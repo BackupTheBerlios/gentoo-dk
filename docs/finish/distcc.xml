@@ -241,7 +241,7 @@ lille indledende vejledning på den nye computer.
 <codenote>Her tilføjer vi distcc til FEATURES</codenote>
 # <i>nano -w /etc/make.conf</i>
 <codenote>Tilføj &quot;distcc&quot; til FEATURES</codenote>
-<codenote>Modificér MAKEOPTS i <path>/etc/make.conf til at indeholde -jN (som beskrevet foroven)</path></codenote>
+<codenote>Modificér MAKEOPTS i /etc/make.conf til at indeholde -jN (som beskrevet foroven)</codenote>
 </pre>
 
 <p>
