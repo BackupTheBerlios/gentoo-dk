@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.10 2004/02/26 20:00:20 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.11 2004/02/28 19:36:56 broeman Exp $ -->
 
 <sections>
 <section>
@@ -12,7 +12,7 @@
 <body>
   	 
 <p>
-Du bliver først nødt til at vælge din tidszone sådan at dit system ved,
+Du bliver først nødt til at vælge din tidszone så. at dit system ved
 hvor det er lokaliseret. Kig efter din tidszone i
 <path>/usr/share/zoneinfo</path>, og lav derefter en symbolsk
 henvisning til <path>/etc/localtime</path> ved brug af <c>ln</c>:
@@ -34,10 +34,10 @@ henvisning til <path>/etc/localtime</path> ved brug af <c>ln</c>:
 <body>
 
 <p>
-Kernen omkring alle distributioner er bygget på Linux kernen. Det er et
+Kernen omkring alle distributioner er bygget på Linux-kernen. Det er et
 lag imellem bruger-programmer og dit systems hardware. Gentoo giver dens
 brugere flere forskellige mulige kerne-kildekoder. En fuld liste med 
-beskrivelser forefindes i <uri link="/doc/en/gentoo-kernel.xml">Gentoo 
+beskrivelser forefindes i <uri link="/doc/da/gentoo-kernel.xml">Gentoo 
 Linux kerne vejledning</uri>. 
 </p>
 
@@ -86,7 +86,7 @@ deres arkitektur: <c>hppa-sources</c> (HPPA) eller <c>ppc-sources</c>
 </p>
 
 <p>
-Vælg din kerne-kildekode og installér den ved at bruge <c>emerge</c>. 
+Vælg din kerne-kildekode og installer den ved at bruge <c>emerge</c>. 
 </p>
 
 <p>
@@ -148,7 +148,7 @@ opsætninger af nogle kerner, vil du ikke kunne huske at det var svært ;)
 </p>
 
 <p>
-En ting er dog <e>rigtigt</e>: du skal kende dit system, når du starter med at
+Én ting er dog <e>rigtigt</e>: du skal kende dit system, når du starter med at
 opsætte en kerne manuelt. De fleste informationer kan blive indsamlet ved at se
 på indholdet af <path>/proc/pci</path> (eller ved at bruge <c>lspci</c>, hvis 
 den er tilgængelig). Du kan også køre <c>lsmod</c> for at se hvilke 
@@ -157,7 +157,7 @@ skal aktivere).
 </p>
 
 <p>
-Gå nu til kerne-kildekode biblioteket og udfør <c>make menuconfig</c>. Dette
+Gå nu til kerne-kildekode mappen og udfør <c>make menuconfig</c>. Dette
 vil starte en ncurses-baseret opsætningsmenu.
 </p>
 
@@ -192,7 +192,7 @@ Code maturity level options ---&gt;
 <p>
 Gå nu til <c>File Systems</c> og vælg understøttelse til de filsystemer, som 
 du bruger.
-Kompilér dem <e>ikke</e> som moduler, ellers vil dit Gentoo system ikke have 
+Kompiler dem <e>ikke</e> som moduler, ellers vil dit Gentoo system ikke have 
 mulighed for at montere dine partitioner. Vælg også <c>Virtual memory</c>, 
 <c>/proc file system</c>, <c>/dev file system</c> og 
 <c>Automatically mount at boot</c>:
@@ -400,7 +400,7 @@ HIL support ---&gt;
 </pre>
 
 <p>
-Inkludér også skærmdriver-understøttelse:
+Inkluder også skærmdriver-understøttelse:
 </p>
 
 <pre caption="Understøttelse af skærmdriver">
@@ -466,7 +466,7 @@ link="#compiling">Kompilering og installation</uri>.
 <body>
 
 <p>
-Aktivér den korrekte bus-understøttelse:
+Aktiver den korrekte bus-understøttelse:
 </p>
 
 <pre caption="Aktivering af SBUS/UPA">
@@ -529,7 +529,7 @@ Ignorerer du dette kan det føre til en ikke-opstartbar kerne.
 </p>
 
 <p>
-Hvis din kerne er en lille smule for stor, kan du prøve at "skrælle" den ved 
+Hvis din kerne er en lille smule for stor, kan du prøve at "strippe" den ved 
 at bruge <c>strip</c>-kommandoen:
 </p>
 
@@ -661,7 +661,7 @@ Console drivers  ---&gt;
 </pre>
 
 <p>
-Hvis du vil have lyd-understøttelse på din Indy/Indigo2, aktivér 
+Hvis du vil have lyd-understøttelse på din Indy/Indigo2, aktiver 
 understøttelse til det:
 </p>
 
@@ -750,7 +750,7 @@ Det er også klogt at kopiere din kerneopsætningsfil til
 </pre>
 
 <p>
-Hvis du er en MIPS-bruger og dit system ikke vil starte ELF-kerner, kompilér
+Hvis du er en MIPS-bruger og dit system ikke vil starte ELF-kerner, kompiler
 kernen ved brug af <c>make vmlinux.ecoff</c> i stedet for <c>make vmlinux</c>.
 Kerne-billedfilen vil blive gemt som <path>arch/mips/boot/vmlinux.ecoff</path> 
 i stedet for <path>vmlinux</path>.
@@ -794,7 +794,7 @@ genkernel'ens ebuild:
 </pre>
 
 <p>
-Kompilér nu din kerne-kildekoder ved at køre <c>genkernel all</c>.
+Kompiler nu din kerne-kildekoder ved at køre <c>genkernel all</c>.
 Vær opmærksom på at,
 når <c>genkernel</c> kompilerer en kerne, som understøtter det meste hardware, 
 kan kompileringen tage noget tid at færdiggøre!
@@ -934,7 +934,7 @@ verificere at pakkerne vil blive installeret ved at emerge en ebuild brug
 </pre>
 
 <p>
-Hvis du ikke kan lide de pakker, som den vil installere brug 
+Hvis du ikke kan lide de pakker som den vil installere, brug 
 <c>emerge --pretend --verbose</c> for at se hvilke USE-flag, som er afkrydset, 
 når man beslutter afhængigheder:
 </p>
@@ -980,7 +980,7 @@ modulerne, hvis du vil.
 </p>
 
 <p>
-For at se alle de mulige moduler, kør følgende <c>find</c>-kommando. Glem ikke
+For at se alle de tilgængelige moduler, kør følgende <c>find</c>-kommando. Glem ikke
 at udskifte "&lt;kernel version&gt;" med den version af kernen, du lige
 har kompileret:
 </p>
