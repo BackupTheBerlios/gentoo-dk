@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.8 2004/03/08 21:42:30 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.9 2004/03/10 21:55:14 broeman Exp $ -->
 
 <sections>
 <section>
@@ -260,9 +260,9 @@ Lad os nu tage et kig på de mulige installationmedier:
 <li>
   <uri link="#doc_chap2_sect3">Gentoo LiveCDer</uri>
   <ul>
-  <li><uri link="#doc_chap2_sect4">Gentoo basic LiveCDer</uri></li>
-  <li><uri link="#doc_chap2_sect5">Gentoo 2-CD LiveCD-Sættet</uri></li>
-  <li><uri link="#doc_chap2_sect6">Gentoo KDE/Gnome LiveCD</uri></li>
+  <li><uri link="#doc_chap2_sect4">Gentoos minimale LiveCD</uri></li>
+  <li><uri link="#doc_chap2_sect5">Gentoos universelle LiveCD</uri></li>
+  <li><uri link="#doc_chap2_sect6">Gentoos KDE/Gnome LiveCD</uri></li>
   </ul>
 </li>
 <li><uri link="#doc_chap2_sect7">Knoppix</uri></li>
@@ -288,8 +288,7 @@ flere, idet at nogle arkitekturer har flere forskellige LiveCDer til rådighed.
 <p>
 Alle LiveCDer tillader dig at starte, indstille netværk, begynde på dine
 partitioner og starte med at installere Gentoo fra Internet. Nogle
-LiveCDer indeholder dog også nødvendig kildekode eller enddog præ-kompileret
-pakker, så du kan installere Gentoo uden netværk.
+LiveCDer indeholder dog også nødvendig kildekode, så du kan installere Gentoo uden en netværkopsætning.
 </p>
 
 <p>
@@ -300,8 +299,8 @@ der er mulig til din arkitektur:
 <table>
 <tr>
   <th>Arkitektur</th>
-  <th>Basic LiveCD</th>
-  <th>2-CD LiveCD-sættet</th>
+  <th>Minimal LiveCD</th>
+  <th>Universel LiveCD</th>
   <th>KDE/Gnome LiveCD</th>
 </tr>
 <tr>
@@ -337,7 +336,7 @@ der er mulig til din arkitektur:
 <tr>
    <ti>amd64</ti>
    <ti>+</ti>
-   <ti></ti>
+   <ti>+</ti>
    <ti></ti>
 </tr>
 </table>
@@ -350,7 +349,7 @@ Hvad indeholder disse LiveCDer så?
 </subsection>
 
 <subsection>
-<title>Gentoo basic LiveCDer</title>
+<title>Gentoos minimale LiveCD</title>
 <body>
 
 <p>
@@ -358,13 +357,13 @@ Dette er en lille, ingen-pjat, startbar CD, hvis eneste formål er at starte
 systemet, forberede netværk og fortsætte med installationen af Gentoo. Det 
 indeholder ikke nogen etaper (eller, i nogle situationer, en enkelt stage1-fil), 
 kildekode eller præ-kompilerede pakker. F.eks. kan x86 varianten af
-denne basale LiveCD findes under <path>universal</path>
+denne LiveCD findes under <path>universal</path>
 underbiblioteket og kaldes <c>install-x86-minimal-2004.0.iso</c>.
 </p>
 
 <table>
 <tr>
-  <th>Basic LiveCD</th>
+  <th>Minimal LiveCD</th>
   <th>Fordele og ulemper</th>
 </tr>
 <tr>
@@ -394,49 +393,29 @@ underbiblioteket og kaldes <c>install-x86-minimal-2004.0.iso</c>.
 </body>
 </subsection>
 <subsection>
-<title>Gentoo 2-CD LiveCD-sættet</title>
+<title>Gentoos universelle LiveCD</title>
 <body>
 
 <p>
-Den første CD er en startbar CD, som er brugbart til at installere Gentoo
-uden netværk. Den indeholder en stage-1 og flere stage-3 tarballs (optimeret
-for individuelle underarkitekturer) og de nødvendige kildekoder, for at installere
-Gentoo fra en stage-1 uden at skulle have en fungerende netværksforbindelse. Nogle
-arkitekturer leverer også stage-2 tarballs og et sæt af præ-byggede pakker på den
-første CD. F.eks. kan x86 varianten af
-denne basale LiveCD findes under <path>universal</path>
-underbiblioteket og kaldes <c>install-x86-minimal-2004.0.iso</c>.
+Gentoos universelle LiveCD er en startbar CD, som er brugbart til at installere Gentoo uden netværk. Den indeholder en stage-1 og flere stage-3 tarballs (optimeret for individuelle underarkitekturer) og de nødvendige kildekoder, for at installere Gentoo fra en stage-1 uden at skulle have en fungerende netværksforbindelse. F.eks. er x86-varianten af denne LiveCD kaldet <c>install-x86-universal-2004.0.iso</c> og kan blive fundet i <path>universal</path> underbibliotek.
 </p>
 
 <p>
-Den anden CD indeholder kun præ-kompilerede pakker og kan blive brugt
-til at installere software efter en succesfuld Gentoo
-installation. For at installere Gentoo, har du kun brug for CD-1, men
-hvis du vil have OpenOffice.org, Mozilla, KDE, GNOME osv. uden at
-skulle kompilere enhver af dem, behøver du også CD-2. F.eks. kaldes
-Athlon-XP underarkitekturens CD-2 <c>packages-athlon-xp-2004.0.iso</c>
-og kan findes i det passende underarkitekturs-bibliotek.
-</p>
-
-<p>
-Vi leverer både et "standard" LiveCD-sæt, startbar til alle
-under-arkitekturer til en specifik arkitektur, men også optimerede
-LiveCDer (CD 2) til de forskellige under-arkitekturer (som f.eks.
-Athlon-XP, G4, osv.).
+Hvis du tager et nærmere kig på vores <path>livecd</path> bibliotek, vil du se at nogle arkitekturer leverer <e>Gentoo Package CDs</e> (pakke-CDer). Denne CD (som ikke er startbar) indeholder kund præ-kompilerede pakker, og kan blive brugt til at installere software efter en succesfuld Gentoo installation. For at installere vil du kun få brug for den universelle LiveCD, men hvis du ønsker at installere OpenOffice.org, Mozilla, KDE, GNOME osv. uden at skulle kompilere enhver af dem, behøver du også pakke-CDen. F.eks. kaldes Athlon-XP underarkitekturens pakke-CD <c>packages-athlon-xp-2004.0.iso</c> og kan findes i det passende underarkitekturs-bibliotek (<path>athlon-xp</path>).
 </p>
 
 <table>
 <tr>
-  <th>2-CD LiveCD-sættet</th>
+  <th>Universel LiveCD med Pakke-CD</th>
   <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Optimeret til din arkitektur og under-arkitektur</ti>
+  <ti>Pakke-CDen er optimeret til din arkitektur og under-arkitektur</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Leveres med præ-kompilerede pakker til en hurtig installation af Gentoo</ti>
+  <ti>Pakke-CDen leverer præ-kompilerede pakker til en hurtig installation af Gentoo</ti>
 </tr>
 <tr>
   <th>+</th>
@@ -454,7 +433,7 @@ Athlon-XP, G4, osv.).
 </body>
 </subsection>
 <subsection>
-<title>Gentoo KDE/Gnome LiveCD</title>
+<title>Gentoos KDE/Gnome LiveCD</title>
 <body>
 
 <p>
