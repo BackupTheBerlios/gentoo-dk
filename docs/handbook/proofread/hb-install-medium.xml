@@ -1,7 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-install-medium.xml,v 1.1 2004/01/06 21:03:25 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-medium.xml,v 1.1 2004/01/12 23:45:14 aaby Exp $ -->
 
 <sections>
 <section>
@@ -11,9 +11,9 @@
 <body>
 
 <p>
-Før vi starter, viser vi en liste over de hardwarekrav, som du skal opfylde for at
-installere Gentoo på din computer. Selvfølgelig er det forskelligt fra hvilken
-arkitektur, du har.
+Før vi starter, viser vi en liste over de hardwarekrav, som du skal
+opfylde for at installere Gentoo på din computer. Selvfølgelig er det
+forskelligt afhængigt af, hvilken arkitektur du har.
 </p>
 
 </body>
@@ -23,11 +23,12 @@ arkitektur, du har.
 <body>
 
 <p>
-Gentoo er officielt til rådighed til seks arkitekturer, og har eksperimental
-understøttelse til to flere. De officielle arkitekturer er <b>x86</b> (inklusiv alle
-under-arkitekturerne, som f.eks. Pentium, Athlon, osv.), <b>sparc</b> (både Sparc32
-og Sparc64), <b>ppc</b> (PowerPC), <b>hppa</b>, <b>alpha</b> og <b>mips</b>. 
-Experimentale understøttelse er til rådighed for <b>amd64</b> og <b>ia64</b>.
+Gentoo er officielt til rådighed til seks arkitekturer, og har
+eksperimentel understøttelse til endnu to. De officielle arkitekturer
+er <b>x86</b> (inklusiv alle under-arkitekturerne, som f.eks. Pentium,
+Athlon, osv.), <b>sparc</b> (både Sparc32 og Sparc64), <b>ppc</b>
+(PowerPC), <b>hppa</b>, <b>alpha</b> og <b>mips</b>.  Experimentale
+understøttelse er til rådighed for <b>amd64</b> og <b>ia64</b>.
 </p>
 
 <p>
@@ -80,7 +81,7 @@ fortsætter med Gentoo installationen:
 
 <p>
 Er du stadigvæk interesseret i at prøve Gentoo? Nå, så er det på tide at
-vælge det installationsmedie, som du gerne vil bruge. Ja, du har et valg
+vælge det installationsmedie som du gerne vil bruge. Ja, du har et valg
 og nej, de er ikke lige gode, og ja, resultatet er altid det samme: et
 Gentoo basissystem.
 </p>
@@ -92,14 +93,14 @@ Installationsmedierne, som vi vil beskrive, er:
 <ul>
 <li>Gentoo LiveCDer</li>
 <li>Knoppix</li>
-<li>Andre Distributioner</li>
-<li>Netopstart</li>
+<li>Andre distributioner</li>
+<li>Net-opstart</li>
 </ul>
 
 <p>
-Enhver medie har deres fordele og ulemper. Vi vil lave en liste over
-dem for hver medie, så du har alle informationer til at
-fortage et forsvarligt valg. Men før vi fortsætter, lad os forklare vores
+Hvert medie har deres fordele og ulemper. Vi vil lave en liste over
+dem for hver medie, så du har alle informationer til at fortage et
+forsvarligt valg. Men før vi fortsætter, lad os forklare vores
 tre-etapes installation.
 </p>
 
@@ -110,15 +111,17 @@ tre-etapes installation.
 <body>
 
 <p>
-Gentoo Linux kan blive installeret ved brug af én af de tre etaper, såkaldte <e>stage</e>-tarball-filer.
-Den du vælger afhænger af om hvor meget af dit system, som du har lyst til at kompilere
-selv. <e>stage1</e>-tarball'en er brugt, når du vil 'bootstrap'e og bygge
-hele systemet fra bunden af. <e>stage2</e>-tarball'en er brugt til at bygge
-hele systemet fra en bootstrappet &quot;semi-kompileret&quot; status.
-<e>stage3</e>-tarball indeholder allerede et Gentoo basissystem, som er blevet
-bygget for dig. Som vi vil forklare senere, kan du også installere
-Gentoo uden at kompilere noget som helst (undtagen din kerne). Hvis du vil
-det, skal du bruge en <e>stage3</e>-tarball.
+Gentoo Linux kan blive installeret ved brug af én af de tre etaper, de
+såkaldte <e>stage</e>-tarball-filer.  Den du vælger afhænger af hvor
+meget af dit system, som du har lyst til at kompilere
+selv. <e>stage1</e>-tarball'en bliver brugt, når du vil 'bootstrap'e
+og bygge hele systemet fra bunden af. <e>stage2</e>-tarball'en er
+brugt til at bygge hele systemet fra en bootstrappet
+&quot;semi-kompileret&quot; tilstand. <e>stage3</e>-tarball indeholder
+allerede et Gentoo basissystem, som er blevet bygget for dig. Som vi
+vil forklare senere, kan du også installere Gentoo uden at kompilere
+noget som helst (undtagen din kerne). Hvis du vil det, skal du bruge
+en <e>stage3</e>-tarball.
 </p>
 
 <p>
@@ -127,11 +130,11 @@ Hvilken etape skal du vælge?
 
 <p>
 Ved at starte fra <e>stage1</e>, tillader du dig fuld kontrol over
-optimeringsindstillingerne og optimal bygge-tidsfunktionalitet, som er 
-fra starten af, aktiveret på dit system. Dette gør <e>stage1</e>-installationen god til
-power-brugere, som ved hvad de gør. Det er også en udemærket
-installationsmetode for dem, som har lyst til at lære mere om den
-indre funktionalitet af Gentoo Linux.
+optimeringsindstillingerne og optimal bygge-tidsfunktionalitet, som
+fra starten af, er aktiveret på dit system. Dette gør
+<e>stage1</e>-installationen god til power-brugere, som ved hvad de
+gør. Det er også en udemærket installationsmetode for dem, som har
+lyst til at lære mere om den indre funktionalitet af Gentoo Linux.
 </p>
 
 <table>
@@ -167,9 +170,10 @@ indre funktionalitet af Gentoo Linux.
 </table>
 
 <p>
-<e>Stage2</e>-installationen tillader dig at springe over bootstrap-processen og ved at gøre dette
-er fint, hvis du er glad for de optimeringsindstillinger, som vi har valgt til
-din særlige <e>stage2</e>-tarball.
+<e>Stage2</e>-installationen tillader dig at springe over
+bootstrap-processen og at gøre dette er fint, hvis du er glad for
+de optimeringsindstillinger, som vi har valgt til din særlige
+<e>stage2</e>-tarball.
 </p>
 
 <table>
@@ -204,11 +208,11 @@ din særlige <e>stage2</e>-tarball.
 </table>
 
 <p>
-Ved at vælge <e>stage3</e>, tillader dig den hurtigste installation af Gentoo
-Linux, men det betyder også at dit basissystem vil have de optimeringsindstillinger,
-som vi har valgt for dig (og lad os være ærlig, er gode indstillinger, som
-vi med omhug har valgt at forøge præstationerne, samt vedligeholde
-stabilitet).
+At vælge <e>stage3</e>, giver dig den hurtigste installation af Gentoo
+Linux, men det betyder også at dit basissystem vil have de
+optimeringsindstillinger, som vi har valgt for dig (og lad os være
+ærlig, det er gode indstillinger, som vi med omhug har valgt til at forøge
+præstationerne, samt vedligeholde stabilitet).
 </p>
 
 <table>
@@ -231,11 +235,12 @@ stabilitet).
 </table>
 
 <p>
-Skriv ned (eller husk) hvilken etape, som du vil bruge. Du vil få brug for det senere, når du
-vælger hvilken LiveCD (eller andet installationsmedie) som du ønsker at bruge. Du vil måske
-være interesseret i at vide at, hvis du vælger at bruge forskellige optimeringsindstillinger
-efter at du har installeret Gentoo, kan du genkompilere hele dit system med
-disse nye optimeringer.
+Skriv ned (eller husk) hvilken etape, som du vil bruge. Du vil få brug
+for det senere, når du vælger hvilken LiveCD (eller andet
+installationsmedie) som du ønsker at bruge. Du vil måske være
+interesseret i at vide, at hvis du vælger at bruge forskellige
+optimeringsindstillinger, efter at du har installeret Gentoo, kan du
+genkompilere hele dit system med disse nye optimeringer.
 </p>
 
 <p>
@@ -252,8 +257,8 @@ Lad os nu tage et kig på de mulige installationmedier:
   </ul>
 </li>
 <li><uri link="#doc_chap2_sect7">Knoppix</uri></li>
-<li><uri link="#doc_chap2_sect8">Eksisterende Distribution</uri></li>
-<li><uri link="#doc_chap2_sect9">Netopstart</uri></li>
+<li><uri link="#doc_chap2_sect8">Eksisterende distribution</uri></li>
+<li><uri link="#doc_chap2_sect9">Net-opstart</uri></li>
 </ul>
 
 </body>
@@ -263,7 +268,7 @@ Lad os nu tage et kig på de mulige installationmedier:
 <body>
 
 <p>
-<e>Gentoo LiveCDer</e> er startbare CDer, som indeholder en
+<e>Gentoo LiveCDer</e> er startbare CDer, som indeholder et
 selv-eksisterende Gentoo-miljø. De tillader dig at starte Linux fra CDen.
 Igennem opstartsprocessen vil dit hardware blive fundet og de passende drivere
 bliver hentet. De er vedligeholdt af Gentoo udviklere og er til rådighed
@@ -273,17 +278,17 @@ flere, idet at nogle arkitekturer har flere forskellige LiveCDer til rådighed.
 
 <p>
 Alle LiveCDer tillader dig at starte, indstille netværk, begynde på dine
-partitioner og starte med at installere Gentoo fra Internet. Dog, nogle
-LiveCDer indeholder også nødvendig kildekode eller enddog præ-kompileret
+partitioner og starte med at installere Gentoo fra Internet. Nogle
+LiveCDer indeholder dog også nødvendig kildekode eller enddog præ-kompileret
 pakker, så du kan installere Gentoo uden netværk.
 </p>
 
 <p>
-&quot;Hvad? Præ-kompilerede pakker?&quot; Jeg hører at du råber. Jeps, virkeligt,
-præ-kompilerede pakker. Idet at Gentoo handler om valg, vil vi give
-vores brugere muligheden for at installere Gentoo hurtigt. Samlingen af
-præ-kompilerede pakker er kaldet <e>Gentoo Reference Platform</e>
-(GRP).
+&quot;Hvad? Præ-kompilerede pakker?&quot; Jeg hører at du råber. Jeps,
+virkeligt, præ-kompilerede pakker. Idet at Gentoo handler om valg, vil
+vi give vores brugere muligheden for at installere Gentoo
+hurtigt. Samlingen af præ-kompilerede pakker er kaldet <e>Gentoo
+Reference Platform</e> (GRP).
 </p>
 
 <p>
@@ -331,17 +336,18 @@ der er mulig til din arkitektur:
 </table>
 
 <p>
-Så, hvad indeholder disse LiveCDer?
+Hvad indeholder disse LiveCDer så?
 </p>
 
 </body>
 </subsection>
+
 <subsection>
 <title>Gentoo basic LiveCDer</title>
 <body>
 
 <p>
-Dette er en lille, ingen-pjat, startbar CD, som eneste formål er at starte 
+Dette er en lille, ingen-pjat, startbar CD, hvis eneste formål er at starte 
 systemet, forberede netværk og fortsætte med installationen af Gentoo. Det 
 indeholder ikke nogen etapers (eller, i nogle situationer, indeholder den en stage1-fil), 
 kildekode eller præ-kompilerede pakker.
@@ -383,19 +389,21 @@ kildekode eller præ-kompilerede pakker.
 <body>
 
 <p>
-Den første CD er en startbar CD, som indeholder alle etaper til en specifik
-under-arkitektur (som f.eks. Athlon-XP, G4, osv.) sammen med kildekoder og
-præ-kompilerede pakker. Den anden CD indeholder kun præ-kompilerede pakker
-og kan blive brugt til at installere andre pakker efter en Gentoo Installation. For at
-installere Gentoo, behøver du kun at bruge CD-1, men hvis du ønsker at bruge OpenOffice.org, Mozilla,
-KDE, GNOME osv. uden at skulle kompilere dem, vil du også få brug for
-CD-2. 
+Den første CD er en startbar CD, som indeholder alle etaper til en
+specifik under-arkitektur (som f.eks. Athlon-XP, G4, osv.) sammen med
+kildekoder og præ-kompilerede pakker. Den anden CD indeholder kun
+præ-kompilerede pakker og kan blive brugt til at installere andre
+pakker efter en Gentoo Installation. For at installere Gentoo, behøver
+du kun at bruge CD-1, men hvis du ønsker at bruge OpenOffice.org,
+Mozilla, KDE, GNOME osv. uden at skulle kompilere dem, vil du også få
+brug for CD-2.
 </p>
 
 <p>
-Vi leverer både et "standard" LiveCD-sæt, startbar til alle under-arkitekturer til en
-specifik arkitektur, men også optimerede LiveCD-sæt til de forskellige
-under-arkitekturer (som f.ek.s Athlon-XP, G4, osv.).
+Vi leverer både et "standard" LiveCD-sæt, startbar til alle
+under-arkitekturer til en specifik arkitektur, men også optimerede
+LiveCD-sæt til de forskellige under-arkitekturer (som f.eks.
+Athlon-XP, G4, osv.).
 </p>
 
 <table>
@@ -431,13 +439,15 @@ under-arkitekturer (som f.ek.s Athlon-XP, G4, osv.).
 <body>
 
 <p>
-Denne CD indeholder et komplet direkte Gentoo-miljø, som leverer KDE og Gnome
-desktop-miljøerne, en apache webserver, flere webbrowsere, irc klienter,
-firewall/router software, netværksundersøgelse-software og en hel del CLI-værktøjer ... Det kan blive
-brugt til at reparere et ødelagt filsystem. KDE/Gnome-LiveCDen indeholder en fuldstændig
-gcc (distcc, ccache aktiveret) værtøjskasse (toolchain); start alle system med dit netværk ved at bruge 
-denne CD og oplev kraften af distribueret kompilering. Denne CD kan blive
-brugt til at installere Gentoo, men den indeholder ikke GRP, distfiles, et portage-snapshot
+Denne CD indeholder et komplet direkte Gentoo-miljø, som leverer KDE
+og Gnome desktop-miljøerne, en apache webserver, flere webbrowsere,
+irc klienter, firewall/router software, netværksundersøgelse-software
+og en hel del CLI-værktøjer ... Det kan blive brugt til at reparere et
+ødelagt filsystem. KDE/Gnome-LiveCDen indeholder en fuldstændig gcc
+(distcc, ccache aktiveret) værtøjskasse (toolchain); start alle dine
+systemer på dit netværk ved at bruge denne CD og oplev kraften af
+distribueret kompilering. Denne CD kan blive brugt til at installere
+Gentoo, men den indeholder ikke GRP, distfiles, et portage-snapshot
 eller stage-filer.
 </p>
 
@@ -497,14 +507,14 @@ fortsætte med <uri link="?part=1&amp;chap=3">Opsætning af dit netværk</uri>.
 </body>
 </subsection>
 <subsection>
-<title>Netopstart</title>
+<title>Net-opstart</title>
 <body>
 
 <p>
 I nogle situationer har du ikke muligheden for at starte fra en CD eller bruge en
 eksisterende installation for at installere Gentoo. I tilfælde af, at dit system har et
 netværksgrænseflade, som er BIOS/ROM-egnet til at fortage en 'netboot' (PXE), kan du få den til at
-hente et lille system ved opstarten og installere fra dette system bagefter.
+hente et lille system ved opstart og installere fra dette system bagefter.
 </p>
 
 <p>
@@ -516,7 +526,7 @@ link="/doc/da/diskless-howto.xml#doc_chap4">TFTP-server</uri> er til rådighed i
 </p>
 
 <p>
-Afhængigt at dine instillinger, skal du nok lave eller hente en kerne ti
+Afhængigt at dine instillinger, skal du nok lave eller hente en kerne til
 dit system.
 </p>
 
@@ -541,17 +551,18 @@ at bruge de andre installationsmedier som alternative sektioner.
   <uri link="#doc_chap4">Alternativ: Hent, brænd og start Knoppix</uri>
 </li>
 <li>
-  <uri link="#doc_chap5">Alternativ: Netopstart</uri>
+  <uri link="#doc_chap5">Alternativ: Net-opstart</uri>
 </li>
 </ul>
 
 </body>
 </subsection>
 </section>
+
 <section>
 <title>Standard: Hent, brænd og start en Gentoo LiveCD</title>
 <subsection>
-<title>Hente og brænde LiveCDerne</title>
+<title>At Hente og brænde LiveCDerne</title>
 <body>
 
 <p>
@@ -595,20 +606,21 @@ Den følgende tabel viser de relative stier til hvor du kan finde LiveCD ISOer
 </table>
 
 <p>
-Besøg en af vores <uri
-link="/main/en/mirrors.xml">filspejle</uri> og gå til
-stien, hvor LiveCD(erne) ligger. Indenfra dette
-bibliotek kan du finde de såkaldte ISO-filer. Disse er fulde CD-billedfiler,
-som du kan skrive til en CD-R. Hvis du finder forskellige ISOer med forskellige 
-datoer (som f.eks.<path>livecd-x86-cd1-20031029.iso</path>) vælg den 
-nyeste.
+Besøg en af vores <uri link="/main/en/mirrors.xml">filspejle</uri> og
+gå til stien, hvor LiveCD(erne) ligger. Indenfra dette bibliotek kan
+du finde de såkaldte ISO-filer. Disse er fulde CD-billedfiler, som du
+kan skrive til en CD-R. Hvis du finder forskellige ISOer med
+forskellige datoer (som
+f.eks.<path>livecd-x86-cd1-20031029.iso</path>) vælg den nyeste.
 </p>
 
 <note>
-Vær venlig og tjek beskrivelserne i <uri link="http://store.gentoo.org">Gentoo
-Store</uri> for at vide, hvilken LiveCD (eller etaper/stage-fil) du skal bruge til din processor. En 
-typisk fejl er at vælge en LiveCD (eller stage-fil) til en processor, der er mere ny
-end din egen (som f.eks. "athlon-xp" til en normal AMD Athlon).
+Vær venlig og tjek beskrivelserne i <uri
+link="http://store.gentoo.org">Gentoo Store</uri> for at vide, hvilken
+LiveCD (eller etaper/stage-fil) du skal bruge til din processor. En
+typisk fejl er at vælge en LiveCD (eller stage-fil) til en processor,
+der er nyere end din egen (som f.eks. "athlon-xp" til en normal AMD
+Athlon).
 </note>
 
 <p>
@@ -665,6 +677,7 @@ Vær sikker på at vælge den undersektion, som er relevant for din arkitektur.
 
 </body>
 </subsection>
+
 <subsection>
 <title>Start af x86 LiveCD(er)</title>
 <body>
@@ -684,11 +697,12 @@ harddisk, og ignorere dit CDROM-drev.
 </p>
 
 <p>
-Placér nu installations-CDen i CDROM-drevet og genstart. Du burde
-se en blæret opstartsskærm med Gentoo Linuxs logo. På denne
-skærm, kan du trykke Enter for at begynde opstartsprocessen med standardindstillingerne
-til opstart, eller opstarte LiveCDen med specificerede opstartsindstillinger ved at indstille 
-en kerne, fulgt af opstartsindstillinger og ved at trykke Enter. 
+Placér nu installations-CDen i CDROM-drevet og genstart. Du burde se
+en blæret opstartsskærm med Gentoo Linuxs logo. På denne skærm, kan du
+trykke Enter for at begynde opstartsprocessen med
+standardindstillingerne til opstart, eller opstarte LiveCDen med
+specificerede opstartsindstillinger ved at indstille en kerne, fulgt
+af opstartsindstillinger og ved at trykke Enter.
 </p>
 
 <p>
@@ -752,7 +766,7 @@ kerne-indstillinger.
 </tr>
 <tr>
   <ti>dokeymap</ti>
-  <ti>Spørger brugeren for hans tastatur-indstillinger (standard: us)</ti>
+  <ti>Spørger brugeren efter hans tastatur-indstillinger (standard: us)</ti>
 </tr>
 <tr>
   <ti>dopcmcia</ti>
@@ -805,7 +819,7 @@ kerne-indstillinger.
 
 <note>
 Nogle LiveCDer leverer ekstra opstartsindstillinger, eller leverer ikke dem, som
-er vist i dette dokument. For at vise en liste over mulige kerner ved opstartstid,
+er vist i dette dokument. For at få vist en liste over mulige kerner ved opstartstid,
 tryk F2, når du er ved opstartsskærmen.
 </note>
 
@@ -1003,13 +1017,13 @@ Edit which field?
 </pre>
 
 <p>
-Disse parametre er brugbart til de fleste situationer.
+Disse parametre er brugbare til de fleste situationer.
 </p>
 
 <p>
 Hvis du får brug for ekstra egenskaber, så skal du tilføje de passende nøgleord til slutningen af 
 kommandolinien. For at tilføje et nøgleord, redigér det sidste felt, tilføj et mellemrum og tast 
-dit nøgleord. Det eneste indbygget nøgleord, på nuværende tidspunkt, er <c>cdcache</c>, som 
+dit nøgleord. Det eneste indbyggede nøgleord, på nuværende tidspunkt, er <c>cdcache</c>, som 
 fortæller LiveCDen til at hente sig selv ind i RAM, som tillader dig at unmounte CDen.
 </p>
 
@@ -1050,9 +1064,9 @@ før du reagerer.
 </impo>
 
 <p>
-Indsæt Gentoo LiveCDen i CDROM-drevet og start dit system. I opstarten,
-tryk Stop-A for at komme ind til OpenBootPROM (OBP). Når du er inde i OBP, start fra
-CDROM-drevet:
+Indsæt Gentoo LiveCDen i CDROM-drevet og start dit system. Ved
+opstarten, tryk Stop-A for at komme ind til OpenBootPROM (OBP). Når du
+er inde i OBP, start fra CDROM-drevet:
 </p>
 
 <pre caption="Start fra LiveCDen">
@@ -1098,10 +1112,10 @@ Hardwareopsætning</uri>.
 <body>
 
 <p>
-Placér LiveCDen i CDROM-drevet og genstart systemet. Hold 'C'-tasten nede ved
-opstart (eller kør en 'OldWorld' boot-loader, som f.eks. BootX eller quik). Du vil blive hilst velkommen
-af en venlig besked og en <e>boot:</e> prompt i bunden af 
-skærmen.
+Placér LiveCDen i CDROM-drevet og genstart systemet. Hold 'C'-tasten
+nede ved opstart (eller kør en 'OldWorld' boot-loader, som
+f.eks. BootX eller quik). Du vil blive hilst velkommen af en venlig
+besked og en <e>boot:</e> prompt i bunden af skærmen.
 </p>
 
 <p>
@@ -1153,21 +1167,22 @@ Hardwareopsætning</uri>.
 </body>
 </subsection>
 <subsection>
-<title>Ekstra Hardwareopsætning</title>
+<title>Ekstra hardwareopsætning</title>
 <body>
 
 <p>
-Når LiveCDen starter, prøver den at finde alt dine hardware-enheder og
-henter de passende kerne-moduler til at understøtte dit hardware. I langt de
-fleste tilfælde gør den et godt arbejde. Men, i nogen tilfælde,
-vil den ikke automatisk hente de kerne-moduler, du har brug for. Hvis PCI
-automatisk-finding ikke fik noget af dit systems hardware, bliver du nødt til at
-hente de passende kerne-moduler manuelt. 
+Når LiveCDen starter, prøver den at finde alle dine hardware-enheder
+og at hente de passende kerne-moduler for at understøtte dit
+hardware. I langt de fleste tilfælde gør den et godt arbejde. Men, i
+nogen tilfælde, vil den ikke automatisk hente de kerne-moduler, du har
+brug for. Hvis PCI automatisk-finding ikke fik noget af dit systems
+hardware, bliver du nødt til at hente de passende kerne-moduler
+manuelt.
 </p>
 
 <p>
-I det næste eksempel, vil vi prøve at hente <c>8139too</c> modulet (understøttelse til
-specifikke slags netværksgrænseflader):
+I det næste eksempel, vil vi prøve at hente <c>8139too</c> modulet
+(understøttelse til specifikke slags netværksgrænseflader):
 </p>
 
 <pre caption="Hentning af kerne-moduler">
@@ -1176,12 +1191,13 @@ specifikke slags netværksgrænseflader):
 
 </body>
 </subsection>
+
 <subsection>
 <title>Option: Finindstilling af harddisk-ydelse</title>
 <body>
 
 <p>
-Hvis du er en expert-bruger ville du måske gerne fin-indstille IDE
+Hvis du er en expert-bruger vil du måske gerne fin-indstille IDE
 harddisk-ydelse ved brug af <c>hdparm</c>. Med <c>-tT</c> valgmuligheden kan du
 teste ydelsen af dine diske (Udfør det flere gang for at få
 et mere præcist udtryk):
@@ -1346,11 +1362,11 @@ Password: <comment>(Skriv root kodeordet, som du lavede foroven)</comment>
 </pre>
 
 <p>
-Nu afslut den nuværende skal (shell) ved at taste <c>exit</c> og <c>su</c> tilbage til
-root. Dette vil hente dine ændringer, som du lavede. 
+Afslut nu den nuværende skal (shell) ved at taste <c>exit</c> og <c>su</c> tilbage til
+root. Dette vil hente de ændringer du lavede. 
 </p>
 
-<pre caption="Hente ændringer">
+<pre caption="At hente ændringer">
 # <i>exit</i>
 $ <i>su -</i>
 Password: <comment>(Skriv root kodeordet)</comment>
@@ -1363,7 +1379,7 @@ Fortsæt nu med <uri link="?part=1&amp;chap=3">Opsætningen af dit netværk</uri>.
 </body>
 </section>
 <section>
-<title>Alternativ: Netopstart</title>
+<title>Alternativ: Net-opstart</title>
 <subsection>
 <body>
 
@@ -1375,7 +1391,7 @@ har alle værktøjer i dem...
 </p>
 
 <p>
-Ved dette tidspunkt, kender vi kun til én arkitektur, som har netopstartsbilledfiler tilgængelig
+Ved dette tidspunkt, kender vi kun til én arkitektur, som har net-opstartsbilledfiler tilgængelig
 og dette er MIPS-arkitekturen. 
 </p>
 
@@ -1434,9 +1450,10 @@ systemet prøve at starte systemet direkte.
 </note>
 
 <p>
-Nogen gange er netopstart ikke nemt at arbejde med. Følgende PROM-kommandoer forneden
-kan måske hjælpe, men det er ikke garanteret. Hvis din maskine nægter at netopstarte, dobbeltjek
-alle tinge på værten, TFTP-maskinen, for at være sikker på at:
+Nogen gange er netopstart ikke nemt at arbejde med. Følgende
+PROM-kommandoer nedenfor kan måske hjælpe, men det er ikke
+garanteret. Hvis din maskine nægter at net-opstarte, dobbeltjek alle
+tinge på værten, TFTP-maskinen, for at være sikker på at:
 </p>
 
 <ul>
@@ -1455,7 +1472,7 @@ alle tinge på værten, TFTP-maskinen, for at være sikker på at:
   </li>
 </ul>
 
-<pre caption="Netopstart tricks">
+<pre caption="Net-opstart tricks">
 &gt;&gt; <i>resetenv</i>
 &gt;&gt; <i>unsetenv netaddr</i>
 &gt;&gt; <i>unsetenv dlserver</i>
