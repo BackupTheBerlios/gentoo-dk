@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.12 2004/02/24 14:13:42 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.13 2004/02/24 14:39:20 broeman Exp $ -->
 
 <book link="handbook.xml">
 <title>Gentoo-håndbogen</title>
@@ -120,8 +120,8 @@
 </author>
 
 <abstract>
-Dette er Gentoo-håndbogen, en bestræbelse på at centralisere
-informationer om Gentoo/Linux.
+Dette er Gentoo-håndbogen, som er en bestræbelse på at centralisere
+informationer omkring Gentoo/Linux.
 </abstract>
 
 <!-- The content of this document is licensed under the CC-BY-SA license -->
@@ -140,7 +140,7 @@ I denne del vil du lære at installere Gentoo på dit system.
 <chapter>
 <title>Om Gentoo Linux installation</title>
 <abstract>
-Brugere, der ikke er velkendt med Gentoo, ved ikke altid, at valg er, hvad
+Brugere, der ikke er velkendt med Gentoo, ved ikke altid, at valg, er hvad
 Gentoo handler om. 
 </abstract>
   <include href="hb-install-about.xml"/>
@@ -269,7 +269,7 @@ med USE-flag og forstå hvordan USE-flag arbejder sammen med dit system.
 <chapter>
 <title>Portage og software</title>
 <abstract>
-Hovedforklaringen til Portage er at vedligeholde software på dit system. I dette
+Hovedforklaringen for Portage er at vedligeholde software på dit system. I dette
 kapitel lærer du hvordan man får informationer fra en pakke, opdaterer din
 pakke-databse, installation/opdatering af software og mere ...
 </abstract>
@@ -295,7 +295,7 @@ vælger filspejle, ændrer bibliotekssteder og mere.
 </chapter>
 
 <chapter>
-<title>Startscripter</title>
+<title>Startscripts</title>
 <abstract>
 Gentoo bruger et specielt startscript-format, som, inklusive andre egenskaber, tillader
 afhængighedsdrevet beslutninger og virtuelle startscripter. Dette kapitel forklarer alle
