@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <?xml-stylesheet href="../xsl/guide.xsl" type="text/xsl"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.4 2003/12/29 19:37:47 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.5 2003/12/29 19:59:26 broeman Exp $ -->
 
 <!DOCTYPE guide SYSTEM "../dtd/guide.dtd">
 <guide>
@@ -39,107 +39,107 @@ Noget
 <tr>
 
 <ti>
-<uri link="#doc_chap4_sect3">A</uri>
+<uri link="#doc_chap1_sect3">A</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect4">B</uri>
+<uri link="#doc_chap1_sect4">B</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect5">C</uri>
+<uri link="#doc_chap1_sect5">C</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect6">D</uri>
+<uri link="#doc_chap1_sect6">D</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect7">E</uri>
+<uri link="#doc_chap1_sect7">E</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect8">F</uri>
+<uri link="#doc_chap1_sect8">F</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect9">G</uri>
+<uri link="#doc_chap1_sect9">G</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect10">H</uri>
+<uri link="#doc_chap1_sect10">H</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect11">I</uri>
+<uri link="#doc_chap1_sect11">I</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect12">J</uri>
+<uri link="#doc_chap1_sect12">J</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect13">K</uri>
+<uri link="#doc_chap1_sect13">K</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect14">L</uri>
+<uri link="#doc_chap1_sect14">L</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect15">M</uri>
+<uri link="#doc_chap1_sect15">M</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect16">N</uri>
+<uri link="#doc_chap1_sect16">N</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect17">O</uri>
+<uri link="#doc_chap1_sect17">O</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect18">P</uri>
+<uri link="#doc_chap1_sect18">P</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect19">Q</uri>
+<uri link="#doc_chap1_sect19">Q</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect20">R</uri>
+<uri link="#doc_chap1_sect20">R</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect21">S</uri>
+<uri link="#doc_chap1_sect21">S</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect22">T</uri>
+<uri link="#doc_chap1_sect22">T</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect23">U</uri>
+<uri link="#doc_chap1_sect23">U</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect24">V</uri>
+<uri link="#doc_chap1_sect24">V</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect25">W</uri>
+<uri link="#doc_chap1_sect25">W</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect26">X</uri>
+<uri link="#doc_chap1_sect26">X</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect27">Y</uri>
+<uri link="#doc_chap1_sect27">Y</uri>
 </ti>
 
 <ti>
-<uri link="#doc_chap4_sect28">Z</uri>
+<uri link="#doc_chap1_sect28">Z</uri>
 </ti>
 
 </tr>
@@ -203,7 +203,13 @@ Noget
 <tr>
 <ti>CD-ROM</ti>
 <ti>CD-ROM</ti>
-<ti>For at sikre konsistens skal CD-ROM altid skrive sådan</ti>
+<ti>For at sikre en konsekvent stil, skal CD-ROM altid skrives sådan</ti>
+</tr>
+
+<tr>
+<ti>configuration</ti>
+<ti>opsætning</ti>
+<ti></ti>
 </tr>
 
 <tr>
@@ -504,6 +510,12 @@ Noget
 <th>EN</th>
 <th>DA</th>
 <th>Kommentar</th>
+</tr>
+
+<tr>
+<ti>settings</ti>
+<ti>indstillinger</ti>
+<ti></ti>
 </tr>
 
 <tr>
