@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-hppa.xml,v 1.7 2004/07/26 20:43:33 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-hppa.xml,v 1.8 2004/07/29 08:36:07 broeman Exp $ -->
 
 <book link="handbook-hppa.xml" lang="da">
 <title>Gentoo-håndbogen til HPPA</title>
@@ -131,8 +131,8 @@ informationer omkring Gentoo/Linux.
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 <license/>
 
-<version>2.42</version>
-<date>26. Juli, 2004</date>
+<version>2.43</version>
+<date>28. Juli, 2004</date>
 
 <part>
 <title>Installation af Gentoo</title>
