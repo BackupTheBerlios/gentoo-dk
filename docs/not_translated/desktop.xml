@@ -1,81 +1,86 @@
-<?xml version='1.0' encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/desktop.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<?xml version='1.0' encoding="iso-8859-1"?>
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/desktop.xml,v 1.2 2004/01/17 11:49:03 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<guide link="/doc/en/desktop.xml">
-<title>Gentoo Linux Desktop Configuration Guide</title>
-<author title="Author"><!-- zhen@gentoo.org -->
+<guide link="/doc/da/desktop.xml">
+<title>Gentoo Linux skrivebords konfigurations vejledningen</title>
+<author title="Forfatter"><!-- zhen@gentoo.org -->
   John P. Davis
 </author>
-<author title="Author">
+<author title="Forfatter">
   <mail link="g2boojum@gentoo.org">Grant Goodyear</mail>
 </author>
-<author title="Editor">
+<author title="Redaktør">
   <mail link="swift@gentoo.org">Sven Vermeulen</mail>
 </author>
-<author title="Editor">
+<author title="Redaktør">
   <mail link="klasikahl@gentoo.org">Zack Gilburd</mail>
 </author>
-<author title="Editor">
+<author title="Redaktør">
   <mail link="bennyc@gentoo.org">Benny Chuang</mail>
 </author>
-<author title="Editor">
+<author title="Redaktør">
   <mail link="erwin@gentoo.org">Erwin</mail>
+</author>
+<author title="Oversætter">
+  <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
 
 <abstract>
-This guide shows you configure Gentoo Linux to be a full-purpose
-desktop system.  Specifically, we walk through installing and 
-configuring X, KDE, GNOME, ALSA (sound), postfix (electronic mail), 
-and samba (unix/windows interoperability).
+Denne vejledning viser dig hvordan du konfigurerer Gentoo Linux til at
+være et skrivebords system til mange formål. Helt specifikt gennemgår vi
+installation og konfiguration af X, KDE, GNOME, ALSA (lyd), postfix
+(elektronisk mail), og samba (unix/windows samarbejde).
 </abstract>
 
 <license/>
 
 <version>1.4.13</version>
-<date>November 16, 2003</date>
+<date>16. November 2003</date>
 
 <chapter>
-<title>Preliminaries</title>
+<title>Indledende</title>
 <section>
 <body>
 
 <p>
-Needless to say, you first need to have Gentoo Linux installed
-(<uri>http://www.gentoo.org/doc/en/build.xml</uri>).  Having finished
-that rather enjoyable process, you also need to download the <e>Portage</e>
-tree.  You really should read the
-<uri link="http://www.gentoo.org/doc/en/portage-user.xml">Portage
-User Guide</uri>, but if you're in a hurry you just need to type:
+Det bør ikke være nødvendigt at sige, du skal selvfølgelig have Gentoo
+Linux installeret
+(<uri>http://www.gentoo.org/doc/en/build.xml</uri>). Efter at du har
+afsluttet denne ret fornøjelsesmæssige proces, skal du også have
+downloadet <e>Portage</e> træet. Du bør læse <uri
+link="http://www.gentoo.org/doc/en/portage-user.xml">Portage User
+Guide</uri>, men hvis du har travlt skal du bare skrive:
 </p>
 
-<pre caption = "Getting Current">
+<pre caption = "At komme uptodate">
 # <i>emerge sync</i>
 </pre>
 
 <p>
-A quick note is in order about the packages that I have chosen to 
-discuss here.  Gentoo Linux has a considerable wealth of window managers,
-mail transport agents, etcetera that can easily be installed.  The specific
-packages that I have chosen to cover are not preferred by Gentoo Linux, they
-are simply packages that the author likes and/or knows how to configure.
-In other words, they're the packages on the author's own desktop.
+En hurtig note er på sin plads omkring de pakker jeg har valgt at
+diskutere her. Gentoo Linux har en betydelig rigdom i form a window
+managere, mail transport agenter osv. der nemt kan installeres. De
+specifikke pakker jeg har valgt at dække foretrækkes ikke af Gentoo
+Linux, de er bare pakker som forfatteren godt kan lide og/eller ved
+hvordan skal konfigureres. Med andre ord, de er bare pakker på
+forfatterens eget skrivebord.
 </p>
 
 <impo>
-Depending on which desktop you are going to install, you might want to
-disable support for which desktops you are not using in 
-<path>/etc/make.conf</path>. Under the <c>USE</c> section, add <c>-gnome 
--gtk</c> if you are using KDE, or add <c>-kde -qt</c> if you are going to use 
-GNOME.
+Afhænigt af hvilket skrivebord du vil installere, er vil du måske slå
+understøttelse. for de skriveborde som du ikke vil bruge, fra i 
+<path>/etc/make.conf</path>. Under <c>USE</c> sektionen skal du tilføje<c>-gnome 
+-gtk</c> hvis du bruger KDE eller tilføj <c>-kde -qt</c> hvis du vil
+bruge GNOME.
 </impo>
 
 <warn>
-If you encounter a bug with any of these packages, report
-them to <uri>http://bugs.gentoo.org/</uri>. <e>Do Not</e> report them to the 
-package maintainers (i.e. KDE), the Gentoo Developers will move the bug
-upstream if necessary.
+Hvis du støder på en bug med nogen af disse pakker, så skal du
+reportere dem til <uri>http://bugs.gentoo.org/</uri>. <e>Du skal
+ikke</e> reportere dem til de folk der laver pakkerne (f.eks. KDE),
+Gentoos udviklere vil flytte bug'en op til de rette folk hvis det er nødvendigt.
 </warn>
 
 </body>
@@ -83,46 +88,48 @@ upstream if necessary.
 </chapter>
 
 <chapter>
-<title>Installing XFree86</title>
+<title>At installere XFree86</title>
 <section>
 <title>Installation</title>
 <body>
 
 <p>
-The emerge/install process of X will take awhile on even a quick system. The 
-system is quite large, so be prepared to read a book, take a nap, etc.
+Emerge/installationsprocessen af X vil tage en del tid, selv på et
+hurtigt system. Systemet er ret stort, så vær forberedt på at læse en
+bog, tage en lur, osv.
 </p>
 
 <p>
-To emerge X, all that you have to do is type:
+For at emerge X, er alt hvad du skal gøre at skrive:
 </p>
 
-<pre caption = "Emerging XFree86">
+<pre caption = "At emerge XFree86">
 # <i>emerge xfree</i>
 # <i>env-update &amp;&amp; source /etc/profile</i>
 </pre>
 
 <p>
-After this rather long process is completed, configuration will begin.
+Efter at denne ret lange proces er fuldendt, skal vi begynde konfigurationen.
 </p>
 
 </body>
 </section>
 <section>
-<title>Configuring X</title>
+<title>At konfigurere X</title>
 <body>
 
 <p>
-I like using the console-based <c>xf86config</c> program to configure X,
-although the generated <path>/etc/X11/XF86Config</path> file is not very
-elegant. Before you start, you'll need to know the horizontal and vertical 
-refresh rates of your monitor (my viewsonic G773 has Horizontal: 30-69 KHz, 
-Vertical: 55-90 KHz), the type and amount of ram (in KB) of your video card
-(a 32768 KB GeForce card, in my case), and the type and device of your
-mouse (an intellimouse plugged into the ps/2 port <path>/dev/psaux</path>).
+Jeg kan godt lide at bruge det konsol-baserede <c>xf86config</c>
+program til at konfigurere X, selvom den generede
+<path>/etc/X11/XF86Config</path> fil ikke er særlig elegant. Før du
+starter bliver du nødt til at kende din monitors horizontale og
+verticale refresh rates (min viewsonic G773 har Horizontal: 30-69 KHz, 
+Vertical: 55-90 KHz), type og antal af ram (i KB) på dit video kort (
+et 32768 KB GeForce kort, i mit tilfælde) og typen og enhedfilen på
+din mus (en intellimouse plugget ind i ps/2 porten <path>/dev/psaux</path>).
 </p>
 
-<pre caption = "Running xf86config">
+<pre caption = "At køre xf86config">
 # <i>/usr/X11R6/bin/xf86config</i>
 </pre>
 
@@ -481,7 +488,7 @@ USE="qt kde -gnome -gtk"
 
 <p>
 To find out more about USE variables, please reference the
-<uri link="http://www.gentoo.org/doc/en/use-howto.xml">USE HOWTO</uri>.
+<uri link="http://www.gentoo.org/doc/da/use-howto.xml">USE HOWTO</uri>.
 </p>
 
 <p>
