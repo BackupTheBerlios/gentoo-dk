@@ -1,7 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-medium.xml,v 1.5 2004/01/05 22:27:53 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-medium.xml,v 1.6 2004/01/06 21:02:01 broeman Exp $ -->
 
 <sections>
 <section>
@@ -161,7 +161,7 @@ indre funktionalitet af Gentoo Linux.
 <tr>
   <th>-</th>
   <ti>
-    Hvis du ikke har tænkt dig at "lege" med indstillingerne, er det sikkert spild af tid
+    Hvis du ikke har tænkt dig at fin-indstille, er det sikkert spild af tid
   </ti>
 </tr>
 </table>
@@ -187,7 +187,7 @@ din særlige <e>stage2</e>-tarball.
 </tr>
 <tr>
   <th>+</th>
-  <ti>Du kan stadigvæk "lege" med dine indstillinger</ti>
+  <ti>Du kan stadigvæk fin-indstille</ti>
 </tr>
 <tr>
   <th>-</th>
@@ -222,7 +222,7 @@ stabilitet).
 </tr>
 <tr>
   <th>-</th>
-  <ti>Du kan ikke "lege" med dit system - det er allerede bygget</ti>
+  <ti>Du kan ikke fin-indstille dit system - det er allerede bygget</ti>
 </tr>
 <tr>
   <th>-</th>
@@ -1177,130 +1177,130 @@ specifikke slags netværksgrænseflader):
 </body>
 </subsection>
 <subsection>
-<title>Optional: Tweaking Hard Disk Performance</title>
+<title>Option: Finindstilling af harddisk-ydelse</title>
 <body>
 
 <p>
-If you are an advanced user, you might want to tweak the IDE hard disk
-performance using <c>hdparm</c>. With the <c>-tT</c> options you can
-test the performance of your disk (execute it several times to get a
-more precise impression):
+Hvis du er en expert-bruger ville du måske gerne fin-indstille IDE
+harddisk-ydelse ved brug af <c>hdparm</c>. Med <c>-tT</c> valgmuligheden kan du
+teste ydelsen af dine diske (Udfør det flere gang for at få
+et mere præcist udtryk):
 </p>
 
-<pre caption="Testing disk performance">
+<pre caption="Test af harddisk-ydelse">
 # <i>hdparm -tT /dev/hda</i>
 </pre>
 
 <p>
-To tweak, you can use any of the following examples (or experiment
-yourself) which use <path>/dev/hda</path> as disk (substitute with your
-disk):
+For at fin-indstille, kan du bruge alle disse følgende eksempler (eller experimentere
+selv), som bruger <path>/dev/hda</path> som harddisk (udskift det med din egen
+harddisk):
 </p>
 
-<pre caption="Tweaking hard disk performance">
-<comment>Activate DMA:</comment>                                       # <i>hdparm -d 1 /dev/hda</i>
-<comment>Activate DMA + Safe Performance-enhancing Options:</comment>  # <i>hdparm -d 1 -A 1 -m 16 -u 1 -a 64 /dev/hda</i>
+<pre caption="Fin-indstilling af harddisk-ydelse">
+<comment>Aktivering af DMA:</comment>                                       # <i>hdparm -d 1 /dev/hda</i>
+<comment>Deaktivering af DMA + sikre ydelse-udvidelsesmuligheder:</comment> # <i>hdparm -d 1 -A 1 -m 16 -u 1 -a 64 /dev/hda</i>
 </pre>
 
 </body>
 </subsection>
 <subsection>
-<title>Optional: User Accounts</title>
+<title>Option: Brugerkonti</title>
 <body>
 
 <p>
-If you plan on giving other people access to your installation
-environment, you need to create the necessary user
-accounts and change the root password.
+Hvis du planlægger at give adgang til andre folk til dit
+installationsmiljø, bliver du nødt til at lave de nødvendige
+brugerkonti og ændre root kodeordet.
 </p>
 
 <p>
-To change the root password, use the <c>passwd</c> utility:
+For at ændre root kodeordet, brug <c>passwd</c>-værktøjet:
 </p>
 
-<pre caption="Changing the root password">
+<pre caption="Ændring af root kodeordet">
 # <i>passwd</i>
-New password: <comment>(Enter your new password)</comment>
-Re-enter password: <comment>(Re-enter your password)</comment>
+Password: <comment>(Skriv dit nye kodeord)</comment>
+Re-enter password: <comment>(Skriv dit nye kodeord igen)</comment>
 </pre>
 
 <p>
-To create a user account, we first enter his credentials, followed by
-its password. We use <c>useradd</c> and <c>passwd</c> for these tasks.
-In the next example, we create a user called &quot;john&quot;.
+For at lave en brugerkonto, skal vi først skrive hans brugernavn, fulgt af
+et kodeord. Vi bruger <c>useradd</c> og <c>passwd</c> til disse opgaver.
+I det næste eksempel, laver vi en bruger, som bliver kaldet &quot;jens&quot;.
 </p>
 
-<pre caption="Creating a user account">
-# <i>useradd john</i>
-# <i>passwd john</i>
-New password: <comment>(Enter john's password)</comment>
-Re-enter password: <comment>(Re-enter john's password)</comment>
+<pre caption="Skabelse af en brugerkonto">
+# <i>useradd jens</i>
+# <i>passwd jens</i>
+New password: <comment>(Skriv jens' kodeord)</comment>
+Re-enter password: <comment>(skriv jens' kodeord igen)</comment>
 </pre>
 
 </body>
 </subsection>
 <subsection>
-<title>Optional: Starting the SSH Daemon</title>
+<title>Option: Start af en SSH-daemon (baggrundsprocess)</title>
 <body>
 
 <impo>
-Only x86, alpha, sparc and ppc provide the possibility to start an ssh daemon 
-during installation.
+Kun på x86, alpha, sparc og ppc kan vi levere muligheden for at starte en ssh-daemon 
+i installationsprocessen.
 </impo>
 
 <p>
-If you want to allow other users to access your computer during the
-Gentoo installation (perhaps because those users are going to help you
-install Gentoo, or even do it for you), you need to create a user
-account for them, or provide them with your root password (<e>only</e>
-do that <e>if</e> you <b>fully trust</b> that user).
+Hvis du vil tillade andre bruger at få adgang til din computer, imens du
+installerer Gentoo (måske fordi at disse brugere vil hjælpe dig med at
+installere Gentoo, eller måske endda gøre det for dig), vil du blive nødt til at lave en
+brugerkonto til dem, eller give dem dit root kodeord (gør det <e>kun</e>
+<e>hvis</e> du virkelig <b>tror fuldt ud</b> på denne bruger).
 </p>
 
 <p>
-To fire up the SSH daemon, execute the following command:
+For at gasse en SSH-daemon op, udfør følgende kommando:
 </p>
 
-<pre caption="Starting the SSH daemon">
+<pre caption="Start af en SSH-daemon">
 # <i>/etc/init.d/sshd start</i>
 </pre>
 
 <p>
-Now continue with the next chapter on <uri 
-link="?part=1&amp;chap=3">Configuring your Network</uri>.
+Fortsæt nu til næste kapitel som omhandler <uri 
+link="?part=1&amp;chap=3">Opsætning af dit netværk</uri>.
 </p>
 
 </body>
 </subsection>
 </section>
 <section>
-<title>Alternative: Download, Burn and Boot Knoppix</title>
+<title>Alternativ: Hent, brænd og start Knoppix</title>
 <body>
 
 <impo>
-You can only use Knoppix on x86-based systems.
+Du kan kun bruge Knoppix på x86-baserede systemer.
 </impo>
 
 <p>
-You can download Knoppix from the <uri
-link="http://www.knoppix.com">Knoppix homepage</uri>. Knoppix too is
-available as ISO-files. After having downloaded the Knoppix ISO file,
-burn it to a CD-R. You have to use &quot;raw&quot; burning. We'll
-explain how to do this with a couple of popular tools.
+Du kan hente Knoppix fra <uri
+link="http://www.knoppix.com">Knoppixs hjemmeside</uri>. Knoppix er også
+til rådighed som ISO-filer. Efter at du har hentet en Knoppix ISO-fil,
+brænd det til en CDR-skive. Du skal bruge &quot;raw&quot; brænding. Vi vil
+forklare, hvordan man gør dette med nogle populære værktøjer.
 </p>
 
 <ul>
   <li>
-    With EasyCD Creator you select <c>File</c>, <c>Record CD
-    from CD image</c>. Then you change the <c>Files of type</c> to <c>ISO image
-    file</c>. Then locate the ISO file and click <c>Open</c>. When you click on
-    <c>Start recording</c> the ISO image will be burned correctly onto the CD-R.
+    Med EasyCD Creator, vælger du <c>File</c>, <c>Record CD
+    from CD image</c>. Så ændrer du <c>Files of type</c> til <c>ISO image
+    file</c>. Bagefter finder du ISO-filen og klikker <c>Open</c>. Når du klikker på
+    <c>Start recording</c> vil ISO-billedfilen blive brændt korrekt til en CD-R.
   </li>
   <li>
-    With Nero Burning ROM, select <c>File</c>, <c>Burn CD image</c>. Set the
-    type of file to <c>*.*</c> and select the ISO file. Older versions of Nero
-    will tell you they don't recognize the format -- confirm here, it does
-    recognize it but doesn't know it yet :) In the next dialog, set the
-    following parameters:
+    Med Nero Burning ROM, vælger du <c>File</c>, <c>Burn CD image</c>. Indstil
+    typen af fil til <c>*.*</c> og vælg ISO-filen. Ældre versioner af Nero
+    vil fortælle dig at den ikke kunne forstå formattet 'don't recognize the format' -- fortsæt alligevel,
+    den kan godt forstå det, men det ved det bare ikke selv :) I den næste dialog, indstil de
+    følgende parametre:
     <ul>
       <li>Type of image: <c>Data Mode 1</c></li>
       <li>Block size: <c>2048 bytes</c></li>
@@ -1308,111 +1308,111 @@ explain how to do this with a couple of popular tools.
       <li>Scrambled: <c>no</c></li>
       <li>Swapped: <c>no</c></li>
     </ul>
-    Now click on <c>OK</c> and then <c>Burn</c> (the CD-R)
+    Klik nu på <c>OK</c> og så på <c>Burn</c> (the CD-R)
   </li>
   <li>
-    With cdrecord, you simply type <c>cdrecord dev=/dev/hdc</c> (replace
-    <path>/dev/hdc</path> with your CD-RW drive's device path) followed
-    by the path to the ISO file :)
+    Med cdrecord, kan du bare skrive <c>cdrecord dev=/dev/hdc</c> (udskift
+    <path>/dev/hdc</path> med dit CD-RW-drevs enhedssti) fulgt af
+    stien til ISO-filen :)
   </li>
   <li>
-    With Mac OS X' Finder mark the ISO and click on <c>File</c> and then <c>Burn
-    Image</c>
+    Med 'Mac OS X's 'Finder' kan du markere ISO-filen og klik på <c>File</c> og vælg <c>Burn
+    Image</c>.
   </li>
 </ul>
 
 <p>
-By default, Knoppix boots into a KDE 3.0 desktop. The first thing you'll
-have to do is set the root password for knoppix. Open a konsole and type
-in the following command:
+Som standard, starter Knoppix ind i KDE 3.0 desktop. Den første ting, som
+skal gøre, er at sætte root kodeordet til Knoppix. Åben en konsol og indtast
+følgende kommando:
 </p>
 
-<pre caption="Setting root password for Knoppix">
+<pre caption="Indstilling af root kodeord til Knoppix">
 $ <i>sudo passwd root</i>
-Password: <comment>(Enter a password)</comment>
-Re-enter password: <comment>(Re-enter the password)</comment>
+Password: <comment>(Skriv et kodeord)</comment>
+Re-enter password: <comment>(Skriv et kodeord igen)</comment>
 </pre>
 
 <p>
-Next, <c>su</c> to root and set the root home directory to
-<path>/root</path>. If you do not do this, you will receive errors when
-emerging about &quot;/home/root: not found&quot;.
+Derefter, <c>su</c> til root og indstil roots hjemmebibliotek til
+<path>/root</path>. Hvis du ikke gør dette, vil du modtage fejl om
+&quot;/home/root: not found&quot; (ikke fundet).
 </p>
 
-<pre caption="Changing root home directory">
+<pre caption="Ændring af roots hjemmebibliotek">
 $ <i>su -</i>
-Password: <comment>(Enter the root password created above)</comment>
+Password: <comment>(Skriv root kodeordet, som du lavede foroven)</comment>
 # <i>usermod -d /root -m root</i>
 </pre>
 
 <p>
-Now exit the current shell by typing <c>exit</c> and <c>su</c> back into
-root. This will load the made changes. 
+Nu afslut den nuværende skal (shell) ved at taste <c>exit</c> og <c>su</c> tilbage til
+root. Dette vil hente dine ændringer, som du lavede. 
 </p>
 
-<pre caption="Loading the changes">
+<pre caption="Hente ændringer">
 # <i>exit</i>
 $ <i>su -</i>
-Password: <comment>(Enter the root password)</comment>
+Password: <comment>(Skriv root kodeordet)</comment>
 </pre>
 
 <p>
-Now continue with <uri link="?part=1&amp;chap=3">Configuring your Network</uri>.
+Fortsæt nu med <uri link="?part=1&amp;chap=3">Opsætningen af dit netværk</uri>.
 </p>
 
 </body>
 </section>
 <section>
-<title>Alternative: Net Booting</title>
+<title>Alternativ: Netopstart</title>
 <subsection>
 <body>
 
 <p>
-To be able to install Gentoo, the image you download from the TFTP server should
-provide the necessary tools to create filesystems, create and mount partitions,
-extract a tarball and chroot. You can download existing net boot images which
-have all tools in them...
+For at kunne installere Gentoo, burde billedfilen, som du hentede fra TFTP-serveren,
+levere de nødvendige værktøjer til at lave filsystemer, lave og mounte partitioner,
+udpakke en tarball og chroot. Du kan hente eksisterende netopstartsbilledfiler, som
+har alle værktøjer i dem...
 </p>
 
 <p>
-At this time we know of only one architecture that has net boot images available
-and that is the MIPS architecture. 
+Ved dette tidspunkt, kender vi kun til én arkitektur, som har netopstartsbilledfiler tilgængelig
+og dette er MIPS-arkitekturen. 
 </p>
 
 <ul>
-  <li><uri link="#doc_chap5_sect2">Net Booting a MIPS System</uri></li>
+  <li><uri link="#doc_chap5_sect2">Netopstart af et MIPS-system</uri></li>
 </ul>
 
 </body>
 </subsection>
 <subsection>
-<title>Net Booting a MIPS System</title>
+<title>Netopstart af et MIPS-system</title>
 <body>
 
 <p>
-First download one of the available net boot images from 
+Hent først én af de mulige netopstartsbilledfiler fra 
 <uri>http://dev.gentoo.org/~kumba/mips/netboot/</uri>.
 </p>
 
 <p>
-Now configure your DHCP server to send this file to the booting client. SGI
-machines however need some minor tweaks to the host system in order for TFTP to
-work properly:
+Opsæt nu din DHCP-server til at sende denne fil til en startende klient. SGI-maskiner
+kræver dog nogle mindre fin-indstillinger til værten, for at TFTP kan
+virke ordentligt:
 </p>
 
-<pre caption="Some fixes to SGI machines to have TFTP work properly">
-<comment>(Disable "Path Maximum Transfer Unit", otherwise SGI Prom won't find the kernel)</comment>
+<pre caption="Nogle reparationer til SGI-maskiner for at TFTP kan virke ordentligt">
+<comment>(Deaktivér "Path Maximum Transfer Unit", ellers vil SGI Prom ikke kernen)</comment>
 # <i>echo 1 &gt; /proc/sys/net/ipv4/ip_no_pmtu_disc</i>
-<comment>(Set the port range usable by the SGI Prom)</comment>
+<comment>(Indstil port-omfanget, som kan bruges af SGI Prom)</comment>
 # <i>echo "2048 32767" &gt; /proc/sys/net/ipv4/ip_local_port_range</i>
 </pre>
 
 <p>
-Now power on your machine, get into the PROM monitor and issue the command to
-boot the kernel over the network:
+Tænd nu for din maskine, kom ind til PROM-monitor og udfør kommandoen til
+at starte en kerne over netværk:
 </p>
 
-<pre caption="Net booting a MIPS">
+<pre caption="Netopstart af MIPS">
         Running power-on diagnostics
 
 System Maintenance Menu
@@ -1429,33 +1429,33 @@ Command Monitor. Type "exit" to return to the menu.
 </pre>
 
 <note>
-You may have to press the Esc key to get into the menu above, otherwise, the
-system will attempt to boot the system directly. 
+Du bliver måske nødt til at trykke Esc-tasten for at komme til ovenstående menu, ellers vil
+systemet prøve at starte systemet direkte. 
 </note>
 
 <p>
-Sometimes netbooting is a tricky endeavour. The following PROM commands below
-may help, but this is not guaranteed. If your machine refuses to netboot, double
-check things on the host TFTP machine to make sure that:
+Nogen gange er netopstart ikke nemt at arbejde med. Følgende PROM-kommandoer forneden
+kan måske hjælpe, men det er ikke garanteret. Hvis din maskine nægter at netopstarte, dobbeltjek
+alle tinge på værten, TFTP-maskinen, for at være sikker på at:
 </p>
 
 <ul>
-  <li>dhcpd is giving the SGI Machine an IP Address</li>
+  <li>dhcpd giver SGI-maskinen en IP-adresse</li>
   <li>
-    Permissions are set properly in your tftp folder (typically 
+    rettighederne er indstillet korrekt i din tftp-bibliotek (typisk 
     <path>/tftpboot</path>)
   </li>
   <li>
-    Check system logs to see what the tftp server is reporting (errors
-    perhaps)
+    tjek system-logfilerne for at se hvad tftp-serveren rapporterer (måske
+    fejl)
   </li>
   <li>
-    Pray to a Tux plushie (this may or may not work, and is not an officially
-    supported troubleshooting technique)
+    bed til en Tux-plysbjørn (dette vil måske eller måske ikke virke, men det er ikke en officiel
+    understøttet fejlfindingsteknik)
   </li>
 </ul>
 
-<pre caption="Net booting tricks">
+<pre caption="Netopstart tricks">
 &gt;&gt; <i>resetenv</i>
 &gt;&gt; <i>unsetenv netaddr</i>
 &gt;&gt; <i>unsetenv dlserver</i>
@@ -1464,9 +1464,9 @@ check things on the host TFTP machine to make sure that:
 </pre>
 
 <p>
-If all things go well, you are now dropped off at busybox' <c>ash</c> shell. You
-can then continue with <uri link="?part=1&amp;chap=3">Configuring your
-Network</uri>.
+Hvis alt dette går, så er du nu smidt af på busybox' <c>ash</c> skal (shell). Du
+kan nu fortsætte med <uri link="?part=1&amp;chap=3">Opsætning af dit
+netværk</uri>.
 </p>
 
 </body>
