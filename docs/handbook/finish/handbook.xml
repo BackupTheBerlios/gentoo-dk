@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.5 2004/01/22 15:47:45 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.6 2004/01/22 17:51:31 broeman Exp $ -->
 
 <book link="handbook.xml">
 <title>Gentoo-håndbogen</title>
@@ -249,7 +249,7 @@ Nu har du et Gentoo system, men hvad skal du nu gøre?
   <include href="hb-install-next.xml"/>
 </chapter>
 </part>
-
+<!--
 <part>
 <title>Arbejde med Gentoo</title>
 <abstract>
@@ -314,5 +314,5 @@ mest brugte variabler.
  <include href="hb-working-variables.xml"/>
 </chapter>
 </part>
-
+-->
 </book>
