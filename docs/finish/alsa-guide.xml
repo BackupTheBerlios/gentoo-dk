@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/alsa-guide.xml,v 1.2 2003/12/29 19:26:04 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/alsa-guide.xml,v 1.1 2003/12/29 22:06:47 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link = "/doc/da/alsa-guide.xml">
@@ -158,7 +158,7 @@ USE-variabel før du starter.
 Da vi stadig bruger 2.4.x kerne-kildekode er vi nødt til at kompilere
 kerne-moduler og ALSA-moduler separat. Folk der bruger en 2.5.x kerne
 kan gøre dette inde fra deres kernes konfiguration, da ALSA-modulerne
-er inkluderede i kerne kildekoderne og skal bygge der.
+er inkluderet i kerne kildekoden og skal bygges der.
 </p>
 
 <p>
@@ -235,7 +235,7 @@ moduler på dit system.
 
 <p>
 Vi kunne nu lave en simpel <c>emerge alsa-driver</c>, men dette vil
-installere <e>elle</e> ALSA lyd-drivere.
+installere <e>alle</e> ALSA lyd-drivere.
 </p>
 
 <p>
@@ -245,9 +245,9 @@ link="http://www.alsa-project.org/alsa-doc">ALSA Soundcard
 Matrix</uri> ved at følge <e>Details</e> linket i <e>Driver and
 Docs</e> kolonnen, i den række hvor din lydkorts chipsæt er placeret. Mit er
 <c>snd-emu10k1</c>, da jeg har et SBlive! lydkort med <e>EMU10K1</e>
- chipsættet. Vi sætter ALSA_CARDS miljøvariablens værdi til modulnavnet 
- før vi emerger (dog uden snd foran), så emerge vil kun kompilerer
- de drivere, vi har brug for.
+chipsættet. Vi sætter ALSA_CARDS miljøvariablens værdi til modulnavnet
+før vi emerger (dog uden snd foran), så emerge kun vil kompilere de
+drivere, vi har brug for.
 </p>
 
 <pre caption="At kompilere det korrekte modul">
@@ -274,7 +274,7 @@ Hvis du vil have OSS kompabilitet, skal du være sikker på at emerge
 <note>
 Hvis du har planer om at rekompilere dine kerne en masse gange, så er
 det måske et godt råd at emerge <c>alsa-driver</c> med
-<c>--buildpkg</c>. Dette vil lave en binær pakke til det. Senere,
+<c>--buildpkg</c>. Dette vil lave en binær pakke. Senere,
 efter at have kompileret din kerne igen, så kan du bare <c>emerge
 --usepkg alsa-driver</c>, hvilket vil installere den binære pakke i
 stedet for at kompilere det fuldstændigt igen.
@@ -292,7 +292,7 @@ Herefter burde ALSA-modulerne være installeret på dit system.
 
 <p>
 Lad os nu begynde med opsætningen, for at få ALSA til at virke
-ordentligt. Vi har brug for at redigere nogle filer, for at lade vore
+ordentligt. Vi har brug for at redigere nogle filer, for at lade vores
 system kende til de nyligt installerede ALSA-moduler.
 </p>
 
@@ -316,7 +316,7 @@ Der er ikke brug for at redigere
 
 <p>
 Tjek ALSA delen <e>i bunden af filen</e>. Ved at tilpasse denne linie
-kan du specificere det maksimale antal af lydkort, som du har (generelt
+kan du specificere det maksimale antal af lydkort du har (generelt
 bare et).
 </p>
 
@@ -446,7 +446,7 @@ alsasound-scriptet manuelt.
 <p>
 ALSA kører nu. Hvis alt er ok, så burde du kunne se ALSA-modulerne
 startet, når du kører <c>lsmod</c>. Lyden vil dog stadig ikke virke, fordi
-kanalerne stadig er muted. Vi har brug for <c>amixer</c> for at ordne dette.
+kanalerne stadig er muted. Vi har brug for <c>amixer</c> til at ordne dette.
 </p>
 
 <pre caption = "At køre amixer">
@@ -531,7 +531,7 @@ den putter alsa modulerne i <path>/lib/modules/*/kernel/sound/pci/</path>.
 <body>
 
 <p>
-Du bliver ikke nødt til at redigere denne fil til brug med ALSA. Efter
+Det er ikke nødvendigt at redigere denne fil til brug med ALSA. Efter
 vores <c>rc-update add alsasound boot</c> vil vores system hente de
 korrekte moduler ved opstart.
 </p>
@@ -564,7 +564,7 @@ at disse problemer er ordnet når du læser dette.
 </body>
 </section>
 <section>
-<title>At aktivere Joystick-understøttelse</title>
+<title>At aktivere joystick-understøttelse</title>
 <body>
 
 <p>
