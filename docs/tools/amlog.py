@@ -407,7 +407,10 @@ class DataFile:
         for string in log:
             charnr = 0
             if string[0:3] == "---":
-                commits.append(string)
+                if string[4:7] == 'Log':
+                    pass
+                else:
+                    commits.append(string)
             for char in string:
                 if str(string[charnr:charnr+14]) == commitstring:
                     commits.append(string)
