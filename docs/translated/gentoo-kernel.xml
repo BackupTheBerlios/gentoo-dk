@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/gentoo-kernel.xml,v 1.3 2004/01/22 16:05:02 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/gentoo-kernel.xml,v 1.1 2004/01/22 20:55:12 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 <guide link="/doc/da/gentoo-kernel.xml">
-<title>Gentoo Linux Kernel Guide</title>
+<title>Gentoo Linux kerne vejledning</title>
 <author title="Forfatter">
     <mail link="swift@gentoo.org">Sven Vermeulen</mail>
 </author>
@@ -37,7 +37,7 @@ Gentoo stiller til rådighed gennem Portage.
 
 <p>
 Som det er med alt andet i Gentoo Linux, så er det også Gentoo kerne
-holdest filosofi at give dig, brugeren, så meget frihed i form af
+holdets filosofi at give dig, brugeren, så meget frihed i form af
 valg, som det er muligt. Hvis du kigger på outputtet af <c>emerge -s
 sources</c>, så ser du et stort udvalg af kerner at vælge i mellem. I
 dette dokument, vil jeg forsøge at give dig en hurtigt rundtur for at
@@ -66,7 +66,7 @@ imens du laver dine hverdags opgaver på computeren. Du vil måske
 erfare, at hvis du bruger <c>vanilla-sources</c> (den officielle kerne
 kildekode frigivet fra <uri>http://www.kernel.org</uri>) så vil
 normale opgaver -- såsom at høre musik, at flytte din mus og ligende
--- vil måske virke ustabilt, når du kompilerer pakker.
+-- vil måske virke ustabil, når du kompilerer pakker.
 </p>
 
 <p>
@@ -139,7 +139,7 @@ vi <c>gs-sources</c>. GS står for Gentoo Stable (stabilt, vi er
 opfindsommme, ikke?). Denne patch er tunet og testet til at give den
 bedste understøttelse til det største hardware og sikrer at dine
 mission kritiske servere vil være oppe når du har brug for dem. Denne
-kerne har ikke de mest aggresive ydelses forhøjende patcher fra <c>gentoo-sources</c>, 
+kerne har ikke de mest aggressive ydelses forhøjende patcher fra <c>gentoo-sources</c>, 
 men tag det roligt, den gode ydelse du kender og elsker fra vanilla
 kernerne er levende og har det godt. Hvor det er muligt og uden at gå
 på kompromis med stabilitet, tilføjer vi ydelses patcher der er
@@ -265,7 +265,7 @@ egenskaber fra andre patch sæt, som er nævnt ovenfor og nedenfor.
 <p>
 <c>ppc-sources-benh</c> ebuilden giver yderligere hardware
 understøttelse til <c>ppc-sources</c> kernen. Den er lidt mere
-ekspermentel end <c>ppc-sources</c>.
+eksperimentel end <c>ppc-sources</c>.
 </p>
 
 </body>
@@ -299,7 +299,7 @@ ekspermentel end <c>ppc-sources</c>.
 <body>
 
 <p>
-<c>compaq-sources</c> giver RedHat's kerne kildekode til Alpha, som
+<c>compaq-sources</c> giver RedHats kerne kildekode til Alpha, som
 bliver vedligholdt af Compaq.
 </p>
 
@@ -308,14 +308,14 @@ bliver vedligholdt af Compaq.
 </chapter>
 
 <chapter>
-<title>The Choices, Part II</title>
+<title>Valgene, Del II</title>
 <section>
 <body>
 
 <p>
-Now I'm going to try to briefly describe some of the other 
-<path>sys-kernel/*-sources</path> which you saw scroll by when you ran 
-<c>emerge -s sources</c>. Lets take them in alphabetical order.  
+Nu vil jeg prøve hurtigt at beskrive nogle af de andre
+<path>sys-kernel/*-sources</path> som du så da du kørte
+<c>emerge -s sources</c>. Lad os kigge på dem i alfabetisk rækkefølge.
 </p>
 
 </body>
@@ -325,31 +325,31 @@ Now I'm going to try to briefly describe some of the other
 <body>
 
 <p>
-First we have <c>aa-sources</c>. This is Andrea Arcangeli's patch set.  
-Andrea is known as an amazing coder by many other kernel hackers.  His 
-kernel patch set has some of the most aggressively tuned VM (Virtual 
-Memory) patches known to mankind. When I last looked, it also contained 
-SGI's XFS filesystem and the O(1) scheduler by Ingo Molar (which will 
-become the default scheduler for Linux 2.6).  
+Først har vi <c>aa-sources</c>. Dette er Andrea Arcangelis patch sæt.
+Andrea er kendt som en forbløffende koder bland mange andre kerne
+hackere. Hans kerne patch sæt har nogle af de mest aggressivt tunede VM
+(Virtual Memory) patcher kendt til menneskeheden. Da jeg sidst
+kiggede, indeholdt den SGI's XFS filesystem og O(1) scheduleren af
+Ingo Molar (som vil blive standard scheduler for Linux 2.6).
 </p>
 
 <p>
-It also provides User Mode Linux support (check out our 
-<uri link="/doc/en/uml.xml">UML Guide</uri> for more information) and 
-the latest TUX Webserver (an in-kernel webserver).
+Den giver også User Mode Linux understøttelse (tjek vores 
+<uri link="/doc/en/uml.xml">UML Guide</uri>(engelsk) for mere
+information) og den nyeste TUX (en webserver indeholdt i kernen).
 </p>
 
 <p>
-If you have Memory Management troubles with other kernels, 
-<c>aa-sources</c> can be your solution. If you want to optimize Linux's
-Memory Management for your system, <c>aa-sources</c> is <e>definitely</e>
-what you need.
+Hvis du har Memory Management problemer med andre kerner, så kan
+<c>aa-sources</c> være din løsning. Hvis du vil optimere Linux
+Memory Management til dit system, så er <c>aa-sources</c> <e>bestemt</e>
+det du har brug for.
 </p>
 
 <p>
-Visit 
+Besøg
 <uri>http://www.kernel.org/pub/linux/kernel/people/andrea/kernels/v2.4</uri>
-for more information about all the patches in these kernel sources.
+for at få mere information omkring alle patcherne i denne kerne kildekode.
 </p>
 
 </body>
@@ -359,23 +359,22 @@ for more information about all the patches in these kernel sources.
 <body>
 
 <p>
-Next we have the <c>ac-sources</c>. This is Alan Cox's patch set against 
-the 2.4 kernel series.  In this patch set you will find the O(1) 
-scheduler, the latest updates to the 2.4 IDE system and many other 
-patches that are waiting for possible inclusion in the 2.4 kernel 
-series.  
+Derefter har vi <c>ac-sources</c>. Dette er Alan Coxs patch sæt til
+2.4 kerne serien. I dette patch sæt finder du O(1) 
+scheduleren, de nyeste opdateringer til 2.4 IDE systemet og mange
+andre patcher, der muligvis venter på at komme med i 2.4 kerne serien.
 </p>
 
 <p>
-This kernel is known to have very decent support for several additional
-hardware and may be a candidate for you if you need a stable but less
-conservative kernel than the <c>vanilla-sources</c>. 
+Denne kerne er kendt for at have meget anstændig understøttelse for
+adskillig ekstra hardware og kan være en kandidat for dig, hvis du har
+brug for en en stabil, men mindre konservativ kerne end <c>vanilla-sources</c>. 
 </p>
 
 <p>
-Check out 
+Tjek
 <uri>http://www.kernel.org/pub/linux/kernel/people/alan/linux-2.4/</uri>
-to get a look at what Alan is working on.
+ud for at få se hvad Alan arbejder på.
 </p>
 
 </body>
@@ -385,13 +384,13 @@ to get a look at what Alan is working on.
 <body>
 
 <p>
-<c>ck-sources</c> is Con Kolivas's kernel patch set.  This kernel is 
-<e>HIGHLY</e> tuned for desktop performance at the expense of 
-throughput and some of the scheduler's ability to prioritize 
-applications.  Con Kolivas benchmarks kernels to find the best 
-combination of features for desktop use.  See 
-<uri>http://kernel.kolivas.org</uri> for more information on Con and his
-patches.
+<c>ck-sources</c> er Con Kolivases kerne patch sæt. Denne kerne er
+tunet <e>HØJT</e> til desktop ydelse på bekostning af throughput og
+nogle af schedulerens egenskaber til at prioritere applikationer. Con
+Kolivas laver benchmark tests af kerner for at finde den bedste
+kombination af egenskaber til desktop brug. Se
+<uri>http://kernel.kolivas.org</uri> for mere information omkring Con
+og hans patcher.
 </p>
 
 </body>
@@ -401,24 +400,24 @@ patches.
 <body>
 
 <p>
-<c>development-sources</c> is the current unstable kernel branch.  This
-is the branch of the Linux kernel that Linus himself maintains.  This
-rapidly changing playground is where the features for the next stable 
-branch are implemented, enhanced and tested before they are released 
-to the vast majority of Linux users.
+<c>development-sources</c> er den nuværende ustabile kerne gren. Dette
+er den gren af Linux kernen som Linus selv vedligeholder. Denne
+hurtigt skiftende legeplads er stedet hvor egenskaberne for den næste
+stabile gren bliver implementeret, forbedret og testet før de bliver
+frigivet til størstedelen af Linux brugerne.
 </p>
 
 <p>
-If you want the latest, bleeding edge support and experimental core-system 
-changes, this is what you want. Note however that these are <e>highly</e>
-experimental kernel sources and it is advised <e>not</e> to use them on mission 
-critical or production systems.
+Hvis du vil have det allernyeste understøttelse og expermentelle
+ændringer af core-systemet, så er det denne du skal have. Bemærk at
+disse er <e>højt</e> eksperimentelle kerne kildekoder og det anbefales
+<e>ikke</e> at bruge dem til kritiske mission eller produktion systemer.
 </p>
 
 <warn>
-Do note that Gentoo Linux does not support issues with or related
-to the <c>development-sources</c> or derivatives as it changes too often 
-and is known to break things occasionally.
+Bemærk at Gentoo Linux ikke hjælper med ting der er relaterede til 
+<c>development-sources</c> eller afledninger da det ændrer sig for
+ofte og er kendt for at ødelægge ting til tider.
 </warn>
 
 </body>
@@ -428,13 +427,13 @@ and is known to break things occasionally.
 <body>
 
 <p>
-<c>gaming-sources</c> are based on <c>ck-sources</c> and are therefore 
-tuned for high performance. They also contain patches for the latest 
-game-related hardware (graphic cards, sound cards, and such). 
+<c>gaming-sources</c> er baseret på <c>ck-sources</c> og er derfor
+tunet til høj ydelse. De indeholder også patcher til det nyeste
+game-relaterede hardware (grafik kort, lyd kort ol.).
 </p>
 
 <p>
-If you are a hardcore gamer, this is your choice.
+Hvis du er en hardcore gamer, så er dette dit valg.
 </p>
 
 </body>
@@ -444,16 +443,16 @@ If you are a hardcore gamer, this is your choice.
 <body>
 
 <p>
-The <c>mm-sources</c> are based on the <c>development-sources</c> and
-contain Andrew Morton's patch set. It assembles several other patches,
-like ext2/3 Extended Attributes and Access Control Lists, Page Table
-Sharing, the Orlov Allocator, non-linear mapping behaviour, etc into one
-patch set.
+<c>mm-sources</c> er baseret på <c>development-sources</c> og
+indeholder Andrew Mortons patch sæt. Det samler adskillige andre
+patcher, såsom ext2/3 Udvidede Attributter og Access Control Lists, Page Table
+Sharing, Orlov Allocator, ikke-lineær mapping behaviour, etc. i et
+patch sæt.
 </p>
 
 <p>
-If you really want to live on the edge and you think 
-<c>development-sources</c> are for wussies, then try out
+Hvis du virkelig vil leve på kanten og synes at
+<c>development-sources</c> er for kyllinger, så prøv
 <c>mm-sources</c>.
 </p>
 
@@ -464,11 +463,11 @@ If you really want to live on the edge and you think
 <body>
 
 <p>
-The <c>mosix-sources</c> are patched to support MOSIX operation for 
-clustered computing. A cluster is a set of nodes (PCs) with software 
-that enables them to handle tasks in a distributed manner. With 
-clusters, you don't need high-profile supercomputers to do lengthy 
-tasks. For more information see <uri>http://www.mosix.org</uri>.
+<c>mosix-sources</c> er patchet til at understøtte MOSIX operationer til 
+clustered computing. En cluster er et sæt af noder (PCer) med software
+der tillader dem at håndtere opgaver på en distribuerende måde. Med
+clustere har du ikke brug for høj-profil supercomputere for at udføre
+lange opgaver. For mere information se <uri>http://www.mosix.org</uri>.
 </p>
 
 </body>
@@ -478,8 +477,8 @@ tasks. For more information see <uri>http://www.mosix.org</uri>.
 <body>
 
 <p>
-The <c>openmosix-sources</c> are patched to support the openMosix system 
-(like MOSIX but Open Source).  For more information see 
+<c>openmosix-sources</c> er patchet til at understøtte openMosix
+systemet (ligesom MOSIX men Open Source). For mere information se
 <uri>http://www.openmosix.org</uri>.
 </p>
 
@@ -495,11 +494,11 @@ The <c>openmosix-sources</c> are patched to support the openMosix system
 <body>
 
 <p>
-The <c>redhat-sources</c> are, as the name suggests, the sources for the 
-RedHat Linux kernel.  Thanks to the wonders of Open Source, anyone can 
-take advantage of the work the RedHat engineers put into making their 
-kernels. We at Gentoo have provided an ebuild so that you can easily
-use this kernel with Gentoo.
+<c>redhat-sources</c> er som navnet antyder, kildekoden til RedHat
+Linux kernen. Takket være Open Source vidunderet kan enhver udnytte
+det arbejde RedHat ingeniørerne lægger i at lave deres kerner. Vi hos
+Gentoo, har lavet en ebuild, sådan at du nemt kan bruge denne kerne
+med Gentoo.
 </p>
 
 </body>
@@ -509,10 +508,11 @@ use this kernel with Gentoo.
 <body>
 
 <p>
-<c>rsbac-sources</c> contain the patches from 
-<uri>http://www.rsbac.org</uri>.  RSBAC stands for <e>Rule Set Based 
-Access Control</e>. These kernel patches allow you to authorize users 
-based on rules instead of normal uid/gid permissions.
+<c>rsbac-sources</c> indeholder patcher fra
+<uri>http://www.rsbac.org</uri>.  RSBAC står for <e>Rule Set Based 
+Access Control</e>(RegelSæt Baseret Adgangsontrol). Disse kerne
+patcher tillader dig at genkende brugere baseret på regler i stedet
+for uid/gid rettigheder.
 </p>
 
 </body>
@@ -522,9 +522,9 @@ based on rules instead of normal uid/gid permissions.
 <body>
 
 <p>
-<c>selinux-sources</c> from <uri>http://www.nsa.gov/selinux</uri> are 
-patches for the security conscious to support the LSM (Linux Security 
-Modules) and the Flask Security Architecture.
+<c>selinux-sources</c> fra <uri>http://www.nsa.gov/selinux</uri> er
+patcher til de sikkerhedsbevidste for at understøtte LSM (Linux Security 
+Modules (Linux Sikkerhedsmoduler )) og Flask sikkerhedsarkitekturen.
 </p>
 
 </body>
@@ -534,16 +534,17 @@ Modules) and the Flask Security Architecture.
 <body>
 
 <p>
-<c>usermode-sources</c> are the User Mode Linux kernel patches.  This 
-kernel is designed to allow Linux to run within Linux to run within Linux
-to ... User Mode Linux is intended for testing and virtual server support.
-For more information about this amazing tribute to the stability and 
-scalability of Linux, see <uri>http://user-mode-linux.sourceforge.net</uri>. 
+<c>usermode-sources</c> er User Mode Linux kerne patcherne. Denne
+kerne er designet til at tillade Linux at køre indenfor Linux indenfor
+Linux indenfor... User Mode Linux er ment til at teste og
+understøttelse af virtuelle servere. For at få mere information
+omkring denne forbløffende hyldest til stabiliteten og skalerbarheden
+af Linux, se <uri>http://user-mode-linux.sourceforge.net</uri>. 
 </p>
 
 <p>
-For more information on UML and Gentoo, read the 
-<uri link="/doc/en/uml.xml">Gentoo UML Guide</uri>.
+For at få mere information omkring UML og Gentoo, læs da
+<uri link="/doc/en/uml.xml">Gentoo UML Guide</uri>(engelsk).
 </p>
 
 </body>
@@ -553,9 +554,10 @@ For more information on UML and Gentoo, read the
 <body>
 
 <p>
-<c>win4lin-sources</c> are patched to support the userland win4lin tools 
-that allow Linux users to run many Microsoft Windows (TM) applications
-at almost native speeds.  See <uri>http://www.netraverse.com/</uri> for more 
+<c>win4lin-sources</c> er patchet til at understøtte de
+brugerbaserede win4lin værktøj, der tillader Linux brugere at køre
+mange Microsoft Windows (TM) applikationer på med hastigheder der
+minder om Windows. Se <uri>http://www.netraverse.com/</uri> for mere 
 information.
 </p>
 
@@ -566,12 +568,12 @@ information.
 <body>
 
 <p>
-<c>wolk-sources</c> contains the <e>Working Overloaded Linux Kernel</e> from 
-<uri>http://sourceforge.net/projects/wolk</uri>. This kernel contains
-many patches of a wide variety, all combined into the kernel with
-extreme care. This allows you to configure nearly every one into and out
-of the kernel at compile time -- so the kernel will work with nearly any
-combination of the patches.
+<c>wolk-sources</c> indeholder <e>Working Overloaded Linux Kernel</e> fra
+<uri>http://sourceforge.net/projects/wolk</uri>. Denne kerne
+indeholder mange patcher fra et bred udvalg, alle kombineret ind i en
+kerne med ekstrem forsigtighed. Dette tillader dig at konfigurere
+næsten alle ind i og ud af kernen ved kompilerings tid -- så kernen
+vil virke med næsten alle kombinationer af patcher.
 </p>
 
 <p>
