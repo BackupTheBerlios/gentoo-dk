@@ -31,6 +31,10 @@ Det danske Gentoo lokaliseringsteam fik ideen til at samle alt viden, om at loka
 Alle informationer kommer fra Gentoo forums, irc og egne tests.
 </p>
 
+<note>
+Guiden bruger <e>en_DK</e> i stedet for <e>da_DK</e>, idet det også giver engelsk understøttelse. Hvis du ikke ønsker dette, så vælg da den sidstnævnte.
+</note>
+
 </body>
 </section>
 </chapter>
@@ -84,12 +88,20 @@ EndSection
 <chapter>
 <title>Program-specifikke indstillinger</title>
 <section>
-<title>Gnome</title>
+<title>GTK-programmer, Gnome og andre</title>
 <body>
 
+<note>
+Jeg kender stadigvæk ikke omfanget af hvor meget der bliver dansk, men KDE er ikke under samme indstillinger, men kig længere nede for disse indstillinger.
+</note>
+
 <p>
-Skal lige finde det ;)
+Generelt bliver alle programmer sat til dansk, hvis du bruger følgende indstillinger (dette gælder ikke kun gtk/gnome) i <path>/etc/profile</path>:
 </p>
+
+<pre caption="Ændring i /etc/profile">
+#export LC_ALL="en_DK"
+</pre>
 
 </body>
 </section>
