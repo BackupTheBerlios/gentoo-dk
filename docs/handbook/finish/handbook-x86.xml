@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-x86.xml,v 1.6 2004/07/26 20:54:40 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-x86.xml,v 1.7 2004/07/29 08:41:36 broeman Exp $ -->
 
 <book link="handbook-x86.xml" lang="da">
 <title>Gentoo-håndbogen til x86</title>
@@ -131,8 +131,8 @@ informationer omkring Gentoo/Linux.
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 <license/>
 
-<version>2.50</version>
-<date>26. Juli, 2004</date>
+<version>2.51</version>
+<date>28. Juli, 2004</date>
 
 <part>
 <title>Installation af Gentoo</title>
