@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-features.xml,v 1.1 2004/01/29 11:23:55 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-features.xml,v 1.1 2004/02/22 20:42:58 aaby Exp $ -->
 
 <sections>
 <section>
@@ -14,10 +14,10 @@
 <body>
 
 <p>
-<c>distcc</c> er et program, som distribuerer kompilering over flere, ikke
+<c>distcc</c> er et program, der distribuerer kompilering over flere, ikke
 nødvendigvis identiske, maskiner på et netværk. <c>distcc</c>-klienten sender alle
 nødvendige informationer til de tilgængelige DistCC-servere (som kører <c>distccd</c>),
-så de kan kompilere dele af kildekoder for klienten. Slutresultatet er en
+så de kan kompilere dele af kildekode for klienten. Slutresultatet er en
 hurtigere kompileringstid.
 </p>
 
@@ -318,7 +318,7 @@ FEATURES="strict"
 <body>
 
 <p>
-Portage kan blive bedt om automatisk at håndtere potentielle farlige
+Portage kan blive bedt om automatisk at håndtere potentielt farlige
 fil-tilladelser, som kan være en sikkerhedsrisiko. Den gør dette, ved at fjerne
 "group" og "other" læsbare bits på setuid-filer og fjerner "other"
 læsbar bit på setgid-filer i den præ-installérbare fase.  For at aktivere
