@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-sparc-disk.xml,v 1.2 2004/05/16 14:52:28 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-sparc-disk.xml,v 1.3 2004/05/16 17:25:13 broeman Exp $ -->
 
 <sections>
 <section>
@@ -362,6 +362,7 @@ Enter. Når der bliver spurgt efter den sidste cylinder, tast <c>+512M</c> for
 at oprette en partition, som optager <c>512 MBytes</c> i plads. Vær sikker på at
 hele root-partitionen er indeholdt indenfor de første 2 GBytes på harddisken.
 Du kan se output til disse trin forneden:
+</p>
 
 <pre caption="Oprettelse af en root-partition">
 Command (m for help): <i>n</i>
@@ -370,6 +371,7 @@ First cylinder (0-8635): <i>(tryk Enter)</i>
 Last cylinder or +size or +sizeM or +sizeK (0-8635, default 8635): <i>+512M</i>
 </pre>
 
+<p>
 Ved nu at taste <c>p</c> burde vise en partitionstabel, som ser ud som dette her:
 </p>
 
