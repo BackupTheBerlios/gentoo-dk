@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-medium.xml,v 1.6 2004/07/06 19:22:38 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-medium.xml,v 1.7 2004/07/06 20:54:26 aaby Exp $ -->
 
 <sections>
 <section>
@@ -304,7 +304,7 @@ En anden måde at tjekke ægtheden af den hentede fil, er at bruge GnuPG til at ve
 </p>
 
 <pre caption="Modtagelse af offentlig nøgle">
-$ <i>gpg --keyserver pgp.mit.edu --recv-keys 19462D47</i>
+$ <i>gpg - -keyserver pgp.mit.edu - -recv-keys 19462D47</i>
 </pre>
 
 <p>
@@ -312,7 +312,7 @@ Verificer nu signaturen:
 </p>
 
 <pre caption="Verificering af den krypterede signatur">
-$ <i>gpg --verify &lt;signature file&gt; &lt;downloaded iso&gt;</i>
+$ <i>gpg - -verify &lt;signature file&gt; &lt;downloaded iso&gt;</i>
 <comment>(Hvis alt går vel, burde du se noget som dette:)</comment>
 gpg: Signature made Mon Apr 19 18:54:40 2004 EDT using DSA key ID 19462D47
 gpg: Good signature from "John Davis (Gentoo Linux Developer) &lt;zhen@gentoo.org&gt;"

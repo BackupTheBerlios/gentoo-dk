@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-sparc-medium.xml,v 1.4 2004/07/06 19:27:51 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-sparc-medium.xml,v 1.5 2004/07/06 20:54:26 aaby Exp $ -->
 
 <sections>
 <section>
@@ -407,7 +407,7 @@ verificere den krypterede signatur (underskrift), som vi leverer (filen som ende
 </p>
 			   	 
 <pre caption="Modtagelse af den offentlige nøgle">
-$ <i>gpg --keyserver pgp.mit.edu --recv-keys 19462D47</i>
+$ <i>gpg - -keyserver pgp.mit.edu - -recv-keys 19462D47</i>
 </pre>
 		   	 
 <p>
@@ -415,7 +415,7 @@ Verficer nu signaturen:
 </p>
 									   	 
 <pre caption="Verificering af den krypterede signatur">
-$ <i>gpg --verify &lt;signature file&gt; &lt;downloaded iso&gt;</i>
+$ <i>gpg - -verify &lt;signature file&gt; &lt;downloaded iso&gt;</i>
 <comment>(Hvis alt går godt, burde du se noget lignende dette:)</comment>
 gpg: Signature made Mon Apr 19 18:54:40 2004 EDT using DSA key ID 19462D47
 gpg: Good signature from "John Davis (Gentoo Linux Developer) &lt;zhen@gentoo.org&gt;"
