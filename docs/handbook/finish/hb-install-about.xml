@@ -1,6 +1,10 @@
+<? xml version='1.0' encoding='iso-8859-1'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.1 2004/01/02 14:35:28 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.2 2004/01/11 14:44:45 broeman Exp $ -->
+
 <sections>
 <section>
 <title>Introduktion</title>
@@ -92,6 +96,30 @@ Nogle gange kan du følge et valgfrit trin. Sådanne trin er mærket med
 vil nogle valgfrie trin afhænge af tidligere beslutninger du har
 taget. Vi vil informere dig når dette sker, både når du laver valget
 og lige før det valgfrie trin er beskrevet.
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>Hvad er mine valgmuligheder?</title>
+<body>
+
+<p>
+Du kan installere Gentoo på mange forskellige metoder. Du kan hente og installere fra
+en af vores LiveCDer (installationscder), fra en eksisterende distribution, fra en 
+startbar CD (som f.eks. Knoppix), fra en netopstartet miljø osv.
+</p>
+
+<p>
+Du har også mange muligheder: du kan kompilere hele dit system fra
+bunden af eller installere forbyggede pakker, for at få dit Gentoo-miljø op at
+køre på ingen tid. Og selvfølgelig har du indledende løsninger, hvor du
+ikke behøver at kompilere det hele, men kan starte fra et semi-klart system.
+</p>
+
+<p>Hvis du planlægger at installere Gentoo ved brug af forbyggede pakker, har du ikke
+et valg, men kan bruge en af LiveCDerne, som indeholder forbyggede pakker. Nyere
+Gentoo-udgivelser vil også levere pakker fra Internet.
 </p>
 
 </body>
