@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.14 2004/05/16 15:24:39 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.15 2004/06/10 17:00:29 aaby Exp $ -->
 
 <sections>
 <section>
@@ -21,7 +21,7 @@ kun når du har et fungerende netværksforbindelse):
 </p>
 
 <pre caption="Vælg hurtige filspejle">
-# <i>mirrorselect -a -s4 -o &gt;&gt; /mnt/gentoo/etc/make.conf</i>
+# <i>mirrorselect -a -s4 -o | grep -ve '^Netselect' &gt;&gt; /mnt/gentoo/etc/make.conf</i>
 </pre>
 
 <p>
