@@ -617,11 +617,11 @@ used in Gentoo Linux's web-based documentation.
 
 <ul>
 <li>Se i vores <uri link="http://www.gentoo.org/cgi-bin/viewcvs.cgi">CVS repository</uri> hvis du vil se vores kode og ebuilds.</li>
-<li><b><uri link="http://www.gentoo.org/main/en/about.xml">Om </uri></b> Gentoo projektet.</li> (engelsk)
+<li><b><uri link="http://www.gentoo.org/main/en/about.xml">Om </uri></b> Gentoo projektet (engelsk).</li>
 <li>Gentoos <b><uri link="http://www.gentoo.org/main/en/contract.xml">forretningsgrundlag</uri></b> (engelsk).</li>
 <li>Flere informationer om de <b><uri link="http://www.gentoo.org/proj/en/site.xml">XML projekter</uri></b>, som Gentoo har gået igennem (engelsk).</li>
 <!--<li>How to <b><uri link="rsync.xml">Mirror Gentoo : Rsync</uri></b>.</li>
-<li>How to <b><uri link="source_mirrors.xml">Mirror Gentoo : Distfiles</uri></b>.</li> -->
+<li>How to <b><uri link="source_mirrors.xml">Mirror Gentoo : Distfiles</uri></b>.</li>-->
 <li>Gentoo Linux News (<uri link="http://www.gentoo.org/rdf/en/gentoo-news.rdf">RDF</uri>, <uri
 link="http://purl.org/net/syndication/subscribe/?rss=http://www.gentoo.org/rdf/en/gentoo-news.rdf">Tilmeld</uri>).</li>
 </ul>
