@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-othertools.xml,v 1.1 2004/02/18 18:59:21 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-othertools.xml,v 1.1 2004/02/22 20:57:29 aaby Exp $ -->
 
 <sections>
 <section>
@@ -148,7 +148,7 @@ $ <i>man qpkg</i>
 <body>
 
 <p>
-Med <c>dep-clean</c> kan du se de afhængigheder, der ikke er
+Med <c>dep-clean</c> kan du se afhængigheder, som ikke er
 korrekte. Som standard viser <c>dep-clean</c> dig dette:
 </p>
 
