@@ -6,7 +6,7 @@
 import time
 import sys
 
-version = '0.3.6.2'
+version = '0.3.6.5'
 
 class Output:
     """ class that handles all io """
@@ -16,7 +16,7 @@ class Output:
 
         if string[0:14] == '--- Log opened':
             return [string[15:], "---", "---"]
-        if string[0:15] == "--- Day changed": #--- Day changed Thu Jan 15 2004
+        if string[0:15] == "--- Day changed": 
             return [string[16:], "---", "---"]
 
         time = string[0:5]
@@ -83,7 +83,9 @@ class Output:
          commitlenght = dataobject.nrcommits
          f('The has been a total of: <b>' + str(commitlenght) + ' commits.</b>\n')
          f('</p>\n')
-
+         f('<p align=center>\n')
+         f('The most active day was: <b>' + dataobject.maxdate[0] + '</b> with: <b>' + str(dataobject.maxdate[1]) + '</b> commits.\n')
+         f('</p>\n')
          f('<h2 align=center>Statistics</h2>\n')
          f('<h3 align=center>Chat</h3>\n')
          f('<p align=center>\n')
@@ -226,6 +228,11 @@ class Output:
         f('<p>\n')
         commitlength = dataobject.nrcommits
         f('  There has been a total of: <b>' + str(commitlength) + ' commits</b>.\n')
+        f('</p>\n\n')
+
+        f('<p>\n')
+
+        f('The most active day was: <b>' + dataobject.maxdate[0] + '</b> with: <b>' + str(dataobject.maxdate[1]) + '</b> commits.\n')
         f('</p>\n\n')
         f('</body>\n')        
         f('</chapter>\n\n')
@@ -391,6 +398,26 @@ class DataFile:
     """ the main class that is manipulated with.
         Holds all the information that the html file should contain at the end """
 
+    def getMaxDate(commits): # [date, nrCommits, nick, nrCommits]
+        activedate = [commits[0][18:-1], 0]
+        maxdate = ["", 0]
+        for string in commits:
+            if string[0:15] == '--- Day changed':
+                if maxdate[0] == '':
+                    maxdate[0] = string[16:-1]
+                activedate[0] = string[16:-1]
+                activedate[1] = 0
+            if string[6] == '<':
+                activedate[1] = activedate[1] + 1
+            if activedate[1] > maxdate[1]:
+                maxdate[0] = activedate[0]
+                maxdate[1] = activedate[1]
+        if ':' in maxdate[0]:
+            tmp = maxdate[0][1:8]
+            tmp2 = maxdate[0][-4:]
+            maxdate[0] = tmp + tmp2
+        return maxdate
+
     def getChannelName():
         lf = LogFile()
         list = lf.read()
@@ -418,7 +445,7 @@ class DataFile:
             charnr = 0
             if string[0:3] == "---":
                 if string[4:7] == 'Log':
-                    pass
+                    commits.append(string)
                 else:
                     commits.append(string)
             for char in string:
@@ -467,6 +494,8 @@ class DataFile:
                 elif char == '>':
                     endchar = charnr
                     break
+            if string[6:9] == '-!-':
+                continue
             if '<' in string:
                 name = string[startchar+1:endchar]
                 newname = name
@@ -595,6 +624,7 @@ class DataFile:
     duration = getDurationTime()
     usage = getUsage(commits)
     chatting = getChatting()
+    maxdate = getMaxDate(commits)
 
 def __main__():
     op = Output()
