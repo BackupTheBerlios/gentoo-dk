@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="utf-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/altinstall.xml,v 1.2 2004/10/09 10:34:08 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/altinstall.xml,v 1.3 2004/10/30 11:34:21 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/en/altinstall.xml">
@@ -57,8 +57,8 @@ f.eks. mangel af en CDROM eller en computer, der kan boote CD'er.
 
 <license/>
 
-<version>0.49</version>
-<date>22. September 2004</date>
+<version>0.50</version>
+<date>25. Oktober 2004</date>
 
 <chapter>
 <title>Om dette dokument</title>
@@ -528,7 +528,7 @@ Derefter opsæt din diskfrie klients <path>/etc/fstab</path>.
 # <i>nano -w /etc/fstab</i>
 /dev/cdroms/cdrom0 /mnt/cdrom iso9660 noauto,ro 0 0
 proc /proc proc defaults 0 0
-tmpfs /dev/shm tmpfs defaults 0 0
+tmpfs /dev/shm tmpfs nodev,nosuid,noexec 0 0
 </pre>
 
 <p>
@@ -622,7 +622,7 @@ som er understøttet af vores resizer, men lad os tale om det senere.
 /dev/hdb2 on / type ext3 (rw) 
 none on /proc type proc (rw) 
 none on /dev/pts type devpts (rw,gid=5,mode=620) 
-none on /dev/shm type tmpfs (rw) 
+none on /dev/shm type tmpfs (rw,nodev,nosuid,noexec)
 # <i>df -h </i>
 Filesystem           Size Used Avail Use% Mounted on 
 /dev/hdb2            4.0G 1.9G  2.4G  82% /
@@ -763,7 +763,7 @@ chrooting, brug følgende kommand for at skylde dit miljø:
 
 <pre caption="Skyldning af miljøet ved en chroot">
 # <i>env -i HOME=$HOME TERM=$TERM chroot /mnt/gentoo /bin/bash</i>
-# <i>/sbin/env-update</i>
+# <i>/usr/sbin/env-update</i>
 # <i>source /etc/profile</i>
 </pre>
 
