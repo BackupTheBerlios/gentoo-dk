@@ -26,9 +26,9 @@ class Output:
         endchar = -1
         for char in string:
             charnr = charnr + 1
-            if char == '<':
+            if char == '<' and charnr < 8:
                 startchar = charnr
-            elif char == '>':
+            elif char == '>' and charnr < (len(string) - (len(string)/2)):
                 endchar = charnr
         name = string[startchar+1:endchar]
         newname = name
