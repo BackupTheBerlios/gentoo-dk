@@ -4,11 +4,11 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.10 2004/02/24 18:26:40 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.11 2004/02/28 20:12:47 broeman Exp $ -->
 
 <sections>
 <section>
-<title>At skifte rod bibliotek (Chrooting)</title>
+<title>At skifte rod-mappe (Chrooting)</title>
 <subsection>
 <title>Valgfrit: Valg af filspejle</title>
 <body>
@@ -29,6 +29,7 @@ Hvis <c>mirrorselect</c> af en eller anden grund skulle fejle, så gå
 ikke i panik. Dette trin er 100% valgfrit. Hvis <c>mirrorselect</c>
 skulle fejle, vil standardværdierne være tilstrækkelige.
 </p>
+
 
 </body>
 </subsection>
@@ -85,8 +86,8 @@ Denne rodskiftning gøres i tre skridt. Først vil vi ændre roden fra
 <path>/</path> (på installationsmediet) til <path>/mnt/gentoo</path>
 (på dine partitioner) ved at bruge <c>chroot</c>. Derefter vil vi
 skabe et nyt miljø ved at bruge <c>env-update</c>, som hovedsageligt
-opretter miljø-variable. Til sidst indlæser vi disse variable, ind i
-hukommelsen ved brug af <c>source</c>.
+opretter miljø-variabler. Til sidst indlæser vi disse variabler ind i
+hukommelsen, ved brug af <c>source</c>.
 </p>
 
 <pre caption = "Skifte til det nye miljø">
@@ -267,7 +268,7 @@ optimeret, fra bunden og op, til din specifikke maskine og dine behov.
 At <e>bootstrappe</e> betyder at man bygger GNU C biblioteket, GNU
 Compiler Collection og flere andre nøgle-systemprogrammer. GNU
 Compiler Collectionen skal enddag bygges to gange: Først med den
-generelle kompiler, som vi udbyder, og en anden gang med den kompiler,
+generelle compiler, som vi udbyder, og en anden gang med den compiler,
 du lige har bygget.
 </p>
 
@@ -341,7 +342,7 @@ det vil resultere i at den henter alt kildekoden for dig.
 
 <p>
 Okay så, tag dit keyboard og tast den næste kommando ind for at starte
-bootstrap processen. Gå derefter et eller andet sted hen og underhold
+bootstrap-processen. Gå derefter et eller andet sted hen og underhold
 dig selv (du kan f.eks. irritere Gentoo udviklerne på #gentoo), fordi
 det her kommer til at tage en god del tid, at blive færdig med.
 </p>
