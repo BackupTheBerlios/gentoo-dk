@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <?xml-stylesheet href="../xsl/guide.xsl" type="text/xsl"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.6 2004/01/02 12:07:18 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.7 2004/01/02 20:00:11 broeman Exp $ -->
 
 <!DOCTYPE guide SYSTEM "../dtd/guide.dtd">
 <guide>
 <title>Ordliste til oversættelse af Gentoo dokumenter</title>
-<author title="Forfatter">
+<author title="Chef-arkitekt">
  <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
+</author>
+<author title="Forfatter">
+ <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
 </author>
 
 <license/>
@@ -16,8 +19,8 @@ Dette dokument indeholder en oversigt med ord der er vanskelige at
 oversætte og ord som helst skal oversættes på en bestemt måde.
 </abstract>
 
-<version>0.1</version>
-<date>21. December 2003</date>
+<version>0.2</version>
+<date>2. Januar 2004</date>
 
 <chapter>
 <title>Gloseliste</title>
