@@ -9,15 +9,14 @@
 <body>
 
 <p>
-Da vi forklarede hvad 
-<e>stage3</e> var, sagde vi, at den indeholdte alle nødvendige
-systemsredskaber, hvor vi desvære ikke kan lade brugerne vælge. Vi
-sagde også at vi ville installere alle de andre redskaber
-senere. Tja, så her er vi jo :)
+Da vi forklarede hvad <e>stage3</e> var, sagde vi, at den indeholdt
+alle nødvendige systemsredskaber, hvor vi desvære ikke kan lade
+brugerne vælge. Vi sagde også at, vi ville installere alle de andre
+redskaber senere. Tja, så er vi jo kommet til det punkt :)
 </p>
 
 <p>
-Det første redskab, du skal tage en beslutning om, skal muliggøre at
+Det første redskab, du skal tage stilling til, skal muliggøre at
 du kan logge dit systems aktivitet. Unix og Linux har historisk haft
 fantastiske muligheder for logning -- hvis du vil, kan du logge
 absolut alt der sker på dit system, og gemme det i logfiler. Dette
@@ -29,9 +28,8 @@ Gentoo giver dig flere system-loggere at vælge imellem. Der er
 <c>sysklogd</c>, som er det traditionelle sæt af
 systemlogningsdaemoner (baggrundsprocesser),
 <c>msyslog</c>, et meget fleksibelt systemslogningsprogram med et
-modulariseret design, <c>syslog-ng</c>, en avanceret systemslogger,
-og <c>metalog</c> som er et meget opsætningsmæssigt
-systemlogningsprogram.
+modulariseret design, <c>syslog-ng</c>, en avanceret systemslogger, og
+<c>metalog</c> som er et meget konfigurerbart systemlogningsprogram.
 </p>
 
 <p>
@@ -41,10 +39,10 @@ gode for-indstillinger.
 </p>
 
 <p>
-For at installere system-loggeren du har valgt, skal du <c>emerge</c> 
+For at installere den system-logger du har valgt, skal du <c>emerge</c> 
 den, og sørge for at den bliver sat ind i din default runlevel ved at bruge 
 <c>rc-update</c>. Følgende eksempel installerer <c>syslog-ng</c>.
-Selvfølgelig skal du bare sætte navnet på din system-logger ind, i
+Selvfølgelig skal du bare sætte navnet på din system-logger ind i
 stedet for:
 </p>
 
@@ -64,7 +62,7 @@ stedet for:
 <p>Dernæst har vi cron-daemonen. Selv om den er valgfri og egentlig
 ikke nødvendig for at dit system fungerer, er det klogt at
 installere én. Men hvad er en cron-daemon? En cron-daemon kører
-tidsbestemte kommandoer. Den er meget god, at have ved hånden, hvis
+tidsbestemte kommandoer. Den er meget god at have ved hånden, hvis
 du skal køre en kommando med jævne mellemrum (for eksempel dagligt,
 ugentligt, eller hvert måned).
 </p>
@@ -72,7 +70,7 @@ ugentligt, eller hvert måned).
 <p>
 Gentoo giver dig tre forskellige cron-daemoner at vælge imellem: 
 <c>dcron</c>, <c>fcron</c> og <c>vixie-cron</c>.
-Installation af cron-daemonen er meget lig installationen af systemsloggeren. Men, 
+Installation af cron-daemonen minder meget om installationen af systemsloggeren. Men, 
 <c>dcron</c> og <c>frcon</c> kræver en ekstra konfigurations kommando, nemlig 
 <c>crontab /etc/crontab</c>. Hvis du ikke ved hvilken en du skal vælge, så brug 
 <c>vixie-cron</c>. 
@@ -81,7 +79,8 @@ Installation af cron-daemonen er meget lig installationen af systemsloggeren. Me
 <note>
 Hvis du installerer Gentoo fra præ-byggede pakker, skal du bruge 
 <c>vcron</c> i stedet for <c>vixie-cron</c>, hvis <c>vixie-_cron</c>
-ikke skulle virke.  </note>
+ikke skulle virke.
+</note>
   
 <pre caption="Installation af en cron-daemon"> #
 <i>emerge --usepkg vixie-cron</i> 
@@ -101,7 +100,7 @@ ikke skulle virke.  </note>
 <p>
 Afhængig af hvilke filsystemer du bruger, skal du installere de
 relevante filsystemsredskaber (til at tjekke filsystemets integritet,
-for at kreere yderligere filsystemer osv.).
+for at lave yderligere filsystemer osv.).
 </p>
 
 <p>
@@ -148,11 +147,11 @@ Hvis du bruger LVM, skal du også installere <c>lvm-user</c>:
 </pre>
 
 <p>
-Hvis du ikke skal bruge 
-<c>rp-pppoe</c> til at koble op til internettet, kan du gå videre med
-<uri link="?part=1&chap=11">Afslutning af din Gentoo
-installation</uri>.  Ellers, så kan du gå videre til <uri
-link="#doc_chap4">Valgfrit: Netværks redskaber</uri>.
+Hvis du ikke skal bruge <c>rp-pppoe</c> til at koble op til
+internettet, kan du gå videre med <uri
+link="?part=1&chap=11">Afslutning af din Gentoo installation</uri>.
+Ellers, så kan du gå videre til <uri link="#doc_chap4">Valgfrit:
+Netværks redskaber</uri>.
 </p>
 
 </body>
@@ -161,10 +160,9 @@ link="#doc_chap4">Valgfrit: Netværks redskaber</uri>.
 <title>Valgfrit: Netværksredskaber</title> 
 <body>
 <p>
-Hvis du bruger 
-<c>rp-pppoe</c> til at koble op til internettet, så skal du installere
-den. GRP-brugere (præ-byggede pakker) skal bruge følgende kommando
-(bemærk det store K):
+Hvis du bruger <c>rp-pppoe</c> til at koble op til internettet, så
+skal du installere den. GRP-brugere (præ-byggede pakker) skal bruge
+følgende kommando (bemærk det store K):
 </p>
 
 <pre caption="Installation af rp-pppoe med GRP">
@@ -184,11 +182,10 @@ Hvis du ikke bruger GRP skal du installere
 </pre>
 
 <p> 
-<c>USE="-X"</c> 
-er der for at sikre at X ikke bliver installeret som en afhængighed ( 
-<c>rp-pppoe</c> har grafiske redskaber; hvis du vil bruge disse, kan
-du rekompilere <c>rp-pppoe</c> senere, eller lade XFree installere nu
--- som tager et godt stykke tid at kompilere).
+<c>USE="-X"</c> er der for at sikre at X ikke bliver installeret som
+en afhængighed (<c>rp-pppoe</c> har grafiske redskaber; hvis du vil
+bruge disse, kan du rekompilere <c>rp-pppoe</c> senere, eller lade
+XFree installere nu -- som tager et godt stykke tid at kompilere).
 </p>
 
 <p>
