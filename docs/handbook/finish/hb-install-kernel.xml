@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.8 2004/02/24 14:18:14 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.9 2004/02/24 14:35:04 broeman Exp $ -->
 
 <sections>
 <section>
@@ -906,6 +906,13 @@ emerge:
   <ti>Accelereret ATI Radeon 8500+/FireGL-grafik til XFree86</ti>
   <ti><c>emerge ati-drivers</c></ti>
 </tr>
+<!-- need confirmation; cannot find these in portage
+<tr>
+  <ti>ati-drivers-extras</ti>
+  <ti>Grafiske ATI-værktøjer</ti>
+  <ti><c>emerge ati-drivers-extras</c></ti>
+</tr>
+-->
 <tr>
   <ti>xfree-drm</ti>
   <ti>
