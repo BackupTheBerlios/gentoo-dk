@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-variables.xml,v 1.1 2004/02/23 15:46:45 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-variables.xml,v 1.1 2004/02/23 18:23:17 aaby Exp $ -->
 
 <sections>
 <section>
@@ -14,7 +14,7 @@
 <body>
 
 <p>
-En miljøvariabel er et navngivet objekt, der inderholder informationer, der 
+En miljøvariabel er et navngivent objekt, der inderholder informationer, som
 bliver benyttet af en eller flere applikationer. Mange brugere (specielt dem 
 der er nye i Linux) finder det en smule mærkeligt eller uhåndterligt. Dette er
 dog forkert; ved at bruge miljøvariabler, kan man let skifte en indstilling for 
@@ -43,7 +43,7 @@ og beskriver deres brug. Eksempelværdier er præsenteret efter tabellen.
     Denne variabel indeholder en kolonsepareret liste over mapper, som 
     dit system leder i efter eksekverbare filer. Hvis du indtaster et navn på
     en eksekverbar fil (som f.eks. <c>ls</c>, <c>rc-update</c> eller <c>emerge</c>),
-    men denne fil ikke er placeret i en af de oplistede mapper, vil dit system 
+    og denne fil ikke er placeret i en af de oplistede mapper, vil dit system 
     ikke eksekvere den (medmindre du angiver den fulde sti som kommando, f.eks. 
     <c>/bin/ls</c>).
   </ti>
@@ -121,7 +121,7 @@ og beskriver deres brug. Eksempelværdier er præsenteret efter tabellen.
 </table>
 
 <p>
-Nedenfor finder du et eksempel af en definering af alle disse variabler:
+Nedenfor finder du et eksempel af en definition af alle disse variabler:
 </p>
 
 <pre caption="Eksempeldefinitioner">
@@ -137,20 +137,20 @@ CLASSPATH="/opt/blackdown-jre-1.4.1/lib/rt.jar:."
 CONFIG_PROTECT="/usr/X11R6/lib/X11/xkb /opt/tomcat/conf \
                 /usr/kde/3.1/share/config /usr/share/texmf/tex/generic/config/ \
                 /usr/share/texmf/tex/platex/config/ /usr/share/config"
-CONFIG_PROTECT_MASK="/etc/gconf
+CONFIG_PROTECT_MASK="/etc/gconf"
 </pre>
 
 </body>
 </subsection>
 </section>
 <section>
-<title>Definering af variabler globalt</title>
+<title>Definition af variabler globalt</title>
 <subsection>
 <title>Mappen /etc/env.d</title>
 <body>
 
 <p>
-For at centralisere definitionerne af disse variabler, introducerer Gentoo 
+For at centralisere definitionerne af disse variable, introducerer Gentoo 
 mappen <path>/etc/env.d</path>. I denne mappe finder du en række af filer, som 
 <path>00basic</path>, <path>05gcc</path> etc., der indeholder variablerne som 
 applikationernes filnavne antyder, har brug for.
@@ -279,10 +279,11 @@ Når du logger ind igen, vil variablen <c>PATH</c> være opdateret.
 <body>
 
 <p>
-Nogle gange er der behov for endnu strengere definitioner. Du vil måske gerne 
-være i stand til at benytte binære filer fra en midlertidigt mappe, du har 
-oprettet, uden at bruge stien til de binære filer, eller ændre i 
-<path>~/.bashrc</path> for de få gange, du har brug for dens skyld.
+Nogle gange er der behov for endnu strengere definitioner. Du vil
+måske gerne være i stand til at benytte binære filer fra en
+midlertidigt mappe, som du har oprettet, uden at bruge stien til de
+binære filer, eller ændre i <path>~/.bashrc</path> til de få gange, du
+har brug for den.
 </p>
 
 <p>
@@ -291,7 +292,7 @@ nuværende session, ved at bruge kommandoen <c>export</c>. Så længe du ikke
 logger ud, vil variablen <c>PATH</c> bruge de midlertidige indstillinger.
 </p>
 
-<pre caption="Definering af en sessionsspecifikt miljøvariabel">
+<pre caption="Definering af en sessionsspecifik miljøvariabel">
 # <i>export PATH="${PATH}:/home/my_user/tmp/usr/bin"</i>
 </pre>
 
