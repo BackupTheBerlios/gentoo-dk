@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-mips.xml,v 1.9 2004/08/30 20:16:59 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-mips.xml,v 1.10 2004/09/21 19:44:40 broeman Exp $ -->
 
 <book link="handbook-mips.xml" lang="da">
 <title>Gentoo-håndbogen til MIPS</title>
@@ -131,8 +131,8 @@ informationer omkring Gentoo/Linux.
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 <license/>
 
-<version>2.64</version>
-<date>23. August 2004</date>
+<version>2.76</version>
+<date>14. September 2004</date>
 
 <part>
 <title>Installation af Gentoo</title>
@@ -266,7 +266,7 @@ med USE-flag og forstå hvordan USE-flag arbejder sammen med dit system.
 <chapter>
 <title>Portage og software</title>
 <abstract>
-Hovedforklaringen for Portage er at vedligeholde software på dit system. I dette
+Grundid�en med Portage er at vedligeholde software på dit system. I dette
 kapitel lærer du hvordan man får informationer fra en pakke, opdaterer din
 pakke-databse, installation/opdatering af software og mere ...
 </abstract>
