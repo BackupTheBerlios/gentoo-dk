@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-config.xml,v 1.2 2004/01/17 18:26:09 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.1 2004/01/18 13:40:27 aaby Exp $ -->
 
 <sections>
 <section>
@@ -12,10 +12,10 @@
 <body>
 
 <p>
-Du skal nu vælge din tidszone, så dit system ved hvor det er placeret. Kig 
-efter din tidszone i <path>/usr/share/zoneinfo</path>, og lav en symbolsk 
-genvej til
-<path>/etc/localtime</path> med <c>ln</c>:
+Du skal nu vælge din tidszone, så dit system ved hvor det er
+placeret. Kig efter din tidszone i <path>/usr/share/zoneinfo</path>,
+og lav en symbolsk genvej til <path>/etc/localtime</path> med
+<c>ln</c>:
 </p>
 
 <pre caption="Opsætning af tidszone">
@@ -54,17 +54,17 @@ felter, adskilt af mellemrum eller tabulatorer (og gerne flere af begge). Hvert
 
 <ul>
 <li>
-  Det første felt beskriver <b>partitionen</b> (stien til filen for enheden)
+  Det første felt beskriver <b>partitionen</b> (stien til enhedsfilen)
 </li>
 <li>
-  Andet felt viser <b>mount-punktet</b> hvor partitionen skal monteres
+  Andet felt viser <b>mount-punktet</b> hvor partitionen skal mountes
 </li>
 <li>
   Tredje felt viser hvilket <b>filsystem</b> partitionen benytter
 </li>
 <li>
   Det fjerde felt viser <b>mount-indstilliger</b>, der bliver brugt af 
-<c>mount</c>, når det vil mounte en partition. Da hvert filsystem har sine 
+<c>mount</c>, når den vil mounte en partition. Da hvert filsystem har sine 
 egne mount-indstillinger, opfordres du til at læse manpagen mount 
 (<c>man mount</c>) for at få et fuldt overblik. Flere mount-indstillinger 
 er adskilt med komma.</li>
@@ -108,7 +108,7 @@ skriver:
 
 <p>
 For at forbedre ydelsen vil de fleste brugere tilføje <c>noatime</c>
-som moount-indstilling, hvilket vil resultere i et hurtigere system, da 
+som mount-indstilling, hvilket vil resultere i et hurtigere system, da 
 tilgangstider ikke bliver registreret (hvilket du normalt ikke har brug for):
 </p>
 
@@ -146,7 +146,7 @@ none        /dev/shm  tmpfs   defaults          0 0
 
 <p>
 <c>auto</c> får <c>mount</c> til at gætte på filsystemet (anbefalet for 
-flytbare medier, da de kan være skabt med et af mange filsystemer) og 
+flytbare medier, da de kan være skabt med et enkelt ud af mange filsystemer) og 
 <c>user</c> gør det muligt for andre brugere end root at mounte CDen.
 </p>
 
