@@ -30,7 +30,8 @@ de funktioner der bliver sat til rådighed af Genkernel.
 <p>
 Genkernel er designet til at tillade, brugere der ikke tidligere er
 vant til at kompilere en kerne, til at bruge opsætning der ligner den
-der er brugt på Gentoo LiveCDerne, hvilke automatisk finder dit hardware.
+der er brugt på Gentoo LiveCDerne, hvilke automatisk finder dit 
+hardware.
 </p>
 
 <p>
@@ -465,3 +466,4 @@ denne arkitektur.
 </section>
 </chapter>
 </guide>
+ 
