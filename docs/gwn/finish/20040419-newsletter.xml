@@ -49,6 +49,9 @@
 <author title="Dansk oversættelse">
 		<mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
+<author title="Dansk oversættelse">
+		<mail link="thewizard@gentoo.dk">Esben Bach</mail>
+</author>
 <author title="Hollandsk oversættelse">
         <mail link="Hendrik.Eeckhaut@UGent.be">Hendrik Eeckhaut</mail>
 </author>
@@ -231,7 +234,7 @@
 <author title="Tyrkisk oversættelse">
         <mail link="gurcell@core.gen.tr">Gursel Kaynak</mail>
 </author>
-<abstract>Dette er Gentoos ugentlige nyhedsbrev for ugen af 19. april, 2004.</abstract>
+<abstract>Dette er Gentoos ugentlige nyhedsbrev for ugen af 19. april 2004.</abstract>
 <summary>Overgang til NFP organisation.</summary>
 <version>3 Årgang, 16. nummer</version>
 <date>19. April 2004</date>
@@ -245,8 +248,8 @@
 <p>
 <mail link="drobbins@gentoo.org">Daniel Robbins</mail>, chef arkitekt
 for Gentoo Linux leder nu en indsats for at lave en overgang til en
-Not For Profit (ikke-for-profit) organisation.  gentoo-nfp maillisten
-er blevet sat op og diskussion er allerede i gang; listen er blevet
+Not For Profit (ikke-for-profit) organisation. Gentoo-nfp maillisten
+er blevet sat op og diskussionen er allerede i gang; listen er blevet
 <uri
 link="http://news.gmane.org/gmane.linux.gentoo.nfp/">arkiveret</uri>,
 og er åben for abonnement: de der er interreseret bør sende en
