@@ -4,30 +4,31 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/2.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-portage-diverttree.xml,v 1.1 2004/11/13 16:35:20 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-portage-diverttree.xml,v 1.1 2004/11/20 13:43:29 aaby Exp $ -->
 
 <sections>
 <section>
 <title>Brug af Portage-træets undersæt</title>
 <subsection>
-<title>Udlukkelse af pakker/kategorier</title>
+<title>Udelukkelse af pakker/kategorier</title>
 <body>
 
 <p>
 Du kan selektivt opdatere specifikke kategorier/pakker og ignorere de andre
 kategorier/pakker. Vi opnår dette ved at få <c>rsync</c> til at udelukke
-kategorier/pakker igennem <c>emerge --sync</c>-trinnet.
+kategorier/pakker igennem <c>emerge --sync</c>-trinet.
 </p>
 
 <p>
-Som stander vil <c>rsync</c> tjekke indholdet af
-<path>/etc/portage/rsync_excludes</path> (hvis den eksisterer), som indeholder de
-kategorier eller pakker, som du <e>ikke</e> ønsker <c>rsync</c> at opdatere.
+Som standard vil <c>rsync</c> tjekke indholdet af
+<path>/etc/portage/rsync_excludes</path> (hvis den eksisterer), som
+indeholder de kategorier eller pakker, som du <e>ikke</e> ønsker
+at <c>rsync</c> opdaterer.
 </p>
 
 <p>
 Noter dog at dette kan foranlede afhængighedsproblemer, idet nye tilladte pakker,
-kan afhænge på nye, men udelukkede pakker.
+kan afhænge af nye, men udelukkede pakker.
 </p>
 
 </body>
@@ -40,10 +41,10 @@ kan afhænge på nye, men udelukkede pakker.
 <body>
 
 <p>
-Du kan spørge Portage om at bruge ebuilds, som ikke officielt er tilgængelig igennem
-Portage-træet. Opret en ny folder (f.eks.
-<path>/usr/local/portage</path>), hvor du gemmer tredje-parts ebuilds. Brug
-samme folder-struktur, som i det officielle Portage-træ!
+Du kan få Portage til at bruge ebuilds, som ikke officielt er
+tilgængelig igennem Portage-træet. Opret en ny folder (f.eks.
+<path>/usr/local/portage</path>), hvor du gemmer tredje-parts
+ebuilds. Brug samme folder-struktur, som i det officielle Portage-træ!
 </p>
 
 <p>
@@ -63,11 +64,12 @@ gang, du kører <c>emerge --sync</c>.
 <body>
 
 <p>
-I nogle tilfælde vil du ønske at opsætte, installere og håndtere software selv,
-uden at have Portage til at automatisk lave processen for dig, selv endda når Portage
-kan levere disse softwaretitler. Kendte tilfælde er kerne-kildekoder og nvidia-drivere.
+I nogle tilfælde vil du ønske at opsætte, installere og håndtere
+software selv, uden at have Portage til at automatisk lave processen
+for dig, selv endda når Portage kan levere disse
+softwaretitler. Kendte tilfælde er kerne-kildekoder og nvidia-drivere.
 Du kan opsætte Portage, så den ved at en specifik pakke er installeret
-manuelt på dit system. Denne process er kaldet <e>injecting</e> og 
+manuelt på dit system. Denne proces er kaldet <e>injecting</e> og
 understøttet af Portage igennem
 <path>/etc/portage/profile/package.provided</path>-filen.
 </p>
