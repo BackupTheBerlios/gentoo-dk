@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.4 2004/01/22 13:34:53 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.5 2004/01/22 15:47:45 aaby Exp $ -->
 
 <book link="handbook.xml">
 <title>Gentoo-håndbogen</title>
@@ -106,8 +106,18 @@
 <author title="Oversætter, Korrektur">
    <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
-
-<!-- HUSK at indsætte navnene på dem der har hjulpet med oversættelse -->
+<author title="Oversætter, Korrektur">
+   <mail link="dysk@gaudity.com">Frans Sohn Frøkjær-Jensen</mail>
+</author>
+<author title="Oversætter, Korrektur">
+   <mail link="morten_fangel@tdcadsl.dk">Morten Fangel</mail>
+</author>
+<author title="Oversætter, Korrektur">
+   <mail link="esben@cs.auc.dk">Esben Bach</mail>
+</author>
+<author title="Oversætter, Korrektur">
+   <mail link="simon.holm@get2net.dk">Simon Holm Thøgersen</mail>
+</author>
 
 <abstract>
 Dette er Gentoo-håndbogen, en bestræbelse på at centralisere
