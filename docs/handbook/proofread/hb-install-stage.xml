@@ -1,21 +1,21 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE sections SYSTEM "/dtd/book.dtd">
 
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-stage.xml,v 1.1 2004/01/11 15:58:48 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-stage.xml,v 1.2 2004/01/11 16:58:52 broeman Exp $ -->
 
 <sections>
 <section>
-<title>Vælg den rigtige Stage</title>
+<title>Vælg den rigtige etape</title>
 <body>
 
 <p>
 Da vi bad dig om at vælge et installationsmedie (LiveCDs, eksisterende
-distributioner etc.), forklarede vi hvilke fordele og ulemper der var.
-En af disse var valg af installationstrin (herefter kaldet
-Stage): går du efter en fuld kompilering (<e>stage1</e>), springe over
+distributioner etc.), forklarede vi hvilke fordele og ulemper, der var.
+En af disse var valg af en installationsetape (herefter kaldet
+stage): går du efter en fuld kompilering (<e>stage1</e>), springe over
 bootstrapping (<e>stage2</e>), eller start fra et prekompileret stadie (<e>stage3</e>)?
 </p>
 
@@ -26,30 +26,30 @@ Det er nu tid til at installere dit valg af stage.
 </p>
 
 <p>
-The følgende to sektioner forklarer hvordan du installere din
-foretrukne stage. Standard muligheden, er her at hente den valgte
-stage fra Internettet. Der er dog nogle LiveCD'er som har disse
-stages, klarlagt på CD'en.
+De følgende to sektioner forklarer, hvordan du installerer din
+foretrukne stage. Standard-muligheden er her, at hente den valgte
+stage fra Internet. Der er dog nogle LiveCDer som har disse
+stages, klarlagt på CDen.
 </p>
 
 <p>
-Hvis du har en virkende Internet forbindelse, rådes du til at bruge
-standard muligheden. Har du ikke en virkende Internet forbindelse,
-eller vil du installere Gentoo ved brug af GRP (prekompilerede
+Hvis du har en fungerende Internet-forbindelse, rådes du til at bruge
+standard-muligheden. Har du ikke en fungerende Internet-forbindelse,
+eller vil du installere Gentoo ved brug af GRP (præ-kompilerede
 pakker), så skal du vælge den alternative måde.
 </p>
 
 <ul>
-<li><uri link="#doc_chap2">Standard: Hentning fra Internettet</uri></li>
-<li><uri link="#doc_chap3">Alternativ: Brug af en Stage fra LiveCD'en</uri><li>
+<li><uri link="#doc_chap2">Standard: Hentning fra Internet</uri></li>
+<li><uri link="#doc_chap3">Alternativ: Brug af en Stage-fil fra LiveCDen</uri><li>
 </ul>
 
 </body>
 </section>
 <section>
-<title>Standard: Hentning fra Internettet</uri></li>
+<title>Standard: Hentning fra Internet</uri></li>
 <subsection>
-<title>Hentning af Stage Tarball</title>
+<title>Hentning af stage-tarball</title>
 <body>
 
 <p>
@@ -57,39 +57,39 @@ Skift til dit Gentoo mountpoint, hvor du mountede dit filsystem (højst
 sandsynligt <path>/mnt/gentoo</path>):
 </p>
 
-<pre caption="Gå til Gentoo mountpoint">
+<pre caption="Gå til Gentoo-mountpunkt">
 # <i>cd /mnt/gentoo</i>
 </pre>
 
 <p>
 Afhængigt af dit installationsmedie, har du et par forskellige
-værktøjer tilrådighed, til at hente en stage.
+værktøjer tilgængelige for at hente en stage.
 Hvis du har <c>lynx</c> til rådighed, så kan du med det samme surfe
-hen til <uri link="/main/en/mirrors.xml">Gentoo filspejl listen</uri>
+hen til <uri link="/main/en/mirrors.xml">Gentoo filspejl-listen</uri>
 og vælge et filspejl nær ved dig.
 Vælg så <path>releases/</path> biblioteket, efterfulgt af din
 arkitektur (for eksempel <path>x86/</path>) og Gentoo version
 (<path>1.4/</path>), afslut med at gå ind i <path>stages/</path>
-biblioteket. Der skulle du gerne se all tilgængelige stage filer, for
+biblioteket. Der skulle du gerne se alle tilgængelige stage-filer, til
 din arkitektur. Vælg en og tryk på <c>D</c> for at hente den.
 Når du er færdig tryk da på <c>Q</q> for at lukke browseren.
 </p>
 
-<pre caption="Surfe til filspejl listen med lynx">
+<pre caption="Surfe til filspejl-listen med lynx">
 # <i>lynx http://www.gentoo.org/main/en/mirrors.xml</i>
 </pre>
 
 <p>
-Hvis du ikke har <c>lynx</c>, så skulle du have <c>links2</c> stillet
+Hvis du ikke har <c>lynx</c>, så burde du have <c>links2</c>
 til rådighed.
 <c>links2</c> er mere kraftfuld end <c>lynx</c>, men den har nogle
-svagheder. En af dem er at den ikke kigger på de proxy variable, vi
-tidligere har deklareret. Hvis du skal bruge en proxy, så brug
+svagheder. En af dem er, at den ikke kigger på de proxy-variabler, vi
+tidligere har sat. Hvis du skal bruge en proxy, så brug
 <c>links2 -http-proxy proxy.server.com:8080</c>. Herfra skal du følge
-de samme trin som i <c>lynx</c> eftersom disse er ens.
+de samme trin som i <c>lynx</c>, eftersom disse er ens.
 </p>
 
-<pre caption="Surf til filspejl listen med links2">
+<pre caption="Surf til filspejl-listen med links2">
 <comment>(Uden proxy:)</comment>   # <i>links2 http://www.gentoo.org/main/en/mirrors.xml</i>
 <comment>(Med proxy:)</comment>      # <i>links2 -http-proxy proxy.server.com:8080 http://www.gentoo.org/main/en/mirrors.xml</i>
 </pre>
@@ -101,8 +101,8 @@ de samme trin som i <c>lynx</c> eftersom disse er ens.
 <body>
 
 <p>
-Nu skal vi udpakke din hentede stage til dit system. Vi bruger GNU's
-<c>tar</c> til dette, efter som det er det nemmeste:
+Nu skal vi udpakke din hentede stage-fil til dit system. Vi bruger GNUs
+<c>tar</c> til dette, eftersom det er det nemmeste:
 </p>
 
 <pre caption="Udpakning af stagen">
@@ -114,39 +114,39 @@ Sørg for at du bruger de samme parametre (<c>-xvjpf</c>).
 <c>x'et</c> står for <e>Extract</e>, <c>v'et</c> står for
 <e>Verbose</e> (denne er valgfri), <c>j'et<c> står for <e>Decompress
 with bzip2</e>, <c>p'et</c> står for <e>Preserve permissions</e> og
-<f'et> pointere at vi vil udpakke en fil istedet for standard input.
+<c>f'et</c> pointerer at vi vil udpakke en fil, i stedet for standard input.
 </p>
 
 <p>
 Færdig? Okay, du er nu klar til at fortsætte med den næste sektion på
-<uri>link="#doc_chap4">Konfigurering af kompilerings parametre</uri>.
+<uri>link="#doc_chap4">Opsætning af kompileringsparametre</uri>.
 </p>
 
 </body>
 </subsection>
 </section>
 <section>
-<title>Alternativ: Brug af en Stage fra LiveCDen</title>
+<title>Alternativ: Brug af en stage-fil fra LiveCDen</title>
 <subsection>
-<title>Udpakning af Stage Tarball</title>
+<title>Udpakning af stage-tarball</title>
 <body>
 
 <p>
-De forskellige Stages på CDen ligger i <path>/mnt/cdrom/stages</path>
+De forskellige etaper på CDen ligger i <path>/mnt/cdrom/stages</path>
 biblioteket.
-For at se en liste af tilgængelige stages, brug <c>ls</c>:
+For at se en liste af tilgængelige stage-filer, brug <c>ls</c>:
 </p>
 
-<pre caption="Liste af tilgængelige stages">
+<pre caption="Liste af tilgængelige stage-filer">
 # <i>ls /mnt/cdrom/stages</i>
 </pre>
 
 <p>
-Hvis system svarer med en fejl, er det måske fordi du skal mounte
-CD-Rom'en først:
+Hvis systemet svarer med en fejl, er det måske fordi du skal mounte
+CDROM-drevet først:
 </p>
 
-<pre caption="Mounting af CD-Rom'en">
+<pre caption="Mounting af CDROM-drevet">
 # <i>ls /mnt/cdrom/stages</i>
 ls: /mnt/cdrom/stages: No such file or directory
 # <i>mount /dev/cdroms/cdrom0 /mnt/cdrom</i>
@@ -154,7 +154,7 @@ ls: /mnt/cdrom/stages: No such file or directory
 </pre>
 
 <p>
-Gå nu ind i dit Gentoo mountpoint (som regel <path>/mnt/gentoo</path>):
+Gå nu ind i dit Gentoo mountpunkt (som regel <path>/mnt/gentoo</path>):
 </p>
 
 <pre caption="Skift bibliotek til /mnt/gentoo">
@@ -162,25 +162,25 @@ Gå nu ind i dit Gentoo mountpoint (som regel <path>/mnt/gentoo</path>):
 </pre>
 
 <p>
-Vi vil nu udpakke den valgte stage tarball.
-Vi vil gøre dette ved brug af af GNU <c>tar</c> vækrtøjet.
-Sørg for at bruge de samme parametre (<c>-xvjpf</c>)! i det næste
-eksempel, vil vi udpakke <path>stage3-20031011.tar.bz2</path>.
-Sørg for at udskifte tarball filnavnet med den valgte stage.
+Vi vil nu udpakke den valgte stage-tarball.
+Vi vil gøre dette ved brug af af GNU <c>tar</c> værktøjet.
+Sørg for at bruge de samme parametre (<c>-xvjpf</c>)! I det næste
+eksempel vil vi udpakke <path>stage3-20031011.tar.bz2</path>.
+Sørg for at udskifte tarball-filnavnet med den valgte stage-fil.
 </p>
 
-<pre caption="Udpakning af stage tarball">
+<pre caption="Udpakning af stage-tarball">
 # <i>tar -xvjpf /mnt/cdrom/stages/stage3-20031011.tar.bz2</i>
 </pre>
 
 </body>
 </subsection>
 <subsection>
-<title>Installering af Portage Snapshot og kildekode</title>
+<title>Installation af Portage-snapshot og kildekode</title>
 <body>
 
 <p>
-Der er et Portage snapshot, tilgængeligt på nogle LiveCD'er. Siden du
+Der er et Portage-snapshot tilgængeligt på nogle LiveCDer. Siden du
 læser dette, kan vi formode at du bruger sådan en LiveCD, til at
 installere dette snapshot.
 Tag et kig på <path>/mnt/cdrom/snapshots/</path> for at se hvilke
@@ -195,12 +195,12 @@ snapshot vi har tilgængelig:
 Udpak nu et snapshot med den følgende opbygning.
 Igen skal du sørge for de korrekte parametre til <c>tar</c>. Derudover
 er <c>-C</c> med et stort <c>C</c>, ikke et lille <c>c</c>.
-I det næste eksempel bruger vi <path>portage-20031011.tar.bz2</path>
+I det næste eksempel bruger vi <path>portage-20031011.tar.bz2</path>,
 som snapshot filnavn.
 Sørg for at erstatte det med dit snapshot.
 </p>
 
-<pre caption="Udpakning af Portage snapshot">
+<pre caption="Udpakning af Portage-snapshot">
 # <i>tar -xvjf /mnt/cdrom/snapshots/portage-20031011.tar.bz2 -C /mnt/gentoo/usr</i>
 </pre>
 
@@ -214,9 +214,9 @@ Du skal også kopiere alt kildekoden fra CDen.
 </pre>
 
 <p>
-Hvis du vil bruge GRP (prekompilerede binære pakker), så læs dette.
-Ellers fortsæt med <uri link="#doc_chap4">Konfigurering af
-kompilerings parametre</uri>.
+Hvis du vil bruge GRP (præ-kompilerede binære pakker), så læs dette.
+Ellers fortsæt med <uri link="#doc_chap4">Opsætning af
+kompileringsparametre</uri>.
 </p>
 
 </body>
@@ -226,49 +226,49 @@ kompilerings parametre</uri>.
 <body>
 
 <p>
-Hvis du vil installere Gentoo ved brug af GRP (prekompilerede pakker),
+Hvis du vil installere Gentoo ved brug af GRP (præ-kompilerede pakker),
 skal du kopiere alle pakkerne over på dit filsystem, således at
 Portage kan bruge dem.
 </p>
 
-<pre caption="Kopiering af prekompilerede pakker">
+<pre caption="Kopiering af præ-kompilerede pakker">
 # <i>mkdir -p /mnt/gentoo/usr/portage/packages/All</i>
 # <i>cp /mnt/cdrom/packages/All/* /mnt/gentoo/usr/portage/packages/All/</i>
 </pre>
 
 <p>
-Forsæt nu med <uri link="#doc_chap4">Konfigurering af kompilerings parametre</uri>.
+Forsæt nu med <uri link="#doc_chap4">Opsætning af kompileringsparametre</uri>.
 </p>
 
 </body>
 </subsection>
 </section>
 <section>
-<title>Konfigurering af kompilerings parametre</title>
+<title>Opsætning af kompileringsparametre</title>
 <subsection>
 <title>Introduktion</title>
 <body>
 
 <p>
-For at optimere Gentoo, kan du sætte et par variable, som har
+For at optimere Gentoo kan du sætte et par variable, som har
 inflydelse på den måde Portage opfører sig.
-Alle disse variable kan sætte som miljø variable (ved brug af
-<c>export</c>) men det er ikke permanent.
+Alle disse variabler kan sættes som miljø variable (ved brug af
+<c>export</c>), men det er ikke permanent.
 For at gemme din opsætning, kommer Portage med
-<path>/etc/make.conf</path>, en configurations fil til Portage.
-Det er denne fil vi vil rette i nu.
+<path>/etc/make.conf</path>, en opsætningsfil til Portage.
+Det er denne fil, vi nu vil rette i.
 </p>
 
 <note>
-En kommenteret liste alle mulige variable, kan findes i
+En kommenteret liste af alle mulige variable, kan findes i
 <path>/mnt/gentoo/etc/make.conf(.example)</path>.
-For en virkende Gentoo installation, behøver du kun at sætte de
-variable, nævnt herunder.
+For at få en fungerende Gentoo installation, behøver du kun at sætte de
+variabler, som er nævnt herunder.
 </note>
 
 <p>
-Åben din favorit editor (i denne guide bruger vi <c>nano</c>), så vi
-kan komme igang med at ændre de optimerings variable vi vil diskutere herefter.
+Åben dit favorit redigeringsprogram (i denne guide bruger vi <c>nano</c>), så vi
+kan komme i gang med at ændre de optimeringsvariabler, vi vil diskutere herefter.
 </p>
 
 <pre caption="Åbning af /etc/make.conf">
@@ -276,11 +276,11 @@ kan komme igang med at ændre de optimerings variable vi vil diskutere herefter.
 </pre>
 
 <p>
-Som du sikkert har lagt mærke til nu, er
-<path>make.conf(.example)</path> filen struktureret på en generel
-måde: kommentar linier starter med "#", andre linier definere variable
+Som du nu sikkert har lagt mærke til, er
+<path>make.conf(.example)</path>-filen struktureret på en generel
+måde: kommentar-linier, som starter med "#" og andre linier, som definerer variabler
 ved brug af <c>VARIABLE="indhold"</c> syntaxen.
-Flere af disse variable bliver diskuteret i næste trin.
+Flere af disse variabler bliver diskuteret i næste trin.
 </p>
 
 </body>
@@ -291,14 +291,14 @@ Flere af disse variable bliver diskuteret i næste trin.
 
 <warn>
 Selvom det måske kan være interessant for ikke-stage1 brugere, så skal
-de <e>IKKE</e> udskift deres <c>CHOST</c> opsætning i
+de <e>IKKE</e> udskifte deres <c>CHOST</c>-opsætning i
 <path>make.conf</path>.
-Gør man dette, bliver systemet måske ubrugeligt. Igen: Ændre kun denne
-variable hvis du bruger en <e>stage1</e> installation.
+Gør man dette, bliver systemet måske ubrugeligt. Igen: Du skal kun ændre denne
+variabel, hvis du bruger en <e>stage1</e>-installation.
 </warn>
 
 <p>
-<c>CHOST</c> variablen, definere hvilken arkitektur <c>gcc</c> skal
+<c>CHOST</c>-variablen definerer hvilken arkitektur, <c>gcc</c> skal
 kompilere programmerne til.
 Mulighederne er:
 </p>
@@ -326,7 +326,7 @@ Mulighederne er:
 </tr>
 <tr>
   <ti>x86</ti>
-  <ti>i686 and above (incl. athlon)</ti>
+  <ti>i686 og derover (inkl. Athlon)</ti>
   <ti>i686-pc-linux-gnu</ti>
 </tr>
 <tr>
@@ -356,7 +356,7 @@ Mulighederne er:
 </tr>
 <tr>
   <ti>hppa</ti>
-  <ti>pa8000 and above</ti>
+  <ti>pa8000 og derover</ti>
   <ti>hppa2.0-unknown-linux-gnu</ti>
 </tr>
 <tr>
@@ -374,39 +374,39 @@ Mulighederne er:
 </body>
 </subsection>
 <subsection>
-<title>CFLAGS and CXXFLAGS</title>
+<title>CFLAGS og CXXFLAGS</title>
 <body>
 
 <p>
-<c>CFLAGS</c> og <c>CXXFLAGS</c> variablene definere optimerings flag
-til <c>gcc</c> C og C++ kompilerne i den rækkefølge.
-Selvom vi definere dem generelt her, vil du kun få optimal ydeevne
-hvis du optimere disse flag for hvert program seperat.
+<c>CFLAGS</c>- og <c>CXXFLAGS</c>-variablerne definerer optimeringsflag
+til <c>gcc</c>, med C og C++ kompilerne i den rækkefølge.
+Selvom vi definerer dem generelt her, vil du kun få optimal ydeevne,
+hvis du optimerer disse flag for hvert program seperat.
 Det skyldes at hver eneste program er forskelligt fra de andre.
 </p>
 
 <p>
-I <path>make.conf</path> skal du optimere de flag du tror vil gøre dit
-system bedst, <e>generelt</e>
+I <path>make.conf</path> skal du <e>generelt</e> optimere de flag du tror vil gøre dit
+system bedst.
 Lad være med at placere eksperimenterende opsætninger i denne
-variable; For meget optimering kan få programmer til at opføre sig
-mærkelig (gå ned, eller endnu være fungere forkert).
+variabel; For meget optimering kan få programmer til at opføre sig
+mærkelig (gå ned, eller endnu værre, fungere forkert).
 </p>
 
 <p>
-Vi vil ikke forklarere all mulig optimerings muligheder. Hvis du vil
-kende dem alle kan du læse <uri
+Vi vil ikke forklare alle mulige optimeringsmuligheder. Hvis du vil
+kende dem alle, kan du læse <uri
 link="http://www.gnu.org/software/gcc/onlinedocs/">Gnu Online
-Manual(s)</uri> eller <c>gcc</c> info siden (<c>info gcc</c> Virker
-kun på et færdig opsat Linux system).
-<path>make.conf</path> filen i sig selv, indeholder også mange
-eksempler og informationer; glem ikke at du også skal læse dette.
+Manual(s)</uri> eller <c>gcc</c> info siden (<c>info gcc</c> virker
+kun på et færdig opsat Linux-system).
+<path>make.conf</path>-filen i sig selv, indeholder også mange
+eksempler og informationer; glem ikke, at du også skal læse dette.
 </p>
 
 <p>
-Den første parametre er <c>-march=</c> flaget, som specificere navnet
+Den første parameter er <c>-march=</c>-flaget, som specificerer navnet
 på din arkitektur. Mulige parametre er beskrevet i
-<path>make.conf</path> filen (som kommentarer).
+<path>make.conf</path>-filen (som kommentarer).
 For eksempel til x86 Athlon XP arkitekturen:
 </p>
 
@@ -415,8 +415,8 @@ For eksempel til x86 Athlon XP arkitekturen:
 </pre>
 
 <p>
-En anden parametre er <c>-O</c> flaget, som specificere <c>gcc</c>'s
-optimerings klasse flag.
+En anden parameter er <c>-O</c>-flaget, som specificerer <c>gcc</c>s
+optimeringsklasse-flag.
 Mulige klasser er <c>s</c> (for størrelses optimering),<c>0</c>(ingen
 optimering),<c>1</c>,<c>2</c>,<c>3</c> til mere hastighedsoptimering,
 (hver klasse har samme flag som den forrige, plus nogle ekstra).
@@ -428,18 +428,18 @@ For eksempel en klasse 2 optimering:
 </pre>
 
 <p>
-Andre populære optimerings flag er <c>-pipe</c> (brug af pipes istedet
-for midlertidig filer, til kommunikation mellem forskellige stadier af
-kompilering) og <c>-fomit-frame-pointer</c> (sørger for at frame
-pointere ikke er i registret til de funktioner der ikke skal proge den).
+Andre populære optimeringsflag er <c>-pipe</c> (brug af pipes i stedet
+for midlertidige filer til kommunikation mellem forskellige stadier af
+kompilering) og <c>-fomit-frame-pointer</c> (sørger for at
+framepointere ikke er i registret til de funktioner, der ikke skal bruge den).
 </p>
 
 <p>
-Når du definere dine <c>CFLAGS</c> og <c>CXXFLAGS</c>, bør du
-kombinere forskellige optimerings flag, som i det følgende eksempel:
+Når du definerer dine <c>CFLAGS</c> og <c>CXXFLAGS</c>, bør du
+kombinere forskellige optimeringsflag, som i det følgende eksempel:
 </p>
 
-<pre caption="Defingering af CFLAGS og CXXFLAGS variablene">
+<pre caption="Definering af CFLAGS og CXXFLAGS variablerne">
 CFLAGS="-march=athlon-xp -pipe -O2"
 CXXFLAGS="${CFLAGS}"                  <comment># Bruger den samme
 opsætning til begge flag</comment>
@@ -452,8 +452,8 @@ opsætning til begge flag</comment>
 <body>
 
 <p>
-Med <c>MAKEOPTS</c> defienre du hvor mange parallele kompilering der
-skal fortages når du installere en pakke. Det foreslået numre, er
+Med <c>MAKEOPTS</c> definerer du, hvor mange parallele kompileringer, der
+skal fortages, når du installere en pakke. Det foreslået nummer, er
 antallet af CPUer i dit system, plus en ekstra.
 </p>
 
@@ -464,14 +464,14 @@ MAKEOPTS="-j2"
 </body>
 </subsection>
 <subsection>
-<title>Ready, Set, Go!</title>
+<title>Klar, parat, start!</title>
 <body>
 
 <p>
-Opdater din <path>/mnt/gentoo/etc/make.conf</path> så den passer dig,
+Opdatér din <path>/mnt/gentoo/etc/make.conf</path>, så den passer dig,
 og gem.
 Du er nu klar til at fortsætte med <uri
-link="?part=1&amp;chap=6">Installinger af Gentoo base systemet</uri>.
+link="?part=1&amp;chap=6">Installationer til Gentoo base-systemet</uri>.
 </p>
 
 </body>
