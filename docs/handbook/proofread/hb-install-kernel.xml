@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-install-kernel.xml,v 1.1 2004/01/17 17:53:08 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-kernel.xml,v 1.1 2004/01/19 13:02:24 aaby Exp $ -->
 
 <sections>
 <section>
@@ -23,9 +23,9 @@ Guide</uri> (engelsk).
 
 <p>
 Til x86-baserede systemer har vi, iblandt andre kerner, <c>vanilla-sources</c>
-(standard kerne-kildekode, som er udviklet af linux-kernel udviklerne),
+(standard kerne-kildekode, som er udviklet af linux-kerne udviklerne),
 <c>gentoo-sources</c> (kerne-kildekode, som er patched med ydelsesforbedrende
-egenskaber), <c>gentoo-dev-sources</c> (kerne version 2.6 kildekoder, som er patched med
+egenskaber), <c>gentoo-dev-sources</c> (kerne version 2.6 kildekoder, som er patchet med
 ydelsesforbedrende egenskaber og stabilitetsforbedringer), <c>xfs-sources</c> 
 (kerne-kildekoder med det sidste nye XFS-understøttelse), <c>gs-sources</c> (kerne-kildekode, som
 er patched til serverbrug), <c>gaming-sources</c> (kerne-kildekode, som er patched til
@@ -34,14 +34,14 @@ optimalt spilleydelse), ...
 
 <p>
 Til alpha-baserede systemer har vi <c>vanilla-sources</c> (standard kerne-kildekode,
-som er udviklet af linux-kernel udviklerne), <c>alpha-sources</c>
+som er udviklet af linux-kerne udviklerne), <c>alpha-sources</c>
 (kerne-kildekode, som er optimeret til alpha-brugere) og <c>compaq-sources</c> (kerne-kildekode,
 som er brugt af RedHat til Alpha, vedligeholdt af Compaq).
 </p>
 
 <p>
 Til sparc-baserede systemer har vi <c>vanilla-sources</c> (standard kerne-kildekode,
-som er udviklet af linux-kernel udviklerne) og <c>sparc-sources</c>
+som er udviklet af linux-kerne udviklerne) og <c>sparc-sources</c>
 (kerne-kildekode optimeret til SPARC-brugere).
 </p>
 
@@ -52,13 +52,13 @@ kerne-træet).
 </p>
 
 <p>
-Til AMD64-baserede systemer har vi <c>gentoo-dev-sources</c> (kernel version 2.6 kildekode,
-som er patched med amd64-specifikke fixes til stabilitet, ydelse og
+Til AMD64-baserede systemer har vi <c>gentoo-dev-sources</c> (kerne version 2.6 kildekode,
+som er patchet med amd64-specifikke fixes til stabilitet, ydelse og
 hardware-understøttelse). 
 </p>
 
 <p>
-Andre arkitekturer burde bruge den kerne, der er specifikt optimeret til
+Andre arkitekturer burde bruge den kerne, der specifikt er optimeret til
 deres arkitektur: <c>hppa-sources</c> (HPPA) eller <c>ppc-sources</c> (PowerPC).
 </p>
 
@@ -125,12 +125,13 @@ link="#doc_chap3">Alternativ: Brug af genkernel</uri> i stedet for.
 
 <p>
 At opsætte kernen manuelt er ofte set som det sværeste, som enhver
-Linux-bruger skal gå igennem. Intet er mindre rigtigt -- efter opsætninger af
-nogle kerner, vil du ikke kunne huske at det var svært ;)
+Linux-bruger skal gå igennem. Intet er mindre rigtigt -- efter
+opsætninger af nogle kerner, vil du ikke kunne huske at det var svært
+;)
 </p>
 
 <p>
-Dog, er én ting <e>rigtigt</e>: du skal kende dit system, når du starter med at
+En ting er dog <e>rigtigt</e>: du skal kende dit system, når du starter med at
 opsætte en kerne manuelt. De fleste informationer kan blive indsamlet ved at se
 på indholdet af <path>/proc/pci</path> (eller ved at bruge <c>lspci</c>, hvis den er tilgængelig). Du
 kan også køre <c>lsmod</c> for at se hvilke kerne-moduler, LiveCDen bruger (det vil måske
@@ -148,9 +149,10 @@ vil starte en ncurses-baseret opsætningsmenu.
 </pre>
 
 <p>
-Du vil blive hilst af flere opsætningssektioner. Vi vil først give dig en list af
-de valgmuligheder, som du skal aktivere (ellers vil Gentoo ikke funktionere, eller funktionere
-ordentligt uden ekstra fin-indstillinger).
+Du vil blive hilst af flere opsætningssektioner. Vi vil først give dig
+en liste af de valgmuligheder, som du skal aktivere (ellers vil Gentoo
+ikke funktionere, eller funktionere ordentligt uden ekstra
+fin-indstillinger).
 </p>
 
 </body>
@@ -166,7 +168,7 @@ Du vil få brug for dette, ellers vil meget vigtige koder/drivere ikke vise sig:
 
 <pre caption="Valg af eksperimentelle koder/drivere">
 Code maturity level options ---&gt;
-  [*] Prompt for development and/or incomplete code/drivers"
+  [*] Prompt for development and/or incomplete code/drivers
 </pre>
 
 <p>
@@ -221,6 +223,7 @@ De to kompressionsvalgmuligheder vil ikke være til unytte, men slet ikke nødvend
 med <c>PPP over Ethernet</c> valgmuligheden, som måske ville blive brugt af 
 <c>rp-pppoe</c>, når den er opsat til at lave kerne-modus PPPoE.
 </p>
+
 <!-- TODO reactivate when LVM2 instructions are boarded
 <p>
 Hvis du bruger LVM, vil du få brug for at aktivere det i kernen:
@@ -232,6 +235,7 @@ Multi-device support (RAID and LVM) - - -&gt;
   &lt;*&gt;  Logical volume manager (LVM) support
 </pre>
 -->
+
 <note>
 Brugere af en 2.6 kerne vil finde nogle af de ovennævnte valgmuligheder under <c>Device
 Drivers</c>.
@@ -696,10 +700,10 @@ modules_install</c>:
 </pre>
 
 <p>
-Når kernen er færdig med at kompilere, kopier den over til
-<path>/boot</path>. I det næste eksempel, vi forudsætter at du har opsat og
-kompileret <c>vanilla-sources-2.4.22</c> (som kan være at ikke være den rigtige kerne til
-dit arkitektur!):
+Når kernen er færdig med at kompilere, kopier den da over til
+<path>/boot</path>. I det næste eksempel forudsætter vi, at du har
+opsat og kompileret <c>vanilla-sources-2.4.22</c> (hvilken måske ikke
+er den rigtige kerne til dit arkitektur!):
 </p>
 
 <pre caption="Installation af kerne">
@@ -747,23 +751,26 @@ kernemoduler</uri>.
 Hvis du læser denne sektionen, så har du valgt at bruge vores <c>genkernel</c>
 script til at opsætte din kerne for dig. Dog, dette betyder også at du har
 et x86-baseret system. Andre arkitekturer er <e>ikke understøttet</e> af
-<c>genkernel</c>. <!-- TODO: Add ppc as it should be available with the first
+<c>genkernel</c>. 
+
+<!-- TODO: Add ppc as it should be available with the first
 2004 release -->
 </p>
 
 <p>
-Nu da din kerne-kildekodetræ er installeret, er det nu tid til at kompilere din
+Nu da dit kerne-kildekodetræ er installeret, er det nu tid til at kompilere din
 kerne ved brug af vores <c>genkernel</c> script til at automatisk bygge en kerne for
 dig. <c>genkernel</c> virker ved at opsætte en kerne, næsten identisk som
 vores LiveCD-kerne er blevet opsat. Dette betyder, at når du bruger 
 <c>genkernel</c> til at bygge din kerne, vil dit system generelt finde alt
 dit hardware ved opstart, ligesom din Live CD gør. Fordi at genkernel 
-ikke kræver nogen manuel kerneopsætning, er den en ideal løsning for
+ikke kræver nogen manuel kerneopsætning, er den en ideel løsning for
 de brugere, som ikke føler sig veltilpas med at kompilere deres egne kerner.
 </p>
 
 <p>
-Lad os nu se hvordan vi bruger genkernel. Først skal du emerge genkernel'ens ebuild:
+Lad os nu se hvordan vi bruger genkernel. Først skal du emerge
+genkernel'ens ebuild:
 </p>
 
 <pre caption="Emerge genkernel">
@@ -772,7 +779,7 @@ Lad os nu se hvordan vi bruger genkernel. Først skal du emerge genkernel'ens ebu
 
 <p>
 Kompilér nu din kerne-kildekoder ved at køre <c>genkernel</c>. Vær opmærksom på at,
-når <c>genkernel</c> kompilerer en kerne, som understøttet det meste hardware, kan
+når <c>genkernel</c> kompilerer en kerne, som understøtter det meste hardware, kan
 kompileringen tage noget tid at færdiggøre!
 </p>
 
@@ -906,7 +913,7 @@ at pakkerne vil blive installeret ved at emerge en ebuild brug <c>emerge
 </pre>
 
 <p>
-Hvis du ikke kan lide pakker, som den vil installere brug <c>emerge --pretend 
+Hvis du ikke kan lide de pakker, som den vil installere brug <c>emerge --pretend 
 --verbose</c> for at se hvilke USE-flag, som er afkrydset, når man beslutter afhængigheder:
 </p>
 
