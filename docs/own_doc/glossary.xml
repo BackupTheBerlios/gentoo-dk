@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <?xml-stylesheet href="../xsl/guide.xsl" type="text/xsl"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.10 2004/11/20 13:09:05 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.11 2004/11/20 14:04:59 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "../dtd/guide.dtd">
 <guide>
@@ -300,6 +300,12 @@ Noget
 <th>EN</th>
 <th>DA</th>
 <th>Kommentar</th>
+</tr>
+
+<tr>
+<ti>fetch</ti>
+<ti>hente</ti>
+<ti></ti>
 </tr>
 
 </table>
