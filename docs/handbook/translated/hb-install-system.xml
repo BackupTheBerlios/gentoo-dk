@@ -1,0 +1,436 @@
+<!-- The content of this document is licensed under the CC-BY-SA license -->
+<!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
+
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-install-system.xml,v 1.1 2004/01/06 21:55:48 broeman Exp $ -->
+
+<sections>
+<section>
+<title>At skifte rod bibliotek (Chrooting)</title>
+<subsection>
+<title>Valgfrit: Valg af filspejle</title>
+<body>
+
+<p>
+Hvis du har startet op fra en Gentoo LiveCD, så er du i stand til at
+bruge <c>mirrorselect</c> til at opdatere <path>/etc/make.conf</path>
+så hurtige filspejle bliver brugt til både Portage og kildekode:
+</p>
+
+<pre caption="Vælg hurtige filspejle">
+# <i>mirrorselect -a -s4 -o &gt;&gt; /mnt/gentoo/etc/make.conf</i>
+</pre>
+
+<p>
+Hvis <c>mirrorselect</c> af en eller anden grund skulle fejle, så gå
+ikke i panik. Dette trin er 100% valgfrit. Hvis <c>mirrorselect</c>
+skulle fejle, vil standard værdierne være tilstrækkelige.
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>Kopiering af DNS information</title>
+<body>
+
+<p>
+Der mangler stadig en ting før vi skifter til det nye miljø, og det er
+at kopiere DNS informationerne i <path>/etc/resolv.conf</path>.
+Du skal gøre dette for at sikre, at netværket stadig virker efter
+skiftet til det nye miljø. <path>/etc/resolv.conf</path> indeholder
+navneserverne til dit netværk.
+</p>
+
+<pre caption="Kopiering af DNS information">
+# <i>cp /etc/resolv.conf /mnt/gentoo/etc/resolv.conf</i>
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: montering af /dev/</title>
+<body>
+
+<p>
+Knoppix brugere (og folk der installere Gentoo fra et installations
+medie der ikke bruger DevFS) skal nu bind-montere <path>/dev</path>
+strukturen.
+Hvis du bruger en af vore LiveCD'er så kan du springe over dette trin.
+</p>
+
+<pre caption="Bind-mountere /dev">
+# <i>mkdir /mnt/gentoo/dev</i>
+# <i>mount -o bind /dev /mnt/gentoo/dev</i>
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>Skift til det nye miljø</title>
+<body>
+
+<p>
+Nu hvor alle partitionerne er iniatiliseret og basis miljøet
+installeret, er det tid til at skifte til vores nye installations
+miljø, ved at lave et <c>rod skifte</c>. Det betyder at vi skifter fra
+det nuværende installations miljø (LiveCD eller andet installations
+medie) til dit installations system (nemlig de initialiserede partitioner).
+</p>
+
+<p>
+Denne rodskiftning gøres i tre skridt. Først vil vi ændre roden fra
+<path>/</path> (på installations mediet) til <path>/mnt/gentoo</path>
+(på dine partitioner) ved at bruge <c>chroot</c>. Derefter vil vi
+skabe et nyt miljø ved at bruge <c>env-update</c>, som hovedsageligt
+opretter miljø variable. Til sidst indlæser vi disse variable, ind i
+hukommelsen ved brug af <c>source</c>.
+</p>
+
+<pre caption = "Skifte til det nye miljø">
+# <i>chroot /mnt/gentoo /bin/bash</i>
+# <i>env-update</i>
+Regenerating /etc/ld.so.cache...
+# <i>source /etc/profile</i>
+</pre>
+
+<p>
+Tillykke! Du er nu inde i dit eget Gentoo Linux miljø.
+Selvfølgelig er det langt fra færdig, hvilket er derfor installationen
+stadig har nogle sektioner tilbage :-)
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: Opdatering af Portage</title>
+<body>
+
+<p>
+Hvis du <e>ikke>/e> bruger GRP, skal du downloade et nyligt snapshot af Portage fra Internettet.
+<c>emerge sync</c> gør dette for dig. GRP-brugere bør springe dette
+over og fortsætte med <uri link="#doc_chap1_sect6">Konfigurereing af
+USE variable</uri>.
+</p>
+
+<pre caption="Opdatering af Portage">
+# <i>emerge sync</i>
+</pre>
+
+<p>
+Hvis du bliver advaret om at det eksistere en ny version af Portage og
+at du skal opdatere Portage, kan du roligt ignorere det. Portage
+bliver opdateret for dig senere under installationen.
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>Konfigurerering af USE variable</title>
+<body>
+
+<p>
+<c>USE</c> er en af de mest kraftfulde variable Gentoo udbyder til
+dets brugere. Mange programmer kam kompileres med eller uden valgfri
+support af bestemte ting. For eksempel, kan nogle programmer
+kompileres med gtk-support, eller med qt-support. Andre kan
+compilleres med eller uden SSL support. Nogle programmer kan endda
+kompileres med framebuffer support (svgalib) istedet for X11 support
+(X-server).
+</p>
+
+<p>
+De fleste distributioner kompilere deres pakker med support for så
+meget som mulligt, hvilket forøger størelsen og start tiden på
+programmerne, for ikke at tale om de enorme mængder af afhængigheder.
+Med Gentoo kan du selv definere hvilke muligheder dine pakker skal
+kompileres med. Det er her <c>USE</c> kommer ind i spillet.
+</p>
+
+<p>
+I <c>USE</c> variablen definere du nøgleord som bliver lagt oven på
+kompilerings parametrene. For eksempel, <e>ssl</e> vil kompilere
+ssl-support ind i de programmer der understøtter det. <e>-X</e> vil
+fjerne X-server support (bemærk minus tenget forrest).<e>gnome gtk
+-kde -qt</e> vil kompilere dine programmer med gnome (og gtk) support,
+men ikke med kde (og qt) support, hvilket gør dit system fuldtud
+tweaket til GNOME.
+</p>
+
+<p>
+Standard <c>USE</c> indstillingerne er placeret i
+<path>/etc/make.profile/make.defaults</path>.
+Hvad du placere i <path>/etc/make.conf</path> bliver udregnet mod
+disse standard værdier. Hvis du lægger noget til <c>USE</c>
+indstillingen, bliver den lagt til standard listen. Hvis du fjerner
+noget fra <c>USE</c> indstillingen (ved at placere et minus tegn foran
+det) så bliver det fjernet fra standard listen (hvis det på noget
+tidspunkt var til stede). Rediger <e>ALDRIG</e> noget i
+<path>/etc/make.profile</path> biblioteket; det bliver overskrevet når
+du opdatere Portage!
+</p>
+
+<p>
+En fuld beskrivelse af <c>USE</c> kan findes i den anden halvdel af
+Gentoo Håndbogen, <uri link="?part=2&amp;chap=1">Kapitel 1: USE
+flag</uri>.
+Som et eksempel viser vi en <c>USE</c> indstilling til et KDE baseret
+system med DVD, ALSA og CD Brændings understøttelse:
+</p>
+
+<pre caption="Åbning af /etc/make.conf">
+# <i>nano -w /etc/make.conf</i>
+</pre>
+
+<pre caption="USE indstilling">
+USE="-gtk -gnome qt kde dvd alsa cdr"
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: Brug af Distribueret Kompilering</title>
+<body>
+
+<p>
+Hvis du er interesseret i at bruge en samling af systemer til at
+hjælpe dig med kompilering af dit system, bør du overveje at tage et
+kig på vores <uri link="/doc/da/distcc.xml">DistCC Guide</uri>.
+Ved at bruge <c>distcc</c> kan du bruge processor kraften af flere
+systemer til at hjælpe dig med installationen.
+</p>
+
+</body>
+</subsection>
+</section>
+<section>
+<title>Forskelle mellem Stage1, Stage2, og Stage3</title>
+<body>
+
+<p>
+Sæt dig ned og tænk over de tidligere trin. Vi bad dig vælge
+<e>stage1</e>, <e>stage2</e> eller <e>stage3</e> og advarede dig, om
+at dit valg ville være vigtigt for de videre installations trin.
+Her er det første sted hvor dit valg definere de næste trin.
+</p>
+
+<ul>
+<li>
+  Hvis du valgte <e>stage1</e>, så skal du følge <e>begge</e> trin i
+  dette kapitel (startende med <uri link="#doc_chap3">Fra Stage1 til Stage2</uri>)
+</li>
+<li>
+  Hvis du valgte <e>stage2</e> skal du kun springe over det første
+  trin og straks starte med det andet trin (<uri
+  link="#doc_chap3">Fra Stage2 til Stage3</uri>)
+</li>
+<li>
+  Hvis du valgte <e>stage3</e> (enten med eller uden GRP) så kan du
+  springe over begge trin og gå videre til den næste sektion: <uri
+  link="?part=1&amp;chap=7">Konfigurering af Kernen</uri>
+</li>
+</ul>
+
+</body>
+</section>
+<section>
+<title>Fra Stage1 til Stage2</title>
+<subsection>
+<title>Introduktion til Bootstrapping</title>
+<body>
+
+<p>
+Så du vil compile alting fra bunden? jamen okay så :-)
+</p>
+
+<p>
+I dette trin vil vi <e>bootstrappe</e> dit Gentoo system.
+Dette tager lang tid, men resultatet er et system som er blevet
+optimeret fra bunden og op, til din spefikke maskine og dine behov.
+</p>
+
+<p>
+At <e>bootstrappe</e> betyder at man bygger GNU C bibliotektet, GNU
+Compiler Collection og flere andre nøgle system programmer. GNU
+Compiler Collectionen skal enddag bygges to gange: Først med den
+generelle kompiler, som vi udbyder, og en anden gang med den compiler
+du lige har bygget.
+</p>
+
+<p>
+Før vi starter med at bootstrappe, lister vi lige et par
+valgmuligheder du måske eller måske ikke vil have med. Hvis du ikke
+gider at læse dem kan du fortsætte med <uri link="#doc_chap3_sect4">At
+bootstrappe systemet</uri>.
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: Formindsk compile tiden</title>
+<body>
+
+<p>
+Hvis du vil øge hastigheden af bootstrap processen, kan du
+midlertidigt fjerne java support. Dette betyder at GNU Compiler
+Collectionen og GNU C biblioteket vil blive compilet uden java support
+(Dette formindsker compile tiden væsentligt). Selvom det betyder at du
+ikke har GNU Java Compileren (<c>gcj</c>) betyder det <e>ikke</e> at
+dit system ikke vil være i stand til at bruge java applets og andet
+java relaterede materiale.
+</p>
+
+<p>
+For at fravælge java support midlertidigt, skal du definere
+<e>USE="-java"</e> før du kører bootstrap scriptet.
+</p>
+
+<pre caption = "Fravælgelse af java support">
+# <i>export USE="-java"</i>
+</pre>
+
+<p>
+Glem endelig ikke at fjerne variablen efter du har bootstrappet:
+</p>
+
+<pre caption="Fjern USE">
+# <i>unset USE</i>
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: Download af kildekoden først</title>
+<body>
+
+<p>
+Hvis du ikke har kopieret alt kildekoden til dit system tidligere, så
+vil bootstrap scriptet automatisk downloade alle de nødvendige filer.
+Dette virker selvfølgelig kun hvis dit netværk virker :-)
+Hvis du vil hente kildekoden først og så senere bootstrappe system
+(f.eks. fordi du ikke vil have din internet forbindelse åben under
+kompilering) så kan du bruge <e>-f</e> (bogstavet f for det engelske
+fetch) parametren på bootstrap
+scriptet, det vil resultere i at den henter alt kildekoden for dig.
+</p>
+
+<pre caption = "Download af den nødvendige kildekode">
+# <i>cd /usr/portage</i>
+# <i>scripts/bootstrap.sh -f</i>
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>At bootstrappe systemet</title>
+<body>
+
+<p>
+Okay så, tag dit keyboard og tryk den næste kommando ind for at starte
+bootstrap processen. Gå derefter et eller andet sted hen og underhold
+dig selv (du kan f.eks. irritere Gentoo udviklerne på #gentoo), fordi
+det her kommer til at tage en god del tid at blive færdig med.
+</p>
+
+<pre caption = "At bootstrappe systemet">
+# <i>cd /usr/portage</i>
+# <i>scripts/bootstrap.sh</i>
+</pre>
+
+<p>
+Hvis du tidligere har ændret <c>CHOST</c> indstillingen i
+<path>/etc/make.conf</path> så skal du reinitialisere nogle variable
+for at få <c>gcc</c> til at arbejde hurtigt:
+
+<pre caption="Reinitialisering af miljø variable">
+# <i>source /etc/profile</i>
+</pre>
+
+<p>
+Forsæt nu med det næste trin, <uri link="#doc_chap4">Fra Stage2 til Stage3</uri>.
+</p>
+
+</body>
+</subsection>
+</section>
+<section>
+<title>Fra Stage2 til Stage3</title>
+<subsection>
+<title>Introduktion</title>
+<body>
+
+<p>
+Hvis du læser denne sektion, så har du et bootstrappet system (enten
+fordi du selv har bootstrappet tidligere, eller fordi du bruger en
+<e>stage2</e>).
+Du skal nu til at bygge alle system pakkerne.
+</p>
+
+<p>
+<e>Alle</e> system pakkerne? Nej ikke rigtig.
+I dette trin bygger du de system pakker, hvor der ikke er nogle
+alternativer til, og som skal bruges til et virkende system.
+Nogle system pakker har flere alternative (så som system loggere) og
+eftersom Gentoo, handler om valg, så vil vi ikke tvinge en type ned
+over hovedet på dig.
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: Oversigt over hvad der bliver lavet</title>
+<body>
+
+<p>
+Hvis du vil vide hvilke pakker der vil blive installere så kan du køre
+<c>emerge --pretend system</c>. 
+Dette vil vise en lisse med allle pakker der vil blive kompileret.
+Eftersom den liste er rimelig stor skal du nok bruge en pager som
+f.eks. <c>less</c> eller <c>more</c> til at gå op og ned genne listen.
+</p>
+
+<pre caption = "Vis hvad 'emerge system' vil gøre">
+# <i>emerge --pretend system | less</i>
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>Valgfrit: Downloading af kildekode</title>
+<body>
+
+<p>
+Hvis du vil have <c>emerge</c> til at downloade kildekoden før du
+fortsætter (f.eks. fordi du ikke vil have internet forbindelsen åben
+mens du kompilere alle pakkerne) så kan du bruge <e>--fetchonly</e>
+parametren til <c>emerge</c>, som vil hente alt kildekode for dig.
+</p>
+
+<pre caption = "Hentning af kildekoden">
+# <i>emerge --fetchonly system</i>
+</pre>
+
+</body>
+</subsection>
+<subsection>
+<title>Opbygning af systemet</title>
+<body>
+
+<p>
+For at starte opbygnings processen af system, skal du køre <c>emerge
+syste</c>.
+Dette trin tager forholdsvis lang tid at færdiggøre så find på noget
+andet at lave end at stirre ind i skærmen.
+</p>
+
+<pre caption = "Opbygning af systemet">
+# <i>emerge system</i>
+</pre>
+
+<p>
+Når opbygningen er færdig, skal du forsætte med <uri
+link="?part=1&amp;chap=7">Konfigurering af kernen</uri>.
+</p>
+
+</body>
+</subsection>
+</section>
+</sections>
