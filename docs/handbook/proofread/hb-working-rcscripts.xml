@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-working-rcscripts.xml,v 1.1 2004/02/22 21:44:22 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-rcscripts.xml,v 1.1 2004/02/23 19:11:07 aaby Exp $ -->
 
 <sections>
 <section>
@@ -15,7 +15,7 @@
 
 <p>
 Når du starter dit system, vil du ligge mærke til en del tekst, som flyder forbi. Hvis du
-virkelig ligger mærke til det, vil nu notere at denne tekst er den samme hver gang du genstarter
+virkelig ligger mærke til det, vil nu bemærke at denne tekst er den samme hver gang du genstarter
 dit system. Sekvensen af alle disse aktioner er kaldet <e>opstartsekvensen</e>
 og er (mere eller mindre) statisk defineret.
 </p>
@@ -24,7 +24,7 @@ og er (mere eller mindre) statisk defineret.
 Først vil din boot-loader hente kerne-billedfilen, som du har defineret i
 boot-loader opsætningen ind i hukommelsen efter den fortæller processoren til at køre
 kernen. Når kernen er hentet og kører, vil den initialisere alle kerne-specifikke
-strukturer og opgaver, og starter <c>init</c>-processen.
+strukturer og opgaver, og starte <c>init</c>-processen.
 </p>
 
 <p>
@@ -50,8 +50,8 @@ ved at køre <c>login</c>.
 
 <p>
 <c>init</c> starter ikke kun scripts i <path>/etc/init.d</path>
-tilfældigt. Endda, den kører ikke alle scripts i <path>/etc/init.d</path>,
-kun dem den er fortalt at skulle køre. Den beslutter hvilke scripts, der skal startes, ved at
+tilfældigt. Den kører endda ikke alle scripts i <path>/etc/init.d</path>,
+kun dem den er blevet bedt om køre. Den beslutter hvilke scripts, der skal startes, ved at
 kigge i <path>/etc/runlevels</path>.
 </p>
 
@@ -65,10 +65,11 @@ en anden én.
 
 <p>
 Når alle <path>/etc/runlevels/boot</path> refererede scripts er kørt,
-fortsætter <c>init</c> med at køre de scripts, som har et symbolsk link til dem
-i <path>/etc/runlevels/default</path>. Igen, den vil bruge den alfabetiske
-orden for at beslutte hvilket script, den skal køre først, undtagen et script har 
-afhængighedsinformationer i den, i hvilken tilfælde rækkefølgen er ændret til at levere en valid 
+fortsætter <c>init</c> med at køre de scripts, som har et symbolsk
+link til dem i <path>/etc/runlevels/default</path>. Igen, den vil
+bruge den alfabetiske orden for at beslutte hvilket script, den skal
+køre først, undtagen hvis et script har afhængighedsinformationer i
+den, i hvilket tilfælde rækkefølgen er ændret til at levere en gyldig
 opstartsekvens.
 </p>
 
@@ -80,12 +81,12 @@ opstartsekvens.
 
 <p>
 Selvfølgelig vil <c>init</c> ikke beslutte alt selv. Den behøver en
-opsætningsfil, som specificerer, hvilke aktiviteter som skal tages. Denne
+opsætningsfil, som specificerer, hvilke aktiviteter der skal udføres. Denne
 opsætningsfil er <path>/etc/inittab</path>.
 </p>
 
 <p>
-Hvis du husker at bootsekvensen, som vi lige har forklaret dig, vil du
+Hvis du husker bootsekvensen, som vi lige har forklaret dig, vil du
 huske at <c>init</c>s første aktivitet er at mounte alle filsystemer. Dette er
 defineret i den følgende linje fra <path>/etc/inittab</path>:
 </p>
@@ -118,7 +119,7 @@ givet til <c>rc</c> (<e>boot</e>) er det samme, som underbiblioteket af
 
 <p>
 Nu vil <c>init</c> tjekke dens opsætningsfil for at se hvad <e>runlevel</e>
-burde køre. For at beslutte dette, læser den følgende linje fra
+der bør køre. For at beslutte dette, læser den følgende linje fra
 <path>/etc/inittab</path>:
 </p>
 
@@ -127,8 +128,8 @@ id:3:initdefault:
 </pre>
 
 <p>
-I dette tilfælde (som hoveddelen af Gentoo-brugere vil bruge), <e>runlevel</e>'ens
-id er 3. Ved at bruge denne information, tjekker <c>init</c> hvad den skal køre for at starte
+I dette tilfælde (som hoveddelen af Gentoo-brugere vil bruge), er <e>runlevel</e>'ens
+id 3. Ved at bruge denne information, tjekker <c>init</c> hvad den skal køre for at starte
 <e>runlevel 3</e>:
 </p>
 
@@ -143,14 +144,14 @@ l6:6:wait:/sbin/rc reboot
 </pre>
 
 <p>
-Linjen, som definerer level 3, igen, bruger <c>rc</c>-scriptet til at starte
-tjenesterne (nu med parameteren <e>default</e>). Igen, noter at parameteren af
+Linjen, som definerer level 3, bruger <c>rc</c>-scriptet til at starte
+tjenesterne (nu med parameteren <e>default</e>). Noter at parameteren af
 <c>rc</c> er den samme, som underbiblioteket i <path>/etc/runlevels</path>.
 </p>
 
 <p>
 Når <c>rc</c> er færdig, beslutter <c>init</c> hvilke virtuelle konsoler, den bør
-aktivere og hvilke kommandoer, som den den behøver at køre ved hver konsol:
+aktiveres og hvilke kommandoer den behøver at køre ved hver konsol:
 </p>
 
 <pre caption="Virtuelle konsolers definitioner">
@@ -171,14 +172,14 @@ c6:12345:respawn:/sbin/agetty 38400 tty6 linux
 
 <p>
 Du har set at <c>init</c> bruger et nummeringsskema for at beslutte hvilke
-<e>runlevel</e> som den skal aktivere. En <e>runlevel</e> er en tilstand, i hvilket
+<e>runlevel</e>'er den skal aktivere. En <e>runlevel</e> er en tilstand, i hvilket
 dit system kører og indeholder en samling af scripts (runlevel-scripts eller
 <e>initscripts</e>), som skal være kørt, når du indtræder eller forlader en runlevel.
 </p>
 
 <p>
 I Gentoo er der syv runlevels defineret: tre interne runlevels, og fire
-brugerdefineret runlevels. De interne runlevels er kaldet <e>sysinit</e>,
+brugerdefinerede runlevels. De interne runlevels er kaldet <e>sysinit</e>,
 <e>shutdown</e> og <e>reboot</e> og gør præcist som deres navne siger:
 initialisere systemer, slukker systemet og genstarter systemet.
 </p>
@@ -224,7 +225,7 @@ er ladt uberørt.
 </note>
 
 <p>
-Hvis du vil stoppe en tjeneste, men ikke tjenester, som afhænger af den, kan du
+Hvis du vil stoppe en tjeneste, men ikke tjenester der afhænger af den, kan du
 bruge <c>pause</c> parameteren:
 </p>
 
@@ -252,7 +253,7 @@ om den gør det, kan du tilbagestille statusinformationen til "stoppet" med
 </pre>
 
 <p>
-For at spørge hvilke afhængigheder som tjenesterne har, kan du bruge <c>iuse</c> eller
+For at spørge hvilke afhængigheder tjenesterne har, kan du bruge <c>iuse</c> eller
 <c>ineed</c>. Med <c>ineed</c> kan du se hvilke tjenester, som er virkelige
 nødvendige for den korrekte funktionsbestemte metode af en tjeneste. <c>iuse</c> på den anden
 side, viser at tjenester, som er brugt af tjenesten, men ikke nødvendigvis
@@ -377,7 +378,7 @@ APACHE2_OPTS="-D PHP4"
 <p>
 Sådan en opsætningsfil inderholder variabler og kun variabler (lige som
 <path>/etc/make.conf</path>), som gør det meget let at opsætte tjenester. Det
-tillader os at levere flere informationer omkring de variabler (som kommentarer).
+tillader os at levere flere informationer omkring variablerne (som kommentarer).
 </p>
 
 </body>
@@ -446,13 +447,13 @@ andre sektioner er valgbare.
 <p>
 Der er to afhængigheder, som du kan definere: <c>use</c> og <c>need</c>. Som vi
 har fortalt før, er <c>need</c>-afhængigheden mere strikt end
-<c>use</c>-afhængigheden. Ved at følge denne afhængighedstype, taster tjenesten, som
-du behøver, eller en <e>virtual</e>-afhængighed.
+<c>use</c>-afhængigheden. Ved at følge denne afhængighedstype, får du
+den tjeneste du behøver, eller den <e>virtuelle</e>-afhængighed.
 </p>
 
 <p>
-En <e>virtual</e> afhængighed er en afhængighed, som en tjeneste leverer, men at den
-ikke kun er leveret af denne tjeneste. Dit init-script kan være afhængig af en systemlogning,
+En <e>virtuel</e> afhængighed er en afhængighed, som en tjeneste leverer, men den
+ikke kun er leveret af denne tjeneste. Dit init-script kan være afhængigt af en systemlogning,
 men der er mange systemloggere at vælge imellem (metalogd, syslog-ng,
 sysklogd, ...). Da du ikke kan <c>mangle</c> enhver af dem (intet normalt
 system har alle disse systemloggere installeret og kørende) vil sørge for at 
@@ -555,7 +556,7 @@ start() {
 
 <p>
 Hvis ud vil have flere eksempler af <c>start()</c>-funktionen, læs venligt kildekoden
-af de tilgængelige init-scripts i din <path>/etc/init.d</path> bibliotek.
+til de tilgængelige init-scripts i din <path>/etc/init.d</path> bibliotek.
 Som for <c>start-stop-daemon</c> er der en udemærket man-side tilrådighed, hvis du
 behøver flere informationer:
 </p>
@@ -573,12 +574,12 @@ udfylde disse funktioner selv, hvis du bruger <c>start-stop-daemon</c>.
 </body>
 </subsection>
 <subsection>
-<title>Tilføje skræddersyet indstillinger</title>
+<title>Tilføje skræddersyede indstillinger</title>
 <body>
 
 <p>
 Hvis du vil have dit init-script til at understøtte flere indstillinger, end dem vi allerede
-har vist dig, burde du tilføje denne indstillinger i <c>opts</c>-variabelen, og
+har vist dig, bør du tilføje denne indstillinger i <c>opts</c>-variabelen, og
 oprette en funktion med samme navn som indstillingen. F.eks. for at understøtte en
 valgmulighed kaldet <c>restartdelay</c>:
 </p>
