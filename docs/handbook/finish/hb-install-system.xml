@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.12 2004/03/08 21:46:15 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.13 2004/03/28 10:45:56 aaby Exp $ -->
 
 <sections>
 <section>
@@ -255,9 +255,7 @@ du lige har bygget.
 
 <p>
 Før vi starter med at bootstrappe, lister vi lige et par
-valgmuligheder du måske eller måske ikke vil have med. Hvis du ikke
-gider at læse dem, kan du fortsætte med <uri link="#doc_chap3_sect4">At
-bootstrappe systemet</uri>.
+valgmuligheder du måske eller måske ikke vil have med. 
 </p>
 
 </body>
