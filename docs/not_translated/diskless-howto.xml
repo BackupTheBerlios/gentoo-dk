@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/diskless-howto.xml,v 1.2 2004/01/07 22:29:58 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/diskless-howto.xml,v 1.3 2004/01/08 21:42:52 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/diskless-howto.xml">
@@ -348,7 +348,7 @@ De fleste af disse "stumper" skulle være forståeligt for dig; Stumper som
 <path>/dev</path> eller <path>/proc</path> vil være befolket, når slaven starter,
 de andre vil blive mountet senere. Du skulle også ændre
 <path>/diskless/192.168.1.21/etc/hostname</path>-filen til at vise værtnavnet til
-slave. Binære filer, biblioteker (libs) og andre filer vil blive befolket senere i
+slave. Binære filer, underprogrammer (libs) og andre filer vil blive befolket senere i
 denne HOWTO lige før du vil prøve at starte slave.
 </p>
 
@@ -358,42 +358,42 @@ denne HOWTO lige før du vil prøve at starte slave.
 
 
 <chapter>
-<title>Configuring the DHCP server</title>
+<title>Opsætning af DHCP-server</title>
 <section>
-<title>About the DHCP server</title>
+<title>Om DHCP-serveren</title>
 <body>
 
 <p>
-DHCP stands for Dynamic Host Configuration Protocol.  The DHCP server is the 
-first computer the slaves will communicate with when they PXE boot.  The 
-primary purpose of the DHCP server is to assign IP addresses.  The DHCP server 
-can assign IP addresses based on hosts ethernet MAC addresses.  Once the slave 
-has an IP address, the DHCP server will tell the slave where to get its 
-initial file system and kernel.
+DHCP står for 'Dynamic Host Configuration Protocol'.  DHCP-serveren er den
+første computer, som slaverne kommunikerer med, når de starter via PXE.  Den
+primære hensigt af DHCP-serveren er at tildele IP-adresser.  DHCP-serveren
+kan tildele IP-adresser, baseret på værtens MAC-adresse.  Når en slave
+har en IP-adresse, vil DHCP-serveren fortælle slaven, hvor den skal få fat
+i det indledende filsystem og kerne.
 </p>
 
 </body>
 </section>
 <section>
-<title>Before you get started</title>
+<title>Før du starter</title>
 <body>
 
 <p>
-There are several things you will want to make sure are working before you 
-begin.  First check your network connectivity:
+Der er flere forskellige ting, som du burde vær sikker på at virker, før du
+begynder. Tjek først din netværksforbindelse:
 </p>
 
-<pre caption="Checking networking configurations">
+<pre caption="Tjek af netværksindstillinger">
 # <i>ifconfig eth0 enable multicast</i>
 # <i>ifconfig -a</i>
 </pre>
 
 <p>
-You will want to make sure you have have an <e>eth0</e> device running.  It 
-should look something like this:
+Du burde også være sikker på at have en <e>eth0</e>-enhed kørende.  Den
+burde se ud som dette her:
 </p>
 
-<pre caption="A properly working eth0 device">
+<pre caption="En passende eth0-enhed, som virker">
 eth0      Link encap:Ethernet  HWaddr 00:E0:83:16:2F:D6
           inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
@@ -405,53 +405,53 @@ eth0      Link encap:Ethernet  HWaddr 00:E0:83:16:2F:D6
 </pre>
 
 <p>
-It's important that is says <e>MULTICAST</e>, if doesn't then you will have to
-recompile your kernel to include multicast support.
+Det er vigtigt, at den siger <e>MULTICAST</e>, og hvis den ikke gør dette, så bliver du nødt til at
+gen-kompilere din kerne til at inkludere multicast-understøttelse.
 </p>
 
 </body>
 </section>
 <section>
-<title>Installing the DHCP server</title>
+<title>Installation af DHCP-serveren</title>
 <body>
 
 <p>
-If your network does not already have a DHCP server installed  you will need 
-to install one:
+Hvis dit netværk ikke allerede har en DHCP-server installeret, så vil du få brug for
+at installere én:
 </p>
 
-<pre caption="Installing the dhcp server">
+<pre caption="Installation af dhcp-server">
 # <i>emerge dhcp</i>
 </pre>
 
 <p>
-If your network already has a DHCP server installed you will have to edit the 
-configuration file to get the PXE boot to function correctly.
+Hvis dit netværk allerede har en DHCP-server installeret, så skal du redigere
+opsætningsfilen for at få PXE-opstart til at virke korrekt.
 </p>
 
 </body>
 </section>
 <section>
-<title>Configuring the DHCP server</title>
+<title>Opsætning af DHCP-serveren</title>
 <body>
 
 <p>
-There is only one configuration file you will have to edit before starting the
-DHCP server: <path>/etc/dhcp/dhcpd.conf</path>.  Copy and edit the provided
-sample file:
+Der er kun én opsætningsfil, som du skal redigere før du starter
+DHCP-serveren: <path>/etc/dhcp/dhcpd.conf</path>.  Kopiér og redigér den leverede
+smagsprøve-fil:
 </p>
 
-<pre caption="Editing the dhcp server's configuration file">
+<pre caption="Redigering af dhcp-serverens opsætningsfil">
 # <i>cp /etc/dhcp/dhcpd.conf.sample /etc/dhcp/dhcpd.conf</i>
 # <i>nano -w /etc/dhcp/dhcpd.conf</i>
 </pre>
 
 <p>
-The general layout of the file is set up in an indented fashion and looks 
-like this:
+Det generelle layout af filen er indstillet med hensigt og ser
+ud som følgende:
 </p>
 
-<pre caption="Sample dhcpd.conf layout">
+<pre caption="Smagsprøve af dhcpd.conf layout">
 <comment># global options here</comment>
 ddns-update-style none;
 shared-network LOCAL-NET {
@@ -469,25 +469,25 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 </pre>
 
 <p>
-The <c>shared-network</c> block is optional and should be used for IPs you want 
-to assign that belong to the same network topology.  At least one <c>subnet</c>
-must be declared and the optional <c>group</c> block allows you to group options
-between items. A good example of <path>dhcpd.conf</path> looks like this:
+<c>shared-network</c>-blokken valgfrit og skulle blive brugt til IPer, som du ønsker
+at være tildelt, at tilhøre de samme netværkssteder.  Mindst en af <c>subnet</c>
+skal være erklæret og den valgfrie <c>group</c>-blok tillader dig at gruppere opsætninger
+imellem punkter. Et godt eksempel på <path>dhcpd.conf</path> ser ud som følgende:
 </p>
 
-<pre caption="Sample dhcpd.conf">
+<pre caption="Smagsprøve af dhcpd.conf">
 # DHCP configuration file for DHCP ISC 3.0
  
 ddns-update-style none;
  
-# Definition of PXE-specific options
-# Code 1: Multicast IP address of boot file server
-# Code 2: UDP port that client should monitor for MTFTP responses
-# Code 3: UDP port that MTFTP servers are using to listen for MTFTP requests
-# Code 4: Number of seconds a client must listen for activity before trying
-#         to start a new MTFTP transfer
-# Code 5: Number of seconds a client must listen before trying to restart
-#         a MTFTP transfer
+# Definition af PXE-specifikke indstillinger
+# Code 1: Multicast IP-adresse af boot-filserveren
+# Code 2: UDP-port, som en klient burde overvåge til MTFTP-responser
+# Code 3: UDP-port, som MTFTP-servere bruger til at lytte for MTFTP-requests
+# Code 4: Sekunder, som en klient skal lytte til en aktivitet, før den prøver
+#         at starte en ny MTFTP-overførsel
+# Code 5: Sekunder, som en klient skal lytte til, før den prøver at genstarte
+#         en MTFTP-overførsel
  
 option space PXE;
 option PXE.mtftp-ip               code 1 = ip-address;
@@ -505,112 +505,112 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
     option vendor-class-identifier "PXEClient";
     vendor-option-space PXE;
  
-    # At least one of the vendor-specific PXE options must be set in
-    # order for the client boot ROMs to realize that we are a PXE-compliant
-    # server.  We set the MCAST IP address to 0.0.0.0 to tell the boot ROM
-    # that we can't provide multicast TFTP (address 0.0.0.0 means no
-    # address).
+    # Mindst én af de salg-specifikke PXE-indstillinger skal være indstillet
+    # for at klients opstartsROM kan forstå at vi er en PXE-understøttet
+    # server. Vi kan indstille MCAST IP-adressen til 0.0.0.0 for at fortælle
+    # opstartsROM at vi ikke kan levere multicast-TFTP (adressen 0.0.0.0 betyder
+    # ingen adresse).
  
     option PXE.mtftp-ip 0.0.0.0;
  
-    # This is the name of the file the boot ROMs should download.
+    # Dette er navnet på filen, som opstartsROM burde hente.
     filename "pxelinux.0";
-    # This is the name of the server they should get it from.
-    <comment># Use the master's IP</comment>
+    # Dette er navnet på den server, som vi skal få det fra.
+    <comment># Brug masters IP</comment>
     next-server 192.168.1.1;
   }
  
   pool {
     max-lease-time 86400;
     default-lease-time 86400;
-    <comment># This prevents unlisted machines from getting an IP</comment>
+    <comment># Dette forhinder at ulistede maskiner kan få en IP</comment>
     deny unknown clients;
   }
  
   host slave21 {
-       <comment># Use your slave's MAC address</comment>
+       <comment># Brug slaves MAC-adresse</comment>
        hardware ethernet                00:40:63:C2:CA:C9;
-       <comment># Give your slave a static IP</comment>
+       <comment># Giv slave en statisk IP</comment>
        fixed-address                    192.168.1.21;
        server-name                      "master";
-       <comment># Use your gateway IP, if required</comment>
+       <comment># Brug din gateways IP, hvis krævet</comment>
        option routers                   192.168.1.1;
-       <comment># Use your DNS IP, if required</comment>
+       <comment># Brug din DNSs IP, hvis krævet</comment>
        option domain-name-servers       192.168.1.1;
        option domain-name               "mydomain.com";
-       <comment># Use your slave hostname</comment>
+       <comment># Brut slaves værtsnavn</comment>
        option host-name                 "slave21";
   }
 }
 </pre>
 
 <p>
-The IP address after <c>next-server</c> will be asked for the specified 
-<c>filename</c>. This IP address should be the IP of the tftp server, usually 
-the same as the master's IP address.  The <c>filename</c> is relative to the
-<path>/diskless</path> directory (this is due to the tftp server specific 
-options which will be covered later).  Inside the <c>host</c> block, the 
-<c>hardware ethernet</c> option specifies a MAC address, and 
-<c>fixed-address</c> assigns a fixed IP address to that particular MAC address.
-The <c>host-name</c> option is probably a good idea to include and is just the 
-hostname of a particular slave.  There is a pretty good man page on 
-<path>dhcpd.conf</path> with options that are beyond the scope of this HOWTO.
-You can read it by typing:
+IP-adressen efter <c>next-server</c> vil blive spurgt for en specificeret
+<c>filename</c> (filnavn). Denne IP-adresse skal være IPen på TFTP-serveren, som normalt er
+den samme, som masters IP-adresse.  <c>filename</c> er relativ til
+<path>/diskless</path>-biblioteket (dette er til TFTP-serverens specifikke
+indstillinger, som vil blive dækket senere).  Inde i <c>host</c>-blokken specificerer 
+<c>hardware ethernet</c>-indstillingen en MAC-adresse, og 
+<c>fixed-address</c> tildeler en fast IP-adresse til en specifik MAC-adresse.
+<c>host-name</c>-indstillingen er sikkert en god idé at inkludere og er bare
+værtsnavnet på en specifik slave.  Der er en pæn god man-page om 
+<path>dhcpd.conf</path> med instillinger udover omfanget af denne HOWTO.
+Du kan læse den, ved at taste:
 </p>
 
-<pre caption="Viewing the man pages for dhcpd.conf">
+<pre caption="Læsning af man-pages for dhcpd.conf">
 # <i>man dhcpd.conf</i>
 </pre>
 
 </body>
 </section>
 <section>
-<title>Starting the DHCP server</title>
+<title>Start af DHCP-serveren</title>
 <body>
 
 <p>
-Before you start the dhcp initialisation script edit the 
-<path>/etc/conf.d/dhcp</path> file so that it looks something like 
-this:
+Før du starter DHCPs initialiseringsscript, redigér
+<path>/etc/conf.d/dhcp</path>-filen, så at den ser ud som dette
+her:
 </p>
 
-<pre caption="Sample /etc/conf.d/dhcp">
+<pre caption="Smagsprøve af /etc/conf.d/dhcp">
 IFACE="eth0"
-<comment># insert any other options needed</comment>
+<comment># indsæt de andre indstillinger, som er nødvendige</comment>
 DHCPD_OPTS="-d"
 </pre>
 
 <p>
-The -d flag is for verbose debugging. The <c>IFACE</c> variable is the device 
-you wish to run your DHCP server on, in our case <c>eth0</c>. Adding more 
-arguments to the <c>IFACE</c> variable can be useful for a complex network 
-topology with multiple Ethernet cards. To start the dhcp server type:  
+-d flaget er til verbose debugging. <c>IFACE</c>-variablen er enheden, som
+du ønsker at køre din DHCP-server på, i dette tilfælde <c>eth0</c>. Tilføjelser af flere
+punkter til <c>IFACE</c>-variablen kan være brugbart til et komplekse netværkssteder,
+med flere netværkskorte. For at starte DHCP-serveren, tast:  
 </p>
 
-<pre caption="Starting the dhcp server on the master">
+<pre caption="Start af DHCP-server på master">
 # <i>/etc/init.d/dhcp start</i>
 </pre>
 
 <p>
-To add the dhcp server to your start-up scripts type:
+For at tilføje DHCP-serveren til dit opstartsscript, tast:
 </p>
 
-<pre caption="Adding the dhcp server to the master's default run level">
+<pre caption="Tilføjelse af DHCP-server til masters standard runlevel">
 # <i>rc-update add dhcp default</i>
 </pre>
 
 </body>
 </section>
 <section>
-<title>Troubleshooting the DHCP server</title>
+<title>Fejlfinding af DHCP-server</title>
 <body>
 
 <p>
-To see if a node boots you can take a look at 
-<path>/var/log/daemon.log</path>.  If the node successfully boots the <path>daemon.log</path> file should look like this:
+For at se at noden starter, kan du tage et kig på
+<path>/var/log/daemon.log</path>.  Hvis denne node starter med success, vil <path>daemon.log</path>-filen se ud som dette:
 </p>
 
-<pre caption="Sample dhcp log file">
+<pre caption="Smagsprøve af DHCPs logfil">
 DHCPDISCOVER from 00:00:00:00:00:00 via eth0
 DHCPOFFER on 192.168.1.21 to 00:00:00:00:00:00 via eth0
 DHCPREQUEST for 192.168.1.21 from 00:00:00:00:00:00 via eth0
@@ -618,24 +618,24 @@ DHCPACK on 192.168.1.21 to 00:00:00:00:00:00 via eth0
 </pre>
 
 <note>
-This log file can also help you discover the slaves' MAC addresses.
+Denne logfil vil også hjælpe dig med at finde slavernes MAC-adresser.
 </note>
 
 <p>
-If you get the following message it probably means there is something wrong 
-in the configuration file but that the DHCP server is broadcasting correctly.
+Hvis du får følgende besked, er det sikkert fordi at der er noget galt
+med opsætningsfilen, men at DHCP-serveren stadigvæk sender korrekt.
 </p>
 
-<pre caption="Sample dhpc server error">
+<pre caption="Smagsprøve af en DHCP-serverfejl">
 no free leases on subnet LOCAL-NET
 </pre>
 
 <p>
-Every time you change the configuration file you must restart the DHCP server.
-To restart the server type:
+Hver gang at du ændrer opsætningsfilen, skal du genstarte DHCP-serveren.
+For at genstarte serveren, tast:
 </p>
 
-<pre caption="Restarting the dhcp server on the master">
+<pre caption="Genstart af DHCP-server på master">
 # <i>/etc/init.d/dhcpd restart</i>
 </pre>
 
@@ -644,91 +644,91 @@ To restart the server type:
 </chapter>
 
 <chapter>
-<title>Configuring the TFTP server and PXE Linux Bootloader</title>
+<title>Opsætning af TFTP-server og PXE Linux boot-loader</title>
 <section>
-<title>About the TFTP server</title>
+<title>om TFTP-serveren</title>
 <body>
 
 <p>
-TFTP stands for Trivial File Transfer Protocol.  The TFTP server is going to 
-supply the slaves with a kernel and an initial filesystem.  All of the 
-slave kernels and filesystems will be stored on the TFTP server, so it's 
-probably a good idea to make the master the TFTP server.
+TFTP står for 'Trivial File Transfer Protocol'.  TFTP-serveren vil
+levere slave med en kerne, og et indledende filsystem.  Alle 
+slave-kerner og filsystemer vil blive gemt på TFTP-serveren, så det er
+sikkert en god idé at lave master til TFTP-serveren.
 </p>
 
 </body>
 </section>
 <section>
-<title>About PXELINUX</title>
+<title>Om PXELINUX</title>
 <body>
 
 <p>
-PXELINUX is the network bootloader equivalent to LILO or GRUB and will be 
-served via TFTP.  It is essentially a tiny set of instructions that tells the 
-client where to locate its kernel and initial filesystem and allows for 
-various kernel options.
+PXELINUX er en netværksboot-loader, som kan sammenlignes med LILO eller GRUB, og vil være
+behandlet via TFTP.  Det er essentielt et lille sæt af instruktioner, som fortæller
+klienten, hvor den skal finde sin kerne og indledende filsystem og tillader
+forskellige kerneopsætninger.
 </p>
 
 </body>
 </section>
 <section>
-<title>Before you get started</title>
+<title>Før vi starter</title>
 <body>
 
 <p>
-You will need to get the pxelinux.0 file which comes in the SYSLINUX package 
-by H. Peter Anvin.  You can install this package by typing:
+Du vil få brug for pxelinux.0 filen, som kommer med SYSLINUX-pakken
+af H. Peter Anvin.  Du kan installere denne pakke ved at taste:
 </p>
 
-<pre caption="Installing syslinux">
+<pre caption="Installation af syslinux">
 # <i>emerge syslinux</i>
 </pre>
 
 </body>
 </section>
 <section>
-<title>Installing the TFTP server</title>
+<title>Installation af TFTP-server</title>
 <body>
 
 <p>
-A highly recommended tftp server is available in the tftp-hpa package.  
-This tftp server happens to be written by the author of SYSLINUX and it works 
-very well with pxelinux. To install simply type:
+Det er med stor anbefaling at TFTP-serveren er med i tftp-hpa pakken.  
+Denne TFTP-server er tilfældigvis også skrevet af samme forfatter som SYSLINUX, og det virker 
+meget godt med pxelinux. For at installere denne, tast:
 </p>
 
-<pre caption="Installing the tfp server">
+<pre caption="Installation af TFTP-server">
 # <i>emerge tftp-hpa</i>
 </pre>
 
 </body>
 </section>
 <section>
-<title>Setting up PXELINUX</title>
+<title>Opsætning af PXELINUX</title>
 <body>
 
 <p>
-Before you start your tftp server you need to setup pxelinux.  First copy 
-the pxelinux binary into your <path>/diskless</path> directory:
+Før du starter din TFTP-server, skal du indstille pxelinux.  Du skal først kopiere 
+pxelinux-binærfilen ind i dit <path>/diskless</path>-bibliotek:
 </p>
 
-<pre caption="Setting up the remote bootloader">
+<pre caption="Indstilling af en fjernstyret boot-loader">
 # <i>cp /usr/lib/syslinux/pxelinux.0 /diskless</i>
 # <i>mkdir /diskless/pxelinux.cfg</i>
 # <i>touch /diskless/pxelinux.cfg/default</i>
 </pre>
 
 <p>
-This will create a default bootloader configuration file.  The binary 
-<path>pxelinux.0</path> will look in the <path>pxelinux.cfg</path> directory 
-for a file whose name is the client's IP address in hexadecimal. If it does not 
-find that file it will remove the rightmost digit from the file name and try 
-again until it runs out of digits. Versions 2.05 and later of syslinux do an 
-extra search for a file named after the MAC address. If no file is found, it 
-uses the <path>default</path> file.
+Dette vil oprette en standard boot-loader opsætningsfil. Den binære 
+<path>pxelinux.0</path> vil kigge i <path>pxelinux.cfg</path>-biblioteket
+for en fil, hvis navn er klientens IP-adresse i hexadecimal. Hvis den ikke
+finder denne fil, vil den slette det højre ciffer fra samme filnavn og prøve 
+igen, indtil den ikke har flere cifre at bruge. Version 2.05 og senere af syslinux vil gøre
+en ekstra søgning for en fil, som er navngivet efter MAC-adressen. Hvis ingen fil er fundet, vil
+den bruge <path>default</path>-filen.
 </p>
 
-<pre caption="Files that PXE looks for in pxelinux.cfg/ in sequence">
-<comment>(Assigned IP in hexadecimal)</comment>
+<pre caption="Filer som PXE kigger efter i pxelinux.cfg/ i rækkefølge">
+<comment>(Tildelt IP i hexadecimal)</comment>
 C0A80115
 C0A8011
 C0A801
@@ -737,122 +737,122 @@ C0A8
 C0A
 C0
 C
-<comment>(Leading 01 means Ethernet, next bytes match our slave's MAC address)</comment>
+<comment>(Er første ciffer 01 betyder det Ethernet, de efterfølgende bytes passer til vores slaves MAC-adresse)</comment>
 01-00-40-63-c2-ca-c9
 default
 </pre>
 
 <p>
-Let's start with the <path>default</path> file:
+Lad os starte med <path>default</path>-filen:
 </p>
 
 
-<pre caption="Sample pxelinux.cfg/default">
+<pre caption="Smagsprøve af pxelinux.cfg/default">
 DEFAULT /diskless/bzImage
 APPEND ip=dhcp root=/dev/nfs nfsroot=192.168.1.1:/diskless/192.168.1.21
 </pre>
 
 <p>
-The <c>DEFAULT</c> tag directs pxelinux to the kernel bzImage that we compiled
-earlier.  The <c>APPEND</c> tag appends kernel initialisation options. Since we
-compiled the slave kernel with <c>NFS_ROOT_SUPPORT</c>, we will specify the
-nfsroot here.  The first IP is the master's IP and the second IP is the
-directory that was created in <path>/diskless</path> to store the slave's
-initial filesystem. 
+<c>DEFAULT</c>-taggen dirigerer pxelinux til kernens bzImage, som vi har kompileret
+tidligere.  <c>APPEND</c>-taggen tildeler kernens intialiseringsopsætning. Siden vi har
+kompileret slaves kerne med <c>NFS_ROOT_SUPPORT</c> vil ve specificere
+nfsroot her.  Den første IP er masters IP, og det andet IP er
+biblioteket, som var oprettet i <path>/diskless</path> til at gemme slaves
+indledende filsystem. 
 </p>
 
 </body>
 </section>
 <section>
-<title>Configuring the TFTP server</title>
+<title>Opsætning af TFTP-serveren</title>
 <body>
 
 <p>
-Edit <path>/etc/conf.d/in.tftpd</path>.  You need to specify the tftproot
-directory with <c>INTFTPD_PATH</c> and any command line options with
-<c>INTFTPD_OPTS</c>.  It should look something like this:
+Redigér <path>/etc/conf.d/in.tftpd</path>. Du vil få brug for at specificere tftproot-biblioteket
+med <c>INTFTPD_PATH</c> og alle andre kommandolinieopsætninger med
+<c>INTFTPD_OPTS</c>.  Det skulle se ud som dette:
 </p>
 
-<pre caption="Sample /etc/conf.d/in.tftpd">
+<pre caption="Smagsprøve af /etc/conf.d/in.tftpd">
 INTFTPD_PATH="/diskless"
 INTFTPD_OPTS="-l -v -s ${INTFTPD_PATH}"
 </pre>
 
 <p>
-The <c>-l</c> option indicates that this server listens in stand alone mode so 
-you dont have to run inetd. The <c>-v</c> indicates that log/error messages 
-should be verbose.  The <c>-s /diskless</c> specifies the root of your tftp 
-server.
+<c>-l</c> indstillingen indikerer at denne server lytter i 'stand alone mode', så
+du ikke skal køre inetd. <c>-v</c> indikerer at log-/fejl-beskeder
+skulle være 'verbose'. <c>-s /diskless</c> specificerer roden af din 
+TFTP-server.
 </p>
 
 </body>
 </section>
 <section>
-<title>Starting the the TFTP Server</title>
+<title>Opstart af TFTP-serveren</title>
 <body>
 
 <p>
-To start the tftp server type:
+For at starte TFTP-serveren, tast:
 </p>
 
-<pre caption="Starting the master's tftp server">
+<pre caption="Opstart af masters TFTP-server">
 # <i>/etc/init.d/in.tftpd start</i>
 </pre>
 
 <p>
-This should start the tftp server with the options you specified in the
-<path>/etc/conf.d/in.tfpd</path>. If you want this server to be automatically
-started at boot type:
+Dette skulle starte TFTP-serveren med de indstillinger, som du har specificeret i
+<path>/etc/conf.d/in.tfpd</path>. Hvis du vil have at denne server starter
+automatisk ved opstart, tast:
 </p>
 
-<pre caption="Adding the tftp server to the master's default run level">
+<pre caption="Tilføjelse af TFTP-server til masters standard runlevel">
 # <i>rc-update add in.tftpd default</i>
 </pre>
 
 </body>
 </section>
 <section>
-<title>Troubleshooting the network boot process</title>
+<title>Fejlfinding af netværksopstartsprocessen</title>
 <body>
 
 <p>
-There are a few things you can do to debug the network boot process.  Primarily
-you can use a tool called <c>tcpdump</c>.  To install <c>tcpdump</c> type:
+Der er få ting, som du kan gøre for at kigge på netværksopstartsprocessen.  Primært
+kan du bruge et værktøj, kaldet <c>tcpdump</c>.  For at installere <c>tcpdump</c>, tast:
 </p>
 
-<pre caption="Installing tcpdump">
+<pre caption="Installation af tcpdump">
 # <i>emerge tcpdump</i>
 </pre>
 
 <p>
-Now you can listen to various network traffic and make sure your client/server 
-interactions are functioning.  If something isn't working there are a few 
-things you might want to check.  First make sure that the client/server is 
-physically connected properly and that the networking cables are not damaged. 
-If your client/server is not receiving requests on a particular port make sure 
-that there is no firewall interference.  To listen to interaction between two 
-computers type:
+Du kan nu lytte til forskelligt netværkstrafik og vurdere at din klient/server-interaktion
+er funktionelt.  Hvis noget ikke virker, er der få
+ting, som du måske skulle kigge efter. Først, vær sikker på at klient/server er 
+fysisk forbundet ordentligt, og at netværkskabler ikker er ødelagte. 
+Hvis din klient/server ikke modtager 'requests' på en specifik port, vær sikker på
+at der ikke er nogen firewall-afbrydelser.  For at lytte til interaktionen imellem
+to computere, tast:
 </p>
 
-<pre caption="Listening to client and server interaction via tcpdump">
-# <i>tcpdump host </i><comment>client_ip</comment><i> and </i><comment>server_ip</comment>
+<pre caption="Lytte til klient- og server-interaktion via tcpdump">
+# <i>tcpdump host </i><comment>client_ip</comment><i> og </i><comment>server_ip</comment>
 </pre>
 
 <p>
-You can also use <c>tcpdump</c> to listen on particular port such as the tftp 
-port by typing:
+Du kan også bruge <c>tcpdump</c> til at lytte til en specifik port, som f.eks. tftp-porten,
+ved at taste:
 </p>
 
-<pre caption="Listening to the tftp server">
+<pre caption="Lytte til tftp-server">
 # <i>tcpdump port 69</i>
 </pre>
 
 <p>
-A common error you might receive is: "PXE-E32: TFTP open time-out".
-This is probably due to firewall issues.  If you are using <c>TCPwrappers</c>, 
-you might want to check <path>/etc/hosts.allow</path> and 
-<path>etc/hosts.deny</path> and make sure that they are configured properly. 
-The client should be allowed to connect to the server.
+EN typisk fejl, som du vil modtage, er: "PXE-E32: TFTP open time-out".
+Det er sikkert pga. fireware-problemer.  Hvis du bruger <c>TCPwrappers</c>, 
+burde du måske tjekke <path>/etc/hosts.allow</path> og 
+<path>etc/hosts.deny</path> og sørge for at de er opsat ordentligt. 
+Klienten burde være tilladt til at forbinde til serveren.
 </p>
 
 </body>
@@ -860,53 +860,53 @@ The client should be allowed to connect to the server.
 </chapter>
 
 <chapter>
-<title>Configuring the NFS server</title>
+<title>Opsætning af NFS-serveren</title>
 <section>
-<title>About the NFS server</title>
+<title>Om NFS-serveren</title>
 <body>
 
 <p>
-NFS stands for Network File System.  The NFS server will be used to serve 
-directories to the slave. This part can be somewhat personalized later, but 
-right now all we want is a preliminary slave node to boot diskless.
+NFS står for 'Network File System'.  NFS-serveren vil blive brugt til at behandle
+biblioteker til slave. Disse kan blive personlige senere, men
+lige nu, er alt hvad vi vil, er at få en indlendende slave-node til at starte diskfrit.
 </p>
 
 </body>
 </section>
 <section>
-<title>About Portmapper</title>
+<title>Om Portmapper</title>
 <body>
 
 <p>
-Various client/server services do not listen on a particular port, but instead 
-rely on RPCs (Remote Procedure Calls).  When the service is initialised it 
-listens on a random port and then registers this port with the Portmapper 
-utility.  NFS relies on RPCs and thus requires Portmapper to be running 
-before it is started.
+Forskellige klient/server-tjenester lytter ikke til en specifik port, men stoler i stedet 
+for på RPCer (Remote Procedure Calls).  Når denne tjeneste er startet, vil den
+lytte på en hvilkensomhelst port og så registrere denne port med 
+Portmapper-værktøjet.  NFS stoler på RPCer og derfor kræver den Portmapper er startet, 
+før den er startet.
 </p>
 
 </body>
 </section>
 <section>
-<title>Before you start</title>
+<title>Før du starter</title>
 <body>
 
 <p>
-The NFS Server needs kernel level support so if you don't have this you should 
-recompile your master's kernel.  To double check your master's kernel 
-configuration type:
+NFS-serveren kræver kernens level-understøttelse, så hvis du ikke har dette, skulle du
+genkompilere din masters kerne.  For at dobbelt-tjekke din masters kerne-opsætning,
+tast:
 </p>
 
-<pre caption="Checking for NFS specific options">
+<pre caption="Tjek af NFS-specifik opsætning">
 # <i>grep NFS /usr/src/linux/.config_master</i>
 </pre>
 
 <p>
-You should see output that looks something like this if your kernel has been 
-properly configured:
+Du burde se en output, som ser ud som dette, hvis din kerne er blevet sat 
+ordentligt op:
 </p>
 
-<pre caption="Proper NFS specific options in the master's kernel configuration">
+<pre caption="Ordentligt NFS-specifik opsætning i masters kerneopsætning">
 # CONFIG_ROOT_NFS is not set
 CONFIG_NFSD=y
 CONFIG_NFSD_V3=y
@@ -917,137 +917,137 @@ CONFIG_NFSD_V3=y
 </body>
 </section>
 <section>
-<title>Installing the NFS server</title>
+<title>Installation af NFS-serveren</title>
 <body>
 
 <p>
-The NFS package that can be acquired through portage by typing:
+NFS-pakken kan fåes igennem portage, ved at taste:
 </p>
 
-<pre caption="Installing nfs-utils">
+<pre caption="Installation af nfs-utils">
 # <i>emerge nfs-utils</i>
 </pre>
 
 <p>
-This package will emerge a portmapping utility, nfs server, and nfs client 
-utilities and will automatically handle initialisation dependencies.
+Denne pakke vil emerge en portmapping-værktøj, nfs server og nfs-client 
+værktøjer, og vil automatisk ordne initialiseringsafhængigheder.
 </p>
 
 </body>
 </section>
 <section>
-<title>Configuring the NFS server</title>
+<title>Opsætning af NFS-serveren</title>
 <body>
 
 <p>
-There are three major configuration files you will have to edit:
+Der er tre store opsætningsfiler, som du skal redigere:
 </p>
 
-<pre caption="Nfs configuration files">
+<pre caption="NFS opsætningsfiler">
 /etc/exports
 /diskless/192.168.1.21/etc/fstab
 /etc/conf.d/nfs
 </pre>
 
 <p>
-The <path>/etc/exports</path> file specifies how, to who and what to export 
-through NFS.  The slave's fstab will be altered so that it can mount the NFS 
-filesystems that the master is exporting.
+<path>/etc/exports</path>-filen specificerer hvordan, til hvem og hvad at eksportere
+igennem NFS.  Slaves fstab vil blive ændret sådan, at den kan mounte NFS-filsystemer,
+som master eksporterer.
 </p>
 
 <p>
-A typical <path>/etc/exports</path> for the master should look something like 
-this:
+En typisk <path>/etc/exports</path> til master, skulle se ud lige som 
+dette:
 </p>
 
-<pre caption="Sample master /etc/exports">
-<comment># one line like this for each slave</comment>
+<pre caption="Smagsprøve af masters /etc/exports">
+<comment># En linie som denne til hver slave</comment>
 /diskless/192.168.1.21   192.168.1.21(rw,no_root_squash,no_all_squash)
-<comment># common to all slaves</comment>
+<comment># Fælles for alle slaver</comment>
 /opt   192.168.1.0/24(ro,no_root_squash,no_all_squash)
 /usr   192.168.1.0/24(ro,no_root_squash,no_all_squash)
 /home  192.168.1.0/24(rw,no_root_squash,no_all_squash)
-<comment># if you want to have a shared log</comment>
+<comment># Hvis du vil have en delt log</comment>
 /var/log   192.168.1.21(rw,no_root_squash,no_all_squash)
 </pre>
 
 <p>
-The first field indicates the directory to be exported and the next field 
-indicates to who and how. This field can be divided in two parts: who should be
-allowed to mount that particular directory, and what the mounting 
-client can do to the filesystem: <c>ro</c> for read only, <c>rw</c> for 
-read/write; <c>no_root_squash</c> and <c>no_all_squash</c>  are 
-important for diskless clients that are writing to the disk, so that they 
-don't get "squashed" when making I/O requests.  The slave's fstab file,
-<path>/diskless/192.168.1.21/etc/fstab</path>, should look like 
-this:
+Det første fejlt indikerer biblioteket, som bliver eksporteret og det næste felt
+indikerer til hvem og hvordan. Dette felt kan blive delt i to dele: hvem burde have
+tilladelse til at mounte det specifikke bibliotek og hvad den mountede
+klient kan gøre med filsystemet: <c>ro</c> for 'read only', <c>rw</c> for 
+'read/write'; <c>no_root_squash</c> og <c>no_all_squash</c> er 
+vigtige til diskfri klienter, som skriver til disken, så de 
+ikke bliver "smadret", når de laver 'I/O requests'.  Slaves fstab-fil,
+<path>/diskless/192.168.1.21/etc/fstab</path>, burde se ud som
+dette:
 </p>
 
-<pre caption="Sample slave fstab">
-<comment># these entries are essential</comment>
+<pre caption="Smagsprøve af slaves fstab">
+<comment># Disse punkter er essentielle</comment>
 master:/diskless/192.168.1.21   /         nfs     hard,intr,rw,nolock,rsize=8192,wsize=8192    0 0
 master:/opt                     /opt      nfs     hard,intr,ro,nolock,rsize=8192,wsize=8192    0 0
 master:/usr                     /usr      nfs     hard,intr,ro,nolock,rsize=8192,wsize=8192    0 0
 master:/home                    /home     nfs     hard,intr,rw,nolock,rsize=8192,wsize=8192    0 0
 none                            /proc     proc    defaults                                     0 0
-<comment># useful but superfluous</comment>
+<comment># Brugbart, men ikke nødvendigt</comment>
 master:/var/log                 /var/log  nfs     hard,intr,rw                                 0 0
 
-<comment>(if you are setting up an openMosix cluster only)</comment>
+<comment>(kun hvis du opsætter en openMosix-cluster)</comment>
 none                            /mfs      mfs     dfsa=1                                       0 0
 </pre>
 
 <p>
-In this example, <e>master</e> is just the hostname of the master but it could
-easily be the IP of the master.  The first field indicates the directory to be
-mounted and the second field indicates where.  The third field describes the
-filesystem and  should be NFS for any NFS mounted directory. The fourth field
-indicates various options that will be used in the mounting process (see
-mount(1) for info on mount options).  Some people have had difficulties with 
-soft mount points so we made them all hard, but you should look into various
-<path>/etc/fstab</path> options to make your cluster more efficient. 
+I dette eksemep er <e>master</e> kun værtnavnet for master, men det kunne med
+med lethed være IP for master.  Det første felt indikerer biblioteket, som bliver
+mountet og det andet felt indikerer hvor.  Det tredje felt beskriver
+filsystem og burde være NFS til enhver NFS-mountet bibliotek. Det fjerde felt
+indikerer forskellige indstillinger som kan blive brugt til mount-processen (se
+mount(1) for flere mount-indstillinger).  Nogle folk har problemer med 
+'soft' mount-punkter, så vi laver dem alle 'hard', men du skulle kigge på forskellige
+<path>/etc/fstab</path>-indstillinger for at gøre din cluster mere effektiv. 
 </p>
 
 <p>
-The last file you should edit is <path>/etc/conf.d/nfs</path> which 
-describes a few options for nfs when it is initialised and looks like this:
+Den sidste fil, som du skal redigere er <path>/etc/conf.d/nfs</path>, som 
+beskriver nogle få indstillinger til NFS, når den er startet, og ser ud som følgende:
 </p>
 
-<pre caption="Sample master /etc/conf.d/nfs">
+<pre caption="Smagsprøve af masters /etc/conf.d/nfs">
 # Config file for /etc/init.d/nfs
 
-# Number of servers to be started up by default
+# Antal af servere, som skal startes som standard
 RPCNFSDCOUNT=8
 
-# Options to pass to rpc.mountd
+# Indstillinger til at sende til rpc.mountd
 RPCMOUNTDOPTS=""
 </pre>
 
 <p>
-You should change <c>RPCNFSDCOUNT</c> to the number of diskless nodes on the
-network.
+Du burde ændre <c>RPCNFSDCOUNT</c> til det antal af diskfrie noder på
+netværket.
 </p>
 
 </body>
 </section>
 <section>
-<title>Starting the NFS server</title>
+<title>Start af NFS-serveren</title>
 <body>
 
 <p>
-You should start the nfs server with its init script located in 
-<path>/etc/init.d</path> by typing:
+Du skal starte NFS-serveren med dens init-script, som er placeret i 
+<path>/etc/init.d</path>, ved at taste:
 </p>
 
-<pre caption="Starting the master's nfs server">
+<pre caption="Start af masters NFS-server">
 # <i>/etc/init.d/nfs start</i>
 </pre>
 
 <p>
-If you want to this script to start when the system boots simply type:
+Hvis du vil have at dette script starter ved opstart, tast følgende:
 </p>
 
-<pre caption="Adding the nfs server to the master's default run level">
+<pre caption="Tilføjelse af NFS-server til masters standard runlevel">
 # <i>rc-update add nfs default</i>
 </pre>
 
@@ -1056,17 +1056,17 @@ If you want to this script to start when the system boots simply type:
 </chapter>
 
 <chapter>
-<title>Completing the slave filesystem</title>
+<title>Afslutning af slaves filsystem</title>
 <section>
-<title>Copy the missing files</title>
+<title>Kopiering af de manglende filer</title>
 <body>
 
 <p>
-We will now make the slave's file system in sync with the master's and provide 
-the necessary binaries while still preserving slave specific files.
+Vi vil nu sørge for slaves filsystem er ajour med masters og levere
+de nødvendige binære filer, imens vi stadigvæk bevarer slaves specifikke filer.
 </p>
 
-<pre caption="Creating a slave filesystem">
+<pre caption="Oprettelse af slaves filsystem">
 # <i>cp -r /bin /diskless/192.168.1.21/bin</i>
 # <i>cp -r /sbin /diskless/192.168.1.21/sbin </i>
 # <i>cp -r /lib /diskless/192.168.1.21/lib </i>
@@ -1075,42 +1075,42 @@ the necessary binaries while still preserving slave specific files.
 </body>
 </section>
 <section>
-<title>Initialisation scripts</title>
+<title>Start-scripts</title>
 <body>
 
 <p>
-The default scripts will try to run <e>checkroot</e> which does not make sense
-on your slave nodes. The hard way out is to manually edit the
-<path>/diskless/192.168.1.21/sbin/rc</path> script but this is cumbersome,
-dangerous and could break if you decided to sync your node file system again
-and forgot to leave this script alone.  The trick is to have a
-<path>/fastboot</path> file when your system boots. This file tells
-<e>checkroot</e> not to run any file system check. But it will also erase the
-file when it has finished the initialisation process. That is why we need to
-create this file again at the end of the init process like this:
+Standard-scripterne vil prøve at køre <e>checkroot</e>, som ikke er logisk for
+dine slave-noder. Den svære vej er at manuelt redigere
+<path>/diskless/192.168.1.21/sbin/rc</path>-scriptet, men dette er en byrdefuld,
+farlig og kunne ødelægge det hele, når du vil ajourføre din nodes filsystem igen
+og glemmer at lade denne script være.  Fidusen er at have en
+<path>/fastboot</path>-filen, når dit system starter op. Denne fil fortæller
+<e>checkroot</e> til ikke at køre nogen tjek af filsystem. Men dette vil også slette
+filen, når den er færdig med programstartsprocessen. Derfor skal vi oprette
+filen igen i slutningen af programstartsprocessen, som dette:
 </p>
 
-<pre caption="Preventing init scripts from running a file system check">
-<comment>(Create the /fastboot file for next reboot)</comment>
+<pre caption="Forhindre programstartsscriptre at køre et filsystemstjek">
+<comment>(Oprettelse af /fastboot filen til næste genstart)</comment>
 # <i>touch /diskless/192.168.1.21/fastboot</i>
-<comment>(Create the /fastboot file on each boot)</comment>
+<comment>(Oprettelse af /fastboot filen på enhver opstart)</comment>
 # <i>echo "touch /fastboot" &gt;&gt; /diskless/192.168.1.21/etc/conf.d/local.start</i>
 </pre>
 
 <p>
-You need as many init scripts under
-<path>/diskless/192.168.1.21/etc/runlevel</path> as you need services on your
-diskless nodes. It all depends on what you want your slaves to do.
+Du får brug for mange programstartsscripter under
+<path>/diskless/192.168.1.21/etc/runlevel</path>, idet du behøver tjenester på dine
+diskfrie noder. Det afhænger alt efter du vil have dine slaver til at gøre.
 </p>
 
 <warn>
-Do not use the <c>rc-update</c> program to add or remove scripts from the
-slave runlevels when logged on your master. This would change your master
-runlevels. You need to create the links manually or log into your slave nodes
-using ssh or connect a screen and keyboard to your slave.
+Brug ikke <c>rc-update</c> programmet til at tilføje eller fjerne scripter i
+slaves runlevel'er, når du er logget ind på din master. Dette ville ændre din masters
+runlevel'er. Du skal oprette henvisninger manuelt eller logge ind til dine slave-noder
+ved brug af ssh eller tilslutte en skærm og tastatur til din slave.
 </warn>
 
-<pre caption="Typical slave runlevels">
+<pre caption="Typiske slave runlevels">
 /diskless/192.168.1.21/etc/runlevels/:
 total 16
 drwxr-xr-x    2 root     root         4096 2003-11-09 15:27 boot
@@ -1154,8 +1154,8 @@ total 0
 </pre>
 
 <p>
-Now is a good time to boot your slave and cross your fingers. It works?
-Congratulations, you are now the proud owner of (a) diskless node(s) :)
+Nu er det et godt tidspunkt at starte din slave og krydse dine fingre. Virker det?
+Tillykke!, du er nu en stolt ejer af (en) diskfri(e) node(r) :)
 </p>
 
 </body>
@@ -1164,92 +1164,92 @@ Congratulations, you are now the proud owner of (a) diskless node(s) :)
 <!-- 
 
 <section>
-<title>An alternative : ClusterNFS</title>
+<title>Et alternativ : ClusterNFS</title>
 <body>
 
 <warn>
-This is mentioned only because a reviewer of this document is using this
-solution. Be aware that Gentoo <e>does not</e> support ClusterNFS. It is not in
-portage and requires changes to a baselayout init script. <b>Use at your own
-risks</b>.
+Dette er kun forklaret, fordi at en reviewer af dette dokument brugte denne
+løsning. Du skal være klar over at Gentoo <e>ikke</e> understøtter ClusterNFS. Den er ikke
+portage og kræver ændringer til et baselayout programstartsscript. <b>Brug det ved
+din egen risiko</b>.
 </warn>
 
 <p>
-If you don't fancy having a distinct root for each slave because it needs some
-maintenance when upgrading files from the master directories, you could share 
-the same root across all nodes, master and slaves included. This means all your
-machines need to be compatible because you will have only one set of binaries.
-You also need to be aware that this might have security issues because all of
-your master root will be exported through NFS.
+Hvis du ikke gider at have en specifik rod til hver slave, fordi at det kræver noget
+vedligeholdse, når du opgraderer filer fra masters biblioteker, kan du dele
+den samme rod over alle noderne, master og slaver inkluderet. Dette betyder at alt hvad dine
+maskiner kræver er, at være kompatible, idet at du kun har ét sæt af binære filer.
+Du skal også være klar over at dette vil måske have sikkerhedsproblemer, idet alle dine
+dine masters rodfiler vil blive eksporteret igennem NFS.
 </p>
 
 <p>
-If you still want to try out this alternative, visit the ClusterNFS <uri
-link="http://clusternfs.sourceforge.net/">home page</uri>, download the
-software and read the doc.
+Hvis du stadigvæk vil prøve dette alternativ, besøg ClusterNFSs <uri
+link="http://clusternfs.sourceforge.net/">hjemmeside</uri>, hente
+softwaren og læs dokumentationen.
 </p>
 
 <p>
-To make it short, all files are shared and the files that need to be different
-between master and all slaves are copied to <path>file$$CLIENT$$</path>. When a
-slave requests <path>file</path>, ClusterNFS will notice the existence of
-<path>file$$CLIENT$$</path> and send it instead. Files that need to be
-different on each node are copied to <path>file$$IP=192.168.1.21$$</path>.
-The same applies to directories.
+For at gøre det kort, er alle filer delt og filerne, som er forskellige fra
+master til alle slaverne, er kopieret til <path>file$$CLIENT$$</path>. Når en 
+slave kræver en fil: <path>file</path>, vil ClusterNFS notere eksistensen af
+<path>file$$CLIENT$$</path> og sende denne i stedet for. Filer, som behøver at være
+forskellige på hver node, er kopieret til <path>file$$IP=192.168.1.21$$</path>.
+Det samme gælder for biblioteker.
 </p>
 
 <p>
-Very shortly, this is what differs from the installation procedure described 
-above:
+Meget kort, er dette er hvad er forskelligt fra installationsproceduren, beskrevet 
+foroven:
 </p>
 
 <ul>
-  <li>You do not need NFS server support in your master kernel</li>
-  <li>Install ClusterNFS <e>after</e> you emerge nfs-utils</li>
-  <li>Make slave copies of files and directories as described below</li>
-  <li>Do not create a root dir for each node</li>
-  <li>Export only / in your <path>/etc/exports</path> file</li>
+  <li>Du behøver ikke NFS-server understøttelse i din masters kerne</li>
+  <li>Installation af ClusterNFS <e>efter</e> du emerger nfs-utils</li>
+  <li>Lav slave-kopier af filer og biblioteker, som beskrevet foroven</li>
+  <li>Lav ikke et rodbibliotek for hver node</li>
+  <li>Eksporterer kun / i din <path>/etc/exports</path> fil</li>
   <li>
-    Only mount / via NFS in the slave <path>/etc/fstab$$CLIENT$$</path> file
+    Mount kun / via NFS i slaves <path>/etc/fstab$$CLIENT$$</path> fil
   </li>
-  <li>Edit <path>/etc/init.d/nfs</path> as described below</li>
+  <li>Redigér <path>/etc/init.d/nfs</path>, som beskrevet forneden</li>
   <li>
-    Edit <path>/etc/conf.d/local.start$$CLIENT$$</path> as described below
+    Redigér <path>/etc/conf.d/local.start$$CLIENT$$</path>, som beskrevet forneden
   </li>
 </ul>
 
-<pre caption="Files that need to be different between master and slaves">
+<pre caption="Filer, som skal være forskellig fra master til slave">
 /etc/conf.d/local.start$$CLIENT$$
-/etc/conf.d/local.stop$$CLIENT$$<comment> (Probably empty)</comment>
-/etc/crontab$$CLIENT$$<comment> (Probably empty, master takes care of chores)</comment>
-/etc/exports$$CLIENT$$<comment> (Empty, slaves do not export NFS mounts)</comment>
+/etc/conf.d/local.stop$$CLIENT$$<comment> (Måske tom)</comment>
+/etc/crontab$$CLIENT$$<comment> (Måske tom, master tager sig af dette)</comment>
+/etc/exports$$CLIENT$$<comment> (Tom, slaver eksporterer ikke NFS-mountpunkter)</comment>
 /etc/fstab$$CLIENT$$
-/etc/hostname$$IP=192.168.1.21$$<comment> (Name your slaves)</comment>
+/etc/hostname$$IP=192.168.1.21$$<comment> (Navngiv dine slaver)</comment>
 /etc/mtab$$IP=192.168.1.21$$
-/etc/runlevels$$CLIENT$$<comment> (Clean separation between master and slave boot scripts)</comment>
+/etc/runlevels$$CLIENT$$<comment> (Ren adskillelse imellem masters og slaves opstartsscripter)</comment>
 /fastboot$$CLIENT$$
 /tmp$$IP=192.168.1.21$$
-/var$$IP=192.168.1.21$$<comment> (Create subdirs as in /var)</comment>
+/var$$IP=192.168.1.21$$<comment> (Oprette underbiblioteker som i /var)</comment>
 </pre>
 
-<pre caption="Editing /etc/init.d/nfs">
-        ebegin "Starting NFS daemon"
+<pre caption="Redigering af /etc/init.d/nfs">
+        ebegin "Start af NFS daemon"
         start-stop-daemon - -start - -quiet - -exec \
-<comment># Add - -translate-names option</comment>
+<comment># Tilføj - -translate-names option</comment>
                 $nfsd - - - -translate-names
-        eend $? "Error starting NFS daemon"
-         # Check if we support NFSv3
-        ebegin "Starting NFS mountd"
-<comment># Comment the following two lines (ClusterNFS only knows NFS v2)</comment>
+        eend $? "Fejl ved start af NFS daemon"
+         # Tjekker om vi understøtter NFSv3
+        ebegin "Start af NFS mountd"
+<comment># Kommentér de følgende to linier (ClusterNFS kender kun NFS v2)</comment>
 #       rpcinfo -u localhost nfs 3 &amp;&gt;/dev/null || \
 #               RPCMOUNTDOPTS="$RPCMOUNTDOPTS - -no-nfs-version 3"
         start-stop-daemon - -start - -quiet - -exec \
                 $mountd - - $RPCMOUNTDOPTS 1&gt;&amp;2
-        eend $? "Error starting NFS mountd"
+        eend $? "Fejl ved start af NFS mountd"
 </pre>
 
-<pre caption="Editing /etc/conf.d/local.start$$CLIENT$$">
-<comment>(Add this line)</comment>
+<pre caption="Redigering af /etc/conf.d/local.start$$CLIENT$$">
+<comment>(Tilføjelse af denne linie)</comment>
 touch /fastboot\$\$CLIENT\$\$
 </pre>
 
