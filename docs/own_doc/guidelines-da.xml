@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/guidelines-da.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/guidelines-da.xml,v 1.2 2003/12/21 14:20:39 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 <guide link="/guidelines-da.xml">
@@ -16,7 +16,7 @@ oversættelse af Gentoos dokumenter.
 </abstract>
 
 <version>0.1</version>
-<date>November 22, 2003</date>
+<date>22. November 2003</date>
 
 <chapter>
 <title>Introduktion</title>
