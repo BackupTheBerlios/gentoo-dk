@@ -3,7 +3,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.9 2004/02/26 20:00:20 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.10 2004/03/08 21:08:51 aaby Exp $ -->
 <sections>
 <section>
 <title>Brugeradministation</title>
@@ -210,8 +210,9 @@ Password: <comment>(Indtast dit root password)</comment>
 </pre>
 
 <p>
-Nu skal vi kopiere de prekompilerede binære filer fra den anden CD (CD-2) hvis 
-du har den. Først skal du mounte CDen:</p>
+Nu er vi nødt til at ændre konfigurationen af Portage til at lede
+efter de præ-kompilerede binære filer fra den anden CD (CD-2). Først
+skal du mounte CDen:</p>
 
 <pre caption="Mount CD-2">
 # <i>mkdir /mnt/cdrom</i>
@@ -220,13 +221,16 @@ du har den. Først skal du mounte CDen:</p>
 </pre>
 
 <p>
-Nu skal du kopiere alle de prekompilerede binære filer fra CDen til 
-<path>/usr/portage/packages</path>. Vær sikker på at bruge den samme 
-kopi-kommando!
+Konfigurer nu Portage til at bruge <path>/mnt/cdrom</path> til dens
+præbyggede pakker:
 </p>
 
-<pre caption="Kopiering af de prekompilerede binære filer">
-# <i>cp -a /mnt/cdrom/packages/* /usr/portage/packages/</i>
+<pre caption="At konfigurere Portage til at bruge /mnt/cdrom">
+# <i>ls /mnt/cdrom</i>
+<comment>(Hvis der er et /mnt/cdrom/packages bibliotek:)</comment>
+# <i>export PKGDIR="/mnt/cdrom/packages"</i>
+<comment>(Ellers:)</comment>
+# <i>export PKGDIR="/mnt/cdrom"</i>
 </pre>
 
 <p>
