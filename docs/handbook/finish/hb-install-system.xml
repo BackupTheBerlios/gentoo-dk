@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.15 2004/06/10 17:00:29 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.16 2004/07/06 20:01:53 aaby Exp $ -->
 
 <sections>
 <section>
@@ -100,9 +100,16 @@ link="#configure_USE">Opsætning af USE-variabler</uri>.
 
 <pre caption="Opdatering af Portage">
 # <i>emerge sync</i>
-<comment>(I tilfælde af at du ikke er i stand til at bruge rsync, så
-brug "emerge-webrsync" der downloader og installerer et snapshot af
-Portage for dig)</comment>
+</pre>
+
+<p>
+Portage bruger RSYNC protokollen til at opdatere Portage træet. Hvis
+den ovenforstående kommando fejler pga. din firewall, brug da
+<c>emerge-webrsync</c>, som henter og installerer et snapshot af
+portage for dig ved brug af den almindelige HTTP protokol.
+</p>
+  	 
+<pre caption="At opdatere Portage med emerge-webrsync">
 # <i>emerge-webrsync</i>
 </pre>
 
