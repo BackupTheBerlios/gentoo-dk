@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-rcscripts.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-rcscripts.xml,v 1.2 2004/01/22 15:20:36 aaby Exp $ -->
 
 <sections>
 <section>
@@ -20,7 +23,7 @@ sequence</e> and is (more or less) statically defined.
 <p>
 First, your boot loader will load the kernel image you have defined in the
 boot loader configuration into memory after which it tells the CPU to run the
-kernel. When the kernel is loaded and run, it initialises all kernel-specific
+kernel. When the kernel is loaded and run, it initializes all kernel-specific
 structures and tasks and starts the <c>init</c> process.
 </p>
 
@@ -28,7 +31,7 @@ structures and tasks and starts the <c>init</c> process.
 This process then makes sure that all filesystems (defined in
 <path>/etc/fstab</path>) are mounted and ready to be used. Then it executes
 several scripts located in <path>/etc/init.d</path>, which will start the
-services you need in order to have a succesfully booted system.
+services you need in order to have a successfully booted system.
 </p>
 
 <p>
@@ -48,7 +51,7 @@ by running <c>login</c>.
 <p>
 Now <c>init</c> doesn't just execute the scripts in <path>/etc/init.d</path>
 randomly. Even more, it doesn't run all scripts in <path>/etc/init.d</path>,
-only the scripts it is told to execute. It decides what scripts to execute by 
+only the scripts it is told to execute. It decides which scripts to execute by 
 looking into <path>/etc/runlevels</path>.
 </p>
 
@@ -65,8 +68,8 @@ When all <path>/etc/runlevels/boot</path> referenced scripts are executed,
 <c>init</c> continues with running the scripts that have a symbolic link to them
 in <path>/etc/runlevels/default</path>. Again, it will use the alphabetical
 order to decide what script to run first, unless a script has dependency
-information in it, in which the order is changed to provide a valid start-up
-sequence.
+information in it, in which case the order is changed to provide a valid 
+start-up sequence.
 </p>
 
 </body>
@@ -93,7 +96,7 @@ si::sysinit:/sbin/rc sysinit
 
 <p>
 This line tells <c>init</c> that it must run <c>/sbin/rc sysinit</c> to
-initialise the system. The <path>/sbin/rc</path> script takes care of the
+initialize the system. The <path>/sbin/rc</path> script takes care of the
 initialisation, so you might say that <c>init</c> doesn't do much -- it
 delegates the task of initialising the system to another process.
 </p>
@@ -177,7 +180,7 @@ your system is running and contains a collection of scripts (runlevel scripts or
 In Gentoo, there are seven runlevels defined: three internal runlevels, and four
 user-defined runlevels. The internal runlevels are called <e>sysinit</e>,
 <e>shutdown</e> and <e>reboot</e> and do exactly what their names imply:
-initialise the system, powering off the system and rebooting the system.
+initialize the system, powering off the system and rebooting the system.
 </p>
 
 <p>
@@ -308,7 +311,7 @@ to rebuild the dependency tree.
 
 <p>
 You have already added init scripts to the "default" runlevel during the
-installation of Gentoo. At that time you might not had a clue what the
+installation of Gentoo. At that time you might not have had a clue what the
 "default" is for, but now you should. The <c>rc-update</c> script requires a
 second argument that defines the action: <e>add</e>, <e>del</e> or <e>show</e>.
 </p>
@@ -538,7 +541,7 @@ depend() {
 <p>
 Next to the <c>depend()</c> functionality, you also need to define the
 <c>start()</c> function. This one contains all the commands necessary to
-initialise your service. It is adviseable to use the <c>ebegin</c> and
+initialize your service. It is adviseable to use the <c>ebegin</c> and
 <c>eend</c> functions to inform the user about what is happening:
 </p>
 
@@ -564,7 +567,7 @@ need more information:
 <p>
 Other functions you can define are: <c>stop()</c> and <c>restart()</c>. You are
 not obliged to define these functions! Our init system is intelligent enough to
-fill these functions in herself if you use <c>start-stop-daemon</c>.
+fill these functions by itself if you use <c>start-stop-daemon</c>.
 </p>
 
 </body>

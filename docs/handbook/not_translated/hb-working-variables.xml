@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-variables.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-variables.xml,v 1.2 2004/01/22 15:20:36 aaby Exp $ -->
 
 <sections>
 <section>
@@ -127,6 +130,12 @@ MANPATH="/usr/share/man:/usr/local/share/man"
 INFODIR="/usr/share/info:/usr/local/share/info"
 PAGER="/usr/bin/less"
 EDITOR="/usr/bin/vim"
+KDEDIRS="/usr"
+CLASSPATH="/opt/blackdown-jre-1.4.1/lib/rt.jar:."
+CONFIG_PROTECT="/usr/X11R6/lib/X11/xkb /opt/tomcat/conf \
+                /usr/kde/3.1/share/config /usr/share/texmf/tex/generic/config/ \
+                /usr/share/texmf/tex/platex/config/ /usr/share/config"
+CONFIG_PROTECT_MASK="/etc/gconf
 </pre>
 
 </body>
@@ -227,8 +236,8 @@ After this, it will run <c>ldconfig</c> to recreate the
 </p>
 
 <p>
-If you want to notice the effect of <c>env-update</c> immediately after you ran
-it, execute the following command to update your environment. Users that have
+If you want to notice the effect of <c>env-update</c> immediately after you run
+it, execute the following command to update your environment. Users who have
 installed Gentoo themselves will probably remember this from the installation
 instructions:
 </p>

@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-behaviour.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-behaviour.xml,v 1.2 2004/01/22 15:20:36 aaby Exp $ -->
 
 <sections>
 <section>
@@ -169,14 +172,14 @@ exit if it doesn't find any more updateable configuration files.
 As Gentoo is becoming increasingly popular, the use of mirrors is greatly
 appreciated. Portage uses three variables for the mirrors: one for the rsync
 mirrors (which is used to synchronise your Portage Tree with), one for the
-distfiles (which is used to download the sourcecode) and one for the prebuilt
+distfiles (which is used to download the source code) and one for the prebuilt
 packages.
 </p>
 
 <p>
 All possible distfiles mirrors are listed on our <uri 
 link="/main/en/mirrors.xml">Gentoo mirrors page</uri>. You can also use 
-<c>mirrorselect</c> which will easen the setup of mirrors for your system. But 
+<c>mirrorselect</c> which will ease the setup of mirrors for your system. But 
 let us first check out the individual variables...
 </p>
 
@@ -378,7 +381,7 @@ PORTDIR_OVERLAY="/usr/local/portage"
 <body>
 
 <p>
-The location of the downloaded sourcecode (so called distfiles) is defined in
+The location of the downloaded source code (so called distfiles) is defined in
 the <c>DISTDIR</c> variable. It defaults to <path>${PORTDIR}/distfiles</path>:
 </p>
 
@@ -485,7 +488,7 @@ PORTAGE_NICENESS="3"
 
 <p>
 In several situations you want multiple different versions of a package
-(including libraries) be available on your system. Portage supports this by
+(including libraries) to be available on your system. Portage supports this by
 defining the <c>SLOT</c> variable in the ebuilds. As a user, you don't have to
 know how <c>SLOT</c>'ing works, but it is important you know it is supported.
 </p>
@@ -557,13 +560,13 @@ DEBUGBUILD="true"
 <p>
 The <c>MAKEOPTS</c> variable is used by <c>make</c>, a tool used to ease the
 compilation of a package. It is usually defined to tell <c>make</c> to run
-several compilations simultaneous (especially if you have a multi-CPU system, or
-are using <c>distcc</c> as described previously).
+several compilations simultaneously (especially if you have a multi-CPU system, 
+or are using <c>distcc</c> as described previously).
 </p>
 
 <p>
-To have <c>make</c> run three compilations simultaneous, set the <c>MAKEOPTS</c>
-variable to <c>-j3</c>:
+To have <c>make</c> run three compilations simultaneously, set the 
+<c>MAKEOPTS</c> variable to <c>-j3</c>:
 </p>
 
 <pre caption="The MAKEOPTS variable">
@@ -573,7 +576,7 @@ MAKEOPTS="-j3"
 <p>
 The <c>ROOT</c> variable shouldn't be set in <path>/etc/make.conf</path>, but
 rather as environment variable. Portage will check this variable to see where a
-package needs to be installed to. Of course, this defaults to <path>/</path>. As
+package needs to be installed. Of course, this defaults to <path>/</path>. As
 an example we show you how to install <c>gnumeric</c> in 
 <path>/mnt/gentoo</path> instead of in your running system:
 </p>

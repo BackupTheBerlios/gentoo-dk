@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-portage.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-working-portage.xml,v 1.2 2004/01/22 15:20:36 aaby Exp $ -->
 
 <sections>
 <section>
@@ -127,7 +130,7 @@ using Gentoo.
 <p>
 The other files are the <path>ChangeLog</path> (which contains a listing of all
 the changes done to the ebuilds), <path>Manifest</path> (which contains the
-checksums and permissions of all the files in the directory) and
+checksums and filesizes of all the files in the directory) and
 <path>metadata.xml</path> (which contains more information about the package,
 such as the responsible development group -- called <e>herd</e> -- and a more
 extensive description).
@@ -226,18 +229,20 @@ the size of the downloaded files, the homepage and the small description.
 You see something new? Yes, <e>downloaded files</e>. When you tell Portage to
 install a package, it of course needs to have the necessary sources (or
 precompiled packages) available. It therefore checks the contents of
-<path>/usr/portage/distfiles</path> (for sourcecode) or
+<path>/usr/portage/distfiles</path> (for source code) or
 <path>/usr/portage/packages/All</path> (for precompiled packages) to see if the
 necessary files are already available. If not, it downloads the necessary files
 and places them in those directories.
-</p> 
+</p>
 
+<!--
 <note>
-Searching the Portage Tree, especially when using <c>--searchdesc</c>, is very
+Searching the Portage Tree, especially when using <c>- -searchdesc</c>, is very
 time consuming. There are other, more performant tools available. We will
 describe those in the chapter on <uri link="?part=2&amp;chap=7">Gentoolkit and
 Other Tools</uri>.
 </note>
+-->
 
 </body>
 </subsection>
@@ -247,13 +252,26 @@ Other Tools</uri>.
 
 <p>
 While browsing through the Portage Tree, you saw that there was a ChangeLog for
-each package. You can view this ChangeLog with <c>emerge</c> too. Use the
+each package. You can view the ChangeLog entries between the available version
+and the installed version with <c>emerge</c> too. Use the
 <c>--pretend --changelog</c> (<c>-pl</c> in short) options. As an example we
 will view the ChangeLog entries for <c>gnumeric</c>:
 </p>
 
 <pre caption="Viewing the ChangeLog entries for gnumeric">
 # <i>emerge --pretend --changelog gnumeric</i>
+<comment>(Some output removed to improve readability)</comment>
+*gnumeric-1.2.2
+
+  27 Nov 2003; foser &lt;foser@gentoo.org&gt; gnumeric-1.2.2.ebuild :
+  New release, requested in #34492
+  updated deps
+
+  12 Nov 2003; Jason Wever &lt;weeve@gentoo.org&gt; gnumeric-1.2.0.ebuild:
+  Marked stable on sparc, fixes bug #32405.
+
+  14 Oct 2003; Jason Wever &lt;weeve@gentoo.org&gt; gnumeric-1.0.8.ebuild:
+  Added ~sparc keyword.  Fixes bug #31150.
 </pre>
 
 </body>
@@ -300,7 +318,7 @@ First install <c>mirrorselect</c> by emerging it:
 
 <p>
 Now run <c>mirrorselect</c> to automatically select mirrors for you (it will
-also setup Portage to use a mirror for the sourcecode):
+also setup Portage to use a mirror for the source code):
 </p>
 
 <pre caption="Running mirrorselect">
@@ -343,7 +361,7 @@ how to setup your system to use proxies during the Gentoo installation.
 
 <p>
 Gentoo provides ebuilds, the Gentoo packages if you like. But when you want to
-install such an ebuild, you can choose between <e>building</e> the package, or
+install such an ebuild, you can choose between <e>building</e> the package and
 using a <e>prebuilt</e> package. But what are the advantages/disadvantages of
 both approaches, and can they be used next to each other?
 </p>
@@ -366,10 +384,10 @@ is needed), but you will lose the advantages of the <c>USE</c> setting and the
 
 <p>
 As previously stated, prebuilt packages are stored in the
-<path>/usr/portage/packages/All</path> directory, while the sourcecode of the
-packages are placed in <path>/usr/portage/distfiles</path>. If you have finished
-installing a package you can remove the package or sourcecode from the
-respective directory. However, you might want to keep the package/sourcecode of
+<path>/usr/portage/packages/All</path> directory, while the source code of the
+packages is placed in <path>/usr/portage/distfiles</path>. If you have finished
+installing a package you can remove the package or source code from the
+respective directory. However, you might want to keep the package/source code of
 the latest version, just in case you want to reinstall the package (so you don't
 have to redownload it).
 </p>
@@ -393,9 +411,9 @@ can just use <c>emerge &lt;package-name&gt;</c> or <c>emerge
 </pre>
 
 <p>
-This will download the sourcecode for you and unpacks, compiles and installs the
-package on your system. It will also do the same for all the dependencies. If
-you want to see what dependencies will be installed with it, use the
+This will download the source code for you and unpacks, compiles and installs 
+the package on your system. It will also do the same for all the dependencies. 
+If you want to see what dependencies will be installed with it, use the
 <c>--pretend</c> option (<c>-p</c> in short):
 </p>
 
@@ -404,7 +422,7 @@ you want to see what dependencies will be installed with it, use the
 </pre>
 
 <p>
-If you want to download the sourcecode of the package and its dependencies, 
+If you want to download the source code of the package and its dependencies, 
 but don't want to build the package, use the <c>--fetchonly</c> option 
 (<c>-f</c> in short):
 </p>
@@ -553,7 +571,7 @@ can lead to failures.
 </pre>
 
 <p>
-To opposite of <c>--nodeps</c> is <c>--onlydeps</c>, which will have Portage
+The opposite of <c>--nodeps</c> is <c>--onlydeps</c>, which will have Portage
 install all dependencies of a given package, but not the package itself:
 </p>
 
@@ -632,7 +650,7 @@ letters) which gives you more information about the package:
     <e>R</e> (reemerge) The package isn't new, but needs to be reemerged
   </li>
   <li>
-    <e>F</e> (fetch) The package requires that you download the sourcecode
+    <e>F</e> (fetch) The package requires that you download the source code
     manually (for instance due to licencing issues)
   </li>
   <li>
@@ -715,7 +733,8 @@ filesystem successfully. The three flags specify the following reasons:
     <c>!empty</c> : The listed directory is not empty
   </li>
   <li>
-    <c>cfgpro</c> : Another already installed package claims to own this file 
+    <c>cfgpro</c> : This file is located inside a protected directory and will
+    not be touched for safety
   </li>
 </ul>
 
@@ -744,12 +763,17 @@ to <e>ARCH</e> after being bugfree for a sufficient amount of time.
 
 <p>
 Your system will use <e>ARCH</e> packages per default. If you want to live on
-the edge, don't mind having a broken package once in a while, and you like
-submitting bugreports to <uri
+the edge, don't mind having a broken package once in a while, know how to deal
+with a broken system and you like submitting bugreports to <uri
 link="http://bugs.gentoo.org">bugs.gentoo.org</uri>, then you can opt to use
 <e>~ARCH</e> packages. To "move" your system to a <e>~ARCH</e>-using system,
 edit the <c>ACCEPT_KEYWORDS</c> variable in <path>/etc/make.conf</path> so that
 it reads <e>~ARCH</e> (again: for x86-based systems: <e>~x86</e>, etc.).
+</p>
+
+<p>
+Note though that it is far from trivial (if even impossible) to go back to 
+<e>ARCH</e> from <e>~ARCH</e>. 
 </p>
 
 <p>
@@ -804,7 +828,9 @@ the same format as is used in <path>/usr/portage/profiles/package.mask</path>).
 
 <p>
 Do <e>not</e> alter the <path>/usr/portage/profiles/package.mask</path> file as
-all changes are undone the next time you update your Portage tree.
+all changes are undone the next time you update your Portage tree. If you want
+to hardmask a package create <path>/etc/portage/package.mask</path> and list the
+package in it (use the same format as mentioned above).
 </p>
 
 <p>
