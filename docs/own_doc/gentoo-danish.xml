@@ -18,7 +18,7 @@ Dette dokument er en hurtig instruktionsvejledning til at opsætte Gentoo komplet
 <date>22. Maj, 2004</date>
 
 <chapter>
-<title></title>
+<title>Om dette dokument</title>
 <section>
 <title>Introduktion</title>
 <body>
@@ -33,22 +33,29 @@ Alle informationer kommer fra Gentoo forums, irc og egne tests.
 
 </body>
 </section>
+</chapter>
+<chapter>
+<title>Generelt</title>
 <section>
 <title>Konsollen</title>
 <body>
 
 <p>
-For at få dansk understøttelse af tegnsæt i konsollen, rediger i <e>/etc/rc.conf</e>:
+For at få dansk understøttelse af tegnsæt i konsollen, rediger i <path>/etc/rc.conf</path>:
 </p>
 
-<pre caption="Ændre fælgende i /etc/rc.conf">
+<pre caption="Ændre følgende i /etc/rc.conf">
 KEYMAP="dk-latin1"
 CONSOLEFONT="lat0-16"
-CONSOLETRANSLATION="8859-1_to_uni"
+CONSOLETRANSLATION="8859-15_to_uni"
 </pre>
 
+<note>
+Brugen af 8859-15 i stedet for 8859-1 giver Euro-tegn (tak til Kloeri).
+</note>
+
 <p>
-For at få filerne til at vise det danske tegnsæt, så rediger <e>/etc/profile</e>:
+For at få filerne til at vise det danske tegnsæt, så rediger <path>/etc/profile</path>:
 </p>
 
 <pre caption="Indsættelse nederst i /etc/profile">
@@ -62,7 +69,7 @@ export LC_CPYTE="en_DK"
 <body>
 
 <p>
-For at få dansk tegnsæt i X, så rediger din <e>/etc/X11/xorg.conf</e> eller <e>/etc/X11/XF86Config</e> og indsæt eller ændre følgende:
+For at få dansk tegnsæt i X, så rediger din <path>/etc/X11/xorg.conf</path> eller <path>/etc/X11/XF86Config</path> og indsæt eller ændre følgende:
 </p>
 
 <pre caption="Indsættelse i opsætningsfilen til dit X">
@@ -71,20 +78,63 @@ Section "InputDevice"
 EndSection
 </pre>
 
+</body>
+</section>
+</chapter>
+<chapter>
+<title>Program-specifikke indstillinger</title>
+<section>
+<title>Gnome</title>
+<body>
+
+<p>
+Skal lige finde det ;)
+</p>
+
+</body>
+</section>
+<section>
+<title>KDE</title>
+<body>
+
 <p>
 Hvis du er en KDE-bruger, installer da kde-i18n-da, for at få danske menuer m.v.
 </p>
 
 <pre caption="Installation af dansk KDE understøttelse">
-# emerge kde-i18n-da
+# <i>emerge kde-i18n-da</i>
 </pre>
 
+</body>
+</section>
+<section>
+<title>OpenOffice</title>
+<body>
+
+<p>OpenOffice betegnes som open source community'ets svar på Micrsoft Office. Du får den i dansk version ved at gøre følgende (kun kildekode-versionen):</p>
+
+<pre caption="Installationa af OpenOffice på dansk">
+# <i>LANGUAGE="DAN" emerge openoffice</i>
+<codenote>(Det samme kan gøres til openoffice-ximian)</codenote>
+</pre>
 
 </body>
 </section>
 <section>
 <title>Ordlister</title>
 <body>
+
+<p>
+Der findes to slags ordlister, ispell og aspell. ispell er den klassiske stavekontrol, men aspell prøver at blive en erstatning. Du vælger selv hvilken der er bedst ved at prøve dem begge af:
+</p>
+
+<pre caption="Installation af aspell">
+# <i>emerge aspell-da</i>
+</pre>
+
+<pre caption="Installation af ispell">
+# <i>emerge ispell-da</i>
+</pre>
 
 </body>
 </section>
