@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.12 2004/03/08 21:59:10 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.13 2004/03/10 22:40:38 broeman Exp $ -->
 
 <sections>
 <section>
@@ -136,7 +136,7 @@ kaldet <path>linux</path>, som peger mod din kerne-kildekode:
 
 <pre caption="Se genvej til kerne-kildekode">
 # <i>ls -l /usr/src/linux</i>
-lrwxrwxrwx    1 root     root           12 Oct 13 11:04 /usr/src/linux -&gt; linux-2.4.24
+lrwxrwxrwx    1 root     root           12 Oct 13 11:04 /usr/src/linux -&gt; linux-2.4.25
 </pre>
 
 <p>
@@ -145,7 +145,7 @@ kerne-kildekode) skal du ændre genvejen før du fortsætter:
 </p>
 
 <pre caption="Ændring af genvejen til kerne-kildekode">
-# <i>rm /usr/src/linux &amp;&amp; ln -s /usr/src/linux-2.4.24 /usr/src/linux</i>
+# <i>rm /usr/src/linux &amp;&amp; ln -s /usr/src/linux-2.4.25 /usr/src/linux</i>
 </pre>
 
 <p>
@@ -753,21 +753,21 @@ modules_install</c>:
 <p>
 Når kernen er færdig med at kompilere, kopier den da over til
 <path>/boot</path>. I det næste eksempel forudsætter vi, at du har
-opsat og kompileret <c>vanilla-sources-2.4.24</c> (hvilket måske ikke
+opsat og kompileret <c>vanilla-sources-2.4.25</c> (hvilket måske ikke
 er den rigtige kerne til din arkitektur!):
 </p>
 
 <pre caption="Installation af kerne">
 <comment>(Til x86-baserede systemer)</comment>
-# <i>cp arch/i386/boot/bzImage /boot/kernel-2.4.24</i>
-# <i>cp System.map /boot/System.map-2.4.24</i>
+# <i>cp arch/i386/boot/bzImage /boot/kernel-2.4.25</i>
+# <i>cp System.map /boot/System.map-2.4.25</i>
 
 <comment>(Til amd64-baserede systemer)</comment>
-# <i>cp arch/x86_64/boot/bzImage /boot/kernel-2.4.24</i>
+# <i>cp arch/x86_64/boot/bzImage /boot/kernel-2.4.25</i>
 
 <comment>(Til andre systemer)</comment>
-# <i>cp vmlinux /boot/kernel-2.4.24</i>
-# <i>cp System.map /boot/System.map-2.4.24</i>
+# <i>cp vmlinux /boot/kernel-2.4.25</i>
+# <i>cp System.map /boot/System.map-2.4.25</i>
 </pre>
 
 <p>
@@ -776,7 +776,7 @@ Det er også klogt at kopiere din kerneopsætningsfil til
 </p>
 
 <pre caption="Backup af din kerneopsætning">
-# <i>cp .config /boot/config-2.4.24</i>
+# <i>cp .config /boot/config-2.4.25</i>
 </pre>
 
 <p>
@@ -830,11 +830,15 @@ når <c>genkernel</c> kompilerer en kerne, som understøtter det meste hardware,
 kan kompileringen tage noget tid at færdiggøre!
 </p>
 
+<p>
+Notér at hvis din boot-partition ikke bruger ext2- eller ext3- filsystem, skal du manuelt opsætte din kernel ved brug af <c>genkernel --menuconfig all</c> og tilføje understøttelse til dit filsystem <e>i</e> kernen (dvs. <e>ikke</e> som module).
+</p>
+
 <pre caption="Start af genkernel">
 # <i>genkernel all</i>
 GenKernel v3.0.1_beta10
 * ARCH: x86    
-* KERNEL VER: 2.4.24
+* KERNEL VER: 2.4.25
 * kernel: configuring source
 * kernel: running mrproper
 <comment>(output fjernet for at forøge læsbarheden)</comment>
