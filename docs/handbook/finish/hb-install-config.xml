@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.16 2004/08/23 19:27:51 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.17 2004/08/23 20:36:02 broeman Exp $ -->
 
 <sections>
 <section>
@@ -458,5 +458,6 @@ Når du er færdig med opsætningen af <path>/etc/rc.conf</path>, så gem og afslut 
 </p>
 
 </body>
+</subsection>
 </section>
 </sections>
