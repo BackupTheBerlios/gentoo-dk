@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-working-use.xml,v 1.1 2004/01/28 21:26:01 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-use.xml,v 1.1 2004/01/29 11:34:04 aaby Exp $ -->
 
 <sections>
 <section>
@@ -22,14 +22,14 @@ En spil-arbejdsstation er forskellig fra en 3D-gengivelse-arbejdsstation.
 
 <p>
 Det er ikke kun rigtigt for at vælge de pakker som du vil installere, men også
-hvilke egenskaber en specifik pakke burde understøtte. Hvis du ikke behøver OpenGL, hvorfor
+hvilke egenskaber en specifik pakke bør understøtte. Hvis du ikke behøver OpenGL, hvorfor
 skulle du interessere dig for at installere OpenGL og bygge OpenGL-understøttelse til de fleste af vores
 pakker? Hvis du ikke vil bruge KDE, hvorfor vi du interessere dig for at kompilere pakker
 med KDE-understøttelse, hvis disse pakker virker fejlfrit uden?
 </p>
 
 <p>
-For at hjælpe brugere med at beslutte, hvad man bør installere/aktivere eller ikke, ville vi for
+For at hjælpe brugere med at beslutte, hvad man bør installere/aktivere eller ikke, ville vi få
 brugeren til at specificere sit miljø på en nem måde. Dette tvinger brugeren til at 
 beslutte, hvad han virkelig vil have og letgør processen for Portage, vores
 pakkebehandlingssystem, for at lave brugbare beslutninger.
@@ -42,7 +42,7 @@ pakkebehandlingssystem, for at lave brugbare beslutninger.
 <body>
 
 <p>
-Gå ind i USE-flag verdenen. Sådan et flag er et nøgleord, som udtrykker understøttelse og
+Gå ind i USE-flag verdenen. Sådan et flag er et nøgleord, der udtrykker understøttelse og
 afhængighedsinformationer til sådan et koncept. Hvis du definerer et specifikt USE-flag, 
 vil Portage vide, at du vil have understøttelse for dette valgte nøgleord. Selvfølgelig
 vil dette også ændre afhængighedsinformationer for en pakke.
@@ -86,7 +86,7 @@ Der er to typer USE-flag: <e>globale</e> og <e>lokale</e> USE-flag.
 
 <p>
 En liste over tilgængelige globale USE-flag, kan blive fundet <uri
-link="/dyn/use-index.xml">online</uri> eller localt i
+link="/dyn/use-index.xml">online</uri> eller lokalt i
 <path>/usr/portage/profiles/use.desc</path>. Et kort (<e>meget</e> ufuldendt)
 udsnit:
 </p>
@@ -111,8 +111,8 @@ imap    - Tilføjer understøttelse til IMAP
 <body>
 
 <p>
-I håbet af at du er overbevist af vigtigheden af USE-flag, vil vi nu informere
-dig, hvordan man erklærer USE-flag.
+I håbet af at du er overbevist om vigtigheden af USE-flag, vil vi nu informere
+dig om, hvordan man erklærer USE-flag.
 </p>
 
 <p>
@@ -237,7 +237,7 @@ Dette vil give dig en liste over alle relevante variabler (inklusiv <c>USE</c>-v
 indholdet brugt af Portage.
 </p>
 
-<pre caption="Kør af emerge info">
+<pre caption="At køre emerge info">
 # <i>emerge info</i>
 </pre>
 
@@ -252,7 +252,7 @@ indholdet brugt af Portage.
 
 <p>
 I det næste kapitel omkring <uri link="?part=2&amp;chap=2">Portage og software</uri>
-vil vi forklare hvordan man håndterer dit installeret software og hvordan man arbejder med
+vil vi forklare hvordan man håndterer dit installerede software og hvordan man arbejder med
 <c>emerge</c>. Dog, vil vi give dig en forsmag på <c>emerge</c>, ved at vise
 dig hvordan man kan se hvilke USE-flag en pakke bruger.
 </p>
