@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <?xml-stylesheet href="../xsl/guide.xsl" type="text/xsl"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.7 2004/01/02 20:00:11 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.8 2004/01/06 22:19:57 broeman Exp $ -->
 
 <!DOCTYPE guide SYSTEM "../dtd/guide.dtd">
 <guide>
@@ -20,7 +20,7 @@ oversætte og ord som helst skal oversættes på en bestemt måde.
 </abstract>
 
 <version>0.2</version>
-<date>2. Januar 2004</date>
+<date>6. Januar 2004</date>
 
 <chapter>
 <title>Gloseliste</title>
@@ -551,6 +551,12 @@ Noget
 <tr>
 <ti>Translator</ti>
 <ti>Oversætter</ti>
+<ti></ti>
+</tr>
+
+<tr>
+<ti>Tweak</ti>
+<ti>Fin-indstille</ti>
 <ti></ti>
 </tr>
 
