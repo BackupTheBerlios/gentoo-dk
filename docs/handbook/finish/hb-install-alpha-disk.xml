@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-disk.xml,v 1.1 2004/04/19 17:13:24 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-disk.xml,v 1.2 2004/05/03 18:06:14 broeman Exp $ -->
 
 <sections>
 <section>
@@ -138,7 +138,7 @@ af fri plads på én partition og intet på en anden.
 </body>
 </subsection>
 </section>
-<section id="#fdisk">
+<section id="fdisk">
 <title>Brug af fdisk på Alpha for at partitionere din harddisk</title>
 <subsection>
 <body>
