@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/index.xml,v 1.9 2004/02/28 20:17:05 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/index.xml,v 1.10 2004/03/02 18:28:23 broeman Exp $ -->
 
-<guide>
+<guide lang="da">
 <title>Bag om Gentoo-håndbogen</title>
 
 <author title="Forfatter">
