@@ -120,15 +120,25 @@ Hvis du er en KDE-bruger, installer da kde-i18n-da, for at få danske menuer m.v.
 </body>
 </section>
 <section>
-<title>OpenOffice</title>
+<title>OpenOffice.org</title>
 <body>
 
-<p>OpenOffice betegnes som open source community'ets svar på Micrsoft Office. Du får den i dansk version ved at gøre følgende (kun kildekode-versionen):</p>
+<p>OpenOffice.org betegnes som open source community'ets svar på Micrsoft(TM) Office(TM). Du får den i dansk version ved at gøre følgende (kun kildekode-versionen):</p>
 
-<pre caption="Installationa af OpenOffice på dansk">
+<pre caption="Installation af OpenOffice.org på dansk">
 # <i>LANGUAGE="DAN" emerge openoffice</i>
 <codenote>(Det samme kan gøres til openoffice-ximian)</codenote>
 </pre>
+
+<p>For at installere ordbøger og lign. værktøjer til OpenOffice (lige meget hvilken version), så hent følgende:</p>
+
+<pre caption="Hentning af OpenOffice.org sprogværktøjer">
+# <i>wget http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/dicooo/DicOOo.sxw</i>
+</pre>
+
+<p>
+Den installeres ved at du åbner filen i OpenOffice.org, som du ville hente andre filer.
+</p>
 
 </body>
 </section>
