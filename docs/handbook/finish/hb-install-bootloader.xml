@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-bootloader.xml,v 1.3 2004/02/12 22:07:50 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-bootloader.xml,v 1.4 2004/02/22 18:57:30 broeman Exp $ -->
 
 <sections>
 <section>
@@ -178,10 +178,10 @@ skal installere <c>grub</c>, AMD64-brugere skal emerge <c>grub-static</c>:
 
 <pre caption = "Installering af GRUB">
 <comment>(Til x86-arkitekturen:)</comment>
-# <i>emerge --usepkg grub</i>
+# <i>emerge grub</i>
 
 <comment>(Til AMD64-arkitekturen:)</comment>
-# <i>emerge --usepkg grub-static</i>
+# <i>emerge grub-static</i>
 # <i>cp -Rpv /usr/share/grub/i386-pc/* /boot/grub</i>
 </pre>
 
@@ -243,9 +243,9 @@ anden editor):
 </pre>
 
 <p>
-Vi vil nu lave en <path>grub.conf</path>. Nedenfor finder du tre mulige
-<path>grub.conf</path> for partitioneringseksemplet vi bruger i denne 
-vejledning med kernebillede <path>kernel-2.4.22</path>. Vi har kun
+Vi vil nu lave en <path>grub.conf</path>. Nedenfor finder du to mulige
+<path>grub.conf</path> til partitioneringseksemplet vi bruger i denne 
+vejledning med kernebillede <path>kernel-2.4.25</path>. Vi har kun
 ekstensivt kommenteret den første <path>grub.conf</path>.
 </p>
 
@@ -256,11 +256,6 @@ ekstensivt kommenteret den første <path>grub.conf</path>.
  </li>
  <li>
   Den anden <path>grub.conf</path> er for folk der har brugt
-  <c>genkernel</c> fra LiveCD'en (f.eks. <c>genkernel</c> installeret
-  via GRP pakker) til at bygge deres kerne
- </li>
- <li>
-  Den tredje <path>grub.conf</path> er for folk der har brugt en downloadet
   <c>genkernel</c> til at bygge deres kerne
  </li>
 </ul>
@@ -273,10 +268,10 @@ timeout 30
 <comment># Fedt splash-billede som krydderi til det hele :)</comment>
 splashimage=(hd0,0)/grub/splash.xpm.gz
 
-title=Gentoo Linux 2.4.22
+title=Gentoo Linux 2.4.25
 <comment># Partitionen hvor kernebilledet (eller operativsystemet) ligger</comment>
 root (hd0,0)
-kernel (hd0,0)/boot/kernel-2.4.22 root=/dev/hda3
+kernel (hd0,0)/boot/kernel-2.4.25 root=/dev/hda3
 
 <comment># De næste tre linier bruges kun hvis du dobbeltbooter med et Windows-system.</comment>
 <comment># I dette tilfølde er Windows placeret på /dev/hda6.</comment>
@@ -285,31 +280,15 @@ root (hd0,5)
 chainloader +1
 </pre>
 
-<pre caption = "grub.conf for brugere af GRP genkernel">
-default 0
-timeout 30
-splashimage=(hd0,0)/grub/splash.xpm.gz
- 	 
-title=Gentoo Linux 2.4.22
-root (hd0,0)
-kernel (hd0,0)/kernel-2.4.22 root=/dev/hda3
-initrd (hd0,0)/initrd-2.4.22
-  	 
-<comment># Kun hvis du vil dual-boote</comment>
-title=Windows XP
-root (hd0,5)
-chainloader +1
-</pre>
-  	 
-<pre caption = "grub.conf for ikke-GRP brugere af genkernel">
+<pre caption = "grub.conf for genkernel brugere">
 default 0
 timeout 30
 splashimage=(hd0,0)/grub/splash.xpm.gz
   	 
-title=Gentoo Linux 2.4.22
+title=Gentoo Linux 2.4.25
 root (hd0,0)
-kernel (hd0,0)/kernel-2.4.22 root=/dev/ram0 init=/linuxrc real_root=/dev/hda3
-initrd (hd0,0)/initrd-2.4.22
+kernel (hd0,0)/kernel-2.4.25 root=/dev/ram0 init=/linuxrc real_root=/dev/hda3
+initrd (hd0,0)/initrd-2.4.25
 
 <comment># Kun hvis du vil dual-boote</comment>
 title=Windows XP
@@ -338,7 +317,7 @@ som vi diskuterede tidligere:
 <pre caption = "Tilføjelse af vga som et kerne-parameter">
 title=Gentoo Linux
 root (hd0,0)
-kernel (hd0,0)/kernel-2.4.22 root=/dev/hda3 vga=788
+kernel (hd0,0)/kernel-2.4.25 root=/dev/hda3 vga=788
 </pre>
 
 <p>
@@ -380,7 +359,7 @@ Installation af LILO er barnemad; bare brug <c>emerge</c>.
 </p>
 
 <pre caption = "Installation af LILO">
-# <i>emerge --usepkg lilo</i>
+# <i>emerge lilo</i>
 </pre>
 
 </body>
@@ -401,8 +380,8 @@ foretrukne redigeringsprogram (i denne håndbog benytter vi <c>nano</c> konsekven
 <p>
 Nogle sektioner tilbage bad vi dig om at huske navnet på det kernebillede, du 
 havde skabt. I det følgende <path>lilo.conf</path>-eksempel, antager vi at 
-navnet på kernebilledet er <path>kernel-2.4.22</path>. Vi bruger også planen 
-for partitioneringseksemplet fra før, i dette eksempel. Der er tre
+navnet på kernebilledet er <path>kernel-2.4.25</path>. Vi bruger også planen 
+for partitioneringseksemplet fra før, i dette eksempel. Der er to
 separate dele:
 </p>
 
@@ -411,10 +390,7 @@ separate dele:
   En til dem der ikke har brugt <c>genkernel</c> til at bygge deres kerne
  </li>
  <li>
-  En til dem der har brugt en GRP <c>genkernel</c> til at bygge deres kerne
- </li>
- <li>
-  En til dem der har brugt en ny (downloadet) <c>genkernel</c> til at bygge deres kerne
+  En til dem der har brugt <c>genkernel</c> til at bygge deres kerne
  </li>
 </ul>  	
 
@@ -427,25 +403,18 @@ default=gentoo            <comment># Når timeouten er udløbet opstartes sektione
 vga=788                   <comment># Framebuffer-parameter. Tilpas til dit eget ønske</comment>
 
 <comment># Til ikke-genkernel brugere</comment>
-image=/boot/kernel-2.4.22
+image=/boot/kernel-2.4.25
   label=gentoo            <comment># Navn vi tildeler denne sektion</comment>
   read-only               <comment># Start med kun læserettigheder til roden. Ændr det ikke!</comment>
   root=/dev/hda3          <comment># Placering af rodens filsystem</comment>
 
-<comment># Til GRP genkernel brugere</comment>
-image=/boot/kernel-2.4.22
-  label=gentoo
-  read-only
-  root=/dev/hda3
-  initrd=/boot/initrd-2.4.22
-  	 
-<comment># Til brugere af ny genkernel</comment>
-image=/boot/kernel-2.4.22
+<comment># Til brugere af genkernel</comment>
+image=/boot/kernel-2.4.25
   label=gentoo
   read-only
   root=/dev/ram0
   append="init=/linuxrc real_root=/dev/hda3"
-  initrd=/boot/initrd-2.4.22
+  initrd=/boot/initrd-2.4.25
 
 <comment># De to næste linjer skal kun bruges hvis du dobbeltbooter med et Windows-system.</comment>
 <comment># I dette tilfælde er Windows placeret på /dev/hda6.</comment>
@@ -465,7 +434,7 @@ Hvis du har brug for at angive yderligere parametre til kernen, så tilføj en
 </p>
 
 <pre caption = "Brug af append til at tilføje kerne-parametre">
-image=/boot/kernel-2.4.22
+image=/boot/kernel-2.4.25
   label=gentoo
   read-only
   root=/dev/hda3
@@ -511,7 +480,7 @@ Vi installerer først aboot på vores system. Det bruger vi selvfølgelig
 </p>
 
 <pre caption = "Installation af aboot">
-# <i>emerge --usepkg aboot</i>
+# <i>emerge aboot</i>
 </pre>
 
 <p>
@@ -585,7 +554,7 @@ Vi bruger <c>emerge</c> til at installere MILO.
 </p>
 
 <pre caption = "Installation af MILO">
-# <i>emerge --usepkg milo</i>
+# <i>emerge milo</i>
 </pre>
 
 <p>
@@ -638,7 +607,7 @@ LOader".
 </p>
 
 <pre caption = "Installation af SILO">
-# <i>emerge --usepkg silo</i>
+# <i>emerge silo</i>
 </pre>
 
 <p>
@@ -653,7 +622,7 @@ LOader".
 <p>
 Nedenfor finder du et eksempel på <path>silo.conf</path>. Det benytter 
 partitioneringskemaet vi bruger igennem hele denne bog og 
-<path>kernel-2.4.22</path> som kernebillede.
+<path>kernel-2.4.25</path> som kernebillede.
 </p>
 
 <pre caption = "Eksempel på /etc/silo.conf">
@@ -661,7 +630,7 @@ partition = 1         <comment># Opstartspartition</comment>
 root = /dev/hda4      <comment># Rodpartition</comment>
 timeout = 15          <comment># Vent 15 sekunder inden der startes op fra standardsektionen</comment>
 
-image = /boot/kernel-2.4.22
+image = /boot/kernel-2.4.25
   label = linux
 </pre>
 
@@ -794,7 +763,7 @@ være tilgængelig via Portage, men måske ikke er i stage-filerne.
 </p>
 
 <pre caption = "Installering af yaBoot">
-# <i>emerge --usepkg --update yaboot</i>
+# <i>emerge --update yaboot</i>
 </pre>
 
 <p>
@@ -829,7 +798,7 @@ Sørg først for at have det seneste <c>yaBoot</c> installeret på dit system:
 </p>
 
 <pre caption = "Installering af yaBoot">
-# <i>emerge --usepkg --update yaboot</i>
+# <i>emerge --update yaboot</i>
 </pre>
 
 <p>

@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.5 2004/02/12 22:42:15 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.6 2004/02/22 18:57:30 broeman Exp $ -->
 
 <sections>
 <section>
@@ -20,7 +20,7 @@ henvisning til <path>/etc/localtime</path> ved brug af <c>ln</c>:
   	 
 <pre caption="At sætte tidszone informationen">
 # <i>ls /usr/share/zoneinfo</i>
-<comment>(Hvis du vil bruge GMT:)</comment>
+<comment>(Hvis du vil bruge GMT)</comment>
 # <i>ln -sf /usr/share/zoneinfo/GMT /etc/localtime</i>
 </pre>
   	 
@@ -50,7 +50,7 @@ patchet med ydelsesforbedrende egenskaber og stabilitetsforbedringer),
 <c>xfs-sources</c> (kerne-kildekoder med det sidste nye XFS-understøttelse), 
 <c>gs-sources</c> (kerne-kildekode, som er patchet til serverbrug), 
 <c>gaming-sources</c> (kerne-kildekode, som er patchet til optimal 
-spilleydelse), ...
+spilleydelse), <c>development-sources</c> (vanilla 2.6 kernekildekode), ...
 </p>
 
 <p>
@@ -86,12 +86,7 @@ deres arkitektur: <c>hppa-sources</c> (HPPA) eller <c>ppc-sources</c>
 </p>
 
 <p>
-Vælg din kerne-kildekode og installér den ved at bruge <c>emerge</c>. Fra nu 
-af, vil vi bruge <c>emerge --usepkg</c>, som vil installere præ-byggede 
-pakker, hvis de er tilgængelige (til GRP-brugere), ellers vil den hente det. 
-Med andre ord, hvis du ikke bruger præ-byggede pakker, kan du bare glemme 
-<c>--usepkg</c> valgmuligheden, men du behøver ikke. Desuden kan du forkorte 
-<c>--usepkg</c> valgmuligheden ved at bruge <c>-k</c>.
+Vælg din kerne-kildekode og installér den ved at bruge <c>emerge</c>. 
 </p>
 
 <p>
@@ -101,7 +96,7 @@ kan du udskifte dit valg af kildekode:
 </p>
 
 <pre caption="Installation af kerne-kildekode">
-# <i>emerge --usepkg vanilla-sources</i>
+# <i>emerge vanilla-sources</i>
 </pre>
 
 <p>
@@ -111,7 +106,7 @@ kaldet <path>linux</path>, som peger mod din kerne-kildekode:
 
 <pre caption="Se genvej til kerne-kildekode">
 # <i>ls -l /usr/src/linux</i>
-lrwxrwxrwx    1 root     root           12 Oct 13 11:04 /usr/src/linux -&gt; linux-2.4.22
+lrwxrwxrwx    1 root     root           12 Oct 13 11:04 /usr/src/linux -&gt; linux-2.4.25
 </pre>
 
 <p>
@@ -120,20 +115,20 @@ kerne-kildekode) skal du ændre genvejen før du fortsætter:
 </p>
 
 <pre caption="Ændring af genvejen til kerne-kildekode">
-# <i>rm /usr/src/linux &amp;&amp; ln -s /usr/src/linux-2.4.22 /usr/src/linux</i>
+# <i>rm /usr/src/linux &amp;&amp; ln -s /usr/src/linux-2.4.25 /usr/src/linux</i>
 </pre>
 
 <p>
-Nu er det tid til at opsætte og kompilere din kernes kildekoder. x86-baserede
-arkitekturer kan bruge <c>genkernel</c> til dette, som vil bygge en omfattende
+Nu er det tid til at opsætte og kompilere din kernes kildekoder. Alle
+arkitekturer, undtagen PPC, kan bruge <c>genkernel</c> til dette, som vil bygge en omfattende
 kerne, som også er brugt på LiveCDen. Vi forklarer dog den "manuelle" 
 opsætning først, idet det er den bedste metode til at optimere dit system.
 </p>
 
 <p>
 Hvis du vil opsætte din kerne manuelt, forsæt nu med <uri
-link="#doc_chap3">Standard: Manuel opsætning</uri>. Hvis du er en af 
-x86-brugerne og du vil bruge <c>genkernel</c>, bør du læse <uri 
+link="#doc_chap3">Standard: Manuel opsætning</uri>. Hvis du ikke er en af 
+PPC-brugerne og du vil bruge <c>genkernel</c>, bør du læse <uri 
 link="#doc_chap4">Alternativ: Brug af genkernel</uri> i stedet for.
 </p>
 
@@ -249,18 +244,6 @@ nødvendige, det samme med <c>PPP over Ethernet</c> valgmuligheden, som måske
 vil blive brugt af <c>rp-pppoe</c>, når den er opsat til at lave kerne-modus 
 PPPoE.
 </p>
-
-<!-- TODO reactivate when LVM2 instructions are boarded
-<p>
-Hvis du bruger LVM, vil du få brug for at aktivere det i kernen:
-</p>
-
-<pre caption="Valg af LVM-understøttelse">
-Multi-device support (RAID and LVM) - - -&gt;
-  [*] Multiple devices driver support (RAID and LVM)
-  &lt;*&gt;  Logical volume manager (LVM) support
-</pre>
--->
 
 <note>
 Brugere af en 2.6 kerne vil finde nogle af de ovennævnte valgmuligheder under 
@@ -731,21 +714,21 @@ modules_install</c>:
 <p>
 Når kernen er færdig med at kompilere, kopier den da over til
 <path>/boot</path>. I det næste eksempel forudsætter vi, at du har
-opsat og kompileret <c>vanilla-sources-2.4.22</c> (hvilket måske ikke
+opsat og kompileret <c>vanilla-sources-2.4.25</c> (hvilket måske ikke
 er den rigtige kerne til din arkitektur!):
 </p>
 
 <pre caption="Installation af kerne">
 <comment>(Til x86-baserede systemer)</comment>
-# <i>cp arch/i386/boot/bzImage /boot/kernel-2.4.22</i>
-# <i>cp System.map /boot/System.map-2.4.22</i>
+# <i>cp arch/i386/boot/bzImage /boot/kernel-2.4.25</i>
+# <i>cp System.map /boot/System.map-2.4.25</i>
 
 <comment>(Til amd64-baserede systemer)</comment>
-# <i>cp arch/x86_64/boot/bzImage /boot/kernel-2.4.22</i>
+# <i>cp arch/x86_64/boot/bzImage /boot/kernel-2.4.25</i>
 
 <comment>(Til andre systemer)</comment>
-# <i>cp vmlinux /boot/kernel-2.4.22</i>
-# <i>cp System.map /boot/System.map-2.4.22</i>
+# <i>cp vmlinux /boot/kernel-2.4.25</i>
+# <i>cp System.map /boot/System.map-2.4.25</i>
 </pre>
 
 <p>
@@ -754,7 +737,7 @@ Det er også klogt at kopiere din kerneopsætningsfil til
 </p>
 
 <pre caption="Backup af din kerneopsætning">
-# <i>cp .config /boot/config-2.4.22</i>
+# <i>cp .config /boot/config-2.4.25</i>
 </pre>
 
 <p>
@@ -778,12 +761,9 @@ kernemoduler</uri>.
 
 <p>
 Hvis du læser denne sektion, så har du valgt at bruge vores <c>genkernel</c>
-script til at opsætte din kerne for dig. Dette betyder dog også at du har
-et x86-baseret system. Andre arkitekturer er <e>ikke understøttet</e> af
+script til at opsætte din kerne for dig. Dette betyder dog også at du ikke har
+et PPC-baseret system, idet det ikke understøtter
 <c>genkernel</c>. 
-
-<!-- TODO: Add ppc as it should be available with the first
-2004 release -->
 </p>
 
 <p>
@@ -803,47 +783,39 @@ genkernel'ens ebuild:
 </p>
 
 <pre caption="Emerge genkernel">
-# <i>emerge --usepkg genkernel</i>
+# <i>emerge genkernel</i>
 </pre>
 
 <p>
-Kompilér nu din kerne-kildekoder. Hvis du bruger en <c>genkernel</c>,
-der er installeret gennem GRP, skal du køre <c>genkernel</c>. Hvis du
-har en nyere <c>genkernel</c> pakke (en downloadet version), så skal
-du køre <c>genkernel all</c>. Vær opmærksom på at,
+Kompilér nu din kerne-kildekoder ved at køre <c>genkernel all</c>.
+Vær opmærksom på at,
 når <c>genkernel</c> kompilerer en kerne, som understøtter det meste hardware, 
 kan kompileringen tage noget tid at færdiggøre!
 </p>
 
 <pre caption="Start af genkernel">
-<comment>(Dette eksempel er til GRP genkernel)</comment>
-# <i>genkernel</i>
-Gentoo Linux genkernel, version 1.4
-Copyright 2003 Gentoo Technologies, Inc., Bob Johnson, Daniel Robbins
-Distributed under the GNU General Public License version 2
-
-Settings:
-compile optimization: 1 processor(s)
-source tree: /usr/src/linux-2.4.22
-config: gentoo (customized)
-config loc: /etc/kernels/config-2.4.22
-initrd config: (default) /etc/kernels/settings
-
-* Running "make oldconfig"...                                                                     [ ok ]
-* Logging to /var/log/genkernel.log...                                                            [ ok ]
-* Starting 2.4.22 build...                                                                        [ ok ]
-* Running "make dep"...                                                                           [ ok ]
-* Running "make bzImage"...                                                                       [ ok ]
-* Running "make modules"...                                                                       [ ok ]
-* Running "make modules_install"...                                                               [ ok ]
-* Moving bzImage to /boot/kernel-2.4.22...                                                        [ ok ]
-* Building busybox...                                                                             [ ok ]
-* Creating initrd...                                                                              [ ok ]
-
-* Build completed successfully!
-
-* Please specify /boot/kernel-2.4.22 and /boot/initrd-2.4.22
-* when customizing your boot loader configuration files.
+# <i>genkernel all</i>
+GenKernel v3.0.1_beta10
+* ARCH: x86    
+* KERNEL VER: 2.4.25
+* kernel: configuring source
+* kernel: running mrproper
+<comment>(output fjernet for at forøge læsbarheden)</comment>
+* Kernel compiled successfully!
+* Required Kernel Params:
+*   : root=/dev/ram0 init=/linuxrc real_root=/dev/$ROOT
+*     where $ROOT is the devicenode for your root partition as
+*     you should have specified in /etc/fstab
+*              
+* You MUST tell your bootloader to use the generated initrd
+*              
+* Recommended Kernel Params:
+*   : vga=0x317 splash=verbose
+*              
+* Do NOT report kernel bugs (configs included) as genkernel bugs.
+* Make sure you have the latest genkernel before reporting bugs
+*              
+* For more info see /usr/share/genkernel/README
 </pre>
 
 <p>
@@ -865,7 +837,7 @@ For at emerge og aktivere <c>hotplug</c>, tast følgende:
 </p>
 
 <pre caption="Emerge og aktivering af hotplug">
-# <i>emerge --usepkg hotplug</i>
+# <i>emerge hotplug</i>
 # <i>rc-update add hotplug default</i>
 </pre>
 
@@ -895,7 +867,7 @@ emerge:
 <tr>
   <ti>nvidia-kernel</ti>
   <ti>Accelereret NVIDIA-grafik til XFree86</ti>
-  <ti><c>emerge --usepkg nvidia-kernel</c></ti>
+  <ti><c>emerge nvidia-kernel</c></ti>
 </tr>
 <tr>
   <ti>nforce-net</ti>

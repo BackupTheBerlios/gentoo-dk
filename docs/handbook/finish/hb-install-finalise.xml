@@ -3,7 +3,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.5 2004/02/12 22:00:30 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.6 2004/02/22 18:57:30 broeman Exp $ -->
 <sections>
 <section>
 <title>Brugeradministation</title>
@@ -94,6 +94,9 @@ link="#doc_chap2_sect2">Valgfrit: Opsætning af BootX</uri>. MIPS
 brugere bliver nødt til at lave lidt mere konfigureren af deres MIPS
 PROM for at få Gentoo til at virke. Disse brugere bør læse <uri
 link="#doc_chap2_sect3">Valgfrit: At få Gentoo/MIPS til at virke</uri>.
+</p>
+
+<p>
 GRP-brugere kan fortsætte med <uri 
 link="#doc_chap2_sect4">Valgfrit: Installation af ekstra pakker</uri>, resten 
 kan slutte med <uri link="?part=1&amp;chap=12">Hvad skal man så 
@@ -189,7 +192,7 @@ Nu er du klar til at nyde Gentoo!
 </subsection>
 
 <subsection>
-<title>Valgfrit: Installering af ekstra pakker.</title>
+<title>Valgfrit: Installering af GRP-pakker</title>
 <body>
 
 <impo>

@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.4 2004/02/12 22:25:41 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.5 2004/02/22 18:57:30 broeman Exp $ -->
 
 <sections>
 <section>
@@ -260,13 +260,13 @@ interfacet til pr-pppoe brug:
 </p>
 
 <pre caption="Eksempler til /etc/conf.d/net">
-<comment>(Ved DHCP:)</comment>
+<comment>(Ved DHCP)</comment>
 iface_eth0="dhcp"
 
-<comment>(Ved statisk IP:)</comment>
+<comment>(Ved statisk IP)</comment>
 iface_eth0="192.168.0.2 broadcast 192.168.0.255 netmask 255.255.255.0"
 gateway="eth0/192.168.0.1"
-<comment>(Til rp-pppoe:)</comment>
+<comment>(Til rp-pppoe)</comment>
 iface_eth0="up"
 </pre>
 
@@ -363,7 +363,7 @@ PCMCIA-brugere bør først installere pakken <c>pcmcia-cs</c>:
 </p>
 
 <pre caption="Installation af pcmcia-cs">
-# <i>emerge --usepkg pcmcia-cs</i>
+# <i>emerge pcmcia-cs</i>
 </pre>
 
 <p>
