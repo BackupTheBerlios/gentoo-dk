@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.5 2004/02/22 18:57:30 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.6 2004/02/28 19:50:35 broeman Exp $ -->
 
 <sections>
 <section>
@@ -16,7 +16,7 @@
 <p>
 Før vi starter, viser vi en liste over de hardwarekrav, som du skal
 opfylde for at installere Gentoo på din computer. Selvfølgelig er det
-forskelligt afhængigt af, hvilken arkitektur du har.
+forskelligt, afhængigt af hvilken arkitektur du har.
 </p>
 
 </body>
@@ -536,7 +536,7 @@ I tilfælde af, at du vil bruge netopstart-metoden (<e>MIPS</e>-brugere har ikke 
 skal du allerede have en fungerende DHCP- og TFTP-server. Informationer for at indstille
 en <uri link="/doc/da/diskless-howto.xml#doc_chap3">DHCP-server</uri> og <uri
 link="/doc/da/diskless-howto.xml#doc_chap4">TFTP-server</uri> er til rådighed i
-<uri link="/doc/da/diskless-howto.xml">Diskless-HOWTO</uri>. 
+<uri link="/doc/da/diskless-howto.xml">Diskless HOWTO</uri>. 
 </p>
 
 <p>
@@ -653,7 +653,7 @@ Athlon).
 <p>
 For at brænde de hentede ISO(er), skal du vælge 'raw-burning'. Hvordan du
 gør dette, er meget afhængigt at programmet. Vi vil diskutere nogle populære
-værktøjer tilat gøre dette.
+værktøjer til at gøre dette.
 </p>
 
 <ul>
@@ -730,7 +730,7 @@ harddisk, og ignorere dit CDROM-drev.
 </p>
 
 <p>
-Placér nu installations-CDen i CDROM-drevet og genstart. Du burde se
+Placer nu installations-CDen i CDROM-drevet og genstart. Du burde se
 en blæret opstartsskærm med Gentoo Linuxs logo. På denne skærm, kan du
 trykke Enter for at begynde opstartsprocessen med
 standardindstillingerne til opstart, eller opstarte LiveCDen med
@@ -975,7 +975,7 @@ Administration mode</c> for at komme ind til BOOT_ADMIN-konsolen. Du burde nu ha
 </p>
 
 <p>
-Indsæt Gentoo LiveCDen i CDROM-drevet. Hvis du ikke kender SCSI IDen til dit
+Indsæt Gentoo LiveCDen i CDROM-drevet. Hvis du ikke kender SCSI ID'en til dit
 CDROM-drev, vil din PA-RISC-station søge efter den, når du udfører 
 <c>search</c>-kommandoen.
 </p>
@@ -1055,7 +1055,7 @@ Disse parametre er brugbare til de fleste situationer.
 
 <p>
 Hvis du får brug for ekstra egenskaber, så skal du tilføje de passende nøgleord til slutningen af 
-kommandolinien. For at tilføje et nøgleord, redigér det sidste felt, tilføj et mellemrum og tast 
+kommandolinien. For at tilføje et nøgleord, rediger det sidste felt, tilføj et mellemrum og tast 
 dit nøgleord. Det eneste indbyggede nøgleord, på nuværende tidspunkt, er <c>cdcache</c>, som 
 fortæller LiveCDen til at hente sig selv ind i RAM, som tillader dig at unmounte CDen.
 </p>
@@ -1145,7 +1145,7 @@ Hardwareopsætning</uri>.
 <body>
 
 <p>
-Placér LiveCDen i CDROM-drevet og genstart systemet. Hold 'C'-tasten
+Placer LiveCDen i CDROM-drevet og genstart systemet. Hold 'C'-tasten
 nede ved opstart (eller kør en 'OldWorld' boot-loader, som
 f.eks. BootX eller quik). Du vil blive hilst velkommen af en venlig
 besked og en <e>boot:</e> prompt i bunden af skærmen.
@@ -1459,7 +1459,7 @@ virke ordentligt:
 </p>
 
 <pre caption="Nogle reparationer til SGI-maskiner for at TFTP kan virke ordentligt">
-<comment>(Deaktivér "Path Maximum Transfer Unit", ellers vil SGI Prom ikke kernen)</comment>
+<comment>(Deaktiver "Path Maximum Transfer Unit", ellers vil SGI Prom ikke kernen)</comment>
 # <i>echo 1 &gt; /proc/sys/net/ipv4/ip_no_pmtu_disc</i>
 <comment>(Indstil port-omfanget, som kan bruges af SGI Prom)</comment>
 # <i>echo "2048 32767" &gt; /proc/sys/net/ipv4/ip_local_port_range</i>
