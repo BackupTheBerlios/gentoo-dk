@@ -342,93 +342,54 @@ For mere information, se venligst <uri link="http://www.gentoo.org/security/en/g
 
 </chapter>
 <chapter> 
-<title>Featured Developer of the Week</title> 
+<title>Ugens udvikler</title> 
 <section>
 <title>Lance Albertson</title>
 <body>
 <figure link="http://www.gentoo.org/images/gwn/20040419_ramereth.jpg"
 short="Lance Albertson (aka ramereth)" caption="Lance Albertson (aka ramereth)" />
 <p>
-This week we are featuring <mail link="ramereth@gentoo.org">Lance Albertson
-</mail> (aka ramereth), who is doing general system administration and monitoring
-for Gentoo. This involves managing monitoring tools for the
-<uri link="http://www.gentoo.org/proj/en/infrastructure/index.xml">Infrastructure
-Project</uri>, such as <uri link="http://www.nagios.org">Nagios</uri>
-server and implementation, Catci graphs, and whateverelse they come up with. He
-also helps with general system administration using cfengine and other tools.
-Furthermore, he helps infrastructure team in setting up new servers, when such
-need arises. He is making his first steps in ebuild maintenance by helping out
-with <uri link="http://wolk.sourceforge.net/">WOLK Kernel</uri> and various
-ebuilds, which belong to netmon herd. Apart from all this Lance is taking part
-in Gentoo server project, throwing ideas and suggesting strategies.
+Denne uge præsenterer vi <mail link="ramereth@gentoo.org">Lance Albertson
+</mail> (aka ramereth), som laver generel system administration og overvågning 
+for Gentoo. Dette involverer overvågningsværktøjer til
+<uri link="http://www.gentoo.org/proj/en/infrastructure/index.xml">Infrastruktur-projektet</uri>, som f.eks. <uri link="http://www.nagios.org">Nagios</uri>-severen og implementeringen, Catci graphs, og hvad ellers de kommer frem med. Han hjælper også med generel system administration ved brug af cfengine og andre værktøjer.
+Yderligere hjælper han infrastruktur-teamet med at opsætte nye servere, når det bliver nødvendigt. Han er ved at tage sine første skridt i ebuild-vedligeholdelse ved at hjælpe med <uri link="http://wolk.sourceforge.net/">WOLK Kernen</uri> og forskellige ebuilds, om tilhører til netmon-flokken. Udover alt dette, tager Lance del i Gentoo server-projektet, ved at smide rundt med ideer og forslag til strategier.
 </p>
 
 <p>
-Lance considers himself to be new to Linux, as his first serious experience
-with this OS started in January 2001. His first distro was Mandrake, on which
-he applied a so called "let's install everything strategy". However, he admits
-that he got bored with it and switched to Debian, which was a suggestion of his
-boss. Lance came across Gentoo sometimes in 2002, seeing his friend building it on
-a dual Pentium Pro box. In the beginning he found the idea to be "nuts" but 6
-months later decided to give it a try (it was version 1.2 at a time), and as he
-says "fell in love instantly".
+Lance ser sig selv som ny til Linux, idet hans første seriøse erfaringer med dette OS startede i Januar 2001. Hans første distribution var Mandrake, hvor han udførte en slags "lad os installere alt"-strategi. Han indrømmer dog at han kedede sig med det og skiftede til Debian, som et forslag fra hans chef. Lance kom omkring Gentoo et tidspunkt i 2002, da han så sin ven bygge det på en dual Pentium Pro box. I begyndelsen fandt han ideen "tosset", men seks måneder senere tog han beslutningen for at prøve (det var version 1.2 på det tidspunkt), og som han siger "blev forelsket med det samme".
 </p>
 
 <p>
-ramereth started his way to becoming a dev on #gentoo-server channel on
-freenode, where he was spending some time. That was when <mail link="klieber@gentoo.org">
-Kurt Lieber</mail> asked him if he wanted to help Gentoo with Nagios
-implementation.
+ramereth startet med at blive en udvikler på #gentoo-server channel på freenode, hvor han brugte nogen tid på. Det var her <mail link="klieber@gentoo.org">
+Kurt Lieber</mail> spurgte ham om han ville hjælpe Gentoo med Nagios-implementationen.
 </p>
 
 <p>
-He is most proud of the project he did once for the school. That was an irc-
-like server/client with xml-based message format. The commands where based on
-IRC standard, so one could join the channel become an op, kick/ban people etc.
-Moreover he was using flashes for the client which made it even more
-interesting. Even though he had a few known bugs, he still got a straight 'A'
-on it.
+Han er mest stolt over et projekt han lavede engang i skolen. Det var en irc-lignende server/klient med xml-baserede beskedsformat. Kommandoerne var baseret på IRC-standarden, så én kunne joine en kanal, blive op, kick/ban folk osv. Yderligere brugte han flash-scripts til klienten, som gjorde det endnu mere spændende. Selvom han have få kendte fejl, fik han alligevel et rent 13-tal (Straight 'A').
 </p>
 
 <p>
-There are about 15 computers in his house, including
-x86/SPARC/PPC/Alpha, and all those he ever used run Gentoo. Lance
-prefers <uri link="http://www.gnome.  org">Gnome</uri> desktop and
-first things he runs are <uri link="http://www.
-ximian.com/">evolution</uri>, <uri
-link="http://gaim.sourceforge.net/">gaim</uri> and xterms. <uri
+Der er omkring 15 computere i hans hus, værende
+x86/SPARC/PPC/Alpha, og alle de han brugte, kører Gentoo. Lance
+foretrækker <uri link="http://www.gnome.org">Gnome</uri>-desktop og
+de første ting han kører er <uri link="http://www.ximian.com/">evolution</uri>, <uri link="http://gaim.sourceforge.net/">gaim</uri> og xtermer. <uri
 link="http://www.iu.hio.no/cfengine/">cfengine</uri>, <uri
-link="http://irssi.org/">irssi</uri>, <uri link="http://www.gnu.org/
-software/screen/">screen</uri>, <uri
-link="http://www.nagios.org">nagios</uri> and <uri
-link="http://www.raxnet.net/products/cacti/">cacti</uri> are among his
-favorite tools.
+link="http://irssi.org/">irssi</uri>, <uri link="http://www.gnu.org/software/screen/">screen</uri>, <uri
+link="http://www.nagios.org">nagios</uri> og <uri
+link="http://www.raxnet.net/products/cacti/">cacti</uri> er blandt hans yndlingsværktøjer.
 </p>
 
 <p>
-Lance was attending a school school at Kansas State University, from which he
-graduated in May 2003 with a degree in Agricultural Technology Management with
-minors in Agronomy and Computer Science. Now he is working for RHS Inc., doing
-technical documentation and IT security. Apart from that he is also doing full-
-time farming with his family. Driving semi truck, combine and various tracktors
-is also on list of his skills.
+Lance gik i skole på Kansas State University, hvorfra han dimitterede i maj 2003 med en grad i 'Agricultural Technology Management' med en minor i 'Agronomy and Computer Science'. Nu arbejder han for RHS Inc. og arbejder med teknisk dokumentation og IT-sikkerhed. Udover det arbejder han også med fuldtids landbrug sammen med sin familie. Køre semi-truck, combine og forskellige traktorer er også på listen over hans kvalifikationer.
 </p>
 
 <p>
-When he doesn't work and doesn't do anything for Gentoo, Lance enjoys playing
-trumpet in jazz ensembles. He has been in the top big band jazz ensemble at k-
-state for several years plus was in the latin jazz combo. Also he likes playing
-racquetball, poker and hanging out with his friends. Now he lives in his own
-house in a small community Hiawatha, which is in northeast of Kansas.  Though
-he considers his life to "laid back" it's quite easy to get away from it, cause
-Hiawatha is just two hours from Kansas City. And he does actually go there quite
-often! His favorite quote is "Where ever
-you go, there you are".
+Når han ikke arbejder og ikke laver noget med Gentoo, nyder Lance at blæse trumpet i jazz-forsamlinger. Han har været i top big band jazz-forsamlingen ved k-state i flere år og han var i det latin-amerikanse jazz combo. Han kan også lide at spille racquetball, poker og hænge ud med sine venner. Lige nu lever han i sit eget hus i et lille samfund, Hiawatha, som er i nordøst Kansas.  Selvom han betegner sit liv som "tilbagelænet" er det meget let at komme væk fra det, idet Hiawatha kun er to timer væk fra Kansas City. Han tager også dertil meget tid! Hans yndlingsnotat er "Where ever you go, there you are" (Hvor ellers du går, der er du).
 </p>
 
 <p>
-When I asked Lance to give me a sentence about Gentoo, he said: "Gentoo is the
-solution to total control."
+Da jeg spurgte Lance om at give mig en sætning om Gentoo, sagde han: "Gentoo er løsningen til total kontrol."
 </p>
 </body>
 </section>
@@ -440,42 +401,28 @@ solution to total control."
 <body>
 
 <p>
-<b>Gentooified coLinux</b>
+<b>Gentooficeret coLinux</b>
 </p>
 
 <p>
-In an bid to add yet another way to run Gentoo under impossible
-circumstances, Danish Gentoo user <uri
-link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=22752">janlaur</uri>
-has volunteered a Howto on running Gentoo Linux as a native Windows
-thread, using coLinux (and involving a complete Gentoo installation
-contained in a 2 GB image file to be downloaded at some point). Anyone
-patient enough to try this, check the thread in the Documentation,
-Tips &amp; Tricks section:
+I tilføjelsen af endny en metode at køre Gentoo under umulige forhold, har den danske Gentoo-bruger <uri link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=22752">janlaur</uri> meldt sig friviligt til at lave en Howto om at køre Gentoo Linux, som en tilhørende Windows-tråd, ved brug af coLinux (og involveringen af en komplet Gentoo installation, indeholdende i en 2GB billedfil, til at blive hentet på et tidspunkt). Alle som er tålmodig nok til at prøve dette, tjek tråden i 'Documentation, Tips &amp; Tricks'-sektionen:
 </p>
 
 <ul><li><uri link="http://forums.gentoo.org/viewtopic.php?t=163154">HOWTO coLinux with gentoo</uri></li>
 </ul>
 
 <p>
-<b>New Finnish Forum</b>
+<b>Nyt finsk forum</b>
 </p>
 
 <p>
-The Great Scandinavian Unification that the Forums saw about a year
-ago was intended to create a lively atmosphere among the nordic
-faction of Gentooism, mostly under the impression that Swedish was
-sort of a lingua franca for most of the region and looked like a good
-common denominator at first. But now the Finnish users, linguistically
-very different from, err, most of the planet's other humanoids, have
-achieved critical mass and decided they deserve a forum in their own
-language. Pleased to announce <uri
+Den store skandinaviske sammensmeltning, som skete på Forums omkring et års tid siden, havde hensigten til at lave en livlig atmosfære omkring den nordiske del af Gentooismen, mest under forestillingen af at svensk var en slags lingua franca til det meste af regionen og så ud som en god fællesnævner. Men nu vil de finske brugere, som sprogligt er meget forskelligt fra, øh, resten af planetens mennesker, opnået en kritisk masse og besluttet at de fortjener et forum til deres eget sprog. Hjertlig velkommen til <uri
 link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=22041">jaska</uri>
-and <uri
+og <uri
 link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=32106">Mikessu</uri>
-as the new forum's inaugural moderators, tervetuloa 'n all that:
+som det nye forums inaugural moderators, tervetuloa og alt det der:
 </p>
-<ul><li><uri link="http://forums.gentoo.org/viewtopic.php?f=47">Finnish Gento Forum</uri></li>
+<ul><li><uri link="http://forums.gentoo.org/viewtopic.php?f=47">Det finske Gento forum</uri></li>
 </ul>
 
 </body>
@@ -485,14 +432,12 @@ as the new forum's inaugural moderators, tervetuloa 'n all that:
 <body>
 <p>
 <b>
-Linux Partiton Resizing Utilities
+Værktøjer til ændring af størrelsen på Linux-partitoner
 </b>
 </p>
 
 <p>
-There are plenty of commercial partition-resizing utilities on the market.  
-But what about Linux ones?  Here's a <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/75114">
-thread</uri> that talks about commercial and free utilities for all your resizing needs.
+Der er masser af kommercielle værktøjer til at ændre størrelsen på partitioner på markedet. Men hvad med dem til Linux? Her er en <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/75114">tråd</uri> som taler omkring de kommercielle og frie værktøjer til alle dine behov.
 </p>
 
 <p>
@@ -502,45 +447,40 @@ Ebuild overflow?
 </p>
 
 <p>
-Some capable Gentoo users have noticed that user-contributed ebuilds
-have <uri
-link="http://thread.gmane.org/gmane.linux.gentoo.user/75545">
-not</uri> been making their way into Portage on a timely basis.  It
-comes down to developer overload, so if you've got some free
-time... become a Gentoo Package maintainer!
+Nogle dygtige Gentoo-brugere har noteret sig at bruger-bidragede ebuilds har <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/75545">ikke</uri> gjort deres vej igennem Portage i et acceptabel tidsrum.  Det er fordi at der er et udvikler-overload, så hvis du har meget tid ... bliv en Gentoo pakke-vedligeholder!
 </p>
 
 </body>
 </section>
 </chapter>
 
-<!-- fra sidste uge...<chapter>
+<chapter>
 <title>Gentoo International</title>
 <section>
 <body>
 
 <p>
-<b>Italy/Switzerland: Joint GECHI and Ticino LUG Meeting</b>
+<b>Italien/Schweiz: Sammenlagt GECHI og Ticino LUG Møde</b>
 </p>
 
 <p>
-On Friday and Saturday, 16 and 17 April, the notorious <uri
-link="http://www.gechi.org/">GECHI</uri> group of Italian Gentoo users
-will join forces with the Ticino Linx User Group to organize a
-friendly event at one of three SUPSI (Scuola Universitaria
-Professionale della Svizzera Italiana) sites in Switzerland, this one
-located in a town called Manno, not far from the Italian border. Dates
-and times are to be taken with a grain of salt (check <uri
-link="http://tilug.org/cms/index.php?ind=14">the TiLUG site</uri> for
-details), but the <uri
+På fredag og lørdag, 16. og 17. April, vil den berygtede <uri
+link="http://www.gechi.org/">GECHI</uri>-gruppe af italienske
+Gentoo-brugere sammenlægge kræfterne med Ticino Linx User Group
+for at organisere en venlig begivenhed ved en af tre SUPSI (Scuola
+Universitaria Professionale della Svizzera Italiana) steder i Schweiz,
+denne placeret i byen kaldet Manno, ikke langt fra den italienske
+grænse. Datoer og tider skal tages med et gram salt (tjek <uri
+link="http://tilug.org/cms/index.php?ind=14">TiLUG siden</uri> for
+detaljer), men <uri
 link="http://forums.gentoo.org/viewtopic.php?t=157613">Forum
-coordination thread</uri> appears to have everything under
-control. And in any case, springtime in Ticino is supposed to be
-lovely....
+koordineringstråden</uri> ser ud til at have alt under kontrol. Og i
+alle tilfælde skulle foråret i Ticino være meget yndigt....
 </p>
+
 </body>
 </section>
-</chapter>-->
+</chapter>
 
 <chapter>
 <title>Gentoo International</title>
@@ -553,7 +493,7 @@ lovely....
 
 <p>
 I morgen, torsdag d. 20. April, vil Gentooisianerne i Norditalien
-flokke til Santo Ricardo's (af Emacs kirken) fremmøde ved det
+flokke til Santo Ricardos (af Emacs kirken) fremmøde ved det
 filosofiske fakultet ved Milanos universitet. RMS vil give en tale og
 medvirke i en panel diskussion i løbet af "Liberty Week" der er
 organiseret af den italienske afdeling af (Syd amerikansk oprindeligt)
@@ -575,7 +515,7 @@ Det berygtede sted for universitetsstudernede "Kamin"
 (Kapuzinerstr. 8, ingen hjemmeside) i Mainz vil se endnu et Gentoo
 bruger møde for folk Wiesbaden/Mainz/Taunusstein området, d. 30. April,
 kl. 19:00. De sædvanelige bliver inviteret pr. email, siger koordinator <uri
-link="http://forums.gentoo.org/profile.php?mode=viewprofile&u=30329">Birnbaumtruhe</uri>,
+link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=30329">Birnbaumtruhe</uri>,
 men alle i regionen i ligeledes velkomne til at deltage. Send din
 "osse mig" besked til <uri
 link="http://forums.gentoo.org/viewtopic.php?t=84785">denne tråd
@@ -682,7 +622,7 @@ link="http://forums.gentoo.org/viewtopic.php?t=94915">koordineringstråden
      </p>
      <ul>
 <li><mail link="livecd@gentoo.org" >Gentoo LiveCD Team</mail>, med 20
-              <uri link="http://bugs.gentoo.org/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;chfield=assigned_to&amp;chfieldfrom=2004-04-10&amp;chfieldto=2004-04-16&amp;assigned_to=livecd@gentoo.org" >nye bugs</uri>
+              <uri link="http://bugs.gentoo.org/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;chfield=assigned_to&amp;chfieldfrom=2004-04-10&amp;chfieldto=2004-04-16&amp;assigned_to=livecd@gentoo.org">nye bugs</uri>
             </li>
 <li><mail link="base-system@gentoo.org" >Gentoo's Team for Core System packages</mail>, med 18
               <uri link="http://bugs.gentoo.org/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;chfield=assigned_to&amp;chfieldfrom=2004-04-10&amp;chfieldto=2004-04-16&amp;assigned_to=base-system@gentoo.org" >nye bugs</uri>
