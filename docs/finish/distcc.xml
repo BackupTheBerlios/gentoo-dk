@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/distcc.xml,v 1.9 2004/05/16 19:05:05 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/distcc.xml,v 1.10 2004/05/16 19:13:01 broeman Exp $ -->
 
 <!--
  Synchronised with rev 1.15 on
@@ -134,7 +134,7 @@ DISTCC_DIR="${PORTAGE_TMPDIR}/.distcc"
 </pre>
 
 <p>
-Derefter skal du specificere hvilken vært du vil bruge. Brug <i>distcc-config</i> kommandoen for at indstille listen af værter. Her er et eksempel på nogle værter, som måske er med i din liste:
+Derefter skal du specificere hvilken vært du vil bruge. Brug <c>distcc-config</c> kommandoen for at indstille listen af værter. Her er et eksempel på nogle værter, som måske er med i din liste:
 </p>
 
 <pre caption="Eksempler på vært definitioner">
@@ -263,9 +263,9 @@ Opstart din nye box med en Gentoo Linux LiveCD og følg <uri link="/doc/da/handbo
 # <i>nano -w /etc/make.conf</i>
 <comment>(Tilføj distcc til FEATURES-variablen</comment>
 FEATURES="distcc"
-<comment>
+<comment>(Sæt distccs folder til midlertidig plads)</comment>
 DISTCC_DIR="${PORTAGE_TMPDIR}/.distcc"
-<comment>Modificer MAKEOPTS til at indeholde -jN men N i en passende integer</comment>
+<comment>(Modificer MAKEOPTS til at indeholde -jN men N i en passende integer)</comment>
 MAKEOPTS="-jN"
 </pre>
 
