@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/nano-basics-guide.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/nano-basics-guide.xml,v 1.2 2004/03/23 20:05:48 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/nano-basics-guide.xml">
@@ -110,8 +110,8 @@ for at klippe teksten. Brug <c>^U</c> for at sætte det ind. SLAM! Se det er madl
 <title>At lede efter tekst</title>
 <body>
 <p>
-At lede efter en streng er nemt, så længe du tænker <em>"HvorEr"</em> i
-stedet for <em>"Søg"</em>. Bare tryk <c>^W</c> (<c>CTRL w</c>) og tast
+At lede efter en streng er nemt, så længe du tænker <e>"HvorEr"</e> i
+stedet for <e>"Søg"</e>. Bare tryk <c>^W</c> (<c>CTRL w</c>) og tast
 den streng du leder efter. Som jeg sagde, nemt.</p>
 </body>
 </section>
