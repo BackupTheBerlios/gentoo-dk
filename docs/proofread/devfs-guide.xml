@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/devfs-guide.xml,v 1.1 2003/12/29 19:13:41 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/devfs-guide.xml,v 1.1 2004/01/02 12:46:18 broeman Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
@@ -13,6 +13,9 @@
 </author>
 <author title="Oversætter">
   <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
+</author>
+<author title="Korrektur">
+  <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
 </author>
 
 <abstract>
@@ -33,21 +36,21 @@ om og hvordan du arbejder med det.
 
 <p>
 Traditionelle Linux implementationer giver deres brugere en abstrakt
-enheds sti, ved navn <path>/dev</path>. Inde i denne sti finder
-brugeren <e>enheds noder</e><!-- device nodes-->, som er specielle
-filer der repræsenterer enheder i deres system. F.eks., repræsenterer
+enhedssti, ved navnet <path>/dev</path>. Inde i denne sti finder
+brugeren <e>enhedsnoder</e><!-- device nodes-->, som er specielle
+filer, der repræsenterer enheder i deres system. F.eks., repræsenterer
 <path>/dev/hda</path> den første IDE enhed i deres system. Ved at
-stille enhedsfiler til rådighed for brugerne, kan de lave programmer
-der kan interagere med hardware som om at hardwaren var en almindelig
+stille enhedsfiler til rådighed for brugerne, kan de lave programmer,
+der kan interagere med hardware, som om at hardwaren var en almindelig
 fil i stedet for at bruge specielle APIer.
 </p>
 
 <p>
-Enhedsfilerne kan deles op i to grupper, de kaldes <e>character</e>
-enheder og <e>block</e> enheder. Den første gruppe består af hardware
+Enhedsfilerne kan deles op i to grupper, de kaldes <e>character</e>-enheder
+og <e>block</e>-enheder. Den første gruppe består af hardware,
 hvor læsning/skrivning ikke bruger buffer. Den anden gruppe består
-naturligvis af hardware hvor læsning/skrivning bruger buffer. Begge
-enheder kan læses en character af gangen, eller i blokke. Derfor kan
+naturligvis af hardware, hvor læsning/skrivning bruger buffer. Begge
+enheder kan læse en character af gangen, eller i blokke. Derfor kan
 navngivningen måske lyde forvirrende og er faktisk forkert.
 </p>
 
@@ -76,7 +79,7 @@ første enhedsfil stemmer overens med den fjerde partition på den
 første IDE enhed. Dens største-mindste par er <path>3, 4</path>. Med
 andre ord, passer den mindste med den partition, hvor den største
 stemmer med enheden. Det andet eksempel har <path>4, 5</path> som
-største mindste parret. I dette tilfælde passer største med terminal
+største-mindste parret. I dette tilfælde passer største med terminal
 driveren, mens mindsten passer med terminalens nummer (i dette
 tilfælde den femte terminal).
 </p>
@@ -89,11 +92,11 @@ tilfælde den femte terminal).
 
 <p>
 Hvis du laver et hurtigt tjek i sådan en <path>/dev</path>, finder du
-ud af at ikke bare er alle dine enheder listet, men <e>alle</e> mulige
+ud af, at ikke bare er alle dine enheder listet, men <e>alle</e> mulige
 enheder du kan forestille dig. Med andre ord har du enhedsfiler for
 enheder du ikke har. At vedligeholde sådan en enhedsgruppe er en
-større opgave for at sige det mildt. Forestil dig at skulle ændre
-rettigheder på alle de enhedsfiler der har en tilsvarende enhed i dit
+større opgave, for at sige det mildt. Forestil dig at skulle ændre
+rettigheder på alle de enhedsfiler, der har en tilsvarende enhed i dit
 system, og efterlade resten af de enhedsfiler som de er.
 </p>
 
@@ -106,8 +109,8 @@ du skal lave?
 </p>
 
 <p>
-Når du har programmer der interagerer med hardware gennem enhedsfiler,
-så kan du ikke have at root partitionen er mountet kun med læse
+Når du har programmer, der interagerer med hardware gennem enhedsfiler,
+så kan du ikke have at root-partitionen er mountet, kun med læse
 rettigheder, selvom der ikke er brug for at der er skrive
 rettigheder. Og du kan ikke have 
 <path>/dev</path> på en separat partition, da <c>mount</c> har brug for
@@ -121,8 +124,8 @@ rettigheder. Og du kan ikke have
 <body>
 
 <p>
-Som du nok kan forestille dig har kerne hackerne fundet en hel del
-løsniger til de førnævnte problemer. Mange af dem har dog andre
+Som du nok kan forestille dig har kerne-hackerne (læs: programmører) fundet en hel del
+løsninger til de førnævnte problemer. Mange af dem har dog andre
 ulemper som er beskrevet på 
 <uri>http://www.atnf.csiro.au/people/rgooch/linux/docs/devfs.html#faq-why</uri>.
 Vi vil ikke diskutere disse implementationer, men fokusere på en
@@ -146,7 +149,7 @@ diskuteret fordi det er mindre spændende for brugere...
 
 <p>
 F.eks. med devfs skal du ikke bekymre dig om største/mindste par. Det
-er stadig understøttet (for bagud kompabilitet), men ikke
+er stadig understøttet (for at sikre bagudkompabilitet), men ikke
 nødvendigt. Dette gør det muligt for Linux at understøtte mange flere
 enheder, da der ikke er nogen grænser mere (tal har altid grænser :)
 </p>
@@ -162,8 +165,8 @@ enheder, da der ikke er nogen grænser mere (tal har altid grænser :)
 <body>
 
 <p>
-En af de første ting du måske ligger mærke til er at devfs bruger
-biblioteker at gruppere enheder sammen. Dette forøger læsbarheden, da
+En af de første ting du måske ligger mærke til er, at devfs bruger
+biblioteker for at gruppere enheder sammen. Dette forøger læsbarheden, da
 alle relaterede enheder nu er inde i et fælles bibliotek.
 </p>
 
@@ -178,10 +181,10 @@ dvs. at de har begge den samme struktur over deres underbiblioteker.
 IDE og SCSI drev kontrolleres af en adapter (on-board eller et separat
 kort), kaldet <e>host</e>(vært). På hver kanal kan man have adskillige
 ID'er. Sådan et ID identificerer en disk. Dette ID kaldes
-<e>target</e>(målet). Nogle SCSI enheder kan have flere luns
-(<e>Logical Unit Numbers</e>), f.eks. instans enheder der håndterer
+<e>target</e>(målet). Nogle SCSI enheder kan have flere lun'er
+(<e>Logical Unit Numbers</e>), f.eks. instansenheder der håndterer
 flere medier på samme tid (hi-end bånd-drev). Du har for det meste
-kun en enkelt lun <path>lun0/</path>.
+kun en enkelt lun med <path>lun0/</path>.
 </p>
 
 <p>
@@ -199,10 +202,10 @@ harddiske, såsom <path>c0b0t0u0p2</path>. De kan findes i <path>/dev/ide/hd</pat
 
 <p>
 For at give dig et indtryk af bibliotekerne er her en liste over de
-biblioteker jeg har på min laptop:
+biblioteker jeg har på min bærbar:
 </p>
 
-<pre caption = "Directories in /dev">
+<pre caption = "Biblioteker i /dev">
 cdroms/     cpu/        discs/          floppy/
 ide/        input/      loop/           misc/
 netlink/    printers/   pts/            pty/
@@ -217,14 +220,14 @@ sr/         usb/        vc/             vcc/
 <body>
 
 <p>
-At bruge dette nye system lyder som sjov, men adskillige værktøjer og
+At bruge dette nye system lyder som at lege, men adskillige værktøjer og
 programmer bruger det tidligere system. For at være sikker på at ingen
 systemer bliver smadret pga. dette, er <c>devfsd</c> blevet
 lavet. Denne daemon laver symbolske genveje fra de gamle navne så de
 peger på nye enhedsfiler.
 </p>
 
-<pre caption = "Lavede symbolske genveje">
+<pre caption = "Skabte symbolske genveje">
 $ <i>ls -l /dev/hda4</i>
 lr-xr-xr-x    1 root     root           33 Aug 25 12:08 /dev/hda4 -> ide/host0/bus0/target0/lun0/part4
 </pre>
@@ -251,7 +254,7 @@ genstarte. Afhængigt af hvad du ønsker, kan du bruge de følgende to signaler:
 </p>
 
 <p>
-<b>SIGHUP</b> får <c>devfsd</c> til at genlæse konfigurationsfilen,
+<b>SIGHUP</b> får <c>devfsd</c> til at genlæse opsætningsfilen,
 genlæse de delte objekter og generere REGISTER hændelsen for hvert
 blad node i enhedstræet.
 </p>
@@ -287,7 +290,7 @@ Hvis du vil fjerne de symbolske genveje, der fylder op i
  de følgende to linier:
 </p>
 
-<pre caption = "/etc/devfsd.conf for bagud kompabilitet">
+<pre caption = "/etc/devfsd.conf for bagudkompabilitet">
 <comment># Udkommenter de følgende to linier for at fjerne de symbolske genveje</comment>
 REGISTER        .*  MKOLDCOMPAT
 UNREGISTER      .*  RMOLDCOMPAT
@@ -338,11 +341,11 @@ og den anden del rettighederne.
 </p>
 
 <p>
-Lad os kigge på gruppe delen. Som et eksempel kigger vi på
+Lad os kigge på gruppe-delen. Som et eksempel kigger vi på
 sound-gruppen (lyd-gruppen):
 </p>
 
-<pre caption = "Sound gruppen i /etc/security/console.perms">
+<pre caption = "Sound-gruppen i /etc/security/console.perms">
 &lt;sound&gt;=/dev/dsp* /dev/audio* /dev/midi* \
     /dev/mixer* /dev/sequencer* \
     /dev/sound/* /dev/snd/* /dev/beep \
@@ -361,23 +364,23 @@ Grupper er imidlertid ikke særlig brugbare, hvis du ikke kan gøre
 noget med dem. Så den næste del beskriver hvordan rettigheder håndteres.
 </p>
 
-<pre caption = "Rettigheder for sound gruppen i /etc/security/console.perms">
+<pre caption = "Rettigheder for sound-gruppen i /etc/security/console.perms">
 &lt;console&gt;  0600 &lt;sound&gt;      0600 root.audio
 </pre>
 
 <p>
 Det første felt er tjekket af terminal. På de fleste systemer er dette
 console-gruppen. PAM tjekker dette felt for hvert login. Hvis at login
-sker på en enhed der er indeholdt i console-gruppen, så vil PAM tjekke
+sker på en enhed, der er indeholdt i console-gruppen, så vil PAM tjekke
 og måske ændre rettighederne på nogle enhedsfiler.
 </p>
 
 <p>
-Det andet felt indeholder rettigheder til hvilken en enhedsfil der
+Det andet felt indeholder rettigheder til hvilken en enhedsfil, der
 bliver sat ved at succesfuldt login. Når en person logger ind i
 systemet og enhedsfilerne ejes af en standard ejer/gruppe, så vil PAM
-ændre ejerskabet til den bruger der er logget ind og sætte
-rettighederne til dem der står i dette andet felt. I dette tilfælde
+ændre ejerskabet til den bruger, der er logget ind og sætte
+rettighederne til dem, der står i dette andet felt. I dette tilfælde
 bruges 0600 (bruger har læse og skrive adgang, alle andre har ikke).
 </p>
 
@@ -389,7 +392,7 @@ relateret til sound) vil blive ændret.
 
 <p>
 Det fjerde felt definerer de rettigheder til hvilket enhedsfilen
-bliver sat til efter at blive returneret til stardard tilstanden. Med
+bliver sat til, efter at blive returneret til stardard tilstanden. Med
 andre ord, hvis den person der ejer alle enhedsfilerne logger ud, så
 vil PAM sætte rettighederne tilbage til en standard tilstand, hvilket
 beskrives i dette fjerde felt.
@@ -444,7 +447,7 @@ Det femte felt indeholder rettighederne på enhedsfilen.
 <p>
 Dette er standard opførsel for Gentoo: hvis du <c>chown</c> (ændre
 ejer) og <c>chmod</c> (ændre tilstand) på nogle enhedsfiler, så vil
-<c>devfsd</c> gemme informationen når du lukker systemet ned. Dette er
+<c>devfsd</c> gemme informationen, når du lukker systemet ned. Dette er
 fordi <path>/etc/devfsd.conf</path> filen indeholder de følgende linier:
 </p>
 
@@ -473,7 +476,7 @@ til <path>/dev</path> når systemet startes op.
 
 <p>
 En anden mulighed er at mounte <path>/lib/dev-state</path> på
-<path>/dev</path> ved opstarts. For at gøre dette skal du være sikker
+<path>/dev</path> ved opstart. For at gøre dette skal du være sikker
 på at devfs ikke automatisk bliver mountet (dvs. du skal kompilere din
 kerne om igen) og at <path>/dev/console</path> eksisterer. Så skal du
 placere dette i starten af dit systems bootscripte:
