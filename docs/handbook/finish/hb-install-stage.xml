@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-stage.xml,v 1.9 2004/05/16 15:08:07 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-stage.xml,v 1.10 2004/05/16 17:42:40 broeman Exp $ -->
 
 <sections>
 <section>
@@ -155,7 +155,7 @@ with bzip2</e>, <c>p'et</c> står for <e>Preserve permissions</e> og
 
 <p>
 Nu da denne etape er færdig, fortsæt med
-<uri>link="#installing_portage">Installere Portage</uri>.
+<uri link="#installing_portage">Installere Portage</uri>.
 </p>
 
 </body>
