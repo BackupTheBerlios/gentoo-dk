@@ -160,6 +160,38 @@ Der findes to slags ordlister, ispell og aspell. ispell er den klassiske staveko
 
 </body>
 </section>
+<section>
+<title>Andre indstillinger</title>
+<body>
+
+<p>Localedef har også en del andre indstillinger, som kan være brugbart til opsætning af et fuldt dansk system:
+</p>
+
+<pre caption="LC_ indstillinger i /etc/profile">
+LC_NUMERIC="en_DK" 
+<codenote>(Sætter ikke-pengemæssige indstillinger)</codenote>
+LC_TIME="en_DK" 
+<codenote>(Sætter dato og tidsformat)</codenote>
+LC_MONETARY="en_DK"
+<codenote>(Sætter pengemæssige indstillinger)</codenote>
+LC_MESSAGES="en_DK"
+<codenote>(Spørgsmål (Ja/Nej vs Yes/No))</codenote>
+LC_PAPER="en_DK"
+<codenote>(Sætter papirmæssige formater (A4))</codenote>
+LC_NAME="en_DK"
+<codenote>(Sætter navne-indstillinger (Hr. Hansen))</codenote>
+LC_ADDRESS="en_DK" 
+<codenote>(Sætter adresse-indstillinger)</codenote>
+LC_TELEPHONE="en_DK" 
+<codenote>(Sætter telefon-indstillinger (12345678))</codenote>
+LC_MEASUREMENT="en_DK" 
+<codenote>(Målingsindstillinger (meter))</codenote>
+LC_IDENTIFICATION="en_DK" 
+<codenote>(Identificerer lokale indstillinger)</codenote>
+</pre>
+
+</body>
+</section>
 </chapter>
 
 <chapter>
@@ -183,10 +215,7 @@ Vi har endnu ikke udarbejdet en vejledning til at indføre dette, samt at flere p
 <body>
 
 <pre caption="Andre specifikke opsætninger">
-LC_NUMERIC="en_DK"
-LC_TIME="en_DK"
-LC_COLLATE="en_DK"
-LC_MONETARY="en_DK"
+LC_COLLATE="en_DK" // Sammenligning af strenge i alfabetet (?)
 </pre>
 
 </body>
