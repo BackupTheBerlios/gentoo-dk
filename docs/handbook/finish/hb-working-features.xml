@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-features.xml,v 1.1 2004/02/22 20:42:58 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-features.xml,v 1.2 2004/02/23 18:57:20 broeman Exp $ -->
 
 <sections>
 <section>
@@ -36,19 +36,19 @@ Distcc Dokumentation</uri>.
 <p>
 Distcc kommer med en grafisk overvåger til at overvåge de opgaver, som
 din computer sender afsted til kompileringen. Hvis du bruger Gnome, så
-put 'gnome' i dine USE-flag. Hvis du imidlertid ikke bruger Gnome og
-stadigvæk vil have overvågeren, så skal du putte 'gtk' i dine
+indsæt 'gnome' i dine USE-flag. Hvis du imidlertid ikke bruger Gnome og
+stadigvæk vil have overvågeren, så skal du indsætte 'gtk' i dine
 USE-flag.
 </p>
 
 <p>
 Installation er, som det er med alt software, tilgængelig igennem Gentoos
-Portage, ekstremt let:
+Portage, med stor lethed:
 </p>
 
 <note>
 Fra nu af, idet du ved hvordan man installerer binære pakker, vil vi
-gemme <c>--usepkg</c>-valgmuligheden igennem resten af Gentoo-håndbogen.
+springe <c>--usepkg</c>-valgmuligheden over igennem resten af Gentoo-håndbogen.
 </note>
 
 <pre caption="Installation af Distcc">
@@ -67,20 +67,20 @@ aktivere Portage-understøttelse til <c>distcc</c>.
 </p>
 
 <p>
-Først, åben <path>/etc/make.conf</path> og redigér <c>FEATURES</c>-variabelen, så
-den indeholder <c>distcc</c>-nøgleordet. Derefter, redigér <c>MAKEOPTS</c>-variabelen,
+Først, åben <path>/etc/make.conf</path> og rediger <c>FEATURES</c>-variabelen, så
+den indeholder <c>distcc</c>-nøgleordet. Derefter, rediger <c>MAKEOPTS</c>-variabelen,
 så den læser <c>-jX</c> med <c>X</c>, antalet af CPUer, som kører <c>distccd</c>
 (inklusiv den nuværende vært) plus én:
 </p>
 
 <pre caption="Mulige MAKEOPTS-indstilling i /etc/make.conf">
-<comment># Antag at du har 2 enkelt-CPU distccd værter uden at tælle
+<comment># Antag at du har 2 enkelt-processor distccd-værter uden at tælle
 denne vært med:</comment>
 MAKEOPTS="-j4"
 </pre>
 
 <p>
-Mens du stadigvæk er inde i <path>/etc/make.conf</path>, udkommentér
+Mens du stadigvæk er inde i <path>/etc/make.conf</path>, udkommenter
 <c>PORTAGE_TMPDIR</c>-linien og tilføj den følgende linie i slutningen
 af filen:
 </p>
@@ -143,7 +143,7 @@ Hvis du er interesseret i hvordan <c>ccache</c> fungerer, besøg venligst
 <body>
 
 <p>
-Installation af <c>ccache</c> med Gentoo kan gøres med lethed. Emerge den bare og du er færdig
+Installation af <c>ccache</c> med Gentoo, kan gøres med lethed. Emerge den bare og du er færdig
 :)
 </p>
 
@@ -168,7 +168,7 @@ FEATURES="ccache"
 
 <p>
 Derefter, skal du redigere (eller oprette) <c>CCACHE_SIZE</c>-variabelen (også i
-<path>/etc/make.conf</path>), så den indeholder summen af harddisk-pladsen, spm du vil
+<path>/etc/make.conf</path>), så den indeholder summen af harddisk-pladsen, som du vil
 opgive til <c>ccache</c>:
 </p>
 
@@ -196,7 +196,7 @@ muligt. Hvis du er usikker på hvordan <c>ccache</c> virker, kan du køre <c>ccach
 <body>
 
 <p>
-Vi har allerede diskuteret hvordan man arbejder med præ-byggede pakker, mne hvordan kan du
+Vi har allerede diskuteret hvordan man arbejder med præ-byggede pakker, men hvordan kan du
 lave dine egne præ-byggede pakker?
 </p>
 
@@ -249,7 +249,7 @@ bruge <c>--buildpkgonly</c> valgmuligheden (<c>-B</c> skrevet kort):
 
 <p>
 Imens bygningen og installationen af pakkerne foregår, bruger Portage <e>sandbox</e> for at beskytte
-dit direkte system. Dette betyder at, så længe at pakken ikke er installeret på
+dit direkte system. Dette betyder, at så længe at pakken ikke er installeret på
 dit system, kan pakken ikke røre nogen anden fil udenfor sandbox. Dette
 sikrer at Portage ved hvilke filer, som bliver oprettet og ændret af en pakke.
 </p>
@@ -267,10 +267,10 @@ disse filer fra sandbox til dit system.
 <body>
 
 <p>
-Portage understøtter også bygning af pakker, som en ikke-root bruger (mere præcist, som
-brugeren "portage", gruppen "portage"). Dette øger sikkerheden igennem
-bygningsprocessen. Du kan vælge at bruge bruger-privilegier med eller uden brug af sandbox.
-Selvfølgelig skal det ikke siges hvilke bruger-privilegier og brug af sandbox der er den mest
+Portage understøtter også bygning af pakker, som en ikkeroot-bruger (mere præcist, som
+brugeren "portage" og gruppen "portage"). Dette øger sikkerheden igennem
+bygningsprocessen. Du kan vælge, at bruge bruger-privilegier med eller uden brug af sandbox.
+Selvfølgelig kan det ikke siges om bruger-privilegier eller brug af sandbox, der er den mest
 brugte metode :)
 </p>
 
@@ -282,8 +282,8 @@ brugte metode :)
 
 <p>
 Portage vil bruge <c>sandbox</c> som standard. Hvis du vil bruge <c>userpriv</c>, bør
-du tilføje den til <c>FEATURES</c>-variabelen. Notér at når du aktiverer
-<c>userpriv</c> vil den fjerne <c>sandbox</c>-understøttelse, undtagen hvis du også aktiverer
+du tilføje den til <c>FEATURES</c>-variabelen. Noter, at når du aktiverer
+<c>userpriv</c>, vil den fjerne <c>sandbox</c>-understøttelse, undtagen hvis du også aktiverer
 <c>usersandbox</c>:
 </p>
 
@@ -303,7 +303,7 @@ Fjern <e>ikke</e> <c>sandbox</c> fra <c>FEATURES</c>-variabelen!
 
 <p>
 Portage kan blive spurgt om at reagere stærkt på mulige farlige betingelser (som
-glemte eller forkerte Manifest filer). For at aktivere denne stramme kontrol, tilføj
+glemte eller forkerte Manifesti-filer). For at aktivere denne stramme kontrol, tilføj
 <c>strict</c>-nøgleordet til <c>FEATURES</c> variabelen:
 </p>
 
@@ -320,8 +320,8 @@ FEATURES="strict"
 <p>
 Portage kan blive bedt om automatisk at håndtere potentielt farlige
 fil-tilladelser, som kan være en sikkerhedsrisiko. Den gør dette, ved at fjerne
-"group" og "other" læsbare bits på setuid-filer og fjerner "other"
-læsbar bit på setgid-filer i den præ-installérbare fase.  For at aktivere
+"group" og "other" læsbare bits på setuid-filer og fjerne "other"
+læsbar bit på setgid-filer i den præ-installerbare fase.  For at aktivere
 'smart file system permissions', tilføj <c>sfperms</c>-nøgleordet til
 <c>FEATURES</c>-variabelen:
 </p>
@@ -343,7 +343,7 @@ FEATURES="sfperms"
 Der er en del andre nøgleord, som du kan placere i <c>FEATURES</c>-variabelen.
 De fleste af dem er målrettet til udviklere og mindre interessant for den daglige
 bruger. Hvis du er interesseret i at lære mere om disse egenskaber (eller Portage
-generelt), glem ikke at læse <path>make.conf</path>s manpage, som vi leverer.
+generelt), glem ikke at læse <path>make.conf</path>s man-side, som vi leverer.
 </p>
 
 <pre caption="Mere Portage-relaterede informationer">
