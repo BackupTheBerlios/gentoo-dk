@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-disk.xml,v 1.1 2004/01/22 22:11:48 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-disk.xml,v 1.1 2004/01/22 22:30:47 broeman Exp $ -->
 
 <sections>
 <section>
@@ -1225,7 +1225,7 @@ LVM</uri>.
 
 
 <section>
-<title>At bruge mac-fdisk på PPC til at partitionere din disk</title>
+<title>At bruge mac-fdisk på PPC for at partitionere din disk</title>
 <body>
 
 <p>
@@ -1237,7 +1237,7 @@ Nu skal du lave dine partitioner med <c>mac-fdisk</c>:
 </pre>
 
 <p>
-Først skal du slette de partitioner du før har klargjort, for at lave
+Først skal du slette de partitioner, som du før har klargjort, for at lave
 plads til dine Linux partitioner. Brug <c>d</c> i <c>mac-fdisk</c> for
 at slette denne/disse partition(er). Den vil spørge efter nummeret på
 den partition der skal slettes.
@@ -1250,20 +1250,20 @@ før har valgt <c>3</c> for partitionsnummeret, tryk da <c>3p</c>.
 </p>
 
 <p>
-Lav nu en swap partition ved at trykke <c>c</c>. <c>mac-fdisk</c> vil
+Lav nu en swap-partition ved at trykke <c>c</c>. <c>mac-fdisk</c> vil
 igen spørge efter hvilken blok du vil starte denne partition fra. Da
-vi før brugte <c>3</c> til at lave Apple_Bootstrap partitionen, så
-skal du nu trykke <c>4p</c>. Når du bliver spurgt om størrelsen, tryk
+vi før brugte <c>3</c> til at lave Apple_Bootstrap-partitionen, så
+skal du nu taste <c>4p</c>. Når du bliver spurgt om størrelsen, tast
 da <c>512M</c> (eller den størrelse du nu ønsker -- 512 anbefales dog). 
-Når du bliver spurgt efter et navn, tryk <c>swap</c> (krævet).
+Når du bliver spurgt efter et navn, tast <c>swap</c> (krævet).
 </p>
 
 <p>
-For at lave root partitionen, tryk <c>c</c>, efterfulgt af <c>5p</c>
-for at vælge hvilken blok root partitionen skal started ved. Når du
-bliver spurgt efter størrelsen, tryk <c>5p</c> igen. <c>mac-fdisk</c>
+For at lave root-partitionen, tryk <c>c</c>, efterfulgt af <c>5p</c>
+for at vælge hvilken blok, root-partitionen skal starte ved. Når du
+bliver spurgt efter størrelsen, tast <c>5p</c> igen. <c>mac-fdisk</c>
 vil fortolke dette som "Brug den plads der er tilgængelig". Når du
-bliver spurgt efter et navn, tryk <c>root</c> (krævet).
+bliver spurgt efter et navn, tast <c>root</c> (krævet).
 </p>
 
 <p>
@@ -1284,7 +1284,7 @@ LVM</uri>.
 </body>
 </section>
 <section>
-<title>At bruge fdisk på HPPA til at partitionere din disk</title>
+<title>At bruge fdisk på HPPA for at partitionere din disk</title>
 <body>
 
 <p>
@@ -1325,7 +1325,7 @@ LVM</uri>.
 </body>
 </section>
 <section>
-<title>At bruge fdisk på MIPS til at partitionere din disk</title>
+<title>At bruge fdisk på MIPS for at partitionere din disk</title>
 <!-- This entire section is copy/pasted from Kumba's original text. It should
      probably be rewritten, but it seems a bit complicated.
      Someone donate me a MIPS? :) 
@@ -1345,7 +1345,7 @@ skabe to specielle partitioner på disken:
 
 <ul>
   <li>
-    <e>SGI Volume Header</e> (den 9ende partition): Denne partition er
+    <e>SGI Volume Header</e> (den niende partition): Denne partition er
     vigtig. Det er her kerne billed-filerne skal hen. For at gemme
     kerne billed-filer, vil du bruge værktøjet kendt som
     <c>dvhtool</c> til at kopiere kerne billed-filer til denne
@@ -1353,7 +1353,7 @@ skabe to specielle partitioner på disken:
     på denne partition via SGI PROM Monitor.
   </li>
   <li>
-    <e>SGI Volume</e> (den 11te partition): Denne partitions formål
+    <e>SGI Volume</e> (den 11. partition): Denne partitions formål
     minder om Sun Disklabel's tredje partition af "Hele disken". Denne
     partition dækker hele disken, og bør forblive uberørt. Den tjener
     ikke noget specielt formål andet end at hjælpe PROM på en ikke
@@ -1418,11 +1418,11 @@ Command (m for help):
 </pre>
 
 <note>
-Hvis din disk allerede har en eksisterende SGI Disklabel, så vil fdisk
+Hvis din harddisk allerede har en eksisterende SGI Disklabel, så vil fdisk
 ikke tillade at lave en ny label. Der er to måder at komme omkring
 dette på. En er at lave en Sun eller MS-DOS disklabel, skrive
 ændringerne til disken og genstarte fdisk. Den anden er at overskrive
-partitions tabellen med null data via den følgende kommando: <c>dd
+partitionstabellen med null data via den følgende kommando: <c>dd
 if=/dev/zero of=/dev/sda bs=512 count=1</c>.  
 </note>
 
@@ -1437,18 +1437,18 @@ Nu hvor en SGI Disklabel er blevet lavet, så kan partitioner
 defineres. I det ovenfor nævnte eksempel, er der allerede defineret to
 partitioner for dig. Disse er de to specielle partitioner nævnt
 ovenfor og bør normalt ikke ændres. For at installere Gentoo, bliver
-vi, imidlertid, nødt til at hente adskillige kerne billed-filer
+vi, imidlertidig nødt til at hente adskillige kerne billed-filer
 direkte ind i volume headeren, da der ikke er nogen understøttet SGI
-Bootloader tilgængelig i Portage, endnu. Volume headeren selv kan
+Boot-loader tilgængelig i Portage, endnu. Volumeheaderen selv kan
 indeholde op til <e>otte</e> billed-filer af enhver størrelse, med
 navne på otte karakterer.
 </p>
 
 <p>
-Processen at lave volume headeren større er ikke ligefrem nemt -- der er en fidus ved det.
-Man kan ikke bare slette og tilføje volume headeren igen pga. mærkelig
+Processen at lave volumeheaderen større er ikke ligefrem nemt -- der er en fidus ved det.
+Man kan ikke bare slette og tilføje volumeheaderen igen pga. mærkelig
 opførsel fra fdisk. I det eksempel der vises nedenfor, laver vi en
-Volume header på 50MB sammen med en 50MB /boot partition. Det faktiske
+Volumeheader på 50MB sammen med en 50MB /boot partition. Det faktiske
 layout af din disk kan variere, men dette er kun for at illustrere.
 </p>
 
@@ -1609,8 +1609,8 @@ tilgængelige filsystemer...
 
 <p>
 Der er adskillige filsystemer til rådighed. Nogle af dem er markeret
-stable til alle arkitekturer, andre er kun på nogle enkelte. Den
-følgende tabel lister de tilgængelige filsystemer og de arkitekturer
+stabil til alle arkitekturer, andre er kun på nogle enkelte. Den
+følgende tabel lister de tilgængelige filsystemer og de arkitekturer,
 som vi ved at de virker med. Hvis en arkitektur er indeholdt i en
 "(...)" så bør filsystemet virke, men det er ikke testet.
 </p>
@@ -1760,7 +1760,7 @@ logiske enheder).
 </body>
 </subsection>
 <subsection>
-<title>At aktivere swap partitionen</title>
+<title>At aktivere swap-partitionen</title>
 <body>
 
 <p>
@@ -1772,10 +1772,10 @@ logiske enheder).
 </pre>
 
 <p>
-For at aktivere swap partitionen, brug <c>swapon</c>:
+For at aktivere swap-partitionen, brug <c>swapon</c>:
 </p>
 
-<pre caption="At aktivere swap partitionen">
+<pre caption="At aktivere swap-partitionen">
 # <i>swapon /dev/hda2</i>
 </pre>
 
@@ -1838,7 +1838,7 @@ nødt til at bind-mounte <path>/proc</path>:
 </pre>
 
 <p>
-Fortsæt nu med <uri link="?part=1&amp;chap=5">At installere Gentoo installationsfilerne</uri>.
+Fortsæt nu med <uri link="?part=1&amp;chap=5">Installation af Gentoo installationsfiler</uri>.
 </p>
 
 </body>
