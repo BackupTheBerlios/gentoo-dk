@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.9 2004/02/12 23:08:06 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.10 2004/02/22 14:50:48 broeman Exp $ -->
 
 <book link="handbook.xml">
 <title>Gentoo-håndbogen</title>
@@ -129,7 +129,7 @@ informationer om Gentoo/Linux.
 <license/>
 
 <version>1.41</version>
-<date>12. Februar, 2003</date>
+<date>19. Februar, 2003</date>
 
 <part>
 <title>Installation af Gentoo</title>
@@ -140,7 +140,7 @@ I denne del vil du lære at installere Gentoo på dit system.
 <chapter>
 <title>Om Gentoo Linux installation</title>
 <abstract>
-Brugere, der ikke er velkendt med Gentoo, ved ikke altid at <e>valg</e> er hvad
+Brugere, der ikke er velkendt med Gentoo, ved ikke altid, at valg er, hvad
 Gentoo handler om. 
 </abstract>
   <include href="hb-install-about.xml"/>
