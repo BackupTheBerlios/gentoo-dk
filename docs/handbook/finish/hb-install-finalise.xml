@@ -1,9 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: 
-/cvsroot/gentoo-dk/docs/handbook/not_translated/hb-install-finalise.xml,v 1.1 
-2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.1 2004/01/12 23:00:44 aaby Exp $ -->
 <sections>
 <section>
 <title>Brugeradministation</title>
@@ -28,12 +26,15 @@ Før du glemmer det, sæt et root-kodeord ved at skrive
 <p>
 At arbejde som root på et Unix/Linux system er <e>farligt</e> og bør undgås så 
 vidt som muligt. Derfor anbefales det <e>meget</e> at tilføje en
-dagligdagsbruger.</p>
+dagligdagsbruger.
+</p>
+
 <p>
 For eksempel, for at tilføje en bruger med navnet <c>jens</c>, som er medlem af 
 <c>wheel</c>-gruppen (for at kunne skifte til root med <c>su -</c>), 
 <c>users</c>-gruppen (standard for alle brugere) og <c>audio</c>-gruppen (for at 
-kunne bruge lyd enheder):</p>
+kunne bruge lyd enheder):
+</p>
 
 <pre caption="Tilføjelse af en dagligdagsbruger">
 # <i>useradd jens -m -G users,wheel,audio -s /bin/bash</i>
@@ -45,7 +46,7 @@ Re-enter password: <comment>(Indtast kodeordet igen for at bekræfte det)</commen
 <p>
 Hvis en bruger nogensinde får brug for at lave nogle opgaver, som root, kan han
 bruge <c>su -</c> for midlertidigt at få root rettigheder. En anden måde er at
-bruge <c>sudo</c>-pakken, hvis opsat korrekt, er meget sikker.</p>
+bruge <c>sudo</c>-pakken, som hvis opsat korrekt, er meget sikker.</p>
 </body>
 </subsection>
 </section>
@@ -56,7 +57,7 @@ bruge <c>sudo</c>-pakken, hvis opsat korrekt, er meget sikker.</p>
 <body>
 
 <p>
-Tillykke! Dit Gentoo system er nu færdigt. Kør <c>etc-update</c> for at updatere 
+Tillykke! Dit Gentoo system er nu færdigt. Kør <c>etc-update</c> for at opdatere 
 opsætningsfilerne (hvis nødvendigt), gå ud af det chrootede miljø og 
 unmount de mountede partitioner. Og så skal du bare skrive den magiske
 kommando du har ventet på: <c>reboot</c></p>
@@ -79,46 +80,59 @@ installeret endnu. Disse brugere bør læse <uri link="#doc_chap2_sect2">Valgfrit:
 Opsætning af BootX</uri>. GRP-brugere kan fortsætte med <uri 
 link="#doc_chap2_sect3">Valgfrit: Installation af ekstra pakker</uri>, resten 
 kan slutte med <uri link="?part=1&amp;chap=12">Hvad skal man så 
-nu?</uri></p>
+nu?</uri>
+</p>
+
 </body>
 </subsection>
+
 <subsection>
 <title>Valgfrit: Konfigurering af BootX</title>
 <body>
 
 <impo>
 Denne del er <e>kun</e> for PPC-brugere der vil benytte BootX som deres
-bootloader. Alle andre bør springe denne del over.</impo>
+bootloader. Alle andre bør springe denne del over.
+</impo>
 
 <p>
-Nu hvor din maskine er bootet i MacOS, åben BootC kontrol panelet. Vælg 
+Nu hvor din maskine er bootet i MacOS, åben da BootC kontrol panelet. Vælg 
 <c>Options</c>, og afvælg <c>Used specified RAM disk</c>. Når du kommer
 tilbage til BootX hovedmenuen vil du nu have mulighed for at indtaste din 
-computeres hoved-disk og partion. Udfyld disse med de tilhørende værdier.</p>
+computeres primære disk og partion. Udfyld disse med de tilhørende
+værdier.
+</p>
 
 <p>
 BootX kan blive konfigureret til at starte Linux ved boot. Hvis du gør dette vil 
-du først se din maskine boote MacOS og så, under opstaten, vil BootX køre og
+du først se din maskine boote MacOS og så, under opstarten, vil BootX køre og
 starte Linux. Se <uri link="http://penguinppc.org/projects/bootx/">BootX 
-hjemmesiden</uri> for mere information.</p>
+hjemmesiden</uri> for mere information.
+</p>
 
 <p>
 Hvis du er GRP bruger kan du fortsætte med <uri 
-link="#doc_chap2_sect3">Valgfrit: Installering af ekstra pakkers</uri>, ellers
-gå til <uri link="?part=1&amp;chap=12">Hvad skal man så nu?</uri></p>
+link="#doc_chap2_sect3">Valgfrit: Installering af ekstra pakker</uri>, ellers
+gå til <uri link="?part=1&amp;chap=12">Hvad skal man så nu?</uri>
+</p>
+
 </body>
 </subsection>
+
 <subsection>
 <title>Valgfrit: Installering af ekstra pakker.</title>
 <body>
 
 <impo>
-Denne del er kun for GRP brugere. De andre brugere bør springe denne del over og 
-fortsætte med <uri link="?part=1&amp;chap=12">Hvad skal man så nu?</uri></impo>
+Denne del er kun for GRP brugere. De andre brugere bør springe denne
+del over og fortsætte med <uri link="?part=1&amp;chap=12">Hvad skal
+man så nu?</uri> 
+</impo>
 
 <p>
 Nu hvor dit system er bootet så log på som den bruger du oprettede (for eksempel <c>john</c>) og brug
-<c>su -</c> for at få root rettighedder.</p>
+<c>su -</c> for at få root rettighedder.
+</p>
 
 <pre caption="At få root rettigheder">
 $ <i>su -</i>
@@ -137,7 +151,8 @@ du har den. Først skal du mounte CDen:</p>
 <p>
 Nu skal du kopiere alle de prekompilerede binære filer fra CDen til 
 <path>/usr/portage/packages</path>. Vær sikker på at bruge den samme 
-kopi-kommando!</p>
+kopi-kommando!
+</p>
 
 <pre caption="Kopiering af de prekompilerede binære filer">
 # <i>cp -a /mnt/cdrom/packages/* /usr/portage/packages/</i>
@@ -157,11 +172,14 @@ Vær sikker på at installere de binære filer. Når du senere laver en <c>emerge
 sync<c> for at opdatere Portage (som du vil lære senere), vil de prekompilerede 
 filer måske ikke passe til de ebuilds som er i din opdaterede Portage. Du kan
 undgå dette ved at bruge <c>emerge --usepkgonly</c> i stedet for <c>emerge
---usepkg</c>.</p>
+--usepkg</c>.
+</p>
 
 <p>Tillykke, dit system er nu fuldt udstyret! Fortsæt med <uri 
 link="?part=1&amp;chap=12">Hvad kan jeg gøre efter dette?</uri> for at lære mere om
-Gentoo.</p>
+Gentoo.
+</p>
+
 </body>
 </subsection>
 </section>
