@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.7 2004/02/23 15:15:38 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.8 2004/02/24 14:18:14 broeman Exp $ -->
 
 <sections>
 <section>
@@ -400,6 +400,18 @@ HIL support ---&gt;
 </pre>
 
 <p>
+Inkludér også skærmdriver-understøttelse:
+</p>
+
+<pre caption="Understøttelse af skærmdriver">
+Graphics support ---&gt;
+  [*] Support for frame buffer devices
+     [*] HP STI frame buffer device support
+  Console display driver support ---&gt;
+     [*] STI text console
+</pre>
+
+<p>
 Når du er færdig med at opsætte kernen, fortsæt med <uri
 link="#compiling">Kompilering og installation</uri>.
 </p>
@@ -704,10 +716,7 @@ modules_install</c>:
 <comment>(Til alle andre systemer, 2.4 kerne)</comment>
 # <i>make dep &amp;&amp; make vmlinux modules modules_install</i>
 
-<comment>(Til amd64-baserede systemer, 2.6 kerne)</comment>
-# <i>make bzImage modules modules_install</i>
-
-<comment>(Til alle andre systemer, 2.6 kerne)</comment>
+<comment>(Til 2.6 kernen)</comment>
 # <i>make &amp;&amp; make modules_install</i>
 </pre>
 
