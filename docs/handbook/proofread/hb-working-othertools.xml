@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-working-othertools.xml,v 1.1 2004/02/02 16:46:53 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-othertools.xml,v 1.1 2004/02/18 18:59:21 broeman Exp $ -->
 
 <sections>
 <section>
@@ -14,31 +14,31 @@
 <body>
 
 <p>
-<c>gentoolkit</c> pakken er et samling af uofficielle administrations
-scripts til Gentoo, der er meget belejlige at have ved
+<c>gentoolkit</c> pakken er en samling af uofficielle administrationscripts
+til Gentoo, der er meget belejlige at have ved
 hånden. Samlingen indeholder de følgende værktøjer:
 </p>
 
 <ul>
-  <li><c>qpkg</c> for at gøre det nemmere at lave forspørgelser til pakke databasen
+  <li><c>qpkg</c> for at gøre det nemmere at lave forspørgelser til pakke-databasen
   </li>
   <li>
     <c>dep-clean</c> til at håndtere forældreløse pakker eller ikke-eksisterende afhængigheder
   </li>
   <li>
-    <c>revdep-rebuild</c> bygger afhænigheder igen i tilfælde af et
+    <c>revdep-rebuild</c> bygger afhængigheder igen i tilfælde af
     globale ændringer er blevet lavet
   </li>
   <li>
-    <c>etcat</c> giver meget mere information omkring en pakke,
+    <c>etcat</c> giver meget flere informationer omkring en pakke,
     inklusiv en beskrivelse omkring de brugte USE-flag, afhængigheder, osv.
   </li>
-  <li><c>euse</c> til at håndtere dine USE-flag indstillinger</li>
+  <li><c>euse</c> til at håndtere dine USE-flag-indstillinger</li>
 </ul>
 
 <p>
-De fleste af disse værktøjer har gode manual sider; brug dem venligst
-for at forsåt det fulde potentiale af værktøjet. I de næste sektioner
+De fleste af disse værktøjer har gode manual-sider; brug dem venligst
+for at forstå det fulde potentiale af værktøjet. I de næste sektioner
 vil vi kort diskutere nogle af disse værktøjers egenskaber.
 </p>
 
@@ -53,12 +53,12 @@ For at installere <c>gentoolkit</c>, skal du bare emerge den:
 </body>
 </subsection>
 <subsection>
-<title>qpkg - Query Packages</title>
+<title>qpkg - pakkeforspørgelser</title>
 <body>
 
 <p>
 <c>qpkg</c> har mange funktioner til at lave forspørgsler. Du kan søge
-efter den pakke der ejer en bestemt fil, liste indholdet af en pakke,
+efter den pakke, der ejer en bestemt fil, liste indholdet af en pakke,
 verificere de filer der ejes af en pakke, liste de installerede pakker
 afhængigt af en given pakker og mere.
 </p>
@@ -94,7 +94,7 @@ CONTENTS:
 
 <p>
 For at verificere de filer der bliver sat til rådighed af
-<c>libbonobo</c> pakken (f.eks. tjek checksums og hvornår de er
+<c>libbonobo</c>-pakken (f.eks. tjek checksums og hvornår de er
 ændret) bruger vi argumentet <c>--check</c>:
 </p>
 
@@ -107,7 +107,7 @@ gnome-base/libbonobo-2.4.0 *
 <p>
 I det forrige eksempel har <c>libbonobo</c> 402 filer, hvoraf ingen er
 blevet ændret siden installationen. Lad os nu tage et blik på hvilke
-installerede pakker der er afhængige af <c>libbonobo</c>:
+installerede pakker, der er afhængige af <c>libbonobo</c>:
 </p>
 
 <pre caption="At tjekke afhængigheder">
@@ -134,10 +134,10 @@ DEPENDED ON BY:
 </pre>
 
 <p>
-Mere information omkring <c>qpkg</c> er tilgængelig i man siden:
+Mere information omkring <c>qpkg</c> er tilgængelig i man-siden:
 </p>
 
-<pre caption="At se qpkgs man side">
+<pre caption="At se qpkgs man-side">
 $ <i>man qpkg</i>
 </pre>
 
@@ -148,15 +148,15 @@ $ <i>man qpkg</i>
 <body>
 
 <p>
-Med <c>dep-clean</c> kan du se de afhængigheder der ikke er
+Med <c>dep-clean</c> kan du se de afhængigheder, der ikke er
 korrekte. Som standard viser <c>dep-clean</c> dig dette:
 </p>
 
 <ul>
   <li>(rød): manglende afhængigheder</li>
-  <li>(gul): installerede pakker der er blevet fjernet fra Portage</li>
+  <li>(gul): installerede pakker, der er blevet fjernet fra Portage</li>
   <li>
-    (grøn): installerede pakker som du ikke manuelt har installeret og
+    (grøn): installerede pakker, som du ikke manuelt har installeret og
     ikke er afhængige af andre pakker
   </li>
 </ul>
@@ -166,10 +166,10 @@ $ <i>dep-clean</i>
 </pre>
 
 <p>
-Mere information om <c>dep-clean</c> kan findes på man siden:
+Mere information om <c>dep-clean</c> kan findes på man-siden:
 </p>
 
-<pre caption="At se dep-clean man siden">
+<pre caption="At se dep-clean man-siden">
 $ <i>man dep-clean</i>
 </pre>
 
@@ -180,8 +180,8 @@ $ <i>man dep-clean</i>
 <body>
 
 <p>
-Med <c>revdep-rebuild</c> kan du genbygge pakker der er smadret når du
-har opdateret et bibliotek der havde inkompatible ABIer med den
+Med <c>revdep-rebuild</c> kan du genbygge pakker, der er smadret når du
+har opdateret et bibliotek, der havde inkompatible ABIer, med den
 forrige version.
 </p>
 
@@ -197,15 +197,15 @@ forrige version.
 
 <p>
 <c>etcat</c> gør brugere og udviklere i stand til, hurtigt, at finde
-information omkring bestemte pakker uden manuelt at lede Portage træet
-og Portage databasen igennem. Med <c>etcat</c> kan du - blandt andre
-ting - liste de USE flag en pakke brugers, kigge
-<path>ChangeLog</path> indgange igennem, udregn den diskplads som en
-pakke bruger, osv.
+information omkring bestemte pakker, uden manuelt at lede Portage-træet
+og Portage-databasen igennem. Med <c>etcat</c> kan du - blandt andre
+ting - liste de USE-flag, som en pakke bruger, kigge
+<path>ChangeLog</path> indgange igennem, udregn den diskplads, som en
+pakke bruger osv.
 </p>
 
 <p>
-Hvis vi bruger <c>libbonobo</c> en gang til som et eksempel, kan vi
+Hvis vi bruger <c>libbonobo</c> en gang til, som et eksempel, kan vi
 finde de brugte USE-flag med <c>uses</c> muligheden:
 </p>
 
@@ -234,10 +234,10 @@ $ <i>etcat size libbonobo</i>
 </pre>
 
 <p>
-For mere information omkring <c>etcat</c> kig venligst på man siden:
+For mere information omkring <c>etcat</c> kig venligst på man-siden:
 </p>
 
-<pre caption="At se etcats man side">
+<pre caption="At se etcats man-side">
 $ <i>man etcat</i>
 </pre>
 
@@ -249,11 +249,11 @@ $ <i>man etcat</i>
 
 <p>
 Med <c>euse</c> kan du redigere dine USE variabler i <path>/etc/make.conf</path>.
-<c>euse</c> vil informere dig om hvad hvert USE-flag betyder så du kan
-træffe vel-informerede valg. Vi starter med at vise information om USE-flagene:
+<c>euse</c> vil informere dig om hvad hvert USE-flag betyder, så du kan
+træffe vel-informerede valg. Vi starter med at vise informationer om USE-flagene:
 </p>
 
-<pre caption="At vise USE-flag information">
+<pre caption="At vise USE-flag informationer">
 $ <i>euse --info</i>
 <comment>(...)</comment>
 justify            [-] [ ] [L] [app-editors/nano] : Toggle the justify option
@@ -274,7 +274,7 @@ gnome [+] [D] [G] Adds GNOME support
 Outputtet informerer dig omkring USE-flaget navn, om det er slået til (+)
 eller slået fra (-), hvor det er slået til/fra henne (C for
 <path>make.conf</path>, D for <path>make.defaults</path> og E for
-miljøvariable), om det er en global en (G) eller lokal til en specifik
+miljøvariable), om det er globalt (G) eller lokalt for en specifik
 ebuild (L) og en beskrivelse.
 </p>
 
@@ -288,10 +288,10 @@ For at slå et USE-flag i <path>make.conf</path> til eller fra, kan du bruge
 </pre>
 
 <p>
-Mere information omkring <c>euse</c> kan findes på man siden.
+Mere information omkring <c>euse</c> kan findes på man-siden.
 </p>
 
-<pre caption="At se man siden">
+<pre caption="At se man-siden">
 $ <i>man euse</i>
 </pre>
 
@@ -308,7 +308,7 @@ $ <i>man euse</i>
 Nogle folk er vant til at arbejde med <c>rpm</c>, RedHats Pakke
 Manager. Til at gøre det lettere at arbejde med Gentoo, stiller vi et
 rpm-lignende værktøj kaldet <c>epm</c> til rådighed. Selvom ikke alle
-RPM-funktionaliteterne er nået endnu, så bør du være i stand til at
+RPM-funktionaliteterne er opnået endnu, så bør du være i stand til at
 udføre de fleste opgaver med <c>epm</c>.
 </p>
 
