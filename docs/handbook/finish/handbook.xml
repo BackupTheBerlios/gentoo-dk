@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/handbook.xml,v 1.1 2003/12/16 22:54:22 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook.xml,v 1.1 2003/12/20 23:41:17 aaby Exp $ -->
 
 <book link="handbook.xml">
 <title>Gentoo-håndbogen</title>
@@ -104,7 +104,7 @@
 </author>
 
 <abstract>
-Dette er Gentoo-håndbogen, en bestræbelse for at centralisere
+Dette er Gentoo-håndbogen, en bestræbelse på at centralisere
 informationer om Gentoo/Linux.
 </abstract>
 
@@ -124,7 +124,7 @@ I denne del vil du lære at installere Gentoo på dit system.
 <chapter>
 <title>Om Gentoo Linux installation</title>
 <abstract>
-Brugere, der ikke er velkendt med Gentoo, vil ikke altid vide at <e>valg</e> er hvad
+Brugere, der ikke er velkendt med Gentoo, ved ikke altid at <e>valg</e> er hvad
 Gentoo handler om. 
 </abstract>
   <include href="hb-install-about.xml"/>
@@ -161,7 +161,7 @@ Dette kapitel beskriver, hvordan man partitionerer en harddisk til fremtidig bru
 <title>Installation af Gentoo installationsfiler</title>
 <abstract>
 Gentoos installationsfiler virker igennem såkaldte stage-filer. I dette kapitel beskriver vi,
-hvordan du udpakker en stage-fil og opsætter Portage.
+hvordan du udpakker en stage-fil og sætter Portage op.
 </abstract>
   <include href="hb-install-stage.xml"/>
 </chapter>
@@ -180,7 +180,7 @@ når til det stadie.
 <title>Opsætning af kernen</title>
 <abstract>
 Linux kernen er grundlaget for enhver distribution. Dette kapitel
-forklarer hvordan du opsætter din kerne.
+forklarer hvordan du sætter din kerne op.
 </abstract>
   <include href="hb-install-kernel.xml"/>
 </chapter>
@@ -200,7 +200,7 @@ fortsætter.
 <abstract>
 Der eksisterer flere forskelige boot-loadere. Hver af disse har deres egen metode til
 opsætning. I dette kapitel vil vi beskrive alle muligheder for dig, og trinvis
-hjælpe dig igennem processen for at opsætte en boot-loader til dine
+hjælpe dig igennem processen for at sætte en boot-loader op til dine
 behov.
 </abstract>
   <include href="hb-install-bootloader.xml"/>
