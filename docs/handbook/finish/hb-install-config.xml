@@ -4,28 +4,9 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.1 2004/01/18 13:40:27 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.2 2004/01/22 14:11:26 aaby Exp $ -->
 
 <sections>
-<section>
-<title>Tidszone</title>
-<body>
-
-<p>
-Du skal nu vælge din tidszone, så dit system ved hvor det er
-placeret. Kig efter din tidszone i <path>/usr/share/zoneinfo</path>,
-og lav en symbolsk genvej til <path>/etc/localtime</path> med
-<c>ln</c>:
-</p>
-
-<pre caption="Opsætning af tidszone">
-# <i>ls /usr/share/zoneinfo</i>
-<comment>(Hvis du vil bruge GMT:)</comment>
-# <i>ln -sf /usr/share/zoneinfo/GMT /etc/localtime</i>
-</pre>
-
-</body>
-</section>
 <section>
 <title>Information om filsystemet</title>
 <subsection>
@@ -363,7 +344,7 @@ Gem og afslut din editor for at afslutte.
 </p>
 
 <p>
-Hvis du ikke har PCMCIA, kan du nu fortsætte med <uri link="#doc_chap4">
+Hvis du ikke har PCMCIA, kan du nu fortsætte med <uri link="#doc_chap3">
 Systeminformation</uri>. PCMCIA-brugere bør læse det følgende emne om PCMCIA.
 </p>
 
