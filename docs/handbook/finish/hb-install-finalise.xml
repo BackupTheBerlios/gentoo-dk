@@ -3,7 +3,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.7 2004/02/24 14:30:56 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.8 2004/02/24 19:40:28 broeman Exp $ -->
 <sections>
 <section>
 <title>Brugeradministation</title>
@@ -68,15 +68,13 @@ bruge <c>sudo</c>-pakken, som hvis opsat korrekt, er meget sikker.</p>
 <body>
 
 <p>
-Tillykke! Dit Gentoo system er nu færdigt. Kør <c>etc-update</c> for at opdatere 
-opsætningsfilerne (hvis nødvendigt), gå ud af det chrootede miljø og 
+Tillykke! Dit Gentoo system er nu færdigt. Afslut det chrootede miljø og 
 unmount de mountede partitioner og i tilfælde af at du blev nødt til
 at bind-mounte <path>/mnt/gentoo/dev</path>, så glem ikke at unmounte
 den også. Og så skal du bare skrive den magiske
 kommando du har ventet på: <c>reboot</c></p>
 
 <pre caption="Genstarte systemet">
-# <i>etc-update</i>
 # <i>exit</i>
 # <i>cd /</i>
 # <i>umount /mnt/gentoo/boot /mnt/gentoo/proc /mnt/gentoo</i>
