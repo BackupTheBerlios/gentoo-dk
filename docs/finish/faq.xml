@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-	 <!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/faq.xml,v 1.7 2004/05/07 10:26:30 aaby Exp $ -->
+	 <!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/faq.xml,v 1.8 2004/05/16 17:33:52 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<guide link="/doc/da/faq.xml">
+<guide link="/doc/da/faq.xml" lang="da">
 <title>Gentoo FAQ (Ofte Stillede Spørgsmål)</title>
 <author title="Chef-arkitekt">
   <mail link="drobbins@gentoo.org">Daniel Robbins</mail>
@@ -47,8 +47,8 @@ medlem af dokumentationsteamet.
 
 <license/>
 
-<version>2.3</version>
-<date>28. April, 2004</date>
+<version>2.4</version>
+<date>12. Maj, 2004</date>
 
 <chapter>
 <title>Hoved-spørgsmål</title>
@@ -395,6 +395,12 @@ og senere er <c>glibc-2.3.x</c> baseret. F.eks. ved at lave en
 med den "sidste nye Gentoo". De virkelige forskelle imellem de
 individuelle udgivelser ligger i installationsprocessen.
 </p>
+
+<!--
+<p>
+Flere informationer kan blive fundet i vores <uri link="gentoo-upgrading.xml">Gentoo opgraderingsvejledning</uri>.
+</p>
+-->
 
 </body>
 </section>
