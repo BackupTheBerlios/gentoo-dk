@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/gentoo-x86-quickinstall.xml,v 1.1 2003/12/20 23:21:15 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/gentoo-x86-quickinstall.xml,v 1.2 2003/12/21 10:25:04 aaby Exp $ -->
 <guide link="/doc/en/quickinstall.xml">
 <title>Gentoo Linux installations reference</title>
 <author title="Forfatter">Steven Wagner</author>
@@ -24,6 +24,7 @@ de vil følge denne vejledning.
 
 <chapter>
 <title>Hurtige installations reference</title>
+<section>
 <body>
 
 <p>
@@ -235,6 +236,7 @@ Unmount nu alle partitioner og reboot ind i dit nye system:
 Du kan få mere information fra <uri link="http://www.gentoo.org/doc/da/index.xml">Gentoo Dokumentationen</uri>.
 </p>
 </body>
+<section>
 </chapter>
 </guide>
 
