@@ -65,11 +65,13 @@ link="gwn-feedback@gentoo.org">gwn-feedback@gentoo.org</mail>.
 <th>Dato</th>
 <th>Opsummering</th>
 </tr>
+
 <tr>
-<ti><uri 
-link="http://www.gentoo.org/news/da/gwn/20040426-newsletter.xml">26. April 2004</uri></ti>
-<ti>Ny apache vedligeholder og offentlig mailliste.  Gentoo Linux søger en ny squid vedligeholder.</ti>
+<ti><uri link="http://www.gentoo.org/news/en/gwn/20040705-newsletter.xml">5 July 2004</uri></ti>
+<ti>Gentoo announcerer web-omdesign-konkurrence.  Bootsplash virker nu
+på PPC.</ti>
 </tr>
+
 <tr>
 <ti><uri link="http://www.gentoo.org/news/da/gwn/20040419-newsletter.xml">19. April 2004</uri></ti>
 <ti>Overgang til NFP organisation.</ti>
@@ -83,7 +85,7 @@ link="http://www.gentoo.org/news/da/gwn/20040426-newsletter.xml">26. April 2004<
 <ti>Gentoo Linux projektet søger flere kerne-udviklere.  Gentoo Linux nyhedsbrev søger flere bidragsydere.</ti>
 </tr>			
 <tr>
-<ti><uri link="http://www.gentoo.org/news/da/gwn/20040329-newsletter.xml">29. Marts 2004</uri></ti>
+<ti><uri link="http://www.gentoo.org/news/da/gwn/20040329-newsletter.xml">29. March 2004</uri></ti>
 <ti>Understøttelse for flere MTAer med mailwrapper. Apache2 opgradering.  Gentoo Linux søger en dedikeret Apache-udvikler.</ti>
 </tr>			
 </table>
