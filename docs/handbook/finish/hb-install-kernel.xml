@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.6 2004/02/22 18:57:30 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.7 2004/02/23 15:15:38 broeman Exp $ -->
 
 <sections>
 <section>
@@ -120,15 +120,15 @@ kerne-kildekode) skal du ændre genvejen før du fortsætter:
 
 <p>
 Nu er det tid til at opsætte og kompilere din kernes kildekoder. Alle
-arkitekturer, undtagen PPC, kan bruge <c>genkernel</c> til dette, som vil bygge en omfattende
+arkitekturer kan bruge <c>genkernel</c> til dette, som vil bygge en omfattende
 kerne, som også er brugt på LiveCDen. Vi forklarer dog den "manuelle" 
 opsætning først, idet det er den bedste metode til at optimere dit system.
 </p>
 
 <p>
 Hvis du vil opsætte din kerne manuelt, forsæt nu med <uri
-link="#doc_chap3">Standard: Manuel opsætning</uri>. Hvis du ikke er en af 
-PPC-brugerne og du vil bruge <c>genkernel</c>, bør du læse <uri 
+link="#doc_chap3">Standard: Manuel opsætning</uri>. Hvis du 
+du vil bruge <c>genkernel</c>, bør du læse <uri 
 link="#doc_chap4">Alternativ: Brug af genkernel</uri> i stedet for.
 </p>
 
@@ -761,9 +761,7 @@ kernemoduler</uri>.
 
 <p>
 Hvis du læser denne sektion, så har du valgt at bruge vores <c>genkernel</c>
-script til at opsætte din kerne for dig. Dette betyder dog også at du ikke har
-et PPC-baseret system, idet det ikke understøtter
-<c>genkernel</c>. 
+script til at opsætte din kerne for dig.
 </p>
 
 <p>
