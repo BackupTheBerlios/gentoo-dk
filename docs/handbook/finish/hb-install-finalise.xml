@@ -3,7 +3,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.8 2004/02/24 19:40:28 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.9 2004/02/26 20:00:20 broeman Exp $ -->
 <sections>
 <section>
 <title>Brugeradministation</title>
@@ -130,7 +130,7 @@ hjemmesiden</uri> for mere information.
 
 <p>
 Hvis du er GRP bruger kan du fortsætte med <uri 
-link="#doc_chap2_sect4">Valgfrit: Installering af ekstra pakker</uri>, ellers
+link="#doc_chap2_sect4">Valgfrit: Installering af GRP-pakker</uri>, ellers
 gå til <uri link="?part=1&amp;chap=12">Hvad skal man så nu?</uri>
 </p>
 

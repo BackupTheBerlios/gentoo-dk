@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-bootloader.xml,v 1.5 2004/02/24 20:02:40 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-bootloader.xml,v 1.6 2004/02/26 20:00:20 broeman Exp $ -->
 
 <sections>
 <section>
@@ -191,9 +191,13 @@ indtaste de rigtige kommandoer for at installere GRUBs boot-optegnelse på din
 harddisk.
 </p>
 
-<pre caption = "Start af GRUBs skal">
+<pre caption = "Start af GRUBs shell (skal)">
 # <i>grub</i>
 </pre>
+
+<note>
+Hvis dit system ikke har nogen floppydrev, tilføj <c>--no-floppy</c> valgmuligheden til den ovenstående kommando, for at forhindre grub i at efterprøve (ikke-eksisterende) diskettedrev.
+</note>
 
 <p>
 I opsætningseksemplet vil vi installere GRUB, så det læser informationerne fra 
