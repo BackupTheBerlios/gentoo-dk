@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/index.xml,v 1.8 2004/02/28 13:27:01 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/index.xml,v 1.9 2004/02/28 20:17:05 broeman Exp $ -->
 
 <guide>
 <title>Bag om Gentoo-håndbogen</title>
@@ -238,7 +238,7 @@ disse instruktioner, er en god ting.
 <body>
 
 <p>
-Okay, okay, vi har hørt det. GDP ved godt at nogle brugere føler, at håndbogens installationsinstruktioner ikke er så læsbar pga. de (få, men visuelt repræsentative, vil jeg sige) arkitektur-specfikikke instruktioner (opstart, partionering, kernel opsætning og boot-loader). Vi har tilføjet en anmodning, for at separere instruktionerne dynamisk uden at separere kildekoder af dokumentationen, til vores <uri link="/proj/en/gdp/roadmap.xml">TODO</iri>-liste.
+Okay, okay, vi har hørt det. GDP ved godt at nogle brugere føler, at håndbogens installationsinstruktioner ikke er så læsbar pga. de (få, men visuelt repræsentative, vil jeg sige) arkitektur-specfikikke instruktioner (opstart, partionering, kernel opsætning og boot-loader). Vi har tilføjet en anmodning, for at separere instruktionerne dynamisk uden at separere kildekoder af dokumentationen, til vores <uri link="/proj/en/gdp/roadmap.xml">TODO</uri>-liste.
 </p>
 
 </body>
