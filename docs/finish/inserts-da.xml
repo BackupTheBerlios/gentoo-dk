@@ -3,7 +3,7 @@
 <inserts lang="da">
   <insert name="Content">Indhold</insert>
   <insert name="Updated">Opdateret</insert>
-  <insert name="Summary"></insert>
+  <insert name="Summary">Opsummering</insert>
   <insert name="Figure">Figur</insert>
   <insert name="Note">Bemærk</insert>
   <insert name="Warning">Advarsel</insert>
