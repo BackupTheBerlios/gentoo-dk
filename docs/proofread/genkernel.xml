@@ -10,10 +10,13 @@
 <author title="Oversætter">
   <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
+<author title="Korrektur">
+  <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
+</author>
 
 <abstract>
 Denne vejledning har til formål at være en reference til alle
-de funktioner der bliver sat til rådighed af Genkernel.
+de funktioner, der bliver sat til rådighed af Genkernel.
 </abstract>
 
 <license/>
@@ -28,7 +31,7 @@ de funktioner der bliver sat til rådighed af Genkernel.
 <body>
 
 <p>
-Genkernel er designet til at tillade, brugere der ikke tidligere er
+Genkernel er designet til at tillade brugere, der ikke tidligere er
 vant til at kompilere en kerne, til at bruge opsætning der ligner den
 der er brugt på Gentoo LiveCDerne, hvilke automatisk finder dit 
 hardware.
@@ -36,10 +39,9 @@ hardware.
 
 <p>
 Nogle brugere er måske også interesseret i at bruge genkernel til
-hardware som kræver initialisering og en virkende kerne før det kan
-bootes. Fordi genkernel også automatisk kompilere dine kerne moduler,
-og således tillader hardware, som kræver at blive hentet med modul
-parametre kan bruges.
+hardware som kræver aktivering og en fungerende kerne, før der skal
+genstartes. Fordi genkernel også automatisk samler dine kerne-moduler,
+tillader den således hardware, som kræver at blive hentet med modul-parametre.
 </p>
 
 </body>
@@ -50,20 +52,20 @@ parametre kan bruges.
 
 <p>
 Genkernel er ofte et godt valg for dem der ikke er vant til at
-compilere deres egen kerne eller dem der ikke er sikre på deres
-hardware konfiguration.
+samle deres egen kerne eller dem der ikke er sikre på deres
+hardware-opsætning.
 </p>
 
 <p>
 Fordi genkernel er designet til at bruge en generisk opsætning, så bør
 den være i stand til at understøtte alt dit hardware - men, fordi alle
-drivere og moduler også skal kompileres, så er det at kompilere sin
-egen kerne selv ofte meget hurtigere, givet at du ved hvad du har brug for.
+drivere og moduler også skal samles, så er det at samle sin egen kerne
+selv ofte meget hurtigere, givet at du ved hvad du har brug for.
 </p>
 
 <p>
-Genkernel understøtter dog ikke, pt. opstart fra LVM2/EVMS2
-partitioner. Brugere anbefales at bruge en manuelt kompileret kerne
+Genkernel understøtter dog ikke pt. opstart fra LVM2/EVMS2
+partitioner. Brugere anbefales at bruge en manuelt samlet kerne
 indtil videre.
 </p>
 
@@ -76,10 +78,10 @@ indtil videre.
 <p>
 Du kan få fat i genkernel ved bare at køre <c>emerge
 genkernel</c>. Glem ikke at bruge <c>-k</c> flaget til emerge, hvis du
-bruger binære pakker, f.eks. GRP. P.g.a at GRP pakkerne har en ældre
-version af genkernel er flagene anderledes. På grund af dette bør du konsultere <uri 
+bruger binære pakker, f.eks. GRP. Pga. at GRP pakkerne har en ældre
+version af genkernel, er flagene anderledes. På grund af dette bør du læse <uri 
 link="http://www.gentoo.org/doc/da/handbook/handbook-x86.xml?part=1&amp;chap=9">
-Gentoo håndbogen</uri> og <path>genkernel --help</path>.
+Gentoo håndbogen</uri> og <path>genkernel --help</path> igennem.
 </p>
 
 </body>
@@ -91,8 +93,8 @@ Gentoo håndbogen</uri> og <path>genkernel --help</path>.
 <p>
 Fra og med genkernel 3.0.2 bør de følgende platforme være
 understøttet: alpha, amd64, parisc, parisc64, ppc, ppc64, sparc,
-sparc64, og x86. Hvis du mener at der er en bug med det understøttende
-kode, og ikke med genkernel, så udfyld en bug hos <uri
+sparc64, og x86. Hvis du mener at der er en fejl i den understøttende
+kode, og ikke med genkernel, så udfyld en fejlrapport hos <uri
 link="http://bugs.gentoo.org">Gentoo Bugzilla.</uri>
 </p>
 
@@ -111,7 +113,7 @@ Genkernel er designet til at virke på tre måder:
 </p>
 
 <ul>
-  <li>"all" mode: denne bygger kernen og initrd</li>
+  <li>"all" mode: denne bygger kernen samt initrd</li>
   <li>"kernel" mode: denne bygger kun kernen</li>
   <li>"initrd" mode: denne bygger kun initrd</li>
 </ul>
@@ -125,7 +127,7 @@ speciel effekt.
 
 <p>
 Selvom at genkernel hovedsagelig er en kommando til at gøre dit liv
-nemmere når du skal kompilere en kerne, så er genkernel også pakket
+nemmere, når du skal samle en kerne, så er genkernel også pakket
 fuldt med forskellige flag, som tillader dig at skræddersy hvordan din
 kerne bliver kompileret og konfigureret.
 </p>
@@ -133,7 +135,7 @@ kerne bliver kompileret og konfigureret.
 </body>
 </section>
 <section>
-<title>Genkernel compiler flag</title>
+<title>Genkernel samlings-flag</title>
 <body>
 
 <p>
@@ -144,59 +146,59 @@ applikationer imens din kerne bliver samlet:
 <ul>
   <li>
     <b>--kernel-as=<c>enAssembler</c></b>: Dette specificerer en
-    assembler som vil blive brugt til at kompilere din kerne.
+    assembler som vil blive brugt til at samle din kerne.
   </li>
   <li>
     <b>--kernel-cc=<c>enCompiler</c></b>: Dette specificerer en
-    compiler som vil blive brugt til at kompilere din kerne.
+    compiler som vil blive brugt til at samle din kerne.
   </li>
   <li>
     <b>--kernel-ld=<c>enLinker</c></b>: Dette specificerer en linker
-    som vil blive brugt til at kompilere din kerne.
+    som vil blive brugt til at samle din kerne.
   </li>
   <li>
     <b>--kernel-make=<c>enMake</c></b>: Dette specificerer en
-    alternativ GNU Make som vil blive brugt til at kompilere din kerne.
+    alternativ GNU Make som vil blive brugt til at samle din kerne.
   </li>
 </ul>
 
 <ul>
   <li>
     <b>--utils-as=<c>enAssembler</c></b>: Dette specificerer en
-    assembler som vil blive brugt til at kompilere understøttelses værktøjerne.
+    assembler som vil blive brugt til at samle understøttelsesværktøjerne.
   </li>
   <li>
     <b>--utils-cc=<c>enCompiler</c></b>: Dette specificerer en
-    kompiler som vil blive brugt til at kompilere understøttelses værktøjerne.
+    kompiler som vil blive brugt til at samle understøttelsesværktøjerne.
   </li>
   <li>
     <b>--utils-ld=<c>enLinker</c></b>: Dette specificerer en linker
-    som vil blive brugt til at kompilere understøttelses værktøjerne.
+    som vil blive brugt til at samle understøttelsesværktøjerne.
   </li>
   <li>
     <b>--utils-make=<c>enMake</c></b>: Dette specificerer en
-    alternativ GNU Make, som vil blive brugt til at kompilere
-    understøttelses værtøjerne.
+    alternativ GNU Make, som vil blive brugt til at samle
+    understøttelsesværtøjerne.
   </li>
 </ul>
 
 <ul>
   <li>
     <b>--makeopts=<c>-jJobs</c></b>: Dette specificerer det flag der
-    vil blive sendt til GNU Make når kernen og værtøjerne bliver kompileret.
+    vil blive sendt til GNU Make når kernen og værtøjerne bliver samlet.
   </li>
 </ul>
 
 </body>
 </section>
 <section>
-<title>Genkernel kerne flag</title>
+<title>Genkernel kerne-flag</title>
 <body>
 
 <p>
 Genkernel understøtter de følgende flag, nogle af dem har
 <c>--<b>no-</b>mulighed</c> ækvivalente, der har
-indflydelse på kerne kompileringen:
+indflydelse på samlingen af kernen:
 </p>
 
 <ul>
@@ -204,19 +206,19 @@ indflydelse på kerne kompileringen:
     <b>--callback="echo Hello"</b>: Denne rutine kalder de
     specificerede argumenter efter at kernen og de relevante moduler
     er blevet bygget, men før at initrd er blevet bygget. Dette er
-    nyttigt hvor du måske ønsker eksterne moduler installeret til
-    initrd ved at emerge de relevante dele ved brug af callback og
-    derefter redefinering af en Genkernel modul gruppe.
+    nyttigt, når du måske ønsker eksterne moduler installeret til
+    initrd, ved at emerge de relevante dele ved brug af callback og
+    derefter omdefinering af en Genkernel modul-gruppe.
   </li>
   <li>
     <b>--<c>no-</c>clean</b>: Dette kører <e>eller kører ikke</e>
-    <c>make clean</c> før den kompilerer din kerne. Dette gør at alle
-    objekt filer og afhængigheder bliver fjernet.
+    <c>make clean</c> før den samler din kerne. Dette gør at alle
+    objektfiler og afhængigheder bliver fjernet.
   </li>
   <li>
     <b>--<c>no-</c>mrproper</b>: Dette kører <e>eller kører ikke</e>
-    <c>make mrproper</c> før den kompilerer din kerne. Dette gør at
-    alle objektfiler, afhængigheder <b>og din konfiguration</b> bliver
+    <c>make mrproper</c> før den samler din kerne. Dette gør at
+    alle objektfiler, afhængigheder <b>og din opsætning</b> bliver
     fjernet.
   </li>
 </ul>
@@ -225,11 +227,11 @@ indflydelse på kerne kompileringen:
   <li>
     <b>--kerneldir=<path>/sti/til/kildekode</path></b>: Dette
     specificerer en alternativ placering af kernens kildekode, i
-    stedet for standard placeringen <path>/usr/src/linux</path>.
+    stedet for standardplaceringen <path>/usr/src/linux</path>.
   </li>
   <li>
     <b>--kernel-config=<path>/sti/til/config-file</path></b>: Dette
-    specificerer en alternativ kerne konfiguration som vil blive
+    specificerer en alternativ kerneopsætning, som vil blive
     brugt; fremfor den ikke persistente
     <path>/sti/til/kildekode/.config</path>, som bliver brugt som standard.
   </li>
@@ -238,7 +240,7 @@ indflydelse på kerne kompileringen:
 <ul>
   <li>
     <b>--<c>no-</c>bootsplash</b>: Dette tilføjer <e>eller tilføjer ikke</e> bootsplash 
-    understøttelse i den initrd som genkernel bygger. Ikke alle
+    understøttelse i den initrd, som genkernel bygger. Ikke alle
     arkitekturer understøtter pt. bootsplash, og en kerne der
     understøtter bootsplash kræves også.
   </li>
@@ -256,14 +258,14 @@ indflydelse på kerne kompileringen:
   </li>
   <li>
     <b>--<c>no-</c>install</b>: Dette installerer <e>eller installerer
-    ikke</e> din kerne, dine moduler og initrd når kompilationen er færdig.
+    ikke</e> din kerne, dine moduler og initrd når samlingen er færdig.
   </li>
 </ul>
 
 </body>
 </section>
 <section>
-<title>Diverse Genkernel flag</title>
+<title>Diverse Genkernel-flag</title>
 <body>
 
 <p>
@@ -288,8 +290,8 @@ ind i de to andre kategorier:
   <li>
     <b>--busybox-bin=<path>/sti/til/busybox-binær.tar.bz2</path></b>:
     Ved at bruge denne mulighed, sikrer du at en busybox binær fil
-    ikke bliver kompileret og at den specificerede tarball vil blive
-    brugt. Bemærk at busybox <e>skal</e> være statisk kompileret!
+    ikke bliver samlet og at den specificerede tarball vil blive
+    brugt. Bemærk at busybox <e>skal</e> være statisk samlet!
   </li>
 </ul>
 
@@ -317,8 +319,8 @@ de nødvendige flag som root. F.eks:
 <pre caption="At køre genkernel">
 # genkernel --menuconfig --no-clean --no-install --bootsplash all
 <comment>(Vil producere en kerne, ved at spørge dig hvordan den skal
-konfigureres, så det passer til dine ønsker, lade alle kompilerede
-objektfiler være, slå bootsplash understøttelse til, men uden at
+opsættes, så det passer til dine ønsker, lade alle samlede
+objektfiler være, slå bootsplash-understøttelse til, men uden at
 installere noget som helst.)</comment>
 </pre>
 
@@ -345,18 +347,18 @@ dig, hvis MOUNTBOOT er sat til "yes" i <path>/etc/genkernel.conf</path>.
 <body>
 
 <p>
-For at sætte genkernel op til at virke med din bootloader, er tre
-eller fire ændringer nødvendige i din bootloader konfiguration.
+For at sætte genkernel op til at virke med din boot-loader, er tre
+eller fire ændringer nødvendige i din boot-loader-opsætning.
 </p>
 
 <ol>
   <li>
     Tilføj <c>root=/dev/ram0</c> og <c>init=/linuxrc</c> til kerne
-    parametrene som bliver sendte videre til kerne imaget.
+    parametrene som bliver sendte videre til kerne-billedfilen.
   </li>
   <li>
     Tilføj <c>real_root=/dev/hda3</c>, eksempelvis, til de kerne
-    parametre der bliver sendt videre til kerne imaget hvis
+    parametre der bliver sendt videre til kerne-billedfilen hvis
     <path>/dev/hda3</path> indeholder din root partition.
   </li>
   <li>
@@ -369,7 +371,7 @@ eller fire ændringer nødvendige i din bootloader konfiguration.
   <li>
     Tilføj initrd afhængigt af hvordan din bootloader kræver
     det: se <uri link="http://www.gentoo.org/doc/da/handbook/handbook-x86.xml?part=1&amp;chap=9">Gentoo 
-    Håndbogen</uri> for detaljer om hvordan du bør gøre det for din bootloader.
+    Håndbogen</uri> for detaljer om hvordan du bør gøre det for din boot-loader.
   </li>
 </ol>
 
@@ -384,7 +386,7 @@ eller fire ændringer nødvendige i din bootloader konfiguration.
 <body>
 
 <p>
-Givet at din  arkitektur har alle de krævede biblioteker og
+Givet at din arkitektur har alle de krævede biblioteker og
 værktøjer, som genkernel kræver, hvilket inkluderer, men er ikke
 begrænset til, en fungerende kerne, til din arkitektur, et fungerende
 sæt, GNU Make og en fungerende busybox distribution, så er du klar til
@@ -393,30 +395,30 @@ at køre!
 
 <p>
 For enhver arkitektur bruger genkernel 
-<path>/usr/share/genkernel/archNavn</path> til konfiguration filer for
+<path>/usr/share/genkernel/archNavn</path> til opsætningsfiler for
 denne arkitektur.
 </p>
 
 </body>
 </section>
 <section>
-<title>Hvordan system bootstrapningen virker</title>
+<title>Hvordan system-bootstrapningen virker</title>
 <body>
 
 <ol>
   <li>
-    Bootloaderen henter genkernel billedet, bygget til specifikationen
-    af konfigurationsfilerne i genkernel bibliotekerne såvel som
+    Boot-loaderen henter genkernel-billedefilen, bygget til specifikationen
+    af opsætningsfilerne i genkernel-bibliotekerne såvel som
     initrd, som bliver gjort klar af genkernel.
   </li>
   <li>
-    Kernen starter op, allokerer en lille mængde RAM, hvori busybox
-    initialiseres, som undersøger systemet med modulerne i modules_load 
+    Kernen starter op, allokerer den en lille mængde RAM, hvori busybox
+    aktiveres, der undersøger systemet med modulerne i modules_load 
     listen for arkitekturen.
   </li>
   <li>
     Når dette er gjort og givet at <c>real_root</c> parameteren er
-    root boot enheden som busybox ser tingene, bliver fundet, så
+    root boot-enheden som busybox ser tingene, bliver fundet, så
     bliver systemet bootet fra denne enhed.
   </li>
 </ol>
@@ -429,13 +431,13 @@ denne arkitektur.
 
 <ul>
   <li>
-    <path>busy-config</path>: Dette er den konfiguration som bliver brugt
+    <path>busy-config</path>: Dette er den opsætning, som bliver brugt
     til at bygge busybox til din arkitektur.
   </li>
   <li>
-    <path>config.sh</path>: Dette er et shell script, som sætter
-    forskellige indre genkernel variable. Se en af
-    <path>config.sh</path> filerne for et eksempel.
+    <path>config.sh</path>: Dette er et shell-script, som sætter
+    forskellige indre genkernel-variabler. Se en af
+    <path>config.sh</path>-filerne for et eksempel.
   </li>
   <li>
     <path>modules_load</path>: Dette er en fil der indeholder en
@@ -449,15 +451,15 @@ denne arkitektur.
 
 <ul>
   <li>
-    <path>kernel-config</path>: En standard kerne konfiguration der
-    bruges for enhver kerne version.
+    <path>kernel-config</path>: En standard kerne-opsætning, der
+    bruges for enhver kerneversion.
   </li>
   <li>
-    <path>kernel-config-2.4</path>: En standard kerne konfiguration
+    <path>kernel-config-2.4</path>: En standard kerne-opsætning,
     der bruges for 2.4 kerneserien.
   </li>
   <li>
-    <path>kernel-config-2.6</path>: En standard kerne konfiguration
+    <path>kernel-config-2.6</path>: En standard kerne-opsætning,
     der bruges for 2.6 kerneserien.
   </li>
 </ul>
@@ -466,4 +468,3 @@ denne arkitektur.
 </section>
 </chapter>
 </guide>
- 
