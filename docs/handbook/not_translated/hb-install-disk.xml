@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-disk.xml,v 1.7 2004/01/20 21:34:34 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-disk.xml,v 1.8 2004/01/21 22:12:31 broeman Exp $ -->
 
 <sections>
 <section>
@@ -498,34 +498,34 @@ som "Linux swap").
 </body>
 </subsection>
 <subsection>
-<title>Removing all Partitions</title>
+<title>Slette alle partitioner</title>
 <body>
 
 <p>
-We will first remove all existing partitions from the disk. Type <c>d</c> to
-delete a partition. For instance, to delete an existing <path>/dev/hda1</path>:
+Vi vil først slette alle de eksisterende partitioner fra harddisken. Tast <c>d</c> for
+at slette en partition. F.eks. for at slette en eksisterende <path>/dev/hda1</path>:
 </p>
 
-<pre caption="Deleting a partition">
+<pre caption="Slette en partition">
 Command (m for help): <i>d</i>
 Partition number (1-4): <i>1</i>
 </pre>
 
 <p>
-The partition has been scheduled for deletion. It will no longer show up if you
-type <c>p</c>, but it will not be erased until your changes have been saved. If
-you made a mistake and want to abort without saving your changes, type <c>q</c>
-immediately and hit enter and your partition will not be deleted.
+Partitionen er blevet planlagt til at blive slettet. Den vil nu ikke længere blive vist, når du
+taster <c>p</c>, men den er ikke slettet før dine ændringer er blevet gemt. Hvis
+du har lavet en fejl og vil afbryde uden at gemme, tast <c>q</c>
+med det samme og tryk Enter og din partition vil ikke blive slettet.
 </p>
 
 <p>
-Now, assuming that you do indeed want to wipe out all the partitions on your
-system, repeatedly type <c>p</c> to print out a partition listing and then type
-<c>d</c> and the number of the partition to delete it. Eventually, you'll end 
-up with a partition table with nothing in it:
+Forudsat at du nu virkelig vil udslette alle partitioner på dit
+system, tast gentagne gange <c>p</c> for at udskrive partitionslisten og tast
+<c>d</c> og nummeret på partitionen, for at slette den. Til sidst vil du ende
+med en partitionstabel uden noget i:
 </p>
 
-<pre caption="An empty partition table">
+<pre caption="En tom partitionstabel">
 Disk /dev/hda: 30.0 GB, 30005821440 bytes
 240 heads, 63 sectors/track, 3876 cylinders
 Units = cylinders of 15120 * 512 = 7741440 bytes
@@ -536,43 +536,43 @@ Command (m for help):
 </pre>
 
 <p>
-Now that the in-memory partition table is empty, we're ready to create the
-partitions. We will use a default partitioning scheme as discussed previously.
-Of course, don't follow these instructions to the letter if you don't want the
-same partitioning scheme!
+Nu da partitionstabellen, som ligger i hukkommelsen, er tom, er det nu tid til at lave
+partitioner. Vi vil bruge standard partitionsskemaet, som diskuteret tidligere.
+Selvfølgelig, følg ikke disse instruktioner til punkt og prikke, hvis du ikke vil have den
+samme partitionsskema!
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Creating the Boot Partition</title>
+<title>Oprettelse af boot-partition</title>
 <body>
 
 <p>
-We first create a small boot partition. Type <c>n</c> to create a new partition,
-then <c>p</c> to select a primary partition, followed by <c>1</c> to select the
-first primary partition. When prompted for the first cylinder, hit enter. When
-prompted for the last cylinder, type <c>+32M</c> to create a partition 32 Mbyte
-in size:
+Først vil vi en lille boot-partition. Tast <c>n</c> for at oprette en ny partition,
+så <c>p</c> for at vælge en primær partition, fulgt af <c>1</c> for at vælge den
+første primære partition. Når du bliver spurgt om den første cylinder, tryk Enter. Når du
+bliver spurgt om den sidste cylinder, tast <c>+32M</c> for at lave en partition på 32 Mbyte
+i størrelse:
 </p>
 
-<pre caption="Creating the boot partition">
+<pre caption="Oprettelse af boot-partition">
 Command (m for help): <i>n</i>
 Command action
   e   extended
   p   primary partition (1-4)
 <i>p</i>
 Partition number (1-4): <i>1</i>
-First cylinder (1-3876, default 1): <comment>(Hit Enter)</comment>
+First cylinder (1-3876, default 1): <comment>(Tryk Enter)</comment>
 Using default value 1
 Last cylinder or +size or +sizeM or +sizeK (1-3876, default 3876): <i>+32M</i>
 </pre>
 
 <p>
-Now, when you type <c>p</c>, you should see the following partition printout:
+Når du nu taster <c>p</c>, vil du se følgende partitionsudskrift:
 </p>
 
-<pre caption="Created boot partition">
+<pre caption="Oprettet boot-partition">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda: 30.0 GB, 30005821440 bytes
@@ -584,30 +584,30 @@ Device Boot    Start       End    Blocks   Id  System
 </pre>
 
 <p>
-We need to make this partition bootable. Type <c>a</c> to toggle the bootable
-flag on this partition. If you press <c>p</c> again, you will notice that an
-<path>*</path> is placed in the "Boot" column.
+Vi mangler at gøre denne partition startbar. Tast <c>a</c> for at skifte opstartsflag
+på denne partition. Hvis du taster <c>p</c> igen, vil du se at
+<path>*</path> er placeret i "Boot"-kolonnen.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Creating the Swap Partition</title>
+<title>Oprettelse af swap-partition</title>
 <body>
 
 <p>
-Let's now create the swap partition. To do this, type <c>n</c> to create a new 
-partition, then <c>p</c> to tell fdisk that you want a primary partition. Then 
-type <c>2</c> to create the second primary partition, <path>/dev/hda2</path> in
-our case. When prompted for the first cylinder, hit enter. When prompted for 
-the last cylinder, type <c>+512M</c> to create a partition 512MB in size. After
-you've done this, type <c>t</c> to set the partition type, <c>2</c> to select 
-the partition you just created and then type in <c>82</c> to set the partition 
-type to "Linux Swap". After completing these steps, typing <c>p</c> should
-display a partition table that looks similar to this:
+Lad os nu lave en swap-partition. For at gøre dette, tast <c>n</c> for at lave en ny
+partition, så <c>p</c> for at fortælle fdisk, at du vil have en primær partition. Tast
+så <c>2</c> for at lave den anden primære partition, <path>/dev/hda2</path> i
+vores eksempel. Når du bliver spurgt om den første cylinder, tryk Enter. Når du bliver spurgt om
+den sidste cylinder, tast <c>+512M</c> for at oprette en partition på 512MB i størrelse. Efter
+at du har gjort det, tast <c>t</c> for at indstille partitionstypen, <c>2</c> for at vælge
+partitionen, som du lige har oprettet, og tast så <c>82</c> for at indstille partitionenstypen
+til "Linux Swap". Efter afslutningen af disse trin, ved at taste <c>p</c>, burde
+vise en partitionstabel, som ser ud som dette:
 </p>
 
-<pre caption="Partition listing after creating a swap partition">
+<pre caption="Partitionsliste efter oprettelse af en swap-partition">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda: 30.0 GB, 30005821440 bytes
@@ -622,20 +622,20 @@ Device Boot    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Creating the Root Partition</title>
+<title>Oprettelse af root-partition</title>
 <body>
 
 <p>
-Finally, let's create the root partition. To do this, type <c>n</c> to create a 
-new partition, then <c>p</c> to tell fdisk that you want a primary partition. 
-Then type <c>3</c> to create the third primary partition, <path>/dev/hda3</path>
-in our case. When prompted for the first cylinder, hit enter. When prompted for
-the last cylinder, hit enter to create a partition that takes up the rest of the
-remaining space on your disk. After completing these steps, typing <c>p</c> 
-should display a partition table that looks similar to this:
+Til sidst, lad os oprette root-partitionen. For at gøre dette, tast <c>n</c> for at oprette en
+ny partition, så <c>p</c> for at fortælle fdisk, at du vil have en primær partition. 
+så tast <c>3</c> for at oprette den tredje primære partition, <path>/dev/hda3</path>
+i vores tilfælde. Når du bliver spurgt om den første cylinder, tryk Enter. Når du bliver spurgt om
+den sidste cylinder, tryk Enter for at oprette en partition, som tager resten af
+den frie plads, som er tilbage på din harddisk. Efter at have afsluttet disse trin, ved at taste <c>p</c> 
+burde vise en partitionstabel, som ser ud som dette:
 </p>
 
-<pre caption="Partition listing after creating the root partition">
+<pre caption="Partitionsliste efter oprettelsen af root-partition">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda: 30.0 GB, 30005821440 bytes
@@ -652,23 +652,23 @@ Device Boot    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Saving the Partition Layout</title>
+<title>Gemme partitionslayout</title>
 <body>
 
 <p>
-To save the partition layout and exit <c>fdisk</c>, type <c>w</c>.
+For at gemme partitionslayouet og afslutte <c>fdisk</c>, tast <c>w</c>.
 </p>
 
-<pre caption="Save and exit fdisk">
+<pre caption="Gem og afslut fdisk">
 Command (m for help): <i>w</i>
 </pre>
 
 <p>
-Now that your partitions are created, you can now continue with <uri
-link="#filesystems">Creating Filesystems</uri>.
+Nu da dine partitioner er oprette, kan du nu fortsætte med <uri
+link="#filesystems">Oprettelse af filsystemer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded 
-, unless you have chosen to use LVM
-in which case you should first read <uri link="#lvm">Optional: Using
+, undtagen hvis du har valgt at bruge LVM,
+hvilket du burde først læse <uri link="#lvm">Valgfrit: Brug af
 LVM</uri>.
 -->
 </p>
@@ -677,89 +677,89 @@ LVM</uri>.
 </subsection>
 </section>
 <section>
-<title>Using fdisk on Alpha to Partition your Disk</title>
+<title>Brug af fdisk på Alpha for at partitionere din harddisk</title>
 <subsection>
 <body>
 
 <impo>
-Only users with <e>Alpha</e> based systems should read this section.
+Kun brugere af <e>Alpha</e> baserede systemer burde læse denne sektion.
 </impo>
 
 <p>
-The following parts explain how to create the example slice layout described
-previously, namely:
+De følgende dele vil forklare hvordan man opretter portionslayout-eksemplet, beskrevet
+tidligere, nemlig:
 </p>
 
 <table>
 <tr>
-  <th>Slice</th>
-  <th>Description</th>
+  <th>Portion</th>
+  <th>Beskrivelse</th>
 </tr>
 <tr>
   <ti><path>/dev/sdaa</path></ti>
-  <ti>Swap slice</ti>
+  <ti>Swap portion</ti>
 </tr>
 <tr>
   <ti><path>/dev/sdab</path></ti>
-  <ti>Root slice</ti>
+  <ti>Root portion</ti>
 </tr>
 <tr>
   <ti><path>/dev/sdac</path></ti>
-  <ti>Full disk (required)</ti>
+  <ti>Hele harddisken (krævet)</ti>
 </tr>
 </table>
 
 <p>
-Change your slice layout according to your own will.
+Du kan ændre dit portionslayout efter dit eget valg.
 </p>
 
 
 </body>
 </subsection>
 <subsection>
-<title>Identifying Available Disks</title>
+<title>Identifikation af tilrådige harddiske</title>
 <body>
 
 <p>
-To figure out what disks you have running, use the following commands:
+For at finde ud af hvilke harddiske, som kører, brug de følgende kommandoer:
 </p>
 
-<pre caption="Identifying available disks">
-<comment>(For IDE disks)</comment>      # <i>dmesg | grep 'drive$'</i>
-<comment>(For SCSI disks)</comment>     # <i>dmesg | grep 'scsi'</i>
+<pre caption="Identifikation af tilrådige harddiske">
+<comment>(Til IDE-harddiske)</comment>      # <i>dmesg | grep 'drive$'</i>
+<comment>(Til SCSI-harddiske)</comment>     # <i>dmesg | grep 'scsi'</i>
 </pre>
 
 <p>
-From this output you should be able to see what disks were detected and their
-respective <path>/dev</path> entry. In the following parts we assume that the
-disk is a SCSI disk on <path>/dev/sda</path>.
+Fra dette output, burde du kunne se hvilke diske, som er blevet fundet og deres
+respektive <path>/dev</path> postering. I de følgende dele, forventer vi at
+harddisken er en SCSI-harddisk på <path>/dev/sda</path>.
 </p>
 
 <p>
-Now fire up <c>fdisk</c>:
+Fyr nu op for <c>fdisk</c>:
 </p>
 
-<pre caption="Starting fdisk">
+<pre caption="Start af fdisk">
 # <i>fdisk /dev/sda</i>
 </pre>
 
 </body>
 </subsection>
 <subsection>
-<title>Deleting All Slices</title>
+<title>Slette alle portioner</title>
 <body>
 
 <p>
-We start with deleting all slices <e>except</e> the 'c'-slice. The following
-shows how to delete a slice (in the example we use 'a'). Repeat the process to
-delete all other slices (again, except the 'c'-slice).
+Vi starter med at slette alle portioner <e>undtagen</e> 'c'-portionen. Det følgende
+viser hvordan man sletter en portion (i eksemplet bruger vi 'a'). Gentag processen for at
+slette alle de andre portioner (igen, undtagen 'c'-portionen).
 </p>
 
 <p>
-Use <c>p</c> to view all existing slices. <c>d</c> is used to delete a slice.
+Brug <c>p</c> for at se alle eksisterende portioner. <c>d</c> er brugt til at slette en portion.
 </p>
 
-<pre caption="Deleting a slice">
+<pre caption="Slette en portion">
 BSD disklabel command (m for help): <i>p</i>
 
 8 partitions:
@@ -778,11 +778,11 @@ Partition (a-h): <i>a</i>
 </pre>
 
 <p>
-After repeating this process for all slices, a listing should show you something
-similar to this:
+Efter at gentage denne process for alle portioner, burde en liste vise dig noget
+lignende dette:
 </p>
 
-<pre caption="Viewing an empty scheme">
+<pre caption="Se et tomt skema">
 BSD disklabel command (m for help): <i>p</i>
 
 3 partitions:
@@ -793,21 +793,21 @@ BSD disklabel command (m for help): <i>p</i>
 </body>
 </subsection>
 <subsection>
-<title>Creating the Swap Slice</title>
+<title>Oprettelse af swap-portion</title>
 <body>
 
 <p>
-On Alpha based systems you don't need a separate boot partition. However, the
-first cylinder cannot be used as the <c>aboot</c> image will be placed there.
+På Alpha baserede systemer behøver du ikke at separere boot-partitionen. Dog kan den
+første cylinder ikke blive brugt, da <c>aboot</c>-billedfilen vil blive placeret her.
 </p>
 
 <p>
-We will create a swap slice starting at the third cylinder, with a total
-size of 1 Gbyte. Use <c>n</c> to create a new slice. After creating the slice,
-we will change its type to <c>1</c>, meaning <e>swap</e>.
+Vi vil oprette en swap-portion, som starter på den tredje cylinder, med en total
+størrelse på 1 GByte. Brug <c>n</c> for at oprette en ny portion. Efter at have oprettet portionen,
+vil vi ændre dens type til <c>1</c>, som betyder <e>swap</e>.
 </p>
 
-<pre caption="Creating the swap slice">
+<pre caption="Oprettelse af swap-portion">
 BSD disklabel command (m for help): <i>n</i>
 Partition (a-p): <i>a</i>
 First cylinder (1-5290, default 1): <i>3</i>
@@ -819,10 +819,10 @@ Hex code (type L to list codes): <i>1</i>
 </pre>
 
 <p>
-After these steps you should see a layout similar to the following:
+Efter disse trin, burde du se et layout lignende til det følgende:
 </p>
 
-<pre caption="Slice layout after creating the swap slice">
+<pre caption="Portionslayout efter oprettelse af swap-portion">
 BSD disklabel command (m for help): <i>p</i>
 
 3 partitions:
@@ -834,27 +834,27 @@ BSD disklabel command (m for help): <i>p</i>
 </body>
 </subsection>
 <subsection>
-<title>Create the Root Slice</title>
+<title>Oprettelse af root-portion</title>
 <body>
 
 <p>
-We will now create the root slice, starting from the first cylinder <e>after</e>
-the swap slice. Use the <c>p</c> command to view where the swap slice ends. In
-our example, this is at 1003, making the root partition start at 1004.
+Vi vil nu oprette root-portionen, som starter fra den første cylinder <e>efter</e>
+swap-portionen. Brug <c>p</c>-kommandoen for at se hvor swap-portionen slutter. I
+vores eksempel, er dette ved 1003, som gør at root-portionen starter ved 1004.
 </p>
 
 <p>
-Another problem is that there is currently a bug in <c>fdisk</c> making it think
-the number of available cylinders is one above the real number of cylinders. In
-other words, when you are asked for the last cylinder, decrease the cylinder
-number (in this example: 5290) with one.
+Et andet problem er at der er på nuværende tidspunkt en fejl i <c>fdisk</c>, som gør at den tror at
+antallet af tilrådige cylindere er højere det reelle antal af cylindere. I
+andre ord, når du bliver spurgt om den sidste cylinder, formindsk cylinder-nummeret
+(i vores eksempel: 5290) med én.
 </p>
 
 <p>
-When the partition is created, we change the type to <c>8</c>, for <e>ext2</e>.
+Når portionen er oprettet, ændrer vi typen til <c>8</c>, som er <e>ext2</e>.
 </p>
 
-<pre caption="Creating the root slice">
+<pre caption="Oprettelse af root-portion">
 D disklabel command (m for help): <i>n</i>
 Partition (a-p): <i>b</i>
 First cylinder (1-5290, default 1): <i>1004</i>
@@ -866,10 +866,10 @@ Hex code (type L to list codes): <i>8</i>
 </pre>
 
 <p>
-Your slice layout should now be similar to this:
+Din portionslayout burde nu se ud som dette her:
 </p>
 
-<pre caption="Viewing the slice layout">
+<pre caption="Se portionslayout">
 BSD disklabel command (m for help): <i>p</i>
 
 3 partitions:
@@ -882,23 +882,23 @@ BSD disklabel command (m for help): <i>p</i>
 </body>
 </subsection>
 <subsection>
-<title>Save the Slice Layout and Exit</title>
+<title>Gem portionslayoutet og afslut</title>
 <body>
 
 <p>
-Save <c>fdisk</c> by typing <c>w</c>. This will also save your slice layout.
+Gem <c>fdisk</c> ved at taste <c>w</c>. Dette vil også gemme dit portionslayout.
 </p>
 
-<pre caption="Save and exit fdisk">
+<pre caption="Gem og afslut fdisk">
 Command (m for help): <i>w</i>
 </pre>
 
 <p>
-Now that your slices are created, you can now continue with <uri
-link="#filesystems">Creating Filesystems</uri>.
+Nu da dine portioner er oprette, kan du nu fortsætte med <uri
+link="#filesystems">Oprettelse af filsystmer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded
-, unless you have chosen to use LVM
-in which case you should first read <uri link="#lvm">Optional: Using
+, undtagen hvis du har valgt at bruge LVM,
+hvilket du burde først læse <uri link="#lvm">Valgfrit: Brug af
 LVM</uri>.
 -->
 </p>
@@ -907,74 +907,74 @@ LVM</uri>.
 </subsection>
 </section>
 <section>
-<title>Using fdisk on SPARC to Partition your Disk</title>
+<title>Brug af fdisk på SPARC for at partionere din harddisk</title>
 <subsection>
 <body>
 
 <impo>
-Only users with <e>SPARC</e> based systems should read this section.
+Kun brugere på <e>SPARC</e> baserede systemer burde læse denne sektion.
 </impo>
 
 <p>
-The following parts explain how to create the example partition layout described
-previously, namely:
+De følgende dele forklarer hvordan man opretter partitionslayout-eksemplet, beskrevet
+tidligere, nemlig:
 </p>
 
 <table>
 <tr>
   <th>Partition</th>
-  <th>Description</th>
+  <th>Beskrivelse</th>
 </tr>
 <tr>
   <ti><path>/dev/hda1</path></ti>
-  <ti>Boot partition</ti>
+  <ti>Boot-partition</ti>
 </tr>
 <tr>
   <ti><path>/dev/hda2</path></ti>
-  <ti>Swap partition</ti>
+  <ti>Swap-partition</ti>
 </tr>
 <tr>
   <ti><path>/dev/hda3</path></ti>
-  <ti>Sun Disk Label (required)</ti>
+  <ti>Sun Disk Label (krævet)</ti>
 </tr>
 <tr>
   <ti><path>/dev/hda4</path></ti>
-  <ti>Root partition</ti>
+  <ti>Root-partition</ti>
 </tr>
 </table>
 
 <p>
-Change your partition layout according to your own will.
+Du kan ændre din partitionslayout efter dine egne ønsker.
 </p>
 
 
 </body>
 </subsection>
 <subsection>
-<title>Firing up fdisk</title>
+<title>Fyr op for fdisk</title>
 <body>
 
 <p>
-Start <c>fdisk</c> with your disk as argument:
+Start <c>fdisk</c> med din harddisk som tilføjelse:
 </p>
 
-<pre caption="Starting fdisk">
+<pre caption="Start af fdisk">
 # <i>fdisk /dev/hda</i>
 </pre>
 
 <p>
-You should be greeted with the fdisk prompt:
+Du burde blive hilst af en fdisk-prompt:
 </p>
 
-<pre caption="The fdisk prompt">
+<pre caption="fdisk-prompten">
 Command (m for help):
 </pre>
 
 <p>
-To view the available partitions, type in <c>p</c>:
+For at se de tilrådige partitioner, tryk <c>p</c>:
 </p>
 
-<pre caption="Listing available partitions">
+<pre caption="Liste af tilrådige partitioner">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda (Sun disk label): 240 heads, 63 sectors/track, 3876 cylinders
@@ -988,42 +988,42 @@ Device Flag    Start       End    Blocks   Id  System
 </pre>
 
 <p>
-Note the <c>Sun disk label</c> in the output. If this is missing, the disk is
-using the DOS-partitioning, not the Sun partitioning. In this case, use <c>s</c>
-to ensure that the disk has a sun partition table.
+Notér at <c>Sun disk label</c> er med i output. Hvis den mangler, bruger harddisken
+DOS-partitionering, ikke Sun-partitionerng. I dette tilfælde, brug <c>s</c>
+for at sikre at harddisken har en sun partitionstabel.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Deleting Existing Partitions</title>
+<title>Slette eksisterende partitioner</title>
 <body>
 
 <p>
-It's time to delete any existing partitions. To do this, type <c>d</c> and hit 
-Enter. You will then be prompted for the partition number you would like to 
-delete. To delete a pre-existing <path>/dev/hda1</path>, you would type:
+Det er tid til at slette alle eksisterende partitioner. For at gøre dette, tast <c>d</c> og tryk
+Enter. Du vil blive spurgt for partitionsnummer, som du ønsker at
+slette. For at slette en eksisterende <path>/dev/hda1</path>, skal du taste:
 </p>
 
-<pre caption="Deleting a partition">
+<pre caption="Slette en partition">
 Command (m for help): <i>d</i>
 Partition number (1-4): <i>1</i>
 </pre>
 
 <p>
-Assuming you want to remove all existing partitions, press <c>p</c> to view the
-available partitions, and <c>d</c> to delete those one by one. If you feel like
-you made an error, press <c>q</c> immediately -- <c>fdisk</c> doesn't
-immediately change the partitions but keeps the changes in memory. Only when you
-press <c>w</c> are the partitions saved.
+Da vi forventer at du vil slette alle eksisterende partitioner, tast <c>p</c> for at se
+tilrådige partitioner, og <c>d</c> for at slette disse, én efter én. Hvis du føler at
+du har lavet en fejl, tast <c>q</c> med det samme -- <c>fdisk</c> gemmer ikke
+ændrer, lavet her og nu, på partitionerne, men holder det i hukommelsen. Kun når du
+taster <c>w</c> er alle partitioner gemt.
 </p>
 
 <p>
-After deleting all partitions, you should have a partition layout similar to the
-following:
+Efter at have slette alle partitioner, burde du have en partitionslayout lignende til det
+følgende:
 </p>
 
-<pre caption="View an empty partition scheme">
+<pre caption="Se et tomt partitionsskema">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda (Sun disk label): 240 heads, 63 sectors/track, 3876 cylinders
@@ -1036,23 +1036,23 @@ Device Flag    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Create the Sun Disk Label</title>
+<title>Oprettelse af Sun Disk Label'en</title>
 <body>
 
 <p>
-Now that the in-memory partition table is empty, we're ready to create the Sun
-Disk Label partition. To do this, type <c>n</c> to create a new partition, then 
-type <c>3</c> to create the partition. When prompted for the first cylinder, 
-hit enter. When prompted for the last cylinder, hit enter. After you've done 
-this, type <c>t</c> to set the partition type, and then type in <c>5</c> to set
-the partition type to "Whole disk".
+Nu da partitionstabellen, som er holdt i hukkommelsen, er tom, er vi klar til at oprette 'Sun
+Disk Label'-partitionen. For at gøre dette, tast <c>n</c> for at oprette en ny partition, så 
+tast <c>3</c> for at oprette partitionen. Når der bliver spurgt om den første cylinder, 
+tast Enter. Når der bliver spurgt om den sidste cylinder, tast Enter. Efter at du har gjort
+dette, tast <c>t</c> for at indstille partitionstypen, og tast derefter <c>5</c> for at indstille
+partitionstypen til "Whole disk" (hele disken).
 </p>
 
-<pre caption="Steps to create a Sun Disk Label">
+<pre caption="Trin til at oprette en Sun Disk Label">
 Command (m for help): <i>n</i>
 Partition number (1-4): <i>3</i>
 First cylinder (1-3876, default 0): <i>0</i>
-Last cylinder or +size or +sizeM or +sizeK (1-3876, default 3876): <comment>(Press Enter)</comment>
+Last cylinder or +size or +sizeM or +sizeK (1-3876, default 3876): <comment>(Tryk Enter)</comment>
 Using default value 3876
 
 Command (m for help): <i>t</i>
@@ -1061,11 +1061,11 @@ Hex code (type L to list codes): <i>5</i>
 </pre>
 
 <p>
-After completing these steps, typing <c>p</c> should display a partition table 
-that looks similar to this:
+Efter at have afsluttet disse trin, ved at taste <c>p</c> burde vise en partitionstabel,
+som ser ud som dette:
 </p>
 
-<pre caption="View the partition layout">
+<pre caption="Se partitionslayout">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda (Sun disk lable): 240 heads, 63 sectors/track, 3876 cylinders
@@ -1078,31 +1078,31 @@ Device Flag    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Creating the Boot Partition</title>
+<title>Oprettelse af boot-partition</title>
 <body>
 
 <p>
-We're ready to create a boot partition. To do this, type <c>n</c> to create a 
-new partition, then type <c>1</c> to create the partition. When prompted for the
-first cylinder, hit enter. When prompted for the last cylinder, type <c>+32M</c>
-to create a partition <c>32MB</c> in size. Make sure that the entire boot
-partition must be contained entirely within the first 2Gb of the disk. 
-You can see output from these steps below:
+Vi er klar til at oprette boot-partitionen. For at gøre dette, tast <c>n</c> for at oprette en
+ny partition, tast da <c>1</c> for at oprette partitionen. Når der bliver spurgt efter den
+første cylinder, tryk Enter. Når der bliver spurgt efter den sidste cylinder, tast <c>+32M</c>
+for at oprette en partition på <c>32MB</c> i størrelse. Vær sikker på at hele boot-partitionen
+er holdt inde for de første 2GB af harddisken. 
+Du kan se output fra disse trin, forneden:
 </p>
 
-<pre caption="Creating a boot partition">
+<pre caption="Oprettelse af boot-partition">
 Command (m for help): <i>n</i>
 Partition number (1-4): <i>1</i>
-First cylinder (1-3876, default 1): <comment>(Press Enter)</comment>
+First cylinder (1-3876, default 1): <comment>(Tryk Enter)</comment>
 Using default value 1
 Last cylinder or +size or +sizeM or +sizeK (1-3876, default 3876): <i>+32M</i>
 </pre>
 
 <p>
-Now, when you type <c>p</c>, you should see the following partition printout:
+Når du nu taster <c>p</c>, burde du se følgende partition-udskrift:
 </p>
 
-<pre caption="Listing the partition layout">
+<pre caption="Liste af partitionslayout">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda (Sun disk label): 240 heads, 63 sectors/track, 3876 cylinders
@@ -1115,21 +1115,21 @@ Device Flag    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Creating a swap partition</title>
+<title>Oprettelse af swap-partition</title>
 <body>
 
 <p>
-Next, let's create the swap partition. To do this, type <c>n</c> to create a new
-partition, then <c>2</c> to create the second partition, <path>/dev/hda2</path>
-in our case. When prompted for the first cylinder, hit enter. When prompted for 
-the last cylinder, type <c>+512M</c> to create a partition 512MB in size. After 
-you've done this, type <c>t</c> to set the partition type, and then type in 
-<c>82</c> to set the partition type to "Linux Swap". After completing these 
-steps, typing <c>p</c> should display a partition table that looks similar to 
-this:
+Herefter, lad os nu oprette swap-partitionen. For at gøre dette, tast <c>n</c> for at oprette en ny
+partition, så <c>2</c> for at oprette en anden partition, <path>/dev/hda2</path>
+i vores tilfælde. Når der bliver spurgt efter den første cylinder, tryk Enter. Når der bliver spurgt 
+efter den sidste cylinder, tast <c>+512M</c> for at oprette en partition på 512MB i størrelse. Efter 
+at du har gjort dette, tast <c>t</c> for at indstille partitionstypen, og indtast derefter
+<c>82</c> for at indstille partitionstype til "Linux Swap". Efter at have afsluttet disse
+trin, indtastningen af <c>p</c> burde vise en partitionstabel, som ser ud som 
+dette:
 </p>
 
-<pre caption="Listing of available partitions">
+<pre caption="Liste af tilrådige partitioner">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda (Sun disk label): 240 heads, 63 sectors/track, 3876 cylinders
@@ -1144,20 +1144,20 @@ Device Flag    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Creating the root partition</title>
+<title>Oprettelse af root-partition</title>
 <body>
 
 <p>
-Finally, let's create the root partition. To do this, type <c>n</c> to create a 
-new partition, then type <c>4</c> to create the third partition, 
-<path>/dev/hda4</path> in our case. When prompted for the first cylinder, hit 
-enter. When prompted for the last cylinder, hit enter to create a partition 
-that takes up the rest of the remaining space on your disk. After completing 
-these steps, typing <c>p</c> should display a partition table that looks similar
-to this:
+Til sidst, lad os oprette root-partitionen. For at gøre dette, tast <c>n</c> for at oprette en
+ny partition, derefter tast <c>4</c> for at oprette en tredje partition, 
+<path>/dev/hda4</path> i vores tilfælde. Når der bliver spurgt efter den første cylinder, tryk 
+Enter. Når der bliver spurgt efter den sidste cylinder, tryk Enter for at oprette en partition,
+som optager resten af den frie harddisk-plads. Efter at have afsluttet
+disse trin, ved at taste <c>p</c> burde vise en partitionstabel, som ser ud som
+dette her:
 </p>
 
-<pre caption="Listing complete partition table">
+<pre caption="Liste af komplet partitionstabel">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda (Sun disk label): 240 heads, 63 sectors/track, 3876 cylinders
@@ -1173,23 +1173,23 @@ Device Flag    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Save and Exit</title>
+<title>Gem og afslut</title>
 <body>
 
 <p>
-To save your partition layout and exit <c>fdisk</c>, type <c>w</c>:
+For at gemme dit partitionslayout og afslutte <c>fdisk</c>, tast <c>w</c>:
 </p>
 
-<pre caption="Save and exit fdisk">
+<pre caption="Gem og afslut fdisk">
 Command (m for help): <i>w</i>
 </pre>
 
 <p>
-Now that your partitions are created, you can now continue with <uri
-link="#filesystems">Creating Filesystems</uri>.
+Nu da dine partitioner er oprettet, kan du fortsætte med <uri
+link="#filesystems">Oprettelse af filsystemer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded
-, unless you have chosen to use LVM
-in which case you should first read <uri link="#lvm">Optional: Using
+, undtagen hvis du har valgt at bruge LVM,
+hvilket du burde først læse <uri link="#lvm">Valgfrit: Brug af
 LVM</uri>.
 -->
 </p>
