@@ -20,9 +20,10 @@ Vermeulen</mail></author>
 <author title="Korrektur"><mail link="mejlholm@stud.auc.dk">Arne Mejlholm</mail></author>
 <author title="Korrektur"><mail link="broeman@gentoo.org">Jesper Brodersen</mail></author>
 
-<abstract>Denne vejledning gennemgår kort hvordan du holder dine pakker 
-up-to-date, og 
-hvordan du vedligeholder dit system.</abstract>
+<abstract>Denne vejledning gennemgår kort hvordan du holder dine
+pakker up-to-date, og hvordan du vedligeholder dit system.</abstract>
+
+<license/>
 
 <version>1.4</version>
 <date>9. Oktober 2003</date>
