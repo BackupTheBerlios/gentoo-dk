@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-disk.xml,v 1.1 2004/01/22 22:30:47 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-disk.xml,v 1.2 2004/01/27 22:57:05 aaby Exp $ -->
 
 <sections>
 <section>
@@ -150,8 +150,9 @@ are used in this handbook) your root filesystem doesn't need to be very big
 <body>
 
 <p>
-Hvis du ikke er interesseret i at tegne en partitionsoversigt selv, til dit system,
-kan du bruge vores (non-LVM) partitionsskema, som vi bruger igennem denne bog:
+Hvis du ikke er interesseret i at tegne en partitionsoversigt selv,
+til dit system, kan du bruge vores (non-LVM) partitionsskema, som vi
+bruger igennem denne bog:
 </p>
 
 <p>
