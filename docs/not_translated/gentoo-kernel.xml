@@ -1,45 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/gentoo-kernel.xml,v 1.2 2004/01/21 21:15:51 aaby Exp $ -->
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/gentoo-kernel.xml,v 1.3 2004/01/22 16:05:02 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
-<guide link="/doc/en/gentoo-kernel.xml">
+<guide link="/doc/da/gentoo-kernel.xml">
 <title>Gentoo Linux Kernel Guide</title>
-<author title="Author">
+<author title="Forfatter">
     <mail link="swift@gentoo.org">Sven Vermeulen</mail>
 </author>
-<author title="Contributor">
+<author title="Bidragsyder">
     <mail link="lostlogic@gentoo.org">Brandon Low</mail>
 </author>
-<author title="Editor">
+<author title="Redaktør">
     <mail link="carl@gentoo.org">Carl Anderson</mail>
 </author>
-<author title="Editor">
+<author title="Redaktør">
     <mail link="peesh@gentoo.org">Jorge Paulo</mail>
+</author>
+<author title="Oversætter">
+    <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
 
 <license/>
 
 <abstract>
-This document gives you an overview on all kernelsources that Gentoo
-provides through Portage.
+Dette dokument giver dig et overblik over alle de kerne kildekoder som
+Gentoo stiller til rådighed gennem Portage.
 </abstract>
 
 <version>0.2</version>
-<date>October 18, 2003</date>
+<date>18. Oktober 2003</date>
 
 <chapter>
-<title>Introduction</title>
+<title>Introduktion</title>
 <section>
 <body>
 
 <p>
-As with everything else in Gentoo Linux, the philosophy of the Gentoo 
-Kernel team is to give you, the user, as much freedom of choice as 
-possible.  If you take a look at the output of <c>emerge -s sources</c> 
-you see a large variety of kernels to choose from.  In this document, 
-I will attempt to give you a brief rundown of the goals of each of the 
-patch sets, which we at Gentoo design, and also explain the other kernel
-sources we make available to you.
+Som det er med alt andet i Gentoo Linux, så er det også Gentoo kerne
+holdest filosofi at give dig, brugeren, så meget frihed i form af
+valg, som det er muligt. Hvis du kigger på outputtet af <c>emerge -s
+sources</c>, så ser du et stort udvalg af kerner at vælge i mellem. I
+dette dokument, vil jeg forsøge at give dig en hurtigt rundtur for at
+se målet med hvert af patch sættene, som vi hos Gentoo designer, og
+også forklare de andre kerne kildekoder som vi sætter til rådighed for dig.
 </p>
 
 </body>
@@ -47,49 +50,50 @@ sources we make available to you.
 </chapter>
 
 <chapter>
-<title>The Choices, Part I</title>
+<title>Valgene, Del 1</title>
 <section>
 <title>gentoo-sources</title>
 <body>
 
 <p>
-For most users, the recommended kernel sources are the 
-<c>gentoo-sources</c>.  The <c>gentoo-sources</c> package contains 
-specially tuned performance kernel patches designed to optimize tasks 
-such as compiling while listening to music and browsing the web.  Most 
-of you who are new to Gentoo have probably never run a system where you 
-are regularly compiling many packages from source while you are doing your
-normal everyday tasks on your computer. 
-You may find that if you use the <c>vanilla-sources</c> (the official 
-kernel sources released from <uri>http://www.kernel.org</uri>) normal tasks -- 
-such as listening to music, moving your mouse and the like  -- may appear
-jumpy when you are compiling packages.
+Til de fleste brugere er det <c>gentoo-sources</c> den anbefalede
+kerne kildekode. <c>gentoo-sources</c> pakken indeholder specielt
+optimerede kerne patcher, der er designet til at optimere opgaver,
+såsom at kompile imens man hører musik og browser omkring på
+nettet. De fleste af jer der er nye til Gentoo, har sikkert aldrig
+kørt et system, hvor du ofte kompilerer mange pakker fra kildekode
+imens du laver dine hverdags opgaver på computeren. Du vil måske
+erfare, at hvis du bruger <c>vanilla-sources</c> (den officielle kerne
+kildekode frigivet fra <uri>http://www.kernel.org</uri>) så vil
+normale opgaver -- såsom at høre musik, at flytte din mus og ligende
+-- vil måske virke ustabilt, når du kompilerer pakker.
 </p>
 
 <p>
-The <c>gentoo-sources</c> contain an updated ACPI subsystem and are based 
-on Con Kolivas' high-performance kernel patches (<c>ck-sources</c>). We also
-support grSecurity (a set of security-related patches with support for
-ACLs), EVMS(2) (a highly flexible storage management filesystem with easy 
-partition resizing), JFS (IBM's high-performance filesystem), the latest
-NTFS drivers, and more.
+<c>gentoo-sources</c> indeholder et opdateret ACPI undersystem og er
+baseret på Con Kolivas høj-ydelses kerne patcher
+(<c>ck-sources</c>). Vi understøtter også grSecurity(et sæt af
+sikkerheds-relaterede patches med understøttelse for ACLer), EVMS(2)
+(et meget fleksibelt lagerplads styringsfilsystem hvor det er nemt at
+ændre på partitionernes størrelse), JFS (IBM's høj-ydelses filsystem),
+de nyeste NTFS drivere og flere.
 </p>
 
 <p>
-Because the <c>gentoo-sources</c> are targeted at full performance, they are
-also very good for gaming purposes.
-</p>
+Fordi <c>gentoo-sources</c> har fuld ydelse som mål, så er også ret
+gode til spil formål.
+</p>a
 
 <p>
-The following USE-flags can be set to select optional patches:
+De følgende USE-flag kan sættes for at vælge valgfrie patcher:
 </p>
 
 <table>
-<tr><th>Flag</th><th>Description</th></tr>
-<tr><ti>aavm</ti><ti>Use Andrea Arcangeli's memory management</ti></tr>
-<tr><ti>evms2</ti><ti>Use EVMS 2.0.1 instead of EVMS 1.2.1</ti></tr>
-<tr><ti>crypt</ti><ti>Apply Cryptographic patches</ti></tr>
-<tr><ti>usagi</ti><ti>Keep USAGI, drop superfreeswan, patch-int, loop-jari</ti></tr>
+<tr><th>Flag</th><th>Beskrivelse</th></tr>
+<tr><ti>aavm</ti><ti>Brug Andrea Arcangeli's memory management</ti></tr>
+<tr><ti>evms2</ti><ti>Brug EVMS 2.0.1 i stedet for EVMS 1.2.1</ti></tr>
+<tr><ti>crypt</ti><ti>Brug Cryptographic patcher</ti></tr>
+<tr><ti>usagi</ti><ti>Behold USAGI, drop superfreeswan, patch-int, loop-jari</ti></tr>
 </table>
 
 
@@ -100,27 +104,26 @@ The following USE-flags can be set to select optional patches:
 <body>
 
 <p>
-The next kernel sources that many of you will probably be familiar with 
-as Linux users are the <c>vanilla-sources</c>.  As I mentioned briefly 
-above, these are the official kernel sources released on 
-<uri>http://www.kernel.org/</uri>. These sources are maintained (contrary 
-to popular belief) not by Linus Torvalds himself, but by Marcelo 
-Tosatti. Linus is the leader of active kernel development, but as he is 
-only one man, he passes off the maintenance of the stable kernel branch
-to someone he can trust to handle it once it has stabilized.  Thus, Alan
-Cox became the maintainer of the Linux-2.2 kernel series and Marcelo 
-Tosatti became the maintainer of the Linux-2.4 kernel series. This is 
-what all the other patch sets in the 2.4 series are based on. Marcelo has
-been doing an outstanding job with its maintenance and it can be 
-counted on for stability and up-to-date (if not bleeding edge) hardware
-support.
+Det næste kerne kode, som mange af jer formegentlig vil være bekendte
+med som Linux brugere er <c>vanilla-sources</c>. Som jeg kort nævnte
+ovenfor, er disse de officielle kerne kildekoder frigivet fra 
+<uri>http://www.kernel.org/</uri>. Denne kildekode vedligeholdes (i
+modsætning til almindelig overbevisning) ikke af Linus Torvalds selv,
+men af Marcelo Tosatti. Linus er lederen af den aktive kerne
+udvikling, men han er kun menneske, så han sender vedligeholdelsen af
+den stabile kerne gren videre til en han kan stole på til at håndtere
+den, når den først har stabiliseret sig. Således blev Alan Cox
+vedligeholder af Linux-2.4 kerne serien. Dette er hvad alle andre
+patch sæt i 2.4 serien er baseret på. Marcelo har lavet et rigtig godt
+arbejde med dets vedligeholdelse og det kan altid stoles på til
+stabilt og uptodate (hvis det ikke er det allernyeste) hardware understøttelse.
 </p>
 
 <p>
-<c>vanilla-sources</c> are probably the most stable sources available
-since they are the most tested and all possible kernel sources are based 
-on them. If you don't need any of the extras that the other kernels supply 
-then the <c>vanilla-sources</c> are your thing.
+<c>vanilla-sources</c> er sikkert de mest stabile kildekoder der er
+tilgængelige, da de er testet og alle mulige kerne kildekoder er
+baseret på dem. Hvis du ikke har brug for alle de ekstra ting som de
+andre kerner giver, så er det <c>vanilla-sources</c> du har brug for.
 </p>
 
 </body>
@@ -130,37 +133,38 @@ then the <c>vanilla-sources</c> are your thing.
 <body>
 
 <p>
-For users to whom desktop interactive performance comes as a secondary 
-priority to reliability and hardware support, we have the 
-<c>gs-sources</c>.  GS stands for Gentoo Stable (creative, aren't we?).  
-This patch set is tuned and tested to provide the best support for the 
-latest hardware and ensures that your mission critical servers will be 
-up when you need them.  This kernel doesn't have some of the most 
-aggressive performance tuning patches from the <c>gentoo-sources</c>, 
-but rest assured, the great performance that you know and love from the
-vanilla kernels are alive and well. Where possible and without 
-compromising stability we add server related performance patches.
+For de brugere hvor interaktiv desktop ydelse kommer som en anden
+prioritet i forhold til pålidelighed og hardware understøttelse, har
+vi <c>gs-sources</c>. GS står for Gentoo Stable (stabilt, vi er
+opfindsommme, ikke?). Denne patch er tunet og testet til at give den
+bedste understøttelse til det største hardware og sikrer at dine
+mission kritiske servere vil være oppe når du har brug for dem. Denne
+kerne har ikke de mest aggresive ydelses forhøjende patcher fra <c>gentoo-sources</c>, 
+men tag det roligt, den gode ydelse du kender og elsker fra vanilla
+kernerne er levende og har det godt. Hvor det er muligt og uden at gå
+på kompromis med stabilitet, tilføjer vi ydelses patcher der er
+relaterede til servere.
 </p>
 
 <p>
-This kernel provides support for the latest ACPI subsystem, EVMS, ECC
-(required for HA Linux systems), Encrypted Loopback devices, NTFS, Win4Lin
-and XFS. It also contains updates for IDE, ext3 and several network cards
-amongst other patches.
+Denne kerne giver understøttelse for det nyeste ACPI undersystem,
+EVMS, ECC (krævet til HA Linux systemer), krypterede loopback enheder,
+NTFS, Win4Lin og XFS. Den indeholder også opdateringer til IDE, ext3
+og adskillige netværkskort imellem andre patcher.
 </p>
 
 <p>
-In other words, these sources are perfect for servers and
-High-Availability systems.
+Med andre ord, disse kildekoder er perfekte til servere og
+høj-tilgængeligheds systemer.
 </p>
 
 <p>
-The following USE-flags can be set to select optional patches:
+De følgende USE-flag kan sættes for valgfrie patcher:
 </p>
 
 <table>
-<tr><th>Flags</th><th>Description</th></tr>
-<tr><ti>crypt</ti><ti>Apply cryptographic patches</ti></tr>
+<tr><th>Flag</th><th>Beskrivelse</th></tr>
+<tr><ti>crypt</ti><ti>Brug Cryptographic patcher</ti></tr>
 </table>
 
 </body>
@@ -170,23 +174,23 @@ The following USE-flags can be set to select optional patches:
 <body>
 
 <p>
-<c>gentoo-test-sources</c> are what will become <c>gentoo-sources</c> after 
-lots of testing and QA. Patches to the <c>gentoo-sources</c> are first
-added to <c>gentoo-test-sources</c> for testing. So if you want the
-performance of <c>gentoo-sources</c> with the most recent possible
-patches, use <c>gentoo-test-sources</c>.
+<c>gentoo-test-sources</c> er dem der bliver til <c>gentoo-sources</c>
+efter en masse testning og QA. Patcher til <c>gentoo-sources</c>
+bliver først tilføjet til <c>gentoo-test-sources</c> som test. Så hvis
+du vil have ydelsen af <c>gentoo-sources</c> med de nyeste mulige
+patcher, så brug <c>gentoo-test-sources</c>.
 </p>
 
 <p>
-The following USE-flags can be set to select optional patches:
+De følgende USE-flag kan sættes for at vælge valgfrie patcher:
 </p>
 
 <table>
-<tr><th>Flag</th><th>Description</th></tr>
-<tr><ti>aavm</ti><ti>Use Andrea Arcangeli's memory management</ti></tr>
-<tr><ti>evms2</ti><ti>Use EVMS 2.0.1 instead of EVMS 1.2.1</ti></tr>
-<tr><ti>crypt</ti><ti>Apply Cryptographic patches</ti></tr>
-<tr><ti>usagi</ti><ti>Keep USAGI, drop superfreeswan, patch-int, loop-jari</ti></tr>
+<tr><th>Flag</th><th>Beskrivelse</th></tr>
+<tr><ti>aavm</ti><ti>Brug Andrea Arcangeli's memory management</ti></tr>
+<tr><ti>evms2</ti><ti>Brug EVMS 2.0.1 i stedet for EVMS 1.2.1</ti></tr>
+<tr><ti>crypt</ti><ti>Brug Cryptographic patcher</ti></tr>
+<tr><ti>usagi</ti><ti>Behold USAGI, drop superfreeswan, patch-int, loop-jari</ti></tr>
 </table>
 
 </body>
@@ -196,18 +200,20 @@ The following USE-flags can be set to select optional patches:
 <body>
 
 <p>
-<c>hardened-sources</c> provides patches for the various subprojects of
-Gentoo Hardened, together with stability/security-enhancements. Check
-<uri>http://www.gentoo.org/proj/en/hardened/</uri> for more information.
+<c>hardened-sources</c> giver patcher fra de forskellige
+underprojekter af Gentoo Hardened, sammen med
+stabilitet/sikkerhed-forhøjelser. Tjek
+<uri>http://www.gentoo.org/proj/en/hardened/</uri>(engelsk) for mere
+information.
 </p>
 
 <p>
-The following USE-flags can be set to select optional patches:
+De følgende USE-flag kan sættes for at vælge valgfrie patcher:
 </p>
 
 <table>
-<tr><th>Flags</th><th>Description</th></tr>
-<tr><ti>selinux</ti><ti>Substitute grSecurity with SELinux support</ti></tr>
+<tr><th>Flag</th><th>Beskrivelse</th></tr>
+<tr><ti>selinux</ti><ti>Skift grSecurity ud med SELinux understøttelse</ti></tr>
 </table>
 
 </body>
@@ -217,37 +223,37 @@ The following USE-flags can be set to select optional patches:
 <body>
 
 <p>
-<c>xfs-sources</c> contains support for EVMS, ACPI, grSecurity and, what
-you probably already figured out by now, the latest XFS support patches
-from the XFS Development. The Gentoo LiveCD uses <c>xfs-sources</c>, if 
-you must know :-)
+<c>xfs-sources</c> indeholder understøttelse for EVMS, ACPI,
+grSecurity og, hvad du sikkert allerede havde regnet ud, de nyeste XFS
+understøttelses patcher fra XFS udviklingen. Gentoo LiveCD bruger
+<c>xfs-sources</c>, hvis du gerne vil vide det :-)
 </p>
 
 <p>
-More information about XFS on <uri>http://oss.sgi.com/projects/xfs/</uri>.
+Mere information omkring XFS kan findes på <uri>http://oss.sgi.com/projects/xfs/</uri>.
 </p>
 
 <p>
-You can select the following USE-flags to select optional patches:
+Du kan sætte de følgende USE-flag for at vælge valgfrie patcher:
 </p>
 
 <table>
-<tr><th>Flags</th><th>Description</th></tr>
-<tr><ti>crypt</ti><ti>Apply cryptographic patches</ti></tr>
+<tr><th>Flag</th><th>Beskrivelse</th></tr>
+<tr><ti>crypt</ti><ti>Brug Cryptographic patcher</ti></tr>
 </table>
 
 </body>
 </section>
 <section>
-<title>Architecture dependent kernels</title>
+<title>Arkitektur afhængige kerner</title>
 <body>
 
 <p>
 <c>alpha-sources</c>, <c>arm-sources</c>, <c>hppa-sources</c>, 
-<c>mips-sources</c>, <c>ppc-sources</c> and <c>sparc-sources</c> are, as
-their names suggest, patched to run best on specific architectures.  They
-also contain some of the patches for hardware and features support from 
-the other patch sets mentioned above and below.
+<c>mips-sources</c>, <c>ppc-sources</c> og <c>sparc-sources</c> er,
+som deres navne forslår, patchet til at køre bedst på en specifik
+arkitektur. De indeholder også nogle patcher til hardware og
+egenskaber fra andre patch sæt, som er nævnt ovenfor og nedenfor.
 </p>
 
 </body>
@@ -257,9 +263,9 @@ the other patch sets mentioned above and below.
 <body>
 
 <p>
-The <c>ppc-sources-benh</c> ebuilds provide additional hardware
-support for the <c>ppc-sources</c> kernel. It is slightly more 
-experimental than the <c>ppc-sources</c>.
+<c>ppc-sources-benh</c> ebuilden giver yderligere hardware
+understøttelse til <c>ppc-sources</c> kernen. Den er lidt mere
+ekspermentel end <c>ppc-sources</c>.
 </p>
 
 </body>
@@ -269,9 +275,9 @@ experimental than the <c>ppc-sources</c>.
 <body>
 
 <p>
-The <c>ppc-sources-crypto</c> ebuilds provide CryptoAPI
-support for the Gentoo Linux PPC Kernel. More information about
-CryptoAPI can be found on <uri>http://www.kerneli.org/about/</uri>.
+<c>ppc-sources-crypto</c> ebuilden giver CryptoAPI understøttelse til
+ Gentoo Linux PPC Kernen. Mere information omkring CryptoAPI kan
+ findes på <uri>http://www.kerneli.org/about/</uri>.
 </p>
 
 </body>
@@ -281,9 +287,9 @@ CryptoAPI can be found on <uri>http://www.kerneli.org/about/</uri>.
 <body>
 
 <p>
-The <c>ppc-sources-dev</c> packages provide the development sources for
-<c>ppc-sources</c>. Every patch which should become part of
-<c>ppc-sources</c> has to go through <c>ppc-sources-dev</c> first.
+<c>ppc-sources-dev</c> pakkerne giver udviklingskildekoden til
+<c>ppc-sources</c>. Hver patch som bliver en del af
+<c>ppc-sources</c> skal gå gennem <c>ppc-sources-dev</c> først.
 </p>
 
 </body>
@@ -293,8 +299,8 @@ The <c>ppc-sources-dev</c> packages provide the development sources for
 <body>
 
 <p>
-The <c>compaq-sources</c> provide RedHat's kernel sources for Alpha, 
-maintained by Compaq.
+<c>compaq-sources</c> giver RedHat's kerne kildekode til Alpha, som
+bliver vedligholdt af Compaq.
 </p>
 
 </body>
@@ -569,8 +575,8 @@ combination of the patches.
 </p>
 
 <p>
-If you need a certain combination of patches that you cannot find in other
-kernel sources, WOLK is definitely worth a shot.
+Hvis du har brug en for en bestemt kombination af patcher, som du ikke
+kan finde i andre kerne kildekoder, så er WOLK bestemt et forsøg værd.
 </p>
 
 </body>
