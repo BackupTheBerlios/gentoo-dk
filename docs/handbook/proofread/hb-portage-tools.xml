@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/2.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-portage-tools.xml,v 1.1 2004/11/13 17:51:45 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-portage-tools.xml,v 1.1 2004/11/20 14:46:09 aaby Exp $ -->
 
 <sections>
 <section>
@@ -12,11 +12,11 @@
 <body>
 
 <p>
-<c>etc-update</c> er et værktøj som hjælper ved en merge af
-<path>._cfg0000_&lt;name&gt;</path>-filer. Den leverer en interaktivt merge-opsætning
+<c>etc-update</c> er et værktøj som hjælper ved opdatering af
+<path>._cfg0000_&lt;navn&gt;</path>-filer. Den leverer en interaktivt merge-opsætning
 og kan også auto-merge trivielle ændringer.
-<path>._cfg0000_&lt;name&gt;</path>-filer er generet af Portage når den vil gemme
-en fil i en folder beskyttet af CONFIG_PROTECT-variabelen.
+<path>._cfg0000_&lt;navn&gt;</path>-filer bliver generet af Portage når den vil gemme
+en fil i en folder beskyttet af CONFIG_PROTECT-variablen.
 </p>
 
 <p>
@@ -43,7 +43,7 @@ Please select a file to edit by entering the corresponding number.
 Hvis du taster <c>-1</c>, vil <c>etc-update</c> afslutte uden at have udført nogen
 ændringer. Hvis du taster <c>-3</c> eller <c>-5</c>, vil <e>alle</e> listede opsætningsfiler
 blive overskrevet af nyere versioner. Det er derfor meget vigtigt at først
-vælge de opsætningsfiler, som ikke skal opdateres automatisk.Det er simpelthen et spørgsmål
+vælge de opsætningsfiler, som ikke skal opdateres automatisk. Det er simpelthen et spørgsmål
 om at taste det nummer placeret til venstre ved opsætningsfilen.
 </p>
 
@@ -62,7 +62,7 @@ End of differences between /etc/pear.conf and /etc/._cfg0000_pear.conf
 </pre>
 
 <p>
-Du kan nu se at ændringerne imellem de to filer. Hvis du tror at den
+Du kan nu se ændringerne imellem de to filer. Hvis du tror at den
 opdaterede opsætningsfil kan blive brugt uden problemer, tast <c>1</c>. Hvis du
 mener at den opdaterede opsætningsfil ikke er nødvendig, eller ikke leverer
 noget nyt og brugbart, tast <c>2</c>. Hvis du interaktivt vil
@@ -71,8 +71,8 @@ opdatere din opsætningsfil, tast <c>3</c>.
 
 <p>
 Der er ikke nogen grund til at fortsætte med at forklare den interaktive merge her. For
-at helhedens skyld, vi vil vise en liste over de mulige kommandoer du kan bruge imens du
-interaktivt ordner de to filer. Du er hilst med to linier (den
+helhedens skyld, vi vil vise en liste over de mulige kommandoer du kan bruge imens du
+interaktivt ordner de to filer. Du bliver hilst med to linier (den
 originale og det nye forslag) og en prompt, hvor du kan taste en af
 følgende kommandoer: 
 </p>
@@ -103,9 +103,10 @@ afslutte, hvis den ikke finder flere opdaterbare opsætningsfiler.
 <body>
 
 <p>
-Ved brug af <c>dispatch-conf</c> kan du merge opdateringer til dine opsætningsfiler,
-imens du holder øje med ændringerne. <c>dispatch-conf</c> gemmer forskellene
-imellem opsætningsfilerne, som patches eller ved brug af 
+Ved brug af <c>dispatch-conf</c> kan du merge opdateringer til dine
+opsætningsfiler, imens du holder øje med
+ændringerne. <c>dispatch-conf</c> gemmer forskellene imellem
+opsætningsfilerne, som patches eller ved brug af
 RCS-revisionssystemet.
 </p>
 
@@ -128,7 +129,7 @@ egenskaber:
 
 <p>
 Vær sikker på at du redigerer <path>/etc/dispatch-conf.conf</path> først og opretter
-folderen referreret ved archive-dir-variabelen.
+folderen refereret ved archive-dir-variablen.
 </p>
 
 <p>
@@ -147,7 +148,7 @@ $ <i>man dispatch-conf</i>
 
 <p>
 Med <c>quickpkg</c> kan du oprette arkiver af pakker, som allerede er
-merget på dit system. Disse arkiver kan blive brugt som præbygget pakker. Kørsel af
+merget på dit system. Disse arkiver kan blive brugt som præbyggede pakker. Kørsel af
 <c>quickpkg</c> er ligefrem: tilføj bare navnene på de pakker som du vil
 arkivere.
 </p>
@@ -163,7 +164,7 @@ F.eks. for at arkivere <c>curl</c>, <c>arts</c> og <c>procps</c>:
 <p>
 De præbyggede pakker vil blive gemt i <path>/usr/portage/packages/All</path>.
 Symbolske henvisninger peger på disse pakker, som er i
-<path>/usr/portage/packages/&lt;category&gt;</path>.
+<path>/usr/portage/packages/&lt;kategori&gt;</path>.
 </p>
 
 </body>
