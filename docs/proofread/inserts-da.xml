@@ -3,12 +3,12 @@
 <inserts lang="da">
   <insert name="Content">Indhold</insert>
   <insert name="Updated">Opdateret</insert>
-  <insert name="Summary">Sammendrag</insert>
+  <insert name="Summary"></insert>
   <insert name="Figure">Figur</insert>
   <insert name="Note">Bemærk</insert>
   <insert name="Warning">Advarsel</insert>
   <insert name="Important">Vigtigt</insert>
-  <insert name="CodeListing">Koder</insert>
+  <insert name="CodeListing">Kode oversigt</insert>
   <insert name="GLinuxDoc">Gentoo Linux dokumentation</insert>
   <insert name="PrintableDoc">Linux dokumentation udskriftsversion</insert>
   <insert name="PrintablePrj">Linux project udskriftsversion</insert>
