@@ -1,7 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-system.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-system.xml,v 1.2 2004/01/03 16:16:58 broeman Exp $ -->
 
 <sections>
 <section>
@@ -51,7 +51,8 @@ network.
 
 <p>
 Knoppix users (and people that install Gentoo from an installation medium that
-does not use DevFS) should now bind-mount the <path>/dev</path> structure:
+does not use DevFS) should now bind-mount the <path>/dev</path> structure. If
+you use one of our LiveCDs you can skip this step.
 </p>
 
 <pre caption="Bind-mounting /dev">
@@ -66,11 +67,11 @@ does not use DevFS) should now bind-mount the <path>/dev</path> structure:
 <body>
 
 <p>
-Now that all partitions are initialised and the base environment
+Now that all partitions are initialized and the base environment
 installed, it is time to enter our new installation environment by
 <e>chrooting</e> into it. This means that we change from the current
 installation environment (LiveCD or other installation medium) to your
-installation system (namely the initialised partitions).
+installation system (namely the initialized partitions).
 </p>
 
 <p>
@@ -103,9 +104,8 @@ has some sections left :-)
 <p>
 If you are <e>not</e> using GRP, you must download a recent Portage snapshot
 from the Internet. <c>emerge sync</c> does this for you. GRP-users should skip
-this and continue with <uri link="#doc_chap1_sect5">Optional: Using Distributed
-Compiling</uri> or <uri link="#doc_chap2">Differences between
-Stage1, Stage2 and Stage3</uri>.
+this and continue with <uri link="#doc_chap1_sect6">Configuring the USE 
+variable</uri>.
 </p>
 
 <pre caption="Updating Portage">
@@ -117,6 +117,63 @@ If you are warned that a new Portage version is available and that you should
 update Portage, you can safely ignore it. Portage will be updated for you later
 on during the installation.
 </p>
+
+</body>
+</subsection>
+<subsection>
+<title>Configuring the USE variable</title>
+<body>
+
+<p>
+<c>USE</c> is one of the most powerful variables Gentoo provides to its users.
+Several programs can be compiled with or without optional support for certain
+items. For instance, some programs can be compiled with gtk-support, or with
+qt-support. Others can be compiled with or without SSL support. Some programs
+can even be compiled with framebuffer support (svgalib) instead of X11 support
+(X-server).
+</p>
+
+<p>
+Most distributions compile their packages with support for as much as possible,
+increasing the size of the programs and startup time, not to mention an enormous
+amount of dependencies. With Gentoo you can define with what options a package 
+should be compiled with. This is where <c>USE</c> comes into play.
+</p>
+
+<p>
+In the <c>USE</c> variable you define keywords which are mapped onto
+compile-options. For instance, <e>ssl</e> will compile ssl-support in the
+programs that support it. <e>-X</e> will remove X-server support (note the minus
+sign in front). <e>gnome gtk -kde -qt</e> will compile your programs with gnome
+(and gtk) support, and not with kde (and qt) support, making your system fully
+tweaked for GNOME.
+</p>
+
+<p>
+The default <c>USE</c> settings are placed in
+<path>/etc/make.profile/make.defaults</path>. What you place in
+<path>/etc/make.conf</path> is calculated against these defaults settings. If
+you add something to the <c>USE</c> setting, it is added to the default list. If
+you remove something from the <c>USE</c> setting (by placing a minus sign in
+front of it) it is removed from the default list (if it was in the default list
+at all). <e>Never</e> alter anything inside the <path>/etc/make.profile</path>
+directory; it gets overwritten when you update Portage!
+</p>
+
+<p>
+A full description on <c>USE</c> can be found in the second part of the Gentoo
+Handbook, <uri link="?part=2&amp;chap=1">Chapter 1: USE flags</uri>. As an 
+example we show a <c>USE</c> setting for a KDE-based system with DVD, ALSA and 
+CD Recording support:
+</p>
+
+<pre caption="Opening /etc/make.conf">
+# <i>nano -w /etc/make.conf</i>
+</pre>
+
+<pre caption="USE setting">
+USE="-gtk -gnome qt kde dvd alsa cdr"
+</pre>
 
 </body>
 </subsection>
@@ -267,11 +324,11 @@ finish.
 
 <p>
 If you have altered the <c>CHOST</c> setting in <path>/etc/make.conf</path>
-previously, you need to reinitialise some variables in order for <c>gcc</c> to
+previously, you need to reinitialize some variables in order for <c>gcc</c> to
 work fast:
 </p>
 
-<pre caption="Reinitialise environment variables">
+<pre caption="Reinitialize environment variables">
 # <i>source /etc/profile</i>
 </pre>
 
@@ -297,8 +354,8 @@ If you are reading this section, then you have a bootstrapped system
 
 <p>
 <e>All</e> system packages? No, not really. In this step, you will build
-the system packages of which there are no alternatives to use. However,
-some system packages have several alternatives (such as system loggers)
+the system packages of which there are no alternatives to use.
+Some system packages have several alternatives (such as system loggers)
 and as Gentoo is all about choices, we don't want to force one upon you.
 </p>
 
@@ -328,7 +385,7 @@ list is pretty big, you should also use a pager like <c>less</c> or
 <p>
 If you want <c>emerge</c> to download the sources before you continue
 (for instance because you don't want the internet connection to be left
-open while you are building all packages) you can use the <e>-f</e>
+open while you are building all packages) you can use the <e>--fetchonly</e>
 option of <c>emerge</c> which will fetch all sources for you. 
 </p>
 
