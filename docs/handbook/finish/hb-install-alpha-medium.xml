@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-medium.xml,v 1.3 2004/05/03 15:59:50 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-medium.xml,v 1.4 2004/05/03 16:27:47 broeman Exp $ -->
 
 <sections>
 <section>
@@ -372,13 +372,13 @@ konsol, ved at trykke Alt-F1.
 </p>
 
 <p>
-Fortsæt nu med <uri link="#doc_chap3_sect7">Ekstra
+Fortsæt nu med <uri link="#hardware">Ekstra
 Hardwareopsætning</uri>.
 </p>
 
 </body>
 </subsection>
-<subsection>
+<subsection id="hardware">
 <title>Ekstra hardwareopsætning</title>
 <body>
 
