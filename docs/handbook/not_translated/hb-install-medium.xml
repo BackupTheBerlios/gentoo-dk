@@ -1,71 +1,71 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-medium.xml,v 1.2 2003/12/21 20:23:33 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-medium.xml,v 1.3 2004/01/03 00:20:21 broeman Exp $ -->
 
 <sections>
 <section>
-<title>Hardware Requirements</title>
+<title>Hardwarekrav</title>
 <subsection>
-<title>Introduction</title>
+<title>Introduktion</title>
 <body>
 
 <p>
-Before we start, we first list what hardware requirements you need to
-succesfully install Gentoo on your box. This of course depends on your
-architecture.
+Før vi starter, viser vi en liste over de hardwarekrav, som du skal opfylde for at
+installere Gentoo på din computer. Selvfølgelig er det forskelligt fra hvilken
+arkitektur, du har.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Architectures</title>
+<title>Arkitekturer</title>
 <body>
 
 <p>
-Gentoo is officially available for six architectures, and has experimental
-support for two more. The official architectures are <b>x86</b> (including all
-subarchitectures, like Pentium, Athlon, etc.), <b>sparc</b> (both Sparc32
-and Sparc64), <b>ppc</b> (PowerPC), <b>hppa</b>, <b>alpha</b> and <b>mips</b>. 
-Experimental support is available for <b>amd64</b> and <b>ia64</b>.
+Gentoo er officielt til rådighed til seks arkitekturer, og har eksperimental
+understøttelse til to flere. De officielle arkitekturer er <b>x86</b> (inklusiv alle
+under-arkitekturerne, som f.eks. Pentium, Athlon, osv.), <b>sparc</b> (både Sparc32
+og Sparc64), <b>ppc</b> (PowerPC), <b>hppa</b>, <b>alpha</b> og <b>mips</b>. 
+Experimentale understøttelse er til rådighed for <b>amd64</b> og <b>ia64</b>.
 </p>
 
 <p>
-Assuming you know your architecture, check the following requirements before you
-continue with the Gentoo installation:
+Vi forventer at du kender din arkitektur, og tjek følgende krav, før du 
+fortsætter med Gentoo installationen:
 </p>
 
 <ul>
 <li>
-  You need at least 1 Gb of free disk space
+  Du vil få brug for mindst 1 GB fri diskplads
 </li>
 <li>
-  If you do not use prebuilt packages, you need at least 300 Mb of memory (RAM +
+  Hvis du ikke bruger de præ-byggede pakker, vil du få brug for mindst 300 MB hukkommelse (RAM +
   swap)
 </li>
 <li>
-  For the <e>x86 architecture</e>, you need a 486+ processor and 
-  at least 64 megabytes of memory
+  Til <e>x86 arkitekturen</e> vil du få brug for mindst en 486+ processor og 
+  mindst 64 MB hukkommelse
 </li>
 <li>
-  For the <e>Alpha architecture</e>, you should check with the <uri
-  link="http://www.alphalinux.org/faq/FAQ-5.html">Alpha/Linux FAQ</uri>
+  Til <e>Alpha arkitekturen</e> burde du også tjekke følgende: <uri
+  link="http://www.alphalinux.org/faq/FAQ-5.html">Alpha/Linux FAQ</uri> (engelsk)
 </li>
 <li>
-  For the <e>hppa architecture</e>, you should check with the <uri 
-  link="http://www.pateam.org">PA Team website</uri>
+  Til <e>hppa arkitekturen</e> burde du tjekke <uri 
+  link="http://www.pateam.org">PA Teams hjemmeside</uri> (engelsk)
 </li>
 <li>
-  For the <e>PowerPC architecture</e>, you need at least a PowerPC (at best a
-  G3 or G4 like the iMac, iBook, PowerBook, etc.)
+  Til <e>PowerPC arkitekturen</e> kræves der, at du mindst har en PowerPC (det bedste er
+  en G3 eller G4, som f.eks. en iMac, iBook, PowerBook, osv.)
 </li>
 <li>
-  For the <e>SPARC architecture</e>, you should check with the <uri
-  link="http://www.ultralinux.org/faq.html#s_2">UltraLinux FAQ</uri>
+  Til <e>SPARC arkitekturen</e> burde du tjekke: <uri
+  link="http://www.ultralinux.org/faq.html#s_2">UltraLinux FAQ</uri> (engelsk)
 </li>
 <li>
-  For the <e>MIPS architecture</e>, you should check with the <uri
-  link="/doc/en/mips-requirements.xml">MIPS Hardware Requirements</uri> document
+  Til <e>MIPS arkitekturen</e> burde du tjekke <uri
+  link="/doc/en/mips-requirements.xml">MIPS Hardwarekrav</uri> dokumentet (engelsk)
 </li>
 </ul>
 
@@ -73,229 +73,229 @@ continue with the Gentoo installation:
 </subsection>
 </section>
 <section>
-<title>Make your Choice</title>
+<title>Tag dit valg</title>
 <subsection>
-<title>Introduction</title>
+<title>Introduktion</title>
 <body>
 
 <p>
-Still interested in trying out Gentoo? Well, then it is now time to
-choose the installation medium you want to use. Yes, you have the
-choice, no, they are not all equal, and yes, the result is always the same: a
-Gentoo base system.
+Er du stadigvæk interesseret i at prøve Gentoo? Nå, så er det på tide at
+vælge det installationsmedie, som du gerne vil bruge. Ja, du har et valg
+og nej, de er ikke lige gode, og ja, resultatet er altid det samme: et
+Gentoo basissystem.
 </p>
 
 <p>
-The installation media we will describe are:
+Installationsmedierne, som vi vil beskrive, er:
 </p>
 
 <ul>
-<li>Gentoo LiveCDs</li>
+<li>Gentoo LiveCDer</li>
 <li>Knoppix</li>
-<li>Other Distribution</li>
-<li>Net Booting</li>
+<li>Andre Distributioner</li>
+<li>Netopstart</li>
 </ul>
 
 <p>
-Every single media has its advantages and disadvantages. We will list
-the pros and cons of every medium so you have all the information to
-make a justified decision. But before we continue, let's explain our
-three-stage installation.
+Enhver medie har deres fordele og ulemper. Vi vil lave en liste over
+dem for hver medie, så du har alle informationer til at
+fortage et forsvarligt valg. Men før vi fortsætter, lad os forklare vores
+tre-etapes installation.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>The Three Stages</title>
+<title>De tre etaper</title>
 <body>
 
 <p>
-Gentoo Linux can be installed using one of three <e>stage</e> tarball files.
-The one you choose depends on how much of the system you want to compile
-yourself. The <e>stage1</e> tarball is used when you want to bootstrap and
-build the entire system from scratch. The <e>stage2</e> tarball is used for
-building the entire system from a bootstrapped &quot;semi-compiled&quot; state.
-The <e>stage3</e> tarball already contains a basic Gentoo Linux system that has
-been built for you. As we will explain later, you can also install
-Gentoo without compiling anything (except your kernel). If you want
-this, you have to use a <e>stage3</e> tarball.
+Gentoo Linux kan blive installeret ved brug af én af de tre etaper, såkaldte <e>stage</e>-tarball-filer.
+Den du vælger afhænger af om hvor meget af dit system, som du har lyst til at kompilere
+selv. <e>stage1</e>-tarball'en er brugt, når du vil 'bootstrap'e og bygge
+hele systemet fra bunden af. <e>stage2</e>-tarball'en er brugt til at bygge
+hele systemet fra en bootstrappet &quot;semi-kompileret&quot; status.
+<e>stage3</e>-tarball indeholder allerede et Gentoo basissystem, som er blevet
+bygget for dig. Som vi vil forklare senere, kan du også installere
+Gentoo uden at kompilere noget som helst (undtagen din kerne). Hvis du vil
+det, skal du bruge en <e>stage3</e>-tarball.
 </p>
 
 <p>
-Now what stage do you have to choose?
+Hvilken etape skal du vælge?
 </p>
 
 <p>
-Starting from a <e>stage1</e> allows you to have total control over the
-optimization settings and optional build-time functionality that is
-initially enabled on your system. This makes <e>stage1</e> installs good for
-power users who know what they are doing. It is also a great
-installation method for those who would like to know more about the
-inner workings of Gentoo Linux.
+Ved at starte fra <e>stage1</e>, tillader du dig fuld kontrol over
+optimeringsindstillingerne og optimal bygge-tidsfunktionalitet, som er 
+fra starten af, aktiveret på dit system. Dette gør <e>stage1</e>-installationen god til
+power-brugere, som ved hvad de gør. Det er også en udemærket
+installationsmetode for dem, som har lyst til at lære mere om den
+indre funktionalitet af Gentoo Linux.
 </p>
 
 <table>
 <tr>
   <th>Stage1</th>
-  <th>Pros and Cons</th>
+  <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
   <ti>
-    Allows you to have total control over the optimization settings and optional
-    build-time functionality that is initially enabled on your system
+    Tillader dig at have fuld kontrol over optimeringsindstillingerne og optimal
+    bygge-tidsfunktionalitet, som er fra starten af, aktiveret på dit system
   </ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Suitable for powerusers that know what they are doing</ti>
+  <ti>Brugbart for power-brugere, som ved hvad de gør</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Allows you to learn more about the inner workings of Gentoo</ti>
+  <ti>Tillader dig at lære mere om den indre funktionalitet af Gentoo</ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>Takes a long time to finish the installation</ti>
+  <ti>Installationen tager lang tid om at afslutte</ti>
 </tr>
 <tr>
   <th>-</th>
   <ti>
-    If you don't intend to tweak the settings, it is probably a waste of time
+    Hvis du ikke har tænkt dig at "lege" med indstillingerne, er det sikkert spild af tid
   </ti>
 </tr>
 </table>
 
 <p>
-<e>Stage2</e> installs allow you to skip the bootstrap process and doing this
-is fine if you are happy with the optimization settings that we chose
-for your particular <e>stage2</e> tarball.
+<e>Stage2</e>-installationen tillader dig at springe over bootstrap-processen og ved at gøre dette
+er fint, hvis du er glad for de optimeringsindstillinger, som vi har valgt til
+din særlige <e>stage2</e>-tarball.
 </p>
 
 <table>
 <tr>
   <th>Stage2</th>
-  <th>Pros and Cons</th>
+  <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
-  <ti>You don't need to bootstrap</ti>
+  <ti>Du behøver ikke at bruge bootstrap</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Faster than starting with stage1</ti>
+  <ti>Hurtigere end at starte fra stage1</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>You can still tweak your settings</ti>
+  <ti>Du kan stadigvæk "lege" med dine indstillinger</ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>You cannot tweak as much as with a stage1</ti>
+  <ti>Du kan ikke indstille så meget som i stage1</ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>It's not the fastest way to install Gentoo</ti>
+  <ti>Det er ikke den hurtigste metode at installere Gentoo</ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>You have to accept the optimizations we chose for the bootstrap</ti>
+  <ti>Du bliver nødt til at acceptere de optimeringer vi har lavet til bootstrap</ti>
 </tr>
 </table>
 
 <p>
-Choosing to go with a <e>stage3</e> allows for the fastest install of Gentoo
-Linux, but also means that your base system will have the optimization
-settings that we chose for you (which to be honest, are good settings
-and were carefully chosen to enhance performance while maintaining
-stability).
+Ved at vælge <e>stage3</e>, tillader dig den hurtigste installation af Gentoo
+Linux, men det betyder også at dit basissystem vil have de optimeringsindstillinger,
+som vi har valgt for dig (og lad os være ærlig, er gode indstillinger, som
+vi med omhug har valgt at forøge præstationerne, samt vedligeholde
+stabilitet).
 </p>
 
 <table>
 <tr>
   <th>Stage3</th>
-  <th>Pros and Cons</th>
+  <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Fastest way to get a Gentoo base system</ti>
+  <ti>Hurtigste metode for at få et Gentoo basissystem</ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>You cannot tweak the base system - it's built already</ti>
+  <ti>Du kan ikke "lege" med dit system - det er allerede bygget</ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>You cannot brag about having used stage1 or stage2</ti>
+  <ti>Du kan ikke blære dig med at have brugt stage1 eller stage2</ti>
 </tr>
 </table>
 
 <p>
-Write down (or remember) what stage you want to use. You need this later when
-you decide what LiveCD (or other installation medium) you want to use. You might
-be interested to know that, if you decide to use different optimization settings
-after having installed Gentoo, you will able to recompile your entire system
-with the new optimization settings.
+Skriv ned (eller husk) hvilken etape, som du vil bruge. Du vil få brug for det senere, når du
+vælger hvilken LiveCD (eller andet installationsmedie) som du ønsker at bruge. Du vil måske
+være interesseret i at vide at, hvis du vælger at bruge forskellige optimeringsindstillinger
+efter at du har installeret Gentoo, kan du genkompilere hele dit system med
+disse nye optimeringer.
 </p>
 
 <p>
-Now take a look at the available installation media:
+Lad os nu tage et kig på de mulige installationmedier:
 </p>
 
 <ul>
 <li>
-  <uri link="#doc_chap2_sect3">Gentoo LiveCDs</uri>
+  <uri link="#doc_chap2_sect3">Gentoo LiveCDer</uri>
   <ul>
-  <li><uri link="#doc_chap2_sect4">Gentoo basic LiveCDs</uri></li>
-  <li><uri link="#doc_chap2_sect5">Gentoo 2-CD LiveCD Set</uri></li>
+  <li><uri link="#doc_chap2_sect4">Gentoo basic LiveCDer</uri></li>
+  <li><uri link="#doc_chap2_sect5">Gentoo 2-CD LiveCD-Sættet</uri></li>
   <li><uri link="#doc_chap2_sect6">Gentoo KDE/Gnome LiveCD</uri></li>
   </ul>
 </li>
 <li><uri link="#doc_chap2_sect7">Knoppix</uri></li>
-<li><uri link="#doc_chap2_sect8">Existing Distribution</uri></li>
-<li><uri link="#doc_chap2_sect9">Net Booting</uri></li>
+<li><uri link="#doc_chap2_sect8">Eksisterende Distribution</uri></li>
+<li><uri link="#doc_chap2_sect9">Netopstart</uri></li>
 </ul>
 
 </body>
 </subsection>
 <subsection>
-<title>Gentoo LiveCDs</title>
+<title>Gentoo LiveCDer</title>
 <body>
 
 <p>
-The <e>Gentoo LiveCDs</e> are bootable CDs which contain a
-self-sustained Gentoo environment. They allow you to boot Linux from the CD.
-During the boot process your hardware is detected and the appropriate drivers
-are loaded. They are maintained by Gentoo developers and are available
-for all supported architectures (x86, alpha, sparc, ppc, hppa). Even
-more, some architectures have several available LiveCDs. 
+<e>Gentoo LiveCDer</e> er startbare CDer, som indeholder en
+selv-eksisterende Gentoo-miljø. De tillader dig at starte Linux fra CDen.
+Igennem opstartsprocessen vil dit hardware blive fundet og de passende drivere
+bliver hentet. De er vedligeholdt af Gentoo udviklere og er til rådighed
+til alle understøttede arkitekturer (x86, alpha, sparc, ppc, hppa). Selv endnu
+flere, idet at nogle arkitekturer har flere forskellige LiveCDer til rådighed. 
 </p>
 
 <p>
-All LiveCDs allow you to boot, setup networking, initialize your
-partitions and start installing Gentoo from the Internet. However, some
-LiveCDs also contain all necessary source code or even precompiled
-packages so you are able to install Gentoo without networking.
+Alle LiveCDer tillader dig at starte, indstille netværk, begynde på dine
+partitioner og starte med at installere Gentoo fra Internet. Dog, nogle
+LiveCDer indeholder også nødvendig kildekode eller enddog præ-kompileret
+pakker, så du kan installere Gentoo uden netværk.
 </p>
 
 <p>
-&quot;What? Precompiled packages?&quot; I hear you shout. Yes, indeed,
-precompiled packages. As Gentoo is all about choices, we want to provide
-our users the possibility to quickly install Gentoo. The collection of
-precompiled packages is called the <e>Gentoo Reference Platform</e>
+&quot;Hvad? Præ-kompilerede pakker?&quot; Jeg hører at du råber. Jeps, virkeligt,
+præ-kompilerede pakker. Idet at Gentoo handler om valg, vil vi give
+vores brugere muligheden for at installere Gentoo hurtigt. Samlingen af
+præ-kompilerede pakker er kaldet <e>Gentoo Reference Platform</e>
 (GRP).
 </p>
 
 <p>
-We provide several types of LiveCDs. The following table shows you what LiveCDs
-are available for your architecture:
+Vi udgiver flere forskellige typer af LiveCDer. Følgende tabel viser dig hvilke LiveCDer,
+der er mulig til din arkitektur:
 </p>
 
 <table>
 <tr>
-  <th>Architecture</th>
+  <th>Arkitektur</th>
   <th>Basic LiveCD</th>
-  <th>2-CD LiveCD Set</th>
+  <th>2-CD LiveCD-sættet</th>
   <th>KDE/Gnome LiveCD</th>
 </tr>
 <tr>
@@ -331,13 +331,13 @@ are available for your architecture:
 </table>
 
 <p>
-Now what do these LiveCDs contain?
+Så, hvad indeholder disse LiveCDer?
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Gentoo basic LiveCDs</title>
+<title>Gentoo basic LiveCDer</title>
 <body>
 
 <p>
