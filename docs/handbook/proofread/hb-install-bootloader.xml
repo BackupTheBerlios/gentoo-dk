@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-install-bootloader.xml,v 1.1 2004/01/19 21:59:17 garfield Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-bootloader.xml,v 1.1 2004/01/21 16:59:47 aaby Exp $ -->
 
 <sections>
 <section>
@@ -14,9 +14,9 @@
 <body>
 
 <p>
-Nu hvor din kerne er konfigureret og kopileret og den nødvendige 
+Nu hvor din kerne er konfigureret og kompileret og den nødvendige 
 systemopsætning er klaret, er det tid til at installere et program der vil 
-sætte gang i din kerne når du starter systemet. Sådan et program kaldes en 
+sætte gang i din kerne, når du starter systemet. Sådan et program kaldes en 
 <e>boot-loader</e>. Men før du starter, skal du overveje dine muligheder...
 </p>
 
@@ -86,7 +86,7 @@ GRUB (anbefalet) og LILO.
 <body>
 
 <note>
-Denne sektion glæder kun for x86, AMD64 og PPC brugere der har understøttelse 
+Denne sektion glæder kun for x86, AMD64 og PPC brugere, der har understøttelse 
 af framebuffer med i opsætningen af deres kerne. Dette inkluderer brugere af 
 <c>genkernel</c>.
 </note>
@@ -228,8 +228,7 @@ grub&gt; <i>quit</i>                  <comment>(Afslut GRUBs skal)</comment>
 Hvis du vil installere GRUB i en partition i stedet for MBR, skal du ændre 
 kommandoen for <c>setup</c> så den peger på den rigtige partition. Hvis du fx 
 vil have GRUB installeret i <path>/dev/hda3</path>, bliver kommandoen 
-<c>setup (hd0,2)</c>.
-Få brugere vil dog gøre dette.
+<c>setup (hd0,2)</c>.  Få brugere vil dog gøre dette.
 </note>
 
 <p>
@@ -302,7 +301,7 @@ bør du tilføje <c>doscsi</c> som kerne-parameter.
 </p>
 
 <p>
-Gem nu filen <path>grub.conf</path> og afslut. Fra nu af er GRUB færdigtopsat, 
+Gem nu filen <path>grub.conf</path> og afslut. Fra nu af er GRUB færdigopsat, 
 og du kan fortsætte med <uri link="?part=1&amp;chap=10">Installation af 
 nødvendige systemværktøjer</uri>.
 </p>
@@ -401,7 +400,7 @@ image=/boot/kernel-2.4.22
 
 <p>
 Brugere af <c>genkernel</c> skal vide at deres kerner har de samme 
-opstartparametre som der er brugt til LiveCD'en. Hvis du fx har SCSI-enheder, 
+opstartparametre, som der er brugt til LiveCD'en. Hvis du fx har SCSI-enheder, 
 bør du tilføje <c>doscsi</c> som kerne-parameter.
 </p>
 
@@ -839,7 +838,7 @@ skal du efter næste genstart klare noget opsætning i BootX kontrolpanelet
 </p>
 
 <p>
-Lige nu, fortsæt med <uri link="?part=1&amp;chap=10">Installation af 
+Fortsæt nu med <uri link="?part=1&amp;chap=10">Installation af 
 nødvendige systemværktøjer</uri>.
 </p>
 
