@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-bootloader.xml,v 1.1 2004/01/21 16:59:47 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-bootloader.xml,v 1.1 2004/01/22 17:10:12 broeman Exp $ -->
 
 <sections>
 <section>
@@ -14,8 +14,8 @@
 <body>
 
 <p>
-Nu hvor din kerne er konfigureret og kompileret og den nødvendige 
-systemopsætning er klaret, er det tid til at installere et program der vil 
+Nu hvor din kerne er opsat og kompileret og den nødvendige 
+systemopsætning er klaret, er det tid til at installere et program, der vil 
 sætte gang i din kerne, når du starter systemet. Sådan et program kaldes en 
 <e>boot-loader</e>. Men før du starter, skal du overveje dine muligheder...
 </p>
@@ -82,11 +82,11 @@ GRUB (anbefalet) og LILO.
 </body>
 </subsection>
 <subsection>
-<title>Valgfri: Framebuffer</title>
+<title>Valgfrit: Framebuffer</title>
 <body>
 
 <note>
-Denne sektion glæder kun for x86, AMD64 og PPC brugere, der har understøttelse 
+Denne sektion gælder kun for x86, AMD64 og PPC brugere, der har understøttelse 
 af framebuffer med i opsætningen af deres kerne. Dette inkluderer brugere af 
 <c>genkernel</c>.
 </note>
@@ -144,8 +144,8 @@ på parenteserne omkring <path>hd0,0</path> - de er nødvendige.
 
 <p>
 Harddiske tælles op fra nul i stedet for "a" og partitionerne starter ved
- nul i stedet for en. Vær også opmærksom på at med hd-enheder bliver kun 
-harddiske, og ikke atapi-ide enheder som fx cd-drev og brændere, talt med. 
+ nul i stedet for én. Vær også opmærksom på at med hd-enheder bliver kun 
+harddiske, og ikke atapi-ide-enheder som fx cd-drev og brændere, talt med. 
 Samme konstruktion gælder ligeledes for scsi-drev. 
 (Normalt får de et højere nummer end ide-drevene, med undtagelse af når bios 
 er sat til at starte op fra scsi-enheder.)
@@ -158,7 +158,7 @@ harddisk på <path>/dev/hdd</path> og ingen scsi-harddisk, bliver
 <path>/dev/hdd7</path> oversat til <path>(hd1,6)</path>. Det kan lyde tricky
  og det er bestemt tricky, men som vi skal se, indeholder GRUB 
 tab-færdiggørelse der kan være behjælpelig for dem der har mange harddiske 
-og partitioner og er gået lidt tabt i GRUBs nummereringssystem.
+og partitioner og er gået lidt tabt i GRUBs nummeringssystem.
 </p>
 
 <p>
@@ -172,7 +172,7 @@ Efter at have fået en ide om det, er det tid til at installere GRUB.
 <body>
 
 <p>
-For at installere GRUB vil vi først emerge det. Brugere af x86-arkitekturen 
+For at installere GRUB, vil vi først emerge det. Brugere af x86-arkitekturen 
 skal installere <c>grub</c>, AMD64-brugere skal emerge <c>grub-static</c>:
 </p>
 
@@ -186,7 +186,7 @@ skal installere <c>grub</c>, AMD64-brugere skal emerge <c>grub-static</c>:
 </pre>
 
 <p>
-For at starte opsætningen af GRUB skriver du <c>grub</c>. Du vil nu blive 
+For at starte opsætningen af GRUB, skriver du <c>grub</c>. Du vil nu blive 
 præsenteret for GRUBs <path>grub&gt;</path> kommandolinjeprompt. Du skal nu 
 indtaste de rigtige kommandoer for at installere GRUBs boot-optegnelse på din
 harddisk.
@@ -206,9 +206,9 @@ kommandoerne tilsvarende.
 </p>
 
 <p>
-Tab-færdiggørelsen i GRUB kan benyttes inde fra GRUB. Hvis du fx indtaster 
+Tab-færdiggørelsen i GRUB kan benyttes inde fra GRUB. Hvis du f.eks. indtaster 
 "<c>root (</c>" efterfulgt af et TAB, vil du blive præsenteret for en liste
-med af enheder (som fx <path>hd0</path>). Hvis du indtaster 
+med af enheder (som f.eks. <path>hd0</path>). Hvis du indtaster 
 "<c>root (hd0,</c>" efterfulgt af et TAB, får du en liste over mulige 
 partition du kan vælge imellem (som fx <path>hd0,0</path>).
 </p>
@@ -284,7 +284,7 @@ monteringspunktet og ikke roden. Med andre ord er
 Hvis du har brug for at angive yderligere parametre til kernen, skal du 
 blot tilføje dem i slutningen af kernel kommandoen. Vi angiver allerede et 
 parameter (<c>root=/dev/hda3</c>), men du kan også angive andre ligeledes. 
-Som eksempel kan vi bruge parameteret <c>vga</c> til framebuffer 
+Som eksempel kan vi bruge parameteret <c>vga</c> til framebuffer, 
 som vi diskuterede tidligere:
 </p>
 
@@ -296,7 +296,7 @@ title=Gentoo Linux
 
 <p>
 Brugere af <c>genkernel</c> skal vide at deres kerner har de samme 
-opstartparametre som der er brugt til LiveCD'en. Hvis du fx har SCSI-enheder, 
+opstartparametre, som er brugt til LiveCD'en. Hvis du fx har SCSI-enheder, 
 bør du tilføje <c>doscsi</c> som kerne-parameter.
 </p>
 
@@ -323,8 +323,8 @@ LILO kan kun bruges med x86-baserede systemer!
 LILO (LInuxLOader) er den afprøvede og sande arbejdshest af Linux' boot-loadere
 . Den mangler dog nogle funktionaliteter som GRUB har (hvilket er årsagen til 
 GRUB i øjeblikket har en stigende popularitet). Årsagen til LILO stadigvæk 
-benyttes er at LILO virker på nogle systemer hvor GRUB ikke virker. Det er 
-selvfølgelig også benyttet af folk der kender LILO og vil holde sig til det. 
+benyttes er, at LILO virker på nogle systemer hvor GRUB ikke virker. Det er 
+selvfølgelig også benyttet af folk, der kender LILO og vil holde sig til det. 
 Uanset hvad, så understøtter Gentoo begge, og du har tilsyneladende valgt LILO.
 </p>
 
@@ -332,7 +332,7 @@ Uanset hvad, så understøtter Gentoo begge, og du har tilsyneladende valgt LILO.
 Installation af LILO er barnemad; bare brug <c>emerge</c>.
 </p>
 
-<pre caption = "Installering af LILO">
+<pre caption = "Installation af LILO">
 # <i>emerge --usepkg lilo</i>
 </pre>
 
@@ -343,8 +343,8 @@ Installation af LILO er barnemad; bare brug <c>emerge</c>.
 <body>
 
 <p>
-Til opsætning af LILO skal du oprette <path>/etc/lilo.conf</path>. Start din
-foretrukne editor (i denne håndbog benytter vi <c>nano</c> konsekvent) og opret filen.
+Til opsætningen af LILO skal du oprette <path>/etc/lilo.conf</path>. Start din
+foretrukne redigeringsprogram (i denne håndbog benytter vi <c>nano</c> konsekvent) og opret filen.
 </p>
 
 <pre caption = "Oprettelse af /etc/lilo.conf">
@@ -352,10 +352,10 @@ foretrukne editor (i denne håndbog benytter vi <c>nano</c> konsekvent) og opret 
 </pre>
 
 <p>
-Nogle sektioner tilbage bad vi dig om at huske navnet på det kernebillede du 
-havde skabt. I det følgende <path>lilo.conf</path> eksempel, antager vi at 
+Nogle sektioner tilbage bad vi dig om at huske navnet på det kernebillede, du 
+havde skabt. I det følgende <path>lilo.conf</path>-eksempel, antager vi at 
 navnet på kernebilledet er <path>kernel-2.4.22</path>. Vi bruger også planen 
-for partitioneringseksemplet fra før i dette eksempel.
+for partitioneringseksemplet fra før, i dette eksempel.
 </p>
 
 <pre caption = "Eksempel på /etc/lilo.conf">
@@ -400,14 +400,14 @@ image=/boot/kernel-2.4.22
 
 <p>
 Brugere af <c>genkernel</c> skal vide at deres kerner har de samme 
-opstartparametre, som der er brugt til LiveCD'en. Hvis du fx har SCSI-enheder, 
+opstartparametre, som der er brugt til LiveCD'en. Hvis du f.eks. har SCSI-enheder, 
 bør du tilføje <c>doscsi</c> som kerne-parameter.
 </p>
 
 
 <p>
-Gem nu filen og afslut. For at færdiggøre helt, skal du køre <c>/sbin/lilo</c> 
-så LILO anvende <path>/etc/lilo.conf</path> på dit system 
+Gem nu filen og afslut. For at færdiggøre helt, skal du køre <c>/sbin/lilo</c>, 
+så LILO anvender <path>/etc/lilo.conf</path> på dit system 
 (dvs. installere sig på disken).
 </p>
 
@@ -436,7 +436,7 @@ Vi installerer først aboot på vores system. Det bruger vi selvfølgelig
 <c>emerge</c> til:
 </p>
 
-<pre caption = "Installering af aboot">
+<pre caption = "Installation af aboot">
 # <i>emerge --usepkg aboot</i>
 </pre>
 
@@ -455,7 +455,7 @@ ind i starten af disken.
 <note>
 Hvis dine partitioner er ordnet anderledes end dem vi bruger i vores eksempel 
 igennem dette kapitel, skal du skifte kommandoerne tilsvarende.
-Læs venligst venligst de hensigtsmæssige manualsider 
+Læs venligst de hensigtsmæssige manualsider 
 (<c>man 8 swriteboot</c> og <c>man 8 abootconf</c>).
 </note>
 
@@ -478,7 +478,7 @@ Se yderligere information i <path>/etc/aboot.conf.example</path>.
 Yderligere skal du tillade login fra serielporten:
 </p>
 
-<pre caption = "Tilladelse til at logge ing fra serielporten">
+<pre caption = "Tilladelse til at logge ind fra serielporten">
 # <i>echo tts/0 &gt;&gt; /etc/securetty</i>
 # <i>echo 's0:12345:respawn:/sbin/agetty 9600 tts/0 vt100' &gt;&gt; /etc/inittab</i>
 </pre>
@@ -510,17 +510,17 @@ kommandoerne så det passer.
 Vi bruger <c>emerge</c> til at installere MILO.
 </p>
 
-<pre caption = "Installering af MILO">
+<pre caption = "Installation af MILO">
 # <i>emerge --usepkg milo</i>
 </pre>
 
 <p>
-Efter at MILO er blevet installeret, skal MILO-billederne være i 
+Efter at MILO er blevet installeret, skal MILO-billed-filerne være i 
 <path>/opt/milo</path>. Kommandoerne nedenfor laver en opstartsdiskette til 
 brug med MILO. Husk at bruge det rigtige billede til dit Alpha-system.
 </p>
 
-<pre caption = "Installering af MILO på en diskette">
+<pre caption = "Installation af MILO på en diskette">
 <comment>(Indsæt først en tom diskette)</comment>
 # <i>fdformat /dev/fd0</i>
 # <i>mformat a:</i>
@@ -542,7 +542,7 @@ bruges i interaktiv tilstand.
 </p>
 
 <p>
-Det er <e>ikke</e> en god ide at springe 
+Det er <e>ikke</e> en god idé at springe 
 <uri link="http://tldp.org/HOWTO/MILO-HOWTO/">MILO-HOWTO</uri> over.
 </p>
 
@@ -563,7 +563,7 @@ Det er nu tid til installation og opsætning af
 LOader".
 </p>
 
-<pre caption = "Installering af SILO">
+<pre caption = "Installation af SILO">
 # <i>emerge --usepkg silo</i>
 </pre>
 
@@ -645,13 +645,13 @@ i <path>/etc/palo.conf</path>. Her er et opsætningseksempel:
 
 <p>
 Den første linje fortæller palo om placeringen af kernen og hvilke 
-opstartsparametre det skal bruge. <c>2/vmlinux</c> betyder at kernen 
+opstartsparametre, det skal bruge. <c>2/vmlinux</c> betyder at kernen 
 <c>/vmlinux</c> ligger på anden partition. Pas på, stien til kernen er relativ 
 til partitionen, ikke til roden af dit filsystem.
 </p>
 
 <p>
-Den anden linje indikerer hvilken genskabelseskerne der skal bruges. Hvis det 
+Den anden linje indikerer hvilken genskabelseskerne, der skal bruges. Hvis det 
 er din første installation og du ikke har en genskabelseskerne, skal du 
 udkommentere linjen. Den tredje linje indikerer hvilken disk palo vil lægge 
 sig på. 
@@ -687,7 +687,7 @@ Der er to måder at opsætte yaBoot til dit system. Du kan bruge det nye og
 forbedrede <c>yabootconfig</c> der er inkluderet med 
 <path>yaboot-1.3.8-r1</path> og senere sætte yaBoot automatisk op. Hvis du af 
 en eller anden grund ikke ønsker at køre <c>yabootconfig</c> for at indstille
-<path>/etc/yaboot.conf</path>, kan du blot redigere i eksempelfilen der 
+<path>/etc/yaboot.conf</path>, kan du blot redigere i eksempelfilen, der 
 allerede er installeret på dit system.
 </p>
 
@@ -711,8 +711,8 @@ Mac OS X.
 </p>
 
 <p>
-For at bruge <c>yabootconfig</c> skal dit drev have en bootstrap-partition 
-og <path>/etc/fstab</path> skal være sat op til dine Linux partitioner. Begge 
+For at bruge <c>yabootconfig</c>, skal dit drev have en bootstrap-partition 
+og <path>/etc/fstab</path> være sat op til dine Linux partitioner. Begge 
 dele skulle allerede være klaret med trinene ovenfor. Du skal starte med at 
 sikre at du har den seneste version af yaBoot installeret ved at køre 
 <c>emerge --update yaboot</c>. Dette er nødvendigt, da den seneste version vil 
@@ -735,12 +735,12 @@ installere opsætningsfilen til yaboot på den.
 <p>
 Du kan nu kontrollere indholdet af <path>/etc/yaboot.conf</path>. Hvis du 
 laver ændringer i <path>/etc/yaboot.conf</path> (det kunne være ændring af 
-standard opstarts OS), så sørg for at køre <c>ybin -v</c> igen for at anvende 
+standard opstarts operativsystem), så sørg for at køre <c>ybin -v</c> igen for at anvende 
 ændringerne på bootstrap-partitionen.
 </p>
 
 <p>
-Fortsæt nu med <uri link="?part=1&amp;chap=10">Installation af nødvendig 
+Fortsæt nu med <uri link="?part=1&amp;chap=10">Installation af nødvendige 
 systemværktøjer</uri>.
 </p>
 
@@ -759,7 +759,7 @@ Sørg først for at have det seneste <c>yaBoot</c> installeret på dit system:
 </pre>
 
 <p>
-Nedenfor finder du en komplet <path>yaboot.conf</path>. Ændr det efter egen 
+Nedenfor finder du en komplet <path>yaboot.conf</path>. Du kan ændre det efter egen 
 vilje:
 </p>
 
@@ -855,19 +855,19 @@ opstarten, men du skal installere din kerne som et tilgængelig valg.
 </p>
 
 <p>
-Installer først <c>dvhtool</c> der er nødvendig for at kunne kopiere kernen 
+Installer først <c>dvhtool</c> der er nødvendig, for at kunne kopiere kernen 
 til SGI Volume Header.
 </p>
 
-<pre caption="Installering af dvhtool">
+<pre caption="Installation af dvhtool">
 # <i>emerge dvhtool</i>
 </pre>
 
 <p>
-Kopier nu kernen til SGI Volume Header. Som standard antager <c>dvhtool</c> 
+Kopiér nu kernen til SGI Volume Header. Som standard antager <c>dvhtool</c> 
 at SGI Volume Header er på <path>/dev/sda</path>. Hvis dette ikke er tilfældet 
 (når fx IRIX er installeret på <path>/dev/sda</path> og Gentoo/MIPS på 
-<path>/dev/sdb</path>) skal du informere <c>dvhtool</c> om det ved hjælp af 
+<path>/dev/sdb</path>) skal du informere <c>dvhtool</c> om det, ved hjælp af 
 <c>-d &lt;device&gt;</c>.
 </p>
 
