@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/2.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-portage-ebuild.xml,v 1.1 2004/11/13 17:22:14 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-portage-ebuild.xml,v 1.1 2004/11/20 14:14:27 aaby Exp $ -->
 
 <sections>
 <section>
@@ -12,18 +12,19 @@
 <body>
 
 <p>
-<c>ebuild</c>-programmet er et lower-level grænseflade til Portage systemet.
-Ved brug af dette program, kan du udføre specifikke aktioner til en given ebuild.
+<c>ebuild</c>-programmet er en low-level grænseflade til Portage systemet.
+Ved brug af dette program, kan du udføre specifikke handlinger til en given ebuild.
 F.eks. kan du udføre de individuelle merge-trin selv.
 </p>
 
 <p>
 Brugen af <c>ebuild</c> er mere til udviklingsopgaver; flere informationer omkring
 <c>ebuild</c> kan derfor findes i <uri
-link="/proj/en/devrel/handbook/handbook.xml">Udviklernes håndbog</uri> (på engelsk). Dog,
-vil vi forklare hvilke instanser en ebuild er påkaldt af Portage igennem merge-processen
-af en specifik softwaretitel, og hvordan man påkalder foropsætningstrin,
-nogle ebuilds tillader dig at udføre.
+link="/proj/en/devrel/handbook/handbook.xml">Udviklernes håndbog</uri>
+(på engelsk). Dog, vil vi forklare hvilke instanser af en ebuild, der bliver påkaldt
+af Portage igennem emerge-processen for en specifik softwaretitel og
+hvordan man påkalder de føropsætningstrin, som nogle ebuilds tillader
+dig at udføre.
 </p>
 
 </body>
@@ -31,29 +32,29 @@ nogle ebuilds tillader dig at udføre.
 <section>
 <title>Manuel installation af software</title>
 <subsection>
-<title>Fangst af kilder samt checksumming</title>
+<title>At hente kilder samt checksum</title>
 <body>
 
 <p>
-Når du påkalder en <c>ebuild</c> til en given ebuild-fil, vil den verficere om
-checksummen af alle involverede filer er lig med dem der er givet i 
-den medfølgende <path>Manifest</path> eller 
-<path>files/digest-&lt;name&gt;-&lt;version&gt;</path>-fil. Dette
-sker efter at kilderne er fanget.
+Når du påkalder en <c>ebuild</c> til en given ebuild-fil, vil den
+verificere om checksummen af alle involverede filer er lig med dem der
+er givet i den medfølgende <path>Manifest</path> eller
+<path>files/digest-&lt;navn&gt;-&lt;version&gt;</path>-fil. Dette sker
+efter at kilderne er hentet.
 </p>
 
 <p>
-For at fange kilderne ved brug af <c>ebuild</c>, kør:
+For at hente kilderne ved brug af <c>ebuild</c>, kør da:
 </p>
 
-<pre caption="Fangst af kildekode">
+<pre caption="At hente kildekode">
 # <i>ebuild sti/til/ebuild fetch</i>
 </pre>
 
 <p>
-Hvis ebuildens md5sum ikke passer sammen med den der er vist i
+Hvis ebuildens md5sum ikke passer sammen med den, der er vist i
 <path>Manifest</path>-filen, eller en af de hentede kildekoder ikke passer med dem
-vist i <path>files/digest-&lt;package&gt;</path>-filen, vil du modtage 
+vist i <path>files/digest-&lt;pakke&gt;</path>-filen, vil du modtage 
 en fejl lignende til dette:
 </p>
 
@@ -74,23 +75,23 @@ valid, kan du regenerere <path>Manifest</path> og
 </p>
 
 <pre caption="Regenerering af Manifest og digest">
-# <i>ebuild path/to/ebuild digest</i>
+# <i>ebuild sti/tíl/ebuild digest</i>
 </pre>
 
 </body>
 </subsection>
 <subsection>
-<title>Udpakning af kildekoderne</title>
+<title>Udpakning af kildekode</title>
 <body>
 
 <p>
-For at pakke kildekoderne ud i <path>/var/tmp/portage</path> (eller en anden
-placering du har specificeret i <path>/etc/make.conf</path>), kør <c>ebuild</c>s
+For at pakke kildekode ud i <path>/var/tmp/portage</path> (eller en anden
+placering du har specificeret i <path>/etc/make.conf</path>), kør da <c>ebuild</c>s
 unpack-funktionalitet:
 </p>
 
 <pre caption="Udpakning af kildekoder">
-# <i>ebuild path/to/ebuild unpack</i>
+# <i>ebuild sti/til/ebuild unpack</i>
 </pre>
 
 <p>
@@ -106,14 +107,14 @@ alle nødvendig patches er tilføjet.
 <body>
 
 <p>
-Det næste trin i merge-processen er at samle kildekoderne.
-<c>ebuild</c>s compile-funktionalitet tager sig af dette trin ved at udføre
+Det næste trin i emerge-processen er at samle kildekoderne.
+<c>ebuild</c>s kompilerings-funktionalitet tager sig af dette trin ved at udføre
 src_compile() funktionen i ebuilden. Dette inkluderer også 'configure'-trin, hvis
 de tilhører titlen.
 </p>
 
 <pre caption="Samling af kildekoderne">
-# <i>ebuild path/to/ebuild compile</i>
+# <i>ebuild sti/til/ebuild compile</i>
 </pre>
 
 <p>
@@ -124,7 +125,7 @@ alle nødvendige kommandoer selv, og opret en tom fil kaldet
 <path>.compiled</path> i 'working'-folderen:
 </p>
 
-<pre caption="Informere Portage om de færdiggjorte samlingsjobs">
+<pre caption="At informere Portage om de færdiggjorte samlingsjobs">
 # <i>touch .compiled</i>
 </pre>
 
@@ -135,9 +136,9 @@ alle nødvendige kommandoer selv, og opret en tom fil kaldet
 <body>
 
 <p>
-I det næste trin vil Portage installere alle de nødvendige i en midlertidig
-placering. Denne folder vil indeholde alle filder, som skal merges til
-det direkte filsystem. Du kan gøre dette ved at køre <c>ebuild</c>s install-funktionalitet,
+I det næste trin vil Portage installere alle de nødvendige filer til en midlertidig
+placering. Denne folder vil indeholde alle filer, som skal emerges til
+det rigtige filsystem. Du kan gøre dette ved at køre <c>ebuild</c>s install-funktionalitet,
 som udfører ebuilds src_install() funktion:
 </p>
 
@@ -148,7 +149,7 @@ som udfører ebuilds src_install() funktion:
 </body>
 </subsection>
 <subsection>
-<title>Merge af filer til det direkte filsystem</title>
+<title>Emerge af filer til det direkte filsystem</title>
 <body>
 
 <p>
@@ -168,7 +169,7 @@ følgende trin:
 Kør <c>ebuild</c>s qmerge-funktionalitet for at udføre disse trin:
 </p>
 
-<pre caption="Merge af filer til det direkte filsystem">
+<pre caption="Emerge af filer til det direkte filsystem">
 # <i>ebuild sti/til/ebuild qmerge</i>
 </pre>
 
@@ -193,7 +194,7 @@ clean-funktionalitet:
 <section>
 <title>Yderligere Ebuild-egenskaber</title>
 <subsection>
-<title>Kørsel af alle merge-relaterede kommandoer</title>
+<title>Kørsel af alle emerge-relaterede kommandoer</title>
 <body>
 
 <p>
