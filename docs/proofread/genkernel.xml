@@ -28,8 +28,8 @@ de funktioner der bliver sat til rådighed af Genkernel.
 <body>
 
 <p>
-Genkernel er designet til at tillade brugere der ikke tidligere er
-vant til at kompilere en kerne til at bruge opsætning der ligner den
+Genkernel er designet til at tillade, brugere der ikke tidligere er
+vant til at kompilere en kerne, til at bruge opsætning der ligner den
 der er brugt på Gentoo LiveCDerne, hvilke automatisk finder dit hardware.
 </p>
 
@@ -61,7 +61,7 @@ egen kerne selv ofte meget hurtigere, givet at du ved hvad du har brug for.
 </p>
 
 <p>
-Genkernel understøtter dog ikke, pt. opstart from LVM2/EVMS2
+Genkernel understøtter dog ikke, pt. opstart fra LVM2/EVMS2
 partitioner. Brugere anbefales at bruge en manuelt kompileret kerne
 indtil videre.
 </p>
@@ -124,7 +124,7 @@ speciel effekt.
 
 <p>
 Selvom at genkernel hovedsagelig er en kommando til at gøre dit liv
-nemmere når du skal kompilere en kerne, så er genkernel også pakked
+nemmere når du skal kompilere en kerne, så er genkernel også pakket
 fuldt med forskellige flag, som tillader dig at skræddersy hvordan din
 kerne bliver kompileret og konfigureret.
 </p>
@@ -194,7 +194,8 @@ applikationer imens din kerne bliver samlet:
 
 <p>
 Genkernel understøtter de følgende flag, nogle af dem har
-<c>--<b>no-</b>mulighed</c> ækvivalente der har indflydelse på kerne kompileringen:
+<c>--<b>no-</b>mulighed</c> ækvivalente, der har
+indflydelse på kerne kompileringen:
 </p>
 
 <ul>
@@ -249,7 +250,7 @@ Genkernel understøtter de følgende flag, nogle af dem har
 
 <ul>
   <li>
-    <b>--no-initrdmodules</b>: Dette kopierer ikke nogen af moduler
+    <b>--no-initrdmodules</b>: Dette kopierer ikke nogen moduler
     til den initrd, som genkernel laver.
   </li>
   <li>
@@ -427,7 +428,7 @@ denne arkitektur.
 
 <ul>
   <li>
-    <path>busy-config</path>: Dette er den konfiguration bliver brugt
+    <path>busy-config</path>: Dette er den konfiguration som bliver brugt
     til at bygge busybox til din arkitektur.
   </li>
   <li>
@@ -439,7 +440,7 @@ denne arkitektur.
     <path>modules_load</path>: Dette er en fil der indeholder en
     liste, afgrænset af mellemrum, af moduler som bliver hentet for at
     få SCSI, FireWire, ATARAID og PCMCIA understøttelse. Hvis der ikke
-    er nogen af disse der er tilgængelige til din platfor, lad da
+    er nogen af disse der er tilgængelige til din platform, lad da
     disse felter være blanke. Se en af <path>modules_load</path>
     filerne for et eksempel.
   </li>
