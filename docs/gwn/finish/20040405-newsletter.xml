@@ -233,21 +233,21 @@
 </author>
 <abstract>Dette er Gentoos ugentlige nyhedsbrev for ugen 29 Marts, 2004.</abstract>
 <summary></summary>
-<version>Volume 3, Issue 14</version>
+<version>3. årgang, 14. nummer</version>
 <date>5. April 2004</date>
 
 <chapter>
 	<title>Gentoo nyheder</title>
 <section>
-<title>Gentoo Linux Projektet søger flere kerne udviklere</title>
+<title>Gentoo Linux Projektet søger flere kerne-udviklere</title>
 <body>
 
 <p>
-Gentoo Linux leder pt. efter flere kerne udviklere, primært til x86,
-amd64, ppc, og ppc64 arkitekturerne. Ansøgere bør have en del erfaring
+Gentoo Linux leder pt. efter flere kernei-udviklere, primært til x86-,
+amd64-, ppc-, og ppc64-arkitekturerne. Ansøgere bør have en del erfaring
 med kernen, specifikt med en eller flere af de ovenfor listede
-arkitekturer. Send en mail til <mail
-link="johnm@gentoo.org">John Mylchreest</mail>(på engelsk) hvis du er interesseret.
+arkitekturer. Send en mail (på engelsk) til <mail
+link="johnm@gentoo.org">John Mylchreest</mail> hvis du er interesseret.
 </p>
 
 </body>
@@ -258,17 +258,16 @@ link="johnm@gentoo.org">John Mylchreest</mail>(på engelsk) hvis du er interesser
 
 <p>
 Gentoos ugentlige nyhedsbrev søger flere bidragsydere til at hjælpe
-med at dække communitiet - dette involverer at overvåge mailling
-lister, web forumer, eller det internationale community og opsummere
-den interessante traffik hver uge. Vi vil også gerne tage nogle
+med at dække communitiet - dette involverer at overvåge maillister, webforumer, eller det internationale community og opsummere
+den interessante trafik hver uge. Vi vil også gerne tage nogle
 frivillige ombord til at hjælpe med nogle af de andre sektioner, komme
 med nye ideer til holdet og lette noget af byrden på de nuværende
-bidragsydere. Det eneste rigtige krav til applikanter er en solid
+bidragsydere. Det eneste rigtige krav til ansøgere er en solid
 kendskab til det skrevne engelsk. Erfaring med journalistik eller
 Linux, så vel som en mængde af andre evner kan også være hjælpsomme,
 men ikke nødvendige, selvom motivation og villighed til at arbejde et
-par timer hver uge. Stadig interesseret? Smid os en linie <mail
-link="gwn-feedback@gentoo.org">her</mail>(på engelsk) med noget
+par timer hver uge. Stadig interesseret? Smid os en linje <mail
+link="gwn-feedback@gentoo.org">her</mail> (på engelsk) med noget
 baggrundsinformation og ideer som du må have til nyhedsbrevet.
 </p>
 
@@ -278,7 +277,7 @@ baggrundsinformation og ideer som du må have til nyhedsbrevet.
 <chapter>
 <title>Gentoo sikkerhed</title>
 <section>
-<title>Fetchmail 6.2.5 ordner muligheden for fjernt DoS</title>
+<title>Fetchmail 6.2.5 udelukker muligheden for udefra kommende DoS</title>
 <body>
 <p>
 
@@ -287,39 +286,39 @@ baggrundsinformation og ideer som du må have til nyhedsbrevet.
   
 </p>
 <p>
-For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-10.xml">GLSA Annoncering</uri>
+For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-10.xml">GLSA Annonceringen</uri>
 </p>
 </body>
 </section>
 <section>
-<title>Squid ACL [url_regex] bypass svaghed</title>
+<title>Squid ACL [url_regex] bypass sårbarhed</title>
 <body>
 <p>
 
-    Squid versioner 2.0 til 2.5.STABLE4 kan tillade en fjern angriber
+    Squid versioner 2.0 til 2.5.STABLE4 kan tillade en udefra kommende angriber
     at gå omkring Access Control Lists ved at sende et specielt-bygget
-    URL-request der indeholder '%00': under sådanne omstændigheder;
+    URL-request, der indeholder '%00': under sådanne omstændigheder;
     vil url_regex ACL måske ikke opdage den ondsindede URL ordentligt,
     og dermed tillade angriberen at gå forbi ACLen.
 </p>
 
 <p>
-For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-11.xml">GLSA Annoncering</uri>
+For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-11.xml">GLSA Annonceringen</uri>
 </p>
 </body>
 </section>
 <section>
-<title>OpenLDAP DoS svaghed</title>
+<title>OpenLDAP DoS sårbarhed</title>
 <body>
 <p>
 
-    En fejlet password operation kan være skyld i at OpenLDAP slapd
-    serveren, hvis den bruger back-ldbm backend, frigiver hukommelse
+    En fejlet password-operation kan være skyld i at OpenLDAP slapd-serveren,
+    hvis den bruger back-ldbm backend, frigiver hukommelse,
     der aldrig er blevet allokeret.
   
 </p>
 <p>
-For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-12.xml">GLSA Annoncering</uri>
+For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-12.xml">GLSA Annonceringen</uri>
 </p>
 </body>
 </section>
@@ -328,13 +327,13 @@ For at få mere information, se venligst <uri link="http://www.gentoo.org/securit
 <body>
 <p>
 
-    MPlayer indeholder et mulig buffer overflow der kan udnyttes i
-    HTTP parseren der vil tillade angribere at køre arbitrær kode på
+    MPlayer indeholder et mulig buffer overflow, der kan udnyttes i
+    HTTP parseren, der vil tillade angribere at køre arbitrær kode på
     en brugers computer.
   
 </p>
 <p>
-For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-13.xml">GLSA Annoncering</uri>
+For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-13.xml">GLSA Annonceringen</uri>
 </p>
 </body>
 </section>
@@ -343,11 +342,11 @@ For at få mere information, se venligst <uri link="http://www.gentoo.org/securit
 <body>
 <p>
 
-    Der er fundet Dos og buffer overflow svagheder i Monit. 
+    Der er fundet Dos og buffer overflow sårbarheder i Monit. 
   
 </p>
 <p>
-For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-14.xml">GLSA Annoncering</uri>
+For at få mere information, se venligst <uri link="http://www.gentoo.org/security/en/glsa/glsa-200403-14.xml">GLSA Annonceringen</uri>
 </p>
 </body>
 </section>
@@ -355,7 +354,7 @@ For at få mere information, se venligst <uri link="http://www.gentoo.org/securit
 <chapter>
 <title>Hørt i communitiet</title>
 <section>
-<title>Web Forum</title>
+<title>Webforum</title>
 <body>
 
 <p>
@@ -363,14 +362,14 @@ For at få mere information, se venligst <uri link="http://www.gentoo.org/securit
 </p>
 
 <p>
-Gentoo udvikler Genone har tidligere sat en sticky tråd op der
-håndterer med den kommende integration af sikkerheds annonceringerne i 
-Portage. Klik her for at få opdateringer af scriptet der nu er i 
-gentoolkit, før det endelige implementation som en del af emerge:
+Gentoo-udvikleren Genone har tidligere sat en sticky-tråd op, der
+håndterer den kommende integration af sikkerhedsannonceringerne i 
+Portage. Klik på nedenstående for at få opdateringer af scriptet, der nu er i 
+gentoolkit, før den endelige implementation bliver en del af emerge:
 </p>
 
 <ul><li><uri link="http://forums.gentoo.org/viewtopic.php?t=148463">portage GLSA integration (aka `emerge security`)</uri></li>
-<li><uri link="http://www.gentoo.org/proj/en/portage/glsa-integration.xml">Portage GLSA integration projektets side</uri></li></ul>
+<li><uri link="http://www.gentoo.org/proj/en/portage/glsa-integration.xml">Portage GLSA-integration projektets side</uri></li></ul>
 
 <p>
 <b>Farven: Lilla...</b>
@@ -402,10 +401,10 @@ temaer. Her er hvor kunstnerne koordinerer deres arbejde:
 
 <p>
 Det næste Gentoo brUger Møde i Oberhausen (Ruhr regionen af det centrale
-Tyskland) vil finde sted denne Onsdag, den 7 April. Mødestedet vil
+Tyskland) vil finde sted denne onsdag, den 7. april. Mødestedet vil
 igen være <uri link="http://www.gasthof-harlos.de">Gasthof
-Harlos</uri>, og GUM starter 19:00. Nykomne og folk der tidligere har
-været der er lige velkomne. Den koordinerende tråd i Forummet er hvor
+Harlos</uri>, og GUM starter 19.00. Nyankomne og folk der tidligere har
+været der, er lige velkomne. Den koordinerende tråd i Forummet er hvor
 <uri link="http://forums.gentoo.org/viewtopic.php?t=94915">den
 sædvanligvis er</uri>.
 </p>
@@ -432,8 +431,8 @@ sædvanligvis er</uri>.
      <p>
      Gentoo communitiet bruger Bugzilla (<uri
      link="http://bugs.gentoo.org" >bugs.gentoo.org</uri>) til at
-     gemme og følge bugs, notifikationer, forslag og anden interaktion
-     med udviklingsholdet. Mellem den 27. marts 2004 og 02. April
+     gemme og følge bugs, bekendtgørelser, forslag og anden interaktivt
+     med udviklingsholdet. Mellem den 27. marts 2004 og 02. april
      2004 har aktivitet på siden resulteret i:
      </p>
      <ul>
@@ -451,8 +450,8 @@ sædvanligvis er</uri>.
 <title>Lukkede bugs placeringer</title>
 <body>
      <p>
-     De udviklere og hold som har lukket de fleste bugs i løbet af
-     denne periode er:
+     De udviklere og hold, som har lukket de fleste bugs i løbet af
+     denne periode, er:
      </p>
      <ul>
 <li><mail link="amd64@gentoo.org" >AMD64 Porting Team</mail>, med 76
@@ -478,8 +477,8 @@ sædvanligvis er</uri>.
 <title>Nye bugs placeringer</title>
 <body>
      <p>
-     De udviklere eller hold der er blevet tilskrevet de fleste nye
-     bugs i løbet af denne periode er:
+     De udviklere eller hold, der er blevet tilskrevet de fleste nye
+     bugs i løbet af denne periode, er:
      </p>
      <ul>
 <li><mail link="apache-bugs@gentoo.org" >Apache Herd</mail>, med 33
@@ -509,9 +508,9 @@ sædvanligvis er</uri>.
 
   <p><b>Flere X-Sessioner</b></p>
 
-  <p>XFree86 tillader dig at have flere X sessioner åbne på samme
+  <p>XFree86 tillader dig at have flere X-sessioner åbne på samme
     tid. Dette kan være brugbart hvis du ønsker eller har brug for to
-    forskellige desktop miljøer der er åbne samtidigt.</p>
+    forskellige desktop miljøer, der er åbne samtidigt.</p>
 
   <pre>
     <codenote>X bruger som standard displayet :0</codenote>
@@ -534,7 +533,7 @@ Desktoppene vil være på terminalerne F7-F12.
 		<body>
 		<p>De følgende udviklere forlod for nyligt Gentoo holdet:
 			<ul>
-				<li><e>ikke nogen denne uge</e></li>
+				<li><e>ingen i denne uge</e></li>
 			</ul>
 		</p>
 		</body>
@@ -544,7 +543,7 @@ Desktoppene vil være på terminalerne F7-F12.
 		<body>
 		<p>De følgende udviklere slog sig sammen med Gentoo Linux holdet:</p>
 		<ul>
-				<li><e>ikke nogen denne uge</e></li>
+				<li><e>ingen i denne uge</e></li>
 		</ul>
 		</body>
 	</section>
@@ -554,7 +553,7 @@ Desktoppene vil være på terminalerne F7-F12.
 		<p>De følgende udviklere ændrede for nyligt deres
 			roller indenfor Gentoo Linux projektet:</p>
 			<ul>
-				<li><e>ikke nogen denne uge</e></li>
+				<li><e>ingen i denne uge</e></li>
 			</ul>
 		</body>
 	</section>
@@ -583,14 +582,14 @@ Desktoppene vil være på terminalerne F7-F12.
 	<title>GWN Subscription Information</title>
 	<section>
 	<body>
-	<p>For at abonnemere på Gentoos ugentlige nyhedsbrev, send da
+	<p>For at abonnere på Gentoos ugentlige nyhedsbrev, send da
 	venligst en blank email til <mail
 	link="gentoo-gwn-subscribe@gentoo.org">gentoo-gwn-subscribe@gentoo.org</mail>(dette
 	er dog på engelsk).</p>
-	<p>For at afskrive abonnoment på Gentoos ugentlige
+	<p>For at afskrive abonnement på Gentoos ugentlige
 	nyhedsbrev, send da en blank email til <mail
 	link="gentoo-gwn-unsubscribe@gentoo.org">gentoo-gwn-unsubscribe@gentoo.org</mail>
-	fra den email addresse du abonnomerer fra.</p>
+	fra den email addresse du abonnerer fra.</p>
 	</body>
 	</section>
 </chapter>
