@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding="iso-8859-1"?> 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/printing-howto.xml,v 1.7 2004/04/14 19:01:01 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/printing-howto.xml,v 1.8 2004/04/14 19:18:47 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<guide link = "/doc/da/printing-howto.xml"> 
+<guide link = "/doc/da/printing-howto.xml" lang="da"> 
 
 <title>Gentoo vejledning til at printe</title> 
 
