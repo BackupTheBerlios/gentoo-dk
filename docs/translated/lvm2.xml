@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/lvm2.xml,v 1.1 2005/02/13 11:23:27 aaby Exp $ -->
+<!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
+
+<guide link = "/doc/da/lvm2.xml">
+<title>Gentoo LVM2 Installation</title>
+
+<author title="Forfatter">
+  <mail link="avi@CFFtechnologies.com">Avi Schwartz</mail>
+</author>
+<author title="Bidragsyder">
+  <mail link="rajiv@gentoo.org">Rajiv Manglani</mail>
+</author>
+<author title="Redaktør">
+  <mail link="neysx@gentoo.org">Xavier Neys</mail>
+</author>
+<author title="Oversætter">
+  <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
+</author>
+
+<abstract>
+Denne vejledning beskriver hvordan du sætter din Gentoo maskine op til
+at bruge Logical Volume Manager version 2 (LVM2).
+</abstract>
+
+<license/>
+
+<version>2.0.6</version>
+<date>2004-11-21</date>
+
+<chapter>
+<title>Introduktion</title>
+<section>
+<body>
+
+<p>
+Denne vejledning er baseret på et eksempel med to IDE harddiske. Dette
+betyder at du mere end sandsynligvis kommer til at ændre drevet,
+partitionsnavne og partitionsstørrelser til at passe til dine behov.
+</p>
+
+<warn>
+Dette dokument er ikke ment som et dokument der skal lære dig alt om
+LVM2. Det tjener som et tillæg til 
+Gentoo installations proceduren som det er beskrevet i <uri
+link="/doc/da/handbook/handbook-x86.xml?part=1&amp;chap=0">Håndbogen, Del
+1</uri>. Vær sikker på at du <c>læser</c> Gentoo Installations Manualen 
+<c>før</c> du starter din installations proces.
+</warn>
+
+<note>
+For en komplet LVM HOWTO peg da din browser mod
+<uri>http://tldp.org/HOWTO/LVM-HOWTO</uri>
+</note>
+
+</body>
+</section>
+<section>
+<title>Initielle krav</title>
+<body>
+
+<p>
+Hvis du laver en frisk installation af Gentoo, så bliver du nødt til
+at bruge en opstartbar CD med LVM2 understøttelse såsom en Gentoo
+LiveCD. Du kan finde LiveCD'en til en x86 arkitektur på vores <uri
+link="http://www.gentoo.org/main/en/mirrors.xml">filspejle</uri> side under
+<path>/releases/x86/2004.3/livecd</path>. Andre arkitekturer er måske
+også understøttet.
+</p>
+
+<p>
+Hvis installerer LVM2 på et system der allerede kører med noget ekstra
+harddisk plads, så får du brug for at slå LVM2 modulet
+(<path>dm-mod</path>) til. Dette modul er tilgængeligt i
+<path>gentoo-sources</path>, i <path>development-sources</path> and i
+<path>gentoo-dev-sources</path>. At kompilere din kerne og få LVM2 til
+at virke bliver dækket senere i denne vejledning.
+</p>
+
+<p>
+Ikke alle 2.4 kerner der stilles til rådighed af Gentoo understøtter LVM2!
+</p>
+
+</body>
+</section>
+<section>
+<title>Partitioner</title>
+<body>
+
+<p>
+Vores eksemplar system har to IDE harddiske og vil blive partitioneret
+som følger:
+</p>
+
+<ul>
+  <li>/dev/hda1  --  /boot</li>
+  <li>/dev/hda2  --  (swap)</li>
+  <li>/dev/hda3  --  /</li>
+  <li>/dev/hda4  --  Vil blive brugt af LVM2</li>
+  <li>/dev/hdb1  --  Vil blive brugt af LVM2</li>
+</ul>
+
+<impo>
+Vær opmærksom på partitionsnavnene da det er nemt at tage fejl af
+a'erne og b'erne, og partitionsnumrene. Et forkert skridt kan slette
+den forkerte partition. Du er blevet advaret!
+</impo>
+
+<p>
+Okay, så er det på tide at starte...
+</p>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
+<title>Installation</title>
+<section>
+<body>
+
+<p>
+Følg håndbogen, men med de følgende rettelser til kapitel <c>4. 
+Klargøring af diskene</c>:
+</p>
+
+<p>
+Brug <c>fdisk</c> som det er beskrevet i håndbogen, men brug
+partitions ordningen der blev nævnt ovenfor som et eksempel. Det er
+kun <e>et eksempel</e>, tilpas det til dine egne behov.
+</p>
+
+<p>
+Lav en lille fysisk /boot partition (hda1). I dette eksempel vil /boot
+ikke blive håndteret af LVM2. Denne partition vil indeholde din
+bootloader og dine kerner. En 64MB partition bør være mere end nok til
+et par kerne generationer.
+</p>
+
+<p>
+Lav en swap partition (hda2) og aktiver den.
+</p>
+
+<pre caption="At aktivere swap partitionen">
+# <i>mkswap /dev/hda2</i>
+# <i>swapon /dev/hda2</i>
+</pre>
+
+<p>
+Lav en  / (root) partition (hda3).  Hvis du er interesseret i at sætte
+din root partition under LVM styring (hvilket vi ikke anbefaler), så
+se ressource sektionen i slutningen af denne vejledning for et link
+til en mini-howto til hvordan du gør dette. Størrelsen på root
+partitionen behøves ikke være stor hvis du vil sætte 
+<path>/opt /usr /home /var</path> og <path>/tmp</path> i en LVM2 Volume Group
+(vg). I dette tilfælde vil 150M være tilstrækkeligt.
+</p>
+
+<note>
+Det er <b>ikke</b> anbefalet at sætte de følgende biblioteker i en 
+LVM2 partition: <path>/etc</path>, <path>/lib</path>, <path>/mnt</path>, 
+<path>/proc</path>, <path>/sbin</path>, <path>/dev</path> og <path>/root</path>.
+På denne måde, vil du stadig være i stand til at logge ind i dit
+system (hæmmet, men stadig i nogen grad brugbart, som root) hvis der
+er noget der går meget galt.
+</note>
+
+<p>
+Hvis vi antager at /boot, swap og root partionerne ikke bruger hele
+den fysiske disk, lav da en fjerde partition på denne disk og sæt den
+til type 8e (Linux LVM). Hvis du har flere fysiske drev som du vil
+bruge med LVM, lav da en partition på hver og giv dem den samme type (8e).
+</p>
+
+<note>
+Når man betragter de enorme størrelser nuværende diske har, så vil du
+måske overveje at dele dine harddiske ind i mindre partitioner i
+stedet for at lave en stor partition der vil blive tilføjet til en
+LVM2 volume group i en blok. LVM2 gør det nemt at udvide dine volumes
+trods alt. Dette efterlader dig med nogle uallokerede partioner du
+måske vil få brug for udenfor en LVM2 gruppe. For at sige det kort,
+lad være med at bruge din disk plads før du ved at du får brug for
+det. Som et eksempel kan det nævnes at en bidragsyder har delt sin 
+160&nbsp;Gb harddisk ind i 8 partitioner af 20&nbsp;Gb hver.
+</note>
+
+<p>
+Hente LVM2 <path>dm-mod</path> modulet.
+</p>
+
+<pre caption="At hente LVM2 modulet">
+# <i>modprobe dm-mod</i>
+</pre>
+
+<p>
+Gennemsøg og aktiver LVM:
+</p>
+
+<pre caption="At aktivere LVM">
+<comment>(Undgå at gennemsøge din cdrom)</comment>
+# <i>mkdir -p /etc/lvm</i>
+# <i>echo 'devices { filter=["r/cdrom/"] }' >/etc/lvm/lvm.conf</i>
+# <i>vgscan</i>
+  Reading all physical volumes.  This may take a while...
+  No volume groups found
+<comment>(Gør en tidligere opsat volume group tilgængelig)</comment>
+# <i>vgchange -a y</i>
+</pre>
+
+<p>
+Klargør partitionerne.
+</p>
+
+<pre caption="At klargøre partitionerne">
+# <i>pvcreate /dev/hda4 /dev/hdb1</i>
+  No physical volume label read from /dev/hda4
+  Physical volume "/dev/hda4" successfully created
+  No physical volume label read from /dev/hdb1
+  Physical volume "/dev/hdb1" successfully created
+</pre>
+
+<p>
+Sæt en volume group op. En volume group er resultatet af at kombinere
+flere fysiske enheder i en enkelt logisk enhed.
+</p>
+
+<p>
+I vores eksempel er <path>/dev/hda1</path>, <path>/dev/hda2</path> og
+<path>/dev/hda3</path> henholdvis <path>/boot</path>, swap og root
+partitionerne så vil bliver nødt til at kombinere
+<path>/dev/hda4</path> og <path>/dev/hdb1</path>. Dette kan gøres med
+en enkelt kommando, men som et eksempel vil vi lave vores volume group
+og udvide den.
+</p>
+
+<pre caption="At lave og udvide en volume group">
+<comment>(Lav en volume group kaldet vg)</comment>
+# <i>vgcreate vg /dev/hda4</i>
+  /etc/lvm/backup: fsync failed: Invalid argument <comment>(Ignorer denne advarsel)</comment>
+  Volume group "vg" successfully created
+<comment>(At udvide en allerede eksisterende volume group)</comment>
+# <i>vgextend vg /dev/hdb1</i>
+  /etc/lvm/backup: fsync failed: Invalid argument <comment>(Ignorer denne advarsel, igen og også senere)</comment>
+  Volume group "vg" successfully extended
+</pre>
+
+<p>
+Lav logical volumes.  Logical volumes er ækvivalente med de
+partitioner du normalt vil lave med fdisk i et ikke LVM2 miljø. I
+vores eksempel, vil vi lave de følgende partitioner:
+</p>
+
+<table>
+<tr>
+  <th>Bibliotek</th>
+  <th>Størrelse</th>
+</tr>
+<tr>
+  <ti>/usr</ti>
+  <ti>10 GB</ti>
+</tr>
+<tr>
+  <ti>/home</ti>
+  <ti>5 GB</ti>
+</tr>
+<tr>
+  <ti>/opt</ti>
+  <ti>5 GB</ti>
+</tr>
+<tr>
+  <ti>/var</ti>
+  <ti>10 GB</ti>
+</tr>
+<tr>
+  <ti>/tmp</ti>
+  <ti>2 GB</ti>
+</tr>
+</table>
+
+<p>
+Eftersom vi vil bruge LVM2 vil vi ikke bekymre ret meget som
+partitionsstørrelserne, da de altid kan udvides som det bliver nødvendigt.
+</p>
+
+<note>
+Som Terje Kvernes kommenterede, er det nemmere at forøge størrelsen af
+en partition end det er at formindske den. Du vil derfor ønske at
+starte med mindre partitioner og forøge deres størrelse når det bliver
+nødvendigt.
+</note>
+
+<pre caption="At lave og udvide logical volumes">
+# <i>lvcreate -L10G -nusr  vg</i>
+  Logical volume "usr" created <comment>(Flere lignende beskeder vil ikke blive vist)</comment>
+# <i>lvcreate -L5G  -nhome vg</i>
+# <i>lvcreate -L5G  -nopt  vg</i>
+# <i>lvcreate -L10G -nvar  vg</i>
+# <i>lvcreate -L2G  -ntmp  vg</i>
+<comment>(Som et eksempel, lad os udvide et logical volume med 5 ekstra Gbytes)</comment>
+# <i>lvextend -L+5G /dev/vg/home</i>
+</pre>
+
+<p>
+Lav filsystemer på logical volumes på den samme måde som du vil på en
+almindelig partition. Vi bruger ext3 på logical volumes men et hvilket
+som helst andet filsystem du ønsker vil også virke:
+</p>
+
+<pre caption="At lave filsystemer">
+# <i>mke2fs -j /dev/vg/usr</i>
+# <i>mke2fs -j /dev/vg/home</i>
+# <i>mke2fs -j /dev/vg/opt</i>
+# <i>mke2fs -j /dev/vg/var</i>
+# <i>mke2fs -j /dev/vg/tmp</i>
+</pre>
+
+<p>
+Mount dine partitioner som det er beskrevet i håndbogen og mount dine LVM2 logical
+volumes som om de var partitioner. Udskift det sædvanelige <path>/dev/hdxx</path>
+med <path>/dev/vg/logical_volumename</path>.
+</p>
+
+<pre caption="At mounte dine logical volumes">
+<comment>(Vær sikker på at du har mounted din root partition som beskrevet i håndbogen først)</comment>
+# <i>mkdir /mnt/gentoo/usr</i>
+# <i>mount /dev/vg/usr /mnt/gentoo/usr</i>
+# <i>mkdir /mnt/gentoo/home</i>
+# <i>mount /dev/vg/home /mnt/gentoo/home</i>
+# <i>mkdir /mnt/gentoo/opt</i>
+# <i>mount /dev/vg/opt /mnt/gentoo/opt</i>
+# <i>mkdir /mnt/gentoo/var</i>
+# <i>mount /dev/vg/var /mnt/gentoo/var</i>
+# <i>mkdir /mnt/gentoo/tmp</i>
+# <i>mount /dev/vg/tmp /mnt/gentoo/tmp</i>
+</pre>
+
+<note>
+Resten af installationsdelen af håndbogen er stort set uændret, så vi
+vil ikke gennemgå denne for dig igen, bortset fra nogle små forskelle.
+</note>
+
+<p>
+Når du sætter din kerne op, vær da sikker på at sætte den op til at
+understøtte LVM2 (det er ikke alle 2.4 kerner der gør). Vælg LVM2
+modulet som følger:
+</p>
+
+<pre caption="At vælge LVM2 modulet i en 2.4.x kerne">
+Multi-device support (RAID and LVM)  ---&gt;
+  [*] Multiple devices driver support (RAID and LVM)
+  &lt; &gt;  RAID support
+<comment>(Bemærk at LVM er valgt fra med vilje, denne er til LVM1)</comment>
+  &lt; &gt;  Logical volume manager (LVM) support
+  &lt;M&gt;  Device-mapper support
+  &lt; &gt;   Mirror (RAID-1) support
+</pre>
+
+<pre caption="At vælge LVM2 module i en 2.6.x kerne">
+Device Drivers  ---&gt;
+ Multi-device support (RAID and LVM)  ---&gt;
+   [*] Multiple devices driver support (RAID and LVM)
+   &lt; &gt;   RAID support
+   &lt;M&gt;   Device mapper support
+</pre>
+
+<p>
+Det kompilerede modul hedder <path>dm-mod.ko</path>
+</p>
+
+<p>
+Efter du har bygget din kerne og installeret dens moduler, tilføj da
+den følgende linje til din
+<path>/etc/modules.autoload.d/kernel-{KV}</path> hvor  {KV}
+repræsenterer din kerneversion (2.4 eller 2.6) sådan at LVM2 modulet
+bliver hentet når din maskine bliver startet op:
+</p>
+
+<pre caption="At tilføje LVM2 modulet i /etc/modules.autoload.d/kernel-2.6">
+# <i>nano -w /etc/modules.autoload.d/kernel-2.6</i>
+<comment>(Tilføj den følgende linje)</comment>
+dm-mod
+</pre>
+
+<p>
+Installer nu lvm2 pakken.
+</p>
+
+<impo>
+Vær sikker på at dit <path>/usr/src/linux</path> symlink peger på den
+kernekildekode du bruger, fordi lvm2 ebuilden afhænger af
+device-mapper ebuilden som vil tjekke tilstedeværelsen af en krævet
+kildekode fil under <path>/usr/src/linux/include/linux</path>.
+</impo>
+
+<pre caption="At emerge LVM2 pakken">
+# <i>emerge lvm2</i>
+<comment>(På skrivende tidspunkt er den stabile version 2.00.08.
+Med 2.00.08, skal du undgå at lvm2 søger på dit cdrom drev ved at udføre::</comment>
+# <i>echo 'devices { filter=["r/cdrom/"] }' >> /etc/lvm/lvm.conf</i>
+
+<comment>(Version 2.00.15 og senere kommer med en /etc/lvm/lvm.conf
+Rediger din /etc/lvm/lvm.conf og følg kommentarerne </comment>
+# <i>nano -w /etc/lvm/lvm.conf</i>
+</pre>
+
+<p>
+Når du redigerer din <path>/etc/fstab</path> fil, så følg håndbogen og
+tilføj dine LVM2 logical volumes som det er nødvendigt. Her er igen et
+par linjer som er nødvendige i vores eksempel:
+</p>
+
+<pre caption="Udpluk af /etc/fstab">
+/dev/hda1     /boot   ext3    noauto,noatime 1 1
+/dev/hda2     none    swap    sw             0 0
+/dev/hda3     /       ext3    noatime        0 0
+# Logical volumes
+/dev/vg/usr   /usr    ext3    noatime        0 0
+/dev/vg/home  /home   ext3    noatime        0 0
+/dev/vg/opt   /opt    ext3    noatime        0 0
+/dev/vg/var   /var    ext3    noatime        0 0
+/dev/vg/tmp   /tmp    ext3    noatime        0 0
+</pre>
+
+<p>
+Når du når slutningen af installationsdelen af håndbogen, så glem ikke
+at unmounte alle dine LVM2 logical volumes og kør for en god sags
+skyld den følgende kommando før du genstarter:
+</p>
+
+<pre caption="At lukke ned for LVM2">
+# <i>vgchange -a n</i>
+</pre>
+
+<p>
+Genstart din maskine og alle partitionerne bør være synlige og mountet.
+</p>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
+<title>Ressourcer</title>
+<section>
+<body>
+
+<ul>
+  <li>
+    Den officielle <uri link="http://sources.redhat.com/lvm2">LVM2 hjemmeside</uri>
+  </li>
+  <li>
+    <uri link="http://tldp.org/HOWTO/LVM-HOWTO">LVM Howto'en</uri>
+  </li>
+  <li>
+    Daniel Robbins's artikler omkring LVM hos IBM's DeveloperWorks:
+    <uri>http://www-106.ibm.com/developerworks/linux/library/l-lvm/?dwzone=linux</uri>
+    og
+    <uri>http://www-106.ibm.com/developerworks/linux/library/l-lvm2.html?dwzone=linux</uri>
+  </li>
+  <li>
+    Hvordan du booter dit root filsystem op på en LVM1:
+    <uri>http://www.the-infinite.org/archive/docs/lvm/howto-boot-off-root-lv.txt</uri>
+  </li>
+</ul>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
+<title>Anerkendelser</title>
+<section>
+<body>
+
+<p>
+Tak til <mail link="bangert@gentoo.org">Thilo Bangert</mail> og <mail
+link="terjekv@math.uio.no">Terje Kvernes</mail> for deres hjælp og
+kommentarer til dette dokument.
+</p>
+
+</body>
+</section>
+</chapter>
+</guide>
