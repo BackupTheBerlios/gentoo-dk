@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.1 2004/01/15 17:43:22 fangel Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.2 2004/01/22 13:54:56 aaby Exp $ -->
 
 <sections>
 <section>
@@ -23,12 +26,12 @@ forskelligt afhængigt af, hvilken arkitektur du har.
 <body>
 
 <p>
-Gentoo er officielt til rådighed til seks arkitekturer, og har
-eksperimentel understøttelse til endnu to. De officielle arkitekturer
+Gentoo er officielt til rådighed til syv arkitekturer, og har
+eksperimentel understøttelse til endnu en. De officielle arkitekturer
 er <b>x86</b> (inklusiv alle under-arkitekturerne, som f.eks. Pentium,
 Athlon, osv.), <b>sparc</b> (både Sparc32 og Sparc64), <b>ppc</b>
-(PowerPC), <b>hppa</b>, <b>alpha</b> og <b>mips</b>.  Experimentale
-understøttelse er til rådighed for <b>amd64</b> og <b>ia64</b>.
+(PowerPC), <b>hppa</b>, <b>alpha</b>, <b>mips</b> og <b>amd64</b>.  Experimentale
+understøttelse er til rådighed for <b>ia64</b>.
 </p>
 
 <p>
@@ -67,6 +70,11 @@ fortsætter med Gentoo installationen:
 <li>
   Til <e>MIPS arkitekturen</e> burde du tjekke <uri
   link="/doc/en/mips-requirements.xml">MIPS Hardwarekrav</uri> dokumentet (engelsk)
+</li>
+<li>
+   Til <e>AMD64 arkitekturen</e>, bør du tjekke med <uri
+   link="http://dev.gentoo.org/~brad_mssw/amd64-tech-notes.html">AMD64 Tech
+   Noter</uri>(engelsk)
 </li>
 </ul>
 
@@ -121,7 +129,8 @@ brugt til at bygge hele systemet fra en bootstrappet
 allerede et Gentoo basissystem, som er blevet bygget for dig. Som vi
 vil forklare senere, kan du også installere Gentoo uden at kompilere
 noget som helst (undtagen din kerne). Hvis du vil det, skal du bruge
-en <e>stage3</e>-tarball.
+en <e>stage3</e>-tarball og en Gentoo LiveCD der indeholder de allered
+byggede pakker.
 </p>
 
 <p>
@@ -212,7 +221,8 @@ At vælge <e>stage3</e>, giver dig den hurtigste installation af Gentoo
 Linux, men det betyder også at dit basissystem vil have de
 optimeringsindstillinger, som vi har valgt for dig (og lad os være
 ærlig, det er gode indstillinger, som vi med omhug har valgt til at forøge
-præstationerne, samt vedligeholde stabilitet).
+præstationerne, samt vedligeholde stabilitet). <e>stage3</e> kræves
+også, hvis du vil installere Gentoo ved brug af præbyggede pakker.
 </p>
 
 <table>
@@ -288,7 +298,8 @@ pakker, så du kan installere Gentoo uden netværk.
 virkeligt, præ-kompilerede pakker. Idet at Gentoo handler om valg, vil
 vi give vores brugere muligheden for at installere Gentoo
 hurtigt. Samlingen af præ-kompilerede pakker er kaldet <e>Gentoo
-Reference Platform</e> (GRP).
+Reference Platform</e> (GRP). Vil vil diskutere GRP i større omfang
+senere under installationen.
 </p>
 
 <p>
@@ -332,6 +343,12 @@ der er mulig til din arkitektur:
   <ti>+</ti>
   <ti></ti>
   <ti></ti>
+</tr>
+<tr>
+   <ti>amd64</ti>
+   <ti>+</ti>
+   <ti></ti>
+   <ti></ti>
 </tr>
 </table>
 
@@ -377,7 +394,7 @@ kildekode eller præ-kompilerede pakker.
   <th>-</th>
   <ti>
     Indeholder ingen etaper, ingen portage-snapshot, ingen GRP-pakker og derfor er den ikke 
-    brugbar til netværkløse installationer eller GRP-installationer
+    brugbar til netværkløse installationer
   </ti>
 </tr>
 </table>
@@ -447,7 +464,7 @@ og en hel del CLI-værktøjer ... Det kan blive brugt til at reparere et
 (distcc, ccache aktiveret) værtøjskasse (toolchain); start alle dine
 systemer på dit netværk ved at bruge denne CD og oplev kraften af
 distribueret kompilering. Denne CD kan blive brugt til at installere
-Gentoo, men den indeholder ikke GRP, distfiles, et portage-snapshot
+Gentoo, men den indeholder ikke GRP, kildekode og hverken portage-snapshot
 eller stage-filer.
 </p>
 
@@ -499,9 +516,11 @@ link="http://www.knoppix.com">Knoppixs hjemmeside</uri>.
 
 <p>
 Hvis du starter med at installere fra en anden allerede installeret
-Linux-distribution, så kan du gavne fra de værktøjer, som allerede er til rådighed på din
-installeret Linux-distribution. Du kan allerede springe resten over i dette kapitel og
-fortsætte med <uri link="?part=1&amp;chap=3">Opsætning af dit netværk</uri>.
+Linux-distribution, så kan du gavne fra de værktøjer, som allerede er
+til rådighed på din installeret Linux-distribution. Hvis du vil
+installere Gentoo fra en allerede eksisterende distribution, så bør du
+hoppe resten af dette kapitel over og fortsætte med <uri
+link="?part=1&amp;chap=3">Opsætning af dit netværk</uri>.
 </p>
 
 </body>
@@ -603,6 +622,10 @@ Den følgende tabel viser de relative stier til hvor du kan finde LiveCD ISOer
   <ti>alpha</ti>
   <ti><path>experimental/alpha/livecd</path></ti>
 </tr>
+<tr>
+   <ti>amd64</ti>
+   <ti><path>experimental/amd64/livecd</path></ti>
+</tr>
 </table>
 
 <p>
@@ -614,6 +637,15 @@ forskellige datoer (som
 f.eks.<path>livecd-x86-cd1-20031029.iso</path>) vælg den nyeste.
 </p>
 
+<p>
+Hvis du er bekymret om din downloaded fil er korrupt eller ikke, så
+kan du tjekke dens MD5 checksum og sammenligne den med den MD5
+checksum vi stiller til rådighed (såsom
+<path>livecd-x86-cd1-20031029.iso.md5</path>). Du kan tjekke MD5
+checksummen med <c>md5sum</c> værktøjet under Linux/Unix eller <uri
+link="http://www.md5summer.org">md5summer</uri> til Windows.
+</p>
+  	 
 <note>
 Vær venlig og tjek beskrivelserne i <uri
 link="http://store.gentoo.org">Gentoo Store</uri> for at vide, hvilken
@@ -668,7 +700,7 @@ Vær sikker på at vælge den undersektion, som er relevant for din arkitektur.
 </p>
 
 <ul>
-<li><uri link="#doc_chap3_sect2">Start af x86 LiveCD(er)</uri></li>
+<li><uri link="#doc_chap3_sect2">Start af x86 eller AMD64 LiveCD(er)</uri></li>
 <li><uri link="#doc_chap3_sect3">Start af Alpha LiveCD(er)</uri></li>
 <li><uri link="#doc_chap3_sect4">Start af HPPA LiveCD(er)</uri></li>
 <li><uri link="#doc_chap3_sect5">Start af SPARC LiveCD(er)</uri></li>
@@ -679,11 +711,11 @@ Vær sikker på at vælge den undersektion, som er relevant for din arkitektur.
 </subsection>
 
 <subsection>
-<title>Start af x86 LiveCD(er)</title>
+<title>Start af x86 eller AMD64 LiveCD(er)</title>
 <body>
 
 <impo>
-Denne undersektion er <e>kun</e> lavet til x86-arkitekturer. Læs hele undersektionen
+Denne undersektion er <e>kun</e> lavet til x86 og amd64 arkitekturer. Læs hele undersektionen
 før du fortsætter, fordi du ikke altid har tid til at læse før du udøver.
 </impo>
 
@@ -1260,7 +1292,7 @@ Re-enter password: <comment>(skriv jens' kodeord igen)</comment>
 <body>
 
 <impo>
-Kun på x86, alpha, sparc og ppc kan vi levere muligheden for at starte en ssh-daemon 
+Kun på x86, amd64, alpha, sparc og ppc kan vi levere muligheden for at starte en ssh-daemon 
 i installationsprocessen.
 </impo>
 
@@ -1330,10 +1362,6 @@ forklare, hvordan man gør dette med nogle populære værktøjer.
     Med cdrecord, kan du bare skrive <c>cdrecord dev=/dev/hdc</c> (udskift
     <path>/dev/hdc</path> med dit CD-RW-drevs enhedssti) fulgt af
     stien til ISO-filen :)
-  </li>
-  <li>
-    Med 'Mac OS X's 'Finder' kan du markere ISO-filen og klik på <c>File</c> og vælg <c>Burn
-    Image</c>.
   </li>
 </ul>
 
