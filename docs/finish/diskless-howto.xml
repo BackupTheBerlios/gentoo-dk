@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/diskless-howto.xml,v 1.3 2004/04/01 19:40:23 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/diskless-howto.xml,v 1.4 2004/04/13 21:09:58 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/diskless-howto.xml" lang="da">
@@ -34,8 +34,8 @@ Denne HOWTO vil hjælpe dig med at opsætte diskfrie noder med Gentoo Linux.
 
 <license/>
 
-<version>1.2</version>
-<date>28. Marts, 2003</date>
+<version>1.3</version>
+<date>11. April, 2003</date>
 
 <chapter>
 <title>Introduktion</title>
@@ -179,7 +179,7 @@ File systems ---&gt;
     [*]   Provide NFSv3 server support
 
 <comment>
-Hvis du vil have adgang til Internet igennem din master's node og/eller har en sikker firewall, vær sikker på at tilføje understøttelse til iptables
+Hvis du vil have adgang til Internet igennem din masters node og/eller har en sikker firewall, vær sikker på at tilføje understøttelse til iptables
 </comment>
   [*] Network packet filtering (replaces ipchains)
   IP: Netfilter Configuration ---&gt;
@@ -322,6 +322,12 @@ og krævede systemfiler. Vi bruger <path>/diskless</path>, men du kan vælge
 den placering, som du ønsker.  Kopiér nu slaves bzImage ind i
 <path>/diskless</path> biblioteket:
 </p>
+
+<note>
+Hvis du bruger forskellige arkitekturer, bør du gemme hver opsætning som
+<path>.config_arch</path>. Gør det samme med billed-filerne: gem dem i
+<path>/diskless</path> som <path>bzImage_arch</path>.
+</note>
 
 <pre caption="Kopiering af slaves kerne">
 # <i>mkdir /diskless</i>
@@ -566,6 +572,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 class "etherboot" {
     if substring (option vendor-class-identifier, 0, 9) = "Etherboot" {
     filename "/diskless/vmlinuz";
+    }
 }
 
   pool {
@@ -722,6 +729,20 @@ sikkert en god idé at lave master til TFTP-serveren.
 </body>
 </section>
 <section>
+<title>Installation af TFTP-server</title>
+<body>
+
+<p>
+En virkelig anbefalet tftp-server er klar som tftp-hpa pakken. Denne tftp-server er skrevet af SYSLINUX-forfatteren og den virker meget godt sammen med pxelinux. For at installere, bare tast:
+</p>
+
+<pre caption="Installation af tftp-serveren">
+# <i>emerge tftp-hpa</i>
+</pre>
+
+</body>
+</section>
+<section>
 <title>Opsætning af TFTP-server</title>
 <body>
 
@@ -867,7 +888,7 @@ Dette er ikke krævet, hvis du bruger PXE-boot.
 </note>
 
 <p>
-Etherboot opstarter netværks-opstartsbilledfiler fra en TFTP-server. Som PXE'en, er dette sammenlignelig med LILO eller GRUB. <c>mknbi</c>-værktøjet sørger for at du kan oprette forskellige billedfiler, som bruger forskellige valgmuligheder.
+Etherboot opstarter netværks-opstartsbilledfiler fra en TFTP-server. Som PXEen, er dette sammenlignelig med LILO eller GRUB. <c>mknbi</c>-værktøjet sørger for at du kan oprette forskellige billedfiler, som bruger forskellige valgmuligheder.
 </p>
 
 </body>
@@ -891,7 +912,7 @@ Du vil få brug for <c>mknbi</c>-pakken (værktøj til at lave tagged kerne-billedf
 <body>
 
 <p>
-I denne sektion vil vi oprette en simpel etherboot-billedfil. Idet DHCP-serveren uddeler klientens rod-sti i "option root-path" dhcp.conf, skal vi ikke tilføje den her. Flere detaljer kan blive fundet i mknbi's manual.
+I denne sektion vil vi oprette en simpel etherboot-billedfil. Idet DHCP-serveren uddeler klientens rod-sti i "option root-path" dhcp.conf, skal vi ikke tilføje den her. Flere detaljer kan blive fundet i mknbis manual.
 </p>
 
 <pre caption="mknbi manual">
@@ -899,15 +920,15 @@ I denne sektion vil vi oprette en simpel etherboot-billedfil. Idet DHCP-serveren
 </pre>
 
 <p>
-Oprettelse af boot-billedfiler. Dette vil oprette en ELF opstartbar billedfil, som kan tilføje DHCP og rod-stien til kernen. Den tvinger også kernen til at browse netværket for en DHCP-server.
+Oprettelse af opstart-billedfiler. Dette vil oprette en ELF opstartbar billedfil, som kan tilføje DHCP og rod-stien til kernen. Den tvinger også kernen til at browse netværket for en DHCP-server.
 </p>
 
-<pre caption="Oprettelse af netboot-billedfiler">
+<pre caption="Oprettelse af netopstart-billedfiler">
 # <i>mkelf-linux -ip=dhcp /diskless/bzImage &gt; /diskless/vmlinuz </i>
 </pre>
 
 <note>
-Til arkitektur-specifikke billedfiler, skal du indtaste <c>bzImage_arch</c> og <c>vmlinux_arch</c>.
+Til arkitektur-specifikke billedfiler, skal du indtaste <c>bzImage_arch</c> og <c>vmlinuz_arch</c>.
 </note>
 
 </body>
