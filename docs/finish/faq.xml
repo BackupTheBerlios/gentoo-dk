@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-	 <!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/faq.xml,v 1.8 2004/05/16 17:33:52 broeman Exp $ -->
+	 <!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/faq.xml,v 1.9 2004/05/16 17:37:48 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/faq.xml" lang="da">
@@ -556,7 +556,7 @@ proxyen er fuldt understøttet.
 </p>
 
 <pre caption="Brug af emerge-webrsync">
-~# <c>emerge-webrsync</c>
+# <i>emerge-webrsync</i>
 </pre>
 
 </body>
@@ -714,7 +714,7 @@ Hvorfor kan min bruger ikke bruge deres egen crontab?
 <body>
 
 <p>
-Du kan tilføje brugeren til <i>cron</i>-gruppen.
+Du kan tilføje brugeren til <c>cron</c>-gruppen.
 </p>
 
 </body>
@@ -991,7 +991,7 @@ fejler, prøv de forskellige Gentoo Linux mail-lister vist på <uri
 link="http://www.google.com">Google</uri>.  For at søge igennem Gentoo
 mail-lister, tast bare "lists.gentoo.org foo" for at søge for "foo".
 Hvis alt andet fejler, eller du kan bare hænge ud med os Gentoo folk,
-besøg os på IRC: <i>#gentoo</i> på <i>irc.freenode.net</i>.
+besøg os på IRC: <c>#gentoo</c> på <c>irc.freenode.net</c>.
 </p>
 
 </body>
