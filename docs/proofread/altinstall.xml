@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="utf-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/altinstall.xml,v 1.2 2004/09/04 10:22:58 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/altinstall.xml,v 1.1 2004/09/29 18:53:59 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/en/altinstall.xml">
@@ -68,11 +68,11 @@ f.eks. mangel af en CDROM eller en computer, der kan boote CD'er.
 <p>
 Hvis den normale boot-fra-CD installationsmetode ikke virker for dig
 (eller du bare ikke ønsker det), er hjælp nu til rådighed. Dette
-dokument tjener formålet med at levere et arkiv af alternative Gentoo
+dokument tjener formålet at levere et arkiv af alternative Gentoo
 Linux installationsteknikker for dem, der mangler det.  Eller, hvis du
 ønsker det, tjener den formålet med at levere et sted for at tilføje
 dine mærkelige installationsmetoder.  Hvis du har en
-installationsmetode, som du selv synes er brugbart, eller du har
+installationsmetode, som du selv synes er brugbar, eller du har
 udtænkt en sjov metode for at installere Gentoo, hold dig endelig ikke
 tilbage med at skrive noget og <mail link="antifa@gentoo.org">sende
 det til mig</mail> (på Engelsk).
@@ -90,8 +90,8 @@ det til mig</mail> (på Engelsk).
 <p>
 Hent Smart BootManager <uri>http://btmgr.sourceforge.net/download.html</uri>.
 Linux kildekoder eller binær format og windows .exe versioner er til
-rådighed, samt mange sprog-pakker. Dog, på dette tidspunkt, den
-anbefalede metode ville være at bruge det binære format, idet
+rådighed, samt mange sprog-pakker. Dog er, på dette tidspunkt, den
+anbefalede metode at bruge det binære format, idet
 kildekoderne ikke kan samles med nyere versioner af NASM.
 </p>
 
@@ -106,9 +106,9 @@ opretter din opstartdiskette, som set forneden.
 
    -t theme     select the theme to be used, in which the theme could be:
                    us = English theme       de = German theme 
-                  hu = Hungarian theme     zh = Chinese theme 
-                  ru = Russian theme       cz = Czech theme
-                  es = Spanish theme       fr = French theme 
+                   hu = Hungarian theme     zh = Chinese theme 
+                   ru = Russian theme       cz = Czech theme
+                   es = Spanish theme       fr = French theme 
                    pt = Portuguese theme 
 
                  
@@ -116,7 +116,7 @@ opretter din opstartdiskette, som set forneden.
                 for Linux:
                   /dev/fd0 is the first floppy driver, 
                   /dev/hda is the first IDE harddisk driver.
-                   /dev/sda is the first SCSI harddisk driver.
+                  /dev/sda is the first SCSI harddisk driver.
                 for DOS:
                    0   is the first floppy drive
                    128 is the first hard drive;
@@ -232,8 +232,8 @@ Brænd en LiveCD iso-fil.
 Få den sidste nye portage snapshot fra
 <uri>http://distro.ibiblio.org/pub/linux/distributions/gentoo/snapshots/</uri>
 (eller dit favorit <uri
-link="http://www.gentoo.org/main/en/mirrors.xml">filspejl</uri>). Enten
-placer denne tarball på en eksisterende partition på den computer, du
+link="http://www.gentoo.org/main/en/mirrors.xml">filspejl</uri>). Placer
+enten denne tarball på en eksisterende partition på den computer, du
 installerer på, eller brænd den til en CD.
 </p>
 
@@ -297,7 +297,7 @@ Noter at du skal have versionerne af hver pakke synced med dit portage-træ.
 Tag disketten til computer, som har hurtig adgang. Hvis du tager et
 kig på <path>stage1.list</path>-filen, vil du se at den giver dig
 flere steder for at hente. Desværre, oplister den også forskellige
-URLs til hver pakke, som ikke hvad du ønsker. Ryd op i alle, undtagen
+URLs til hver pakke, som ikke er hvad du ønsker. Ryd op i alle, undtagen
 en af URLene først:
 </p>
 
@@ -333,9 +333,9 @@ mulighed for at køre <c>bootstrap.sh</c>. Gentag den samme
 <body>
 
 <p>
-Du skal bruge et netværkskort på den diskfrie klient, som bruger
-PXE-protokollen til at opstarte, som mange 3com-korte. Du vil også få
-brug for en BIOS, som understøtter opstart fra PXE.
+Du skal bruge et netværkskort på den diskfrie klient, der bruger
+PXE-protokollen til at opstarte, hvilket mange 3com-korte gør. Du vil
+også få brug for en BIOS, som understøtter opstart fra PXE.
 </p>
 
 </body>
@@ -441,7 +441,7 @@ linie i <path>/etc/exports</path> opsætningsfilen:
 </pre>
 
 <p>
-Opdater din værter:  En vigtigt ting at gøre nu er at ændre din
+Opdater dine værter:  En vigtigt ting at gøre nu er at ændre din
 <path>/etc/hosts</path> fil til at passe til dine behov.
 </p>
 
@@ -598,7 +598,7 @@ bare en fil, som ender med .tbz eller .tar.gz). Forfatteren brugte RedHat Linux 
 <p>
 Først vil vi lave plads til en partition til Gentoo ved at ændre størrelsen på vores nuværende Linux
 partition, mounte partitionen, untar tarball'en som er mountet, chroot
-inde i psuedo-systemet og starte samlingen. Når bootstrap-processen er færdig,
+inde i pseudo-systemet og starte samlingen. Når bootstrap-processen er færdig,
 vil vi gøre os nogle afsluttende opsætninger af systemet, så vi er sikker på at den
 starter op, og så er vi klar til at genstarte og bruge Gentoo.
 </p>
@@ -652,12 +652,13 @@ parted, "partition editor", og vi kan få det fra
 </p>
 
 <note>
-Der er også andre værktøjer som kan ændre partitionsstørrelsen, men forfatteren er
-ikke sikker på/ikke interesseret i om PartitionMagic(tm) eller andre softwareprodukter af denne type gør
-det samme job. Det er op til læseren at finde dem.
+Der er også andre værktøjer som kan ændre partitionsstørrelsen, men
+forfatteren er ikke sikker på/ikke interesseret i om
+PartitionMagic(tm) eller andre softwareprodukter af denne type gør det
+samme job. Det er op til læseren at finde dem.
 </note>
 
-<p> 
+<p>
 Slå op på siden, og se efter hvilket filsystem du ønsker at ændre, og se om 
 parted kan gøre det. Hvis ikke, er du uheldig og skal fjerne nogle partitioner
 for at gøre plads til Gentoo, og geninstallere tilbage. Bare start med at hente
@@ -671,8 +672,7 @@ Her er hvordan jeg gjorde det for mit system.
 </p>
 
 <impo>
-Vær sikker på at de ting du vil gøre er understøttet af
-parted!
+Vær sikker på at de ting du vil gøre er understøttet af parted!
 </impo>
 
 <p>
@@ -700,7 +700,7 @@ Maxsize=268966912
 </pre>
 
 <p>
-Vi vil nu fortsætte med at samlingen af parted. Hvis det ikke allerede er hentet
+Vi vil nu fortsætte med samlingen af parted. Hvis det ikke allerede er hentet
 og udpakket, så gør det nu og cd ind i den tilsvarende folder. Kør nu følgende
 kommandoer for at samle værktøjet og kopiere det til din diskette.
 </p>
@@ -754,8 +754,11 @@ for at se om det virkeligt virker. Det bør tage imellem 2 og 30 minutter.
 </impo>
 
 <p>
-Når du har ændret størrelsen, start op på din gamle linux, som beskrevet. Så gå til
-<uri link="/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=4">Gentoo-håndbogen: Forberedelse af diske</uri> og følg instruktionerne. Når du kommer til chrooting, brug følgende kommand for at skylde dit miljø:
+Når du har ændret størrelsen, start op på din gamle linux, som
+beskrevet. Så gå til <uri
+link="/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=4">Gentoo-håndbogen:
+Forberedelse af diske</uri> og følg instruktionerne. Når du kommer til
+chrooting, brug følgende kommand for at skylde dit miljø:
 </p>
 
 <pre caption="Skyldning af miljøet ved en chroot">
