@@ -188,7 +188,7 @@ installationen (sådan som kernen eller LVM).
 <p>
 Delen om at <uri
 link="/doc/da/handbook/handbook.xml?part=1">Installere Gentoo</uri> i
-vores <uri link="/doc/da/handbook/index.xml">Gentoo håndbog</uri>
+vores <uri link="/doc/da/handbook/index.xml">Gentoo-håndbog</uri>
 forklarer hvordan man installerer Gentoo på dit system. Det indeholder
 instruktioner til alle bruger og alle arkitekturer.
 Installationsvejledningerne vil trin for trin hjælpe dig igennem
@@ -198,7 +198,7 @@ du selv vil bygge fra bunden af.
 </p>
 
 <p>
-Installationsvejledningerne er overtaget af Gentoo håndbog
+Installationsvejledningerne er overtaget af Gentoo-håndbogens
 instruktioner, men er stadig online og vedligeholdt, indtil den
 nye Gentoo Linux kommer.
 Installationsvejledningerne er til rådig for følgende arkitekturer:
@@ -488,7 +488,7 @@ applikationsspecifikke vejledninger.
 </body>
 </section>
 <section>
-<title>Desktop Konfiguration</title>
+<title>Desktop Opsætning</title>
 <body>
 <!--
 <p>
