@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/openmosix-howto.xml,v 1.1 2004/01/02 12:09:23 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/openmosix-howto.xml,v 1.1 2004/01/02 13:04:50 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/openmosix-howto.xml">
@@ -45,7 +45,7 @@ være baseret omkring Gentoo Linux distributionen. Vores intention er,
 at lave dette så brugervenligt som muligt og hjælpe Linux
 nybegynderen. Hvor en erfaren bruger nemt kunne flette de mange
 HOWTO'er omkring openMosix, diskfri noder og netværk sammen, da håber
-vi, at denne HOWTO kan lette proceduren for brugere, med mindre erfaring.
+vi, at denne HOWTO kan lette proceduren for brugere med mindre erfaring.
 </p>
 
 <note>
@@ -65,7 +65,7 @@ tilbage hertil for at fortsætte med den faktiske installation af clusteren.
 <p>
 OpenMosix er en patch til Linux-kernen, der tillader flere værter at
 virke, som et single system image (SSI). Dette resulterer i flere
-værter, der <e>virker</e> som en stor vært med flere processorer. I
+værter, der <e>virker</e> som én stor vært med flere processorer. I
 skrivende stund er den nyeste udgivelse af openMosix-kerne-patchen
 version 2.4.22 og openMosix-brugerværktøjerne har version 0.3.4. Der
 er et stort udvalg af information omkring openMosix på
@@ -127,7 +127,7 @@ For at få denne kildekode, skal du bare bruge <c>emerge</c>:
 
 <p>
 Kernen er den software, der sidder mellem din hardware og alt andet
-software, du har kørende på din maskine, essentielt er det hjertet af
+software du har kørende på din maskine, essentielt er det hjertet af
 et kernebaseret operativsystem. Når din computer er startet,
 eksekverer BIOS'en de instruktioner, der findes på den reserverede boot
 plads af din harddisk. Disse instruktioner er typisk en boot-loader,
@@ -184,11 +184,11 @@ nuværende opsætningsfil:
 </pre>
 
 <p>
-Den allerøverste menu bør hedde <c>openMosix ---&gt;</c>. Hvis den ikke er, 
-bliver du nødt til at emerge kerne kildekoden med openMosix patchen (se <uri
-link="#doc_chap1_sect4">Før du starter</uri>). Gå til den følgende
-undermenu og vær sikker på, at de følgende ting er valgt som
-indbygget (og <e>IKKE</e> som modul):
+Den allerøverste menu bør hedde <c>openMosix ---&gt;</c>. Hvis den
+ikke gør det, bliver du nødt til at emerge kerne kildekoden med
+openMosix patchen (se <uri link="#doc_chap1_sect4">Før du
+starter</uri>). Gå til den følgende undermenu og vær sikker på, at de
+følgende ting er valgt som indbygget (og <e>IKKE</e> som modul):
 </p>
 
 <pre caption="Menuconfig muligheder">
@@ -243,7 +243,7 @@ Tilføj så en indgang til den nye kerne i <path>lilo.conf</path> eller
 <path>grub.conf</path> (afhængigt af hvilken boot-loader du bruger) og
 gør den nye kerne til et standardvalg. Nu hvor det nye
 <path>bzImage</path> er blevet kopieret ind i dit <path>/boot</path>-bibliotek,
-så er det eneste du skal gøre at genstarte dit system.
+så er det eneste du skal gøre, at genstarte dit system.
 </p>
 
 </body>
@@ -314,7 +314,7 @@ none                    /mfs            mfs             noauto,dfsa=1          0
 
 
 <note>
-Ikke alle noder behøves at være oppe og køre for at openMosix fungerer korrekt.
+Ikke alle noder behøves at være oppe at køre for at openMosix fungerer korrekt.
 </note>
 
 </body>
@@ -351,7 +351,7 @@ system. For at nævne nogle få:
 <ul>
   <li>
     <c>mosmon</c> - openMosix monitor. Tillader dig at se alle dine
-    noder inklusiv brug af cpu, installeret hukommelse, brugt
+    noder, inklusiv brug af cpu, installeret hukommelse, brugt
     hukommelse, osv.
   </li>
   <li>
