@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding="iso-8859-1"?>
+<!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
+
+<guide link="/doc/da/gentoo-danish.xml" lang="da">
+<title>Gentoo Dansk Howto</title>
+
+<author title="Author">
+  <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
+</author>
+
+<abstract>
+Dette dokument er en hurtig instruktionsvejledning til at opsætte Gentoo komplet til dansk.</abstract>
+
+<license/>
+
+<version>1.0</version>
+<date>22. Maj, 2004</date>
+
+<chapter>
+<title></title>
+<section>
+<title>Introduktion</title>
+<body>
+
+<p>
+Det danske Gentoo lokaliseringsteam fik ideen til at samle alt viden, om at lokalisere så mange dele af Gentoo, som muligt, til dansk.
+</p>
+
+<p>
+Alle informationer kommer fra Gentoo forums, irc og egne tests.
+</p>
+
+</body>
+</section>
+<section>
+<title>Konsollen</title>
+<body>
+
+<p>
+For at få dansk understøttelse af tegnsæt i konsollen, rediger i <e>/etc/rc.conf</e>:
+</p>
+
+<pre caption="Ændre fælgende i /etc/rc.conf">
+KEYMAP="dk-latin1"
+CONSOLEFONT="lat0-16"
+CONSOLETRANSLATION="8859-1_to_uni"
+</pre>
+
+<p>
+For at få filerne til at vise det danske tegnsæt, så rediger <e>/etc/profile</e>:
+</p>
+
+<pre caption="Indsættelse nederst i /etc/profile">
+export LC_CPYTE="en_DK"
+</pre>
+
+</body>
+</section>
+<section>
+<title>X</title>
+<body>
+
+<p>
+For at få dansk tegnsæt i X, så rediger din <e>/etc/X11/xorg.conf</e> eller <e>/etc/X11/XF86Config</e> og indsæt eller ændre følgende:
+</p>
+
+<pre caption="Indsættelse i opsætningsfilen til dit X">
+Section "InputDevice"
+  Option "XkbLayout" "dk-latin1"
+EndSection
+</pre>
+
+<p>
+Hvis du er en KDE-bruger, installer da kde-i18n-da, for at få danske menuer m.v.
+</p>
+
+<pre caption="Installation af dansk KDE understøttelse">
+# emerge kde-i18n-da
+</pre>
+
+
+</body>
+</section>
+<section>
+<title>Ordlister</title>
+<body>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
+<title>UTF-8</title>
+<section>
+<title>UTF-8</title>
+<body>
+
+<p>
+Vi har endnu ikke udarbejdet en vejledning til at indføre dette, samt at flere programmer stadigvæk ikke bruger utf-8.
+</p>
+
+</body>
+</section>
+</chapter>
+</guide>
+
