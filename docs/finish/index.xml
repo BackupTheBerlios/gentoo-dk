@@ -138,31 +138,30 @@ link="http://forums.gentoo.org">forum</uri>. For at se disse, gå til
 
 </body>
 </section>
-<!--
+
 <section>
- <title>Gentoo-håndbogen</title>
- <body>
+<title>Gentoo-håndbogen</title>
+<body>
  
 <p>
 Gentoo Documentation Project er startet med udviklingen af <uri
 link="handbook/handbook.xml">Gentoo-håndbogen</uri>.
-På nuværende tidspunkt, er de første to dele (<uri
-link="handbook/handbook.xml?part=1">Installation af Gentoo</uri> og <uri
-link="handbook/handbook.xml?part=2">Arbejde med Gentoo</uri>) færdige
-og har nået det "officielle" niveau. Brugere bør 
-bruge installationsinstruktionerne fra håndbogen og give os
+På nuværende tidspunkt, er den første del (<uri
+link="handbook/handbook.xml?part=1">Installation af Gentoo</uri> 
+<!--og <uri link="handbook/handbook.xml?part=2">Arbejde med Gentoo</uri>)--> 
+færdig og har nået det "officielle" niveau. Brugere bør 
+bruge installationsinstruktionerne fra håndbogen og give os <uri
 link="http://bugs.gentoo.org/enter_bug.cgi?product=Docs-user">fejl-rapporter</uri>
 med deres oplevelser (brug venligst <e>Handbook</e> komponenten).
 </p>
 
- <p>
- Flere informationer kan blive fundet på <uri link="handbook/index.xml">Bag om
- Gentoo-håndbogen</uri>s hjemmeside.
- </p>
+<p>
+Flere informationer kan blive fundet på <uri link="handbook/index.xml">Bag om
+Gentoo-håndbogen</uri>s hjemmeside.
+</p>
  
- </body>
+</body>
 </section>
--->
 </chapter>
 
 <chapter>
@@ -357,7 +356,7 @@ virtuel understøttelse.
 <body>
 
 <p>
-<b><uri link="gentoo-kernel.xml">Kerne Guiden</uri></b> lister de
+<b><uri link="gentoo-kernel.xml">Kerne vejledningen</uri></b> lister de
 forskellige kerner som Gentoo stiller kildekode til rådighed for. De
 fleste af disse kerner vedligeholdes af <uri
 link="http://www.gentoo.org/proj/en/kernel">Gentoo Kerne
@@ -456,7 +455,7 @@ hvordan DevFs virker og hvordan det kan administreres.
 
 <p>
 <b><uri link="printing-howto.xml">Gentoo vejledningen til at printe</uri></b> er en
-omfattende guide til Gentoo og printning
+omfattende vejledning til Gentoo og printning
 </p>
 <!--
 <p>
@@ -687,8 +686,8 @@ link="http://purl.org/net/syndication/subscribe/?rss=http://www.gentoo.org/rdf/e
 <!-- <tr><ti><uri link="ipv6.xml">IPv6 Guide</uri></ti></tr>
  <tr><ti><uri link="uml.xml">User Mode Linux Guide</uri></ti></tr>
  <tr><ti><uri link="ldap-howto.xml">LDAP Authentification Howto</uri></ti></tr>-->
- <tr><ti><uri link="openmosix-howto.xml">OpenMosix Guide</uri></ti></tr>
-<tr><ti><uri link="diskless-howto.xml">Diskless Guide</uri></ti></tr>
+ <tr><ti><uri link="openmosix-howto.xml">OpenMosix vejledningen</uri></ti></tr>
+<tr><ti><uri link="diskless-howto.xml">Diskless vejledningen</uri></ti></tr>
 <!--<tr><ti><uri link="ltsp.xml">LTSP Guide</uri></ti></tr> -->
  <tr><ti><uri link="distcc.xml">DistCC vejledning</uri></ti></tr>
  <tr><ti><uri link="devfs-guide.xml">DevFS Guide</uri></ti></tr>
