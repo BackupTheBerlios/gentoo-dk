@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-use.xml,v 1.1 2004/01/29 11:34:04 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-use.xml,v 1.1 2004/02/22 20:51:33 aaby Exp $ -->
 
 <sections>
 <section>
@@ -29,7 +29,7 @@ med KDE-understøttelse, hvis disse pakker virker fejlfrit uden?
 </p>
 
 <p>
-For at hjælpe brugere med at beslutte, hvad man bør installere/aktivere eller ikke, ville vi få
+For at hjælpe brugere med at beslutte, hvad man bør installere/aktivere eller ikke, vil vi få
 brugeren til at specificere sit miljø på en nem måde. Dette tvinger brugeren til at 
 beslutte, hvad han virkelig vil have og letgør processen for Portage, vores
 pakkebehandlingssystem, for at lave brugbare beslutninger.
