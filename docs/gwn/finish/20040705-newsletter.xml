@@ -240,17 +240,27 @@
 <date>5. Juli, 2004</date>
 
 <chapter>
-	<title>Gentoo nyheder</title>
+<title>Gentoo nyheder</title>
 <section>
 <title>Gentoo announcerer web-omdesign-konkurrence</title>
 <body>
 <p>
-Gentoo-fonden har announceret planer for at omdesigne forskellige hjemmesider, som er en del af Gentoo-community'et med et nyt, universel tema. Ved at være en community-baseret distribution, besluttede vi at anmode forslag for et nyt 'look & feel' fra vores brugere.
+Gentoo-fonden har announceret planer for at omdesigne forskellige
+hjemmesider, som er en del af Gentoo-community'et med et nyt,
+universelt tema. Ved at være en community-baseret distribution,
+besluttede vi at anmode om forslag til et nyt 'look and feel' fra vores
+brugere.
 </p>
 <p>
 Vi åbner officielt <uri
-link="/proj/en/infrastructure/redesign-guidelines.xml">Gentoo-fondens web-omdesign-konkurrence</uri>.  Denne konkurrence giver dig, som en Gentoo-bruger, muligheden for at design det nye udseende og indtryk, som vil definere Gentoo Linux i en snarlig fremtid.  Det vindende design vil blive udvalgt af community'et via en åben stemmeprocess. For alle detaljer, se venligst vores <uri
-link="/proj/en/infrastructure/redesign-guidelines.xml">konkurrence guidelines</uri> (kun på engelsk).
+link="/proj/en/infrastructure/redesign-guidelines.xml">Gentoo-fondens
+web-omdesign-konkurrence</uri>.  Denne konkurrence giver dig, som en
+Gentoo-bruger, muligheden for at design det nye udseende og indtryk,
+som vil definere Gentoo Linux i en snarlig fremtid.  Det vindende
+design vil blive udvalgt af community'et via en åben
+stemmeprocess. For alle detaljer, se venligst vores <uri
+link="/proj/en/infrastructure/redesign-guidelines.xml">konkurrence
+guidelines</uri> (kun på engelsk).
 </p>
 </body>
 </section>
@@ -258,7 +268,20 @@ link="/proj/en/infrastructure/redesign-guidelines.xml">konkurrence guidelines</u
 <title>Bootsplash virker nu på PPC</title>
 <body>
 <p>
-Vi er meget glade for at announcere at bootsplash nu virker på PPC.  <uri link="http://www.bootsplash.org/">Bootsplash</uri> er en kerne-patch, som tillader visning af billeder igennem opstarts-sekvensen, udover eller i stedet for de traditionelle opstartsbeskeder.  Takket været udvikleren <mail link="spock@gentoo.org">Michael Januszewski</mail>s hårde arbejde, er bootsplash nu uafhængig af vesa-framebufferen. Den sidste nye ebuild (media-gfx/bootsplash-0.6.1-r4) er nu ~ppc-maskeret, og bootsplash_patch'en virker med development-sources (patchen vil snart blive tilføjet i gentoo-development-sources).  For flere informationer, se <uri link="http://bugs.gentoo.org/show_bug.cgi?id=55877">fejlrapporten</uri> og <uri link="http://forums.gentoo.org/viewtopic.php?t=192895">forum diskussionen</uri>.
+Vi er meget glade for at announcere at bootsplash nu virker på PPC.
+<uri link="http://www.bootsplash.org/">Bootsplash</uri> er en
+kerne-patch, som tillader visning af billeder igennem
+opstarts-sekvensen, udover eller i stedet for de traditionelle
+opstartsbeskeder.  Takket været udvikleren <mail
+link="spock@gentoo.org">Michael Januszewski</mail>s hårde arbejde, er
+bootsplash nu uafhængig af vesa-framebufferen. Den sidste nye ebuild
+(media-gfx/bootsplash-0.6.1-r4) er nu ~ppc-maskeret, og
+bootsplash_patch'en virker med development-sources (patchen vil snart
+blive tilføjet i gentoo-development-sources).  For flere
+informationer, se <uri
+link="http://bugs.gentoo.org/show_bug.cgi?id=55877">fejlrapporten</uri>
+og <uri link="http://forums.gentoo.org/viewtopic.php?t=192895">forum
+diskussionen</uri>.
 </p>
 </body>
 </section>
@@ -365,67 +388,75 @@ short="Josuha Kinard" caption="Joshua Kinard" />
 <p>
     I denne uge præsenterer vi <mail link="kumba@gentoo.org">Joshua
     Kinard</mail>, som går under kumba, pga. fascinationen med
-    "Kumba"-rutschebanen ved Busch Gardens, Tampa Bay.  Joshua arbejder
-    som team leader for <uri
-    link="http://www.gentoo.org/proj/en/base/mips/index.xml">MIPS-projektet</uri>, selvom han beskriver rollen som at kun være
-    "en anden del af MIPS-teamene ...vi arbejder alle sammen for at holde
-    Gentoo kørende på hvad nogle ville sige er en underlig MIPS-arkitektur."   Nogle læsere vil måske være familiært med MIPS som en
-    processor-arkitektur, som driver Silicon Graphics arbejdstationen.  
+    "Kumba"-rutschebanen ved Busch Gardens, Tampa Bay.  Joshua
+    arbejder som team leader for <uri
+    link="http://www.gentoo.org/proj/en/base/mips/index.xml">MIPS-projektet</uri>,
+    selvom han beskriver rollen som at kun være "en anden del af
+    MIPS-holdene ...vi arbejder alle sammen for at holde Gentoo
+    kørende på hvad nogle ville sige er en underlig MIPS-arkitektur."
+    Nogle læsere vil måske være familiært med MIPS som en
+    processor-arkitektur, som driver Silicon Graphics arbejdstationen.
     Joshua har også bidraget med noget porting-arbejde for
     Sparc-processoren, og arbejder som et medlem af <uri
     link="http://www.gentoo.org/proj/en/base/embedded/index.xml">embedded</uri>-,
     <uri
     link="http://www.gentoo.org/proj/en/base/index.xml">base-system</uri>-
-    og toolchain-flokene.  Joshuas arbejde for MIPS-projektet indholder
-    vedligeholdelse af mips-sources kerne-træ-ebuilds, porting af
-    ebuilds, rekrutering af udviklere, bygning af netboot-billedfiler og
-    bidrage til Cobalt-porten.  Han arbejder også på Sparc-toolchain,
-    og bidraget med et crossdev-script til bygning af
-    kryds-kompiler miljøer.
+    og toolchain-flokene.  Joshuas arbejde for MIPS-projektet
+    indholder vedligeholdelse af mips-sources kerne-træ-ebuilds,
+    porting af ebuilds, rekrutering af udviklere, bygning af
+    netboot-billedfiler og bidrage til Cobalt-porten.  Han arbejder
+    også på Sparc-toolchain, og bidraget med et crossdev-script til
+    bygning af kryds-kompiler miljøer.
 </p> 
 
 <p>
     Joshua hørte først om Linux for seks eller syv år siden, selvom på
-    tidspunktet, troede han og hans venner "at det var en slags 
-    Windows add-on."  Efter at have lært mere, blev han interesseret og
-    købte en box-version af Red Hat 5.2.  Han havde også adgang til en
-    fjernstyret server-shell-konto, som gav ham muligheden for at
-    blive familiært med Linux-kommandolinjen. Sent i 2001, skaffede han
-    sig et Sun Blade-100 system, som han havde tænkt sig at installere Linux
-    på.  Red Hats Sparc port var ikke fungerende, så han 'shoppede' for
-    et distro til det nye system.  Han huskede "et afsidigt distribution
-    som blev nævnt på en IRC-kanal" og installerede det.  Han har brugt
-    Gentoo lige siden.  I 2003, blev han interesse i at hjælpe <mail
-    link="tuxus@gentoo.org">Jan Seidel</mail> for at implementere en MIPS port
-    noteret, og han blev spurgt om at slutte sig til teamet som en udvikler.
-    Dette var ikke hans første Open Source projekt - han er også forfatter til <uri link="http://sourceforge.net/projects/progkill/">Program
+    tidspunktet, troede han og hans venner "at det var en slags
+    Windows add-on."  Efter at have lært mere, blev han interesseret
+    og købte en box-version af Red Hat 5.2.  Han havde også adgang til
+    en fjernstyret server-shell-konto, som gav ham muligheden for at
+    blive familiært med Linux-kommandolinjen. Sent i 2001, skaffede
+    han sig et Sun Blade-100 system, som han havde tænkt sig at
+    installere Linux på.  Red Hats Sparc port var ikke fungerende, så
+    han 'shoppede' for et distro til det nye system.  Han huskede "et
+    afsidigt distribution som blev nævnt på en IRC-kanal" og
+    installerede det.  Han har brugt Gentoo lige siden.  I 2003, blev
+    han interesse i at hjælpe <mail link="tuxus@gentoo.org">Jan
+    Seidel</mail> for at implementere en MIPS port noteret, og han
+    blev spurgt om at slutte sig til teamet som en udvikler.  Dette
+    var ikke hans første Open Source projekt - han er også forfatter
+    til <uri link="http://sourceforge.net/projects/progkill/">Program
     Killer</uri>, et Windows-program, som blokerer spyware, P2P, IM
-    trafik eller andre programmer, baseret på administrative indstillinger.
+    trafik eller andre programmer, baseret på administrative
+    indstillinger.
 </p>
 
 <p>
     Givet hans rolle som en udvikler, Joshua's udsøgende samling af
     computere burde ikke komme som en overraskelse.  Udover en Sun
-    Blade, som nævnt tidligere, har han også en SGI Indigo2 , en SGI Indy, en
-    SGI O2 og en Cobalt Microserver - alle kører Linux.  To andre
-    SGI bokse og en Sun SPARCstation er på nuværende tidspunkt ikke i brug.    Hans samling er rundet af med et dual PIII-system, som kører Windows
-    2000.  Under Linux, påstår han at værktøjerne er pænt
-    kedelige.  Han bekender sin glæde til <uri
-    link="http://www.mozilla.org/mailnews/">Mozilla Mail</uri>,
-    <uri link="http://www.interwarn.com/sldesc.html">StormLab</uri>
-    'doppler radar information klienten' og <uri
-    link="http://www.artofgregmartin.com">kunstværker af Greg Martin</uri>.
+    Blade, som nævnt tidligere, har han også en SGI Indigo2 , en SGI
+    Indy, en SGI O2 og en Cobalt Microserver - alle kører Linux.  To
+    andre SGI bokse og en Sun SPARCstation er på nuværende tidspunkt
+    ikke i brug.  Hans samling er rundet af med et dual PIII-system,
+    som kører Windows 2000.  Under Linux, påstår han at værktøjerne er
+    pænt kedelige.  Han bekender sin glæde til <uri
+    link="http://www.mozilla.org/mailnews/">Mozilla Mail</uri>, <uri
+    link="http://www.interwarn.com/sldesc.html">StormLab</uri>
+    'doppler radar informations klienten' og <uri
+    link="http://www.artofgregmartin.com">kunstværker af Greg
+    Martin</uri>.
 </p>
 
 <p>
-    Joshua har fornyeligt afsluttet en grad i 'Computer and Information
-    Sciences' ved 'University of Maryland University College'.  Han
-    har også arbejdet ved et lokalt universitets-computerlab leverer brugersupport
-    og systemadministration.  Han har lavet de typiske
-    før-nyuddannet jobsøgninger, og håber for et job, hvor han "kan tilføje
-    [hans] computer/Linux viden."  Han er er en "bona fide geek", med 
-    få ikke-computer relaterede hobbies.  Dette kan ses ved hans
-    'Middle Earth' stednavne til sine servere.  Han bekender sig også til
+    Joshua har fornyeligt afsluttet en grad i 'Computer and
+    Information Sciences' ved 'University of Maryland University
+    College'.  Han har også arbejdet ved et lokalt
+    universitets-computerlab som leverer brugersupport og
+    systemadministration.  Han har lavet de typiske før-nyuddannet
+    jobsøgninger, og håber for et job, hvor han "kan tilføje [hans]
+    computer/Linux viden."  Han er er en "bona fide geek", med få
+    ikke-computer relaterede hobbies.  Dette kan ses ved hans 'Middle
+    Earth' stednavne til sine servere.  Han bekender sig også til
     typiske 'geek' glæde for Babylon 5, og citerer den tidligere
     Centauri kejser for hans yndlingscitat: "The past tempts us, the
     present confuses us, the future frightens us. Our lives slip away,
@@ -445,7 +476,16 @@ short="Josuha Kinard" caption="Joshua Kinard" />
 <b>Ugens bouquet: 3D skriveborde</b>
 </p>
 
-<p>Ved at læse hardwarekravene (2 GHz CPU og 512 RAM minimum) kan slukke gnisten for mange veteran Linux-brugere, men Suns nye skrivebord <uri link="https://lg3d.dev.java.net/">Looking Glass</uri> var sat under GNU public license i sidste uge, og det var grund nok til jubel hos mange Gentoo-forum posters. Ridende på samme bølge som Suns moderskip, en noget 'lettere' Fransk 3D-løsning kaldet <uri link="http://insitu.lri.fr/~chapuis/metisse/index.html">Metisse</uri>, baseret på en virtuel X-server og en modificeret FVWM window manager, bliver diskutteret med næsten lige så stor glæde: 
+<p>
+Ved at læse hardwarekravene (2 GHz CPU og 512 RAM minimum) kan
+slukke gnisten for mange veteran Linux-brugere, men Suns nye
+skrivebord <uri link="https://lg3d.dev.java.net/">Looking Glass</uri>
+var sat under GNU public license i sidste uge, og det var grund nok
+til jubel hos mange Gentoo-forum posters. Ridende på samme bølge som
+Suns moderskip, en noget 'lettere' Fransk 3D-løsning kaldet <uri
+link="http://insitu.lri.fr/~chapuis/metisse/index.html">Metisse</uri>,
+baseret på en virtuel X-server og en modificeret FVWM window manager,
+bliver diskutteret med næsten lige så stor glæde:
 </p>
 <ul><li><uri link="http://forums.gentoo.org/viewtopic.php?t=191216">Looking Glass GPLed</uri></li>
 <li><uri link="http://forums.gentoo.org/viewtopic.php?t=191930">Metisse</uri></li>
@@ -460,15 +500,19 @@ short="Josuha Kinard" caption="Joshua Kinard" />
 <b>Maillist skik og brug</b>
 </p>
 <p>
-En <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/87530">bøn</uri> fra et mailing-list medlem, startede
-en god tråd omkring skik og brug af maillister. Det er god læsning hvis du er ny til maillister!
+En <uri
+link="http://thread.gmane.org/gmane.linux.gentoo.user/87530">bøn</uri>
+fra et mailing-list medlem, startede en god tråd omkring skik og brug
+af maillister. Det er god læsning hvis du er ny til maillister!
 </p>
 <p>
 <b>Mailklient-tråden</b>
 </p>
 <p>
-Gentoo leverer en bred vifte af mailklienter til dens brugere.  <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/87340">Denne 
-store tråd</uri> taklede emnet med det uendelige spørgsmål: "Hvilken én er den bedste?"
+Gentoo leverer en bred vifte af mailklienter til dens brugere.  <uri
+link="http://thread.gmane.org/gmane.linux.gentoo.user/87340">Denne
+store tråd</uri> taklede emnet med det uendelige spørgsmål: "Hvilken
+én er den bedste?"
 </p>
 <p>
 <b>Multibooting af 2.4- og 2.6-kerner</b>
@@ -489,7 +533,27 @@ multiboote med 2.4- og 2.6-kerner.
 <b>USA: Linux World Expo i San Francisco</b>
 </p>
 
-<p>Fire uger endnu før den Kaliforniske franchise af <uri link="http://www.linuxworldexpo.com">Linux World Expo</uri> åbner dørene ved <uri link="http://www.moscone.com">Moscone Center</uri> i downtown San Francisco, fra 2. til 5. August 2004. Lige som sidste år, vil Gentoo blive præsenteret inde i udstillingshallen, i år ved bod nummer 270 (<uri link="http://www.linuxworldexpo.com/live/images/other/12SFO04A_Floorplan.pdf">oversigtskort her som PDF-fil</uri>). Udover udstillingen, bør du ikke glemme Greg Kroah-Hartman, udev-vedligeholder og Gentoo-udvikler på hans egen måde, kæmper mod Andrew Morton og Timothy Widham fra OSDL og tre open source-evangelister fra Apple i en OSS-quiz kaldet "Golden Penguin Bowl". Corey Shields fra Gentoo-infrastrukturteamet er på taler-listen, men den præstentation omkring "High Performance Linux Storage Management", og han har også opsat et <uri link="http://www.linuxworldexpo.com/live/12/events/12SFO04A/conference/tracksessions//QMONYA04LRY6">Gentoo community-møde</uri> på dag to af showet (3. August 2004 fra 17:30 til 19:00): en BoF (Birds of a Feather) samling for alle Gentoo afficionados, udviklere og brugere, som også vil inkludere en GPG keysigning-fest. Kontakt <mail link="cshields@gentoo.org">Corey</mail> for detaljer omkring proceduren.
+<p>
+Fire uger endnu, før den Kaliforniske franchise af <uri
+link="http://www.linuxworldexpo.com">Linux World Expo</uri> åbner
+dørene ved <uri link="http://www.moscone.com">Moscone Center</uri> i
+downtown San Francisco, fra 2. til 5. August 2004. Lige som sidste år,
+vil Gentoo blive præsenteret inde i udstillingshallen, i år ved bod
+nummer 270 (<uri
+link="http://www.linuxworldexpo.com/live/images/other/12SFO04A_Floorplan.pdf">oversigtskort
+her som PDF-fil</uri>). Udover udstillingen, bør du ikke glemme Greg
+Kroah-Hartman, udev-vedligeholder og Gentoo-udvikler på hans egen
+måde, kæmper mod Andrew Morton og Timothy Widham fra OSDL og tre open
+source-evangelister fra Apple i en OSS-quiz kaldet "Golden Penguin
+Bowl". Corey Shields fra Gentoo-infrastrukturteamet er på
+taler-listen, med en præsentation omkring "High Performance Linux
+Storage Management", og han har også opsat et <uri
+link="http://www.linuxworldexpo.com/live/12/events/12SFO04A/conference/tracksessions//QMONYA04LRY6">Gentoo
+community-møde</uri> på dag to af showet (3. August 2004 fra 17:30 til
+19:00): en BoF (Birds of a Feather) samling for alle Gentoo
+afficionados, udviklere og brugere, som også vil inkludere en GPG
+keysigning-fest. Kontakt <mail link="cshields@gentoo.org">Corey</mail>
+for detaljer omkring proceduren.
 </p>
 
 </body>
@@ -597,7 +661,7 @@ multiboote med 2.4- og 2.6-kerner.
 	<section>
 		<title>Flytninger</title>
 		<body>
-		<p>De følgende udviklere forlod for nyligt Gentoo holdet:
+		<p>De følgende udviklere forlod for nyligt Gentoo holdet:</p>
 			<ul>
 				<li><e>Ingen i denne uge</e></li>
 			</ul>
