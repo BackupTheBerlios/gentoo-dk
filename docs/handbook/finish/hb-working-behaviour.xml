@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-behaviour.xml,v 1.1 2004/02/22 20:32:56 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-behaviour.xml,v 1.1 2004/02/22 21:57:09 broeman Exp $ -->
 
 <sections>
 <section>
@@ -37,7 +37,7 @@ opgave nemmere. Vil vil tale om <c>etc-update</c> senere.
 <p>
 Portage kan ikke beskytte fra fil til fil. I stedet for beskytter den hele
 biblioteker. <c>CONFIG_PROTECT</c>-variabelen viser alle beskyttede biblioteker.
-Alle underbiblioteker i de viste biblioteker, er også beskyttet.
+Alle underbiblioteker i de viste biblioteker er også beskyttet.
 <c>CONFIG_PROTECT</c>-variabelen er defineret i <path>/etc/make.globals</path>,
 men hvis du vil ændre den, bør du erklære den i
 <path>/etc/make.conf</path> (for at holde ting konsekvente, er
@@ -308,7 +308,7 @@ RSYNC_EXCLUDEFROM="/etc/portage/rsync_excludes"
 </pre>
 
 <p>
-Når <c>rsync</c> fejler vil den prøve igen et antal gange, før den skifter til den
+Når <c>rsync</c> fejler, vil den prøve igen et antal gange, før den skifter til den
 næste tilgængelige rsync-server. Antallet af genfindelser er defineret i
 <c>RSYNC_RETRIES</c> og standarden er sat til <c>3</c>:
 </p>
@@ -439,7 +439,7 @@ BUILD_PREFIX="${PORTAGE_TMPDIR}/portage"
 </pre>
 
 <p>
-Hvis du tænker på at ændre stedet, vær sikker på at dette midlertidige bibliotek er på en
+Hvis du tænker på at ændre placeringen, vær sikker på at dette midlertidige bibliotek er på en
 partition med nok fri plads: når der bliver kompileret store software-pakker
 kan biblioteket gro op til 2 GB og mere!
 </p>
