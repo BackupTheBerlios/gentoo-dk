@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<!DOCTYPE book SYSTEM "/dtd/book.dtd">
+
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/handbook.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+
+<book link="handbook.xml">
+<title>Gentoo-håndbogen</title>
+
+<author title="Chef-arkitekt">
+    <mail link="drobbins@gentoo.org">Daniel Robbins</mail>
+</author>
+<author title="Forfatter">
+  <mail link="swift@gentoo.org">Sven Vermeulen</mail>
+</author>
+<author title="Forfatter">
+  <mail link="chouser@gentoo.org">Chris Houser</mail>
+</author>
+<author title="Forfatter">
+  <mail link="jerry@gentoo.org">Jerry Alexandratos</mail>
+</author>
+<author title="Gentoo x86 udvikler">
+  <mail link="seemant@gentoo.org">Seemant Kulleen</mail>
+</author>
+<author title="Gentoo Alpha udvikler">
+  <mail link="taviso@gentoo.org">Tavis Ormandy</mail>
+</author>
+<author title="Gentoo Alpha udvikler">
+  <mail link="agriffis@gentoo.org">Aron Griffis</mail>
+</author>
+<author title="Gentoo HPPA udvikler">
+  <mail link="gmsoft@gentoo.org">Guy Martin</mail>
+</author>
+<author title="Gentoo PPC udvikler">
+   <mail link="pvdabeel@gentoo.org">Pieter Van den Abeele</mail>
+</author>
+<author title="Gentoo SPARC udvikler">
+  <mail link="blademan@gentoo.org">Joe Kallar</mail>
+</author>
+<author title="Redaktør">
+    <mail link="zhen@gentoo.org">John P. Davis</mail>
+</author>
+<author title="Redaktør">
+    <mail link="Pierre-Henri.Jondot@wanadoo.fr">Pierre-Henri Jondot</mail>
+</author>
+<author title="Redaktør">
+    <mail link="stocke2@gentoo.org">Eric Stockbridge</mail>
+</author>
+<author title="Redaktør">
+    <mail link="rajiv@gentoo.org">Rajiv Manglani</mail>
+</author>
+<author title="Redaktør">
+    <mail link="seo@gentoo.org">Jungmin Seo</mail>
+</author>
+<author title="Redaktør">
+    <mail link="zhware@gentoo.org">Stoyan Zhekov</mail>
+</author>
+<author title="Redaktør">
+    <mail link="jhhudso@gentoo.org">Jared Hudson</mail>
+</author>
+<author title="Redaktør">
+    <mail link="peitolm@gentoo.org">Colin Morey</mail>
+</author>
+<author title="Redaktør">
+    <mail link="peesh@gentoo.org">Jorge Paulo</mail>
+</author>
+<author title="Redaktør">
+    <mail link="carl@gentoo.org">Carl Anderson</mail>
+</author>
+<author title="Redaktør">
+    <mail link="avenj@gentoo.org">Jon Portnoy</mail>
+</author>
+<author title="Redaktør">
+     <mail link="klasikahl@gentoo.org">Zack Gilburd</mail>
+</author>
+<author title="Redaktør">
+  <mail link="jmorgan@gentoo.org">Jack Morgan</mail>
+</author>
+<author title="Redaktør">
+  <mail link="bennyc@gentoo.org">Benny Chuang</mail>
+</author>
+<author title="Redaktør">
+  <mail link="erwin@gentoo.org">Erwin</mail>
+</author>
+<author title="Reviewer">
+    <mail link="g2boojum@gentoo.org">Grant Goodyear</mail>
+</author>
+<author title="Reviewer">
+    <mail link="gerrynjr@gentoo.org">Gerald J. Normandin Jr.</mail>
+</author>
+<author title="Reviewer">
+    <mail link="spyderous@gentoo.org">Donnie Berkholz</mail>
+</author>
+<author title="Reviewer">
+    <mail link="antifa@gentoo.org">Ken Nowack</mail>
+</author>
+<author title="Bidrager">
+   <mail link="pylon@gentoo.org">Lars Weiler</mail>
+</author>
+<author title="Oversætter">
+   <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
+</author>
+
+<abstract>
+Dette er Gentoo-håndbogen, en bestræbelse for at centralisere Gentoo/Linux
+informationer.
+</abstract>
+
+<!-- The content of this document is licensed under the CC-BY-SA license -->
+<!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
+<license/>
+
+<version>0.24</version>
+<date>10. December, 2003</date>
+
+<part>
+<title>Installation af Gentoo</title>
+<abstract>
+I denne del, vil du lære at installere Gentoo på dit system.
+</abstract>
+
+<chapter>
+<title>Om Gentoo Linux installation</title>
+<abstract>
+Brugere, der ikke er velkendt med Gentoo, vil ikke altid vide at <e>valg</e> er hvad
+Gentoo handler om. 
+</abstract>
+  <include href="hb-install-about.xml"/>
+</chapter>
+
+<chapter>
+<title>Valg af det rigtige installationsmedie</title>
+<abstract>
+Du kan installere Gentoo på mange måder. Du kan bruge vores LiveCD, en eksisterende
+distribution osv. 
+</abstract>
+  <include href="hb-install-medium.xml"/>
+</chapter>
+
+<chapter>
+<title>Opsætning af dit netværk</title>
+<abstract>
+Hvis du vil installere Gentoo ved brug af Internet, vil du få brug for at sætte netværk
+op.
+</abstract>
+  <include href="hb-install-network.xml"/>
+</chapter>
+
+<chapter>
+<title>Forberedelse af harddiske</title>
+<abstract>
+For at kunne installere Gentoo, skal du lave de nødvendige partitioner.
+Dette kapitel beskriver, hvordan man partionerer en harddisk til fremtidig brug.
+</abstract>
+  <include href="hb-install-disk.xml"/>
+</chapter>
+
+<chapter>
+<title>Installation af Gentoo installationsfiler</title>
+<abstract>
+Gentoos installationsfiler virker igennem såkaldte stage-files. I dette kapitel beskriver vi,
+hvordan du udpakker en stage-fil og opsætter Portage.
+</abstract>
+  <include href="hb-install-stage.xml"/>
+</chapter>
+
+<chapter>
+<title>Installation af Gentoo basissystem</title>
+<abstract>
+Uafhængigt af hvilken "stage" du vælger, vil det eventuelt resultere i, at du vil
+have et Gentoo basissystem til rådighed. Dette kapitel beskriver hvordan man
+når til det stadie.
+</abstract>
+  <include href="hb-install-system.xml"/>
+</chapter>
+
+<chapter>
+<title>Opsætning af kernen</title>
+<abstract>
+Linux kernen er grundlaget for enhver distribution. Dette kapitel
+forklarer hvordan du opsætter din kerne.
+</abstract>
+  <include href="hb-install-kernel.xml"/>
+</chapter>
+
+<chapter>
+<title>Opsætning af dit system</title>
+<abstract>
+Du kommer til at redigere nogle vigtige opsætningsfiler. I dette kapitel
+vil du modtage en oversigt over disse filer og en forklaring på hvordan man
+fortsætter.
+</abstract>
+  <include href="hb-install-config.xml"/>
+</chapter>
+
+<chapter>
+<title>Opsætning af boot-loader</title>
+<abstract>
+Der eksisterer flere forskelige boot-loadere. Hver af disse har deres egen metode til
+opsætning. I dette kapitel vil vi beskrive alle muligheder for dig, og trinvis
+hjælpe dig igennem processen for at opsætte en boot-loader til dine
+behov.
+</abstract>
+  <include href="hb-install-bootloader.xml"/>
+</chapter>
+
+<chapter>
+<title>Installation af nødvendige systemværktøjer</title>
+<abstract>
+Som forklaret før, handler Gentoo om valg. I dette kapitel vil vi hjælpe dig med at
+vælge og at installere nogle vigtige værktøjer.
+</abstract>
+  <include href="hb-install-tools.xml"/>
+</chapter>
+
+<chapter>
+<title>Afslutning af din Gentoo installation</title>
+<abstract>
+Du er snart færdig. Vi vil kun lave én (eller flere) brugere til dit
+system og lade installationen genstarte ind i et helt nyt Gentoo
+system.
+</abstract>
+  <include href="hb-install-finalise.xml"/>
+</chapter>
+
+<chapter>
+<title>Hvad kan jeg gøre efter dette?</title>
+<abstract>
+Nu har du et Gentoo system, men hvad skal du nu gøre? 
+</abstract>
+  <include href="hb-install-next.xml"/>
+</chapter>
+</part>
+</book>

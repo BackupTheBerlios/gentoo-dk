@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/guidelines-da.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+
+<!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
+<guide link="/guidelines-da.xml">
+<title>Retningslinier for oversættelse af Gentoo Dokumenter</title>
+<author title="Forfatter">
+ <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
+</author>
+
+<license/>
+
+<abstract>
+Dette dokument skildrer de retningslinier der er knyttet til
+oversættelse af Gentoos dokumenter.
+</abstract>
+
+<version>0.1</version>
+<date>November 22, 2003</date>
+
+<chapter>
+<title>Introduktion</title>
+<section>
+<body>
+<p>
+Jeg vil kort i det følgende præsentere de gældende regler. Dette er
+mest i forbindelse kommunikation imellem oversættere og de redskaber
+der er til rådighed.
+</p>
+
+<p>
+Den danske udgave af Gentoo er organiseret således at vi har en intern
+kommunikation og en kommunikation til resten af Gentoos dokumentations
+hold. Den sidstnævnte administreres udelukkende af Lead-Translator
+(Jesper Brodersen) og Follow-up-Translator (Arne Mejlholm).
+</p>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
+<title>Kommunikation</title>
+<section>
+<title>Mailinglister</title>
+<body>
+
+<p>
+Medlemmer skal være tilføjet mailinglisten
+<i>gentoo-dk-devel@nongnu.org</i>, der er vores egen interne
+mailingliste.
+
+Medlemmer opfordres også til at lave en konto hos <i>bugs.gentoo.org</i> og
+at tilmelde sig mailinglisten <i>gentoo-doc@gentoo.org</i>.
+</p>
+
+</body>
+</section>
+
+<section>
+<title>IRC</title>
+<body>
+
+<p>
+Medlemmer af oversættelsesholdet skal i det omfang de er online være på kanalen
+<i>#gentoo-doc-dk</i> på IRC netværket <i>irc.freenode.net</i>.
+</p>
+
+</body>
+</section>
+
+<section>
+<title>Status på oversættelser</title>
+<body>
+
+<p>
+Vi bruger to forskellige sider til at vedligeholde vores oversættelser
+og dokumenter.
+</p>
+
+<p>
+Pt. arbejder vi på at oversætte et script vi har fået af neysx, der
+kan holde øje med nye versioner af dokumenter og hvor langt vi er med
+vores egne. <uri
+link="http://www.nongnu.org/gentoo-dk/sider/status.xml">Status-siden</uri>
+vedligholdes af Jesper Brodersen.
+</p>
+
+<p>
+Vores egen side hos <uri
+link="http://savannah.nongnu.org/projects/gentoo-dk/">Savannah</uri>
+benyttes primært til at holde øje med bugs. Vi bruger bugs til at
+holde styr på hvor langt vi er kommet med oversættelser, opdateringer
+og andre vigtige ting. Det skal understreges at det er vigtig at
+opdatere denne side når man er færdig med en opgave, ellers ryger hele
+systemet sig en tur.
+</p>
+
+</body>
+</section>
+
+</chapter>
+
+<chapter>
+<title>Værktøjer</title>
+<section>
+<title>Guide XML</title>
+<body>
+
+<p>
+Gentoo's dokumenter er skrevet i Guide XML, dvs. det ikke er
+WYSIWYG(What You See Is What You Get), man skal kompilere dokumenterne
+for at læse dem som html. Måden vi arbejder på er at
+kopiere de originale engelske dokumenter og ændre i deres kode. I den
+sammenhæng er det vigtigt at nævne at for at man kan få danske tegn
+skal <i>encoding="UTF-8"</i> ændres til
+<i>encoding="iso-8859-1"</i>. Datoer og versioner opdateres kun når
+det rent faktisk er en opdatering der er godkendt af Gentoo-doc.
+</p>
+
+<p>
+Som før nævnt skal man kompilere sine .xml dokumenter for at kunne se
+dem som html. Dette kan gøres med kommandoen <c>xsltproc</c>, som vist
+nedenfor:
+</p>
+
+<pre caption="At bruge xsltproc til at kompilere en fil">
+# <i>xsltproc ../xsl/guide.xsl inputfilnavn.xml > outputfilnavn.html</i>
+</pre>
+
+<p>
+<c>xsltproc</c> findes i pakken <c>dev-libs/libxslt</c>. Udover
+<c>xsltproc</c> bruger vi også <c>xmllint</c> det kontrollerer om filen
+er syntaktisk korrekt. Dette gøres således:
+</p>
+
+<pre caption="At bruge xmllint til at tjekke syntaks">
+# <i>xmllint filnavn.xml</i>
+</pre>
+
+<p>
+Hvis der ikke er fejl viser den hurtigt hele dokumentet på
+skærmen. <c>xmllint</c> findes i pakken <c>dev-libs/libxml2</c>.
+</p>
+
+</body>
+</section>
+
+<section>
+<title>CVS</title>
+<body>
+<p>
+Vi bruger i stor udstrækning CVS (Concurrent Version System) til at
+administrere vores filer. Alle kan finde vores filer på webcvs hos
+Savannah, men for at få skrive adgang skal være Medlem og have en
+konto hos Savannah. Til de personer der ikke har erfaring med CVS
+kræver vi at de læser <uri
+link="http://www.gentoo.org/doc/en/cvs-tutorial.xml">Gentoos CVS guide</uri>
+</p>
+
+<p>
+For at undgå konflikter af enhver type kræver vi at, de folk der
+arbejder på et dokument er online på IRC. Når man påbegynder arbejdet
+er det høfligt lige at sige det på IRC. Der skal altid i cvs loggen
+skrive en fyldestgørende forklaring på hvad man har lavet. Man
+opdaterer derefter bugs'ene inde på savannah og igen skal man lige
+nævne det på IRC.
+</p>
+
+<impo>
+Derudover kræves det at man altid før man begynder arbejdet opdatere
+sin cvs. Når man er færdig med arbejdet opdaterer man igen cvs'en og
+commiter sit dokument. 
+</impo>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
+<title>Afrunding</title>
+<section>
+<body>
+
+<p>
+Det var det grundlæggende, hvis der er flere spørgsmål er I velkomne
+til at stille dem på IRC eller på mail. Kommende oversættere bør
+kontakte enten Jesper Brodersen eller Arne Mejlholm. 
+</p>
+
+</body>
+</section>
+</chapter>
+</guide>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/agenda.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+
+<!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
+<guide link="agenda.xml">
+<title>Dagsorden for møde 23-11-2003</title>
+<author title="Forfatter">
+ <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
+</author>
+
+<license/>
+
+<abstract>
+Dagsorden til møde 23-11-2003.
+</abstract>
+
+<version>0.1</version>
+<date>November 23, 2003</date>
+
+<chapter>
+<title>Dagsorden</title>
+<section>
+<title>1. Godkendelse af DO</title>
+<body>
+
+<p>
+Kan den godkendes?
+</p>
+
+<p>
+Godkendt
+</p>
+
+</body>
+</section>
+
+<section>
+<title>2. Script status</title>
+<body>
+<p>
+Broeman har fået et dejligt script, desværre er der lidt problemer med
+at få det til at køre lige pt. Prioritet på dette script vil jeg gerne
+have diskuteret.
+</p>
+
+<p>
+Broeman giver høj prioritet til at få scriptet op at køre.
+</p>
+
+</body>
+
+</section>
+<section>
+<title>3. Brug af redaktør i dokumenter</title>
+<body>
+<p>
+Punktet giver sig selv. Der skal for fremtiden bruges Korrektur i
+stedet for Redaktør på vores dokumenter. Redaktør betyder at man har
+ændret i det tekniske indhold af et dokument.
+</p>
+
+<p>
+Godkendt. Aaby, laver ændringerne på savannah cvs og derefter lader vi
+dem blive indfaset på gentoo.org.
+</p>
+
+</body>
+</section>
+
+<section>
+<title>4. Bugs.gentoo.org</title>
+<body>
+<p>
+Den normale gang er at man, når man skal i gang med at oversætte et
+dokument, laver en bug derinde og assigner den til enten
+aaby@gentoo.org eller broeman@gentoo.org. Dette er ikke tvingende
+nødvendigt da vi har vores egen side. Det er dog nødvendigt at der
+bliver lavet en bug der under alle omstændigheder.
+</p>
+
+<p>
+Aftalen er at vi fortsætter med at bruge Savannah som sædvaneligt. Der
+vil derudover blive lavet en bug inde på bugs.gentoo.org ved start på
+et nyt dokument. Når dette er fædigt bliver der comittet og buggen
+bliver lukket.
+</p>
+
+</body>
+</section>
+
+<section>
+<title>5. Strategi</title>
+<body>
+<p>
+Det virkelige punkt. Vi skal finde ud af vores videre forløb. Herunder
+hører at tage stilling til prioriteten af handbook'en.
+</p>
+
+<p>
+Strategien bliver som følger. Vi gør de mest alvorlige dokumenter
+færdige først, derefter bliver arbejdet primært at holde dokumenter
+up2date og at oversætte handbook'en. Dette gøres mere specifikt:
+</p>
+
+<ol>
+<li>Aaby ordner nuværende docs, holder docs uptodate, derefter handbook
+</li>
+<li>Broeman ordner script, holder docs uptodate og derefter handbook
+</li>
+<li>GG ordner kernel-guide, derefter handbook
+</li>
+</ol>
+
+</body>
+</section>
+
+<section>
+<title>6. Evt.</title>
+<body>
+<p>
+Noget eventuelt?
+a) Færdiggørelse af proofreads.
+
+b) Opdatering af savannah hjemmesiden.
+</p>
+
+<p>
+a) Broeman færdiggør dem i eftermiddag, mail'er til GG at han er
+færdig. Derefter ordner GG den sidste proofread.
+</p>
+
+<p>
+b) Broeman laver opdatering af savannah hjemmesiden. Dette er med blik
+på at få links til førnævnte script og generel information.
+</p>
+
+</body>
+</section>
+</chapter>
+</guide>
