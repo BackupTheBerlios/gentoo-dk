@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-config.xml,v 1.1 2004/01/17 18:15:59 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-config.xml,v 1.2 2004/01/17 18:26:09 broeman Exp $ -->
 
 <sections>
 <section>
@@ -33,11 +33,11 @@ genvej til
 <body>
 
 <p>
-Under Linux skal alle partitioner som systemet benytter være på listen i
-<path>/etc/fstab</path>. Denne fil indeholder monteringpunkterne til disse 
+Under Linux skal alle partitioner, som systemet benytter, være på listen i
+<path>/etc/fstab</path>. Denne fil indeholder mount-punkterne til disse 
 partitioner (hvor de bliver set i filsystemets struktur), hvordan de skal 
-monteres (specielle indstillinger) og hvornår (automatisk eller ej, om brugere 
-kan eller ikke kan montere dem, etc.).
+mountes (specielle indstillinger) og hvornår (automatisk eller ej, om brugere 
+kan eller ikke kan mounte dem, etc.).
 </p>
 
 </body>
@@ -57,16 +57,16 @@ felter, adskilt af mellemrum eller tabulatorer (og gerne flere af begge). Hvert
   Det første felt beskriver <b>partitionen</b> (stien til filen for enheden)
 </li>
 <li>
-  Andet felt viser <b>monteringspunktet</b> hvor partitionen skal monteres
+  Andet felt viser <b>mount-punktet</b> hvor partitionen skal monteres
 </li>
 <li>
   Tredje felt viser hvilket <b>filsystem</b> partitionen benytter
 </li>
 <li>
-  Det fjerde felt viser <b>monteringsindstilliger</b> der bliver brugt af 
-<c>mount</c> når det vil montere en partition. Da hvert filsystemer har sine 
-egne monteringsindstillinger, opfordres du til at læse manpagen mount 
-(<c>man mount</c>) for at få et fuldt overblik. Flere monteringsindstillinger 
+  Det fjerde felt viser <b>mount-indstilliger</b>, der bliver brugt af 
+<c>mount</c>, når det vil mounte en partition. Da hvert filsystem har sine 
+egne mount-indstillinger, opfordres du til at læse manpagen mount 
+(<c>man mount</c>) for at få et fuldt overblik. Flere mount-indstillinger 
 er adskilt med komma.</li>
 <li>
   Femte felt er brugt af <c>dump</c> til bestemme om en partion har brug for at
@@ -98,7 +98,7 @@ partitionen. Dette er kun et eksempel, så hvis din arkitektur ikke har brug for
 <p>
 I vores standardeksempel med x86 partitionering er <path>/boot</path> 
 partitionen <path>/dev/hda1</path> med <c>ext2</c> som filsystem. Det bør ikke 
-monteres automatisk (<c>noauto</c>), men skal stadigt kontrolleres, så vi 
+mountes automatisk (<c>noauto</c>), men skal stadigvæk kontrolleres, så vi 
 skriver:
 </p>
 
@@ -108,7 +108,7 @@ skriver:
 
 <p>
 For at forbedre ydelsen vil de fleste brugere tilføje <c>noatime</c>
-som monteringsindstilling, hvilket vil resultere i et hurtigere system, da 
+som moount-indstilling, hvilket vil resultere i et hurtigere system, da 
 tilgangstider ikke bliver registreret (hvilket du normalt ikke har brug for):
 </p>
 
@@ -130,7 +130,7 @@ Hvis vi forsætter med dette, får vi de tre følgende linjer (for
 <p>
 For at gøre det færdigt bør du tilføje en definition for <path>/proc</path>, 
 <c>tmpfs</c> (påkrævet) og for dit CD-ROM drev (og selvfølgelig også for andre 
-partitioner og drev hvis du har det):
+partitioner og drev, hvis du har det):
 </p>
 
 <pre caption="Et komplet eksempel på /etc/fstab">
@@ -147,7 +147,7 @@ none        /dev/shm  tmpfs   defaults          0 0
 <p>
 <c>auto</c> får <c>mount</c> til at gætte på filsystemet (anbefalet for 
 flytbare medier, da de kan være skabt med et af mange filsystemer) og 
-<c>user</c> gør det muligt for andre brugere end root at montere CD'en.
+<c>user</c> gør det muligt for andre brugere end root at mounte CDen.
 </p>
 
 <p>
@@ -185,7 +185,7 @@ Genindlæs din <path>/etc/fstab</path>, gem og afslut for at fortsætte.
 <p>
 Et af de valg man som bruger skal gøre, er at bestemme et navn til sin PC. 
 Dette lader til at være ret let, men <e>mange</e> brugere har problemer med at 
-finde et passende navn til deres Linux-pc. For at gøre det kort, så kan du 
+finde et passende navn til deres Linux-PC. For at gøre det kort, så kan du 
 ændre ethvert navn du vælger, senere. For vores skyld kan du kalde dit system 
 <c>tux</c> og dit domæne <c>homenetwork</c>. 
 </p>
@@ -252,7 +252,7 @@ er brugt i dette eksempel):
 </pre>
 
 <p>
-Den første variabel du finder er <c>iface_eth0</c>. Det benytter følgende 
+Den første variabel, du finder er <c>iface_eth0</c>. Det benytter følgende 
 syntaks:
 </p>
 
@@ -263,7 +263,7 @@ broadcast-adresse&gt;</i> netmask <i>&lt;din netmaske&gt;</i>"
 
 <p>
 Hvis du bruger DHCP (automatisk modtagelse af IP), skal du blot sætte 
-<c>iface_eth0</c>til <c>dhcp</c>. Hvis du til gengæld bliver nødt til at 
+<c>iface_eth0</c> til <c>dhcp</c>. Hvis du til gengæld bliver nødt til at 
 opsætte dit netværk manuelt og du ikke er bekendt med de ovenstående udtryk, så
  læs venligst sektionen i <uri
 link="?part=1&amp;chap=3#doc_chap4_sect3">Forståelse af netværksterminologi
@@ -287,7 +287,7 @@ gateway="eth0/192.168.0.1"
 
 <p>
 Hvis du har flere netværksenheder, så opret en ekstra <c>iface_eth</c> variabel
- som fx <c>iface_eth1</c>, <c>iface_eth2</c>. Variablen med <c>gateway</c> bør 
+ som f.eks. <c>iface_eth1</c>, <c>iface_eth2</c>. Variablen med <c>gateway</c> bør 
 ikke duplikeres, da du kun kan angive en gateway per computer.
 </p>
 
@@ -332,7 +332,7 @@ bruge <c>ln</c> til det:
 <p>
 Du skal nu informere Linux om dit netværk. Dette er defineret i 
 <path>/etc/hosts</path> og hjælper med at oversætte værtsnavne til IP-adresser,
- for værter der ikke er blevet oversat af din navneserver. Hvis fx dit interne 
+ for værter der ikke er blevet oversat af din navneserver. Hvis f.eks. dit interne 
 netværk består af tre PC'er navngivet <c>jenny</c> (192.168.0.5), 
 <c>benny</c> (192.168.0.6) og <c>tux</c> (192.168.0.7 - dette system) skal du 
 åbne <path>/etc/hosts</path> og indsætte disse værdier:
@@ -363,7 +363,7 @@ Gem og afslut din editor for at afslutte.
 </p>
 
 <p>
-Hvis du ikke har PCMCIA, kan du nu fortsætte med<uri link="#doc_chap4">
+Hvis du ikke har PCMCIA, kan du nu fortsætte med <uri link="#doc_chap4">
 Systeminformation</uri>. PCMCIA-brugere bør læse det følgende emne om PCMCIA.
 </p>
 
@@ -377,7 +377,7 @@ Systeminformation</uri>. PCMCIA-brugere bør læse det følgende emne om PCMCIA.
 PCMCIA-brugere bør først installere pakken <c>pcmcia-cs</c>:
 </p>
 
-<pre caption="Installering af pcmcia-cs">
+<pre caption="Installation af pcmcia-cs">
 # <i>emerge --usepkg pcmcia-cs</i>
 </pre>
 
@@ -408,14 +408,14 @@ Gentoo bruger <path>/etc/rc.conf</path> til generel system opsætning. Åbn
 
 <p>
 Som du kan se, er denne fil kommenteret fint til at hjælpe dig med opsætningen 
-af de nødvendige variabler. Vær særlig opmærksom på indstillingen <c>KEYMAP</c>
-: hvis du vælger forkert <c>KEYMAP</c>, vil du få mærkelige resultater når du 
+af de nødvendige variabler. Vær særlig opmærksom på indstillingen <c>KEYMAP</c>:
+hvis du vælger et forkert <c>KEYMAP</c>, vil du få mærkelige resultater når du 
 skriver på tastaturet.
 </p>
 
 <note>
 Brugere af USB-baserede SPARC systemer og SPARC kloner, kan have brug for at 
-vælge en i386 keymap (som fx "us") i stedet for "sunkeymap".
+vælge en i386 keymap (som f.eks. "us") i stedet for "sunkeymap".
 </note>
 
 <p>
