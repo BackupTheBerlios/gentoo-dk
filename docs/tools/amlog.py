@@ -6,7 +6,7 @@
 import time
 import sys
 
-version = '0.3.5'
+version = '0.3.6.2'
 
 class Output:
     """ class that handles all io """
@@ -56,11 +56,11 @@ class Output:
          f('<h1 align=center>' + dataobject.title + '</h1>\n')
          f('<h2 align=center>Channel summary</h2>\n')
          f('<p align=center>\n')
-         f('Log from channel: ' + str(dataobject.channelname) + ' parsed on: ' + str(dataobject.date) + '<br>\n')
-         f('The duration of the log file was: ' + str(dataobject.duration[0]) +
+         f('Log from channel: <b>' + str(dataobject.channelname) + '</b> parsed on: <b>' + str(dataobject.date) + '</b><br>\n')
+         f('The duration of the log file was: <b>' + str(dataobject.duration[0]) +
                                      ' day(s) ' + str(dataobject.duration[1]) +
-                                  ' hours and ' + str(dataobject.duration[2]) + ' minutes<br>\n')
-         f('The following people have been active: <br>\n')
+                                  ' hours and ' + str(dataobject.duration[2]) + ' minutes</b><br>\n')
+         f('<b>The following people have been active: </b><br>\n')
          i = -1
          length = len(dataobject.listofnicks) -1
          for nick in dataobject.listofnicks:
@@ -79,18 +79,43 @@ class Output:
          f('The has been a total of: <b>' + str(commitlenght) + ' commits.</b>\n')
          f('</p>\n')
 
-         f('<h2 align=center>Commit details </h2>\n')
+         f('<h2 align=center>Statistics</h2>\n')
+         f('<h3 align=center>Chat</h3>\n')
          f('<p align=center>\n')
          f('<table border=1>\n')
-         f('<tr><td><b>Nick</b></td><td><b>Time</b></td><td><b>Action</b></td></tr>\n')
-         for line in dataobject.commits:
-                 list = self.formatCommit(line)
-                 f('<tr><td>' + list[1] +'</td><td>' + list[0] + '</td><td>' + list[2] + '</td></tr>\n')
+
+         f('<tr>\n')
+         f('<td>Period</td>\n')
+         f('<td>00-04</td>\n')
+         f('<td>05-09</td>\n')
+         f('<td>10-14</td>\n')
+         f('<td>15-19</td>\n')
+         f('<td>20-23</td>\n')
+         f('</tr>\n\n')
+
+         f('<tr>\n')
+         f('<td>Number</td>\n')
+         f('<td>' + str(dataobject.chatting[0]) + '</td>\n')
+         f('<td>' + str(dataobject.chatting[1]) + '</td>\n')
+         f('<td>' + str(dataobject.chatting[2]) + '</td>\n')
+         f('<td>' + str(dataobject.chatting[3]) + '</td>\n')
+         f('<td>' + str(dataobject.chatting[4]) + '</td>\n')
+         f('</tr>\n\n')
+
+         f('<tr>\n')
+         f('<td>Percentile</td>\n')
+         f('<td>' + str((100 * dataobject.chatting[0])/dataobject.chatting[5]) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.chatting[1])/dataobject.chatting[5]) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.chatting[2])/dataobject.chatting[5]) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.chatting[3])/dataobject.chatting[5]) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.chatting[4])/dataobject.chatting[5]) + '%</td>\n')
+         f('</tr>\n\n')
 
          f('</table>\n')
          f('</p>\n')
 
-         f('<h2 align=center>Commit statistics</h2>\n')
+
+         f('<h3 align=center>Commits</h3>\n')
          f('<p align=center>\n')
          f('<table border=1>\n')
 
@@ -114,12 +139,23 @@ class Output:
 
          f('<tr>\n')
          f('<td>Percentile</td>\n')
-         f('<td>' + str((100 * dataobject.usage[0])/commitlength) + '%</td>\n')
-         f('<td>' + str((100 * dataobject.usage[1])/commitlength) + '%</td>\n')
-         f('<td>' + str((100 * dataobject.usage[2])/commitlength) + '%</td>\n')
-         f('<td>' + str((100 * dataobject.usage[3])/commitlength) + '%</td>\n')
-         f('<td>' + str((100 * dataobject.usage[3])/commitlength) + '%</td>\n')         
+         f('<td>' + str((100 * dataobject.usage[0])/commitlenght) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[1])/commitlenght) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[2])/commitlenght) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[3])/commitlenght) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[4])/commitlenght) + '%</td>\n')         
          f('</tr>\n\n')
+
+         f('</table>\n')
+         f('</p>\n')
+
+         f('<h2 align=center>Commit details </h2>\n')
+         f('<p align=center>\n')
+         f('<table border=1>\n')
+         f('<tr><td><b>Nick</b></td><td><b>Time</b></td><td><b>Action</b></td></tr>\n')
+         for line in dataobject.commits:
+                 list = self.formatCommit(line)
+                 f('<tr><td>' + list[1] +'</td><td>' + list[0] + '</td><td>' + list[2] + '</td></tr>\n')
 
          f('</table>\n')
          f('</p>\n')
@@ -148,21 +184,21 @@ class Output:
         f('<version>1.0</version>\n')
         f('<date>' + dataobject.date + '</date>\n\n')
         f('<abstract>\n')
-        f('  This document shows stats from ' + dataobject.channelname + '\n')
+        f('  This document shows stats from <b>' + dataobject.channelname + '</b>\n')
         f('</abstract>\n\n')
         f('<chapter>\n')        
         f('<title>Channel Summary</title>\n')
         f('<body>\n\n')
         f('<p>\n')
-        f('  Log from channel: ' + dataobject.channelname + ' parsed on:' + dataobject.date + '\n')
+        f('  Log from channel: <b>' + dataobject.channelname + '</b> parsed on: <b>' + dataobject.date + '</b>\n')
         f('</p>\n\n')
         f('<p>\n')
-        f('  The duration of the log file was: ' +  str(dataobject.duration[0]) +
+        f('  The duration of the log file was: <b>' +  str(dataobject.duration[0]) +
                                     ' day(s) ' + str(dataobject.duration[1]) +
-                                 ' hours and ' + str(dataobject.duration[2]) + ' minutes\n')
+                                 ' hours and ' + str(dataobject.duration[2]) + ' minutes</b>\n')
         f('</p>\n\n')
         f('<p>\n')
-        f('  The following people have been active:\n')
+        f('  <b>The following people have been active:</b>\n')
         f('</p>\n')
         i = -1
         length = len(dataobject.listofnicks) - 1
@@ -187,28 +223,49 @@ class Output:
         f('</p>\n\n')
         f('</body>\n')        
         f('</chapter>\n\n')
-        f('<chapter>\n')        
-        f('<title>Commit details</title>\n')
+
+        f('<chapter>\n')
+        f('<title>Statistics</title>\n')
+        f('<section>\n')
+        f('<title>Chat</title>\n')
         f('<body>\n\n')
-        
+
         f('<table>\n')
 
         f(' <tr>\n')
-        f('  <th>Nick</th>\n')
-        f('  <th>Time</th>\n')
-        f('  <th>Action</th>\n')
+        f('  <th>Period</th>\n')
+        f('  <th>00-04</th>\n')
+        f('  <th>05-09</th>\n')
+        f('  <th>10-14</th>\n')
+        f('  <th>15-19</th>\n')
+        f('  <th>20-23</th>\n')
         f(' </tr>\n\n')
-        for line in dataobject.commits:
-            list = self.formatCommit(line)
-            f(' <tr>\n  <ti>' + list[1] +'</ti>\n  <ti>' + list[0] + '</ti>\n  <ti>' + list[2] + '</ti>\n </tr>\n')
+
+        f(' <tr>\n')
+        f('  <ti>Number</ti>\n')
+        f('  <ti>' + str(dataobject.chatting[0]) + '</ti>\n')
+        f('  <ti>' + str(dataobject.chatting[1]) + '</ti>\n')
+        f('  <ti>' + str(dataobject.chatting[2]) + '</ti>\n')
+        f('  <ti>' + str(dataobject.chatting[3]) + '</ti>\n')
+        f('  <ti>' + str(dataobject.chatting[4]) + '</ti>\n')
+        f(' </tr>\n\n')
+        f(' <tr>\n')
+
+        f('  <ti>Percentile</ti>\n')
+        f('  <ti>' + str((100 * dataobject.chatting[0])/dataobject.chatting[5]) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.chatting[1])/dataobject.chatting[5]) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.chatting[2])/dataobject.chatting[5]) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.chatting[3])/dataobject.chatting[5]) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.chatting[4])/dataobject.chatting[5]) + '%</ti>\n')
+
+        f(' </tr>\n\n')
 
         f('</table>\n\n')
-
         f('</body>\n')        
-        f('</chapter>\n\n')
-
-        f('<chapter>\n')        
-        f('<title>Commit statistics</title>\n')
+        f('</section>\n\n')
+   
+        f('<section>\n')        
+        f('<title>Commits</title>\n')
         f('<body>\n\n')
 
         f('<table>\n')
@@ -239,6 +296,26 @@ class Output:
         f('  <ti>' + str((100 * dataobject.usage[3])/commitlength) + '%</ti>\n')
         f('  <ti>' + str((100 * dataobject.usage[4])/commitlength) + '%</ti>\n') 
         f(' </tr>\n\n')
+
+        f('</table>\n\n')
+        f('</body>\n')
+        f('</section>\n')
+        f('</chapter>\n\n')
+        
+        f('<chapter>\n')        
+        f('<title>Commit details</title>\n')
+        f('<body>\n\n')
+        
+        f('<table>\n')
+
+        f(' <tr>\n')
+        f('  <th>Nick</th>\n')
+        f('  <th>Time</th>\n')
+        f('  <th>Action</th>\n')
+        f(' </tr>\n\n')
+        for line in dataobject.commits:
+            list = self.formatCommit(line)
+            f(' <tr>\n  <ti>' + list[1] +'</ti>\n  <ti>' + list[0] + '</ti>\n  <ti>' + list[2] + '</ti>\n </tr>\n')
 
         f('</table>\n\n')
 
@@ -448,8 +525,42 @@ class DataFile:
                 continue
             else:
                 print error
-        return [interval00_04, interval05_09, interval10_14, interval15_19, interval20_23]
-        
+        return [interval00_04, interval05_09, interval10_14, interval15_19, interval20_23, len(com)]
+
+    def getChatting():
+
+        lf = LogFile()
+        log = lf.read()
+        temp = []
+        interval00_04 = 0
+        interval05_09 = 0
+        interval10_14 = 0
+        interval15_19 = 0
+        interval20_23 = 0
+        for string in log:
+            if string[2] == ':' and string[5] != '!':
+                temp.append(int(string[0:2]))
+        for number in temp:
+            if number <= 4:
+                interval00_04 = interval00_04 + 1
+                continue
+            elif number <= 9:
+                interval05_09 = interval05_09 + 1
+                continue
+            elif number <= 14:
+                interval10_14 = interval10_14 + 1
+                continue
+            elif number <= 19:
+                interval15_19 = interval15_19 + 1
+                continue
+            elif number >= 20:
+                interval20_23 = interval20_23 + 1
+                continue
+            else:
+                print error
+        return [interval00_04, interval05_09, interval10_14, interval15_19, interval20_23, len(temp)]
+
+    
     backgroundcolor = 'white'
     title = getTitle()
     channelname = getChannelName()
@@ -459,6 +570,7 @@ class DataFile:
     listofnicks = getActiveNicks()
     duration = getDurationTime()
     usage = getUsage(commits)
+    chatting = getChatting()
 
 def __main__():
     op = Output()
