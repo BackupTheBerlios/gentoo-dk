@@ -100,8 +100,8 @@ den nyeste 2004.0 udgivelse af Gentoo Linux:
 </p>	
 
 <ul>
-<li>Understøttelse for x86, PowerPC, UltraSparc, Alpha og MIPS processorer</li>
-<li>LiveCD-baseret installation til x86, PowerPC, UltraSparc og Alpha</li>
+<li>Understøttelse for x86, AMD64, PowerPC, UltraSparc, Alpha og MIPS processorer</li>
+<li>LiveCD-baseret installation til x86, AMD64, PowerPC, UltraSparc og Alpha</li>
 <li>Nyeste stabile KDE og GNOME</li>
 <li>Forskellige optimerede Linux-kerner</li>
 <li>Meget moderne GNU-udviklingsmiljø</li>
