@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <?xml-stylesheet href="../xsl/guide.xsl" type="text/xsl"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.5 2003/12/29 19:59:26 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.6 2004/01/02 12:07:18 broeman Exp $ -->
 
 <!DOCTYPE guide SYSTEM "../dtd/guide.dtd">
 <guide>
@@ -183,6 +183,12 @@ Noget
 <ti>boot</ti>
 <ti>opstart</ti>
 <ti/>
+</tr>
+
+<tr>
+<ti>boot loader</ti>
+<ti>boot-loader</ti>
+<ti>for konsekvens. start-henter, opstartshenter eller lign. virker bare ikke</ti>
 </tr>
 
 </table>
