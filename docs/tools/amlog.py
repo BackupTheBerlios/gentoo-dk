@@ -2,7 +2,7 @@
 ## An application to parse IRC log files. The purpose is mainly to
 ## remember commit messages.
 ## Made by Arne Mejlholm (aaby@gentoo.org)
-
+ 
 import time
 import sys
 
@@ -44,7 +44,7 @@ class Output:
     def writeHtmlFile(self, dataobject):
          """ a method that writes a html file passed as an object. """
          cf = ConfFile()
-         outputhtmlfile = cf.parseConfFileString('DIR') + '/output.html'
+         outputhtmlfile = cf.parseConfFileString('DIR') + 'output.html'
          file = open(outputhtmlfile, 'w')
          f = file.write
          f('<html>\n')
@@ -112,6 +112,15 @@ class Output:
          f('<td>' + str(dataobject.usage[4]) + '</td>\n')
          f('</tr>\n\n')
 
+         f('<tr>\n')
+         f('<td>Percentile</td>\n')
+         f('<td>' + str((100 * dataobject.usage[0])/commitlength) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[1])/commitlength) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[2])/commitlength) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[3])/commitlength) + '%</td>\n')
+         f('<td>' + str((100 * dataobject.usage[3])/commitlength) + '%</td>\n')         
+         f('</tr>\n\n')
+
          f('</table>\n')
          f('</p>\n')
 
@@ -124,7 +133,7 @@ class Output:
     def writeXMLFile(self, dataobject):
         """ a method that writes an xml file passed as an object. """        
         cf = ConfFile()
-        outputxmlfile = cf.parseConfFileString('DIR') + '/output.xml'
+        outputxmlfile = cf.parseConfFileString('DIR') + 'output.xml'
         file = open(outputxmlfile, 'w')
         f = file.write
 
@@ -173,8 +182,8 @@ class Output:
                 f(', ' + nick)
         f('</p>\n\n')
         f('<p>\n')
-        commitlenght = dataobject.nrcommits
-        f('  There has been a total of: <b>' + str(commitlenght) + ' commits</b>.\n')
+        commitlength = dataobject.nrcommits
+        f('  There has been a total of: <b>' + str(commitlength) + ' commits</b>.\n')
         f('</p>\n\n')
         f('</body>\n')        
         f('</chapter>\n\n')
@@ -221,6 +230,16 @@ class Output:
         f('  <ti>' + str(dataobject.usage[3]) + '</ti>\n')
         f('  <ti>' + str(dataobject.usage[4]) + '</ti>\n')
         f(' </tr>\n\n')
+        f(' <tr>\n')
+
+        f('  <ti>Percentile</ti>\n')
+        f('  <ti>' + str((100 * dataobject.usage[0])/commitlength) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.usage[1])/commitlength) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.usage[2])/commitlength) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.usage[3])/commitlength) + '%</ti>\n')
+        f('  <ti>' + str((100 * dataobject.usage[4])/commitlength) + '%</ti>\n') 
+        f(' </tr>\n\n')
+
         f('</table>\n\n')
 
         ### bottom
