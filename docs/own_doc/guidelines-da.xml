@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/guidelines-da.xml,v 1.2 2003/12/21 14:20:39 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/guidelines-da.xml,v 1.3 2003/12/29 20:50:11 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 <guide link="/guidelines-da.xml">
@@ -46,9 +46,10 @@ hold. Den sidstnævnte administreres udelukkende af Lead-Translator
 <body>
 
 <p>
-Medlemmer skal være tilføjet mailinglisten
-<i>gentoo-dk-devel@nongnu.org</i>, der er vores egen interne
-mailingliste.
+Medlemmer skal være tilføjet mailinglisterne
+<i>gentoo-dk-cvs@lists.berlios.de</i> og
+<i>,gentoo-dk-announce@lists.berlios</i>, der er vores egen interne
+mailinglister.
 
 Medlemmer opfordres også til at lave en konto hos <i>bugs.gentoo.org</i> og
 at tilmelde sig mailinglisten <i>gentoo-doc@gentoo.org</i>.
@@ -82,13 +83,13 @@ og dokumenter.
 Pt. arbejder vi på at oversætte et script vi har fået af neysx, der
 kan holde øje med nye versioner af dokumenter og hvor langt vi er med
 vores egne. <uri
-link="http://www.nongnu.org/gentoo-dk/sider/status.xml">Status-siden</uri>
+link="http://gentoo-dk.berlios.de/sider/status.xml">Status-siden</uri>
 vedligholdes af Jesper Brodersen.
 </p>
 
 <p>
 Vores egen side hos <uri
-link="http://savannah.nongnu.org/projects/gentoo-dk/">Savannah</uri>
+link="https://developer.berlios.de/projects/gentoo-dk/">BerliOS</uri>
 benyttes primært til at holde øje med bugs. Vi bruger bugs til at
 holde styr på hvor langt vi er kommet med oversættelser, opdateringer
 og andre vigtige ting. Det skal understreges at det er vigtig at
