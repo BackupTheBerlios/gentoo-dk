@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/gentoo-x86-quickinstall.xml,v 1.3 2003/12/29 19:25:55 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/gentoo-x86-quickinstall.xml,v 1.1 2004/01/02 12:28:17 broeman Exp $ -->
 <guide link="/doc/da/quickinstall.xml">
-<title>Gentoo Linux installations reference</title>
+<title>Gentoo Linux installationsreference</title>
 <author title="Forfatter">Steven Wagner</author>
 <author title="Redaktør">
   <mail link="swift@gentoo.org">Sven Vermeulen</mail>
@@ -9,11 +9,14 @@
 <author title="Oversætter">
   <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
+<author title="Korrektur">
+  <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
+</author>
 
 <abstract>
-Den hurtige installations reference dækker alle detaljer omkring
-installations processen i på en ikke uddybende måde. Brugere bør
-allerede have tidligere erfaring med at installere Gentoo Linux hvis
+Den hurtige installationsreference dækker alle detaljer omkring
+installationsprocessen i på en ikke uddybende måde. Brugere bør
+allerede have tidligere erfaring, med at installere Gentoo Linux, hvis
 de vil følge denne vejledning.
 </abstract>
 
@@ -23,25 +26,25 @@ de vil følge denne vejledning.
 <date>1. December 2003</date>
 
 <chapter>
-<title>Hurtige installations reference</title>
+<title>Hurtig installationsreference</title>
 <section>
 <body>
 
 <p>
-Installations ISO'erne er på <uri link=
-"http://www.gentoo.org/main/en/mirrors.xml">Gentoo
-Filspejlene</uri>. Detaljerede beskrivelser af de forskellige CD'er er
+Installations-ISO'erne er på <uri link=
+"http://www.gentoo.org/main/en/mirrors.xml">Gento-filspejlene</uri>.
+Detaljerede beskrivelser af de forskellige CD'er er
 tilgængelige i <uri link="http://store.gentoo.org">Gentoo
-Butikken</uri>. CD 1 indeholder alt du har brug for til at installere
-Gentoo Linux hurtigt og uden an forbindelse til Internettet. CD 2 er
+Butikken</uri>. CD 1 indeholder alt du har brug for, til at installere
+Gentoo Linux hurtigt og uden en forbindelse til Internettet. CD 2 er
 valgfri og indeholder præ-kompilerede pakker som KDE, GNOME,
 OpenOffice, Mozilla, Evolution og andet.
 </p>
 
 <p>
 Start op fra den første Gentoo CD. Tryk &lt;F1&gt; og/eller &lt;F2&gt;
-for at se hvad opstarts muligheder der er tilgængelige. Tryk
-&lt;ENTER&gt; ved bootskærmen for at fortsætte med standard kernen. Du
+for at se hvilke opstartsmuligheder der er tilgængelige. Tryk
+&lt;ENTER&gt; ved bootskærmen for at fortsætte med standardkernen. Du
 får med tiden en prompt.
 </p>
 
@@ -53,8 +56,8 @@ får med tiden en prompt.
 </pre>
 
 <p>
-Den anbefalede opsætning er 64 MB boot drev med ext2, en swap
-partition med den dobbelte størrelse af dine tilgængelige RAM og
+Den anbefalede opsætning er 64 MB boot drev med ext2, en swap-partition
+med den dobbelte størrelse af dine tilgængelige RAM og
 resten til din root partition med ReiserFS.
 </p>
 
@@ -94,7 +97,7 @@ Nu installerer vi Gentoo:
 </p>
 
 <pre caption = "At installere Gentoo">
-(Ændér USE, CFLAGS og CXXFLAGS. Stage1 kan også ændre CHOST)     # <i>nano -w /etc/make.conf</i>
+(Ændre USE, CFLAGS og CXXFLAGS. Stage1 kan også ændre CHOST)     # <i>nano -w /etc/make.conf</i>
 (Kun Stage1: bootstrap system)                                   # <i>cd /usr/portage; scripts/bootstrap.sh</i>
 (Kun Stage1, Kun Stage2: installér det basale system)            # <i>emerge system</i>
 </pre>
@@ -103,9 +106,9 @@ Nu installerer vi Gentoo:
 Herefter sætter vi det nødvendige information:
 </p>
 
-<pre caption = "At sætte konfigurationsfiler op">
+<pre caption = "At sætte opsætningsfiler op">
 (Sæt tidszone information)                            # <i>ln -sf /usr/share/zoneinfo/path/to/timezonefile /etc/localtime</i>
-(Rediger fstab filen)                                 # <i>nano -w /etc/fstab</i>
+(Redigér fstab filen)                                 # <i>nano -w /etc/fstab</i>
 </pre>
 
 <p>
@@ -128,7 +131,7 @@ none                    /dev/shm        tmpfs           defaults                
 Forsæt ved at installere Linux kernen:
 </p>
 
-<pre caption="Installing the Kernel">
+<pre caption="Installation af kernen">
 (Installér kerne koden)                                    # <i>emerge -k gentoo-sources</i>
 (Konfigurér din kerne med genkernel...)                    # <i>emerge -k genkernel; genkernel</i>
 (<comment>eller</comment> (1) byg manuelt din kerne)       # <i>cd /usr/src/linux; make menuconfig;</i>
@@ -138,10 +141,10 @@ Forsæt ved at installere Linux kernen:
 </pre>
 
 <p>
-Installér nu andre værktøjer du måske ønsker:
+Installér nu andre værktøjer du måtte ønske:
 </p>
 
-<pre caption = "Installér vigtige system værktøjer">
+<pre caption = "At installere vigtige system værktøjer">
 (Installér system logger; valg: sysklogd, metalog, msyslog, syslog-ng) # <i>emerge -k syslog-ng </i>
 (Få systemloggeren til automatisk at starte ved boot)                  # <i>rc-update add syslog-ng default</i>
 (Installér cron daemon; valg: vcron, dcron, fcron)                     # <i>emerge -k vcron</i>
@@ -186,10 +189,10 @@ Færdiggør opsætningen for dit Gentoo system:
 </pre>
 
 <p>
-Installér nu en bootloader. Den venstre er for grub, den højre er for lilo:
+Installér nu en boot-loader. Den venstre er for grub, den højre er for lilo:
 </p>
 
-<pre caption = "Install and Configure a bootloader">
+<pre caption = "At installere og opsætte en boot-loader">
 # <i>emerge -k grub</i>                                          | # <i>emerge -k lilo</i>
 # <i>grub</i>                                                    | # <i>nano -w /etc/lilo.conf</i>
 grub&gt; <i>root (hd0,0)</i>   (Boot partition)                     |  boot=/dev/hda
@@ -215,7 +218,7 @@ grub&gt; <i>quit</i>                                                |  timeout=5
 </pre>
 
 <p>
-Unmount nu alle partitioner og reboot ind i dit nye system:
+Unmount nu alle partitioner og genstart ind i dit nye system:
 </p>
 
 <pre caption="Færdiggør og installér GUI">
