@@ -100,7 +100,7 @@ Generelt bliver alle programmer sat til dansk, hvis du bruger følgende indstilli
 </p>
 
 <pre caption="Ændring i /etc/profile">
-#export LC_ALL="en_DK"
+export LC_ALL="en_DK"
 </pre>
 
 </body>
@@ -164,6 +164,20 @@ Vi har endnu ikke udarbejdet en vejledning til at indføre dette, samt at flere p
 
 </body>
 </section>
+<section>
+<title>Ting jeg ikke kender endnu ;)</title>
+<body>
+
+<pre caption="Andre specifikke opsætninger">
+LC_NUMERIC="en_DK"
+LC_TIME="en_DK"
+LC_COLLATE="en_DK"
+LC_MONETARY="en_DK"
+</pre>
+
+</body>
+</section>
+
 </chapter>
 </guide>
 
