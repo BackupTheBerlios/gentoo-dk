@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-portage.xml,v 1.2 2004/02/23 14:56:47 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-portage.xml,v 1.3 2004/02/23 19:26:59 broeman Exp $ -->
 
 <sections>
 <section>
@@ -23,13 +23,13 @@ behov.
 </p>
 
 <p>
-<c>emerge</c> er kommandoen der bruges til at installere, fjerne,
+<c>emerge</c> er kommandoen, der bruges til at installere, fjerne,
 forespørge og vedligeholde software pakker. Det er en front-end til
 <c>ebuilds</c>; folk der er interesseret i at blive professionelle
 brugere af Gentoo, vil lære at bruge <c>ebuilds</c> senere. Indtil
-videre vil vi fokusere på <c>emerge</c>, og den har funktionalitet som
+videre vil vi fokusere på <c>emerge</c>, og den har funktionalitet, som
 <c>ebuild</c> mangler (såsom at løse afhængigheder, søge i Portage
-træet, osv. ).
+træet osv.).
 </p>
 
 <p>
@@ -97,8 +97,8 @@ dev-lisp/        gnome-extra/       net-p2p/
 </pre>
 
 <p>
-Som du kan se har Portage træet adskillige underbiblioteker. De fleste
-af dem er <e>kategorier</e> hvori Gentoo-pakkerne, kaldet
+Som du kan se, har Portage-træet adskillige underbiblioteker. De fleste
+af dem er <e>kategorier</e>, hvori Gentoo-pakkerne, kaldet
 <e>ebuilds</e>, holder til. Tag f.eks. et blik på <path>app-office</path>:
 </p>
 
@@ -113,7 +113,7 @@ gnofin/      khacc/     mrproject/  phprojekt/          texmacs/
 </pre>
 
 <p>
-Inde i en kategori finder du de pakker der tilhører en kategori, med
+Inde i en kategori finder du de pakker, der tilhører en kategori, med
 et separat bibliotek til hver pakke. Lad os kigge på <c>openoffice</c>
 pakken:
 </p>
@@ -128,7 +128,7 @@ Manifest   metadata.xml  openoffice-1.1.0-r1.ebuild  openoffice-1.1.0.ebuild
 Huskede du, at vi fortalte dig at en Gentoo-pakke kaldes for en ebuild? Ser
 du, i biblioteket i vores eksempel, er der gemt fire ebuilds. Deres
 navngivning er næsten identisk: de skiller sig kun ud på deres
-versionsnavn. Du er fri til at kigge på indholdet af sådan en pakke:
+versionsnavn. Du er fri til at kigge på indholdet af sådan en pakke;
 de er bare almindelige scripts. Vi vil ikke diskutere det lige nu, da
 det ikke er vigtigt at vide, hvis du har planer om bare at bruge Gentoo.
 </p>
@@ -174,7 +174,7 @@ diskutere disse senere i dette kapitel.
 
 <p>
 Hvis du er ny til Linux eller Gentoo¸ så ved du måske ikke hvilke
-værktøjer du har brug for, til hvilket job. Til at muliggøre søgning,
+værktøjer, du har brug for til hvilket job. Til at muliggøre søgning,
 leverer <c>emerge</c> en måde at søge de tilgængelige pakker på
 dit system, igennem på. Der er to måder du kan søge igennem pakker:
 efter <e>navn</e>, eller efter <e>navn</e> og 
@@ -186,7 +186,7 @@ For at søge gennem Portage-træet efter navn, skal du bruge <c>emerge
 search</c>. F.eks. for at finde ud af mere omkring <c>mozilla</c>:
 </p>
 
-<pre caption="At se information omkring mozilla">
+<pre caption="At se informationer omkring mozilla">
 # <i>emerge search mozilla</i>
 Searching...   
 [ Results for search key : mozilla ]
@@ -231,7 +231,7 @@ Searching...
 Som du kan se, informerer outputtet af <c>emerge</c> om kategorien og
 navnet på pakken, den nyeste tilgængelige version, den version der
 pt. er installeret, størrelsen på de downloadede filer, hjemmesiden
-og den lille beskrivelse.
+og en lille beskrivelse.
 </p>
 
 <p>
@@ -240,7 +240,7 @@ at installere en pakke, skal den selvfølgelig have de nødvendige
 kildekoder (eller præ-kompilerede pakker) tilgængelig. Den tjekker
 derfor indholdet af <path>/usr/portage/distfiles</path> (efter
 kildekode) eller <path>/usr/portage/packages/All</path> (efter
-prækompilerede pakker) for at se om de nødvendige pakker allerede er
+præ-kompilerede pakker) for at se om de nødvendige pakker allerede er
 tilgængelige. Hvis ikke, så henter den de nødvendige filer og placerer
 dem i disse biblioteker.
 </p>
@@ -262,13 +262,13 @@ Other Tools</uri>.
 
 <p>
 Da du skimmede igennem Portage-træet, så du at der var en ChangeLog til
-enhver pakke. Du kan også se ChangeLog-noteringer imellem den tilgængelige
-version og den installerede version med <c>emerge</c>. Brug
-<c>--pretend --changelog</c> (<c>-pl</c> forkortet) mulighederne. Som
-et eksempel vil vi se ChangeLog indgange for <c>gnumeric</c>:
+enhver pakke. Du kan også se ChangeLog-noteringer, imellem den tilgængelige
+version og den installerede version, med <c>emerge</c>. Brug
+<c>--pretend --changelog</c> (<c>-pl</c> forkortet) valgmulighederne. Som
+et eksempel vil vi se ChangeLog-noteringer for <c>gnumeric</c>:
 </p>
 
-<pre caption="At se ChangeLog-noteringer til gnumeric">
+<pre caption="At se ChangeLog-noteringer for gnumeric">
 # <i>emerge --pretend --changelog gnumeric</i>
 <comment>(Noget af outputtet er fjernet for at forøge læsbarheden)</comment>
 *gnumeric-1.2.2
@@ -318,11 +318,11 @@ tilgængeligheden af et netværk ikke tillader brug af rsync server).
 <p>
 Det kan anbefales at vælge et hurtigt <uri
 link="/main/en/mirrors.xml">filspejl</uri> tæt på dig, først. Du kan
-gøre dette manuelt (ved at sætte <c>SYNC</c> variablen i
-<path>/etc/make.conf</path>) eller brug af <c>mirrorselect</c> til at
-gøre dette automatisk for dig. Da <c>SYNC</c> variablen vil blive
+gøre dette manuelt (ved at sætte <c>SYNC</c>-variabelen i
+<path>/etc/make.conf</path>) eller brug af <c>mirrorselect</c>, til at
+gøre dette automatisk for dig. Da <c>SYNC</c>-variabelen vil blive
 diskuteret senere, vil vi fokusere på brugen af <c>mirrorselect</c>.
-Installér først <c>mirrorselect</c> ved at emerge den:
+Installer først <c>mirrorselect</c> ved at emerge den:
 </p>
 
 <pre caption="Installation af mirrorselect">
@@ -370,13 +370,13 @@ system op til at bruge proxier under Gentoo installationen.
 <section>
 <title>Vedligeholdelse af software</title>
 <subsection>
-<title>At bygge eller at bruge præbygget?</title>
+<title>At bygge eller at bruge præ-bygget?</title>
 <body>
 
 <p>
-Gentoo stiller ebuilds, Gentoo-pakkerne hvis du foretrækker det, til
+Gentoo stiller ebuilds og Gentoo-pakkerne, hvis du foretrækker det, til
 rådighed. Men når du vil installere sådan en ebuild, så kan du vælge
-mellem at <e>bygge</e> pakken og at bruge en <e>præbygget</e>
+mellem at <e>bygge</e> pakken og at bruge en <e>præ-bygget</e>
 pakke. Men hvad er fordelene/ulemperne af begge disse muligheder, og
 kan de bruges sammen med hinanden?
 </p>
@@ -393,13 +393,13 @@ kompilere en pakke med.
 </p>
 
 <p>
-At bruge præbyggede pakker forbedrer installationstiden (da der ikke
+At bruge præ-byggede pakker forbedrer installationstiden (da der ikke
 længere er brug for kompilering), men du vil miste fordelene af
 <c>USE</c>-indstillingen og <c>CFLAGS</c>- &amp; <c>CXXFLAGS</c>-variablerne.
 </p>
 
 <p>
-Som vi før har sagt, bliver præbyggede pakker gemt i
+Som vi før har sagt, bliver præ-byggede pakker gemt i
 <path>/usr/portage/packages/All</path> biblioteket, mens kildekoden
 til pakkerne er placeret i <path>/usr/portage/distfiles</path>. Hvis
 du har gennemført installationen af en pakke kan du fjerne pakken
@@ -418,7 +418,7 @@ downloade den igen).
 <p>
 Okay, nok snak, lad os komme til sagen. For at installere en pakke,
 bruger man <c>emerge</c> kommandoen. Hvis du ikke vil bruge nogen
-præbyggede pakker, så kan du bare bruge <c>emerge &lt;pakke-navn&gt;</c> eller <c>emerge
+præ-byggede pakker, så kan du bare bruge <c>emerge &lt;pakke-navn&gt;</c> eller <c>emerge
 &lt;kategori&gt;/&lt;pakke-navn&gt;</c>. Som et eksempel vil vi installere
 <c>gnumeric</c>:
 </p>
@@ -430,7 +430,7 @@ præbyggede pakker, så kan du bare bruge <c>emerge &lt;pakke-navn&gt;</c> eller <
 <p>
 Dette vil downloade kildekoden for dig og pakke ud, kompilere samt
 installere pakken på dit system. Den vil også gøre det samme for alle
-afhængigheder. Hvis du vil se hvilke afhængigheder der vil blive
+afhængigheder. Hvis du vil se hvilke afhængigheder, der vil blive
 installeret sammen med den, brug <c>--pretend</c> muligheden (<c>-p</c> forkortet):
 </p>
 
@@ -440,7 +440,7 @@ installeret sammen med den, brug <c>--pretend</c> muligheden (<c>-p</c> forkorte
 
 <p>
 Hvis du vil downloade kildekoden til en pakke og dens afhængigheder,
-men ikke ønsker at bygge pakken, så brug <c>--fetchonly</c> muligheden 
+men ikke ønsker at bygge pakken, så brug <c>--fetchonly</c> valgmuligheden 
 (<c>-f</c> forkortet):
 </p>
 
@@ -475,17 +475,17 @@ eksakte version).
 </body>
 </subsection>
 <subsection>
-<title>At installere præbyggede pakker</title>
+<title>At installere præ-byggede pakker</title>
 <body>
 
 <p>
-Når du ønsker at installere en præbygget pakke, så bør du bruge <c>--usepkg</c>
+Når du ønsker at installere en præ-bygget pakke, så bør du bruge <c>--usepkg</c>
 muligheden (<c>-k</c> forkortet). Dette vil bruge den binære pakke
 tilgængelig i <path>/usr/portage/packages/All</path> <e>hvis</e>
 pakken og den version af applikationen, du vil installere, matcher.
 </p>
 
-<pre caption="At installere en præbygget pakke til gnumeric">
+<pre caption="At installere en præ-bygget pakke til gnumeric">
 # <i>emerge --usepkg gnumeric</i>
 </pre>
 
@@ -493,12 +493,12 @@ pakken og den version af applikationen, du vil installere, matcher.
 Hvis du vil bruge den binære pakke, selv om at versionerne ikke
 matcher, brug da <c>--usepkgonly</c> (<c>-K</c> forkortet).
 </p>
-<pre caption="At installere den præbyggede pakke til gnumeric">
+<pre caption="At installere den præ-byggede pakke til gnumeric">
 # <i>emerge --usepkgonly gnumeric</i>
 </pre>
 
 <p>
-Hvis du ikke har den præbyggede pakke på dit system endnu, så kan du
+Hvis du ikke har den præ-byggede pakke på dit system endnu, så kan du
 få <c>emerge</c> til at downloade den fra et filspejl, som er
 defineret i <c>PORTAGE_BINHOST</c> variablen erklæret i
 <path>/etc/make.conf</path>.
@@ -509,7 +509,7 @@ For at downloade den binære pakke i tilfælde af, at denne pakke ikke
 allerede eksisterer på dit system, brug <c>--getbinpkg</c> (<c>-g</c> forkortet):
 </p>
 
-<pre caption="At downloade og installere en præbygget pakke til gnumeric">
+<pre caption="At downloade og installere en præ-bygget pakke til gnumeric">
 # <i>emerge --getbinpkg gnumeric</i>
 </pre>
 
@@ -520,19 +520,19 @@ vil se hvilke afhængigheder, der vil blive installeret med den, brug
 <c>--pretend</c> muligheden (<c>-p</c> forkortet):
 </p>
 
-<pre caption="At lade som om man downloader den præbyggede pakke til gnumeric">
+<pre caption="At lade som om man downloader den præ-bygget pakke til gnumeric">
 # <i>emerge --getbinpkg --pretend gnumeric</i>
 </pre>
 
 <p>
-Du kan også vælge at downloade den præbyggede pakke (og den
+Du kan også vælge at downloade den præ-bygget pakke (og den
 pakke-relaterede information) <e>uden</e> at tjekke informationen på
-dit lokale system og <e>uden</e> at bruge den præbyggede pakke der
+dit lokale system og <e>uden</e> at bruge den præ-bygget pakke, der
 allerede er på dit system (hvis anvendelig), brug da
-<c>--getbinpkgonly</c> muligheden (<c>-G</c> forkortet):
+<c>--getbinpkgonly</c> valgmuligheden (<c>-G</c> forkortet):
 </p>
 
-<pre caption="At installere en præbygget pakke uden at bruge lokal information">
+<pre caption="At installere en præ-bygget pakke uden at bruge lokal information">
 # <i>emerge --getbinpkgonly gnumeric</i>
 </pre>
 
@@ -560,19 +560,19 @@ eksakte version).
 
 <p>
 Portage har en omfattende understøttelse for håndtering af
-afhængigheder. Selvom du sædvaneligvis ikke behøver at tænke på dette
-(da afhængigheder automatisk bliver håndteret af Portage) vil nogle
-brugere måske gerne vide hvordan du kan arbejde med <c>emerge</c> og
+afhængigheder. Selvom du sædvanligvis ikke behøver at tænke på dette
+(da afhængigheder automatisk bliver håndteret af Portage), vil nogle
+brugere måske gerne vide, hvordan man kan arbejde med <c>emerge</c> og
 afhængigheder.
 </p>
 
 <p>
-F.eks. hvis du vil have Portage til at lade som at ingen af en pakkes
+F.eks. hvis du vil have Portage til at lade som om, at ingen af en pakkes
 afhængigheder er installeret, så kan du bruge <c>--emptytree</c> (<c>-e</c> forkortet). 
 Dette er brugbart sammen med <c>--pretend</c> for at vise et komplet træ
 af afhængigheder for en bestemt pakke. Uden <c>--pretend</c>, vil <c>emerge</c> 
-rekompilere alle de listede pakker. <c>glibc</c> vil dog <e>ikke</e>
-blive listet som en afhængighed af sikkerhedsårsager.
+genkompilere alle de listede pakker. <c>glibc</c> vil dog <e>ikke</e>
+blive oplistet som en afhængighed af sikkerhedsårsager.
 </p>
 
 <pre caption="At vise alle afhængigheder for gnumeric">
@@ -580,9 +580,9 @@ blive listet som en afhængighed af sikkerhedsårsager.
 </pre>
 
 <p>
-Et andet argument er <c>--nodeps</c>, hvilken vil bede Portage om at
+Et andet argument er <c>--nodeps</c>, hvilken vil bede Portage om, at
 installere den givne pakke uden at håndtere dens afhængigheder. Det er
-trivielt at dette kan føre til fejl.
+trivielt, at dette kan føre til fejl.
 </p>
 
 <pre caption="At installere gnumeric uden at håndtere afhængighederne">
@@ -610,12 +610,12 @@ Portage kender to specielle ord der repræsenterer et sæt af software pakker:
 installerede Gentoo, hvis du ikke brugte en <e>stage3</e>
 installation. For at genopfriske tingene: <e>system</e> er samlingen
 af <e>centrale</e> pakker, der er nødvendige for at have et Gentoo
-system der virker.
+system, der virker.
 </p>
 
 <p>
 <e>world</e>­ordet består af alt det software, du selv har installeret
-på systemet plus <e>system</e> informationen. Med andre ord, så
+på systemet plus <e>system</e>s-informationen. Med andre ord, så
 hver gang du emerger en pakke ved brug af <c>emerge
 &lt;pakke-navn&gt;</c>, så bliver <c>&lt;pakke-navn&gt;</c> registreret
 i <e>world</e> filen
@@ -683,8 +683,8 @@ kombination af bogstaver), som giver dig mere information omkring pakken:
     men vil blive nedgraderet til en ældre version
   </li>
   <li>
-    <e>U-</e> (plads advarsel)<!--slot warning--> Den pakke du har
-    installeret på dit system er listet som en pakke der ikke kan
+    <e>U-</e> (plads advarsel) Den pakke du har
+    installeret på dit system er oplistet, som en pakke der ikke kan
     eksistere sammen med en anden version, men det gør din opdatering
     faktisk. Opdaterering vil blive installeret og den ældre version
     vil blive fjernet
@@ -732,18 +732,18 @@ igen bruge <c>--pretend</c>:
 </pre>
 
 <warn>
-Portage bekræfter ikke om en pakke er en afhængighed for en anden
+Portage bekræfter ikke om en pakke er en afhængighed, for en anden
 installeret pakke. Den advarer heller ikke hvis pakken er en del af 
 <e>system</e>, f.eks. en central applikation, der er nødvendig for at
 dit system fungerer korrekt!
 </warn>
 
 <p>
-Når unmerge begynder, så vil du se en lang liste af filnavne der
+Når unmerge begynder, så vil du se en lang liste af filnavne, der
 tilhører pakken. Nogle af disse filnavne vil have et flag vist til
 venstre for filnavnet. Flagene <c>!mtime</c>, <c>!empty</c>, og
 <c>cfgpro</c> specificerer grunde til hvorfor givne filer ikke bliver
-fjernet selvom pakken gør. Filer, der bliver listet uden nogen af disse
+fjernet, selvom pakken gør. Filer, der bliver listet uden nogen af disse
 tre flag, bliver fjernet fra filsystemet med succes. De tre flag
 specificerer de følgende grunde:
 </p>
@@ -773,7 +773,7 @@ specificerer de følgende grunde:
 
 <p>
 Gentoo placerer sine pakker i to mulige stadier kaldet <e>ARCH</e> og
-<e>~ARCH</e>. Tag ikke dette bogstaveligt: stadiet afhænger af den
+<e>~ARCH</e>. Tag ikke dette bogstaveligt; stadiet afhænger af den
 arkitektur du bruger. Med andre ord, til x86-baserede systemer har du <e>x86</e> og
 <e>~x86</e>, til ppc-baserede systemer har du <e>ppc</e> og <e>~ppc</e> osv.
 </p>
@@ -805,7 +805,7 @@ Bemærk at det er langt fra trivielt (omend umuligt) at gå tilbage til
 
 <p>
 Hvis du vil opdatere dit system nu, så vil du bemærke at der er
-<e>mange</e> pakker du vil blive opdateret!
+<e>mange</e> pakker, som vil blive opdateret!
 </p>
 
 </body>
@@ -843,7 +843,7 @@ ikke er tilgængelig i <e>ARCH</e>), så kan du midlertidigt acceptere <e>~ARCH</e
 </pre>
 
 <p>
-En pakke er masked "hårdt" hvis den er listet i 
+En pakke er maskeret "hårdt" hvis den er listet i 
 <path>/usr/portage/profiles/package.mask</path>. Hvis du læser denne
 fil, så vil du også læse grunden til at pakken er hårdt maskeret (det
 er som regel tilføjet som en kommentar). Hvis du på trods af alt dette
@@ -855,10 +855,10 @@ eller "trænger virkelig til at blive testet"), så lav
 </p>
 
 <p>
-Ændér <e>ikke</e> i <path>/usr/portage/profiles/package.mask</path>­filen,
+Du skal <e>ikke</e> ændre i <path>/usr/portage/profiles/package.mask</path>­filen,
 da alle ændringer bliver fjernet, næste gang du opdaterer dit
 Portage-træ. Hvis du vil maskere en pakke hårdt, så lav
-<path>/etc/portage/package.mask</path> og list pakken i den (brug det
+<path>/etc/portage/package.mask</path> og noter pakken i den (brug det
 samme format som nævnt ovenfor).
 </p>
 <!--
