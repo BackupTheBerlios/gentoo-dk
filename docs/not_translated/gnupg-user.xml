@@ -1,20 +1,21 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/gnupg-user.xml,v 1.1 2003/12/19 13:01:40 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/gnupg-user.xml,v 1.2 2004/01/03 16:35:32 brotherdysk Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 <guide link = "/doc/en/gnupg-user.xml">
-<title>GnuPG Gentoo user guide</title>
+<title>GnuPG Gentoo brugervejledning</title>
 <author title="Author">
 <mail link="gustavo@felisberto.net">Gustavo Felisberto</mail>
 </author>
-<author title="Editor"><!-- zhen@gentoo.org -->
+<author title="Redaktoer"><!-- zhen@gentoo.org -->
 John P. Davis
 </author>
-<author title="Editor">
+<author title=Redaktoer">
 <mail link="bennyc@gentoo.org">Benny Chuang</mail>
 </author>
 
 <abstract>
-This small guide will teach you the basics of using GnuPG, a tool for secure communication.
+Denne lille vejledning vil laere dig den basale brug af GnuPG, som er et redskab til sikker kommunikation.
+[This small guide will teach you the basics of using GnuPG, a tool for secure communication.]
 </abstract>
 
 <version>1.0.3</version>
@@ -23,20 +24,20 @@ This small guide will teach you the basics of using GnuPG, a tool for secure com
 <license/>
 
 <chapter>
-<title>Introduction</title>
+<title>Introduktion</title>
 <section>
-<title>What you will get in this guide</title>
+<title>Hvad denne vejledning indeholder</title>
 <body>
 
 <p>
-This guide assumes that you are familiar with public-key cryptography, 
-encryption, and digital signatures. If this is not the case take a look at the 
-<uri link="http://www.gnupg.org/(en)/documentation/guides.html">GnuPG handbook
+Denne vejledning regner med at du er rimeglig familiar med public-key cryptography, 
+encryption, og digitale underskrifter. Hvis detter ikke er tilfældet, så tag en kik på 
+<uri link="http://www.gnupg.org/(en)/documentation/guides.html">GnuPG handbooken
 </uri> chapter 2.
 </p>
 
 <p>
-This guide will teach you how to install GnuPG, how to create your keypair, 
+Denne vejledning vil lære dig hvordan man installerer GnuPG, how to create your keypair, 
 how to add keys to your keyring, how to submit your public key to keyserver, 
 and how to (sign/encrypt)/(verify/decode) messages you send/receive. You will 
 also learn how to encrypt files in your local computer to prevent people from 
@@ -50,7 +51,7 @@ reading their contents.
 <body>
 
 <p>
-At a very basic level you need to <c>emerge gnupg</c>, if you wish to have an 
+På et meget basalt niveau skal du <c>emerge gnupg</c>, if you wish to have an 
 e-mail client using gnupg you can use pine (<c>emerge pinepgp</c>), mutt 
 (<c>emerge mutt</c>), Mozilla/Netscape Mail, evolution (evolution is a GNOME 
 Microsoft Outlook work alike) and KDE's own KMail (KMail is part of the 
