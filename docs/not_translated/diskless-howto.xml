@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/diskless-howto.xml,v 1.1 2004/01/03 10:21:57 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/diskless-howto.xml,v 1.2 2004/01/07 22:29:58 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<guide link="/doc/en/diskless-howto.xml">
+<guide link="/doc/da/diskless-howto.xml">
 
-<title>Diskless Nodes with Gentoo</title>
+<title>Diskfrie noder med Gentoo</title>
 
 <author title="Researcher">
     <mail link="ma53@drexel.edu">Michael Andrews</mail>
@@ -12,60 +12,63 @@
 <author title="Reviewer">
     <mail link="swift@gentoo.org">Sven Vermeulen</mail>
 </author>
-<author title="Reviewer">
+<author title="Redaktør">
     <mail link="neysx@gentoo.org">Xavier Neys</mail>
+</author>
+<author title="Oversætter">
+    <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
 </author>
 
 <license/>
 
 <abstract>
-This HOWTO will help you create setup diskless nodes with Gentoo Linux 
+Denne HOWTO vil hjælpe dig med at opsætte diskfrie noder med Gentoo Linux 
 </abstract>
 
 <version>1.1</version>
-<date>November 20, 2003</date>
+<date>20. November, 2003</date>
 
 <chapter>
-<title>Introduction</title>
+<title>Introduktion</title>
 
 <section>
-<title>About this HOWTO</title>
+<title>Om denne HOWTO</title>
 <body>
 
 <p>
-This HOWTO will help you setup <e>diskless</e> workstations based on
-the Gentoo Linux distribution. We intend to make this as user friendly
-as possible and cater to the Linux newbie, because every one of us was one at a
-certain point :) While an experienced user could easily tie the multiple HOWTOs 
-available on diskless nodes and networking together we hope that this guide can 
-ease the installation for all interested users, geeks or not. 
+Denne HOWTO vil hjælpe dig med sætte <e>diskfrie</e> arbejdsstationer op, baseret på
+Gentoo Linux distributionen. Vi prøver at lave det så brugervenligt
+som muligt, og sørger for Linux-newbien, fordi alle var én på et
+specifikt tidspunkt :) Da en erfaren bruger sagtens kan samle de mange HOWTOer,
+som er tilgængelige omkring diskfrie noder og netværk sammenlagt, håber vi at denne vejledning kan
+lette installationen for alle interesserede brugere, nørd eller ej. 
 </p>
 
 </body>
 </section>
 <section>
-<title>What is a diskless machine?</title>
+<title>Hvad er en diskfri maskine?</title>
 <body>
 
 <p>
-A diskless machine is a PC without any of the usual boot devices such as hard
-disks, floppy drives or CD-ROMs. The diskless node boots off the network and 
-needs a server that will provide it with storage space as a local hard disk 
-would. From now on we call the server the <e>master</e>, while the diskless 
-machine gets called the <e>slave</e> (what's in a name :). The slave node 
-needs a network adapter that supports PXE booting. Most modern cards support 
-PXE and many built-in adapters on motherboards will also work.
+En diskfri maskine er en PC, uden nogen af de normale opstartsenheder, som
+harddiske, floppydrev eller CDROM-drev. Den diskfrie node starter via et netværk og 
+skal bruge en server, som kan levere det med lagerplads, som en lokal harddisk
+ville gøre. Fra nu af, kalder vi serveren <e>master</e>, imens vi kalder den diskfrie 
+maskine for <e>slave</e> (det ligger i navnet :). Slave-noden
+kræver en netværksadapter, som understøtter PXE-opstart. De fleste kort understøtter
+PXE og mange indebygget adaptere på bundkorte vil også virke.
 </p>
 
 </body>
 </section>
 <section>
-<title>Before you start</title>
+<title>Før du starter</title>
 <body>
 
 <p>
-You should have Gentoo installed on your master node and enough space on the 
-master to store the file systems of the slave nodes you want to host.  
+Du burde have Gentoo installeret på din master-node, og nok plads på 
+master til at gemme de filsystemer til slave-noderne.  
 </p>
 
 </body>
@@ -73,70 +76,70 @@ master to store the file systems of the slave nodes you want to host.
 </chapter>
 
 <chapter>
-<title>Configuring the master and the slaves</title>
+<title>Opsætning af master og slave</title>
 <section>
-<title>About kernels</title>
+<title>Om kerner</title>
 <body>
 
 <note>
-If you are going to cluster your nodes into an openMosix cluster, make sure you
-use the patched kernel for openMosix. It can be found in portage under
-<path>sys-kernel/openmosix-sources</path>. You should read our <uri
-link="openmosix-howto.xml">openMosix HOWTO</uri> to learn how to compile your
-kernel for openMosix.
+Hvis du vil lave en cluster af dine noder ind til en openMosix-cluster, vær sikker på at du
+bruger den patchet kerne til openMosix. Den kan findes i portage under
+<path>sys-kernel/openmosix-sources</path>. Du burde læse vores <uri
+link="openmosix-howto.xml">openMosix HOWTO</uri> for at lære om, hvordan du kompilerer din
+kerne til openMosix.
 </note>
 
 <p>
-The kernel is the software that sits between your hardware and all other 
-software you have loaded on your machine, essentially the heart of a kernel 
-based operating system.  When your computer is started, the BIOS executes the 
-instructions found at the reserved boot space of your hard drive. These 
-instructions are typically a boot loader that loads your kernel. After your 
-kernel has been loaded all processes are handled by the kernel.  
+Kernen er det software, som sidder imellem dit hardware og alt andet 
+software, som du hentet på din maskine, er essensen af et kerne 
+baseret operativsystem.  Når din computer er startet, vil BIOS udføre 
+instruktioner, som er fundet på et reserveret opstartsplads på din harddisk. Disse 
+instruktioner er typisk en boot-loader, som henter din kerne. Efter at din 
+kerne er blevet hentet, er alle processer håndteret af kernen.  
 </p>
 
 <p>
-For more information on kernels and kernel configuration you might want to
-check out the <uri link="http://www.tldp.org/HOWTO/Kernel-HOWTO.html">kernel
-HOWTO</uri>.
+Flere informationer om kerner og kerneopsætning kan du finde ved at
+kigge på <uri link="http://www.tldp.org/HOWTO/Kernel-HOWTO.html">kernel
+HOWTO</uri> (engelsk).
 </p>
 
 </body>
 </section>
 <section>
-<title>Configuring the master kernel</title>
+<title>Opsætning af masters kerne</title>
 <body>
 
 <p>
-The master kernel can be as large and as customized as you would like but 
-there are a few required kernel options you need to select. Go into your 
-kernel configuration menu by typing:
+Masterens kerne kan være så stor og skræddersyet, som du ville ønske det, men
+der er få krævede kerne-valgmuligheder, som du skal vælge. Gå ind i din 
+kerne-opsætningsmednu ved at taste:
 </p>
 
-<pre caption="Editing the master's kernel configuration">
+<pre caption="Redigering af masters kerneopsætning">
 # <i>cd /usr/src/linux</i>
 # <i>make menuconfig</i>
 </pre>
 
 <p>
-You should get a grey and blue GUI that offers a safe alternative to manually 
-editing the <path>/usr/src/linux/.config</path> file.  If your kernel is 
-currently functioning well you might want to save the current configuration 
-file by exiting the GUI and type:
+Du burde få et grå og blåt grafisk grænseflade (GUI), som leverer en sikker alternative til manuelt
+redigering af <path>/usr/src/linux/.config</path> filen.  Hvis din kerne er 
+funktionsdygtig, så er det måske en god idé at gemme den nuværende opsætningsfil 
+ved at afslutte GUIen og taste:
 </p>
 
-<pre caption="Backing up the master's kernel configuration">
+<pre caption="Backup af masters kerneopsætning">
 # <i>cp .config .config_working</i>
 </pre>
 
 <p>
-Go into the following sub-menus and make sure the listed items are checked
-as built-in (and <e>NOT</e> as modular).  The options show below are taken from 
-the 2.4.22 kernel version. If you use a different version, the text or sequence
-might differ. Just make sure you select at least those shown below.
+Gå ind i følgende under-menuer og være sikker på at de viste ting er afkrydset
+som 'built-in' (og <e>IKKE</e> som moduler).  Indstillingerne, som er vist forneden er taget fra 
+2.4.22 kerneversionen. Hvis du bruger en anden version, så kan teksten eller opstillingen
+være anderledes. Vær sikker på at du vælger mindst dem vist forneden.
 </p>
 
-<pre caption="master's kernel options">
+<pre caption="masters kerneindstillinger">
 Code maturity level options  ---&gt;
   [*] Prompt for development and/or incomplete code/drivers
 
@@ -162,81 +165,81 @@ File systems ---&gt;
 </pre>
 
 <note>
-These kernel configuration options should only be added to your system 
-specific configuration options and are not meant to completely replace your 
-kernel configuration.
+Disse kerneopsætningsindstillinger skulle kun blive tilføjet dit systemspecifikke 
+opsætningsindstillinger og er ikke ment til at erstarte din egen kernes
+indstillinger komplet.
 </note>
 
 <p>
-After you have re-configured the master's kernel you will want to rebuild it: 
+Efter at du har genindstillet masters kerne, vil du få brug for at genbygge den: 
 </p>
 
-<pre caption="Recompiling the master's kernel and modules">
+<pre caption="Genkompilering af masters kerne og moduler">
 # <i>make dep</i>
 # <i>make clean bzImage modules modules_install</i>
-<comment>(Make sure /boot is mounted before copying to it)</comment>
+<comment>(Vær sikker på at /boot er mounted, før du kopierer til den)</comment>
 # <i>cp arch/i386/boot/bzImage /boot/bzImage-master</i>
 # <i>cp System.map /boot/System.map-master</i>
 </pre>
 
 <p>
-Then add an entry for that new kernel into <path>lilo.conf</path> or
-<path>grub.conf</path> depending on which bootloader you are using and make the
-new kernel the default one. Now that the new bzImage has been copied into your
-boot directory all you will have to do is reboot the system in order to load
-these new options.
+Tilføj så en punkt for den nye kerne i <path>lilo.conf</path> eller
+<path>grub.conf</path>, afhængigt af hvilken boot-loader, som du bruger og lav
+den nye kerne, valgt som standard. Nu da den nye bzImage er blevet kopieret til dit
+boot-bibliotek, er alt hvad du skal gøre er, at genstarte systemet for at hente
+disse nye indstillinger.
 </p>
 
 </body>
 </section>
 <section>
-<title>About the slave kernel</title>
+<title>Om slaves kerne</title>
 <body>
 
 <p>
-It is recommended that you compile the slave kernel without any modules, since 
-loading and setting them up via remote boot is a difficult and unnecessary 
-process.  Additionally, the slave kernel should be as small and compact as 
-possible in order to efficiently boot from the network. We are going to compile 
-the slave's kernel in the same place where the master was configured.
+Det er anbefalet, at du kompilerer slaves kerne uden nogen moduler, idet at
+hente og indstille dem via en fjern-kontroleret opstart er svært og en unødvendig
+process.  I tilføjelse af dette, burde slaves kerne være så lille og kompakt som
+muligt, for at kunne opstarte effektivt fra netværket. Vi skal til at kompilere
+slaves kerne i det samme sted, som master var opsat.
 </p>
 
 <p>
-To avoid confusion and wasting time it is probably a good idea to backup the 
-master's configuration file by typing:
+For at undgå misforståelser og spilde tid, er det sikkert en god idé at lave en backup af 
+masters opsætningsfil ved at taste:
 </p>
 
-<pre caption="Backing up the master's kernel configuration">
+<pre caption="Backup af masters kerneopsætning">
 # <i>cp /usr/src/linux/.config /usr/src/linux/.config_master</i>
 </pre>
 
 <p>
-Now we will want to configure the slave's kernel in the same fashion we 
-configured the master's kernel.  If you want to start with a fresh 
-configuration file you can always recover the default 
-<path>/usr/src/linux/.config</path> file by typing:
+Nu vil vi til at opsætte slaves kerne på den samme måde, som vi
+opsatte masters kerne.  Hvis du vil starte med en ren
+opsætningsfil, kan du altid genskabe standard
+<path>/usr/src/linux/.config</path> filen ved at taste:
 </p>
 
-<pre caption="Getting a clean kernel configuration">
+<pre caption="Genskabelse af en ren kerneopsætning">
 # <i>cd /usr/src/linux</i>
 # <i>make mrproper</i>
 </pre>
 
 <p>
-Now go into the configuration GUI by typing:
+Gå nu ind i opsætningsGUIen ved at taste:
 </p>
 
-<pre caption="Editing the slave's kernel configuration">
+<pre caption="Redigering af slaves kerneopsætning">
 # <i>cd /usr/src/linux</i>
 # <i>make menuconfig</i>
 </pre>
 
 <p>
-You will want to make sure you select the following options as built-in 
-and <e>NOT</e> as kernel modules:
+Du vil nok være sikker på at du har valgt de følgende indstillinger som indbygget
+og <e>IKKE</e> som kerne-moduler:
 </p>
 
-<pre caption="slave's kernel options">
+<pre caption="slaves kerneindstillinger">
 Code maturity level options  ---&gt;
   [*] Prompt for development and/or incomplete code/drivers
 
@@ -264,24 +267,24 @@ File systems ---&gt;
 </pre>
 
 <p>
-Now the slave's kernel needs to be compiled.  You have to be careful here 
-because you don't want to mess up the modules (if any) you have built for the 
+Nu mangler slaves kerne at blive kompileret.  Du skal være omhyggelig her,
+idet du ikke ønsker at ødelægge modulerne (hvis nogen) som du har bygget til 
 master:
 </p>
 
-<pre caption="Compiling the slave kernel">
+<pre caption="Kompilering af slaves kerne">
 # <i>cd /usr/src/linux</i>
 # <i>make clean dep bzImage</i>
 </pre>
 
 <p>
-Now create the directory on the master that will be used to hold slaves' files
-and required system files. We use <path>/diskless</path> but you may choose
-any location you like.  Now copy the slave's bzImage into the
-<path>/diskless</path> directory:
+Lav nu et bibliotek på master, som du vil bruge til at indeholde slaves filer
+og krævede systemfiler. Vi bruger <path>/diskless</path>, men du kan vælge
+den placering, som du ønsker.  Kopiér nu slaves bzImage ind i
+<path>/diskless</path> biblioteket:
 </p>
 
-<pre caption="Copying the slave kernel">
+<pre caption="Kopiering af slaves kerne">
 # <i>mkdir /diskless</i>
 # <i>cp /usr/src/linux/arch/i386/boot/bzImage /diskless</i>
 </pre>
@@ -289,41 +292,41 @@ any location you like.  Now copy the slave's bzImage into the
 </body>
 </section>
 <section>
-<title>Configuring a preliminary slave file system</title>
+<title>Opsætning af en slaves indledende filsystem</title>
 <body>
 
 <p>
-The master and slave filesystems can be tweaked and changed a lot.  Right now 
-we are only interested in getting a preliminary filesystem of appropriate 
-configuration files and mount points. First we need to create a directory 
-within <path>/diskless</path> for the first slave.  Each slave needs it's own 
-root file system because sharing certain system files will cause permission 
-problems and hard crashes.  You can call these directories anything you want 
-but I suggest using the slaves IP addresses as they are unique and not 
-confusing.  The static IP of our first slave will be, for instance, 
+Masters og slaves filsystemer kan blive fin-indstillet og ændret en del.  Lige nu
+er vi kun interesseret i at få lavet et indledende filsystem med passende
+opsætningsfiler og mount-punkter. Først skal vi lave et bibliotek
+inde i <path>/diskless</path> til den første slave.  Enhver slave kræver den egen
+overordnet filsystem, fordi at dele specifikke systemfiler kan skabe problemer med
+rettigheder og problems og det hele går ned.  Du kan kalde de biblioteker alt hvad du ønsker,
+men vi foreslår at bruge slavernes IP-adresser, idet de er unikke og ikke
+misledende.  Den statiske IP på vores første slave vil være, f.eks.
 <c>192.168.1.21</c>:
 </p>
 
-<pre caption="Creating a remote root directory">
+<pre caption="Oprettelse af et fjernstyret rodbibliotek">
 # <i>mkdir /diskless/192.168.1.21</i>
 </pre>
 
 <p>
-Various configuration files in <path>/etc</path> need to be altered to work on 
-the slave.  Copy the master's <path>/etc</path> directory onto your
-new slave root by typing:
+Forskellige opsætningsfiler i <path>/etc</path> skal modificeres for at virke på
+slaven. Kopiér masters <path>/etc</path>-bibliotek ind i din nye
+slaves rod ved at taste:
 </p>
 
-<pre caption="Creating /etc for the slave's filesystem">
+<pre caption="Oprettelse af /etc til slaves filsystem">
 # <i>cp -r /etc /diskless/192.168.1.21/etc</i>
 </pre>
 
 <p>
-Still this filesystem isn't ready because it needs various mount points and
-directories. To create them, type:
+Stadigvæk er filsystemet ikke klart, fordi at den kræver flere mount-punkter og
+biblioteker. For at oprette dem, tast:
 </p>
 
-<pre caption="Creating mount points and directories in the slave's filesystem">
+<pre caption="Oprettelse af mount-punkter og biblioteker til slaves filsystem">
 # <i>mkdir /diskless/192.168.1.21/home</i>
 # <i>mkdir /diskless/192.168.1.21/dev</i>
 # <i>mkdir /diskless/192.168.1.21/proc</i>
@@ -336,17 +339,17 @@ directories. To create them, type:
 # <i>mkdir /diskless/192.168.1.21/var/lock</i>
 # <i>mkdir /diskless/192.168.1.21/var/log</i>
 # <i>mkdir /diskless/192.168.1.21/var/run</i>
-<comment>(for openMosix only)</comment>
+<comment>(Kun for openMosix)</comment>
 # <i>mkdir /diskless/192.168.1.21/mfs</i>
 </pre>
 
 <p>
-Most of these "stubs" should be recognizable to you; Stubs like
-<path>/dev</path> or <path>/proc</path> will be populated when the slave starts,
-the others will be mounted later. You should also change the
-<path>/diskless/192.168.1.21/etc/hostname</path> file to reflect the hostname
-of the slave. Binaries, libraries and other files will be populated later in
-this HOWTO right before you attempt to boot the slave.
+De fleste af disse "stumper" skulle være forståeligt for dig; Stumper som
+<path>/dev</path> eller <path>/proc</path> vil være befolket, når slaven starter,
+de andre vil blive mountet senere. Du skulle også ændre
+<path>/diskless/192.168.1.21/etc/hostname</path>-filen til at vise værtnavnet til
+slave. Binære filer, biblioteker (libs) og andre filer vil blive befolket senere i
+denne HOWTO lige før du vil prøve at starte slave.
 </p>
 
 </body>
