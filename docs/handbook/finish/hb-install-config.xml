@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.11 2004/04/01 18:20:09 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.12 2004/06/10 16:58:26 aaby Exp $ -->
 
 <sections>
 <section>
@@ -151,7 +151,7 @@ none        /proc/bus/usb   usbfs         defaults      0 0
 </pre>
 
 <p>
-Genindlæs din <path>/etc/fstab</path>, gem og afslut for at fortsætte.
+Dobbelt-tjek din <path>/etc/fstab</path>, gem og afslut for at fortsætte.
 </p>
 
 </body>
