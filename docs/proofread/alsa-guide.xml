@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/alsa-guide.xml,v 1.2 2003/12/20 19:00:05 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/alsa-guide.xml,v 1.1 2003/12/29 19:19:15 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link = "/doc/en/alsa-guide.xml">
@@ -28,13 +28,16 @@
 <author title="Oversætter">
   <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
+<author title="Korrektur">
+  <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
+</author>
 
 <license/>
 
 <abstract>
 Denne vejledning viser hvordan du sætter Advanced Linux Sound
 Architecture (ALSA) op på Gentoo Linux. I forbindelse med Gentoo Linux
-Desktop Konfigurations vejledningen er den ment til at give dig mere
+Desktop Konfigurationsvejledningen er den ment til at give dig mere
 information omkring dette emne.  </abstract>
 
 <version>1.3.4</version>
@@ -50,7 +53,7 @@ information omkring dette emne.  </abstract>
 Advanced Linux Sound Architecture (ALSA) er et projekt til at forbedre
 Linux lyd undersystemet ved at genskrive store dele af det. Det
 forventes at ALSA kommer med i Linux kerne 2.6.x (eller 3.x.x -- hvad
-der nu en kommer først) når det bliver klart.
+der nu for én der kommer først) når det bliver klart.
 </p>
 
 <p>
@@ -58,7 +61,7 @@ ALSA giver lyd og MIDI funktionalitet til Linux.
 </p>
  
 <p>
-Citeret fra <uri>http://www.alsa-project.org</uri>, ALSA har de
+Citeret fra <uri>http://www.alsa-project.org</uri>, har ALSA de
  følgende egenskaber:
 </p>
 
@@ -70,7 +73,7 @@ Citeret fra <uri>http://www.alsa-project.org</uri>, ALSA har de
   <li>Fuldt modulære lyd drivere</li>
   <li>SMP og tråd-sikkert design</li>
   <li>
-  Plads til bruger bibliotek (alsa-lib) hvor man kan simplificere
+  Plads til brugerbibliotek (alsa-lib) hvor man kan simplificere
     programmering af applikationer og derved give højere grad af funktionalitet
   </li>
   <li>
@@ -93,8 +96,8 @@ understøtte avancerede egenskaber på nye lydkort), ...
 <body>
 
 <p>
-Hvis dit lydkort understøttes af Linux kerne lyd systemet eller det
-kommercielle OSS/4Front lyd driver system, hvilke kan findes i alle
+Hvis dit lydkort understøttes af Linux-kernens lydsystem eller det
+kommercielle OSS/4Front lyd-driver-system, hvilke kan findes i alle
 2.4.x Linux kerner, så kan du lige så godt bygge <e>disse moduler</e>
 for at udnytte dit lydkort. Hvis dette er hvad du ønsker, så skal du
 bare læse <uri link="http://www.tldp.org/HOWTO/Sound-HOWTO/index.html">Linux Sound
@@ -103,9 +106,9 @@ HOWTO</uri>.
 
 <p>
 Disse OSS/4Front drivere har imidlertid nogle begrænsninger -- at være
-kommercielle er en.  ALSA er et forsøg på at gå ud over disse
+kommercielle er én.  ALSA er et forsøg på at gå ud over disse
 begrænsninger og at gøre dette på en open-source måde. ALSA er et fuld
-GPL og LGPLet lyd driver system, der giver et professionelt kvalitets
+GPL og LGPLet lyd-driver-system, der giver et professionelt kvalitets
 system til at optage, afspille og MIDI sequencing.
 </p> 
 
@@ -124,7 +127,7 @@ dog kun pakker med binære filer.
 <p>
 For at finde ud af om dit kort er understøttet, kan du finde et
 lydkorts matrice over hvilke kort der er understøttet og ikke
-undetstøttet her: <uri>http://www.alsa-project.org/alsa-doc/</uri>.
+understøttet her: <uri>http://www.alsa-project.org/alsa-doc/</uri>.
 </p>
 
 </body>
@@ -134,42 +137,42 @@ undetstøttet her: <uri>http://www.alsa-project.org/alsa-doc/</uri>.
 <chapter>
 <title>Installation</title>
 <section>
-<title>Gentoo USE flag</title>
+<title>Gentoo USE-flag</title>
 <body>
 
 <p>
 For at kompilere programmer med ALSA-understøttelse skal du være
-sikker på at tilføje <e>alsa</e> til dine USE-variable. Mange værtøjer
-undrestøtter imidlertid ikke ALSA endnu og kræver OSS. ALSA stiller
-emulation af OSS til rådighed, hvis du definerer <e>oss</e> i den
-USE-variable før du starter.
+sikker på at tilføje <e>alsa</e> til dine USE-variabel. Mange værtøjer
+understøtter imidlertid ikke ALSA endnu og kræver OSS. ALSA stiller
+emulation af OSS til rådighed, hvis du definerer <e>oss</e> i din
+USE-variabel før du starter.
 </p>
 
 </body>
 </section>
 <section>
-<title>Kerne moduler</title>
+<title>Kerne-moduler</title>
 <body>
 
 <p>
-Da vi stadig bruger 2.4.x kerne kildekode er vi nødt til at kompilere
-kerne moduler og ALSA moduler separat. Folk der bruger en 2.5.x kerne
-kan gøre dette inde fra deres kernes konfiguration, da ALSA modulerne
+Da vi stadig bruger 2.4.x kerne-kildekode er vi nødt til at kompilere
+kerne-moduler og ALSA-moduler separat. Folk der bruger en 2.5.x kerne
+kan gøre dette inde fra deres kernes konfiguration, da ALSA-modulerne
 er inkluderede i kerne kildekoderne og skal bygge der.
 </p>
 
 <p>
 Først skal vi være sikker på at vores kernes konfiguration er klar til
-brug med ALSA. Als hvad du har brug for i din kerne konfiguration er
+brug med ALSA. Alt hvad du har brug for i din kerne konfiguration er
 at have Sound Card Support sat til at blive bygget som et modul
 (M). Dette bygger <path>soundcore.o</path>.
 </p>
 
 <note>
-Dette vil muligvis også virke hvis du bygger Sound Card Support ind i
+Dette vil muligvis også virke, hvis du bygger Sound Card Support ind i
 kernen (Y) i stedet for at bygge det som et modul (M). Men den
-officielle ALSA dokumentation anbefaler at bygge de som et modul, da
-ALSA vil forsøge at loade den.
+officielle ALSA-dokumentation anbefaler at bygge de som et modul, da
+ALSA vil forsøge at hente den.
 </note>
 
 <p>
@@ -188,7 +191,7 @@ Support). Hvis du ønsker at gøre dette uden at genstarte, kan du gøre dette:
 
 <p>
 Vælg nu <e>Sound Card Support</e> som Modul (M) og fravælg alle andre
-lyd drivere. Exit og sig Y til at gemme din
+lyd-drivere. Exit og sig Y til at gemme din
 kernekonfiguration. Derefter skal du bygge modulerne:
 </p>
 
@@ -198,12 +201,12 @@ kernekonfiguration. Derefter skal du bygge modulerne:
 </pre>
 
 <p>
-Før du installerer dine nye moduler vil den sidste linie slette alle
-dine gamle moduler, også dem fra en tidligere ALSA installation.
+Før du installerer dine nye moduler, vil den sidste linie slette alle
+dine gamle moduler, også dem fra en tidligere installation af ALSA.
 </p>
 
 <impo>
-Dette betyder, at hver gang du skal kompilere din kerne igen senere
+Dette betyder, at hver gang du skal kompilere din kerne igen, senere
 hen, så skal du genkompilere <c>alsa-driver</c>.  
 </impo>
 
@@ -214,7 +217,7 @@ hen, så skal du genkompilere <c>alsa-driver</c>.
 <body>
 
 <p>
-Nu er det tid til at installere ALSA driverne til dit/dine
+Nu er det tid til at installere ALSA-driverne til dit/dine
 lydkort. Hvis du har et PCI lydkort, så kan du finde navnet og typen
 ved at kigge på outputtet af <path>/proc/pci</path>.
 </p>
@@ -225,14 +228,14 @@ ved at kigge på outputtet af <path>/proc/pci</path>.
 
 <warn>
 Hvis du havde en tidligere opsætning af lyd og der stadig er ikke-ALSA
-lyd moduler loaded, så skal du lukke dem <e>nu</e>. Tjek med
+lyd-moduler hentet, så skal du lukke dem <e>nu</e>. Tjek med
 <c>lsmod</c> og brug <c>rmmod</c> for at lukke alle lyd-relaterede
 moduler på dit system.
 </warn>
 
 <p>
 Vi kunne nu lave en simpel <c>emerge alsa-driver</c>, men dette vil
-installere <e>elle</e> ALSA lyd drivere.
+installere <e>elle</e> ALSA lyd-drivere.
 </p>
 
 <p>
@@ -240,14 +243,14 @@ For at spare os noget tid skal du finde <e>Module Name</e> for
 dit/dine lydkort på <uri
 link="http://www.alsa-project.org/alsa-doc">ALSA Soundcard
 Matrix</uri> ved at følge <e>Details</e> linket i <e>Driver and
-Docs</e> kolonnen i den række hvor dit lydkorts chip er. Mit er
+Docs</e> kolonnen, i den række hvor din lydkorts chipsæt er placeret. Mit er
 <c>snd-emu10k1</c>, da jeg har et SBlive! lydkort med <e>EMU10K1</e>
- chipsættet. Vi sætter ALSA_CARDS miljøvariablens værdi til modul
- navnet før vi emerger (dog uden snd foran), så emerge kun kompilerer
- de drivere vi har brug for.
+ chipsættet. Vi sætter ALSA_CARDS miljøvariablens værdi til modulnavnet 
+ før vi emerger (dog uden snd foran), så emerge vil kun kompilerer
+ de drivere, vi har brug for.
 </p>
 
-<pre caption="At kompilere det korrekte module">
+<pre caption="At kompilere det korrekte modul">
 # <i>env ALSA_CARDS='emu10k1' emerge alsa-driver</i> 
 </pre>
 
@@ -258,7 +261,7 @@ at når du skal til at emerge alsa-driver igen senere, kan du bare køre
 'ALSA_CARDS="emu10k1"' >> /etc/make.conf</c> </note>
 
 <note>
-Når du vil installere ALSA drivere til mere end et lydkort, kan du
+Når du vil installere ALSA-drivere til mere end et lydkort, kan du
 sætte ALSA_CARDS til en liste af drivere, adskilt af mellemrum; sådan
 her: <c>env ALSA_CARDS='emu10k1 intel8x0 ens1370' emerge
 alsa-driver</c> </note>
@@ -271,26 +274,26 @@ Hvis du vil have OSS kompabilitet, skal du være sikker på at emerge
 <note>
 Hvis du har planer om at rekompilere dine kerne en masse gange, så er
 det måske et godt råd at emerge <c>alsa-driver</c> med
-<c>--buildpkg</c>. Dette vil lave en binær pakke til det. Senere, --
+<c>--buildpkg</c>. Dette vil lave en binær pakke til det. Senere,
 efter at have kompileret din kerne igen, så kan du bare <c>emerge
---usepkg alsa-driver</c>, hvilket vil installere den binære pakke i -->
---stedet for at kompilere det fuldstændigt igen.
+--usepkg alsa-driver</c>, hvilket vil installere den binære pakke i
+stedet for at kompilere det fuldstændigt igen.
 </note>
 
 <p>
-Herefter burde ALSA modulerne være installeret på dit system.
+Herefter burde ALSA-modulerne være installeret på dit system.
 </p>
 
 </body>
 </section>
 <section>
-<title>Konfiguration af ALSA</title>
+<title>Opsætning af ALSA</title>
 <body>
 
 <p>
-Lad os nu begynde at konfigurere for at få ALSA til at virke
+Lad os nu begynde med opsætningen, for at få ALSA til at virke
 ordentligt. Vi har brug for at redigere nogle filer, for at lade vore
-system kende til de nyligt installerede ALSA moduler.
+system kende til de nyligt installerede ALSA-moduler.
 </p>
 
 <p>
@@ -313,7 +316,7 @@ Der er ikke brug for at redigere
 
 <p>
 Tjek ALSA delen <e>i bunden af filen</e>. Ved at tilpasse denne linie
-kan du specificere det maksimale antal af lydkort som du har (generelt
+kan du specificere det maksimale antal af lydkort, som du har (generelt
 bare et).
 </p>
 
@@ -343,9 +346,9 @@ alias snd-card-0 snd-emu10k1
 </pre>
 
 <note>
-Hvis du har mere end et lydkort, justér da <c>cards_limit</c> værdien
-og tilføj flere snd-card aliasser til filen. Jeg har ikke erfaringer
-med dette, men du kan finde eksempler på konfigurationer med to eller
+Hvis du har mere end et lydkort, justér da <c>cards_limit</c>-værdien
+og tilføj flere snd-card alias'ser til filen. Jeg har ikke erfaringer
+med dette, men du kan finde eksempler på opsætninger med to eller
 flere lydkort i <uri
 link="http://www.alsa-project.org/alsa-doc/alsa-howto/c1660.htm">Kapitel
 6</uri> af <uri
@@ -354,7 +357,7 @@ Howto</uri>.
 </note>
 
 <p>
-Den sidste ting at gøre i denne fil, næsten nede i bunden, er at
+Den sidste ting som du skal gøre i denne fil, næsten nede i bunden, er at
 tjekke at disse linier er tilstede og ikke udkommenterede:
 </p>
 
@@ -365,7 +368,7 @@ alias /dev/midi snd-seq-oss
 </pre>
 
 <p>
-Dobbelt tjek nu filen <path>/etc/modules.d/alsa</path> og, når du er
+Dobbelttjek nu filen <path>/etc/modules.d/alsa</path> og, når du er
 sikker på at alt er som det skal være, kør <c>modules-update</c>.
 </p>
 
@@ -374,13 +377,13 @@ sikker på at alt er som det skal være, kør <c>modules-update</c>.
 </pre>
 
 <note>
-At køre <c>modules-update</c> her vil indsætte data fra
+At køre <c>modules-update</c> her, vil indsætte data fra
 <path>/etc/modules.d/alsa</path> ind i <path>/etc/modules.conf</path>
 </note>
 
 <p>
-Du skal også sikre dig at <path>/etc/devfsd.conf</path> har alsa
-enhederne og rettigheder korrekt registreret.
+Du skal også sikre dig at <path>/etc/devfsd.conf</path> har ALSA-enhederne
+og rettigheder korrekt registreret.
 </p>
 
 <pre caption="/etc/devfsd.conf">
@@ -421,8 +424,8 @@ opstart. Sådan her:
 </pre>
 
 <warn>
-Bemærk at alsasound scriptet bør tilføjes til "boot" runlevel'en, ikke
-"default" runlevel'en.
+Bemærk at alsasound-scriptet bør tilføjes til "boot"-runlevel'en, ikke
+"default"-runlevel'en.
 </warn>
 
 </body>
@@ -432,8 +435,8 @@ Bemærk at alsasound scriptet bør tilføjes til "boot" runlevel'en, ikke
 <body>
 
 <p>
-Da vi er Linux bruger, ønsker vi ikke at genstarte, så vi starter
-alsasound scriptet manuelt.
+Da vi er Linux-brugere, ønsker vi ikke at genstarte, så vi starter
+alsasound-scriptet manuelt.
 </p>
 
 <pre caption="At starte ALSA">
@@ -441,8 +444,8 @@ alsasound scriptet manuelt.
 </pre>
 
 <p>
-ALSA kører nu. Hvis alt er ok, så burde du kunne se ALSA modulerne
-loadet når du kører <c>lsmod</c>. Lyd vil dog stadig ikke virke, fordi
+ALSA kører nu. Hvis alt er ok, så burde du kunne se ALSA-modulerne
+startet, når du kører <c>lsmod</c>. Lyden vil dog stadig ikke virke, fordi
 kanalerne stadig er muted. Vi har brug for <c>amixer</c> for at ordne dette.
 </p>
 
@@ -453,7 +456,7 @@ kanalerne stadig er muted. Vi har brug for <c>amixer</c> for at ordne dette.
 <warn>
 Du bør ikke få dette, men <e>hvis</e> du får en fejl med "amixer: Mixer 
 attach default error: No such file or directory", så skal du manuelt
-modprobe <c>snd-mixer-oss</c> og <c>snd-pcm-oss</c> en gang. Kør
+modprobe <c>snd-mixer-oss</c> og <c>snd-pcm-oss</c> én gang. Kør
 herefter amixer igen.
 </warn>
 
@@ -487,12 +490,12 @@ derefter lydniveauet som du har lyst til; den ncurses-baserede
 </p>
 
 <p>
-Du vil måske emerge <c>alsa-xmms</c> da dette vil give ALSA
- understøttelse til XMMS.
+Du vil måske emerge <c>alsa-xmms</c> da dette vil give ALSA-understøttelse
+til XMMS.
 </p>
 
 <p>
-Når du genstarter dit system, vil <c>alsasound</c> init scriptet gemme
+Når du genstarter dit system, vil <c>alsasound</c> init-scriptet gemme
  og gendanne din opsætning af lydniveau korrekt.
 </p>
 
@@ -529,7 +532,7 @@ den putter alsa modulerne i <path>/lib/modules/*/kernel/sound/pci/</path>.
 
 <p>
 Du bliver ikke nødt til at redigere denne fil til brug med ALSA. Efter
-vores <c>rc-update add alsasound boot</c> vil vores system loade de
+vores <c>rc-update add alsasound boot</c> vil vores system hente de
 korrekte moduler ved opstart.
 </p>
 
@@ -547,13 +550,13 @@ for mere information.
 <body>
 
 <note>
-Denne guide halter bag efter udviklingen af alsa. Der er mulighed for
+Denne vejledning halter bag efter udviklingen af ALSA. Der er mulighed for
 at disse problemer er ordnet når du læser dette.
 </note>
 
 <ul>
   <li>
-    Hvis du har <b>meget larm</b> når du bruger <b>oss</b> emulering,
+    Hvis du har <b>meget larm</b> når du bruger <b>oss</b>-emulering,
     tilføj da <e>options snd-pcm-oss dsp_map=1</e> til <path>/etc/modules.d/alsa</path>
   </li>
 </ul>
@@ -561,14 +564,14 @@ at disse problemer er ordnet når du læser dette.
 </body>
 </section>
 <section>
-<title>At aktivere Joystick understøttelse</title>
+<title>At aktivere Joystick-understøttelse</title>
 <body>
 
 <p>
-Hvis dit lydkort har et joystick stik, vil du måske være interesseret i
-at aktivere joystick understøttelse for dit lydkort. Hvis dette er
+Hvis dit lydkort har et joystick-stik, vil du måske være interesseret i
+at aktivere joystick-understøttelse i dit lydkort. Hvis dette er
 tilfældet, start med at verificere at dit lydkorts driver har en
-joystick parameter. Du kan verificere dette ved at køre <c>modinfo</c>
+joystick-parameter. Du kan verificere dette ved at køre <c>modinfo</c>
 mod din <path>snd-&lt;dit chipsæt&gt;</path>. F.eks. <c>snd-via82xx</c>:
 </p>
 
@@ -602,24 +605,24 @@ options snd-via82xx joystick=1
 </body>
 </section>
 <section>
-<title>Flere link...</title>
+<title>Flere links...</title>
 <body>
 
 <p>
-Du kan tjekke disse for at få mere information:
+Du kan tjekke disse links for at få mere information:
 </p>
 
 <ul>
   <li>
     <uri link="http://www.gentoo.org/doc/en/desktop.xml">Gentoo Linux 
-    Desktop Konfigurations Vejledningen</uri>
+    Desktop Opsætningsvejledningen</uri>
   </li>
   <li>
-    <uri link="http://www.alsa-project.org">ALSA projektets hjemmeside </uri>
+    <uri link="http://www.alsa-project.org">ALSA-projektets hjemmeside </uri>
   </li>
   <li>
-    <uri link="http://www.alsa-project.org/documentation.php3">ALSA bruger 
-    Dokumentation</uri>
+    <uri link="http://www.alsa-project.org/documentation.php3">ALSA 
+     brugerdokumentation</uri>
   </li>
   <li>
     <uri link="http://www.djcj.org">ALSA Howto og FAQ'er</uri>
