@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/index.xml,v 1.1 2003/12/29 22:21:27 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/index.xml,v 1.1 2003/12/29 23:27:33 aaby Exp $ -->
 
 <guide>
 <title>Gentoo-håndbogen</title>
@@ -76,13 +76,14 @@ ethvert muligt aspekt af Gentoo Linux. Det sammensætter de nuværende dokumenter 
 én konsekvent bog, så at det samme dokument kan bruges til enhver mulig
 arkitektur, enhver installation, enhver bruger. Dette gør det ikke alene lettere for os at
 vedligeholde, men også lettere for brugeren at kunne se at forskellene er små, og at
-andre arkitekturer ikke er set, som et separat væsen.
+andre arkitekturer ikke er betragtes, som et separat væsen.
 </p>
 
 <p>
-Det tillader os også at udarbejde forskellige punkter og give flere eksempler. Vi
-er ikke tvunget til at skrive al dokumentation, til en enkelt vist side mere,
-og dette gør dokumentationen mere flydende.
+Det tillader os også at udarbejde forskellige punkter og give flere
+eksempler. Vi er ikke tvunget til at skrive al dokumentation, til et
+dokument vist på en enkelt side mere, og dette gør dokumentationen
+mere flydende.
 </p>
 
 </body>
@@ -147,7 +148,7 @@ egne stages, osv.
 
 <p>
 Hvis du finder en fejl i håndbogen, besøg venligst vores <uri
-link="http://bugs.gentoo.org">Gentoo Linux Bugzilla</uri> and lav en fejlrapport til:
+link="http://bugs.gentoo.org">Gentoo Linux Bugzilla</uri> og lav en fejlrapport til:
 <e>Docs-user</e>, Component <e>Handbook</e>. 
 </p>
 
@@ -161,9 +162,9 @@ link="http://bugs.gentoo.org">Gentoo Linux Bugzilla</uri> and lav en fejlrapport
 <body>
 
 <p>
-I den tidligere situation, hvor enhver arkitektur har deres egen installationsvejledning,
+I den tidligere situation, hvor enhver arkitektur havde deres egen installationsvejledning,
 var det nærmest umuligt at holde dem i et klart billede. Siden x86-arkitekturen er den mest
-brugte i Gentoo-community'et, er x86-installationsvejledningen den mest aktive
+brugte i Gentoo-community'et, er x86-installationsvejledningen den mest aktivt
 udviklet. De andre arkitekturers vejledninger blev holdt for dem selv, og opdateringer, som kom
 i x86-installationsvejledningen, blev ikke opdateret i de andre arkitekturers vejledninger,
 og dermed tit ude af trin med virkeligheden.
@@ -179,7 +180,9 @@ forskellige: <e>opstart</e>, <e>partionering</e>, <e>kernen</e> og
 </body>
 </section>
 <section>
-<title>Kan du ikke på magisk vis have håndbogen dynamisk skabt for ethvert brug?</title><body>
+<title>Kan du ikke på magisk vis have håndbogen dynamisk skabt for
+ethvert brug?</title>
+<body>
 
 <p>
 Alt er muligt, men vi har valgt ikke at gøre dette, af flere grunde.
@@ -204,13 +207,13 @@ lille del af sektionerne er forskellige. Sikke et spild af ressourcer :)
 De valg, som brugeren laver, er baseret på <b>et forskelligt stadie</b>. Dette ville
 gøre det mere svært for brugeren, bare at skulle udskrive håndbogen -- vi skal
 først informere brugeren, med alle de mulige valgmuligheder, før vi kan begynde,
-som sikkert skræmmer ham væk.
+hvilket sikkert skræmmer ham væk.
 </p>
 
 <p>
 Delen om "Installation af Gentoo" <b>er ikke den eneste del</b> af Gentoo-håndbogen.
-Det er den første, men de følgende dele, er individuelt, baseret på de valg, som
-brugeren afgør. At skabe håndbogen dynamisk, bare for installationsinstruktionerne,
+Det er den første, man alle følgende dele er uafhængige af de valg som
+brugere træffer. At skabe håndbogen dynamisk, bare for installationsinstruktionerne,
 ville være et "overkill".
 </p>
 
@@ -218,7 +221,7 @@ ville være et "overkill".
 Ved ikke at separere instruktionerne for ethvert muligt valg, kan brugeren se
 resultatet af de andre valgmuligheder med lethed. Dette skaber en <b>bedre oversigt på
 installationsinstruktionerne</b> for brugeren: selvom han vælger - f.eks.
-- stage3, kan han blive informeret med lethed om hvad stage2 stage2 eller stage1 gør. Ikke at gemme
+- stage3, kan han blive informeret med lethed om hvad stage2 eller stage1 gør. Ikke at gemme
 disse instruktioner, er en god ting.
 </p>
 
@@ -229,7 +232,7 @@ disse instruktioner, er en god ting.
 <body>
 
 <p>
-Vær venlig og <uri link="http://bugs.gentoo.org">rapportere</uri> dine ideer; ikke at være enig 
+Vær venlig og <uri link="http://bugs.gentoo.org">rapportér</uri> dine ideer; ikke at være enig 
 uden af give os konstruktivt feedback afhjælper ikke situationen.
 Dokumentation er lavet til community'et, så community feedback er mere end velkommen.
 </p>
