@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.9 2004/02/23 15:06:45 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.10 2004/02/24 18:26:40 broeman Exp $ -->
 
 <sections>
 <section>
@@ -532,7 +532,7 @@ link="/main/en/mirrors.xml">filspejle-liste</uri> for tilgængelige filspejle.
 </p>
 
 <pre caption="Redigering af /mnt/gentoo/etc/make.conf">
-# <i>nano -w /mnt/gentoo/etc/make.conf</i>
+# <i>nano -w /etc/make.conf</i>
 </pre>
 
 <pre caption="Opsætning af PORTAGE_BINHOST-variablen">
@@ -563,4 +563,5 @@ fortsæt med <uri link="?part=1&amp;chap=7">Opsætning af kernen</uri>.
 </body>
 </subsection>
 </section>
+
 </sections>
