@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-stage.xml,v 1.4 2004/02/22 18:57:30 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-stage.xml,v 1.5 2004/02/28 20:07:07 broeman Exp $ -->
 
 <sections>
 <section>
@@ -35,7 +35,7 @@ fra CDen selv.
 <body>
 
 <p>
-Skift til dit Gentoo mountpoint, hvor du mountede dit filsystem (højst
+Skift til dit Gentoo mountpunkt, hvor du mountede dit filsystem (højst
 sandsynligt <path>/mnt/gentoo</path>):
 </p>
 
@@ -192,7 +192,7 @@ Hvis du ikke har en fungerende netværksforbindelse, skal du installere
 et portage-snapshot, leveret på en af vores LiveCDer. Hvis du vil bruge
 præ-byggede pakker senere, for at forøge hastigheden på installation, <e>skal</e>
 du bruge et portage-snapshot, enten fra LiveCDen eller fra én af vores
-filspejle. Andre brugere vil hente et fuldt opdateret Portage-træ ved
+filspejle. Andre brugere kan hente et fuldt opdateret Portage-træ ved
 brug af <c>emerge</c> senere.
 </p>
 
@@ -307,9 +307,9 @@ link="#compile_options">Opsætning af kompileringsparametre</uri>.
 <body>
 
 <p>
-For at optimere Gentoo kan du sætte et par variable, som har
+For at optimere Gentoo kan du sætte et par variabler, som har
 inflydelse på den måde Portage opfører sig.
-Alle disse variabler kan sættes som miljø variable (ved brug af
+Alle disse variabler kan sættes som miljø-variable (ved brug af
 <c>export</c>), men det er ikke permanent.  For at gemme din
 opsætning, kommer Portage med <path>/etc/make.conf</path>, en
 opsætningsfil til Portage.  Det er denne fil, vi nu vil rette i.
@@ -450,7 +450,7 @@ værre, fungere forkert).
 <p>
 Vi vil ikke forklare alle mulige optimeringsmuligheder. Hvis du vil
 kende dem alle, kan du læse <uri
-link="http://www.gnu.org/software/gcc/onlinedocs/">Gnu Online
+link="http://www.gnu.org/software/gcc/onlinedocs/">GNU Online
 Manual(s)</uri> eller <c>gcc</c> info siden (<c>info gcc</c> virker
 kun på et færdigt opsat Linux-system).  <path>make.conf.example</path>-filen i
 sig selv, indeholder også mange eksempler og informationer; glem ikke,
@@ -520,7 +520,7 @@ MAKEOPTS="-j2"
 <body>
 
 <p>
-Opdatér din <path>/mnt/gentoo/etc/make.conf</path>, så den passer dig,
+Opdater din <path>/mnt/gentoo/etc/make.conf</path>, så den passer dig,
 og gem.  Du er nu klar til at fortsætte med <uri
 link="?part=1&amp;chap=6">Installationer til Gentoo
 base-systemet</uri>.
