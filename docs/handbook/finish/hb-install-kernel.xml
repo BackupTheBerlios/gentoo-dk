@@ -4,9 +4,29 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.1 2004/01/21 17:33:30 fangel Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-kernel.xml,v 1.2 2004/01/22 14:09:04 aaby Exp $ -->
 
 <sections>
+<section>
+<title>Tidzone</title>
+<body>
+  	 
+<p>
+Du bliver først nødt til at vælge din tidzone sådan at dit system ved,
+hvor det er lokaliseret. Kig efter din tidzone i
+<path>/usr/share/zoneinfo</path>, og lav derefter en symbolsk
+henvisning til <path>/etc/localtime</path> ved brug af <c>ln</c>:
+</p>
+  	 
+<pre caption="At sætte tidzone informationen">
+# <i>ls /usr/share/zoneinfo</i>
+<comment>(Hvis du vil bruge GMT:)</comment>
+# <i>ln -sf /usr/share/zoneinfo/GMT /etc/localtime</i>
+</pre>
+  	 
+</body>
+</section>
+
 <section>
 <title>Installation af kildekoderne</title>
 <subsection>
@@ -109,9 +129,9 @@ idet det er den bedste metode til at optimere dit system.
 
 <p>
 Hvis du vil opsætte din kerne manuelt, forsæt nu med <uri
-link="#doc_chap2">Standard: Manuel opsætning</uri>. Hvis du er en af x86-brugerne
+link="#doc_chap3">Standard: Manuel opsætning</uri>. Hvis du er en af x86-brugerne
 og du vil bruge <c>genkernel</c>, skulle du læse <uri 
-link="#doc_chap3">Alternativ: Brug af genkernel</uri> i stedet for.
+link="#doc_chap4">Alternativ: Brug af genkernel</uri> i stedet for.
 </p>
 
 </body>
@@ -251,13 +271,13 @@ Afhængigt af din arkitektur, skal du måske nu vælge flere valgmuligheder:
 </p>
 
 <ul>
-<li><uri link="#doc_chap2_sect3">Aktivering af x86-anbefalede valgmuligheder</uri></li>
-<li><uri link="#doc_chap2_sect4">Aktivering af Alpha-anbefalede valgmuligheder</uri></li>
-<li><uri link="#doc_chap2_sect5">Aktivering af HPPA-anbefalede valgmuligheder</uri></li>
-<li><uri link="#doc_chap2_sect6">Aktivering af PPC-anbefalede valgmuligheder</uri></li>
-<li><uri link="#doc_chap2_sect7">Aktivering af SPARC-anbefalede valgmuligheder</uri></li>
-<li><uri link="#doc_chap2_sect8">Aktivering af MIPS-anbefalede valgmuligheder</uri></li>
-<li><uri link="#doc_chap2_sect9">Aktivering af AMD64-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect3">Aktivering af x86-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect4">Aktivering af Alpha-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect5">Aktivering af HPPA-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect6">Aktivering af PPC-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect7">Aktivering af SPARC-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect8">Aktivering af MIPS-anbefalede valgmuligheder</uri></li>
+<li><uri link="#doc_chap3_sect9">Aktivering af AMD64-anbefalede valgmuligheder</uri></li>
 </ul>
 
 </body>
@@ -736,7 +756,7 @@ for <path>vmlinux</path>.
 </p>
 
 <p>
-Fortsæt nu med <uri link="#doc_chap4">Installation af separate
+Fortsæt nu med <uri link="#doc_chap5">Installation af separate
 kernemoduler</uri>.
 </p>
 
@@ -778,12 +798,16 @@ genkernel'ens ebuild:
 </pre>
 
 <p>
-Kompilér nu din kerne-kildekoder ved at køre <c>genkernel</c>. Vær opmærksom på at,
+Kompilér nu din kerne-kildekoder. Hvis du bruger en <c>genkernel</c>,
+der er installeret gennem GRP, skal du køre <c>genkernel</C>. Hvis du
+har en nyere <c>genkernel</c> pakke (en downloadet version), så skal
+du køre <c>genkernel all</c>. Vær opmærksom på at,
 når <c>genkernel</c> kompilerer en kerne, som understøtter det meste hardware, kan
 kompileringen tage noget tid at færdiggøre!
 </p>
 
 <pre caption="Start af genkernel">
+<comment>(Dette eksempel er til GRP genkernel)</comment>
 # <i>genkernel</i>
 Gentoo Linux genkernel, version 1.4
 Copyright 2003 Gentoo Technologies, Inc., Bob Johnson, Daniel Robbins
