@@ -1,53 +1,53 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE sections SYSTEM "/dtd/book.dtd">
 
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-disk.xml,v 1.6 2004/01/17 11:50:43 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-disk.xml,v 1.7 2004/01/20 21:34:34 broeman Exp $ -->
 
 <sections>
 <section>
-<title>Introduction to Block Devices</title>
+<title>Introduktion til blok-enheder</title>
 <subsection>
-<title>Block Devices</title>
+<title>Blok-enheder</title>
 <body>
 
 <p>
-We'll take a good look at disk-oriented aspects of Gentoo Linux
-and Linux in general, including Linux filesystems, partitions and block devices.
-Then, once you're familiar with the ins and outs of disks and filesystems,
-you'll be guided through the process of setting up partitions and filesystems
-for your Gentoo Linux installation.
+Vi vil tage et godt kig på disk-orienterede aspekter af Gentoo Linux
+og Linux generelt, inklusiv Linux filesystemer, partitioner og blok-enheder.
+Så, når du er blevet godt kendt med diske og filsystemer,
+vil du blive vejledt igennem processen af at opsætte partioner og filsystemer
+til din Gentoo Linux installation.
 </p>
 
 <p>
-To begin, we'll introduce <e>block devices</e>. The most famous block device is
-probably the one that represents the first IDE drive in a Linux system, namely
-<path>/dev/hda</path>. If your system uses SCSI drives, then your first hard
-drive would be <path>/dev/sda</path>.
+For at begynde, vil vi introducere begrebet <e>blok-enheder</e>. Den mest kendte blok-enhed er
+sikkert den, som repræsenterer den første IDE-harddisk på et Linux system, med navnet
+<path>/dev/hda</path>. Hvis dit system bruger SCSI-drev, så vil din første harddisk
+være <path>/dev/sda</path>.
 </p>
 
 <p>
-The block devices above represent an abstract interface to the disk. User
-programs can use these block devices to interact with your disk without worrying
-about whether your drives are IDE, SCSI or something else. The program can
-simply address the storage on the disk as a bunch of contiguous,
-randomly-accessible 512-byte blocks.
+Blok-enhederne ovenover repræsenterer en abstrakt grænseflade til harddisken. 
+Brugerprogrammer kan bruge disse blok-enheder, for at interagere med din harddisk uden at skulle bekymre
+sig om at dine drev er IDE, SCSI eller noget andet. Programmet kan
+simpelthen adressere lageret på harddisken, som et bundt af tilstødende,
+vilkårlige-tilgængelige 512-byte blokke.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Partitions and Slices</title>
+<title>Partitioner og portioner</title>
 <body>
 
 <p>
-Although it is theoretically possible to use a full disk to house your Linux
-system, this is almost never done in practice. Instead, full disk block devices
-are split up in smaller, more manageable block devices. On most systems,
-these are called <e>partitions</e>. Other architectures use a similar technique,
-called <e>slices</e>.
+Selvom det er teoretisk muligt at bruge hele harddisken til dit Linux
+system, er det næsten aldrig gjort i praksis. I stedet for er hele hardiskens blok-enheder
+opsplittet i mindre, mere håndgribelige blok-enheder. På de fleste systemer er
+disse kaldet <e>partitioner</e>. Andre arkitekturer bruger en lignende teknik,
+kaldet <e>portioner (slices)</e>.
 </p>
 
 </body>
@@ -57,28 +57,28 @@ called <e>slices</e>.
 <body>
 
 <p>
-Partitions are divided in three types:
-<e>primary</e>, <e>extended</e> and <e>logical</e>.
+Partitioner er opdelt i tre typer:
+<e>primære</e>, <e>udvidet</e> og <e>logiske</e>.
 </p>
 
 <p>
-A <e>primary</e> partition is a partition which has its information stored in
-the MBR (master boot record). As an MBR is very small (512 bytes) only four
-primary partitions can be defined (for instance, <path>/dev/hda1</path> to
+En <e>primær</e> partition er en partition, som har dens informationer gemt på
+MBR (master boot record). Da en MBR er meget lille (512 bytes) kan kun fire
+primære partitioner blive defineret (f.eks. <path>/dev/hda1</path> til
 <path>/dev/hda4</path>).
 </p>
 
 <p>
-An <e>extended</e> partition is a special primary partition (meaning the
-extended partition must be one of the four possible primary partitions) which
-contains more partitions. Such a partition didn't exist originally, but as
-four partitions were too few, it was brought to life to extend the formatting
-scheme without losing backward compatibility.
+En <e>udvidet</e> partition er en speciel primær partition (som betyder at
+den udvidet partition skal være én af de første fire mulige primære partitioner) som
+indeholder flere partitioner. Sådan en partition eksisterede ikke oprindeligt, men da
+fire partitioner var for få, nogen kom med idéen at udvide formateringsskemaet
+uden at tabe bagud-kompatibilitet.
 </p>
 
 <p>
-A <e>logical</e> partition is a partition inside the extended partition. Their
-definitions aren't placed inside the MBR, but are declared inside the extended
+En <e>logisk</e> partition er en partition inden i den udvidet partition. Deres
+definitioner er ikke placeret inde i MBR, men er deklareret inde i den udvidet
 partition. 
 </p>
 
@@ -140,26 +140,26 @@ are used in this handbook) your root filesystem doesn't need to be very big
 -->
 </section>
 <section>
-<title>Designing a Partitioning Scheme</title>
+<title>Design af et partitionsskema</title>
 <subsection>
-<title>Default Partitioning Scheme</title>
+<title>Standard partitionsskema</title>
 <body>
 
 <p>
-If you are not interesting in drawing up a partitioning scheme for your system,
-you can use the (non-LVM) partitioning scheme we use throughout this book:
+Hvis du ikke er interesseret i at tegne et partitionsoversigt selv, til dit system,
+kan du bruge vores (non-LVM) partitionsskema, som vi bruger igennem denne bog:
 </p>
 
 <p>
-For x86 or amd64:
+Til x86 eller amd64:
 </p>
 
 <table>
 <tr>
-  <th>Partition</th>
-  <th>Filesystem</th>
-  <th>Size</th>
-  <th>Description</th>
+  <th>Partitioner</th>
+  <th>Filsystem</th>
+  <th>Størrelse</th>
+  <th>Beskrivelse</th>
 </tr>
 <tr>
   <ti><path>/dev/hda1</path></ti>
@@ -176,26 +176,26 @@ For x86 or amd64:
 <tr>
   <ti><path>/dev/hda3</path></ti>
   <ti>ext3</ti>
-  <ti>Rest of the disk</ti>
+  <ti>Resten af harddisken</ti>
   <ti>Root partition</ti>
 </tr>
 </table>
 
 <p>
-For ppc:
+Til ppc:
 </p>
 
 <table>
 <tr>
   <th>Partition NewWorld</th>
   <th>Partition OldWorld</th>
-  <th>Filesystem</th>
-  <th>Size</th>
-  <th>Description</th>
+  <th>Filsystem</th>
+  <th>Størrelse</th>
+  <th>Beskrivelse</th>
 </tr>
 <tr>
   <ti><path>/dev/hda1</path></ti>
-  <ti>(Not needed)</ti>
+  <ti>(Ikke nødvendigt)</ti>
   <ti>(bootstrap)</ti>
   <ti>800k</ti>
   <ti>Apple_Bootstrap</ti>
@@ -211,21 +211,21 @@ For ppc:
   <ti><path>/dev/hda3</path></ti>
   <ti><path>/dev/hda2</path></ti>
   <ti>ext3</ti>
-  <ti>Rest of the disk</ti>
+  <ti>Resten af harddisken</ti>
   <ti>Root partition</ti>
 </tr>
 </table>
 
 <p>
-For Sparc:
+Til Sparc:
 </p>
 
 <table>
 <tr>
   <th>Sun Disklabel</th>
-  <th>Filesystem</th>
-  <th>Size</th>
-  <th>Description</th>
+  <th>Filsystem</th>
+  <th>Størrelse</th>
+  <th>Beskrivelse</th>
 </tr>
 <tr>
   <ti><path>/dev/hda1</path></ti>
@@ -242,13 +242,13 @@ For Sparc:
 <tr>
   <ti><path>/dev/hda3</path></ti>
   <ti>(none)</ti>
-  <ti>Full disk</ti>
+  <ti>Hele harddisken</ti>
   <ti>Sun Disk Label (required)</ti>
 </tr>
 <tr>
   <ti><path>/dev/hda4</path></ti>
   <ti>ext3</ti>
-  <ti>Rest of the disk</ti>
+  <ti>Resten af harddisken</ti>
   <ti>Root partition</ti>
 </tr>
 </table>
@@ -263,95 +263,95 @@ this big partition of type "Linux LVM" or "LVM" (8e).
 -->
 
 <p>
-If you are installing Gentoo from an existing distribution, you should first
-resize your existing partitions (if you don't have any spare room left) to be
-able to install Gentoo. You can use <uri 
-link="http://www.gnu.org/software/parted">GNU/Parted</uri> to resize your
-partitions.
+Hvis du er ved at installere Gentoo fra en eksisterende distribution, burde du først
+ændre størrelsen på dine eksisterende partitioner (hvis du ikke har noget plads fri) for at
+kunne installere Gentoo. Du kan bruge <uri 
+link="http://www.gnu.org/software/parted">GNU/Parted</uri> til at ændre størrelsen på
+partitioner.
 </p>
 
 <p>
-If you are interested in knowing how big a partition (or logical 
-volume) should be, or even how many partitions (or volumes) you need, read on. 
-Otherwise continue now with partitioning your disk:
+Hvis du er interesseret i at vide hvor stor en partition (eller logical 
+volume) burde være, eller hvor mange partitioner (eller volumes) du behøver, læs videre. 
+Ellers fortsæt nu med at partitionere din harddisk:
 </p>
 
 <ul>
 <li>
-  <uri link="#doc_chap3">Using fdisk on x86 or amd64 to Partition your 
-  Disk</uri>
+  <uri link="#doc_chap3">Brug af fdisk på x86 eller amd64 for at partitionere din 
+  harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap4">Using fdisk on Alpha to Partition your Disk</uri>
+  <uri link="#doc_chap4">Brug af fdisk på Alpha for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap5">Using fdisk on SPARC to Partition your Disk</uri>
+  <uri link="#doc_chap5">Brug af fdisk på SPARC for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap6">Using mac-fdisk on PPC to Partition your Disk</uri>
+  <uri link="#doc_chap6">Brug af mac-fdisk på PPC for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap7">Using fdisk on HPPA to Partition your Disk</uri>
+  <uri link="#doc_chap7">Brug af fdisk on HPPA for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap8">Using fdisk on MIPS to Partition your Disk</uri>
+  <uri link="#doc_chap8">Brug af fdisk on MIPS for at partitionere din harddisk</uri>
 </li>
 </ul>
 
 </body>
 </subsection>
 <subsection>
-<title>How Many and How Big?</title>
+<title>Hvor mange og hvor stort?</title>
 <body>
 
 <p>
-The number of partitions is highly dependent on your environment. For instance,
-if you have lots of users, you will most likely want to have your
-<path>/home</path> separate as it increases security and makes backups easier.
-If you are installing Gentoo to perform as a mailserver, your 
-<path>/var</path> should be separate as all mails are stored inside 
-<path>/var</path>. A good choice of filesystem will then maximise your 
-performance. Gameservers will have a separate <path>/opt</path> as most gaming 
-servers are installed there. The reason is similar for <path>/home</path>: 
-security and backups.
+Antallet af partitioner er meget afhængigt af dit miljø. F.eks.,
+hvis du har en hel del brugere, vil det være nærmest at lave dit
+<path>/home</path> separat, idet at det forøger sikkerheden og gør det nemmere at lave backup.
+Hvis du intallerer Gentoo for at arbejde som en mail-server, burde din 
+<path>/var</path> være separat, idet alle emails er gemt inde i
+<path>/var</path>. Et godt valg af filsystem vil derefter maksimere din 
+ydelse. Spil-servere burde have en separat <path>/opt</path>, idet at de fleste
+spil-servere bliver installeret der. Forklaringen er denne samme som for <path>/home</path>: 
+sikkerhed og backup.
 </p>
 
 <p>
-As you can see, it very much depends on what you want to achieve. Separate
-partitions or volumes have the following advantages:
+Som du kan se, afhænger det meget af hvad du vil opnå. Separate
+partitioner eller volumes har følgende fordele:
 </p>
 
 <ul>
 <li>
-  You can choose the most performant filesystem for each partition or volume
+  Du kan vælge den mest ydelsesstærke filsystem til hver partition eller volume
 </li>
 <li>
-  Your entire system cannot run out of free space if one defunct tool is
-  continuously writing files to a partition or volume
+  Hele dit system burde ikke løbe tør for fri harddisk-plads, hvis et ødelagt værktøj bliver
+  ved med at skrive filer til en partition eller volume
 </li>
 <li>
-  If necessary, file system checks are reduced in time, as multiple checks can
-  be done in parallel (although this advantage is more with multiple disks than
-  it is with multiple partitions)
+  Hvis nødvendigt, et filsystem-tjek er reduceret i tid, idet flere tjek kan blive
+  gjort parallelt (selvom det har fordelen er mere med flere harddiske end med
+  at det gjort på flere partitioner)
 </li>
 <li>
-  Security can be enhanced by mounting some partitions or volumes read-only, 
-  nosuid (setuid bits are ignored), noexec (executable bits are ignored) etc.
+  Sikkerhed kan blive forøget ved at mounte nogle partitioner eller volumes read-only (kun-læs), 
+  nosuid (setuid bits er ignoreret), noexec (executable bits er ignoreret) osv.
 </li>
 </ul>
 
 <p>
-However, multiple partitions have one big disadvantage: if not configured 
-properly, you might result in having a system with lots
-of free space on one partition and none on another.
+Dog har flere partitioner en stor ulempe: hvis det ikke er opsat
+ordentligt, kan det betyde at have et system med masser
+af fri plads på én partition og intet på en anden.
 </p>
 
 <p>
-As an example partitioning, we show you one for a 20Gb disk, used as a
-demonstration laptop (containing webserver, mailserver, gnome, ...):
+Som et eksempel på partitionering, viser vi dig en til en 20GB harddisk, brugt som
+demonstrationsbærbar (som indeholder webserver, mailserver, gnome, ...):
 </p>
 
-<pre caption="Filesystem usage example">
+<pre caption="Brug af filsystem eksempel">
 Filesystem    Type    Size  Used Avail Use% Mounted on
 /dev/hda5     ext3    509M  132M  351M  28% /
 /dev/hda2     ext3    5.0G  3.0G  1.8G  63% /home
@@ -360,43 +360,43 @@ Filesystem    Type    Size  Used Avail Use% Mounted on
 /dev/hda9     ext3    2.0G  607M  1.3G  32% /var
 /dev/hda1     ext2     51M   17M   31M  36% /boot
 /dev/hda6     swap    516M   12M  504M   2% &lt;not mounted&gt;
-<comment>(Unpartitioned space for future usage: 2 Gb)</comment>
+<comment>(Upartitioneret plads til fremtidig brug: 2 GB)</comment>
 </pre>
 
 <p>
-<path>/usr</path> is rather full (83% used) here, but once
-all software is installed, <path>/usr</path> doesn't tend to grow that much.
-For <path>/var</path>, people might think the assigned
-space is too much. However, Gentoo compiles all programs inside
-<path>/var/tmp/portage</path>, so you should have <path>/var</path> with at
-least 1G free if you don't want to compile big programs, up to 3G free if 
-compiling KDE and OpenOffice.org at the same time is no big deal for you.
+<path>/usr</path> er pænt fyldt op (83% brugt) her, men når først
+alt softwaren er installeret, vil <path>/usr</path> ikke tendere til at gro særligt meget.
+Til <path>/var</path> kan folk måske tro at der er blevet afsat
+for meget plads. Dog kompilerer Gentoo alle programmer inde i
+<path>/var/tmp/portage</path>, så du burde have <path>/var</path> med
+minimum 1GB fri plads, hvis du ikke vil kompilere store programmer, op til 3GB fri plads, hvis 
+kompileringen af KDE og OpenOffice.org på samme tid ikke bliver til et problem.
 </p>
 
 <p>
-Now partition your disk(s) using the instructions available for your
-architecture as an example:
+Partitionere nu din(e) harddisk(e) ved brug af instruktionerne, som er tilgængeligt til dit
+arkitektur, som eksempel:
 </p>
 
 <ul>
 <li>
-  <uri link="#doc_chap3">Using fdisk on x86 or amd64 to Partition your 
-  Disk</uri>
+  <uri link="#doc_chap3">Brug af fdisk på x86 eller amd64 for at partitionere din 
+  harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap4">Using fdisk on Alpha to Partition your Disk</uri>
+  <uri link="#doc_chap4">Brug af fdisk på Alpha for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap5">Using fdisk on SPARC to Partition your Disk</uri>
+  <uri link="#doc_chap5">Brug af fdisk på SPARC for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap6">Using mac-fdisk on PPC to Partition your Disk</uri>
+  <uri link="#doc_chap6">Brug af mac-fdisk på PPC for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap7">Using fdisk on HPPA to Partition your Disk</uri>
+  <uri link="#doc_chap7">Brug af fdisk on HPPA for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap8">Using fdisk on MIPS to Partition your Disk</uri>
+  <uri link="#doc_chap8">Brug af fdisk on MIPS for at partitionere din harddisk</uri>
 </li>
 </ul>
 
@@ -404,24 +404,24 @@ architecture as an example:
 </subsection>
 </section>
 <section>
-<title>Using fdisk on x86 or amd64 to Partition your Disk</title>
+<title>Brug af fdisk på x86 eller amd64 for at partitionere din harddisk</title>
 <subsection>
 <body>
 
 <impo>
-Only users with <e>x86</e> or <e>amd64</e> based systems should read this 
-section.
+Kun brugere med <e>x86</e> eller <e>amd64</e> baserede systemer burde læse denne
+sektion.
 </impo>
 
 <p>
-The following parts explain how to create the example partition layout 
-described previously, namely:
+De følgende dele forklaerer hvordan man laver partitionslayoutet, som
+beskrevet førhen, nemlig:
 </p>
 
 <table>
 <tr>
   <th>Partition</th>
-  <th>Description</th>
+  <th>Beskrivelse</th>
 </tr>
 <tr>
   <ti><path>/dev/hda1</path></ti>
@@ -438,27 +438,27 @@ described previously, namely:
 </table>
 
 <p>
-Change your partition layout according to your own will.
+Du kan ændre partitionslayoutet til hvordan du ønsker det.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Viewing the Current Partition Layout</title>
+<title>Et kig på den nuværende partitionslayout</title>
 <body>
 
 <p>
-<c>fdisk</c> is a popular and powerful tool to split your disk into partitions.
-Fire up <c>fdisk</c> on your disk (in our example, we use
+<c>fdisk</c> er en populær og et kraftfuld værktøj til at splitte din harddisk ind i partitioner.
+Fyr op for din <c>fdisk</c> på din harddisk (i vores eksempel, bruger vi
 <path>/dev/hda</path>):
 </p>
 
-<pre caption="Starting fdisk">
+<pre caption="Start af fdisk">
 # <i>fdisk /dev/hda</i>
 </pre>
 
 <p>
-Once in <c>fdisk</c>, you'll be greeted with a prompt that looks like this:
+Når du er i <c>fdisk</c>, vil du blive hilst af en prompt, som ligner dette:
 </p>
 
 <pre caption="fdisk prompt">
@@ -466,10 +466,10 @@ Command (m for help):
 </pre>
 
 <p>
-Type <c>p</c> to display your disk's current partition configuration:
+Tast <c>p</c> for at vise din harddisks nuværende opsætning:
 </p>
 
-<pre caption="An example partition configuration">
+<pre caption="Et eksempel på en partitionsopsætning">
 Command (m for help): <i>p</i>
 
 Disk /dev/hda: 240 heads, 63 sectors, 2184 cylinders
@@ -490,9 +490,9 @@ Command (m for help):
 </pre>
 
 <p>
-This particular disk is configured to house seven Linux filesystems (each with a
-corresponding partition listed as "Linux") as well as a swap partition (listed
-as "Linux swap"). 
+Denne specifikke harddisk er opsat til at huse syv Linux filesystemer (partitionerne,
+hver især, er vist som "Linux") samt en swap-partition (vist
+som "Linux swap"). 
 </p>
 
 </body>
