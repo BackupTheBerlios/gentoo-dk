@@ -236,7 +236,7 @@
 </author>
 <abstract>Dette er Gentoos ugentlige nyhedsbrev for ugen af 19. april 2004.</abstract>
 <summary>Overgang til NFP organisation.</summary>
-<version>3 Årgang, 16. nummer</version>
+<version>3. årgang, Nummer 16</version>
 <date>19. April 2004</date>
 
 <chapter>
@@ -246,35 +246,32 @@
 <body>
 
 <p>
-<mail link="drobbins@gentoo.org">Daniel Robbins</mail>, chef arkitekt
-for Gentoo Linux leder nu en indsats for at lave en overgang til en
+<mail link="drobbins@gentoo.org">Daniel Robbins</mail>, chefarkitekt
+for Gentoo Linux, leder nu en indsats for at lave en overgang til en
 Not For Profit (ikke-for-profit) organisation. Gentoo-nfp maillisten
 er blevet sat op og diskussionen er allerede i gang; listen er blevet
-<uri
-link="http://news.gmane.org/gmane.linux.gentoo.nfp/">arkiveret</uri>,
-og er åben for abonnement: de der er interreseret bør sende en
-mail til <mail
-link="gentoo-nfp-subscribe@gentoo.org">gentoo-nfp-subscribe@gentoo.org</mail>.
-Daniel sætter slutningen af April som mål for at gøre NFP
-indsatsen færdig og har indsendt et detaljeret <uri
-link="http://article.gmane.org/gmane.linux.gentoo.nfp/25">forslag</uri>
+<uri link="http://news.gmane.org/gmane.linux.gentoo.nfp/">arkiveret</uri>,
+og er åben for abonnement: de der er interesseret bør sende en
+mail til <mail link="gentoo-nfp-subscribe@gentoo.org">gentoo-nfp-subscribe@gentoo.org</mail>.
+Daniel målsætter slutningen af April for at gøre NFP
+indsatsen færdig og har indsendt et detaljeret <uri link="http://article.gmane.org/gmane.linux.gentoo.nfp/25">forslag</uri>
 til maillisten, hvilket er blevet diskuteret og klarificeret der.
 </p>
 
 <p>
-I forslaget, vil Gentoo Foundation, Inc. holde det intelektuelle
-ejerskab af projektet. Det vil have en bestyrelseskomite og vil
+I forslaget, vil Gentoo Foundation, Inc. beholde det intellektuelle
+ejerskab af projektet. Det vil have en bestyrelseskomité og vil
 være en handelsforening med åbent medlemsskab. Den indledende
 bestyrelseskomite vil være gældende for et år, derefter vil
-et nyt et blive valgt. Gentoo Store vil betale for oprettelsen af
-denne NFP, ligeså vel som Gentoo Foundations legale udgifter til at
+et nyt blive valgt. Gentoo Store vil betale for oprettelsen af
+denne NFP, ligeså vel som Gentoo Foundations retsudgifter til at
 søge efter 501(c)(6) federal association status, hvilket forventes
 at koste omkring $5000.  Ydermere vil Daniel tilbageholde gratis
-rettigheder til brugen af  "Gentoo" trademarket og "G" logoet, derved
+rettigheder til brugen af "Gentoo" trademarket og "G" logoet, derved
 tillade ham at køre Gentoo Store hvis han ønsker det, for at
 understøtte hans familie og forsøge at betale nogle af den
-gæld på $20,000 som han har akkumuleret under hans virke som
-Chef arkitekt.
+gæld på $20,000, som han har akkumuleret under hans virke som
+Chefarkitekt.
 </p>
 
 </body>
@@ -288,7 +285,7 @@ Chef arkitekt.
 <body>
 <p>
 
-    Der er to sårbarheder i CVS; en i serveren og en i
+    Der er to sårbarheder i CVS; én i serveren og én i
     klienten. Disse sårbarheder tillader læsning og skrivning af
     arbitrære filer på både klienten og serveren.
   
@@ -304,8 +301,8 @@ For mere information, se venligst <uri link="http://www.gentoo.org/security/en/g
 <p>
 
     Der er adskillige streng format sårbarheder i neon biblioteket
-    der bruges i cadaver, som der muligt kan lede til ekserkvering af
-    arbitrær kode når man er forbundet til en ondsindet server.
+    der bruges i cadaver, som der muligt kan lede til udførselen af
+    vilkårlig kode, når man er forbundet til en ondsindet server.
   
 </p>
 <p>
@@ -319,7 +316,7 @@ For mere information, se venligst <uri link="http://www.gentoo.org/security/en/g
 <p>
 
     XChat er sårbar overfor et stak overflow der kan tillade en
-    fjernangriver at køre arbitrær kode.
+    fjernangriber at køre arbitrær kode.
   
 </p>
 <p>
@@ -333,7 +330,7 @@ For mere information, se venligst <uri link="http://www.gentoo.org/security/en/g
 <p>
 
     To nye sårbarheder er blevet fundet i HTTP interfacet til monit,
-    som muliggør denial of service eller eksekvering af arbitrær
+    som muliggør denial of service eller udførsel af vilkårlig
     kode.
   
 </p>
