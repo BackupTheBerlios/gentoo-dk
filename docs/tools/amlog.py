@@ -29,6 +29,7 @@ class Output:
             elif char == '>':
                 endchar = charnr
         name = string[startchar+1:endchar]
+        newname = name
         if name[0] == '@':
             newname = 'Op ' + name[1:]
         if name[0] == '+':
@@ -78,12 +79,10 @@ class Output:
          f('<p align=center>\n')
          f('<table border=1>\n')
          f('<tr><td><b>Nick</b></td><td><b>Time</b></td><td><b>Action</b></td></tr>\n')
-         if commitlenght < 20:
-             for line in dataobject.commits:
+         for line in dataobject.commits:
                  list = self.formatCommit(line)
                  f('<tr><td>' + list[1] +'</td><td>' + list[0] + '</td><td>' + list[2] + '</td></tr>\n')
-         else:
-             pass
+
          f('</table>\n')
          f('</p>\n')
 
@@ -157,13 +156,9 @@ class Output:
         f('  <th>Time</th>\n')
         f('  <th>Action</th>\n')
         f(' </tr>\n\n')
-
-        if commitlenght < 20:
-            for line in dataobject.commits:
-                list = self.formatCommit(line)
-                f(' <tr>\n  <ti>' + list[1] +'</ti>\n  <ti>' + list[0] + '</ti>\n  <ti>' + list[2] + '</ti>\n </tr>\n')
-        else:
-                pass
+        for line in dataobject.commits:
+            list = self.formatCommit(line)
+            f(' <tr>\n  <ti>' + list[1] +'</ti>\n  <ti>' + list[0] + '</ti>\n  <ti>' + list[2] + '</ti>\n </tr>\n')
 
         f('</table>\n\n')
         ### bottom
@@ -314,6 +309,9 @@ class DataFile:
         if min < 0:
             hours = hours - 1
             min = 60 +  min
+        if hours < 0:
+            day = day - 1
+            hours = hours + 24
         duration = [day, hours, min]
         return duration
         
