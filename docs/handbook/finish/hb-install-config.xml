@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.14 2004/07/29 14:49:42 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-config.xml,v 1.15 2004/07/29 16:11:21 broeman Exp $ -->
 
 <sections>
 <section>
@@ -274,7 +274,7 @@ iface_eth0="dhcp"
 <comment>bruge dem. Dette vil overskrive din egen værtsnavn og</comment>
 <comment>domænenavnsdefinitioner.</comment>
 dhcpcd_eth0="-HD"
-<comment>Hvis du har tænkt dig at bruge NTP for at holde din<comment>
+<comment>Hvis du har tænkt dig at bruge NTP for at holde din</comment>
 <comment>maskines ur opdateret, brug -N valgmuligheden for at</comment>
 <comment>forhindre dhcpcd fra at overskrive din /etc/ntp.conf</comment>
 dhcpcd_eth0="-N"
