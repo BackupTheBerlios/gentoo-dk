@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/devfs-guide.xml,v 1.1 2004/01/02 12:46:18 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/devfs-guide.xml,v 1.1 2004/01/02 13:53:32 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
@@ -37,17 +37,17 @@ om og hvordan du arbejder med det.
 <p>
 Traditionelle Linux implementationer giver deres brugere en abstrakt
 enhedssti, ved navnet <path>/dev</path>. Inde i denne sti finder
-brugeren <e>enhedsnoder</e><!-- device nodes-->, som er specielle
-filer, der repræsenterer enheder i deres system. F.eks., repræsenterer
-<path>/dev/hda</path> den første IDE enhed i deres system. Ved at
-stille enhedsfiler til rådighed for brugerne, kan de lave programmer,
-der kan interagere med hardware, som om at hardwaren var en almindelig
-fil i stedet for at bruge specielle APIer.
+brugeren <e>enhedsnoder</e>, som er specielle filer, der repræsenterer
+enheder i deres system. F.eks., repræsenterer <path>/dev/hda</path>
+den første IDE enhed i deres system. Ved at stille enhedsfiler til
+rådighed for brugerne, kan de lave programmer, der kan interagere med
+hardware, som om at hardwaren var en almindelig fil i stedet for at
+bruge specielle APIer.
 </p>
 
 <p>
 Enhedsfilerne kan deles op i to grupper, de kaldes <e>character</e>-enheder
-og <e>block</e>-enheder. Den første gruppe består af hardware,
+og <e>blok</e>-enheder. Den første gruppe består af hardware,
 hvor læsning/skrivning ikke bruger buffer. Den anden gruppe består
 naturligvis af hardware, hvor læsning/skrivning bruger buffer. Begge
 enheder kan læse en character af gangen, eller i blokke. Derfor kan
@@ -65,7 +65,7 @@ brw-rw----    1 root     disk       3,   0 Jul  5  2000 /dev/hda
 </pre>
 
 <p>
-I det førnævnte eksempel så vi at <path>/dev/hda</path> er en block
+I det førnævnte eksempel så vi at <path>/dev/hda</path> er en blok
 enhed. Mere vigtigt er at den har to specielle tal tilskrevet:
 <path>3, 0</path>. Dette par kaldes <e>største-mindste</e> parret. Det
 bruges af kernen til at til at kortlægge en enhedsfil til en rigtig
@@ -109,12 +109,12 @@ du skal lave?
 </p>
 
 <p>
-Når du har programmer, der interagerer med hardware gennem enhedsfiler,
-så kan du ikke have at root-partitionen er mountet, kun med læse
-rettigheder, selvom der ikke er brug for at der er skrive
-rettigheder. Og du kan ikke have 
-<path>/dev</path> på en separat partition, da <c>mount</c> har brug for
-<path>/dev</path> til at mounte partitioner.
+Når du har programmer, der interagerer med hardware gennem
+enhedsfiler, så kan du ikke have at root-partitionen er mountet kun
+med læse rettigheder, selvom der ikke er brug for at der er skrive
+rettigheder. Og du kan ikke have <path>/dev</path> på en separat
+partition, da <c>mount</c> har brug for <path>/dev</path> til at
+mounte partitioner.
 </p>
 
 </body>
@@ -124,12 +124,12 @@ rettigheder. Og du kan ikke have
 <body>
 
 <p>
-Som du nok kan forestille dig har kerne-hackerne (læs: programmører) fundet en hel del
-løsninger til de førnævnte problemer. Mange af dem har dog andre
-ulemper som er beskrevet på 
+Som du nok kan forestille dig har kerne-hackerne (læs: programmører)
+fundet en hel del løsninger til de førnævnte problemer. Mange af dem
+har dog andre ulemper som er beskrevet på
 <uri>http://www.atnf.csiro.au/people/rgooch/linux/docs/devfs.html#faq-why</uri>.
-Vi vil ikke diskutere disse implementationer, men fokusere på en
-implementationer der har klaret sig ind i den officielle kerne
+Vi vil ikke diskutere disse implementationer, men fokuserer på en
+implementation der har klaret sig ind i den officielle kerne
 kildekode: devfs.
 </p>
 
@@ -141,9 +141,9 @@ kildekode: devfs.
 
 <p>
 devfs klarer alle de listede problemer. Det giver kun brugeren
-eksisterende enheder, tilføjer ny noder når nye enheder bliver fundet
+eksisterende enheder, tilføjer nye noder når nye enheder bliver fundet
 og gør det muligt at mounte et root filsystem kun med
-læserettigheder. Det takler også andre problemer som vi ikke har
+læserettigheder. Det håndterer også andre problemer som vi ikke har
 diskuteret fordi det er mindre spændende for brugere...
 </p>
 
@@ -166,8 +166,9 @@ enheder, da der ikke er nogen grænser mere (tal har altid grænser :)
 
 <p>
 En af de første ting du måske ligger mærke til er, at devfs bruger
-biblioteker for at gruppere enheder sammen. Dette forøger læsbarheden, da
-alle relaterede enheder nu er inde i et fælles bibliotek.
+biblioteker til at gruppere enheder sammen med. Dette forøger
+læsbarheden, da alle relaterede enheder nu er inde i et fælles
+bibliotek.
 </p>
 
 <p>
@@ -181,16 +182,16 @@ dvs. at de har begge den samme struktur over deres underbiblioteker.
 IDE og SCSI drev kontrolleres af en adapter (on-board eller et separat
 kort), kaldet <e>host</e>(vært). På hver kanal kan man have adskillige
 ID'er. Sådan et ID identificerer en disk. Dette ID kaldes
-<e>target</e>(målet). Nogle SCSI enheder kan have flere lun'er
+<e>target</e>(målet). Nogle SCSI enheder kan have flere LUN'er
 (<e>Logical Unit Numbers</e>), f.eks. instansenheder der håndterer
 flere medier på samme tid (hi-end bånd-drev). Du har for det meste
-kun en enkelt lun med <path>lun0/</path>.
+kun en enkelt LUN med <path>lun0/</path>.
 </p>
 
 <p>
 Så hvor vi før brugte <path>/dev/hda4</path>, har vi nu
 <path>/dev/ide/host0/bus0/target0/lun0/part4</path>. Dette er meget
-nemmere... nej du skal ikke diskutere med mig... det <e>er</e>
+nemmere... nej du skal ikke diskutere det med mig... det <e>er</e>
 nemmere... jaja! :)
 </p>
 
@@ -201,7 +202,7 @@ harddiske, såsom <path>c0b0t0u0p2</path>. De kan findes i <path>/dev/ide/hd</pat
 </note>
 
 <p>
-For at give dig et indtryk af bibliotekerne er her en liste over de
+For at give dig et indtryk af bibliotekerne, er her en liste over de
 biblioteker jeg har på min bærbar:
 </p>
 
@@ -280,7 +281,7 @@ For at sende et signal skal du simpelthen bruge <c>kill</c> eller <c>killall</c>
 <body>
 
 <warn>
-Pt. kan Gentoo ikke leve uden de kompabilitet sikrende symbolske genveje.
+Pt. kan Gentoo ikke leve uden de kompabilitetsikrende symbolske genveje.
 </warn>
 
 <p>
@@ -355,8 +356,8 @@ sound-gruppen (lyd-gruppen):
 </pre>                  
 
 <p>
-Syntaksen er ganske nem: du starter med et gruppenavn, og ender med en
-liste af enheder der tilhører denne gruppe.
+Syntaksen er ganske nem: du starter med et gruppenavn og ender med en
+liste af enheder, som tilhører denne gruppe.
 </p>
 
 <p>
@@ -376,10 +377,10 @@ og måske ændre rettighederne på nogle enhedsfiler.
 </p>
 
 <p>
-Det andet felt indeholder rettigheder til hvilken en enhedsfil, der
+Det andet felt indeholder rettigheder til hvilken enhedsfil, der
 bliver sat ved at succesfuldt login. Når en person logger ind i
 systemet og enhedsfilerne ejes af en standard ejer/gruppe, så vil PAM
-ændre ejerskabet til den bruger, der er logget ind og sætte
+ændre ejerskabet til den bruger, der er logget ind, og sætte
 rettighederne til dem, der står i dette andet felt. I dette tilfælde
 bruges 0600 (bruger har læse og skrive adgang, alle andre har ikke).
 </p>
@@ -400,7 +401,7 @@ beskrives i dette fjerde felt.
 
 <p>
 Det femte felt definerer ejerskabet (med gruppe, hvis du ønsker dette)
-to hvilken enheds attributterne bliver sat efter at være gået tilbage
+til hvilken enhed, attributterne bliver sat, efter at være gået tilbage
 til standard tilstand. Med andre ord, hvis den person der ejer alle
 enhedsfilerne logger ud, så vil PAM sætte ejerskabet tilbage til
 standard tilstand, beskrevet i dette femte felt.
