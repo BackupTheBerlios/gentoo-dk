@@ -140,24 +140,24 @@ link="http://forums.gentoo.org">forum</uri>. For at se disse, gå til
 </section>
 <!--
 <section>
- <title>Gentoo Handbook</title>
+ <title>Gentoo-håndbogen</title>
  <body>
  
 <p>
-The Gentoo Documentation Project has started with the <uri
-link="handbook/handbook.xml">Gentoo Handbook</uri>
-development. Currently, the first two parts (<uri
-link="handbook/handbook.xml?part=1">Installing Gentoo</uri> and <uri
-link="handbook/handbook.xml?part=2">Working with Gentoo</uri>) are
-finished and have reached the "official" stage. Users are encouraged
-to use the installation instructions from the Handbook and
-link="http://bugs.gentoo.org/enter_bug.cgi?product=Docs-user">bug</uri>
-us with their experience (please use the <e>Handbook</e> component).
+Gentoo Documentation Project er startet med udviklingen af <uri
+link="handbook/handbook.xml">Gentoo-håndbogen</uri>.
+På nuværende tidspunkt, er de første to dele (<uri
+link="handbook/handbook.xml?part=1">Installation af Gentoo</uri> og <uri
+link="handbook/handbook.xml?part=2">Arbejde med Gentoo</uri>) færdige
+og har nået det "officielle" niveau. Brugere bør 
+bruge installationsinstruktionerne fra håndbogen og give os
+link="http://bugs.gentoo.org/enter_bug.cgi?product=Docs-user">fejl-rapporter</uri>
+med deres oplevelser (brug venligst <e>Handbook</e> komponenten).
 </p>
 
  <p>
- More information can be found on the <uri link="handbook/index.xml">Gentoo
- Handbook Effort</uri> homepage.
+ Flere informationer kan blive fundet på <uri link="handbook/index.xml">Bag om
+ Gentoo-håndbogen</uri>s hjemmeside.
  </p>
  
  </body>
@@ -174,8 +174,8 @@ us with their experience (please use the <e>Handbook</e> component).
 <p>
 Installationsdokumenterne giver dig informationer som kan være til
 glæde under installationen af Gentoo Linux. Dette inkluderer 
-<!-- delen om "Installation af Gentoo" i vores håndbog, som de 
-tidligere, men stadig vedligeholdte --> 
+delen om "Installation af Gentoo" i vores håndbog, som de 
+tidligere, men stadig vedligeholdte 
 arkitektur-relaterede installationsdokumenter og vejledninger, som skal følges under
 installationen (sådan som kernen eller LVM).
 </p>
@@ -187,11 +187,11 @@ installationen (sådan som kernen eller LVM).
 <body>
 
 <p>
-<!-- Delen om at <uri
+Delen om at <uri
 link="/doc/da/handbook/handbook.xml?part=1">Installere Gentoo</uri> i
 vores <uri link="/doc/da/handbook/index.xml">Gentoo håndbog</uri>
 forklarer hvordan man installerer Gentoo på dit system. Det indeholder
-instruktioner til alle bruger og alle arkitekturer.-->
+instruktioner til alle bruger og alle arkitekturer.
 Installationsvejledningerne vil trin for trin hjælpe dig igennem
 processen for at installere Gentoo Linux 1.4. Vi understøtter
 forskellige installationsmetoder, afhængig af hvor meget af systemet,
@@ -199,9 +199,9 @@ du selv vil bygge fra bunden af.
 </p>
 
 <p>
-<!-- Installationsvejledningerne er overtaget af Gentoo håndbog -->
-<!-- instruktioner, men er stadig online og vedligeholdt, indtil den -->
-<!-- nye Gentoo Linux kommer.-->
+Installationsvejledningerne er overtaget af Gentoo håndbog
+instruktioner, men er stadig online og vedligeholdt, indtil den
+nye Gentoo Linux kommer.
 Installationsvejledningerne er til rådig for følgende arkitekturer:
 </p>
 
@@ -269,8 +269,8 @@ Gentoo from another medium (distribution, bootable CD, network boot, etc.).
 
 <p>
 Brugere interesseret i at bruge LVM bør læse <b><uri
-link="lvm.xml">LVM vejledningen </uri></b><!--, som er implementeret i
-Gentoo håndbogen,--> som forklarer hvilke skridt du skal igennem for
+link="lvm.xml">LVM vejledningen </uri></b>, som er implementeret i
+Gentoo håndbogen, som forklarer hvilke skridt du skal igennem for
 at få din LVM ordning op at køre.
 </p>
 
