@@ -63,7 +63,7 @@ For at få filerne til at vise det danske tegnsæt, så rediger <path>/etc/profile<
 </p>
 
 <pre caption="Indsættelse nederst i /etc/profile">
-export LC_CPYTE="en_DK"
+export LC_CTYPE="en_DK"
 </pre>
 
 </body>
