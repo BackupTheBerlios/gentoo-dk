@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.10 2004/03/18 17:14:54 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-medium.xml,v 1.11 2004/03/28 10:59:18 aaby Exp $ -->
 
 <sections>
 <section>
@@ -1204,10 +1204,10 @@ Hardwareopsætning</uri>.
 Når LiveCDen starter, prøver den at finde alle dine hardware-enheder
 og at hente de passende kerne-moduler for at understøtte dit
 hardware. I langt de fleste tilfælde gør den et godt arbejde. Men, i
-nogen tilfælde, vil den ikke automatisk hente de kerne-moduler, du har
-brug for. Hvis PCI automatisk-finding ikke fik noget af dit systems
-hardware, bliver du nødt til at hente de passende kerne-moduler
-manuelt.
+nogen tilfælde(SPARC LiveCD'en bruger ikke engang automatisk opsætning), vil den
+ikke automatisk hente de kerne-moduler, du har brug for. Hvis PCI
+automatisk-finding ikke fik noget af dit systems hardware, bliver du
+nødt til at hente de passende kerne-moduler manuelt.
 </p>
 
 <p>
@@ -1315,7 +1315,8 @@ For at starte en SSH-daemon op, udfør følgende kommando:
 </pre>
 
 <p>
-Fortsæt nu til næste kapitel som omhandler <uri 
+For at være i stand til at bruge sshd, skal du først sætte dit netværk
+op. Fortsæt til næste kapitel som omhandler <uri
 link="?part=1&amp;chap=3">Opsætning af dit netværk</uri>.
 </p>
 
