@@ -3,7 +3,7 @@
 
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.5 2004/02/24 19:36:08 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.6 2004/03/08 21:00:47 aaby Exp $ -->
 
 <sections>
 <section>
@@ -125,7 +125,9 @@ ikke behøver at kompilere det hele, men kan starte fra et semi-klart system.
 
 <p>
 Hvis du finder problemer i installationen (eller i
-installationsdokumentationen) så besøg venligst vores <uri
+installationsdokumentationen) så tjek venligst <uri
+link="/proj/en/releng/release/2004.0/x86/x86-release-notes.xml#doc_chap2_sect2">
+udgivelses errata</uri> besøg vores <uri
 link="http://bugs.gentoo.org">fejlopfølgningssystem</uri> og se om
 fejlen er kendt. Hvis dette ikke er tilfældet så opret venligst en
 fejlrapport, så vi kan se på det. Vær ikke bange for de udviklere, der
