@@ -1,7 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-medium.xml,v 1.3 2004/01/03 00:20:21 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-medium.xml,v 1.4 2004/01/03 11:17:42 broeman Exp $ -->
 
 <sections>
 <section>
@@ -341,37 +341,37 @@ Så, hvad indeholder disse LiveCDer?
 <body>
 
 <p>
-This is a small, no-nonsense, bootable CD which sole purpose is to boot the 
-system, prepare the networking and continue with the Gentoo installation. It 
-does not contain any stages (or, in some cases, only contains a stage1 file), 
-source code or precompiled packages.
+Dette er en lille, ingen-pjat, startbar CD, som eneste formål er at starte 
+systemet, forberede netværk og fortsætte med installationen af Gentoo. Det 
+indeholder ikke nogen etapers (eller, i nogle situationer, indeholder den en stage1-fil), 
+kildekode eller præ-kompilerede pakker.
 </p>
 
 <table>
 <tr>
   <th>Basic LiveCD</th>
-  <th>Pros and Cons</th>
+  <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Smallest download</ti>
+  <ti>Mindste download</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Suitable for a complete architecture</ti>
+  <ti>Brugbart til et komplet arkitektur</ti>
 </tr>
 <tr>
   <th>+</th>
   <ti>
-    You can do a stage1, stage2 or stage3 by getting the stage tarball off the
-    net
+    Du kan lave en stage1, stage2 eller stage3 ved at hente stage-tarball fra 
+    Internet
   </ti>
 </tr>
 <tr>
   <th>-</th>
   <ti>
-    Contains no stages, no portage snapshot, no GRP packages and therefore not 
-    suitable for networkless installation or GRP installations
+    Indeholder ingen etaper, ingen portage-snapshot, ingen GRP-pakker og derfor er den ikke 
+    brugbar til netværkløse installationer eller GRP-installationer
   </ti>
 </tr>
 </table>
@@ -379,48 +379,48 @@ source code or precompiled packages.
 </body>
 </subsection>
 <subsection>
-<title>Gentoo 2-CD LiveCD Set</title>
+<title>Gentoo 2-CD LiveCD-sættet</title>
 <body>
 
 <p>
-The first CD is a bootable CD containing all stages for a specific
-subarchitecture (such as Athlon-XP, G4, etc.) together with source code and
-precompiled packages. The second CD only contains precompiled packages
-and can be used to install other packages after the Gentoo Installation. To
-install Gentoo, you only need CD-1, but if you want OpenOffice.org, Mozilla,
-KDE, GNOME etc. without having to compile every single one of them, you need
-CD-2 too. 
+Den første CD er en startbar CD, som indeholder alle etaper til en specifik
+under-arkitektur (som f.eks. Athlon-XP, G4, osv.) sammen med kildekoder og
+præ-kompilerede pakker. Den anden CD indeholder kun præ-kompilerede pakker
+og kan blive brugt til at installere andre pakker efter en Gentoo Installation. For at
+installere Gentoo, behøver du kun at bruge CD-1, men hvis du ønsker at bruge OpenOffice.org, Mozilla,
+KDE, GNOME osv. uden at skulle kompilere dem, vil du også få brug for
+CD-2. 
 </p>
 
 <p>
-We provide both a "default" LiveCD set, bootable on all subarchitectures for a
-specific architecture, as well as optimized LiveCD sets for the various
-subarchitectures (such as Athlon-XP, G4, etc.).
+Vi leverer både et "standard" LiveCD-sæt, startbar til alle under-arkitekturer til en
+specifik arkitektur, men også optimerede LiveCD-sæt til de forskellige
+under-arkitekturer (som f.ek.s Athlon-XP, G4, osv.).
 </p>
 
 <table>
 <tr>
-  <th>2-CD LiveCD Set</th>
-  <th>Pros and Cons</th>
+  <th>2-CD LiveCD-sættet</th>
+  <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Optimized to your architecture and subarchitecture</ti>
+  <ti>Optimeret til din arkitektur og under-arkitektur</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>Provide precompiled packages for fast Gentoo installations</ti>
+  <ti>Leveres med præ-kompilerede pakker til en hurtig installation af Gentoo</ti>
 </tr>
 <tr>
   <th>+</th>
   <ti>
-    Contains everything you need. You can even install without a network
-    connection.
+    Indeholder alt hvad du får brug for. Du kan endda installere uden en
+    netværksforbindelse.
   </ti>
 </tr>
 <tr>
   <th>-</th>
-  <ti>Huge download</ti>
+  <ti>Kæmpe downloads</ti>
 </tr>
 </table>
 
@@ -431,34 +431,34 @@ subarchitectures (such as Athlon-XP, G4, etc.).
 <body>
 
 <p>
-This cd contains a complete live Gentoo environment featuring the KDE and Gnome
-desktop environment, an apache webserver, several webbrowsers, irc clients,
-firewall/router stuff, network auditing stuff, a lot of CLI tools... It can be
-used to fix a broken filesystem. The kde/gnome livecd contains an entire
-gcc (distcc, ccache enabled) toolchain; boot all systems on your network using 
-this cd and experience the power of distributed compilation. This cd can be
-used to install Gentoo, but does not contain GRP, distfiles, nor a portage
-snapshot or stages.
+Denne CD indeholder et komplet direkte Gentoo-miljø, som leverer KDE og Gnome
+desktop-miljøerne, en apache webserver, flere webbrowsere, irc klienter,
+firewall/router software, netværksundersøgelse-software og en hel del CLI-værktøjer ... Det kan blive
+brugt til at reparere et ødelagt filsystem. KDE/Gnome-LiveCDen indeholder en fuldstændig
+gcc (distcc, ccache aktiveret) værtøjskasse (toolchain); start alle system med dit netværk ved at bruge 
+denne CD og oplev kraften af distribueret kompilering. Denne CD kan blive
+brugt til at installere Gentoo, men den indeholder ikke GRP, distfiles, et portage-snapshot
+eller stage-filer.
 </p>
 
 <table>
 <tr>
   <th>KDE/Gnome LiveCD</th>
-  <th>Pros and Cons</th>
+  <th>Fordele og ulemper</th>
 </tr>
 <tr>
   <th>+</th>
-  <ti>You can work with Gentoo without installing it on your hard disk</ti>
+  <ti>Du kan arbejde med Gentoo uden at skulle installere det på din harddisk</ti>
 </tr>
 <tr>
   <th>+</th>
-  <ti>You can also use it to install Gentoo :)</ti>
+  <ti>Du kan også bruge det til at installere Gentoo med :)</ti>
 </tr>
 <tr>
   <th>-</th>
   <ti>
-    Huge download, but doesn't contain a portage snapshot, stages, precompiled
-    packages or sourcecode.
+    Kæmpe download, men indeholder ikke et portage-snapshot, stage-filer, præ-kompilerede
+    pakker eller kildekoder.
   </ti>
 </tr>
 </table>
@@ -470,78 +470,78 @@ snapshot or stages.
 <body>
 
 <p>
-<e>Knoppix</e> is a well-known bootable CD with a fully working desktop
-environment. It allows you to boot from CD and, without interaction with
-your disk, start up office applications or system tools. In our case, we
-will use the system and networking tools to install Gentoo.
+<e>Knoppix</e> er en velkendt startbar CD, som indeholder et fuldstændig fungerende
+desktop-miljø. Det tillader dig at starte fra en CD, og uden interagering med
+din harddisk, kan du starte kontor-programmer eller system-værktøjer. I dette tilfælde, vil
+vi bruge system og netværksværktøjerne til at installere Gentoo.
 </p>
 
 <p>
-If you plan on using Knoppix, you can download it from <uri
-link="http://www.knoppix.com">the Knoppix homepage</uri>.
-</p>
-
-</body>
-</subsection>
-<subsection>
-<title>Existing Distribution</title>
-<body>
-
-<p>
-If you start installing from another already installed Linux
-distribution, then you benefit from all the tools already available in your
-installed Linux distribution. You can already skip the rest of this chapter and 
-continue with <uri link="?part=1&amp;chap=3">Configuring your Network</uri>.
+Hvis du planlægger at bruge Knoppix, kan du hente det fra <uri
+link="http://www.knoppix.com">Knoppixs hjemmeside</uri>.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Net Booting</title>
+<title>Eksisterende distribution</title>
 <body>
 
 <p>
-In some cases you do not have the possibility to boot from a CD or use an
-existing installation to install Gentoo from. In case your system has a network
-interface and BIOS/ROM capable of performing a netboot (PXE) you can have it
-download a small system at boot time and install from that system onwards.
-</p>
-
-<p>
-In case you want to use the net boot method (<e>MIPS</e> users have no choice)
-you should already have a working DHCP and TFTP server. Information on setting
-up a <uri link="/doc/en/diskless-howto.xml#doc_chap3">DHCP server</uri> and <uri
-link="/doc/en/diskless-howto.xml#doc_chap4">TFTP server</uri> are available in
-the <uri link="/doc/en/diskless-howto.xml">Diskless-HOWTO</uri>. 
-</p>
-
-<p>
-Depending on your setup, you might need to create or download a kernel image for
-your system.
+Hvis du starter med at installere fra en anden allerede installeret
+Linux-distribution, så kan du gavne fra de værktøjer, som allerede er til rådighed på din
+installeret Linux-distribution. Du kan allerede springe resten over i dette kapitel og
+fortsætte med <uri link="?part=1&amp;chap=3">Opsætning af dit netværk</uri>.
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Choosing the Installation Medium</title>
+<title>Netopstart</title>
 <body>
 
 <p>
-Now make your choice of installation medium and continue with the
-appropriate section. As this is a Gentoo handbook, we'll default to using
-the Gentoo LiveCDs, but you can find the necessary information about
-using the other installation media as alternative sections.
+I nogle situationer har du ikke muligheden for at starte fra en CD eller bruge en
+eksisterende installation for at installere Gentoo. I tilfælde af, at dit system har et
+netværksgrænseflade, som er BIOS/ROM-egnet til at fortage en 'netboot' (PXE), kan du få den til at
+hente et lille system ved opstarten og installere fra dette system bagefter.
+</p>
+
+<p>
+I tilfælde af, at du vil bruge netopstart-metoden (<e>MIPS</e>-brugere har ikke et valg)
+skal du allerede have en fungerende DHCP- og TFTP-server. Informationer for at indstille
+en <uri link="/doc/da/diskless-howto.xml#doc_chap3">DHCP-server</uri> og <uri
+link="/doc/da/diskless-howto.xml#doc_chap4">TFTP-server</uri> er til rådighed i
+<uri link="/doc/da/diskless-howto.xml">Diskless-HOWTO</uri>. 
+</p>
+
+<p>
+Afhængigt at dine instillinger, skal du nok lave eller hente en kerne ti
+dit system.
+</p>
+
+</body>
+</subsection>
+<subsection>
+<title>At vælge installationsmediet</title>
+<body>
+
+<p>
+Nu kan du vælge dit installationsmedie og fortsætte med den
+passende sektion. Da dette er Gentoo-håndbogen, sætter vi standarden til
+Gentoo LiveCDerne, men du kan finde de nødvendige informationer om
+at bruge de andre installationsmedier som alternative sektioner.
 </p>
 
 <ul>
 <li>
-  <uri link="#doc_chap3">Default: Download, Burn and Boot a Gentoo LiveCD</uri>
+  <uri link="#doc_chap3">Standard: Hent, brænd og start en Gentoo LiveCD</uri>
 </li>
 <li>
-  <uri link="#doc_chap4">Alternative: Download, Burn and Boot Knoppix</uri>
+  <uri link="#doc_chap4">Alternativ: Hent, brænd og start Knoppix</uri>
 </li>
 <li>
-  <uri link="#doc_chap5">Alternative: Net Booting</uri>
+  <uri link="#doc_chap5">Alternativ: Netopstart</uri>
 </li>
 </ul>
 
@@ -549,28 +549,28 @@ using the other installation media as alternative sections.
 </subsection>
 </section>
 <section>
-<title>Default: Download, Burn and Boot a Gentoo LiveCD</title>
+<title>Standard: Hent, brænd og start en Gentoo LiveCD</title>
 <subsection>
-<title>Downloading and Burning the LiveCDs</title>
+<title>Hente og brænde LiveCDerne</title>
 <body>
 
 <p>
-You have chosen to use a Gentoo LiveCD (if not, then you are reading the
-wrong section). We'll first start by downloading and burning the chosen
-LiveCD. We previously discussed the several available LiveCDs, but where can you
-find them? 
+Du har valgt at bruge en Gentoo LiveCD (hvis ikke, så læser du den
+forkerte sektion). Vi vil først starte med at hente og brænde den valgte
+LiveCD. Vi har forinden diskuteret de mulige LiveCDer, men hvor kan du
+finde dem? 
 </p>
 
 <p>
-The following table lists the relative paths where you can find the LiveCD ISOs
-(CD images). The path is relative to the main Gentoo directory on any of our
-<uri link="/main/en/mirrors.xml">mirrors</uri>.
+Den følgende tabel viser de relative stier til hvor du kan finde LiveCD ISOer
+(CD-billedfiler). Stien er relativ til Gentoos hovedbibliotek på alle vores
+<uri link="/main/en/mirrors.xml">filspejle</uri>.
 </p>
 
 <table>
 <tr>
-  <th>Architecture</th>
-  <th>Path</th>
+  <th>Arkitektur</th>
+  <th>Sti</th>
 </tr>
 <tr>
   <ti>x86</ti>
@@ -595,41 +595,41 @@ The following table lists the relative paths where you can find the LiveCD ISOs
 </table>
 
 <p>
-Visit one of our <uri
-link="/main/en/mirrors.xml">mirrors</uri> and go to
-the path where the LiveCD(s) of your choice are located. Inside that
-directory you'll find so-called ISO-files. Those are full CD images
-which you can write on a CD-R. If you find several ISOs with different 
-date-tags (such as <path>livecd-x86-cd1-20031029.iso</path>) take the most 
-recent one.
+Besøg en af vores <uri
+link="/main/en/mirrors.xml">filspejle</uri> og gå til
+stien, hvor LiveCD(erne) ligger. Indenfra dette
+bibliotek kan du finde de såkaldte ISO-filer. Disse er fulde CD-billedfiler,
+som du kan skrive til en CD-R. Hvis du finder forskellige ISOer med forskellige 
+datoer (som f.eks.<path>livecd-x86-cd1-20031029.iso</path>) vælg den 
+nyeste.
 </p>
 
 <note>
-Please check the descriptions on the <uri link="http://store.gentoo.org">Gentoo
-Store</uri> to know what LiveCD (or stage) you should use for your CPU. A 
-common mistake is choosing a LiveCD (or stage) for a CPU that is more recent 
-than yours (such as "athlon-xp" for a regular AMD Athlon).
+Vær venlig og tjek beskrivelserne i <uri link="http://store.gentoo.org">Gentoo
+Store</uri> for at vide, hvilken LiveCD (eller etaper/stage-fil) du skal bruge til din processor. En 
+typisk fejl er at vælge en LiveCD (eller stage-fil) til en processor, der er mere ny
+end din egen (som f.eks. "athlon-xp" til en normal AMD Athlon).
 </note>
 
 <p>
-To burn the downloaded ISO(s), you have to select raw-burning. How you
-do this is highly program-dependent. We will discuss a couple of popular
-tools on how to do this.
+For at brænde de hentede ISO(er), skal du vælge 'raw-burning'. Hvordan du
+gør dette, er meget afhængigt at programmet. Vi vil diskutere nogle populære
+værktøjer tilat gøre dette.
 </p>
 
 <ul>
   <li>
-    With EasyCD Creator you select <c>File</c>, <c>Record CD
-    from CD image</c>. Then you change the <c>Files of type</c> to <c>ISO image
-    file</c>. Then locate the ISO file and click <c>Open</c>. When you click on
-    <c>Start recording</c> the ISO image will be burned correctly onto the CD-R.
+    Med EasyCD Creator, vælger du <c>File</c>, <c>Record CD
+    from CD image</c>. Så ændrer du <c>Files of type</c> til <c>ISO image
+    file</c>. Bagefter finder du ISO-filen og klikker <c>Open</c>. Når du klikker på
+    <c>Start recording</c> vil ISO-billedfilen blive brændt korrekt til en CD-R.
   </li>
   <li>
-    With Nero Burning ROM, select <c>File</c>, <c>Burn CD image</c>. Set the
-    type of file to <c>*.*</c> and select the ISO file. Older versions of Nero
-    will tell you they don't recognize the format -- confirm here, it does
-    recognize it but doesn't know it yet :) In the next dialog, set the
-    following parameters:
+    Med Nero Burning ROM, vælger du <c>File</c>, <c>Burn CD image</c>. Indstil
+    typen af fil til <c>*.*</c> og vælg ISO-filen. Ældre versioner af Nero
+    vil fortælle dig at den ikke kunne forstå formattet 'don't recognize the format' -- fortsæt alligevel,
+    den kan godt forstå det, men det ved det bare ikke selv :) I den næste dialog, indstil de
+    følgende parametre:
     <ul>
       <li>Type of image: <c>Data Mode 1</c></li>
       <li>Block size: <c>2048 bytes</c></li>
@@ -637,36 +637,36 @@ tools on how to do this.
       <li>Scrambled: <c>no</c></li>
       <li>Swapped: <c>no</c></li>
     </ul>
-    Now click on <c>OK</c> and then <c>Burn</c> (the CD-R)
+    Klik nu på <c>OK</c> og så på <c>Burn</c> (the CD-R)
   </li>
   <li>
-    With cdrecord, you simply type <c>cdrecord dev=/dev/hdc</c> (replace
-    <path>/dev/hdc</path> with your CD-RW drive's device path) followed
-    by the path to the ISO file :)
+    Med cdrecord, kan du bare skrive <c>cdrecord dev=/dev/hdc</c> (udskift
+    <path>/dev/hdc</path> med dit CD-RW-drevs enhedssti) fulgt af
+    stien til ISO-filen :)
   </li>
   <li>
-    With Mac OS X' Finder mark the ISO and click on <c>File</c> and then <c>Burn
-    Image</c>
+    Med 'Mac OS X's 'Finder' kan du markere ISO-filen og klik på <c>File</c> og vælg <c>Burn
+    Image</c>.
   </li>
 </ul>
 
 <p>
-The following subsections explain how to boot the architecture-specific LiveCDs. 
-Be sure to pick the subsection which is relevant for your architecture. 
+Følgende undersektioner forklarer hvordan man starter de arkitektur-specifikke LiveCDer. 
+Vær sikker på at vælge den undersektion, som er relevant for din arkitektur. 
 </p>
 
 <ul>
-<li><uri link="#doc_chap3_sect2">Booting the x86 LiveCD(s)</uri></li>
-<li><uri link="#doc_chap3_sect3">Booting the Alpha LiveCD(s)</uri></li>
-<li><uri link="#doc_chap3_sect4">Booting the HPPA LiveCD(s)</uri></li>
-<li><uri link="#doc_chap3_sect5">Booting the SPARC LiveCD(s)</uri></li>
-<li><uri link="#doc_chap3_sect6">Booting the PPC LiveCD(s)</uri></li>
+<li><uri link="#doc_chap3_sect2">Start af x86 LiveCD(er)</uri></li>
+<li><uri link="#doc_chap3_sect3">Start af Alpha LiveCD(er)</uri></li>
+<li><uri link="#doc_chap3_sect4">Start af HPPA LiveCD(er)</uri></li>
+<li><uri link="#doc_chap3_sect5">Start af SPARC LiveCD(er)</uri></li>
+<li><uri link="#doc_chap3_sect6">Start af PPC LiveCD(er)</uri></li>
 </ul>
 
 </body>
 </subsection>
 <subsection>
-<title>Booting the x86 LiveCD(s)</title>
+<title>Start af x86 LiveCD(er)</title>
 <body>
 
 <impo>
