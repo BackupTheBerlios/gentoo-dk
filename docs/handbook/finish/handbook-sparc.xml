@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-sparc.xml,v 1.6 2004/07/26 20:53:00 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-sparc.xml,v 1.7 2004/07/29 08:40:48 broeman Exp $ -->
 
 <book link="handbook-sparc.xml" lang="da">
 <title>Gentoo-håndbogen til SPARC</title>
@@ -131,8 +131,8 @@ informationer omkring Gentoo/Linux.
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 <license/>
 
-<version>2.43</version>
-<date>26. Juli, 2004</date>
+<version>2.44</version>
+<date>28. Juli, 2004</date>
 
 <part>
 <title>Installation af Gentoo</title>
