@@ -60,7 +60,7 @@ class Output:
          f('The duration of the log file was: <b>' + str(dataobject.duration[0]) +
                                      ' day(s) ' + str(dataobject.duration[1]) +
                                   ' hours and ' + str(dataobject.duration[2]) + ' minutes</b><br>\n')
-         f('<b>The following people have been active: </b><br>\n')
+         f('<b>The following '+ str(len(dataobject.listofnicks)) +' people have been active: </b><br>\n')
          i = -1
          length = len(dataobject.listofnicks) -1
          for nick in dataobject.listofnicks:
@@ -198,7 +198,7 @@ class Output:
                                  ' hours and ' + str(dataobject.duration[2]) + ' minutes</b>\n')
         f('</p>\n\n')
         f('<p>\n')
-        f('  <b>The following people have been active:</b>\n')
+        f('  <b>The following '+ str(len(dataobject.listofnicks)) +' people have been active:</b>\n')
         f('</p>\n')
         i = -1
         length = len(dataobject.listofnicks) - 1
@@ -469,7 +469,18 @@ class DataFile:
                 else:
                     listofnicks.append(newname)
 
-        return listofnicks
+        newlist = []
+        for nick in listofnicks:
+            newnick = nick.lower()
+            if newnick[0] == ' ':
+                newnick = newnick[1:]
+            newnick = newnick[0].upper() + newnick[1:]
+            if newnick in newlist:
+                pass
+            else:
+                newlist.append(newnick)
+        newlist.sort()
+        return newlist
 
     def getDurationTime():
         day = 0
