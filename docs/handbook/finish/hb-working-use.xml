@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-use.xml,v 1.1 2004/02/22 20:51:33 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-use.xml,v 1.2 2004/02/23 19:36:37 broeman Exp $ -->
 
 <sections>
 <section>
@@ -21,7 +21,7 @@ En spil-arbejdsstation er forskellig fra en 3D-gengivelse-arbejdsstation.
 </p>
 
 <p>
-Det er ikke kun rigtigt for at vælge de pakker som du vil installere, men også
+Det er ikke kun rigtigt for at vælge de pakker, som du vil installere, men også
 hvilke egenskaber en specifik pakke bør understøtte. Hvis du ikke behøver OpenGL, hvorfor
 skulle du interessere dig for at installere OpenGL og bygge OpenGL-understøttelse til de fleste af vores
 pakker? Hvis du ikke vil bruge KDE, hvorfor vi du interessere dig for at kompilere pakker
@@ -32,7 +32,7 @@ med KDE-understøttelse, hvis disse pakker virker fejlfrit uden?
 For at hjælpe brugere med at beslutte, hvad man bør installere/aktivere eller ikke, vil vi få
 brugeren til at specificere sit miljø på en nem måde. Dette tvinger brugeren til at 
 beslutte, hvad han virkelig vil have og letgør processen for Portage, vores
-pakkebehandlingssystem, for at lave brugbare beslutninger.
+pakkebehandlingssystem, for at lave hjælpsomme beslutninger.
 </p>
 
 </body>
@@ -42,20 +42,20 @@ pakkebehandlingssystem, for at lave brugbare beslutninger.
 <body>
 
 <p>
-Gå ind i USE-flag verdenen. Sådan et flag er et nøgleord, der udtrykker understøttelse og
+Tag et skridt ind i USE-flag verdenen. Sådan et flag er et nøgleord, der udtrykker understøttelse og
 afhængighedsinformationer til sådan et koncept. Hvis du definerer et specifikt USE-flag, 
-vil Portage vide, at du vil have understøttelse for dette valgte nøgleord. Selvfølgelig
-vil dette også ændre afhængighedsinformationer for en pakke.
+vil Portage vide om, at du vil have understøttelse for dette valgte nøgleord. Selvfølgelig
+vil dette også ændre afhængighedsinformationerne for en pakke.
 </p>
 
 <p>
 Lad os tage et kig på et specifikt eksempel: <c>kde</c>-nøgleordet. Hvis du ikke
-har dette nøgleord i dine <c>USE</c>-variabler, vil alle pakker, som har 
+har dette nøgleord i dine <c>USE</c>-variablerne, vil alle pakker, som har 
 <e>valgfri</e> KDE-understøttelse, blive kompileret <e>uden</e> KDE-understøttelse. Alle
 pakker, som har <e>valgfrie</e> KDE-afhængigheder, vil blive installeret
 <e>uden</e> at installere KDE-biblioteker (som en afhængighed). Hvis du har defineret
 <c>kde</c>-nøgleordet, vælg da de pakker, som <e>vil</e> være kompileret med
-KDE-understøttelse, og KDE-bibliotekerne vil blive installeret, som en afhængighed.
+KDE-understøttelse, og KDE-libs vil blive installeret, som en afhængighed.
 </p>
 
 <p>
@@ -189,7 +189,7 @@ link="?part=2&amp;chap=2">Portage og software</uri>.
 
 <p>
 Nogle pakker lytter ikke kun til USE-flag, men leverer også USE-flag. Når
-du installerer sådanne en pakke, vil USE-flag'et blive tilføjet til din
+du installerer sådan en pakke, vil USE-flag'et blive tilføjet til din
 USE-opsætning. For at se en liste over pakker, som leverer USE-flag, tjek
 <path>/etc/make.profile/use.defaults</path>:
 </p>
@@ -253,7 +253,7 @@ indholdet brugt af Portage.
 <p>
 I det næste kapitel omkring <uri link="?part=2&amp;chap=2">Portage og software</uri>
 vil vi forklare hvordan man håndterer dit installerede software og hvordan man arbejder med
-<c>emerge</c>. Dog, vil vi give dig en forsmag på <c>emerge</c>, ved at vise
+<c>emerge</c>. Dog vil vi give dig en forsmag på <c>emerge</c>, ved at vise
 dig hvordan man kan se hvilke USE-flag en pakke bruger.
 </p>
 
@@ -276,7 +276,7 @@ Calculating dependencies ...done!
 <p>
 <c>emerge</c> er ikke det eneste værktøj til dette job. I virkeligheden har vi et værktøj
 tilegnet til pakke-informationer, kaldet <c>etcat</c>, som er placeret i
-<c>gentoolkit</c>-pakken. Først, installér <c>gentoolkit</c>:
+<c>gentoolkit</c>-pakken. Først, installer <c>gentoolkit</c>:
 </p>
 
 <pre caption="Installation af gentoolkit">
@@ -284,7 +284,7 @@ tilegnet til pakke-informationer, kaldet <c>etcat</c>, som er placeret i
 </pre>
 
 <p>
-Kør nu <c>etcat</c> med <c>uses</c> argumentet for at se USE-flag af en
+Kør nu <c>etcat</c> med <c>uses</c> parameteren for at se USE-flag af en
 vis pakke. F.eks. <c>gnumeric</c>-pakken:
 </p>
 
