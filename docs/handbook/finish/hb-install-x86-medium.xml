@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-x86-medium.xml,v 1.2 2004/05/03 16:28:07 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-x86-medium.xml,v 1.3 2004/05/03 16:32:24 broeman Exp $ -->
 
 <sections>
 <section>
@@ -297,17 +297,7 @@ blive fundet i <path>universal</path> underbibliotek.
 </p>
 
 <p>
-Hvis du tager et nærmere kig på vores <path>releases/x86/2004.1</path> folder,
-vil du se at nogle arkitekturer leverer <e>Gentoo Package CDs</e>
-(pakke-CDer) i <path>packagecd/</path>-folderen). Denne CD (som ikke er startbar) indeholder kun
-præ-kompilerede pakker, og kan blive brugt til at installere software
-efter en succesfuld Gentoo installation. For at installere vil du kun
-få brug for den universelle LiveCD, men hvis du ønsker at installere
-OpenOffice.org, Mozilla, KDE, GNOME osv. uden at skulle kompilere
-enhver af dem, behøver du også pakke-CDen. F.eks. kaldes Athlon-XP
-underarkitekturens pakke-CD <c>packages-athlon-xp-2004.0.iso</c> og
-kan findes i det passende underarkitekturs-bibliotek
-(<path>athlon-xp</path>).
+Hvis du tager et nærmere kig på vores <path>releases/x86/2004.1</path> folder, vil du se at nogle arkitekturer leverer <e>Gentoo Package CDs</e> (pakke-CDer) i <path>packagecd/</path>-folderen). Denne CD (som ikke er startbar) indeholder kun præ-kompilerede pakker, og kan blive brugt til at installere software efter en succesfuld Gentoo installation. For at installere vil du kun få brug for den universelle LiveCD, men hvis du ønsker at installere OpenOffice.org, Mozilla, KDE, GNOME osv. uden at skulle kompilere enhver af dem, behøver du også pakke-CDen. F.eks. kaldes Athlon-XP underarkitekturens pakke-CD <c>packages-athlon-xp-2004.1.iso</c> og kan findes i det passende underarkitekturs-bibliotek (<path>athlon-xp</path>).
 </p>
 
 <table>
@@ -459,11 +449,11 @@ Nedenfor finder du en kort oversigt over de mulige kerner:
 </tr>
 <tr>
   <ti>gentoo</ti>
-  <ti>Standard-kernen med framebuffer understøttelse</ti>
+  <ti>Standard 2.4-kerne med framebuffer understøttelse</ti>
 </tr>
 <tr>
   <ti>smp</ti>
-  <ti>Kerne med understøttelse til flere processorer</ti>
+  <ti>2.6-Kerne med understøttelse til flere processorer</ti>
 </tr>
 <tr>
   <ti>gentoo-nofb</ti>
@@ -522,6 +512,11 @@ opstartsprocessen er færdig, vil du automatisk blive logget ind til en
 have en root (&quot;#&quot;) prompt i den nuværende konsol og du kan også skifte 
 til andre konsoler ved at bruge Alt-F2, Alt-F3 og Alt-F4. Gå tilbage til den, 
 du startede fra, ved at trykke Alt-F1.
+</p>
+
+<p>
+Hvis du installerer Gentoo fra et system med en ikke-amerikansk tastatur, vær sikker på at 
+opstarte LiveCDen med <c>dokeymap</c>-valgmuligheden.
 </p>
 
 <p>
