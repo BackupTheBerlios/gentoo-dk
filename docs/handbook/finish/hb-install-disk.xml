@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-disk.xml,v 1.4 2004/02/22 18:57:30 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-disk.xml,v 1.5 2004/02/24 20:25:13 broeman Exp $ -->
 
 <sections>
 <section>
@@ -32,7 +32,7 @@ første harddisk være <path>/dev/sda</path>.
 <p>
 Blok-enhederne ovenover repræsenterer en abstrakt grænseflade til
 harddisken.  Brugerprogrammer kan bruge disse blok-enheder, til at
-interagere med din harddisk uden at skulle bekymre sig om at dine drev
+interagere med din harddisk, uden at skulle bekymre sig om at dine drev
 er IDE, SCSI eller noget andet. Programmet kan simpelthen adressere
 lageret på harddisken, som et bundt af tilstødende,
 vilkårlige-tilgængelige 512-byte blokke.
@@ -73,16 +73,16 @@ primære partitioner blive defineret (f.eks. <path>/dev/hda1</path> til
 
 <p>
 En <e>udvidet</e> partition er en speciel primær partition (som
-betyder at den udvidede partition skal være én af de første fire mulige
+betyder, at den udvidede partition skal være én af de første fire mulige
 primære partitioner) som indeholder flere partitioner. Sådan en
 partition eksisterede ikke oprindeligt, men da fire partitioner var
-for få, nogen kom med idéen at udvide formateringsskemaet uden at tabe
+for lidt, kom nogen med idéen om at udvide formateringsskemaet uden at tabe
 bagud-kompatibilitet.
 </p>
 
 <p>
 En <e>logisk</e> partition er en partition inden i den udvidet partition. Deres
-definitioner er ikke placeret inde i MBR, men er deklareret inde i den udvidet
+definitioner er ikke placeret inde i MBR, men er erklæret inde i den udvidet
 partition. 
 </p>
 
@@ -92,7 +92,7 @@ partition.
 <title>Advanceret lagring</title>
 <body>
 Hvis du har startet fra en Gentoo LiveCD, så har du muligheden for at bruge EVMS
-eller LVM2 til at forøge fleksibiliteten tilbudt af dit partitionsopsætning. Igennem
+eller LVM2 til at forøge fleksibiliteten, tilbudt af dit partitionsopsætning. Igennem
 installationsinstruktionerne vil vi fokusere på "regulære" partitioner, men det er
 stadigvæk godt at vide at EVMS og LVM2 også er understøttet.
 </body>
@@ -584,7 +584,7 @@ Device Boot    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Lad os nu tilsidst oprette root-partitionen. For at gøre dette, tast
+Lad os nu, til sidst, oprette root-partitionen. For at gøre dette, tast
 <c>n</c> for at oprette en ny partition, så <c>p</c> for at fortælle
 fdisk, at du vil have en primær partition.  så tast <c>3</c> for at
 oprette den tredje primære partition, <path>/dev/hda3</path> i vores
@@ -941,7 +941,7 @@ Device Flag    Start       End    Blocks   Id  System
 </pre>
 
 <p>
-Notér at <c>Sun disk label</c> er med i output. Hvis den mangler,
+Noter at <c>Sun disk label</c> er med i output. Hvis den mangler,
 bruger harddisken DOS-partitionering, ikke Sun-partitionering. I dette
 tilfælde, brug <c>s</c> for at sikre at harddisken har en Sun
 partitionstabel.
@@ -1443,7 +1443,7 @@ tilgængelige filsystemer...
 </body>
 </subsection>
 <subsection>
-<title>Filesystemer?</title>
+<title>Filsystemer?</title>
 <body>
 
 <p>
