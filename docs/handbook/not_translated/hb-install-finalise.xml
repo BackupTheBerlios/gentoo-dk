@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-finalise.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-finalise.xml,v 1.2 2004/01/08 21:58:40 broeman Exp $ -->
 
 <sections>
 <section>
@@ -16,6 +19,15 @@ Before you forget, set the root password by typing:
 
 <pre caption="Setting the root password">
 # <i>passwd</i>
+</pre>
+
+<p>
+If you want root to be able to log on through the serial console, add
+<c>ttyS0</c> to <path>/etc/securetty</path>.
+</p>
+
+<pre caption="Adding ttyS0 to /etc/securetty">
+# <i>echo "ttyS0" &gt;&gt; /etc/securetty</i>
 </pre>
 
 </body>
@@ -82,9 +94,11 @@ booted again instead of your new Gentoo system.
 <p>
 OldWorld PPC users will boot in MacOS since their bootloader
 isn't installed yet. Those users should read <uri
-link="#doc_chap2_sect2">Optional: Configuring BootX</uri>. GRP users can
-continue with <uri link="#doc_chap2_sect3">Optional: Install Extra 
-Packages</uri>, all the rest can finish up with <uri 
+link="#doc_chap2_sect2">Optional: Configuring BootX</uri>. MIPS users will have
+to do some more tweaking in their MIPS PROM to get Gentoo to work. Those users
+should read <uri link="#doc_chap2_sect3">Optional: Getting Gentoo/MIPS to 
+Work</uri>. GRP users can continue with <uri link="#doc_chap2_sect4">Optional: 
+Install Extra Packages</uri>, all the rest can finish up with <uri 
 link="?part=1&amp;chap=12">Where to go from here?</uri>.
 </p>
 
@@ -124,6 +138,57 @@ link="#doc_chap2_sect3">Optional: Install Extra Packages</uri>, otherwise go to
 </body>
 </subsection>
 <subsection>
+<title>Optional: Getting Gentoo/MIPS to Work</title>
+<body>
+
+<p>
+When you are rebooted, go to the <e>System Maintenance Menu</e> and select
+<e>Enter Command Monitor</e> (<c>5</c>). If you want to test your new Gentoo
+installation, you can just run <c>boot -f &lt;kernel name&gt;</c>. To have your
+system permanently boot into the Gentoo installation, you need to set some
+variables in the MIPS PROM:
+</p>
+
+<pre caption="Configuring the PROM to Boot Gentoo">
+1) Start System
+2) Install System Software
+3) Run Diagnostics
+4) Recover System
+5) Enter Command Monitor
+
+Option? <i>5</i>
+Command Monitor.  Type "exit" to return to the menu.
+
+<comment>(&lt;root device&gt; = Gentoo's root partition, e.g. /dev/sda3)</comment>
+&gt;&gt; <i>setenv OSLoadPartition &lt;root device&gt;</i>
+
+<comment>(To list the available kernels, type "ls")</comment>
+&gt;&gt; <i>setenv OSLoader &lt;kernel name&gt;</i>
+&gt;&gt; <i>setenv OSLoadFilename &lt;kernel name&gt;</i>
+
+<comment>(Declare the kernel parameters you want to pass)</comment>
+&gt;&gt; <i>setenv OSLoadOptions &lt;kernel parameters&gt;</i>
+
+<comment>(Provide the location of the Volume Header)</comment>
+&gt;&gt; <i>setenv SystemPartition scsi(0)disk(1)rdisk(0)partition(8)</i>
+
+<comment>(Automatically boot Gentoo)</comment>
+&gt;&gt; <i>setenv AutoLoad Yes</i>
+
+<comment>(Set the timezone)</comment>
+&gt;&gt; <i>setenv TimeZone EST5EDT</i>
+
+<comment>(Use the serial console - graphic adapter users should have "g" instead of "d1" (one))</comment>
+&gt;&gt; <i>setenv console d1</i>
+</pre>
+
+<p>
+Now you're ready to enjoy Gentoo!
+</p>
+
+</body>
+</subsection>
+<subsection>
 <title>Optional: Install Extra Packages</title>
 <body>
 
@@ -143,7 +208,7 @@ Password: <comment>(Enter your root password)</comment>
 </pre>
 
 <p>
-Now we need to copy over the prebuild binaries from the second CD (CD-2) if you
+Now we need to copy over the prebuilt binaries from the second CD (CD-2) if you
 have it. First mount this CD:
 </p>
 
@@ -153,16 +218,16 @@ have it. First mount this CD:
 </pre>
 
 <p>
-Now copy over all prebuild binaries from the CD to
+Now copy over all prebuilt binaries from the CD to
 <path>/usr/portage/packages</path>. Make sure you use the same copy-command!
 </p>
 
-<pre caption="Copy over prebuild binaries">
-# <i>cp -a /mnt/cdrom/packages/* /usr/portage/packages/</i>
+<pre caption="Copy over prebuilt binaries">
+# <i>cp /mnt/cdrom/packages/All/* /usr/portage/packages/All/</i>
 </pre>
 
 <p>
-Now install the packages you want. CD-2 contains several prebuild binaries, for
+Now install the packages you want. CD-2 contains several prebuilt binaries, for
 instance KDE:
 </p>
 

@@ -1,7 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sections SYSTEM "/dtd/book.dtd">
+
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-network.xml,v 1.2 2003/12/21 20:24:21 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-network.xml,v 1.3 2004/01/08 21:58:40 broeman Exp $ -->
 
 <sections>
 <section>
@@ -50,7 +53,7 @@ to install Gentoo on a system with a running Internet connection.
 
 <p>
 If you are in this situation you will need to use the 2CD-sets. These sets
-include the sourcecode, a snapshot of the portage-tree and the tools to
+include the source code, a snapshot of the portage-tree and the tools to
 install a Gentoo base-system and beyond. This method comes at a price:
 You won't have the very latest software, although differences will be
 minimal.
@@ -179,7 +182,8 @@ correctly, etc..
 
 <p>
 Are you able to use your network? If so, you can skip the rest of this
-section. If not, bad luck, you'll have to pursue a bit harder :)
+section and continue with <uri link="?part=1&amp;chap=4">Preparing the
+Disks</uri>. If not, bad luck, you'll have to pursue a bit harder :)
 </p>
 
 </body>
@@ -355,7 +359,7 @@ the kernel module:
 </p>
 
 <pre caption="Using modprobe to load a kernel module">
-<comment>(As an example, we load the pcnet32 kernel)</comment>
+<comment>(As an example, we load the pcnet32 module)</comment>
 # <i>modprobe pcnet32</i>
 </pre>
 
@@ -364,7 +368,7 @@ To check if your network card is now detected, use <c>ifconfig</c>. A
 detected network card would result in something like this:
 </p>
 
-<pre caption="Testing availability of your network card, succesfull">
+<pre caption="Testing availability of your network card, successful">
 # <i>ifconfig eth0</i>
 eth0      Link encap:Ethernet  HWaddr FE:FD:00:00:00:00  
           BROADCAST NOARP MULTICAST  MTU:1500  Metric:1
@@ -472,7 +476,7 @@ and hosts outside a network, the IP address is divided in two parts: the
 The separation is written down with the <e>netmask</e>, a collection of
 ones followed by a collection of zeros. The part of the IP that can be
 mapped on the ones is the network-part, the other one is the host-part.
-As is usual, the netmask can be written down as an IP-address.
+As usual, the netmask can be written down as an IP-address.
 </p>
 
 <pre caption="Example of network/host separation">
@@ -612,7 +616,8 @@ nameserver ${NAMESERVER2}
 <p>
 That's it. Now test your network by pinging some Internet server (like
 <uri link="http://www.google.com">Google</uri>). If this works,
-congratulations then. You are now ready to install Gentoo.
+congratulations then. You are now ready to install Gentoo. Continue with <uri
+link="?part=1&amp;chap=4">Preparing the Disks</uri>.
 </p>
 
 </body>
