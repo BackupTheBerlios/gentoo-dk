@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-stage.xml,v 1.10 2004/05/16 17:42:40 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-stage.xml,v 1.11 2004/06/10 17:03:32 aaby Exp $ -->
 
 <sections>
 <section>
@@ -457,6 +457,7 @@ Athlon XP arkitekturen:
 </p>
 
 <pre caption="GCC march opsætning">
+<comment># AMD64 brugere bør ikke bruge athlon-xp</comment>
 -march=athlon-xp
 </pre>
 
@@ -485,6 +486,7 @@ kombinere forskellige optimeringsflag, som i det følgende eksempel:
 </p>
 
 <pre caption="Definering af CFLAGS og CXXFLAGS variablerne">
+<comment># AMD64 brugere bør ikke bruge athlon-xp</comment>
 CFLAGS="-march=athlon-xp -pipe -O2"
 CXXFLAGS="${CFLAGS}" <comment># Bruger den samme opsætning til begge flag</comment>
 </pre>
