@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-install-disk.xml,v 1.1 2004/01/21 23:38:20 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-disk.xml,v 1.1 2004/01/22 22:11:48 aaby Exp $ -->
 
 <sections>
 <section>
@@ -31,7 +31,7 @@ første harddisk være <path>/dev/sda</path>.
 
 <p>
 Blok-enhederne ovenover repræsenterer en abstrakt grænseflade til
-harddisken.  Brugerprogrammer kan bruge disse blok-enheder, for at
+harddisken.  Brugerprogrammer kan bruge disse blok-enheder, til at
 interagere med din harddisk uden at skulle bekymre sig om at dine drev
 er IDE, SCSI eller noget andet. Programmet kan simpelthen adressere
 lageret på harddisken, som et bundt af tilstødende,
@@ -73,7 +73,7 @@ primære partitioner blive defineret (f.eks. <path>/dev/hda1</path> til
 
 <p>
 En <e>udvidet</e> partition er en speciel primær partition (som
-betyder at den udvidet partition skal være én af de første fire mulige
+betyder at den udvidede partition skal være én af de første fire mulige
 primære partitioner) som indeholder flere partitioner. Sådan en
 partition eksisterede ikke oprindeligt, men da fire partitioner var
 for få, nogen kom med idéen at udvide formateringsskemaet uden at tabe
@@ -150,7 +150,7 @@ are used in this handbook) your root filesystem doesn't need to be very big
 <body>
 
 <p>
-Hvis du ikke er interesseret i at tegne et partitionsoversigt selv, til dit system,
+Hvis du ikke er interesseret i at tegne en partitionsoversigt selv, til dit system,
 kan du bruge vores (non-LVM) partitionsskema, som vi bruger igennem denne bog:
 </p>
 
@@ -315,9 +315,9 @@ du har en hel del brugere, vil det være nærmest at lave dit
 nemmere at lave backup.  Hvis du installerer Gentoo for at arbejde som
 en mail-server, burde din <path>/var</path> være separat, idet alle
 emails er gemt inde i <path>/var</path>. Et godt valg af filsystem vil
-derefter maksimere din ydelse. Spil-servere burde have en separat
+derefter maksimere din ydelse. Spil-servere bør have en separat
 <path>/opt</path>, idet at de fleste spil-servere bliver installeret
-der. Forklaringen er denne samme som for <path>/home</path>: sikkerhed
+der. Forklaringen er den samme som for <path>/home</path>: sikkerhed
 og backup.
 </p>
 
@@ -328,16 +328,16 @@ partitioner eller volumes har følgende fordele:
 
 <ul>
 <li>
-  Du kan vælge den mest ydelsesstærke filsystem til hver partition eller volume
+  Du kan vælge det mest ydelsesstærke filsystem til hver partition eller volume
 </li>
 <li>
-  Hele dit system burde ikke løbe tør for fri harddisk-plads, hvis et ødelagt værktøj bliver
+  Hele dit system bør ikke løbe tør for fri harddisk-plads, hvis et ødelagt værktøj bliver
   ved med at skrive filer til en partition eller volume
 </li>
 <li>
   Hvis nødvendigt, et filsystem-tjek er reduceret i tid, idet flere tjek kan blive
-  gjort parallelt (selvom det har fordelen er mere med flere harddiske end med
-  at det gjort på flere partitioner)
+  gjort parallelt (selvom denne fordel er større med flere harddiske
+  end med flere partitioner)
 </li>
 <li>
   Sikkerhed kan blive forøget ved at mounte nogle partitioner eller volumes read-only (kun-læs), 
@@ -369,17 +369,18 @@ Filesystem    Type    Size  Used Avail Use% Mounted on
 </pre>
 
 <p>
-<path>/usr</path> er pænt fyldt op (83% brugt) her, men når først
-alt softwaren er installeret, vil <path>/usr</path> ikke tendere til at gro særligt meget.
-Til <path>/var</path> kan folk måske tro at der er blevet afsat
-for meget plads. Dog kompilerer Gentoo alle programmer inde i
-<path>/var/tmp/portage</path>, så du burde have <path>/var</path> med
-minimum 1GB fri plads, hvis du ikke vil kompilere store programmer, op til 3GB fri plads, hvis 
-kompileringen af KDE og OpenOffice.org på samme tid ikke bliver til et problem.
+<path>/usr</path> er pænt fyldt op (83% brugt) her, men når først alt
+softwaren er installeret, vil tendensen være at <path>/usr</path> ikke
+gror særligt meget.  Til <path>/var</path> kan folk måske tro at der
+er blevet afsat for meget plads. Dog kompilerer Gentoo alle programmer
+inde i <path>/var/tmp/portage</path>, så du burde have
+<path>/var</path> med minimum 1GB fri plads, hvis du ikke vil
+kompilere store programmer, op til 3GB fri plads, så kompileringen
+af KDE og OpenOffice.org på samme tid ikke bliver til et problem.
 </p>
 
 <p>
-Partitionere nu din(e) harddisk(e) ved brug af instruktionerne, som er tilgængeligt til dit
+Partitioner nu din(e) harddisk(e) ved brug af instruktionerne, som er tilgængeligt til din
 arkitektur, som eksempel:
 </p>
 
@@ -414,7 +415,7 @@ arkitektur, som eksempel:
 <body>
 
 <impo>
-Kun brugere med <e>x86</e> eller <e>amd64</e> baserede systemer burde læse denne
+Kun brugere med <e>x86</e> eller <e>amd64</e> baserede systemer bør læse denne
 sektion.
 </impo>
 
@@ -443,7 +444,7 @@ beskrevet førhen, nemlig:
 </table>
 
 <p>
-Du kan ændre partitionslayoutet til hvordan du ønsker det.
+Du kan ændre partitionslayoutet som du ønsker det.
 </p>
 
 </body>
@@ -453,7 +454,7 @@ Du kan ændre partitionslayoutet til hvordan du ønsker det.
 <body>
 
 <p>
-<c>fdisk</c> er en populær og et kraftfuld værktøj til at splitte din
+<c>fdisk</c> er et populært og et kraftfuld værktøj til at splitte din
 harddisk ind i partitioner.  Fyr op for din <c>fdisk</c> på din
 harddisk (i vores eksempel, bruger vi <path>/dev/hda</path>):
 </p>
@@ -503,7 +504,7 @@ som "Linux swap").
 </body>
 </subsection>
 <subsection>
-<title>Slette alle partitioner</title>
+<title>At slette alle partitioner</title>
 <body>
 
 <p>
@@ -520,7 +521,7 @@ Partition number (1-4): <i>1</i>
 Partitionen er blevet planlagt til at blive slettet. Den vil nu ikke
 længere blive vist, når du taster <c>p</c>, men den er ikke slettet
 før dine ændringer er blevet gemt. Hvis du har lavet en fejl og vil
-afbryde uden at gemme, tast <c>q</c> med det samme og tryk Enter og
+afbryde uden at gemme, tast <c>q</c> med det samme, tryk Enter og
 din partition vil ikke blive slettet.
 </p>
 
@@ -542,10 +543,10 @@ Command (m for help):
 </pre>
 
 <p>
-Nu da partitionstabellen, som ligger i hukkommelsen, er tom, er det nu
+Nu da partitionstabellen, som ligger i hukommelsen, er tom, er det nu
 tid til at lave partitioner. Vi vil bruge standard partitionsskemaet,
 som diskuteret tidligere.  Selvfølgelig, følg ikke disse instruktioner
-til punkt og prikke, hvis du ikke vil have den samme partitionsskema!
+til punkt og prikke, hvis du ikke vil have det samme partitionsskema!
 </p>
 
 </body>
@@ -555,7 +556,7 @@ til punkt og prikke, hvis du ikke vil have den samme partitionsskema!
 <body>
 
 <p>
-Først vil vi en lille boot-partition. Tast <c>n</c> for at oprette en
+Først vil vi lave en lille boot-partition. Tast <c>n</c> for at oprette en
 ny partition, så <c>p</c> for at vælge en primær partition, fulgt af
 <c>1</c> for at vælge den første primære partition. Når du bliver
 spurgt om den første cylinder, tryk Enter. Når du bliver spurgt om den
@@ -607,7 +608,7 @@ Lad os nu lave en swap-partition. For at gøre dette, tast <c>n</c> for
 at lave en ny partition, så <c>p</c> for at fortælle fdisk, at du vil
 have en primær partition. Tast så <c>2</c> for at lave den anden
 primære partition, <path>/dev/hda2</path> i vores eksempel. Når du
-bliver spurgt om den første cylinder, tryk Enter. Når du bliver spurgt
+bliver spurgt om den første cylinder, så tryk Enter. Når du bliver spurgt
 om den sidste cylinder, tast <c>+512M</c> for at oprette en partition
 på 512MB i størrelse. Efter at du har gjort det, tast <c>t</c> for at
 indstille partitionstypen, <c>2</c> for at vælge partitionen, som du
@@ -636,13 +637,13 @@ Device Boot    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Til sidst, lad os oprette root-partitionen. For at gøre dette, tast
+Lad os nu tilsidst oprette root-partitionen. For at gøre dette, tast
 <c>n</c> for at oprette en ny partition, så <c>p</c> for at fortælle
 fdisk, at du vil have en primær partition.  så tast <c>3</c> for at
 oprette den tredje primære partition, <path>/dev/hda3</path> i vores
 tilfælde. Når du bliver spurgt om den første cylinder, tryk Enter. Når
 du bliver spurgt om den sidste cylinder, tryk Enter for at oprette en
-partition, som tager resten af den frie plads, som er tilbage på din
+partition, som tager resten af den frie plads der er tilbage på din
 harddisk. Efter at have afsluttet disse trin, ved at taste <c>p</c>
 burde vise en partitionstabel, som ser ud som dette:
 </p>
@@ -664,7 +665,7 @@ Device Boot    Start       End    Blocks   Id  System
 </body>
 </subsection>
 <subsection>
-<title>Gemme partitionslayout</title>
+<title>At gemme partitionslayout</title>
 <body>
 
 <p>
@@ -758,7 +759,7 @@ Fyr nu op for <c>fdisk</c>:
 </body>
 </subsection>
 <subsection>
-<title>Slette alle portioner</title>
+<title>AT slette alle portioner</title>
 <body>
 
 <p>
@@ -768,7 +769,7 @@ slette alle de andre portioner (igen, undtagen 'c'-portionen).
 </p>
 
 <p>
-Brug <c>p</c> for at se alle eksisterende portioner. <c>d</c> er brugt til at slette en portion.
+Brug <c>p</c> for at se alle eksisterende portioner. <c>d</c> bruges til at slette en portion.
 </p>
 
 <pre caption="Slette en portion">
@@ -815,7 +816,7 @@ første cylinder ikke blive brugt, da <c>aboot</c>-billedfilen vil blive placeret
 
 <p>
 Vi vil oprette en swap-portion, som starter på den tredje cylinder, med en total
-størrelse på 1 GByte. Brug <c>n</c> for at oprette en ny portion. Efter at have oprettet portionen,
+størrelse på 1 GByte. Brug <c>n</c> til at oprette en ny portion. Efter at have oprettet portionen,
 vil vi ændre dens type til <c>1</c>, som betyder <e>swap</e>.
 </p>
 
@@ -857,9 +858,9 @@ at root-portionen starter ved 1004.
 </p>
 
 <p>
-Et andet problem er at der er på nuværende tidspunkt en fejl i
+Et andet problem er at der på nuværende tidspunkt er en fejl i
 <c>fdisk</c>, som gør at den tror at antallet af tilrådige cylindere
-er højere det reelle antal af cylindere. I andre ord, når du bliver
+er højere det reelle antal af cylindere. Med andre ord, når du bliver
 spurgt om den sidste cylinder, formindsk cylinder-nummeret (i vores
 eksempel: 5290) med én.
 </p>
@@ -880,7 +881,7 @@ Hex code (type L to list codes): <i>8</i>
 </pre>
 
 <p>
-Din portionslayout burde nu se ud som dette her:
+Dit portionslayout bør nu se ud som dette her:
 </p>
 
 <pre caption="Se portionslayout">
@@ -1017,7 +1018,7 @@ partitionstabel.
 
 <p>
 Det er tid til at slette alle eksisterende partitioner. For at gøre
-dette, tast <c>d</c> og tryk Enter. Du vil blive spurgt for
+dette, tast <c>d</c> og tryk Enter. Du vil blive spurgt efter det
 partitionsnummer, som du ønsker at slette. For at slette en
 eksisterende <path>/dev/hda1</path>, skal du taste:
 </p>
@@ -1031,13 +1032,13 @@ Partition number (1-4): <i>1</i>
 Da vi forventer at du vil slette alle eksisterende partitioner, tast
 <c>p</c> for at se tilrådige partitioner, og <c>d</c> for at slette
 disse, én efter én. Hvis du føler at du har lavet en fejl, tast
-<c>q</c> med det samme -- <c>fdisk</c> gemmer ikke ændrer, lavet her
-og nu, på partitionerne, men holder det i hukommelsen. Kun når du
+<c>q</c> med det samme -- <c>fdisk</c> gemmer ikke ændringer, lavet her
+og nu, på partitionerne, men holder det i hukommelsen. Først når du
 taster <c>w</c> er alle partitioner gemt.
 </p>
 
 <p>
-Efter at have slette alle partitioner, burde du have en
+Efter at have slette alle partitioner, bør du have en
 partitionslayout lignende til det følgende:
 </p>
 
@@ -1058,7 +1059,7 @@ Device Flag    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Nu da partitionstabellen, som er holdt i hukkommelsen, er tom, er vi
+Nu da partitionstabellen, som er holdt i hukommelsen, er tom, er vi
 klar til at oprette 'Sun Disk Label'-partitionen. For at gøre dette,
 tast <c>n</c> for at oprette en ny partition, så tast <c>3</c> for at
 oprette partitionen. Når der bliver spurgt om den første cylinder,
@@ -1236,7 +1237,7 @@ Nu skal du lave dine partitioner med <c>mac-fdisk</c>:
 </pre>
 
 <p>
-Først skal du slette de partitioner du før har klargjort for at lave
+Først skal du slette de partitioner du før har klargjort, for at lave
 plads til dine Linux partitioner. Brug <c>d</c> i <c>mac-fdisk</c> for
 at slette denne/disse partition(er). Den vil spørge efter nummeret på
 den partition der skal slettes.
@@ -1324,7 +1325,7 @@ LVM</uri>.
 </body>
 </section>
 <section>
-<title>Using fdisk on MIPS to Partition your Disk</title>
+<title>At bruge fdisk på MIPS til at partitionere din disk</title>
 <!-- This entire section is copy/pasted from Kumba's original text. It should
      probably be rewritten, but it seems a bit complicated.
      Someone donate me a MIPS? :) 
@@ -1451,7 +1452,7 @@ Volume header på 50MB sammen med en 50MB /boot partition. Det faktiske
 layout af din disk kan variere, men dette er kun for at illustrere.
 </p>
 
-<pre caption="Resizing the SGI Volume Header correctly">
+<pre caption="At lave om på størrelsen af SGI Volume Header korrekt">
 Command (m for help): <i>n</i>
 Partition number (1-16): <i>1</i>
 First cylinder (5-8682, default 5): <i>51</i>
@@ -1617,18 +1618,18 @@ som vi ved at de virker med. Hvis en arkitektur er indeholdt i en
 <table>
 <tr>
   <th>Filsystem</th>
-  <th>Journaled</th>
-  <th>Arkitekture</th>
+  <th>Journaliseret</th>
+  <th>Arkitektur</th>
 </tr>
 <tr>
   <ti>ext2</ti>
   <ti>nej</ti>
-  <ti>Alle arkitekture</ti>
+  <ti>Alle arkitekturer</ti>
 </tr>
 <tr>
   <ti>ext3</ti>
   <ti>ja</ti>
-  <ti>Alle arkitekture</ti>
+  <ti>Alle arkitekturer</ti>
 </tr>
 <tr>
   <ti>reiserfs</ti>
@@ -1648,7 +1649,7 @@ som vi ved at de virker med. Hvis en arkitektur er indeholdt i en
 </table>
 
 <p>
-<b>ext2</b> er det afprøvede og rigtige Linux filsystem, men det har
+<b>ext2</b> er det afprøvede og sande Linux filsystem, men det har
 ikke metadata journaler, hvilket betyder at rutinemæssige tjek af
 filsystemer ved opstart kan tage en del tid. Der er nu et udvalg af
 filsystemer af nyere generation med journal, der kan tjekkes for
@@ -1663,8 +1664,8 @@ konsekvent tilstand.
 giver metadata journaler til hurtig genskabelse og yderligere andre
 ydelse fremmende journal muligheder så fuld data og ordnet data
 journal. ext3 er meget godt og et pålideligt filsystem. Det tilbyder
-generelt anstændig ydelse under de fleste vilkår. Da det ikke i særlig
-udbredt omfang udnytter brugen af "træer" i dets indre designe, kan
+generelt anstændig ydelse under de fleste vilkår. Da det ikke, i særlig
+udbredt omfang, udnytter brugen af "træer" i dets indre designe, kan
 det ikke skalere særlig godt, hvilket betyder at det ikke er ideelt
 til meget store filsystemer eller i situationer hvor du komme til at
 behandle meget store filer eller store mængder af filer i et enkelt
@@ -1795,7 +1796,7 @@ det tid til at mounte disse partitioner. Brug <c>mount</c>
 kommandoen. Glem ikke at lave de nødvendige mount biblioteker:
 </p>
 
-<pre caption="At mounting partitioner">
+<pre caption="At mounte partitioner">
 # <i>mount /dev/hda3 /mnt/gentoo</i>
 # <i>mkdir /mnt/gentoo/boot</i>
 # <i>mount /dev/hda1 /mnt/gentoo/boot</i>
