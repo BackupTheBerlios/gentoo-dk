@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/2.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-portage-configuration.xml,v 1.1 2004/11/13 16:13:44 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-portage-configuration.xml,v 1.1 2004/11/20 13:34:52 aaby Exp $ -->
 
 <sections>
 <section>
@@ -18,7 +18,7 @@ bør definere i <path>/etc/make.conf</path>. Læs venligst
 <path>make.conf</path>s man-sider for flere og dybdegående informationer:
 </p>
 
-<pre caption="Læsning af make.confs man-sider">
+<pre caption="At læse make.confs man-sider">
 $ <i>man make.conf</i>
 </pre>
 
@@ -39,21 +39,21 @@ variabler til kompileren og opsætningsscriptet:
 <ul>
   <li>
     CFLAGS og CXXFLAGS definerer de ønskede kompiler-flag til C og C++
-    samling.
+    kompilering
   </li>
   <li>
     CHOST definerer bygningsværtens informationer til programmets opsætningsscript
   </li>
   <li>
     MAKEOPTS bliver flyttet til <c>make</c>-kommandoen og er normalt sat til at definere
-    antallet af parallelisme brugt igennem samlingen. Flere informationer
+    antallet af parallelisme brugt igennem kompilering. Flere informationer
     omkring make-valgmuligheder kan blive fundet i make's man-sider.
   </li>
 </ul>
 
 <p>
-USE-variabelen er også brugt igennem opsætningen og samlingen, men er blevet
-forklaret i mange detaljer i de foregående kapitler.
+USE-variablen er også brugt igennem opsætningen og kompileringen, men
+er blevet forklaret i mange detaljer i de foregående kapitler.
 </p>
 
 </body>
@@ -63,10 +63,11 @@ forklaret i mange detaljer i de foregående kapitler.
 <body>
 
 <p>
-Når Portage har merget en nyere version af en specifik softwaretitel, vil den
-fjerne de udgåede filer fra gamle versioner på dit system. Portage giver
-brugeren en 5-sekunders udsættelse, før den afmerger den gamle version. Disse 5 sekunder
-er defineret af CLEAN_DELAY-variabelen.
+Når Portage har emerget en nyere version af en specifik softwaretitel,
+vil den fjerne de udgåede filer fra gamle versioner på dit
+system. Portage giver brugeren en 5-sekunders udsættelse, før den
+afmerger den gamle version. Disse 5 sekunder er defineret af
+CLEAN_DELAY-variablen.
 </p>
 
 </body>
@@ -79,21 +80,22 @@ er defineret af CLEAN_DELAY-variabelen.
 <body>
 
 <p>
-Portage overskriver filer, som er leveret af nyere versioner af en softwaretitel, hvis
-filerne ikke er gemt i et <e>beskyttet</e> område. Disse beskyttede placeringer
-er defineret af CONFIG_PROTECT-variabelen og er generelt opsætningsfilsplaceringer.
-Folder-listen er mellemrums-afgrænset.
+Portage overskriver filer, som er leveret af nyere versioner af en
+softwaretitel, hvis filerne ikke er gemt i et <e>beskyttet</e>
+område. Disse beskyttede placeringer er defineret af
+CONFIG_PROTECT-variablen og er generelt opsætningsfilsplaceringer.
+Bibliotekslisten er mellemrums-afgrænset.
 </p>
 
 <p>
 En fil, som ville blive skrevet i sådan en beskyttet placering er omdøbt og
-brugeren er advaret om en eksisterende nyere version af den (forudsatte) 
+brugeren er advaret om en nyere eksisterende version af den givne 
 opsætningsfil.
 </p>
 
 <p>
-Du kan vide mere omkring den nuværende CONFIG_PROTECT-indstilling fra <c>emerge
-info</c> outputtet:
+Du kan få mere at vide omkring den nuværende
+CONFIG_PROTECT-indstilling fra <c>emerge info</c> outputtet:
 </p>
 
 <pre caption="Få CONFIG_PROTECT-indstillingen">
@@ -112,12 +114,12 @@ $ <i>emerge --help config</i>
 </body>
 </subsection>
 <subsection>
-<title>Udlukke foldere</title>
+<title>At udelukke foldere</title>
 <body>
 
 <p>
 For at  'afbeskytte' specifikke underfoldere af beskyttede placeringer kan du bruge
-CONFIG_PROTECT_MASK-variabelen.
+CONFIG_PROTECT_MASK-variablen.
 </p>
 
 </body>
@@ -131,7 +133,7 @@ CONFIG_PROTECT_MASK-variabelen.
 
 <p>
 Når de forespurgte informationer eller data ikke er tilgængelige på dit system, vil Portage
-hente det fra Internet. Server-placeringerne til de forskellige
+hente det fra Internettet. Server-placeringerne til de forskellige
 informationer og data-kanaler er defineret af de følgende variabler:
 </p>
 
@@ -160,7 +162,7 @@ opdaterer dit Portage-træ:
 
 <p>
 GENTOO_MIRRORS- og SYNC-variablerne kan blive indstillet automatisk igennem
-<c>mirrorselect</c>-programmet. Du skal <c>emerge mirrorselect</c> først,
+<c>mirrorselect</c>-programmet. Du skal først <c>emerge mirrorselect</c>
 før du kan bruge den. For flere informationer, se mirrorselects onlinehjælp:
 </p>
 
@@ -181,12 +183,13 @@ HTTP_PROXY-, FTP_PROXY- og RSYNC_PROXY-variablerne til at erklære en proxy-serv
 
 <p>
 Når Portage skal fange kildekoder, bruger den <c>wget</c> som standard. Du
-kan ændre dette igennem FETCHCOMMAND-variabelen. 
+kan ændre dette igennem FETCHCOMMAND-variablen. 
 </p>
 
 <p>
-Portage har mulighed for at gentage delvis hentet kildekode. Den bruger <c>wget</c>
-som standard, men dette kan blive ændret igennem RESUMECOMMAND-variabelen. 
+Portage har mulighed for at genoptage hentningen af delvist hentet
+kildekode. Den bruger <c>wget</c> som standard, men dette kan blive
+ændret igennem RESUMECOMMAND-variablen.
 </p>
 
 <p>
@@ -207,18 +210,18 @@ FETCHCOMMAND_FTP, RESUMECOMMAND_HTTP, RESUMECOMMAND_FTP osv.
 <body>
 
 <p>
-Du kan ikke ændre rsync-kommandoen brugt af Portage for at opdatere Portage-træet,
+Du kan ikke ændre rsync-kommandoen, som Portage bruger til at opdatere Portage-træet,
 men du kan indstille nogle variabler, der er relateret til rsync-kommandoen:
 </p>
 
 <ul>
   <li>
-    RSYNC_EXCLUDEFROM peger til en fil, som har en liste over de pakker og/eller kategorier
-    rsync bør ignorere igennem opdateringsprocessen.
+    RSYNC_EXCLUDEFROM peger på en fil, som har en liste over de pakker og/eller kategorier
+    som rsync bør ignorere igennem opdateringsprocessen.
   </li>
   <li>
     RSYNC_RETRIES definerer hvor mange gange rsync bør prøve at forbinde til 
-    mirror peget på igennem SYNC-variabelen før den opgiver. Denne variabel
+    mirror peget på igennem SYNC-variablen før den opgiver. Denne variabel
     er indstillet som standard til 3.
   </li>
   <li>
@@ -234,13 +237,13 @@ men du kan indstille nogle variabler, der er relateret til rsync-kommandoen:
 <section>
 <title>Gentoo-opsætning</title>
 <subsection>
-<title>Branchevalg</title>
+<title>Software gren valg</title>
 <body>
 
 <p>
-Du kan ændre din standard-branche med ACCEPT_KEYWORDS-variabelen. Den
-er som standard sat til din arktitekturs stabile branche. Flere informationer omkring Gentoos
-brancher kan blive fundet i næste kapitel.
+Du kan ændre din standard-gren med ACCEPT_KEYWORDS-variablen. Den er
+som standard sat til din arkitekturs stabile gren. Flere informationer
+omkring Gentoos grene kan blive fundet i næste kapitel.
 </p>
 
 </body>
@@ -250,9 +253,9 @@ brancher kan blive fundet i næste kapitel.
 <body>
 
 <p>
-Du kan aktivere specifikke egenskaber til Portage igennem FEATURES-variabelen.
+Du kan aktivere specifikke egenskaber til Portage igennem FEATURES-variablen.
 Portages egenskaber blev diskuteret i tidligere kapitler, som f.eks. <uri 
-link="?part=2&amp;chap=3">Portages egenkaber</uri>.
+link="?part=2&amp;chap=3">Portages egenskaber</uri>.
 </p>
 
 </body>
@@ -265,8 +268,8 @@ link="?part=2&amp;chap=3">Portages egenkaber</uri>.
 <body>
 
 <p>
-Med PORTAGE_NICENESS-variabelen kan du forstørre eller formindske nice-værdien
-Portage kører med. The PORTAGE_NICENESS-værdien er <e>tilføjet</e> til den nuværende
+Med PORTAGE_NICENESS-variablen kan du forstørre eller formindske nice-værdien
+Portage kører med. PORTAGE_NICENESS-værdien er <e>tilføjet</e> til den nuværende
 nice-værdi.
 </p>
 
