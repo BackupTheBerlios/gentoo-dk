@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/altinstall.xml,v 1.1 2004/08/21 13:28:24 broeman Exp $ -->
+<?xml version='1.0' encoding="utf-8"?>
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/altinstall.xml,v 1.2 2004/09/04 10:22:58 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/en/altinstall.xml">
@@ -30,27 +30,35 @@
 <author title="Bidrager">
   <mail link="aliz@gentoo.org">Daniel Ahlberg</mail>
 </author>
-<author title="Redaktør">
+<author title="RedaktÃ¸r">
   <mail link="swift@gentoo.org">Sven Vermeulen</mail>
 </author>
-<author title="Gennemlæsning">
-  <mail link="antifa@gentoo.org">Ken Nowack</mail>
+<author title="GennemlÃ¦sning">
+Ken Nowack <!-- antifa@gentoo.org seems out -->
 </author>
-<author title="Redaktør">
+<author title="RedaktÃ¸r">
   <mail link="blubber@gentoo.org">Tiemo Kieft</mail>
 </author>
-<author title="Oversættelse">
+ <author title="RedaktÃ¸r">
+  <mail link="bennyc@gentoo.org">Benny Chuang</mail>
+</author>
+<author title="OversÃ¦ttelse">
   <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
+</author>
+<author title="Korrektur">
+  <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
 
 <abstract>
-Denne HOWTO er ment som et arkiv af alternative Gentoo installationsmetoder, til dem med specielle installationsbehov, som f.eks. mangel af en CDROM eller en computer, der kan boote CD'er.
+Denne HOWTO er ment som et arkiv af alternative Gentoo
+installationsmetoder, til dem med specielle installationsbehov, som
+f.eks. mangel af en CDROM eller en computer, der kan boote CD'er.
 </abstract>
 
 <license/>
 
-<version>0.43</version>
-<date>12. Juli, 2004</date>
+<version>0.47</version>
+<date>28. August 2004</date>
 
 <chapter>
 <title>Om dette dokument</title>
@@ -58,9 +66,16 @@ Denne HOWTO er ment som et arkiv af alternative Gentoo installationsmetoder, til
 <body>
 
 <p>
-Hvis den normale boot-fra-CD installationsmetode ikke virker for dig (eller du bare ikke ønsker det), er hjælp nu til rådighed. Dette dokument tjener formålet med at levere et arkiv af alternative Gentoo Linux installationsteknikker for dem, der mangler det.
-Eller, hvis du ønsker det, tjener den formålet med at levere et sted for at tilføje dine mærkelige installationsmetoder.
-Hvis du har en installationsmetode, som du selv synes er brugbart, eller du har udtænkt en sjov metode for at installere Gentoo, hold dig endelig ikke tilbage med at skrive noget og <mail link="antifa@gentoo.org">sende det til mig</mail> (på Engelsk).
+Hvis den normale boot-fra-CD installationsmetode ikke virker for dig
+(eller du bare ikke Ã¸nsker det), er hjÃ¦lp nu til rÃ¥dighed. Dette
+dokument tjener formÃ¥let med at levere et arkiv af alternative Gentoo
+Linux installationsteknikker for dem, der mangler det.  Eller, hvis du
+Ã¸nsker det, tjener den formÃ¥let med at levere et sted for at tilfÃ¸je
+dine mÃ¦rkelige installationsmetoder.  Hvis du har en
+installationsmetode, som du selv synes er brugbart, eller du har
+udtÃ¦nkt en sjov metode for at installere Gentoo, hold dig endelig ikke
+tilbage med at skrive noget og <mail link="antifa@gentoo.org">sende
+det til mig</mail> (pÃ¥ Engelsk).
 </p>
 
 </body>
@@ -73,13 +88,17 @@ Hvis du har en installationsmetode, som du selv synes er brugbart, eller du har 
 <body>
 
 <p>
-Hent Smart BootManager <uri
-link="http://btmgr.sourceforge.net/index.php3?body=download.html">http://btmgr.sourceforge.net/index.php3?body=download.html</uri>.
-Linux kildekoder eller binær format og windows .exe versioner er til rådighed, samt mange sprog-pakker. Dog, på dette tidspunkt, den anbefalede metode ville være at bruge det binære format, idet kildekoderne ikke kan samles med nyere versioner af NASM.
+Hent Smart BootManager <uri>http://btmgr.sourceforge.net/download.html</uri>.
+Linux kildekoder eller binÃ¦r format og windows .exe versioner er til
+rÃ¥dighed, samt mange sprog-pakker. Dog, pÃ¥ dette tidspunkt, den
+anbefalede metode ville vÃ¦re at bruge det binÃ¦re format, idet
+kildekoderne ikke kan samles med nyere versioner af NASM.
 </p>
 
 <p>
-Enten samler du pakken fra kildekoderne eller hente den binære fil. Der er flere valgmuligheder, som kan blive udført imens du opretter din opstartdiskette, som set forneden.
+Enten samler du pakken fra kildekoderne eller hente den binÃ¦re
+fil. Der er flere valgmuligheder, som kan blive udfÃ¸rt imens du
+opretter din opstartdiskette, som set forneden.
 </p>
 
 <pre caption="Smart BootManagers valgmuligheder">
@@ -121,16 +140,19 @@ Erstat fd0 med din respektive floppy-drevs enhedsnavn, hvis din er anderledes.
 </note>
 
 <p>
-Indsæt nu bare disketten i diskette-drevet på den computer, hvorpå du ønsker at opstarte LiveCDen, samt placere LiveCDen i CDROM-drevet og opstart computeren.
+IndsÃ¦t nu bare disketten i diskette-drevet pÃ¥ den computer, hvorpÃ¥ du
+Ã¸nsker at opstarte LiveCDen, samt placere LiveCDen i CDROM-drevet og
+opstart computeren.
 </p>
 
 <p>
-Du vil blive hilst af Smart BootManagerens dialog. Vælg dit CDROM-drev og
-tast ENTER for at starte LiveCDen. Når opstartsprocessen er afsluttet, fortsæt med de normale installationsinstruktioner.
+Du vil blive hilst af Smart BootManagerens dialog. VÃ¦lg dit CDROM-drev
+og tast ENTER for at starte LiveCDen. NÃ¥r opstartsprocessen er
+afsluttet, fortsÃ¦t med de normale installationsinstruktioner.
 </p>
 
 <p>
-Flere informationer omkring Smart BootManager kan blive fundet på
+Flere informationer omkring Smart BootManager kan blive fundet pÃ¥
 <uri>http://btmgr.sourceforge.net/</uri>
 </p>
 
@@ -144,24 +166,37 @@ Flere informationer omkring Smart BootManager kan blive fundet på
 <body>
 
 <p>
-Opstart fra <uri link="http://www.knoppix.org/">Knoppix</uri>-LiveCDen er en metode for at få et fuldt funktionelt Linux system, imens du samler Gentoo. Tux
-Racer vil hjælpe dig med at få tiden til at gå, imens du venter på bootstrap.
+Opstart fra <uri link="http://www.knoppix.org/">Knoppix</uri>-LiveCDen
+er en metode for at fÃ¥ et fuldt funktionelt Linux system, imens du
+samler Gentoo. Tux Racer vil hjÃ¦lpe dig med at fÃ¥ tiden til at gÃ¥,
+imens du venter pÃ¥ bootstrap.
 </p>
 
 <p>
-Opstart fra Knoppix CDen. Den laver generelt et godt job med hardware-findingen. Det kan dog være at du skal tilføje nogle opstarts-valgmuligheder.
+Opstart fra Knoppix CDen. Den laver generelt et godt job med
+hardware-findingen. Det kan dog vÃ¦re at du skal tilfÃ¸je nogle
+opstarts-valgmuligheder.
 </p>
 
 <p>
-Som standard, opstarter Knoppix ind på en KDE 3.0 arbejdsplads. Den første ting, som jeg gjorde var at åbne en konsol og taste <c>sudo passwd root</c>. Dette lader dig ændre root-kodeordet for Knoppix.
+Som standard, opstarter Knoppix ind pÃ¥ en KDE 3.0 arbejdsplads. Den
+fÃ¸rste ting, som jeg gjorde var at Ã¥bne en konsol og taste <c>sudo
+passwd root</c>. Dette lader dig Ã¦ndre root-kodeordet for Knoppix.
 </p>
 
 <p>
-Derefter, su'er jeg til root og taster <c>usermod -d /root -m root</c>. Dette sætter brugeren roots hjemmefolder til /root ("the Gentoo way") fra /home/root ("the Knoppix way"). Hvis du ikke gør dette, vil du modtage fejl, når du emerger, som f.eks. "/home/root: not found" eller noget lignende.
+Derefter, su'er jeg til root og taster <c>usermod -d /root -m
+root</c>. Dette sÃ¦tter brugeren roots hjemmefolder til /root ("the
+Gentoo way") fra /home/root ("the Knoppix way"). Hvis du ikke gÃ¸r
+dette, vil du modtage fejl, nÃ¥r du emerger, som f.eks. "/home/root:
+not found" eller noget lignende.
 </p>
 
 <p>
-Så indtaster jeg <c>exit</c> og så <c>su</c>'er tilbage til root. Dette henter ændringerne, som var blevet lavet med usermod-kommandoen. Opret nu <path>/mnt/gentoo</path> mountpunktet ved brug af <c>mkdir</c>:
+SÃ¥ indtaster jeg <c>exit</c> og sÃ¥ <c>su</c>'er tilbage til
+root. Dette henter Ã¦ndringerne, som var blevet lavet med
+usermod-kommandoen. Opret nu <path>/mnt/gentoo</path> mountpunktet ved
+brug af <c>mkdir</c>:
 </p>
 
 <pre caption="Oprettelse af /mnt/gentoo mountpunkt">
@@ -169,8 +204,11 @@ Så indtaster jeg <c>exit</c> og så <c>su</c>'er tilbage til root. Dette henter æ
 </pre>
 
 <p>
-På dette tidspunkt, kan du forsætte med installationsdokumentationen fra <uri link="/doc/da/handbook/handbook-x86.xml?part=1&amp;chap=4">4. kapitel</uri>.
-Dog, når du bliver spurgt om at mounte proc systemet, udfør følgende kommando, i stedet for:
+PÃ¥ dette tidspunkt, kan du forsÃ¦tte med installationsdokumentationen
+fra <uri
+link="/doc/da/handbook/handbook-x86.xml?part=1&amp;chap=4">4. kapitel</uri>.
+Dog, nÃ¥r du bliver spurgt om at mounte proc systemet, udfÃ¸r fÃ¸lgende
+kommando, i stedet for:
 </p>
 
 <pre caption="Bind-mounting af proc pseudo filsystemet">
@@ -182,37 +220,44 @@ Dog, når du bliver spurgt om at mounte proc systemet, udfør følgende kommando, i
 </chapter>
 
 <chapter>
-<title>Installation fra stage 1 uden netværksadgang</title>
+<title>Installation fra stage 1 uden netvÃ¦rksadgang</title>
 <section>
 <body>
 
 <p>
-Brænd en LiveCD iso-fil.
+BrÃ¦nd en LiveCD iso-fil.
 </p>
 
 <p>
-Få den sidste nye portage snapshot fra
+FÃ¥ den sidste nye portage snapshot fra
 <uri>http://distro.ibiblio.org/pub/linux/distributions/gentoo/snapshots/</uri>
 (eller dit favorit <uri
-link="http://www.gentoo.org/main/en/mirrors.xml">filspejl</uri>). Enten placer denne tarball på en eksisterende partition på den computer, du installerer på, eller brænd den til en CD.
+link="http://www.gentoo.org/main/en/mirrors.xml">filspejl</uri>). Enten
+placer denne tarball pÃ¥ en eksisterende partition pÃ¥ den computer, du
+installerer pÃ¥, eller brÃ¦nd den til en CD.
 </p>
 
 <p>
-Følg alle instruktionerne i Gentoo installationshåndbog op til <c>chroot
-/mnt/gentoo</c> i kapitel 6. Hvis du kun har et CDROM-drev, så husk at bruge <c>cdcache</c> valgmuligheden, imens du opstarter, så du kan unmounte LiveCDen og mounte din portage snapshot CD.
+FÃ¸lg alle instruktionerne i Gentoo installationshÃ¥ndbog op til
+<c>chroot /mnt/gentoo</c> i kapitel 6. Hvis du kun har et CDROM-drev,
+sÃ¥ husk at bruge <c>cdcache</c> valgmuligheden, imens du opstarter, sÃ¥
+du kan unmounte LiveCDen og mounte din portage snapshot CD.
 </p>
 
 <p>
-Åben en ny konsol (Alt-F2), og følg installationsdokumentationen op til det kørende bootstrap.sh script.
+Ã…ben en ny konsol (Alt-F2), og fÃ¸lg installationsdokumentationen op
+til det kÃ¸rende bootstrap.sh script.
 </p>
 
 <warn>
-Ældre udgivelser af LiveCDen kræver at du ændrer kodeordet ved brug af <c>passwd</c>-kommandoen, før du logger ind manuelt.
-</warn>		   
+Ã†ldre udgivelser af LiveCDen krÃ¦ver at du Ã¦ndrer kodeordet ved brug af
+<c>passwd</c>-kommandoen, fÃ¸r du logger ind manuelt.  </warn>
 
 <p>
-Gå tilbage til den første konsol (Alt-F1, uden chroot) og mount en anden CD på
-<path>/mnt/gentoo/mnt/cdrom2</path>. Kopier portage tarballen fra cdrom2 og udpak den til <path>/mnt/gentoo/usr/portage</path>.
+GÃ¥ tilbage til den fÃ¸rste konsol (Alt-F1, uden chroot) og mount en
+anden CD pÃ¥ <path>/mnt/gentoo/mnt/cdrom2</path>. Kopier portage
+tarballen fra cdrom2 og udpak den til
+<path>/mnt/gentoo/usr/portage</path>.
 </p>
 
 <pre caption="Mount af snapshot cd">
@@ -225,18 +270,22 @@ Gå tilbage til den første konsol (Alt-F1, uden chroot) og mount en anden CD på
 </pre>
 
 <p>
-Skift tilbage til F2 konsollen. Hvis du nu prøver at kører bootstrap.sh, vil den fejle, fordi den ikke har mulighed for at hente nogen filer. Vi vil nu fange disse filer et andetsteds og putte dem i /usr/portage/distfiles (på F2 konsollen).
+Skift tilbage til F2 konsollen. Hvis du nu prÃ¸ver at kÃ¸rer
+bootstrap.sh, vil den fejle, fordi den ikke har mulighed for at hente
+nogen filer. Vi vil nu fange disse filer et andetsteds og putte dem i
+/usr/portage/distfiles (pÃ¥ F2 konsollen).
 </p>
 
 <p>
-Du behøver en liste af stage 1 pakker: glibc, baselayout, texinfo, gettext, zlib, binutils, gcc, ncurses samt deres afhængigheder.
+Du behÃ¸ver en liste af stage 1 pakker: glibc, baselayout, texinfo,
+gettext, zlib, binutils, gcc, ncurses samt deres afhÃ¦ngigheder.
 </p>
 
 <note>
-Noter at du skal have versionerne af hver pakke synced med dit portage-træ.
+Noter at du skal have versionerne af hver pakke synced med dit portage-trÃ¦.
 </note>
 
-<pre caption="Opnåelse af hente-listen">
+<pre caption="OpnÃ¥else af hente-listen">
 <comment>(Glem ikke 2 foran &gt;)</comment>
 # <i>emerge -fp glibc baselayout texinfo gettext zlib binutils gcc ncurses 2&gt; stage1.list</i>
 # <i>mount -t vfat /dev/fd0 /mnt/floppy</i>
@@ -245,13 +294,18 @@ Noter at du skal have versionerne af hver pakke synced med dit portage-træ.
 </pre>
 
 <p>
-Tag disketten til computer, som har hurtig adgang. Hvis du tager et kig på <path>stage1.list</path>-filen, vil du se at den giver dig flere steder for at hente. Desværre, oplister den også forskellige URLs til hver pakke, som ikke hvad du ønsker. Ryd op i alle, undtagen en af URLene først:
+Tag disketten til computer, som har hurtig adgang. Hvis du tager et
+kig pÃ¥ <path>stage1.list</path>-filen, vil du se at den giver dig
+flere steder for at hente. DesvÃ¦rre, oplister den ogsÃ¥ forskellige
+URLs til hver pakke, som ikke hvad du Ã¸nsker. Ryd op i alle, undtagen
+en af URLene fÃ¸rst:
 </p>
 
 <pre caption="Oprydning af URLs">
-<comment>(Dette script er afhængig af output-formatet givet ved emerge, som kan ændres i fremtiden uden videre at blive sagt - brug den med forsigtighed!)</comment>
-# <i>cut -f 1 -d ' ' stage1.list > stage1.download</i>
-</pre>
+<comment>(Dette script er afhÃ¦ngig af output-formatet givet ved
+emerge, som kan Ã¦ndres i fremtiden uden videre at blive sagt - brug
+den med forsigtighed!)</comment> # <i>cut -f 1 -d ' ' stage1.list >
+stage1.download</i> </pre>
 
 <p>
 Brug nu <c>wget</c> til at fange alle de oplistede kilder:
@@ -262,7 +316,10 @@ Brug nu <c>wget</c> til at fange alle de oplistede kilder:
 </pre>
 
 <p>
-Når du har opnået alle filerne, tag dem til din computer og kopier dem til <path>/mnt/gentoo/usr/portage/distfiles</path>. Nu vil du have mulighed for at køre <c>bootstrap.sh</c>. Gentag den samme "wget-fangst og -placer" procedure til stage 2 og 3.
+NÃ¥r du har opnÃ¥et alle filerne, tag dem til din computer og kopier dem
+til <path>/mnt/gentoo/usr/portage/distfiles</path>. Nu vil du have
+mulighed for at kÃ¸re <c>bootstrap.sh</c>. Gentag den samme
+"wget-fangst og -placer" procedure til stage 2 og 3.
 </p>
 
 </body>
@@ -276,41 +333,41 @@ Når du har opnået alle filerne, tag dem til din computer og kopier dem til <path
 <body>
 
 <p>
-Du skal bruge et netværkskort på den diskfrie klient, som bruger PXE-protokollen
-til at opstarte, som mange 3com-korte. Du vil også få brug for en BIOS, som understøtter opstart
-fra PXE.
+Du skal bruge et netvÃ¦rkskort pÃ¥ den diskfrie klient, som bruger
+PXE-protokollen til at opstarte, som mange 3com-korte. Du vil ogsÃ¥ fÃ¥
+brug for en BIOS, som understÃ¸tter opstart fra PXE.
 </p>
 
 </body>
 </section>
 <section>
-<title>Basisopsætning af server</title>
+<title>BasisopsÃ¦tning af server</title>
 <body>
 
 <p>
-Opret foldere: Den første ting der skal gøres er at oprette foldere, hvor dit
+Opret foldere: Den fÃ¸rste ting der skal gÃ¸res er at oprette foldere, hvor dit
 diskfrie system vil blive gemt. Opret en folder kaldet
 <path>/diskless</path>, som huser en folder for hver diskfri klient. I resten
-af denne howto vil vi arbejde på klienten 'eta'.
+af denne howto vil vi arbejde pÃ¥ klienten 'eta'.
 </p>
 
-<pre caption="opsætning af foldere">
+<pre caption="opsÃ¦tning af foldere">
 # <i>mkdir /diskless</i>
 # <i>mkdir /diskless/eta</i>
 # <i>mkdir /diskless/eta/boot</i>
 </pre>
 
 <p>
-DHCP- og TFTP-opsætning: Klienten vil få opstartsinformationer ved brug af DHCP og
-hente alle de krævede filer ved brug af TFTP. Bare emerge DHCP og indstil den til
-dine generelle behov. Så, tilføj følgende i
+DHCP- og TFTP-opsÃ¦tning: Klienten vil fÃ¥ opstartsinformationer ved brug af DHCP og
+hente alle de krÃ¦vede filer ved brug af TFTP. Bare emerge DHCP og indstil den til
+dine generelle behov. SÃ¥, tilfÃ¸j fÃ¸lgende i
 <path>/etc/dhcp/dhcpd.conf</path>.
 </p>
 
 <note>
 Dette skaber en fast IP-adresse til klienten og stien af en PXE-opstartsbilledfil,
 her pxegrub. Du skal erstatte MAC-adressen af Ethernet-kortet
-for din klient og folderen, hvor du vil indsætte klientens filer med den,
+for din klient og folderen, hvor du vil indsÃ¦tte klientens filer med den,
 du bruger.
 </note>
 
@@ -326,7 +383,7 @@ filename "/eta/boot/pxegrub";
 
 <p>
 Til TFTP, emerge <c>app-admin/tftp-hpa</c>. I
-<path>/etc/conf.d/in.tftpd</path>, indsæt følgende:
+<path>/etc/conf.d/in.tftpd</path>, indsÃ¦t fÃ¸lgende:
 </p>
 
 <pre caption="in.tftpd">
@@ -336,21 +393,23 @@ INTFTPD_OPTS="-u ${INTFTPD_USER} -l -vvvvvv -p -c -s ${INTFTPD_PATH}"
 </pre>
 
 <p>
-Opsæt GRUB: For at levere PXE-opstart, bruger jeg GRUB. Du skal samle den selv
-for at aktivere PXE-billedfil samling ... men det er pænt let. Først,
-hent den sidste nye version af GRUB-kildekoden (<c>emerge -f grub</c> vil
-placere tarball'en i <path>/usr/portage/distfiles</path>). Kopier tarball'en til
-<path>/diskless</path> og samle den for at skabe den PXE-understøttede binære fil. Når
-den binære fil er samlet, kopier den over til den diskfrie klients opstartsfolder. Så rediger
-dens grub.lst indstillingsfil.
+OpsÃ¦t GRUB: For at levere PXE-opstart, bruger jeg GRUB. Du skal samle
+den selv for at aktivere PXE-billedfil samling ... men det er pÃ¦nt
+let. FÃ¸rst, hent den sidste nye version af GRUB-kildekoden (<c>emerge
+-f grub</c> vil placere tarball'en i
+<path>/usr/portage/distfiles</path>). Kopier tarball'en til
+<path>/diskless</path> og samle den for at skabe den PXE-understÃ¸ttede
+binÃ¦re fil. NÃ¥r den binÃ¦re fil er samlet, kopier den over til den
+diskfrie klients opstartsfolder. SÃ¥ rediger dens grub.lst
+indstillingsfil.
 </p>
 
 <pre caption="grub setup">
 # <i>tar zxvf grub-0.92.tar.gz</i>
 # <i>cd grub-0.92</i>
 # <i>./configure --help</i>
-<codenote>I indstillingerne vil du se en liste af understøttede drivere til netværksgrænseflader. </codenote>
-<codenote>Vælg den driver som understøtter dit kort. Herefter refereret som $nic</codenote>
+<codenote>I indstillingerne vil du se en liste af understÃ¸ttede drivere til netvÃ¦rksgrÃ¦nseflader. </codenote>
+<codenote>VÃ¦lg den driver som understÃ¸tter dit kort. Herefter refereret som $nic</codenote>
 # <i>./configure --enable-diskless --enable-$nic</i>
 # <i>make</i>
 # <i>cd stage2</i>
@@ -367,12 +426,12 @@ root (nd)
 kernel /eta/bzImage ip=dhcp root=/dev/nfs nfsroot=<i>ip.ad.res.se</i>:/diskless/eta
 
 <codenote>Til nfsroot valgmuligheden, er IP-adressen den for serveren og </codenote>
-<codenote>folderen, er hvor hvor din diskfrie diskless klients filer er placeret (på serveren).</codenote>
+<codenote>folderen, er hvor hvor din diskfrie diskless klients filer er placeret (pÃ¥ serveren).</codenote>
 </pre>
 
 <p>
-Opsætning af NFS: NFS er meget let at opsætte. Den eneste ting du skal gøre er at tilføje en
-linie i <path>/etc/exports</path> opsætningsfilen:
+OpsÃ¦tning af NFS: NFS er meget let at opsÃ¦tte. Den eneste ting du skal gÃ¸re er at tilfÃ¸je en
+linie i <path>/etc/exports</path> opsÃ¦tningsfilen:
 </p>
 
 <pre caption="/etc/exports">
@@ -382,7 +441,7 @@ linie i <path>/etc/exports</path> opsætningsfilen:
 </pre>
 
 <p>
-Opdater din værter:  En vigtigt ting at gøre nu er at ændre din
+Opdater din vÃ¦rter:  En vigtigt ting at gÃ¸re nu er at Ã¦ndre din
 <path>/etc/hosts</path> fil til at passe til dine behov.
 </p>
 
@@ -396,16 +455,19 @@ Opdater din værter:  En vigtigt ting at gøre nu er at ændre din
 </body>
 </section>
 <section>
-<title>Oprettelse af systemet på serveren</title>
+<title>Oprettelse af systemet pÃ¥ serveren</title>
 <body>
 
 <p>
-Genstart serveren på en Gentoo LiveCD. Følg den normale installationsprocedure, som
-forklaret i Gentoo installationshowto, MEN med følgende ændringer. Når du
-mounter filsystemet, gør følgende (hvor hdaX er partitionen, som du oprettede
-/diskless folderen). Du behøver ikke at mounte andre
-partitionr, da alle filerne vil være placeret i <path>/diskless/eta</path>
-folderen.
+Du vil mÃ¥ske Ã¸nske at genstarte serveren med en Gentoo LiveCD, selvom
+du sagtens kan fortsÃ¦tte med det samme hvis du ved hvordan du skal
+fortsÃ¦tte med Gentoo Installation instruktionerne for en eksisterende
+installation. FÃ¸lg standard installationsproceduren som det er
+forklaret i Gentoo Install Howto, MEN med de fÃ¸lgende forskelle: NÃ¥r
+du mounter filsystemet, skal du gÃ¸re det fÃ¸lgende (hvor hdaX er den
+partition hvor du lavede /diskless biblioteket). Du har ikke brug for
+at mounte andre partitioner, da alle filerne vil vÃ¦re placeret i
+<path>/diskless/eta</path> folderen.
 </p>
 
 <pre caption="Mount af filsystem">
@@ -414,12 +476,12 @@ folderen.
 
 <p>
 Stage-tarballs og chroot: Dette eksempel bruger en stage3-tarball. Mount
-<path>/proc</path> til din diskfri folder og chroot den for at fortsætte
-installationen. Følg derefter installationsinstruktionerne indtil kerne-opsætningen.
+<path>/proc</path> til din diskfri folder og chroot den for at fortsÃ¦tte
+installationen. FÃ¸lg derefter installationsinstruktionerne indtil kerne-opsÃ¦tningen.
 </p>
 
 <warn>
-Vær meget forsigtig med hvor du udpakker din stage-tarball. Du vil ikke ønske at udpakke
+VÃ¦r meget forsigtig med hvor du udpakker din stage-tarball. Du vil ikke Ã¸nske at udpakke
 oveni din eksisterende installation.
 </warn>
 
@@ -434,13 +496,14 @@ oveni din eksisterende installation.
 </pre>
 
 <p>
-Kerne-opsætning: Når du laver <c>make menuconfig</c> på din kerne-opsætning,
-glem ikke at aktivere de følgende valgmuligheder, med de andre 
+Kerne-opsÃ¦tning: NÃ¥r du laver <c>make menuconfig</c> pÃ¥ din kerne-opsÃ¦tning,
+glem ikke at aktivere de fÃ¸lgende valgmuligheder, med de andre 
 anbefalede fra installationsinstruktionerne.
 </p>
 
 <pre caption="Menuconfig valgmuligheder">
-- Dit netværkskort enhedsunderstøttelse
+- Dit netvÃ¦rkskort enhedsunderstÃ¸ttelse
+<comment>(I kernen, *ikke* som et modul!)</comment>
 
 - Under "Networking options" :
 
@@ -458,7 +521,7 @@ anbefalede fra installationsinstruktionerne.
 </pre>
 
 <p>
-Derefter opsæt din diskfrie klients <path>/etc/fstab</path>.
+Derefter opsÃ¦t din diskfrie klients <path>/etc/fstab</path>.
 </p>
 
 <pre caption="/etc/fstab">
@@ -469,9 +532,19 @@ tmpfs /dev/shm tmpfs defaults 0 0
 </pre>
 
 <p>
+Du Ã¸nsker ogsÃ¥ at forhindre klienten i at kÃ¸re et tjek pÃ¥ filsystemet:
+</p>
+  	 
+<pre caption="At forhindre at klienten kÃ¸rer et tjek pÃ¥ filsystemet">
+# <i>touch /fastboot</i>
+# <i>echo "touch /fastboot" &gt;&gt; /etc/conf.d/local.start</i>
+</pre>
+  	 
+<p>
+
 Boot-loader. Installer ikke en anden boot-loader, fordi vi har allerede en -
 pxegrub. Afslut simpelthen installationen og genstart serveren. Start de services
-som du behøver for at starte den nye klient: DHCP, TFTPD, and NFS.
+som du behÃ¸ver for at starte den nye klient: DHCP, TFTPD, and NFS.
 </p>
 
 <pre caption="Opstart af services">
@@ -488,11 +561,11 @@ som du behøver for at starte den nye klient: DHCP, TFTPD, and NFS.
 
 <p>
 For at den nye klient kan opstarte ordentligt, skal du indstille bios og
-netværkskortet til at bruge PXE som første opstartsmetode - før CD-ROM eller floppy. For
-hjælp til dette, læs dine hardware-instruktionsvejledninger eller producenters hjemmeside. 
-Netværkskortet bør få en IP-adresse ved brug af DHCP og hente GRUB PXE-billedfilen
-ved brug af TFTP. Så, bør du se en flot sort og hvid GRUB-opstartsmenu,
-hvor du vælger den kerne du vil starte og trykker Enter. Hvis alt er i orden, vil
+netvÃ¦rkskortet til at bruge PXE som fÃ¸rste opstartsmetode - fÃ¸r CD-ROM eller floppy. For
+hjÃ¦lp til dette, lÃ¦s dine hardware-instruktionsvejledninger eller producenters hjemmeside. 
+NetvÃ¦rkskortet bÃ¸r fÃ¥ en IP-adresse ved brug af DHCP og hente GRUB PXE-billedfilen
+ved brug af TFTP. SÃ¥, bÃ¸r du se en flot sort og hvid GRUB-opstartsmenu,
+hvor du vÃ¦lger den kerne du vil starte og trykker Enter. Hvis alt er i orden, vil
 din kerne starte op, mounte rod-filsystemet ved brug af NFS og give dig en
 login-prompt. Nyd det.
 </p>
@@ -510,10 +583,10 @@ login-prompt. Nyd det.
 <p>
 For at kunne installere Gentoo fra en eksisterende Linux distribution, vil du have brug for
 at have chroot-kommandoen installeret, og have en kopi af Gentoo installationstarball'en
-eller ISO, som du ønsker at installere. En netværksforbindelse er anbefalet hvis
-du vil have mere end hvad er leveret i din tarball. (bemærk at en tarball er
+eller ISO, som du Ã¸nsker at installere. En netvÃ¦rksforbindelse er anbefalet hvis
+du vil have mere end hvad er leveret i din tarball. (bemÃ¦rk at en tarball er
 bare en fil, som ender med .tbz eller .tar.gz). Forfatteren brugte RedHat Linux 7.3 som 
-"vært" operativsystem, men det er ikke vigtigt.  Lad os starte!
+"vÃ¦rt" operativsystem, men det er ikke vigtigt.  Lad os starte!
 </p>
 
 </body>
@@ -523,11 +596,11 @@ bare en fil, som ender med .tbz eller .tar.gz). Forfatteren brugte RedHat Linux 
 <body>
 
 <p>
-Først vil vi lave plads til en partition til Gentoo ved at ændre størrelsen på vores nuværende Linux
+FÃ¸rst vil vi lave plads til en partition til Gentoo ved at Ã¦ndre stÃ¸rrelsen pÃ¥ vores nuvÃ¦rende Linux
 partition, mounte partitionen, untar tarball'en som er mountet, chroot
-inde i psuedo-systemet og starte samlingen. Når bootstrap-processen er færdig,
-vil vi gøre os nogle afsluttende opsætninger af systemet, så vi er sikker på at den
-starter op, og så er vi klar til at genstarte og bruge Gentoo.
+inde i psuedo-systemet og starte samlingen. NÃ¥r bootstrap-processen er fÃ¦rdig,
+vil vi gÃ¸re os nogle afsluttende opsÃ¦tninger af systemet, sÃ¥ vi er sikker pÃ¥ at den
+starter op, og sÃ¥ er vi klar til at genstarte og bruge Gentoo.
 </p>
 
 </body>
@@ -537,11 +610,11 @@ starter op, og så er vi klar til at genstarte og bruge Gentoo.
 <body>
 
 <p>
-Rod-partitionen er filsystemet mountet under <path>/</path>. En hurtig kørsel
-af mount på mit system, viser hvad jeg taler om. Vi vil også bruge df (disk
-free) for at se hvor meget plads der er tilbage og hvordan jeg ændrer det. Noter at
-det ikke er et krav at ændre størrelsen på din rod-partition! Du kan ændre alt andet
-som er understøttet af vores resizer, men lad os tale om det senere.
+Rod-partitionen er filsystemet mountet under <path>/</path>. En hurtig kÃ¸rsel
+af mount pÃ¥ mit system, viser hvad jeg taler om. Vi vil ogsÃ¥ bruge df (disk
+free) for at se hvor meget plads der er tilbage og hvordan jeg Ã¦ndrer det. Noter at
+det ikke er et krav at Ã¦ndre stÃ¸rrelsen pÃ¥ din rod-partition! Du kan Ã¦ndre alt andet
+som er understÃ¸ttet af vores resizer, men lad os tale om det senere.
 </p>
 
 <pre caption="Filesystem information">
@@ -558,66 +631,66 @@ none		      38M    0    38M   0% /dev/shm
 
 <p>
 Som du kan se, er partitionen mountet som <path>/</path> navngivet
-<path>/dev/hdb2</path> og har 2,4 gigabytes fri plads. I mit tilfælde, synes jeg at jeg vil
-ændre den, så der er 400 MB fri plads, og dermed placere 2 gigabytes
-til Gentoo. Ikke dårligt, jeg kan have en del ting installeret. Dog, 
-kan en gigabyte være nok til de fleste brugere. Så lad os partionere dette!
+<path>/dev/hdb2</path> og har 2,4 gigabytes fri plads. I mit tilfÃ¦lde, synes jeg at jeg vil
+Ã¦ndre den, sÃ¥ der er 400 MB fri plads, og dermed placere 2 gigabytes
+til Gentoo. Ikke dÃ¥rligt, jeg kan have en del ting installeret. Dog, 
+kan en gigabyte vÃ¦re nok til de fleste brugere. SÃ¥ lad os partionere dette!
 </p>
 
 </body>
 </section>
 <section>
-<title>Samling af parted for at ændre partitionsstørrelse</title> 
+<title>Samling af parted for at Ã¦ndre partitionsstÃ¸rrelse</title> 
 <body>
 
 <p>
-Parted er et værktøj leveret af GNU foundation, et gammelt og respektabelt
-kæmpeprojekt, hvis software du bruger lige nu. Dette er ét værktøj,
-dog er det ekstremt brugbart for os i dette øjeblik. Det er kaldet
-parted, "partition editor", og vi kan få det fra
+Parted er et vÃ¦rktÃ¸j leveret af GNU foundation, et gammelt og respektabelt
+kÃ¦mpeprojekt, hvis software du bruger lige nu. Dette er Ã©t vÃ¦rktÃ¸j,
+dog er det ekstremt brugbart for os i dette Ã¸jeblik. Det er kaldet
+parted, "partition editor", og vi kan fÃ¥ det fra
 <uri>http://www.gnu.org/software/parted/</uri>
 </p>
 
 <note>
-Der er også andre værktøjer som kan ændre partitionsstørrelsen, men forfatteren er
-ikke sikker på/ikke interesseret i om PartitionMagic(tm) eller andre softwareprodukter af denne type gør
-det samme job. Det er op til læseren at finde dem.
+Der er ogsÃ¥ andre vÃ¦rktÃ¸jer som kan Ã¦ndre partitionsstÃ¸rrelsen, men forfatteren er
+ikke sikker pÃ¥/ikke interesseret i om PartitionMagic(tm) eller andre softwareprodukter af denne type gÃ¸r
+det samme job. Det er op til lÃ¦seren at finde dem.
 </note>
 
 <p> 
-Slå op på siden, og se efter hvilket filsystem du ønsker at ændre, og se om 
-parted kan gøre det. Hvis ikke, er du uheldig og skal fjerne nogle partitioner
-for at gøre plads til Gentoo, og geninstallere tilbage. Bare start med at hente
-softwareen og installer det. Her har vi et problem. Vi ønsker at ændre størrelsen på vores Linux
+SlÃ¥ op pÃ¥ siden, og se efter hvilket filsystem du Ã¸nsker at Ã¦ndre, og se om 
+parted kan gÃ¸re det. Hvis ikke, er du uheldig og skal fjerne nogle partitioner
+for at gÃ¸re plads til Gentoo, og geninstallere tilbage. Bare start med at hente
+softwareen og installer det. Her har vi et problem. Vi Ã¸nsker at Ã¦ndre stÃ¸rrelsen pÃ¥ vores Linux
 rod-partition, og derfor skal vi starte op fra en diskette med et minimalt linux system
-og bruge præ-kompileret parted kopieret til en diskette for at kunne ændre størrelsen på
-<path>/</path>.  Dog, hvis du kan unmounte partitionen, imens du stadigvæk er
-i Linux, er du heldig, og du behøver ikke at gøre som følgende. Bare samle parted
-og køre den på en umountet partition, som du ønsker at ændre størrelsen på.
+og bruge prÃ¦-kompileret parted kopieret til en diskette for at kunne Ã¦ndre stÃ¸rrelsen pÃ¥
+<path>/</path>.  Dog, hvis du kan unmounte partitionen, imens du stadigvÃ¦k er
+i Linux, er du heldig, og du behÃ¸ver ikke at gÃ¸re som fÃ¸lgende. Bare samle parted
+og kÃ¸re den pÃ¥ en umountet partition, som du Ã¸nsker at Ã¦ndre stÃ¸rrelsen pÃ¥.
 Her er hvordan jeg gjorde det for mit system.
 </p>
 
 <impo>
-Vær sikker på at de ting du vil gøre er understøttet af
+VÃ¦r sikker pÃ¥ at de ting du vil gÃ¸re er understÃ¸ttet af
 parted!
 </impo>
 
 <p>
 Hent tomsrtbt boot/root disk (gratis) fra
-<uri>http://freshmeat.net/tomsrtbt</uri>, opret en diskette, som foreslået i dokumentationen,
-som følger med softwarepakken og indsæt en ny diskette i
-drevet til næste trin.
+<uri>http://freshmeat.net/tomsrtbt</uri>, opret en diskette, som foreslÃ¥et i dokumentationen,
+som fÃ¸lger med softwarepakken og indsÃ¦t en ny diskette i
+drevet til nÃ¦ste trin.
 </p>
 
 <note>
-Noter igen at Linux er synonym med "Der er flere måder at gøre det på". Din
-opgave er at køre parted på en unmounted partition, så den kan gøre sit arbejde. Du
-kan vælge at bruge en anden boot/root diskset end tomsrtbt. Du behøver endda ikke at
-skulle gøre dette overhovedet, men kan måske unmounte filsystemet du vil have
-genpartitioneret i din Linux session og køre parted på den. 
+Noter igen at Linux er synonym med "Der er flere mÃ¥der at gÃ¸re det pÃ¥". Din
+opgave er at kÃ¸re parted pÃ¥ en unmounted partition, sÃ¥ den kan gÃ¸re sit arbejde. Du
+kan vÃ¦lge at bruge en anden boot/root diskset end tomsrtbt. Du behÃ¸ver endda ikke at
+skulle gÃ¸re dette overhovedet, men kan mÃ¥ske unmounte filsystemet du vil have
+genpartitioneret i din Linux session og kÃ¸re parted pÃ¥ den. 
 </note>
 
-<pre caption="Oprettelse af værktøjsdiskette">
+<pre caption="Oprettelse af vÃ¦rktÃ¸jsdiskette">
 # <i>mkfs.minix /dev/fd0</i>
 480 inodes
 1440 blocks
@@ -627,34 +700,34 @@ Maxsize=268966912
 </pre>
 
 <p>
-Vi vil nu fortsætte med at samlingen af parted. Hvis det ikke allerede er hentet
-og udpakket, så gør det nu og cd ind i den tilsvarende folder. Kør nu følgende
-kommandoer for at samle værktøjet og kopiere det til din diskette.
+Vi vil nu fortsÃ¦tte med at samlingen af parted. Hvis det ikke allerede er hentet
+og udpakket, sÃ¥ gÃ¸r det nu og cd ind i den tilsvarende folder. KÃ¸r nu fÃ¸lgende
+kommandoer for at samle vÃ¦rktÃ¸jet og kopiere det til din diskette.
 </p>
 
-<pre caption="Samling af værktøjsdiskette">
+<pre caption="Samling af vÃ¦rktÃ¸jsdiskette">
 # <i> mkdir /floppy; mount -t minix /dev/fd0 /floppy &amp;&amp; 
 export CFLAGS="-O3 -pipe -fomit-frame-pointer -static" &amp;&amp; ./configure 
 &amp;&amp; make &amp;&amp; cp parted/parted /floppy &amp;&amp; umount /floppy </i>
 </pre>
 
 <p>
-Tillykke, du er klar til at genstarte og ændre størrelsen på din partition. Gør kun dette
-efter at have taget et hurtigt kig i parted dokumentationen på GNUs webside.
-Ændringen af størrelsen bør kun tage under 30 minutter for de største harddiske, vær
-tålmodig.  Genstart dit system med tomsrtbt opstartsdisk (bare put den i),
-og når du har logget ind, udskift disketten i drevet med din værktøjsdiskette,
+Tillykke, du er klar til at genstarte og Ã¦ndre stÃ¸rrelsen pÃ¥ din partition. GÃ¸r kun dette
+efter at have taget et hurtigt kig i parted dokumentationen pÃ¥ GNUs webside.
+Ã†ndringen af stÃ¸rrelsen bÃ¸r kun tage under 30 minutter for de stÃ¸rste harddiske, vÃ¦r
+tÃ¥lmodig.  Genstart dit system med tomsrtbt opstartsdisk (bare put den i),
+og nÃ¥r du har logget ind, udskift disketten i drevet med din vÃ¦rktÃ¸jsdiskette,
 som vi har lavet foroven og indtast mount /dev/fd0 /floppy for at have parted under
-/floppy. Der har du det. Kør parted og du vil være klar til ændre størrelsen på din
-partition. Når denne langvarige process er færdig, er du klar til at have det rigtigt sjovt med
-at installere Gentoo. Genstart tilbage til dit gamle Linux system nu. Drevet, som du ønsker
-at arbejde på, er det drev som inderholder partitionen du ønsker at ændre størrelsen på. F.eks.
-hvis du vil ændre /dev/hda3, er drevet /dev/hda.
+/floppy. Der har du det. KÃ¸r parted og du vil vÃ¦re klar til Ã¦ndre stÃ¸rrelsen pÃ¥ din
+partition. NÃ¥r denne langvarige process er fÃ¦rdig, er du klar til at have det rigtigt sjovt med
+at installere Gentoo. Genstart tilbage til dit gamle Linux system nu. Drevet, som du Ã¸nsker
+at arbejde pÃ¥, er det drev som inderholder partitionen du Ã¸nsker at Ã¦ndre stÃ¸rrelsen pÃ¥. F.eks.
+hvis du vil Ã¦ndre /dev/hda3, er drevet /dev/hda.
 </p>
 
-<pre caption="Kommandoer som skal køres når man er logget ind på tomsrtbt system">
+<pre caption="Kommandoer som skal kÃ¸res nÃ¥r man er logget ind pÃ¥ tomsrtbt system">
 # <i>mount /dev/fd0 /floppy </i>
-# <i>cd /floppy; ./parted [drev som du ønsker at arbejde på]</i>
+# <i>cd /floppy; ./parted [drev som du Ã¸nsker at arbejde pÃ¥]</i>
 (parted) <i> print </i>
 Disk geometry for /dev/hdb: 0.000-9787.148 megabytes
 Disk label type: msdos
@@ -676,17 +749,17 @@ Minor    Start       End     Type      Filesystem  Flags
 </pre>
 
 <impo>
-Vær tålmodig! Computeren virker! Kig bare på hardware LED på dit kabinet
-for at se om det virkeligt virker. Det bør tage imellem 2 og 30 minutter.
+VÃ¦r tÃ¥lmodig! Computeren virker! Kig bare pÃ¥ hardware LED pÃ¥ dit kabinet
+for at se om det virkeligt virker. Det bÃ¸r tage imellem 2 og 30 minutter.
 </impo>
 
 <p>
-Når du har ændret størrelsen, start op på din gamle linux, som beskrevet. Så gå til
-<uri link="/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=4">Gentoo-håndbogen: Forberedelse af diske</uri> og følg instruktionerne. Når du kommer til chrooting, brug følgende kommand for at skylde dit miljø:
+NÃ¥r du har Ã¦ndret stÃ¸rrelsen, start op pÃ¥ din gamle linux, som beskrevet. SÃ¥ gÃ¥ til
+<uri link="/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=4">Gentoo-hÃ¥ndbogen: Forberedelse af diske</uri> og fÃ¸lg instruktionerne. NÃ¥r du kommer til chrooting, brug fÃ¸lgende kommand for at skylde dit miljÃ¸:
 </p>
 
-<pre caption="Skyldning af miljøet ved en chroot">
-# <i>env -i /usr/sbin/chroot /mnt/gentoo /bin/bash</i>
+<pre caption="Skyldning af miljÃ¸et ved en chroot">
+# <i>env -i HOME=$HOME TERM=$TERM /usr/sbin/chroot /mnt/gentoo /bin/bash</i>
 </pre>
 
 <p>
