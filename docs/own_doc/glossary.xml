@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <?xml-stylesheet href="../xsl/guide.xsl" type="text/xsl"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.8 2004/01/06 22:19:57 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/own_doc/glossary.xml,v 1.9 2004/04/07 14:59:33 broeman Exp $ -->
 
 <!DOCTYPE guide SYSTEM "../dtd/guide.dtd">
 <guide>
@@ -434,6 +434,12 @@ Noget
 <th>Kommentar</th>
 </tr>
 
+<tr>
+<ti>Notification</ti>
+<ti>bekendtgørelse</ti>
+<ti>ikke notifikation ;)</ti>
+</tr>
+
 </table>
 </body>
 </section>
@@ -497,6 +503,12 @@ Noget
 <tr>
 <ti>read-only</ti>
 <ti>kun med læse rettigheder</ti>
+<ti></ti>
+</tr>
+
+<tr>
+<ti>remote</ti>
+<ti>udefra kommende</ti>
 <ti></ti>
 </tr>
 
@@ -588,6 +600,12 @@ Noget
 <th>EN</th>
 <th>DA</th>
 <th>Kommentar</th>
+</tr>
+
+<tr>
+<ti>vulnerability</ti>
+<ti>sårbarhed</ti>
+<ti></ti>
 </tr>
 
 </table>
