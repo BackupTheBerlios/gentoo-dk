@@ -4,20 +4,20 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-variables.xml,v 1.1 2004/02/23 18:23:17 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-variables.xml,v 1.2 2004/02/23 19:42:42 broeman Exp $ -->
 
 <sections>
 <section>
-<title>Miljøvariabler?</title>
+<title>Miljø-variabler?</title>
 <subsection>
 <title>Hvad de er</title>
 <body>
 
 <p>
-En miljøvariabel er et navngivent objekt, der inderholder informationer, som
+En miljø-variabel er et navngivent objekt, der inderholder informationer, som
 bliver benyttet af en eller flere applikationer. Mange brugere (specielt dem 
 der er nye i Linux) finder det en smule mærkeligt eller uhåndterligt. Dette er
-dog forkert; ved at bruge miljøvariabler, kan man let skifte en indstilling for 
+dog forkert; ved at bruge miljø-variabler, kan man let skifte en indstilling for 
 en eller flere applikationer.
 </p>
 
@@ -59,7 +59,7 @@ og beskriver deres brug. Eksempelværdier er præsenteret efter tabellen.
   <ti>LDPATH</ti>
   <ti>
     Denne variabel indeholder en kolonsepareret liste over mapper, som den 
-    dynamiske linker søger igennem, for at finde et bibliotek.
+    'dynamiske linker' søger igennem, for at finde et bibliotek.
   </ti>
 </tr>
 <tr>
@@ -173,10 +173,10 @@ LDPATH="/usr/lib/gcc-lib/i686-pc-linux-gnu/3.2.3"
 
 <p>
 Andre distributioner vil fortælle dig, at du skal ændre eller tilføje sådanne 
-miljøvariabeldefinitioner i <path>/etc/profile</path> eller andre steder. 
+miljø-variabeldefinitioner i <path>/etc/profile</path> eller andre steder. 
 Gentoo gør på den anden side det let for dig (og for Portage), at vedligeholde
-og administrere miljøvariablerne uden at skulle lægge mærke til rækken af filer,
-der kan indeholde miljøvariabler.
+og administrere miljø-variablerne uden at skulle lægge mærke til rækken af filer,
+der kan indeholde miljø-variabler.
 </p>
 
 <p>
@@ -210,8 +210,8 @@ over de variabler, du har defineret selv.
 <p>
 Flere filer i <path>/etc/env.d</path> definerer variablen <c>PATH</c>. Dette er
 ikke forkert; når du kører <c>env-update</c>, vil det tilføje de flere 
-definitioner før den opdaterer miljøvariablerne, og gør det dermed nemmere for 
-pakker (eller brugere) at tilføje deres egen opsætning af miljøvariablerne, uden
+definitioner før den opdaterer miljø-variablerne, og gør det dermed nemmere for 
+pakker (eller brugere) at tilføje deres egen opsætning af miljø-variablerne, uden
 at forstyrre de allerede eksisterende værdier.
 </p>
 
@@ -234,7 +234,7 @@ af <path>/etc/profile</path>). Det vil også trække informationen ud fra
 variablen <c>LDPATH</c>, og bruge den til at oprette 
 <path>/etc/ld.so.conf</path>.
 Efter dette, vil det køre <c>ldconfig</c> for at genskabe filen 
-<path>/etc/ld.so.cache</path>, der benyttes af den dynamiske linker.
+<path>/etc/ld.so.cache</path>, der benyttes af den 'dynamiske linker'.
 </p>
 
 <p>
@@ -257,15 +257,15 @@ installeret Gentoo, vil sikkert huske dette fra installationsinstruktionerne:
 <body>
 
 <p>
-Det er ikke altid, du vil definere dine miljøvariabler globalt. F.eks. har du måske 
-lyst til at tilføje <path>/home/my_user/bin</path> til variablen <c>PATH</c>,
+Det er ikke altid, du vil definere dine miljø-variabler globalt. F.eks. har du måske 
+lyst til at tilføje <path>/home/min_bruger/bin</path> til variablen <c>PATH</c>,
 men du vil ikke have, at alle andre brugere på dit system også skal have det i 
 deres <c>PATH</c>. Hvis du vil definere en miljøvariabel lokalt, skal du bruge
 <path>~/.bashrc</path> eller <path>~/.bash_profile</path>:
 </p>
 
 <pre caption="Udvidelse af PATH til lokalt brug i ~/.bashrc">
-PATH="${PATH}:/home/my_user/bin"
+PATH="${PATH}:/home/min_bruger/bin"
 </pre>
 
 <p>
@@ -292,7 +292,7 @@ nuværende session, ved at bruge kommandoen <c>export</c>. Så længe du ikke
 logger ud, vil variablen <c>PATH</c> bruge de midlertidige indstillinger.
 </p>
 
-<pre caption="Definering af en sessionsspecifik miljøvariabel">
+<pre caption="Definering af en sessionsspecifik miljø-variabel">
 # <i>export PATH="${PATH}:/home/my_user/tmp/usr/bin"</i>
 </pre>
 
