@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding="utf-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/prelink-howto.xml,v 1.3 2004/10/09 12:25:05 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/prelink-howto.xml,v 1.4 2004/10/09 12:36:20 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 <guide link="prelink-howto.xml" lang="da">
+
 <title>Prelink vejledningen</title>
 
 <author title="Forfatter">
@@ -34,10 +35,10 @@ Denne guide informerer om hvordan man bruger prelink understøttelse i
 portage version 2.0.46 og senere.
 </abstract>
 
+<license/>
+
 <version>1.4</version>
 <date>7. September, 2003</date>
-
-<license/>
 
 <chapter>
 <title>Introduktion</title>
@@ -338,7 +339,7 @@ Her er de biblioteker der ikke er blevet fixet eller ikke kan fixes:
 
 <p>
 Hvis dit problem bibliotek ikke var listet, reporter det venligst,
-helst med en patch til at tilføje <i>-fPIC</i> til de relevante CFLAGS.
+helst med en patch til at tilføje <c>-fPIC</c> til de relevante CFLAGS.
 </p>
 
 </body>
@@ -348,7 +349,7 @@ helst med en patch til at tilføje <i>-fPIC</i> til de relevante CFLAGS.
 <body>
 
 <p>
-Du bliver nødt til at bruge <i>-f</i> muligheden til <path>prelink</path>;
+Du bliver nødt til at bruge <c>-f</c> muligheden til <path>prelink</path>;
 kør f.eks. prelink på hele systemet fra start af igen. Prøv <c>prelink -af</c>.
 </p>
 
@@ -360,7 +361,7 @@ reloc type...&quot;</title>
 <body>
 
 <p>
-Dette er blevet ordnet i <i>sys-libs/glibc-2.3.1-r2</i> den 2002/11/18,
+Dette er blevet ordnet i <c>sys-libs/glibc-2.3.1-r2</c> den 2002/11/18,
 emerge glibc igen hvis dit er ældre.
 </p>
 
