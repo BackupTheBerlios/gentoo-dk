@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-disk.xml,v 1.8 2004/01/21 22:12:31 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/translated/Attic/hb-install-disk.xml,v 1.1 2004/01/21 23:38:20 aaby Exp $ -->
 
 <sections>
 <section>
@@ -22,17 +22,19 @@ til din Gentoo Linux installation.
 </p>
 
 <p>
-For at begynde, vil vi introducere begrebet <e>blok-enheder</e>. Den mest kendte blok-enhed er
-sikkert den, som repræsenterer den første IDE-harddisk på et Linux system, med navnet
-<path>/dev/hda</path>. Hvis dit system bruger SCSI-drev, så vil din første harddisk
-være <path>/dev/sda</path>.
+For at begynde, vil vi introducere begrebet <e>blok-enheder</e>. Den
+mest kendte blok-enhed er sikkert den, som repræsenterer den første
+IDE-harddisk på et Linux system, med navnet
+<path>/dev/hda</path>. Hvis dit system bruger SCSI-drev, så vil din
+første harddisk være <path>/dev/sda</path>.
 </p>
 
 <p>
-Blok-enhederne ovenover repræsenterer en abstrakt grænseflade til harddisken. 
-Brugerprogrammer kan bruge disse blok-enheder, for at interagere med din harddisk uden at skulle bekymre
-sig om at dine drev er IDE, SCSI eller noget andet. Programmet kan
-simpelthen adressere lageret på harddisken, som et bundt af tilstødende,
+Blok-enhederne ovenover repræsenterer en abstrakt grænseflade til
+harddisken.  Brugerprogrammer kan bruge disse blok-enheder, for at
+interagere med din harddisk uden at skulle bekymre sig om at dine drev
+er IDE, SCSI eller noget andet. Programmet kan simpelthen adressere
+lageret på harddisken, som et bundt af tilstødende,
 vilkårlige-tilgængelige 512-byte blokke.
 </p>
 
@@ -44,9 +46,10 @@ vilkårlige-tilgængelige 512-byte blokke.
 
 <p>
 Selvom det er teoretisk muligt at bruge hele harddisken til dit Linux
-system, er det næsten aldrig gjort i praksis. I stedet for er hele hardiskens blok-enheder
-opsplittet i mindre, mere håndgribelige blok-enheder. På de fleste systemer er
-disse kaldet <e>partitioner</e>. Andre arkitekturer bruger en lignende teknik,
+system, er det næsten aldrig gjort i praksis. I stedet for er hele
+hardiskens blok-enheder opsplittet i mindre, mere håndgribelige
+blok-enheder. På de fleste systemer er disse kaldet
+<e>partitioner</e>. Andre arkitekturer bruger en lignende teknik,
 kaldet <e>portioner (slices)</e>.
 </p>
 
@@ -69,11 +72,12 @@ primære partitioner blive defineret (f.eks. <path>/dev/hda1</path> til
 </p>
 
 <p>
-En <e>udvidet</e> partition er en speciel primær partition (som betyder at
-den udvidet partition skal være én af de første fire mulige primære partitioner) som
-indeholder flere partitioner. Sådan en partition eksisterede ikke oprindeligt, men da
-fire partitioner var for få, nogen kom med idéen at udvide formateringsskemaet
-uden at tabe bagud-kompatibilitet.
+En <e>udvidet</e> partition er en speciel primær partition (som
+betyder at den udvidet partition skal være én af de første fire mulige
+primære partitioner) som indeholder flere partitioner. Sådan en
+partition eksisterede ikke oprindeligt, men da fire partitioner var
+for få, nogen kom med idéen at udvide formateringsskemaet uden at tabe
+bagud-kompatibilitet.
 </p>
 
 <p>
@@ -243,7 +247,7 @@ Til Sparc:
   <ti><path>/dev/hda3</path></ti>
   <ti>(none)</ti>
   <ti>Hele harddisken</ti>
-  <ti>Sun Disk Label (required)</ti>
+  <ti>Sun Disk Label (krævet)</ti>
 </tr>
 <tr>
   <ti><path>/dev/hda4</path></ti>
@@ -263,11 +267,11 @@ this big partition of type "Linux LVM" or "LVM" (8e).
 -->
 
 <p>
-Hvis du er ved at installere Gentoo fra en eksisterende distribution, burde du først
-ændre størrelsen på dine eksisterende partitioner (hvis du ikke har noget plads fri) for at
-kunne installere Gentoo. Du kan bruge <uri 
-link="http://www.gnu.org/software/parted">GNU/Parted</uri> til at ændre størrelsen på
-partitioner.
+Hvis du er ved at installere Gentoo fra en eksisterende distribution,
+burde du først ændre størrelsen på dine eksisterende partitioner (hvis
+du ikke har noget plads fri) for at kunne installere Gentoo. Du kan
+bruge <uri link="http://www.gnu.org/software/parted">GNU/Parted</uri>
+til at ændre størrelsen på partitioner.
 </p>
 
 <p>
@@ -291,10 +295,10 @@ Ellers fortsæt nu med at partitionere din harddisk:
   <uri link="#doc_chap6">Brug af mac-fdisk på PPC for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap7">Brug af fdisk on HPPA for at partitionere din harddisk</uri>
+  <uri link="#doc_chap7">Brug af fdisk på HPPA for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap8">Brug af fdisk on MIPS for at partitionere din harddisk</uri>
+  <uri link="#doc_chap8">Brug af fdisk på MIPS for at partitionere din harddisk</uri>
 </li>
 </ul>
 
@@ -305,15 +309,16 @@ Ellers fortsæt nu med at partitionere din harddisk:
 <body>
 
 <p>
-Antallet af partitioner er meget afhængigt af dit miljø. F.eks.,
-hvis du har en hel del brugere, vil det være nærmest at lave dit
-<path>/home</path> separat, idet at det forøger sikkerheden og gør det nemmere at lave backup.
-Hvis du intallerer Gentoo for at arbejde som en mail-server, burde din 
-<path>/var</path> være separat, idet alle emails er gemt inde i
-<path>/var</path>. Et godt valg af filsystem vil derefter maksimere din 
-ydelse. Spil-servere burde have en separat <path>/opt</path>, idet at de fleste
-spil-servere bliver installeret der. Forklaringen er denne samme som for <path>/home</path>: 
-sikkerhed og backup.
+Antallet af partitioner er meget afhængigt af dit miljø. F.eks., hvis
+du har en hel del brugere, vil det være nærmest at lave dit
+<path>/home</path> separat, idet at det forøger sikkerheden og gør det
+nemmere at lave backup.  Hvis du installerer Gentoo for at arbejde som
+en mail-server, burde din <path>/var</path> være separat, idet alle
+emails er gemt inde i <path>/var</path>. Et godt valg af filsystem vil
+derefter maksimere din ydelse. Spil-servere burde have en separat
+<path>/opt</path>, idet at de fleste spil-servere bliver installeret
+der. Forklaringen er denne samme som for <path>/home</path>: sikkerhed
+og backup.
 </p>
 
 <p>
@@ -393,10 +398,10 @@ arkitektur, som eksempel:
   <uri link="#doc_chap6">Brug af mac-fdisk på PPC for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap7">Brug af fdisk on HPPA for at partitionere din harddisk</uri>
+  <uri link="#doc_chap7">Brug af fdisk på HPPA for at partitionere din harddisk</uri>
 </li>
 <li>
-  <uri link="#doc_chap8">Brug af fdisk on MIPS for at partitionere din harddisk</uri>
+  <uri link="#doc_chap8">Brug af fdisk på MIPS for at partitionere din harddisk</uri>
 </li>
 </ul>
 
@@ -414,7 +419,7 @@ sektion.
 </impo>
 
 <p>
-De følgende dele forklaerer hvordan man laver partitionslayoutet, som
+De følgende dele forklarer hvordan man laver partitionslayoutet, som
 beskrevet førhen, nemlig:
 </p>
 
@@ -448,9 +453,9 @@ Du kan ændre partitionslayoutet til hvordan du ønsker det.
 <body>
 
 <p>
-<c>fdisk</c> er en populær og et kraftfuld værktøj til at splitte din harddisk ind i partitioner.
-Fyr op for din <c>fdisk</c> på din harddisk (i vores eksempel, bruger vi
-<path>/dev/hda</path>):
+<c>fdisk</c> er en populær og et kraftfuld værktøj til at splitte din
+harddisk ind i partitioner.  Fyr op for din <c>fdisk</c> på din
+harddisk (i vores eksempel, bruger vi <path>/dev/hda</path>):
 </p>
 
 <pre caption="Start af fdisk">
@@ -512,17 +517,18 @@ Partition number (1-4): <i>1</i>
 </pre>
 
 <p>
-Partitionen er blevet planlagt til at blive slettet. Den vil nu ikke længere blive vist, når du
-taster <c>p</c>, men den er ikke slettet før dine ændringer er blevet gemt. Hvis
-du har lavet en fejl og vil afbryde uden at gemme, tast <c>q</c>
-med det samme og tryk Enter og din partition vil ikke blive slettet.
+Partitionen er blevet planlagt til at blive slettet. Den vil nu ikke
+længere blive vist, når du taster <c>p</c>, men den er ikke slettet
+før dine ændringer er blevet gemt. Hvis du har lavet en fejl og vil
+afbryde uden at gemme, tast <c>q</c> med det samme og tryk Enter og
+din partition vil ikke blive slettet.
 </p>
 
 <p>
 Forudsat at du nu virkelig vil udslette alle partitioner på dit
 system, tast gentagne gange <c>p</c> for at udskrive partitionslisten og tast
-<c>d</c> og nummeret på partitionen, for at slette den. Til sidst vil du ende
-med en partitionstabel uden noget i:
+<c>d</c> og nummeret på partitionen, for at slette den. Til sidst vil
+du ende med en partitionstabel uden noget i:
 </p>
 
 <pre caption="En tom partitionstabel">
@@ -536,10 +542,10 @@ Command (m for help):
 </pre>
 
 <p>
-Nu da partitionstabellen, som ligger i hukkommelsen, er tom, er det nu tid til at lave
-partitioner. Vi vil bruge standard partitionsskemaet, som diskuteret tidligere.
-Selvfølgelig, følg ikke disse instruktioner til punkt og prikke, hvis du ikke vil have den
-samme partitionsskema!
+Nu da partitionstabellen, som ligger i hukkommelsen, er tom, er det nu
+tid til at lave partitioner. Vi vil bruge standard partitionsskemaet,
+som diskuteret tidligere.  Selvfølgelig, følg ikke disse instruktioner
+til punkt og prikke, hvis du ikke vil have den samme partitionsskema!
 </p>
 
 </body>
@@ -549,10 +555,11 @@ samme partitionsskema!
 <body>
 
 <p>
-Først vil vi en lille boot-partition. Tast <c>n</c> for at oprette en ny partition,
-så <c>p</c> for at vælge en primær partition, fulgt af <c>1</c> for at vælge den
-første primære partition. Når du bliver spurgt om den første cylinder, tryk Enter. Når du
-bliver spurgt om den sidste cylinder, tast <c>+32M</c> for at lave en partition på 32 Mbyte
+Først vil vi en lille boot-partition. Tast <c>n</c> for at oprette en
+ny partition, så <c>p</c> for at vælge en primær partition, fulgt af
+<c>1</c> for at vælge den første primære partition. Når du bliver
+spurgt om den første cylinder, tryk Enter. Når du bliver spurgt om den
+sidste cylinder, tast <c>+32M</c> for at lave en partition på 32 Mbyte
 i størrelse:
 </p>
 
@@ -596,15 +603,18 @@ på denne partition. Hvis du taster <c>p</c> igen, vil du se at
 <body>
 
 <p>
-Lad os nu lave en swap-partition. For at gøre dette, tast <c>n</c> for at lave en ny
-partition, så <c>p</c> for at fortælle fdisk, at du vil have en primær partition. Tast
-så <c>2</c> for at lave den anden primære partition, <path>/dev/hda2</path> i
-vores eksempel. Når du bliver spurgt om den første cylinder, tryk Enter. Når du bliver spurgt om
-den sidste cylinder, tast <c>+512M</c> for at oprette en partition på 512MB i størrelse. Efter
-at du har gjort det, tast <c>t</c> for at indstille partitionstypen, <c>2</c> for at vælge
-partitionen, som du lige har oprettet, og tast så <c>82</c> for at indstille partitionenstypen
-til "Linux Swap". Efter afslutningen af disse trin, ved at taste <c>p</c>, burde
-vise en partitionstabel, som ser ud som dette:
+Lad os nu lave en swap-partition. For at gøre dette, tast <c>n</c> for
+at lave en ny partition, så <c>p</c> for at fortælle fdisk, at du vil
+have en primær partition. Tast så <c>2</c> for at lave den anden
+primære partition, <path>/dev/hda2</path> i vores eksempel. Når du
+bliver spurgt om den første cylinder, tryk Enter. Når du bliver spurgt
+om den sidste cylinder, tast <c>+512M</c> for at oprette en partition
+på 512MB i størrelse. Efter at du har gjort det, tast <c>t</c> for at
+indstille partitionstypen, <c>2</c> for at vælge partitionen, som du
+lige har oprettet, og tast så <c>82</c> for at indstille
+partitionenstypen til "Linux Swap". Efter afslutningen af disse trin,
+ved at taste <c>p</c>, burde vise en partitionstabel, som ser ud som
+dette:
 </p>
 
 <pre caption="Partitionsliste efter oprettelse af en swap-partition">
@@ -626,12 +636,14 @@ Device Boot    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Til sidst, lad os oprette root-partitionen. For at gøre dette, tast <c>n</c> for at oprette en
-ny partition, så <c>p</c> for at fortælle fdisk, at du vil have en primær partition. 
-så tast <c>3</c> for at oprette den tredje primære partition, <path>/dev/hda3</path>
-i vores tilfælde. Når du bliver spurgt om den første cylinder, tryk Enter. Når du bliver spurgt om
-den sidste cylinder, tryk Enter for at oprette en partition, som tager resten af
-den frie plads, som er tilbage på din harddisk. Efter at have afsluttet disse trin, ved at taste <c>p</c> 
+Til sidst, lad os oprette root-partitionen. For at gøre dette, tast
+<c>n</c> for at oprette en ny partition, så <c>p</c> for at fortælle
+fdisk, at du vil have en primær partition.  så tast <c>3</c> for at
+oprette den tredje primære partition, <path>/dev/hda3</path> i vores
+tilfælde. Når du bliver spurgt om den første cylinder, tryk Enter. Når
+du bliver spurgt om den sidste cylinder, tryk Enter for at oprette en
+partition, som tager resten af den frie plads, som er tilbage på din
+harddisk. Efter at have afsluttet disse trin, ved at taste <c>p</c>
 burde vise en partitionstabel, som ser ud som dette:
 </p>
 
@@ -656,7 +668,7 @@ Device Boot    Start       End    Blocks   Id  System
 <body>
 
 <p>
-For at gemme partitionslayouet og afslutte <c>fdisk</c>, tast <c>w</c>.
+For at gemme partitionslayoutet og afslutte <c>fdisk</c>, tast <c>w</c>.
 </p>
 
 <pre caption="Gem og afslut fdisk">
@@ -838,16 +850,18 @@ BSD disklabel command (m for help): <i>p</i>
 <body>
 
 <p>
-Vi vil nu oprette root-portionen, som starter fra den første cylinder <e>efter</e>
-swap-portionen. Brug <c>p</c>-kommandoen for at se hvor swap-portionen slutter. I
-vores eksempel, er dette ved 1003, som gør at root-portionen starter ved 1004.
+Vi vil nu oprette root-portionen, som starter fra den første cylinder
+<e>efter</e> swap-portionen. Brug <c>p</c>-kommandoen for at se hvor
+swap-portionen slutter. I vores eksempel, er dette ved 1003, som gør
+at root-portionen starter ved 1004.
 </p>
 
 <p>
-Et andet problem er at der er på nuværende tidspunkt en fejl i <c>fdisk</c>, som gør at den tror at
-antallet af tilrådige cylindere er højere det reelle antal af cylindere. I
-andre ord, når du bliver spurgt om den sidste cylinder, formindsk cylinder-nummeret
-(i vores eksempel: 5290) med én.
+Et andet problem er at der er på nuværende tidspunkt en fejl i
+<c>fdisk</c>, som gør at den tror at antallet af tilrådige cylindere
+er højere det reelle antal af cylindere. I andre ord, når du bliver
+spurgt om den sidste cylinder, formindsk cylinder-nummeret (i vores
+eksempel: 5290) med én.
 </p>
 
 <p>
@@ -886,7 +900,8 @@ BSD disklabel command (m for help): <i>p</i>
 <body>
 
 <p>
-Gem <c>fdisk</c> ved at taste <c>w</c>. Dette vil også gemme dit portionslayout.
+Gem <c>fdisk</c> ved at taste <c>w</c>. Dette vil også gemme dit
+portionslayout.
 </p>
 
 <pre caption="Gem og afslut fdisk">
@@ -895,7 +910,7 @@ Command (m for help): <i>w</i>
 
 <p>
 Nu da dine portioner er oprette, kan du nu fortsætte med <uri
-link="#filesystems">Oprettelse af filsystmer</uri>.
+link="#filesystems">Oprettelse af filsystemer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded
 , undtagen hvis du har valgt at bruge LVM,
 hvilket du burde først læse <uri link="#lvm">Valgfrit: Brug af
@@ -907,7 +922,7 @@ LVM</uri>.
 </subsection>
 </section>
 <section>
-<title>Brug af fdisk på SPARC for at partionere din harddisk</title>
+<title>Brug af fdisk på SPARC for at partitionere din harddisk</title>
 <subsection>
 <body>
 
@@ -916,8 +931,8 @@ Kun brugere på <e>SPARC</e> baserede systemer burde læse denne sektion.
 </impo>
 
 <p>
-De følgende dele forklarer hvordan man opretter partitionslayout-eksemplet, beskrevet
-tidligere, nemlig:
+De følgende dele forklarer hvordan man opretter
+partitionslayout-eksemplet, beskrevet tidligere, nemlig:
 </p>
 
 <table>
@@ -988,9 +1003,10 @@ Device Flag    Start       End    Blocks   Id  System
 </pre>
 
 <p>
-Notér at <c>Sun disk label</c> er med i output. Hvis den mangler, bruger harddisken
-DOS-partitionering, ikke Sun-partitionerng. I dette tilfælde, brug <c>s</c>
-for at sikre at harddisken har en sun partitionstabel.
+Notér at <c>Sun disk label</c> er med i output. Hvis den mangler,
+bruger harddisken DOS-partitionering, ikke Sun-partitionering. I dette
+tilfælde, brug <c>s</c> for at sikre at harddisken har en Sun
+partitionstabel.
 </p>
 
 </body>
@@ -1000,9 +1016,10 @@ for at sikre at harddisken har en sun partitionstabel.
 <body>
 
 <p>
-Det er tid til at slette alle eksisterende partitioner. For at gøre dette, tast <c>d</c> og tryk
-Enter. Du vil blive spurgt for partitionsnummer, som du ønsker at
-slette. For at slette en eksisterende <path>/dev/hda1</path>, skal du taste:
+Det er tid til at slette alle eksisterende partitioner. For at gøre
+dette, tast <c>d</c> og tryk Enter. Du vil blive spurgt for
+partitionsnummer, som du ønsker at slette. For at slette en
+eksisterende <path>/dev/hda1</path>, skal du taste:
 </p>
 
 <pre caption="Slette en partition">
@@ -1011,16 +1028,17 @@ Partition number (1-4): <i>1</i>
 </pre>
 
 <p>
-Da vi forventer at du vil slette alle eksisterende partitioner, tast <c>p</c> for at se
-tilrådige partitioner, og <c>d</c> for at slette disse, én efter én. Hvis du føler at
-du har lavet en fejl, tast <c>q</c> med det samme -- <c>fdisk</c> gemmer ikke
-ændrer, lavet her og nu, på partitionerne, men holder det i hukommelsen. Kun når du
+Da vi forventer at du vil slette alle eksisterende partitioner, tast
+<c>p</c> for at se tilrådige partitioner, og <c>d</c> for at slette
+disse, én efter én. Hvis du føler at du har lavet en fejl, tast
+<c>q</c> med det samme -- <c>fdisk</c> gemmer ikke ændrer, lavet her
+og nu, på partitionerne, men holder det i hukommelsen. Kun når du
 taster <c>w</c> er alle partitioner gemt.
 </p>
 
 <p>
-Efter at have slette alle partitioner, burde du have en partitionslayout lignende til det
-følgende:
+Efter at have slette alle partitioner, burde du have en
+partitionslayout lignende til det følgende:
 </p>
 
 <pre caption="Se et tomt partitionsskema">
@@ -1040,11 +1058,13 @@ Device Flag    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Nu da partitionstabellen, som er holdt i hukkommelsen, er tom, er vi klar til at oprette 'Sun
-Disk Label'-partitionen. For at gøre dette, tast <c>n</c> for at oprette en ny partition, så 
-tast <c>3</c> for at oprette partitionen. Når der bliver spurgt om den første cylinder, 
-tast Enter. Når der bliver spurgt om den sidste cylinder, tast Enter. Efter at du har gjort
-dette, tast <c>t</c> for at indstille partitionstypen, og tast derefter <c>5</c> for at indstille
+Nu da partitionstabellen, som er holdt i hukkommelsen, er tom, er vi
+klar til at oprette 'Sun Disk Label'-partitionen. For at gøre dette,
+tast <c>n</c> for at oprette en ny partition, så tast <c>3</c> for at
+oprette partitionen. Når der bliver spurgt om den første cylinder,
+tast Enter. Når der bliver spurgt om den sidste cylinder, tast
+Enter. Efter at du har gjort dette, tast <c>t</c> for at indstille
+partitionstypen, og tast derefter <c>5</c> for at indstille
 partitionstypen til "Whole disk" (hele disken).
 </p>
 
@@ -1082,12 +1102,13 @@ Device Flag    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Vi er klar til at oprette boot-partitionen. For at gøre dette, tast <c>n</c> for at oprette en
-ny partition, tast da <c>1</c> for at oprette partitionen. Når der bliver spurgt efter den
-første cylinder, tryk Enter. Når der bliver spurgt efter den sidste cylinder, tast <c>+32M</c>
-for at oprette en partition på <c>32MB</c> i størrelse. Vær sikker på at hele boot-partitionen
-er holdt inde for de første 2GB af harddisken. 
-Du kan se output fra disse trin, forneden:
+Vi er klar til at oprette boot-partitionen. For at gøre dette, tast
+<c>n</c> for at oprette en ny partition, tast da <c>1</c> for at
+oprette partitionen. Når der bliver spurgt efter den første cylinder,
+tryk Enter. Når der bliver spurgt efter den sidste cylinder, tast
+<c>+32M</c> for at oprette en partition på <c>32MB</c> i
+størrelse. Vær sikker på at hele boot-partitionen er holdt inde for de
+første 2GB af harddisken.  Du kan se output fra disse trin, forneden:
 </p>
 
 <pre caption="Oprettelse af boot-partition">
@@ -1119,11 +1140,13 @@ Device Flag    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Herefter, lad os nu oprette swap-partitionen. For at gøre dette, tast <c>n</c> for at oprette en ny
-partition, så <c>2</c> for at oprette en anden partition, <path>/dev/hda2</path>
-i vores tilfælde. Når der bliver spurgt efter den første cylinder, tryk Enter. Når der bliver spurgt 
-efter den sidste cylinder, tast <c>+512M</c> for at oprette en partition på 512MB i størrelse. Efter 
-at du har gjort dette, tast <c>t</c> for at indstille partitionstypen, og indtast derefter
+Herefter, lad os nu oprette swap-partitionen. For at gøre dette, tast
+<c>n</c> for at oprette en ny partition, så <c>2</c> for at oprette en
+anden partition, <path>/dev/hda2</path> i vores tilfælde. Når der
+bliver spurgt efter den første cylinder, tryk Enter. Når der bliver
+spurgt efter den sidste cylinder, tast <c>+512M</c> for at oprette en
+partition på 512MB i størrelse. Efter at du har gjort dette, tast
+<c>t</c> for at indstille partitionstypen, og indtast derefter
 <c>82</c> for at indstille partitionstype til "Linux Swap". Efter at have afsluttet disse
 trin, indtastningen af <c>p</c> burde vise en partitionstabel, som ser ud som 
 dette:
@@ -1148,13 +1171,14 @@ Device Flag    Start       End    Blocks   Id  System
 <body>
 
 <p>
-Til sidst, lad os oprette root-partitionen. For at gøre dette, tast <c>n</c> for at oprette en
-ny partition, derefter tast <c>4</c> for at oprette en tredje partition, 
-<path>/dev/hda4</path> i vores tilfælde. Når der bliver spurgt efter den første cylinder, tryk 
-Enter. Når der bliver spurgt efter den sidste cylinder, tryk Enter for at oprette en partition,
-som optager resten af den frie harddisk-plads. Efter at have afsluttet
-disse trin, ved at taste <c>p</c> burde vise en partitionstabel, som ser ud som
-dette her:
+Til sidst, lad os oprette root-partitionen. For at gøre dette, tast
+<c>n</c> for at oprette en ny partition, derefter tast <c>4</c> for at
+oprette en tredje partition, <path>/dev/hda4</path> i vores
+tilfælde. Når der bliver spurgt efter den første cylinder, tryk
+Enter. Når der bliver spurgt efter den sidste cylinder, tryk Enter for
+at oprette en partition, som optager resten af den frie
+harddisk-plads. Efter at have afsluttet disse trin, ved at taste
+<c>p</c> burde vise en partitionstabel, som ser ud som dette her:
 </p>
 
 <pre caption="Liste af komplet partitionstabel">
@@ -1197,54 +1221,58 @@ LVM</uri>.
 </body>
 </subsection>
 </section>
+
+
 <section>
-<title>Using mac-fdisk on PPC to Partition your Disk</title>
+<title>At bruge mac-fdisk på PPC til at partitionere din disk</title>
 <body>
 
 <p>
-At this point, create your partitions using <c>mac-fdisk</c>:
+Nu skal du lave dine partitioner med <c>mac-fdisk</c>:
 </p>
 
-<pre caption="Starting mac-fdisk">
+<pre caption="At starte mac-fdisk">
 # <i>mac-fdisk /dev/hda</i>
 </pre>
 
 <p>
-First delete the partitions you have cleared previously to make room for your
-Linux partitions. Use <c>d</c> in <c>mac-fdisk</c> to delete those partition(s).
-It will ask for the partition number to delete.
+Først skal du slette de partitioner du før har klargjort for at lave
+plads til dine Linux partitioner. Brug <c>d</c> i <c>mac-fdisk</c> for
+at slette denne/disse partition(er). Den vil spørge efter nummeret på
+den partition der skal slettes.
 </p>
 
 <p>
-Second, create an <e>Apple_Bootstrap</e> partition by using <c>b</c>. It will
-ask for what block you want to start. If you previously selected <c>3</c> as
-partition number, enter <c>3p</c>.
+Derefter skal du lave en <e>Apple_Bootstrap</e> partition ved brug af
+<c>b</c>. Den vil spørge efter hvilken blok du vil starte fra. Hvis du
+før har valgt <c>3</c> for partitionsnummeret, tryk da <c>3p</c>.
 </p>
 
 <p>
-Now create a swap partition by pressing <c>c</c>. Again <c>mac-fdisk</c> will
-ask for what block you want to start this partition from. As we used <c>3</c>
-before to create the Apple_Bootstrap partition, you now have to enter
-<c>4p</c>. When you're asked for the size, enter <c>512M</c> (or whatever size
-you want -- 512 is recommended though). When asked for a name, enter <c>swap</c>
-(mandatory).
+Lav nu en swap partition ved at trykke <c>c</c>. <c>mac-fdisk</c> vil
+igen spørge efter hvilken blok du vil starte denne partition fra. Da
+vi før brugte <c>3</c> til at lave Apple_Bootstrap partitionen, så
+skal du nu trykke <c>4p</c>. Når du bliver spurgt om størrelsen, tryk
+da <c>512M</c> (eller den størrelse du nu ønsker -- 512 anbefales dog). 
+Når du bliver spurgt efter et navn, tryk <c>swap</c> (krævet).
 </p>
 
 <p>
-To create the root partition, enter <c>c</c>, followed by <c>5p</c> to select
-from what block the root partition should start. When asked for the size, enter
-<c>5p</c> again. <c>mac-fdisk</c> will interprete this as "Use all available
-space". When asked for the name, enter <c>root</c> (mandatory).
+For at lave root partitionen, tryk <c>c</c>, efterfulgt af <c>5p</c>
+for at vælge hvilken blok root partitionen skal started ved. Når du
+bliver spurgt efter størrelsen, tryk <c>5p</c> igen. <c>mac-fdisk</c>
+vil fortolke dette som "Brug den plads der er tilgængelig". Når du
+bliver spurgt efter et navn, tryk <c>root</c> (krævet).
 </p>
 
 <p>
-To finish up, write the partition to the disk using <c>w</c> and <c>q</c> to
-quit <c>mac-fdisk</c>.
+For at færdiggøre, skriv partitionen til disken ved at bruge <c>w</c>
+og <c>q</c> til at forlade <c>mac-fdisk</c>.
 </p>
 
 <p>
-Now that your partitions are created, you can now continue with <uri
-link="#filesystems">Creating Filesystems</uri>.
+Nu hvor dine partitioner er lavet, kan du forsætte med <uri
+link="#filesystems">Oprettelse af filsystemer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded 
 , unless you have chosen to use LVM
 in which case you should first read <uri link="#lvm">Optional: Using
@@ -1255,36 +1283,37 @@ LVM</uri>.
 </body>
 </section>
 <section>
-<title>Using fdisk on HPPA to Partition your Disk</title>
+<title>At bruge fdisk på HPPA til at partitionere din disk</title>
 <body>
 
 <p>
-Use <c>fdisk</c> to create the partitions you want:
+Brug <c>fdisk</c> til at lave de partitioner du ønsker:
 </p>
 
-<pre caption="Partitioning the disk">
+<pre caption="At partitionere disken">
 # <i>fdisk /dev/sda</i>
 </pre>
 
 <p>
-PALO needs a special partition to work. You have to create a partition of at
-least 16Mb at the beginning of your disk. The partition type must be of type
-<e>f0</e> (Linux/PA-RISC boot).
+PALO har brug for en speciel partition for at virke. Du bliver nødt
+til at lave en partition med minimum 16Mb i starten af din disk. Denne
+partition skal være af typen <e>f0</e> (Linux/PA-RISC boot).
 </p>
 
 <impo>
-If you ignore this and continue without a special PALO partition, your system
-will stop loving you and fail to start.
+Hvis du ignorer dette og fortsætter uden en speciel PALO partition, så
+vil dit system holde op med at elske dig og ikke være i stand til at starte.
 </impo>
 
 <p>
-Also, if your disk is larger than 2Gb, make sure that the boot partition is in
-the first 2Gb of your disk. PALO is unable to read a kernel after the 2Gb limit.
+Hvis din disk er større end 2Gb, så skal du også være sikker på at
+boot partitionen er indenfor de første 2Gb af din disk. PALO er ikke i
+stand til at læse en kerne efter grænsen på 2Gb.
 </p>
 
 <p>
-Now that your partitions are created, you can now continue with <uri
-link="#filesystems">Creating Filesystems</uri>.
+Nu hvor dine partitioner er lavet, så kan du fortsætte med <uri
+link="#filesystems">Oprettelse af filsystemer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded
 , unless you have chosen to use LVM
 in which case you should first read <uri link="#lvm">Optional: Using
@@ -1303,44 +1332,46 @@ LVM</uri>.
        ~SwifT
 -->
 <subsection>
-<title>Creating an SGI Disk Label</title>
+<title>At lave en SGI Disk Label</title>
 <body>
 
 <p>
-All disks in an SGI System require an <e>SGI Disk Label</e>, which serves a 
-similar function as Sun &amp; MS-DOS disklabels -- It stores information about 
-the disk partitions. Creating a new SGI Disk Label will create two special 
-partitions on the disk:
+Alle diske i et SGI system kræver en <e>SGI Disk Label</e>, hvilken
+fungerer som noget der ligner Sun &amp; MS-DOS disklabels -- Den gemmer
+information omkring diskens partitioner. At lave en SGI Disk Label vil
+skabe to specielle partitioner på disken:
 </p>
 
 <ul>
   <li>
-    <e>SGI Volume Header</e> (9th partition): This partition is important. It
-    is where the kernel images will go. To store kernel images, you will utilize
-    the tool known as <c>dvhtool</c> to copy kernel images to this partition. 
-    You will then be able to boot kernels from this partition via the SGI PROM 
-    Monitor.
+    <e>SGI Volume Header</e> (den 9ende partition): Denne partition er
+    vigtig. Det er her kerne billed-filerne skal hen. For at gemme
+    kerne billed-filer, vil du bruge værktøjet kendt som
+    <c>dvhtool</c> til at kopiere kerne billed-filer til denne
+    partition. Du vil derefter være i stand til at opstarte fra kerner
+    på denne partition via SGI PROM Monitor.
   </li>
   <li>
-    <e>SGI Volume</e> (11th partition): This partition is similar in purpose to
-    the Sun Disklabel's third partition of "Whole Disk". This partition spans
-    the entire disk, and should be left untouched. It serves no special purpose
-    other than to assist the PROM in some undocumented fashion (or it is used by
-    IRIX in some way).
+    <e>SGI Volume</e> (den 11te partition): Denne partitions formål
+    minder om Sun Disklabel's tredje partition af "Hele disken". Denne
+    partition dækker hele disken, og bør forblive uberørt. Den tjener
+    ikke noget specielt formål andet end at hjælpe PROM på en ikke
+    dokumenteret facon (eller den bliver brugt af IRIX på en eller
+    anden måde).
   </li>
 </ul>
 
 <warn>
-The SGI Volume Header <e>must</e> begin at cylinder 0. Failure to do so means
-you won't be able to boot from the disk.
+SGI Volume Headeren <e>skal</e> begynde ved cylinder 0. Hvis dette
+fejler, så vil du ikke være i stand til at starte op fra disken.
 </warn>
 
 <p>
-The following is an example excerpt from an <c>fdisk</c> session. Read and
-tailor it to your needs...
+Det følgende er et eksempel udsnit fra en <c>fdisk</c> session. Læs
+det og ret det til efter dine behov...
 </p>
 
-<pre caption="Creating an SGI Disklabel">
+<pre caption="At lave en SGI Disklabel">
 # <i>fdisk /dev/sda</i>
 
 Command (m for help): <i>x</i>
@@ -1386,35 +1417,38 @@ Command (m for help):
 </pre>
 
 <note>
-If your disk already has an existing SGI Disklabel, then fdisk will not allow
-the creation of a new label. There are two ways around this. One is to create a
-Sun or MS-DOS disklabel, write the changes to disk, and restart fdisk. The
-second is to overwrite the partition table with null data via the following
-command: <c>dd if=/dev/zero of=/dev/sda bs=512 count=1</c>.
+Hvis din disk allerede har en eksisterende SGI Disklabel, så vil fdisk
+ikke tillade at lave en ny label. Der er to måder at komme omkring
+dette på. En er at lave en Sun eller MS-DOS disklabel, skrive
+ændringerne til disken og genstarte fdisk. Den anden er at overskrive
+partitions tabellen med null data via den følgende kommando: <c>dd
+if=/dev/zero of=/dev/sda bs=512 count=1</c>.  
 </note>
 
 </body>
 </subsection>
 <subsection>
-<title>Getting the SGI Volume Header to just the right size</title>
+<title>At få SGI Volume Header til at justere den rigtige størrelse</title>
 <body>
 
 <p>
-Now that an SGI Disklabel is created, partitions may now be defined. In the
-above example, there are already two partitions defined for you. These are the
-special partitions mentioned above and should not normally be altered. However,
-for installing Gentoo, we'll need to load multiple kernel images directly into
-the volume header, as there is no supported SGI Bootloader available in Portage
-yet. The volume header itself can hold up to <e>eight</e> images of any size, 
-with each image allowed eight-character names.
+Nu hvor en SGI Disklabel er blevet lavet, så kan partitioner
+defineres. I det ovenfor nævnte eksempel, er der allerede defineret to
+partitioner for dig. Disse er de to specielle partitioner nævnt
+ovenfor og bør normalt ikke ændres. For at installere Gentoo, bliver
+vi, imidlertid, nødt til at hente adskillige kerne billed-filer
+direkte ind i volume headeren, da der ikke er nogen understøttet SGI
+Bootloader tilgængelig i Portage, endnu. Volume headeren selv kan
+indeholde op til <e>otte</e> billed-filer af enhver størrelse, med
+navne på otte karakterer.
 </p>
 
 <p>
-The process of making the volume header larger isn't exactly straight-forward --
-there's a bit of a trick to it. One cannot simply delete and re-add the volume
-header due to odd fdisk behavior. In the example provided below, we'll create a
-50MB Volume header in conjunction with a 50MB /boot partition. The actual layout
-of your disk may vary, but this is for illustrative purposes only.
+Processen at lave volume headeren større er ikke ligefrem nemt -- der er en fidus ved det.
+Man kan ikke bare slette og tilføje volume headeren igen pga. mærkelig
+opførsel fra fdisk. I det eksempel der vises nedenfor, laver vi en
+Volume header på 50MB sammen med en 50MB /boot partition. Det faktiske
+layout af din disk kan variere, men dette er kun for at illustrere.
 </p>
 
 <pre caption="Resizing the SGI Volume Header correctly">
@@ -1422,39 +1456,41 @@ Command (m for help): <i>n</i>
 Partition number (1-16): <i>1</i>
 First cylinder (5-8682, default 5): <i>51</i>
  Last cylinder (51-8682, default 8682): <i>101</i>
-<comment>(Notice how fdisk only allows Partition #1 to be re-created starting at a minimum of cylinder 5)</comment>
-<comment>(Had you attempted to delete &amp; re-create the SGI Volume Header this way, this is the same issue
- you would have encountered.)</comment>
-<comment>(In our example, we want /boot to be 50MB, so we start it at cylinder 51 (the Volume Header needs to 
- start at cylinder 0, remember?), and set its ending cylinder to 101, which will roughly be 50MB (+/- 1-5MB))</comment>
+<comment>(Bemærk hvordan fdisk kun tillader at Partition #1 bliver genskabt med en minimum cylinder på 5)</comment>
+<comment>(Hvis du havde forsøgt at slette &amp; Så skal du genskabe
+SGI Volume Headeren på denne måde, dette er det samme problem, som du ville være løbet ind i.)</comment>
+<comment>(I vores eksempel, vil vi have /boot til at være 50MB, med
+den ved cylinder 51 (Volume Headeren skal starte ved cylinder 0, hvis
+du kan huske det?), og at sætte dens sluttende cylinder til 101,
+hvilket groft set vil være 50MB (+/- 1-5MB))</comment>
 
 Command (m for help): <i>d</i>
 Partition number (1-16): <i>9</i>
-<comment>(Delete Partition #9 (SGI Volume Header))</comment>
+<comment>(Slet partition #9 (SGI Volume Header))</comment>
 
 Command (m for help): <i>n</i>
 Partition number (1-16): <i>9</i>
 First cylinder (0-50, default 0): <i>0</i>
  Last cylinder (0-50, default 50): <i>50</i>
-<comment>(Re-Create Partition #9, ending just before Partition #1)</comment>
+<comment>(Genskab partition #9, til at slutte lige inden partition #1)</comment>
 </pre>
 
 </body>
 </subsection>
 <subsection>
-<title>Final partition layout</title>
+<title>Endeligt layout af partitioner</title>
 <body>
 
 <p>
-Once this is done, you are safe to create the rest of your partitions as you see
-fit. After all your partitions are laid out, make sure you set the partition ID
-of your swap partition to <c>82</c>, which is Linux Swap. By default, it will be
-<c>83</c>, Linux Native. 
+Efter at dette er gjort, så kan du sikkert lave resten af dine
+partitioner som du ser det passende. Efter at alle dine partitioner er
+lagt ud, så skal du være sikker på at sætte partitions ID på dine swap
+partition til <c>82</c>, hvilken er Linux Swap. Den vil være <c>83</c>, Linux Native. 
 </p>
 
 <p>
-Now that your partitions are created, you can now continue with <uri
-link="#filesystems">Creating Filesystems</uri>.
+Nu hvor dine partitioner er lavet, kan du fortsætte med <uri
+link="#filesystems">Oprettelse af filsystemer</uri>.
 <!-- TODO reactivate when LVM2 instructions are boarded
 , unless you have chosen to use 
 LVM in which case you should first read <uri link="#lvm">Optional: Using
@@ -1465,7 +1501,7 @@ LVM</uri>.
 </body>
 </subsection>
 </section>
-<!-- TODO rewrite with LVM2 instructions when appropriate
+<!-- TODO rewrite with LVM2 instructions when appropriate # og oversæt :) Aaby
 <section id="lvm">
 <title>Optional: Using LVM</title>
 <subsection>
@@ -1550,130 +1586,137 @@ home     opt      swap     tmp     usr      var
 </section>
 -->
 <section id="filesystems">
-<title>Creating Filesystems</title>
+<title>Oprettelse af filsystemer</title>
 <subsection>
-<title>Introduction</title>
+<title>Introduktion</title>
 <body>
 
 <p>
-Now that your partitions are created, it is time to place a filesystem on them. 
-If you don't care about what filesystem to choose and are happy with what we use
-as default in this handbook, continue with <uri 
-link="#filesystems-apply">Applying a Filesystem to a Partition</uri>.
-Otherwise read on to learn about the available filesystems...
+Nu da dine partitioner er lavet, er det tid til at lave filsystemer på
+dem. Hvis du er ligeglad med hvilket filsystem du vælger og er
+tilfreds med hvad vi bruger som standard her i denne håndbog, så kan
+du fortsætte med <uri link="#filesystems-apply">At anvende et filsystem på en
+partition</uri>. Ellers kan du fortsætte for at lære mere om de
+tilgængelige filsystemer...
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Filesystems?</title>
+<title>Filesystemer?</title>
 <body>
 
 <p>
-Several filesystems are available. Some of them are found stable on all
-architectures, others only on a few. The following table lists the available
-filesystems and the architectures they are known to work on. If an architecture
-is contained within "(...)" then the filesystem should work but is untested.
+Der er adskillige filsystemer til rådighed. Nogle af dem er markeret
+stable til alle arkitekturer, andre er kun på nogle enkelte. Den
+følgende tabel lister de tilgængelige filsystemer og de arkitekturer
+som vi ved at de virker med. Hvis en arkitektur er indeholdt i en
+"(...)" så bør filsystemet virke, men det er ikke testet.
 </p>
 
 <table>
 <tr>
-  <th>Filesystem</th>
+  <th>Filsystem</th>
   <th>Journaled</th>
-  <th>Architectures</th>
+  <th>Arkitekture</th>
 </tr>
 <tr>
   <ti>ext2</ti>
-  <ti>no</ti>
-  <ti>All architectures</ti>
+  <ti>nej</ti>
+  <ti>Alle arkitekture</ti>
 </tr>
 <tr>
   <ti>ext3</ti>
-  <ti>yes</ti>
-  <ti>All architectures</ti>
+  <ti>ja</ti>
+  <ti>Alle arkitekture</ti>
 </tr>
 <tr>
   <ti>reiserfs</ti>
-  <ti>yes</ti>
+  <ti>ja</ti>
   <ti>x86, hppa, alpha, (mips), (pcc), (amd64)</ti>
 </tr>
 <tr>
   <ti>xfs</ti>
-  <ti>yes</ti>
+  <ti>ja</ti>
   <ti>x86, alpha, amd64, (ppc)</ti> <!-- TODO when xfs is in mips-sources, add "(mips)" -->
 </tr>
 <tr>
   <ti>jfs</ti>
-  <ti>yes</ti>
+  <ti>ja</ti>
   <ti>x86, alpha, (mips), (amd64)</ti>
 </tr>
 </table>
 
 <p>
-<b>ext2</b> is the tried and true Linux filesystem but doesn't have metadata
-journaling, which means that routine ext2 filesystem checks at startup time can
-be quite time-consuming. There is now quite a selection of newer-generation
-journaled filesystems that can be checked for consistency very quickly and are
-thus generally preferred over their non-journaled counterparts. Journaled
-filesystems prevent long delays when you boot your system and your filesystem
-happens to be in an inconsistent state.
+<b>ext2</b> er det afprøvede og rigtige Linux filsystem, men det har
+ikke metadata journaler, hvilket betyder at rutinemæssige tjek af
+filsystemer ved opstart kan tage en del tid. Der er nu et udvalg af
+filsystemer af nyere generation med journal, der kan tjekkes for
+konsekvens meget hurtigt og er derfor at foretrække fremfor deres
+tilsvarende uden journal. Filsystemer med journal kan afskaffe lange
+ventetider når dit system starter op og dine filsystemer er i en ikke
+konsekvent tilstand.
 </p>
 
 <p>
-<b>ext3</b> is the journaled version of the ext2 filesystem, providing metadata
-journaling for fast recovery in addition to other enhanced journaling modes like
-full data and ordered data journaling. ext3 is a very good and reliable
-filesystem. It offers generally decent performance under most conditions.
-Because it does not extensively employ the use of "trees" in its internal
-design, it doesn't scale very well, meaning that it is not an ideal choice for
-very large filesystems, or situations where you will be handling very large
-files or large quantities of files in a single directory. But when used within
-its design parameters, ext3 is an excellent filesystem.
+<b>ext3</b> er den journaliserede udgave af ext2 filsystemet, der
+giver metadata journaler til hurtig genskabelse og yderligere andre
+ydelse fremmende journal muligheder så fuld data og ordnet data
+journal. ext3 er meget godt og et pålideligt filsystem. Det tilbyder
+generelt anstændig ydelse under de fleste vilkår. Da det ikke i særlig
+udbredt omfang udnytter brugen af "træer" i dets indre designe, kan
+det ikke skalere særlig godt, hvilket betyder at det ikke er ideelt
+til meget store filsystemer eller i situationer hvor du komme til at
+behandle meget store filer eller store mængder af filer i et enkelt
+bibliotek. Men når det bliver brugt indenfor sine design parametre, så
+er ext3 et udemærket filsystem.
 </p>
 
 <p>
-<b>ReiserFS</b> is a B*-tree based filesystem that has very good overall 
-performance and greatly outperforms both ext2 and ext3 when dealing with small 
-files (files less than 4k), often by a factor of 10x-15x. ReiserFS also scales 
-extremely well and has metadata journaling. As of kernel 2.4.18+, ReiserFS is 
-now rock-solid and highly recommended for use both as a general-purpose 
-filesystem and for extreme cases such as the creation of large filesystems, the 
-use of many small files, very large files and directories containing tens of 
-thousands of files. 
+<b>ReiserFS</b> er et filsystem baseret på B*-træer der har en god
+alsidig ydelse og slår både ext2 og ext3 stor når det kommer til at
+håndtere små filer (filer mindre end 4k), ofte med en faktor på
+10x-15x. ReiserFS skalerer også ekstremt godt og har metadata
+journaler. Fra og med kerne 2.4.18+ er ReiserFS solidt som sten og
+højt anbefalet til formål som alment filsystem og til ekstreme
+tilfælde, hvor man laver store filsystemer, brugen af mange små filer,
+meget store filer og biblioteker der indeholder titusinder af filer.
 </p>
 
 <p>
-<b>XFS</b> is a filesystem with metadata journaling that is fully supported 
-under Gentoo Linux's xfs-sources kernel. It comes with a robust feature-set and
-is optimized for scalability. We only recommend using this filesystem on Linux
-systems with high-end SCSI and/or fibre channel storage and a uninterruptible
-power supply. Because XFS aggressively caches in-transit data in RAM, improperly
-designed programs (those that don't take proper precautions when writing files
-to disk and there are quite a few of them) can lose a good deal of data if the
-system goes down unexpectedly.
+<b>XFS</b> er et filsystem med metadata journaler der er fuld
+understøttet af Gentoo Linuxses xfs-sources kerne. Det kommer med et
+robust sæt af muligheder og er optimeret til skalerbarhed. Vi
+anbefaler kun at bruge dette filsystem til Linux systemer med high-end
+SCSI og/eller fiberkanal lager og en uafbrydbar strømforsyning. Fordi
+XFS aggressivt cachér indkommende data i RAM, kan dårligt designede
+programmer (dem der ikke tager fornuftige forholdregler, når de
+skriver filer til disken og der er faktisk en del af dem) miste en hel
+del data, hvis systemet uventet går ned.
 </p>
 
 <p>
-<b>JFS</b> is IBM's high-performance journaling filesystem. It has recently 
-become production-ready and there hasn't been a sufficient track record to 
-comment positively nor negatively on its general stability at this point.
+<b>JFS</b> er IBM's høj-ydelses filsystem med journal. Det er
+fornyligt blevet klar til produktion og der har ikke være
+tilstrækkelige optegnelser til at kommentere positivt eller negativt
+omkring dets stabilitet pt.
 </p>
 
 </body>
 </subsection>
 <subsection id="filesystems-apply">
-<title>Applying a Filesystem to a Partition</title>
+<title>At anvende et filsystem på en partition</title> 
 <body>
 
 <p>
-To create a filesystem on a partition or volume, there are tools available for 
-each possible filesystem:
+For at lave et filsystem på en partition eller enhed, så er der
+værktøjer til rådighed for hvert filsystem:
 </p>
 
 <table>
 <tr>
-  <th>Filesystem</th>
-  <th>Creation Command</th>
+  <th>Filsystem</th>
+  <th>Kommando til at lave</th>
 </tr>
 <tr>
   <ti>ext2</ti>
@@ -1698,103 +1741,103 @@ each possible filesystem:
 </table>
 
 <p>
-For instance, to have the boot partition (<path>/dev/hda1</path> in our
-example) in ext2 and the root partition (<path>/dev/hda3</path> in our example)
-in ext3 (as in our example), you would use:
+F.eks. for at få boot partitionen (<path>/dev/hda1</path> i vores
+tilfælde) i ext2 og root partitionen (<path>/dev/hda3</path> i vores
+tilfælde) i ext3 (som i vores tilfælde), ville vi bruge:
 </p>
 
-<pre caption="Applying a filesystem on a partition">
+<pre caption="At anvende et filsystem på en partition">
 # <i>mke2fs /dev/hda1</i>
 # <i>mke2fs -j /dev/hda3</i>
 </pre>
 
 <p>
-Now create the filesystems on your newly created partitions (or logical
-volumes).
+Lav nu filsystemerne på dine for nyligt skabte partitioner (eller
+logiske enheder).
 </p>
 
 </body>
 </subsection>
 <subsection>
-<title>Activating the Swap Partition</title>
+<title>At aktivere swap partitionen</title>
 <body>
 
 <p>
-<c>mkswap</c> is the command that is used to initialize swap partitions:
+<c>mkswap</c> er kommandoen der bruges til at initialisere swap partitioner:
 </p>
 
-<pre caption="Creating a Swap signature">
+<pre caption="At lave en swap signatur">
 # <i>mkswap /dev/hda2</i>
 </pre>
 
 <p>
-To activate the swap partition, use <c>swapon</c>:
+For at aktivere swap partitionen, brug <c>swapon</c>:
 </p>
 
-<pre caption="Activating the swap partition">
+<pre caption="At aktivere swap partitionen">
 # <i>swapon /dev/hda2</i>
 </pre>
 
 <p>
-Create and activate the swap now.
+Lav og aktiver swap nu.
 </p>
 
 </body>
 </subsection>
 </section>
 <section>
-<title>Mounting</title>
+<title>At mounte</title>
 <body>
 
 <p>
-Now that your partitions are initialized and are housing a filesystem, it is
-time to mount those partitions. Use the <c>mount</c> command. Don't forget to
-create the necessary mount directories:
+Nu hvor dine partitioner er initialiserede og huser et filsystem, er
+det tid til at mounte disse partitioner. Brug <c>mount</c>
+kommandoen. Glem ikke at lave de nødvendige mount biblioteker:
 </p>
 
-<pre caption="Mounting partitions">
+<pre caption="At mounting partitioner">
 # <i>mount /dev/hda3 /mnt/gentoo</i>
 # <i>mkdir /mnt/gentoo/boot</i>
 # <i>mount /dev/hda1 /mnt/gentoo/boot</i>
 </pre>
 
 <note>
-If you want your <path>/tmp</path> to reside on a separate partition, be sure to
-change its permissions after mounting: <c>chmod 1777 /mnt/gentoo/tmp</c>. This
-also holds for <path>/var/tmp</path>.
+Hvis du vil have din <path>/tmp</path> til at være på en separat
+partition, så vær sikker på at ændre dens rettigheder efter at være
+blevet mountet: <c>chmod 1777 /mnt/gentoo/tmp</c>. Dette gælder også
+for <path>/var/tmp</path>.
 </note>
 
 <p>
-We also need to mount the proc filesystem (a virtual interface with the kernel)
-on <path>/proc</path>. We first create the <path>/mnt/gentoo/proc</path> 
-mountpoint:
+Vi bliver også nødt til at mounte proc filsystemet (en virtuel
+grænseflade til kernen) på <path>/proc</path>. Vi laver først <path>/mnt/gentoo/proc</path> 
+mountpunktet:
 </p>
 
-<pre caption="Creating the /mnt/gentoo/proc mountpoint">
+<pre caption="At lave /mnt/gentoo/proc mountpunktet">
 # <i>mkdir /mnt/gentoo/proc</i>
 </pre>
 
 <p>
-If you are installing Gentoo from a LiveCD, you just need to mount
+Hvis du installerer Gentoo fra en LiveCD, så behøves du bare at mounte
 <path>proc</path>:
 </p>
 
-<pre caption="Mounting proc">
+<pre caption="AT mounte proc">
 # <i>mount -t proc none /mnt/gentoo/proc</i>
 </pre>
 
 <p>
-If you are not installing Gentoo from a Gentoo LiveCD, you need to
-bindmount <path>/proc</path>:
+Hvis du ikke installerer Gentoo fra en Gentoo LiveCD, så bliver du
+nødt til at bind-mounte <path>/proc</path>:
 </p>
 
-<pre caption="Bind-mounting proc">
+<pre caption="At bind-mounte proc">
 # <i>mount -o bind /proc /mnt/gentoo/proc</i>
 </pre>
 
 <p>
-Now continue with <uri link="?part=1&amp;chap=5">Installing the Gentoo
-Installation Files</uri>.
+Fortsæt nu med <uri link="?part=1&amp;chap=5">At installere Gentoo installationsfilerne</uri>.
 </p>
 
 </body>
