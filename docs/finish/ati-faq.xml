@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding="iso-8859-1"?>
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/ati-faq.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/ati-faq.xml,v 1.2 2004/01/22 17:33:09 broeman Exp $ -->
 <guide link="/doc/da/ati-faq.xml">
 <title>ATI FAQ</title>
 <author title="Forfatter"><mail link="lu_zero@gentoo.org">
@@ -172,7 +172,7 @@ direkte at bruge XFree86 auto konfigurationsmuligheden:
 </pre>
 For at få mere information om hvordan man får en basal <c>XF86Config</c> konfigurationsfil,
 Kig venligst i 
-<uri link="http://www.gentoo.org/doc/en/desktop.xml">DesktopOpsætningsvejledningen</uri>.
+<uri link="http://www.gentoo.org/doc/en/desktop.xml">Desktop Opsætningsvejledningen</uri> (engelsk).
 </p>
 <note>
 Brugere af ati-drivers kan også bruge <c>fglrxconfig</c>.
