@@ -1,7 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-system.xml,v 1.1 2004/01/06 22:43:12 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-system.xml,v 1.1 2004/01/06 23:43:22 aaby Exp $ -->
 
 <sections>
 <section>
@@ -33,9 +33,9 @@ skulle fejle, vil standardværdierne være tilstrækkelige.
 <body>
 
 <p>
-Der mangler stadig en ting, før vi skifter til det nye miljø, og det er
-at kopiere DNS informationerne i <path>/etc/resolv.conf</path>.
-Du skal gøre dette for at sikre, at netværket stadig virker, efter
+Der mangler stadig en ting, før vi skifter til det nye miljø, og det
+er at kopiere DNS informationerne i <path>/etc/resolv.conf</path>.  Du
+skal gøre dette for at sikre, at netværket stadig virker, efter
 skiftet til det nye miljø. <path>/etc/resolv.conf</path> indeholder
 navneserverne til dit netværk.
 </p>
@@ -51,10 +51,10 @@ navneserverne til dit netværk.
 <body>
 
 <p>
-Knoppix-brugere (og folk, der installerer Gentoo fra et installationsmedie,
-der ikke bruger DevFS) skal nu bind-mounte <path>/dev</path>
-strukturen.
-Hvis du bruger en af vore LiveCD'er, så kan du springe dette trin over.
+Knoppix-brugere (og folk, der installerer Gentoo fra et
+installationsmedie, der ikke bruger DevFS) skal nu bind-mounte
+<path>/dev</path> strukturen.  Hvis du bruger en af vore LiveCD'er, så
+kan du springe dette trin over.
 </p>
 
 <pre caption="Bind-mounte /dev">
@@ -69,7 +69,7 @@ Hvis du bruger en af vore LiveCD'er, så kan du springe dette trin over.
 <body>
 
 <p>
-Nu, hvor alle partitionerne er iniatiliseret og basismiljøet
+Nu, hvor alle partitionerne er initialiseret og basismiljøet
 installeret, er det tid til at skifte til vores nye installationsmiljø,
 ved at lave et <c>rod skifte</c>. Det betyder at vi skifter fra
 det nuværende installationsmiljø (LiveCD eller andet installationsmedie)
@@ -105,10 +105,10 @@ stadigvæk har nogle sektioner tilbage :-)
 <body>
 
 <p>
-Hvis du <e>ikke</e> bruger GRP, skal du downloade et nyligt snapshot af Portage fra Internettet.
-<c>emerge sync</c> gør dette for dig. GRP-brugere bør springe dette
-over og fortsætte med <uri link="#doc_chap1_sect6">Opsætning af
-USE-variabler</uri>.
+Hvis du <e>ikke</e> bruger GRP, skal du downloade et nyligt snapshot
+af Portage fra Internettet. <c>emerge sync</c> gør dette for
+dig. GRP-brugere bør springe dette over og fortsætte med <uri
+link="#doc_chap1_sect6">Opsætning af USE-variabler</uri>.
 </p>
 
 <pre caption="Opdatering af Portage">
@@ -128,18 +128,18 @@ bliver opdateret for dig senere under installationen.
 <body>
 
 <p>
-<c>USE</c> er en af de mest kraftfulde variabler, som Gentoo udbyder til
-dens brugere. Mange programmer kam kompileres med eller uden valgfri
-support af bestemte ting. For eksempel, kan nogle programmer
-kompileres med gtk-support, eller med qt-support. Andre kan
-kompileres med eller uden SSL support. Nogle programmer kan endda
-kompileres med framebuffer support (svgalib) i stedet for X11 support
-(X-server).
+<c>USE</c> er en af de mest kraftfulde variabler, som Gentoo udbyder
+til dens brugere. Mange programmer kam kompileres med eller uden
+valgfri understøttelse af bestemte ting. For eksempel, kan nogle programmer
+kompileres med gtk understøttelse, eller med qt understøttelse. Andre
+kan kompileres med eller uden SSL understøttelse. Nogle programmer kan
+endda kompileres med framebuffer understøttelse (svgalib) i stedet for X11
+understøttelse (X-server).
 </p>
 
 <p>
-De fleste distributioner kompilerer deres pakker med support for så
-meget som mulligt, hvilket forøger størelsen og starttiden på
+De fleste distributioner kompilerer deres pakker med understøttelse for så
+meget som muligt, hvilket forøger størrelsen og starttiden på
 programmerne, for ikke at tale om de enorme mængder af afhængigheder.
 Med Gentoo kan du selv definere hvilke muligheder dine pakker skal
 kompileres med. Det er her <c>USE</c> kommer ind i spillet.
@@ -148,10 +148,10 @@ kompileres med. Det er her <c>USE</c> kommer ind i spillet.
 <p>
 I <c>USE</c>-variablen, definerer du nøgleord, som bliver lagt oven på
 kompileringsparametrene. For eksempel vil <e>ssl</e> kompilere
-ssl-support ind i de programmer, der understøtter det. <e>-X</e> vil
-fjerne X-server support (bemærk minus-tegnet forrest).<e>gnome gtk
--kde -qt</e> vil kompilere dine programmer med gnome (og gtk) support,
-men ikke med kde (og qt) support, hvilket gør dit system fuldt ud
+ssl understøttelse ind i de programmer, der understøtter det. <e>-X</e> vil
+fjerne understøttelse af X-server (bemærk minus-tegnet forrest).<e>gnome gtk
+-kde -qt</e> vil kompilere dine programmer med gnome (og gtk) understøttelse,
+men ikke med kde (og qt) understøttelse, hvilket gør dit system fuldt ud
 fin-indstillet til GNOME.
 </p>
 
@@ -171,9 +171,8 @@ du opdaterer Portage!
 <p>
 En fuld beskrivelse af <c>USE</c> kan findes i den anden halvdel af
 Gentoo-håndbogen, <uri link="?part=2&amp;chap=1">Kapitel 1: USE
-flag</uri>.
-Som et eksempel viser vi en <c>USE</c> indstilling til et KDE baseret
-system med DVD, ALSA og CD Brændings understøttelse:
+flag</uri>.  Som et eksempel viser vi en <c>USE</c> indstilling til et
+KDE baseret system med DVD, ALSA og brænding af CD-ROM understøttelse:
 </p>
 
 <pre caption="Åbning af /etc/make.conf">
@@ -187,7 +186,7 @@ USE="-gtk -gnome qt kde dvd alsa cdr"
 </body>
 </subsection>
 <subsection>
-<title>Valgfrit: Brug af Distribueret Kompilering</title>
+<title>Valgfrit: Brug af distribueret kompilering</title>
 <body>
 
 <p>
@@ -244,11 +243,11 @@ Så du vil kompilere alting fra bunden? jamen okay så :-)
 <p>
 I dette trin vil vi <e>bootstrappe</e> dit Gentoo system.
 Dette tager lang tid, men resultatet er et system, som er blevet
-optimeret fra bunden og op, til din spefikke maskine og dine behov.
+optimeret, fra bunden og op, til din specifikke maskine og dine behov.
 </p>
 
 <p>
-At <e>bootstrappe</e> betyder at man bygger GNU C bibliotektet, GNU
+At <e>bootstrappe</e> betyder at man bygger GNU C biblioteket, GNU
 Compiler Collection og flere andre nøgle-systemprogrammer. GNU
 Compiler Collectionen skal enddag bygges to gange: Først med den
 generelle kompiler, som vi udbyder, og en anden gang med den kompiler,
@@ -265,21 +264,21 @@ bootstrappe systemet</uri>.
 </body>
 </subsection>
 <subsection>
-<title>Valgfrit: Formindsk compile tiden</title>
+<title>Valgfrit: Formindsk kompileringstiden</title>
 <body>
 
 <p>
 Hvis du vil øge hastigheden af bootstrap processen, kan du
-midlertidigt fjerne java support. Dette betyder at GNU Compiler
-Collectionen og GNU C biblioteket vil blive compilet uden java support
-(Dette formindsker compile tiden væsentligt). Selvom det betyder at du
+midlertidigt fjerne java understøttelse. Dette betyder at GNU Compiler
+Collectionen og GNU C biblioteket vil blive kompileret uden java understøttelse
+(Dette formindsker kompileringstiden væsentligt). Selvom det betyder at du
 ikke har GNU Java Compileren (<c>gcj</c>) betyder det <e>ikke</e> at
 dit system ikke vil være i stand til at bruge java-applets og andet
 java-relateret materiale.
 </p>
 
 <p>
-For at fravælge java-understøttels midlertidigt, skal du definere
+For at fravælge java-understøttelse midlertidigt, skal du definere
 <e>USE="-java"</e> før du kører bootstrap scriptet.
 </p>
 
@@ -312,7 +311,7 @@ fetch) parameteren på bootstrap-scriptet,
 det vil resultere i at den henter alt kildekoden for dig.
 </p>
 
-<pre caption = "Download af den nødvendige kildekode">
+<pre caption = "Download den nødvendige kildekode">
 # <i>cd /usr/portage</i>
 # <i>scripts/bootstrap.sh -f</i>
 </pre>
@@ -360,17 +359,15 @@ Forsæt nu med det næste trin, <uri link="#doc_chap4">Fra Stage2 til Stage3</uri>
 <p>
 Hvis du læser denne sektion, så har du et bootstrappet system (enten
 fordi du selv har bootstrappet tidligere, eller fordi du bruger en
-<e>stage2</e>).
-Du skal nu til at bygge alle systempakkerne.
+<e>stage2</e>). Du skal nu til at bygge alle systempakkerne.
 </p>
 
 <p>
-<e>Alle</e> systempakkerne? Nej ikke rigtigt.
-I dette trin bygger du de system pakker, hvor der ikke er nogle
-alternativer til, og som skal bruges til et virkende system.
-Nogle system pakker har flere alternative (så som system loggere) og
-eftersom Gentoo, handler om valg, så vil vi ikke tvinge en type ned
-over hovedet på dig.
+<e>Alle</e> systempakkerne? Nej ikke rigtigt. I dette trin bygger du
+de system pakker, hvor der ikke er nogle alternativer til, og som skal
+bruges til et virkende system. Nogle system pakker har flere
+alternativer (så som system loggere) og eftersom Gentoo, handler om
+valg, så vil vi ikke tvinge en type ned over hovedet på dig.
 </p>
 
 </body>
@@ -384,7 +381,7 @@ Hvis du vil vide hvilke pakker, der vil blive installeret, så kan du køre
 <c>emerge --pretend system</c>. 
 Dette vil vise en liste med alle pakker der vil blive kompileret.
 Eftersom den liste er rimelig stor skal du nok bruge en pager som
-f.eks. <c>less</c> eller <c>more</c> til at gå op og ned genne listen.
+f.eks. <c>less</c> eller <c>more</c> til at gå op og ned gennem listen.
 </p>
 
 <pre caption = "Vis hvad 'emerge system' vil gøre">
@@ -416,9 +413,8 @@ parametren til <c>emerge</c>, som vil hente alt kildekode for dig.
 
 <p>
 For at starte opbygningsprocessen af system, skal du køre <c>emerge
-syste</c>.
-Dette trin tager forholdsvis lang tid at færdiggøre så find på noget
-andet at lave end at stirre ind i skærmen.
+system</c>. Dette trin tager forholdsvis lang tid at færdiggøre så find
+på noget andet at lave end at stirre ind i skærmen.
 </p>
 
 <pre caption = "Opbygning af systemet">
