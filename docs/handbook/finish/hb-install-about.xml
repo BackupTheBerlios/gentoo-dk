@@ -1,6 +1,6 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-install-about.xml,v 1.1 2004/01/02 12:59:36 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.1 2004/01/02 14:35:28 aaby Exp $ -->
 <sections>
 <section>
 <title>Introduktion</title>
@@ -11,20 +11,20 @@
 <p>
 Til at starte med, <e>velkommen</e> til Gentoo. Du går nu ind i en
 verden af valg og ydelse. Gentoo handler om valg. Når du installerer
-Gentoo vil du se dette flere gange -- du kan vælge hvor meget du selv vil
-kompilere, hvordan du vil installer Gentoo, hvilken system logger
+Gentoo vil du se dette flere gange -- du kan vælge hvor meget du selv
+vil kompilere, hvordan du vil installer Gentoo, hvilken system logger
 du vil have, osv.
 </p>
 
 <p>
-Gentoo er en hurtig, moderne metadistibution med et rent og
-fleksibelt design. Gentoo er bygget op omkring frit software og
-skjuler ikke hvad der ligger under motorhjelmen for sine
-brugere. Portage, pakke-vedligeholdelse-systemet, er skrevet i Python
-hvilket betyder at du nemt kan se og ændre i kildekoden. Gentoos pakkesystem
-benytter kildekode (selvom der også er understøttelse af
-præ-kompilerede pakker) og konfigurering af Gentoo sker gennem normale
-tekstfiler. Med andre ord, åbent overalt.
+Gentoo er en hurtig, moderne metadistibution med et rent og fleksibelt
+design. Gentoo er bygget op omkring frit software og skjuler ikke hvad
+der ligger under motorhjelmen for sine brugere. Portage,
+pakke-vedligeholdelse-systemet, er skrevet i Python hvilket betyder at
+du nemt kan se og ændre i kildekoden. Gentoos pakkesystem benytter
+kildekode (selvom der også er understøttelse af præ-kompilerede
+pakker) og konfigurering af Gentoo sker gennem normale tekstfiler. Med
+andre ord, åbent overalt.
 </p>
 
 <p>
@@ -79,10 +79,10 @@ kapitel 2 - 11. Hvert trin vil resultere i en ny tilstand.
 </ul>
 
 <p>
-Når du er stillet overfor et valg, vil vi gøre vores bedste for at forklare
-hvilke fordele og ulemper, der er. Vi vil så fortsætte med standard
-valget, mærket med "Standard:" i titlen. De andre muligheder er
-mærket med "Alternativt:". Tro <e>ikke</e> at standard er hvad vi
+Når du er stillet overfor et valg, vil vi gøre vores bedste for at
+forklare hvilke fordele og ulemper, der er. Vi vil så fortsætte med
+standard valget, mærket med "Standard:" i titlen. De andre muligheder
+er mærket med "Alternativt:". Tro <e>ikke</e> at standard er hvad vi
 anbefaler. Det er derimod det vi tror at flest vil bruge.
 </p>
 
@@ -101,8 +101,8 @@ og lige før det valgfrie trin er beskrevet.
 <body>
 
 <p>
-Hvis du finder problemer i installationen (eller i installationsdokumentationen)
-så besøg venligst vores <uri
+Hvis du finder problemer i installationen (eller i
+installationsdokumentationen) så besøg venligst vores <uri
 link="http://bugs.gentoo.org">fejlopfølgningssystem</uri> og se om
 fejlen er kendt. Hvis dette ikke er tilfældet så opret venligst en
 fejlrapport så vi kan se på det. Vær ikke bange for de udviklere, der
