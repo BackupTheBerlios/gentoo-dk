@@ -6,7 +6,7 @@
 import time
 import sys
 
-version = '0.3.6.5'
+version = '0.3.6.6'
 
 class Output:
     """ class that handles all io """
@@ -233,6 +233,8 @@ class Output:
         f('<p>\n')
 
         f('The most active day was: <b>' + dataobject.maxdate[0] + '</b> with: <b>' + str(dataobject.maxdate[1]) + '</b> commits.\n')
+        #f('The most active comitter was: <b>' + dataobject.maxcommits[0] + '</b> with: <b>'
+         # + dataobject.maxcommits[1] + '</b> on the: <b>' + dataobject.maxcommits[2] + '</b>\n')
         f('</p>\n\n')
         f('</body>\n')        
         f('</chapter>\n\n')
@@ -398,7 +400,7 @@ class DataFile:
     """ the main class that is manipulated with.
         Holds all the information that the html file should contain at the end """
 
-    def getMaxDate(commits): # [date, nrCommits, nick, nrCommits]
+    def getMaxDate(commits): 
         activedate = [commits[0][18:-1], 0]
         maxdate = ["", 0]
         for string in commits:
@@ -435,6 +437,7 @@ class DataFile:
         fmt = '%a, %d %b %Y %H:%M:%S GMT'
         str = time.strftime(fmt, gmt)
         return str
+    
     def getCommits():
         lf = LogFile()
         cf = ConfFile()
@@ -613,7 +616,6 @@ class DataFile:
                 print error
         return [interval00_04, interval05_09, interval10_14, interval15_19, interval20_23, len(temp)]
 
-    
     backgroundcolor = 'white'
     title = getTitle()
     channelname = getChannelName()
@@ -625,6 +627,7 @@ class DataFile:
     usage = getUsage(commits)
     chatting = getChatting()
     maxdate = getMaxDate(commits)
+    maxcommits = ["Aaby", "25", "2nd feb 2004"] #getMaxCommits(commits)
 
 def __main__():
     op = Output()
