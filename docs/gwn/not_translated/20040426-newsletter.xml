@@ -4,7 +4,7 @@
 <guide type="newsletter">
 <title>Gentoos ugentlige nyhedsbrev</title>
 <subtitle>26. April 2004</subtitle>
-<author title="Redaktør">
+<author title="Redaktør">
     <mail link="carlos@gentoo.org">Yuji Carlos Kosugi</mail>
 </author>
 <author title="Bidragsyder">
@@ -40,205 +40,207 @@
 <author title="Bidragsyder">
     <mail link="plate@gentoo.org">Ulrich Plate</mail>
 </author>
-<author title="Dansk oversættelse">
+<author title="Dansk oversættelse">
 		<mail link="simon@lysbro.net">Simon Holm Thøgersen</mail>
 </author>
-<author title="Dansk oversættelse">
+<author title="Dansk oversættelse">
 		<mail link="broeman@gentoo.org">Jesper Brodersen</mail>
 </author>
-<author title="Dansk oversættelse">
+<author title="Dansk oversættelse">
 		<mail link="aaby@gentoo.org">Arne Mejlholm</mail>
 </author>
-<author title="Dansk oversættelse">
+<author title="Dansk oversættelse">
 		<mail link="thewizard@gentoo.dk">Esben Bach</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="Hendrik.Eeckhaut@UGent.be">Hendrik Eeckhaut</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="sephiroth@quicknet.nl">Jorn Eilander</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="bernieke@bernieke.com">Bernard Kerckenaere</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="peter@daborg.nl">Peter ter Borg</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="linux@sejo.be">Jochen Maes</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="rgoessen@home.nl">Roderick Goessen</mail>
 </author>
-<author title="Hollandsk oversættelse">
+<author title="Hollandsk oversættelse">
         <mail link="gerard@steelo.net">Gerard van den Berg</mail>
 </author>
-<author title="Fransk oversættelse">
+<author title="Fransk oversættelse">
     <mail link="mat@frheaven.com">Matthieu Montaudouin</mail>
 </author>
-<author title="Fransk oversættelse">
+<author title="Fransk oversættelse">
     <mail link="neysx@gentoo.org">Xavier Neys</mail> 
 </author>
-<author title="Fransk oversættelse">
+<author title="Fransk oversættelse">
     <mail link="riverdale@linuxmail.org">Martin Prieto</mail>
 </author>
-<author title="Fransk oversættelse">
+<author title="Fransk oversættelse">
     <mail link="cabec2@pegase.net">Antoine Raillon</mail>
 </author>
-<author title="Fransk oversættelse">
+<author title="Fransk oversættelse">
     <mail link="seb@cine7.net">Sebastien Cevey</mail>
 </author>
-<author title="Fransk oversættelse">
+<author title="Fransk oversættelse">
     <mail link="mabouya@petitefleure.org">Jean-Christophe Choisy</mail>
 </author>
-<author title="Tysk oversættelse"><mail link="lordvan@gentoo.org">Thomas Raschbacher</mail></author>
-<author title="Tysk oversættelse"><mail link="madeagle@gentoo.org">Steffen Lassahn</mail></author>
-<author title="Tysk oversættelse"><mail link="haim@gentoo.org">Matthias F. Brandstetter</mail></author>
-<author title="Tysk oversættelse"><mail link="Cyrik@gentoo.org">Lukas Domagala</mail></author>
-<author title="Tysk oversættelse"><mail link="dertobi123@gentoo.org">Tobias Scherbaum</mail></author>
-<author title="Tysk oversættelse"><mail link="Sputnik1969@gentoo.org">Daniel Gerholdt</mail></author>
-<author title="Tysk oversættelse"><mail link="dj-submerge@gentoo.org">Marc Herren</mail></author>
-<author title="Tysk oversættelse"><mail link="SirSeoman@gentoo.org">Tobias Matzat</mail></author>
-<author title="Italiensk oversættelse">
+<author title="Tysk oversættelse"><mail link="lordvan@gentoo.org">Thomas Raschbacher</mail></author>
+<author title="Tysk oversættelse"><mail link="madeagle@gentoo.org">Steffen Lassahn</mail></author>
+<author title="Tysk oversættelse"><mail link="haim@gentoo.org">Matthias F. Brandstetter</mail></author>
+<author title="Tysk oversættelse"><mail link="Cyrik@gentoo.org">Lukas Domagala</mail></author>
+<author title="Tysk oversættelse"><mail link="dertobi123@gentoo.org">Tobias Scherbaum</mail></author>
+<author title="Tysk oversættelse"><mail link="Sputnik1969@gentoo.org">Daniel Gerholdt</mail></author>
+<author title="Tysk oversættelse"><mail link="dj-submerge@gentoo.org">Marc Herren</mail></author>
+<author title="Tysk oversættelse"><mail link="SirSeoman@gentoo.org">Tobias Matzat</mail></author>
+<author title="Italiensk oversættelse">
 	<mail link="mush@monrif.net">Marco Mascherpa</mail>
 </author>
-<author title="Italiensk oversættelse">
+<author title="Italiensk oversættelse">
 	<mail link="paper@tiscali.it">Claudio Merloni</mail>
 </author>
-<author title="Italiensk oversættelse">
+<author title="Italiensk oversættelse">
 	<mail link="bsolar@bluewin.ch">Christian Apolloni</mail>
 </author>
-<author title="Italiensk oversættelse">
+<author title="Italiensk oversættelse">
 	<mail link="stefano.lucidi@gentoo-italia.org">Stefano Lucidi</mail>
 </author>
-<author title="Japansk oversættelse">
+<author title="Japansk oversættelse">
 	<mail link="katuyuki@siva.ddo.jp">Katuyuki Konno</mail>
 </author>
-<author title="Japansk oversættelse">
+<author title="Japansk oversættelse">
 	<mail link="hiro@extreme.jspeed.jp">Hiroyuki Takeda</mail>
 </author>
-<author title="Japansk oversættelse">
+<author title="Japansk oversættelse">
 	<mail link="hatake@mx2.ttcn.ne.jp">Masato Hatakeyama</mail>
 </author>
-<author title="Japansk oversættelse">
+<author title="Japansk oversættelse">
 	<mail link="masayang@masasushi.com">Masayoshi Nakamura</mail>
 </author>
-<author title="Japansk oversættelse">
+<author title="Japansk oversættelse">
 	<mail link="yasunori@mail.portland.co.uk">Yasunori Fukudome</mail>
 </author>
-<author title="Japansk oversættelse">
+<author title="Japansk oversættelse">
 	<mail link="web-gentoo-doc-jp@trombik.mine.nu">Tomoyuki Sakurai</mail>
 </author>
-<author title="Polsk oversættelse">
+<author title="Polsk oversættelse">
     <mail link="lucass@gentoo.pl">Lukasz Strzygowski</mail>
 </author>
-<author title="Polsk oversættelse">
+<author title="Polsk oversættelse">
     <mail link="gooroo@gentoo.pl">Karol Goralski</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="bohlke@inf.ufrgs.br">Atila "Jedi" Bohlke Vasconcelos</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="dudu@datavibe.net">Eduardo Belloti</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="joaoraf@rudah.com.br">Jo&#227;o Rafael Moraes Nicola</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="mgazambuja@terra.com.br">Marcelo Gon&#231;alves de Azambuja</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="angusy@gentoobr.org">Otavio Rodolfo Piske</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="natunobilis@gentoobr.org">Pablo N. Hess -- NatuNobilis</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="pzilla@yawl.com.br">Pedro de Medeiros</mail>
 </author>
-<author title="Portugisisk (Brazilien) oversættelse">
+<author title="Portugisisk (Brazilien) oversættelse">
 	<mail link="venturasbarbeiro@ig.com.br">Ventura Barbeiro</mail>
 </author>
-<author title="Portugisisk (Portugal) oversættelse">
+<author title="Portugisisk (Portugal) oversættelse">
 <mail link="blueroom@digitalmente.net">Bruno Ferreira</mail>
 </author>
-<author title="Portugisisk (Portugal) oversættelse">
+<author title="Portugisisk (Portugal) oversættelse">
 	<mail link="humpback@felisberto.net">Gustavo Felisberto</mail>
 </author>
-<author title="Portugisisk (Portugal) oversættelse">
+<author title="Portugisisk (Portugal) oversættelse">
 	<mail link="jose_costa@netcabo.pt">Jos&#233; Costa</mail>
 </author>
-<author title="Portugisisk (Portugal) oversættelse">
+<author title="Portugisisk (Portugal) oversættelse">
 	<mail link="metalgodin@linuxmail.org">Luis Medina</mail>
 </author>
-<author title="Portugisisk (Portugal) oversættelse">
+<author title="Portugisisk (Portugal) oversættelse">
 	<mail link="rjlouro@rjlouro.org">Ricardo Loureiro</mail>
 </author>
-<author title="Russisk oversætter">
+<author title="Russisk oversætter">
        <mail link="amncorp@bk.ru">Aleksandr Martyncev</mail>
 </author>
-<author title="Russisk oversætter">
+<author title="Russisk oversætter">
        <mail link="gals_home@list.ru">Sergey Galkin</mail>
 </author>
-<author title="Russisk oversætter">
+<author title="Russisk oversætter">
        <mail link="svyatogor@gentoo.org">Sergey Kuleshov</mail>
 </author>
-<author title="Russisk oversætter">
+<author title="Russisk oversætter">
        <mail link="asp13@mail.ru">Alex Spirin</mail>
 </author>
-<author title="Russisk oversætter">
+<author title="Russisk oversætter">
        <mail link="dzaletov@rambler.ru">Denis Zaletov</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="lanark@lanark.com.ar">Lanark</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="ferdy@ferdyx.org">Fernando J. Pereda</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="lpeinado@uoc.edu">Lluis Peinado Cifuentes</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="ZEPHRYNXIRDAL@telefonica.net">Zephryn Xirdal T</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="katossi@usuarios.retecal.es">Guillermo Juarez</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="correo@sevein.com">Jes&#250;s Garc&#237;a Crespo</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="carlos@castillobueno.com">Carlos Castillo</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="julio@castillobueno.com">Julio Castillo</mail>
 </author>
-<author title="Spansk oversættelse">
+<author title="Spansk oversættelse">
      <mail link="s3r@fibertel.com.ar">Sergio G&#243;mez</mail>
 </author>
-<author title="Tyrkisk oversættelse">
+<author title="Tyrkisk oversættelse">
         <mail link="aycan@core.gen.tr">Aycan Irican</mail>
 </author>
-<author title="Tyrkisk oversættelse">
+<author title="Tyrkisk oversættelse">
         <mail link="bugra@myrealbox.com">Bugra Cakir</mail>
 </author>
-<author title="Tyrkisk oversættelse">
+<author title="Tyrkisk oversættelse">
         <mail link="cagils@biznet.com.tr">Cagil Seker</mail>
 </author>
-<author title="Tyrkisk oversættelse">
+<author title="Tyrkisk oversættelse">
         <mail link="emre@core.gen.tr">Emre Kazdagli</mail>
 </author>
-<author title="Tyrkisk oversættelse">
+<author title="Tyrkisk oversættelse">
         <mail link="evrim@core.gen.tr">Evrim Ulu</mail>
 </author>
-<author title="Tyrkisk oversættelse">
+<author title="Tyrkisk oversættelse">
         <mail link="gurcell@core.gen.tr">Gursel Kaynak</mail>
 </author>
 <abstract>Dette er Gentoos ugentlige nyhedsbrev for ugen af 26. april 2004.</abstract>
 
-<summary>Ny apache vedligeholder og offentlig mailliste.  Gentoo Linux søger en ny squid vedligeholder.
-</summary>
-<version>3. årgang, Nummer 17</version>
+<summary>
+Ny apache vedligeholder og offentlig mailliste.  Gentoo Linux søger
+en ny squid vedligeholder.  
+</summary> 
+<version>3. årgang, Nummer 17</version> 
 <date>26. April 2004</date>
 
 <chapter>
@@ -485,11 +487,11 @@ for future activities. Looking forward to their announcements.
 </chapter>
 
 <chapter>
-<title>Flytninger, tilføjelser og ændringer</title>
+<title>Flytninger, tilføjelser og ændringer</title>
 	<section>
 		<title>Flytninger</title>
 		<body>
-		<p>De følgende udviklere forlod for nyligt Gentoo holdet:
+		<p>De følgende udviklere forlod for nyligt Gentoo holdet:
 			<ul>
 				<li>Donny Davies (woodchip) - Apache and system components</li>
 			</ul>
@@ -497,18 +499,18 @@ for future activities. Looking forward to their announcements.
 		</body>
 	</section>
 	<section>
-		<title>Tilføjelser</title>
+		<title>Tilføjelser</title>
 		<body>
-		<p>De følgende udviklere slog sig sammen med Gentoo Linux holdet:</p>
+		<p>De følgende udviklere slog sig sammen med Gentoo Linux holdet:</p>
 		<ul>
 				<li><e>ingen i denne uge</e></li>
 		</ul>
 		</body>
 	</section>
 	<section>
-		<title>Ændringer</title>
+		<title>Ændringer</title>
 		<body>
-		<p>De følgende udviklere ændrede for nyligt deres
+		<p>De følgende udviklere ændrede for nyligt deres
 			roller indenfor Gentoo Linux projektet:</p>
 			<ul>
 				<li><e>ingen i denne uge</e></li>
@@ -531,8 +533,8 @@ for future activities. Looking forward to their announcements.
 	<section>
 	<body>
 	<p>Send venligst din feedback til <mail
-	link="aaby@gentoo.org">Arne Mejlholm</mail> og hjælp os med at
-	gøre GWN bedre.</p>
+	link="aaby@gentoo.org">Arne Mejlholm</mail> og hjælp os med at
+	gøre GWN bedre.</p>
 	</body>
 	</section>
 </chapter>
@@ -540,11 +542,11 @@ for future activities. Looking forward to their announcements.
 	<title>GWN Subscription Information</title>
 	<section>
 	<body>
-	<p>For at abonnere på Gentoos ugentlige nyhedsbrev, send da
+	<p>For at abonnere på Gentoos ugentlige nyhedsbrev, send da
 	venligst en blank email til <mail
 	link="gentoo-gwn-subscribe@gentoo.org">gentoo-gwn-subscribe@gentoo.org</mail>(dette
-	er dog på engelsk).</p>
-	<p>For at afskrive abonnement på Gentoos ugentlige
+	er dog på engelsk).</p>
+	<p>For at afskrive abonnement på Gentoos ugentlige
 	nyhedsbrev, send da en blank email til <mail
 	link="gentoo-gwn-unsubscribe@gentoo.org">gentoo-gwn-unsubscribe@gentoo.org</mail>
 	fra den email addresse du abonnerer fra.</p>
@@ -555,8 +557,8 @@ for future activities. Looking forward to their announcements.
 	<title>Andre sprog</title>
 	<section>
 	<body>
-	<p>Gentoos ugentlige nyhedbrev er også tilgængeligt på de
-	følgende sprog:</p>
+	<p>Gentoos ugentlige nyhedbrev er også tilgængeligt på de
+	følgende sprog:</p>
 	<ul>
 		<li><uri link="http://www.gentoo.org/news/da/gwn/gwn.xml">Dansk</uri></li>
 		<li><uri link="http://www.gentoo.org/news/en/gwn/gwn.xml">Engelsk</uri></li>
