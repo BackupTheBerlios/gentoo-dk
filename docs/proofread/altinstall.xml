@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="utf-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/altinstall.xml,v 1.3 2004/10/30 11:34:21 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/altinstall.xml,v 1.4 2004/11/13 12:47:44 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/en/altinstall.xml">
@@ -42,7 +42,7 @@ Ken Nowack <!-- antifa@gentoo.org seems out -->
  <author title="Redaktør">
   <mail link="bennyc@gentoo.org">Benny Chuang</mail>
 </author>
-<author title="Oversættelse">
+<author title="Oversættelse, Korrektur">
   <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
 </author>
 <author title="Korrektur">
@@ -662,9 +662,9 @@ samme job. Det er op til læseren at finde dem.
 Slå op på siden, og se efter hvilket filsystem du ønsker at ændre, og se om 
 parted kan gøre det. Hvis ikke, er du uheldig og skal fjerne nogle partitioner
 for at gøre plads til Gentoo, og geninstallere tilbage. Bare start med at hente
-softwareen og installer det. Her har vi et problem. Vi ønsker at ændre størrelsen på vores Linux
+softwaren og installer det. Her har vi et problem. Vi ønsker at ændre størrelsen på vores Linux
 rod-partition, og derfor skal vi starte op fra en diskette med et minimalt linux system
-og bruge præ-kompileret parted kopieret til en diskette for at kunne ændre størrelsen på
+og bruge præ-samlet parted kopieret til en diskette for at kunne ændre størrelsen på
 <path>/</path>.  Dog, hvis du kan unmounte partitionen, imens du stadigvæk er
 i Linux, er du heldig, og du behøver ikke at gøre som følgende. Bare samle parted
 og køre den på en umountet partition, som du ønsker at ændre størrelsen på.
