@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/altinstall.xml,v 1.2 2004/06/10 19:48:25 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/not_translated/Attic/altinstall.xml,v 1.3 2004/06/25 10:37:39 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 	  
 
@@ -24,8 +24,8 @@ or a computer that can't boot cds.
 
 <license/>
 
-<version>0.40</version>
-<date>Apr 25, 2004</date>
+<version>0.42</version>
+<date>June 24, 2004</date>
 
 <chapter>
 <title>About this document</title>
@@ -141,7 +141,7 @@ up and  <mail link="antifa@gentoo.org">send it to me.</mail></p>
 
 <p>Get the latest portage snapshot from <uri>http://distro.ibiblio.org/pub/linux/distributions/gentoo/snapshots/</uri> (or your favorite <uri link="http://www.gentoo.org/main/en/mirrors.xml">mirror</uri>). Either place this tarball on an existing partition on the computer your are installing to, or burn it to a CD.</p>
 
-<p>Follow all instructions of Gentoo Install Doc up to <c>chroot /mnt/gentoo</c> in Step 8. If you only have one CD-ROM remember to use the <c>cdcache</c> option while booting so you can unmount the LiveCD and mount your portage snapshot CD.</p>
+<p>Follow all instructions of the Gentoo Installation Handbook up to <c>chroot /mnt/gentoo</c> in Chapter 6. If you only have one CD-ROM remember to use the <c>cdcache</c> option while booting so you can unmount the LiveCD and mount your portage snapshot CD.</p>
 
 <p>Open a new console (Alt-F2), we will continue with the Install Doc up to running the bootstrap.sh script.</p>
 
@@ -506,7 +506,7 @@ your case to see that it is really working. This should take between 2 and 30
 minutes. </impo>
 
 <p>Once you have resized, boot back into your old linux as described. Then go to
-<uri link="/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=5">The Gentoo Handbook: Installing the Gentoo Installation Files</uri> and follow the instructions. When chrooting, use the following command to flush your environment:
+<uri link="/doc/en/handbook/handbook-x86.xml?part=1&amp;chap=4">The Gentoo Handbook: Preparing the Disks</uri> and follow the instructions. When chrooting, use the following command to flush your environment:
 </p>
 
 <pre caption = "Flushing the environment during chroot">
