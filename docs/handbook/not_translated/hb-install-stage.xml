@@ -1,7 +1,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-stage.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/not_translated/Attic/hb-install-stage.xml,v 1.2 2004/01/08 21:44:14 broeman Exp $ -->
 
 <sections>
 <section>
@@ -30,7 +30,7 @@ LiveCDs have these stages available on the CD.
 <p>
 If you have a working Internet connection, you are advised to use the default
 option. If however you do not have a working Internet connection, or you want to
-install Gentoo using GRP (precompiled packages), then you have to choose for the
+install Gentoo using GRP (precompiled packages), then you have to choose the
 alternative option.
 </p>
 
@@ -63,7 +63,7 @@ surf to <uri link="/main/en/mirrors.xml">the Gentoo
 mirrorlist</uri> and choose a mirror close to you. Then pick the
 <path>releases/</path> directory, followed by your architecture (for instance
 <path>x86/</path> and the Gentoo version (<path>1.4/</path>) to finish up with
-the <path>stages/</path> directory. For there on you should see all available
+the <path>stages/</path> directory. There you should see all available
 stage files for your architecture. Select one and press <c>D</c> to download.
 When you're finished, press <c>Q</c> to quit the browser.
 </p>
@@ -196,7 +196,8 @@ You also need to copy over all source code from the CD.
 </p>
 
 <pre caption="Copy over source code">
-# <i>cp -R /mnt/cdrom/distfiles /mnt/gentoo/usr/portage/distfiles</i>
+# <i>mkdir /mnt/gentoo/usr/portage/distfiles</i>
+# <i>cp /mnt/cdrom/distfiles/* /mnt/gentoo/usr/portage/distfiles/</i>
 </pre>
 
 <p>
@@ -216,7 +217,8 @@ over all packages onto your filesystem so that Portage can use them.
 </p>
 
 <pre caption="Copy over precompiled packages">
-# <i>cp -a /mnt/cdrom/packages /mnt/gentoo/usr/portage/packages</i>
+# <i>mkdir -p /mnt/gentoo/usr/portage/packages/All</i>
+# <i>cp /mnt/cdrom/packages/All/* /mnt/gentoo/usr/portage/packages/All/</i>
 </pre>
 
 <p>
@@ -240,6 +242,12 @@ you with <path>/etc/make.conf</path>, a configuration file for Portage. It is
 this file we will edit now. 
 </p>
 
+<note>
+A commented listing of all possible variables can be found in
+<path>/mnt/gentoo/etc/make.conf(.example)</path>. For a successful Gentoo 
+installation you'll only need to set the variables which are mentioned beneath.
+</note>
+
 <p>
 Fire up your favorite editor (in this guide we use <c>nano</c>) so we can alter
 the optimization variables we will discuss hereafter.
@@ -250,10 +258,10 @@ the optimization variables we will discuss hereafter.
 </pre>
 
 <p>
-As you probably notice now, the <path>make.conf</path> file is structured in a
-generic way: commented lines start with "#", other lines define variables using
-the <c>VARIABLE="content"</c> syntax. Several of those variables are discussed
-next. 
+As you probably notice now, the <path>make.conf(.example)</path> file is
+structured in a generic way: commented lines start with "#", other lines define
+variables using the <c>VARIABLE="content"</c> syntax. Several of those
+variables are discussed next.
 </p>
 
 </body>
@@ -330,6 +338,16 @@ compile programs for. The possibilities are:
   <ti>pa8000 and above</ti>
   <ti>hppa2.0-unknown-linux-gnu</ti>
 </tr>
+<tr>
+  <ti>mips</ti>
+  <ti></ti>
+  <ti>mips-unknown-linux-gnu</ti>
+</tr>
+<tr>
+  <ti>amd64</ti>
+  <ti></ti>
+  <ti>x86_64-pc-linux-gnu</ti>
+</tr>
 </table>
 
 </body>
@@ -400,108 +418,6 @@ several optimization flags, like in the following example:
 CFLAGS="-march=athlon-xp -pipe -O2"
 CXXFLAGS="${CFLAGS}"                  <comment># Use the same settings for both variables</comment>
 </pre>
-
-</body>
-</subsection>
-<subsection>
-<title>USE</title>
-<body>
-
-<p>
-<c>USE</c> is one of the most powerful variables Gentoo provides to its users.
-Several programs can be compiled with or without optional support for certain
-items. For instance, some programs can be compiled with gtk-support, or with
-qt-support. Others can be compiled with or without SSL support. Some programs
-can even be compiled with framebuffer support (svgalib) instead of X11 support
-(X-server).
-</p>
-
-<p>
-Most distributions compile their packages with support for as much as possible,
-increasing the size of the programs and startup time, not to mention an enormous
-amount of dependencies. With Gentoo you can define with what options a package 
-should be compiled with. This is where <c>USE</c> comes into play.
-</p>
-
-<p>
-In the <c>USE</c> variable you define keywords which are mapped onto
-compile-options. For instance, <e>ssl</e> will compile ssl-support in the
-programs that support it. <e>-X</e> will remove X-server support (note the minus
-sign in front). <e>gnome gtk -kde -qt</e> will compile your programs with gnome
-(and gtk) support, and not with kde (and qt) support, making your system fully
-tweaked for GNOME.
-</p>
-
-<p>
-The default <c>USE</c> settings are placed in
-<path>/etc/make.profile/make.defaults</path>. What you place in
-<path>/etc/make.conf</path> is calculated against these defaults settings. If
-you add something to the <c>USE</c> setting, it is added to the default list. If
-you remove something from the <c>USE</c> setting (by placing a minus sign in
-front of it) it is removed from the default list (if it was in the default list
-at all). <e>Never</e> alter anything inside the <path>/etc/make.profile</path>
-directory; it gets overwritten when you update Portage!
-</p>
-
-<p>
-A full description on <c>USE</c> can be found in our <uri
-link="/doc/en/use-howto.xml">USE Howto</uri>. As an example
-we show a <c>USE</c> setting for a KDE-based system with DVD, ALSA and CD
-Recording support:
-</p>
-
-<pre caption="USE setting">
-USE="-gtk -gnome qt kde dvd alsa cdr"
-</pre>
-
-</body>
-</subsection>
-<subsection>
-<title>ACCEPT_KEYWORDS</title>
-<body>
-
-<p>
-Ebuilds (the package format Gentoo uses) are located in one out of three trees.
-The first one is called <e>ARCH</e>, meaning that the ebuild and its
-dependencies are thought to be stable and ready for general acceptance. Most
-people want this. If you want your system to use packages from <e>ARCH</e>, then
-<c>ACCEPT_KEYWORDS</c> should contain your architecture (being <c>x86</c>,
-<c>alpha</c>, <c>ppc</c>, <c>sparc</c> or <c>hppa</c>):
-</p>
-
-<pre caption="Setting ACCEPT_KEYWORDS for the x86 architecture in ARCH">
-ACCEPT_KEYWORDS="x86"
-</pre>
-
-<p>
-When an ebuild enters Portage, is first goes to <e>~ARCH</e>, meaning that the
-ebuild works for the maintainer, but that the
-package needs more testing before it is moved to <e>ARCH</e>. If you want your
-system to use packages from <e>~ARCH</e>, then <c>ACCEPT_KEYWORDS</c> should
-contain your architecture, prefixed by a tilde (<e>~</e>). <e>Don't</e> think
-this is the equivalent of "testing" or "unstable" in other distributions.
-Packages inside <e>~ARCH</e> <e>do</e> occasionally break stuff! Some
-architectures don't even bootstrap succesfully if you use <e>~ARCH</e> (notably
-SPARC).
-</p>
-
-<pre caption="Setting ACCEPT_KEYWORDS for the x86 architecture in ~ARCH">
-ACCEPT_KEYWORDS="~x86"
-</pre>
-
-<p>
-If you want to use packages that are known to break your system, then you have
-dance with the devil and uncomment the packages in
-<path>/usr/portage/profiles/package.mask</path>. However, and this is a big fat
-warning:
-</p>
-
-<warn>
-Fiddling with <path>package.mask</path> is bad for your system, health and sense
-of humor. Do <e>not</e> touch it unless you drive a tank, wear a teflon vest
-24h/7 and love to sit and wait until Gentoo is reinstalled again... and again...
-and again...
-</warn>
 
 </body>
 </subsection>
