@@ -349,15 +349,35 @@ For mere information, se venligst <uri link="http://www.gentoo.org/security/en/g
 <figure link="http://www.gentoo.org/images/gwn/20040419_ramereth.jpg"
 short="Lance Albertson (aka ramereth)" caption="Lance Albertson (aka ramereth)" />
 <p>
-Denne uge præsenterer vi <mail link="ramereth@gentoo.org">Lance Albertson
-</mail> (aka ramereth), som laver generel system administration og overvågning 
-for Gentoo. Dette involverer overvågningsværktøjer til
-<uri link="http://www.gentoo.org/proj/en/infrastructure/index.xml">Infrastruktur-projektet</uri>, som f.eks. <uri link="http://www.nagios.org">Nagios</uri>-severen og implementeringen, Catci graphs, og hvad ellers de kommer frem med. Han hjælper også med generel system administration ved brug af cfengine og andre værktøjer.
-Yderligere hjælper han infrastruktur-teamet med at opsætte nye servere, når det bliver nødvendigt. Han er ved at tage sine første skridt i ebuild-vedligeholdelse ved at hjælpe med <uri link="http://wolk.sourceforge.net/">WOLK Kernen</uri> og forskellige ebuilds, om tilhører til netmon-flokken. Udover alt dette, tager Lance del i Gentoo server-projektet, ved at smide rundt med ideer og forslag til strategier.
+Denne uge præsenterer vi <mail link="ramereth@gentoo.org">Lance
+Albertson </mail> (aka ramereth), som laver generel system
+administration og overvågning for Gentoo. Dette involverer
+overvågningsværktøjer til <uri
+link="http://www.gentoo.org/proj/en/infrastructure/index.xml">Infrastruktur-projektet</uri>,
+som f.eks. <uri link="http://www.nagios.org">Nagios</uri>-severen og
+implementeringen, Catci graphs, og hvad ellers de kommer frem med. Han
+hjælper også med generel system administration ved brug af
+cfengine og andre værktøjer.  Yderligere hjælper han
+infrastruktur-teamet med at opsætte nye servere, når det bliver
+nødvendigt. Han er ved at tage sine første skridt i
+ebuild-vedligeholdelse ved at hjælpe med <uri
+link="http://wolk.sourceforge.net/">WOLK Kernen</uri> og forskellige
+ebuilds, om tilhører til netmon-flokken. Udover alt dette, tager
+Lance del i Gentoo server-projektet, ved at smide rundt med ideer og
+forslag til strategier.
 </p>
 
 <p>
-Lance ser sig selv som ny til Linux, idet hans første seriøse erfaringer med dette OS startede i Januar 2001. Hans første distribution var Mandrake, hvor han udførte en slags "lad os installere alt"-strategi. Han indrømmer dog at han kedede sig med det og skiftede til Debian, som et forslag fra hans chef. Lance kom omkring Gentoo et tidspunkt i 2002, da han så sin ven bygge det på en dual Pentium Pro box. I begyndelsen fandt han ideen "tosset", men seks måneder senere tog han beslutningen for at prøve (det var version 1.2 på det tidspunkt), og som han siger "blev forelsket med det samme".
+Lance ser sig selv som ny til Linux, idet hans første seriøse
+erfaringer med dette OS startede i Januar 2001. Hans første
+distribution var Mandrake, hvor han udførte en slags "lad os
+installere alt"-strategi. Han indrømmer dog at han kedede sig med
+det og skiftede til Debian, som et forslag fra hans chef. Lance kom
+omkring Gentoo et tidspunkt i 2002, da han så sin ven bygge det
+på en dual Pentium Pro box. I begyndelsen fandt han ideen "tosset",
+men seks måneder senere tog han beslutningen for at prøve (det
+var version 1.2 på det tidspunkt), og som han siger "blev forelsket
+med det samme".
 </p>
 
 <p>
@@ -366,7 +386,13 @@ Kurt Lieber</mail> spurgte ham om han ville hjælpe Gentoo med Nagios-implementat
 </p>
 
 <p>
-Han er mest stolt over et projekt han lavede engang i skolen. Det var en irc-lignende server/klient med xml-baserede beskedsformat. Kommandoerne var baseret på IRC-standarden, så én kunne joine en kanal, blive op, kick/ban folk osv. Yderligere brugte han flash-scripts til klienten, som gjorde det endnu mere spændende. Selvom han have få kendte fejl, fik han alligevel et rent 13-tal (Straight 'A').
+Han er mest stolt over et projekt han lavede engang i skolen. Det var
+en irc-lignende server/klient med xml-baserede
+beskedsformat. Kommandoerne var baseret på IRC-standarden, så
+én kunne joine en kanal, blive op, kick/ban folk osv. Yderligere
+brugte han flash-scripts til klienten, som gjorde det endnu mere
+spændende. Selvom han have få kendte fejl, fik han alligevel et
+rent 13-tal (Straight 'A').
 </p>
 
 <p>
@@ -381,11 +407,26 @@ link="http://www.raxnet.net/products/cacti/">cacti</uri> er blandt hans yndlings
 </p>
 
 <p>
-Lance gik i skole på Kansas State University, hvorfra han dimitterede i maj 2003 med en grad i 'Agricultural Technology Management' med en minor i 'Agronomy and Computer Science'. Nu arbejder han for RHS Inc. og arbejder med teknisk dokumentation og IT-sikkerhed. Udover det arbejder han også med fuldtids landbrug sammen med sin familie. Køre semi-truck, combine og forskellige traktorer er også på listen over hans kvalifikationer.
+Lance gik i skole på Kansas State University, hvorfra han
+dimitterede i maj 2003 med en grad i 'Agricultural Technology
+Management' med en minor i 'Agronomy and Computer Science'. Nu
+arbejder han for RHS Inc. og arbejder med teknisk dokumentation og
+IT-sikkerhed. Udover det arbejder han også med fuldtids landbrug
+sammen med sin familie. Køre semi-truck, combine og forskellige
+traktorer er også på listen over hans kvalifikationer.
 </p>
 
 <p>
-Når han ikke arbejder og ikke laver noget med Gentoo, nyder Lance at blæse trumpet i jazz-forsamlinger. Han har været i top big band jazz-forsamlingen ved k-state i flere år og han var i det latin-amerikanse jazz combo. Han kan også lide at spille racquetball, poker og hænge ud med sine venner. Lige nu lever han i sit eget hus i et lille samfund, Hiawatha, som er i nordøst Kansas.  Selvom han betegner sit liv som "tilbagelænet" er det meget let at komme væk fra det, idet Hiawatha kun er to timer væk fra Kansas City. Han tager også dertil meget tid! Hans yndlingsnotat er "Where ever you go, there you are" (Hvor ellers du går, der er du).
+Når han ikke arbejder og ikke laver noget med Gentoo, nyder Lance
+at blæse trumpet i jazz-forsamlinger. Han har været i top big
+band jazz-forsamlingen ved k-state i flere år og han var i det
+latin-amerikanse jazz combo. Han kan også lide at spille
+racquetball, poker og hænge ud med sine venner. Lige nu lever han i
+sit eget hus i et lille samfund, Hiawatha, som er i nordøst Kansas.
+Selvom han betegner sit liv som "tilbagelænet" er det meget let at
+komme væk fra det, idet Hiawatha kun er to timer væk fra Kansas
+City. Han tager også dertil meget tid! Hans yndlingsnotat er "Where
+ever you go, there you are" (Hvor ellers du går, der er du).
 </p>
 
 <p>
@@ -405,7 +446,15 @@ Da jeg spurgte Lance om at give mig en sætning om Gentoo, sagde han: "Gentoo er 
 </p>
 
 <p>
-I tilføjelsen af endny en metode at køre Gentoo under umulige forhold, har den danske Gentoo-bruger <uri link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=22752">janlaur</uri> meldt sig friviligt til at lave en Howto om at køre Gentoo Linux, som en tilhørende Windows-tråd, ved brug af coLinux (og involveringen af en komplet Gentoo installation, indeholdende i en 2GB billedfil, til at blive hentet på et tidspunkt). Alle som er tålmodig nok til at prøve dette, tjek tråden i 'Documentation, Tips &amp; Tricks'-sektionen:
+I tilføjelsen af endny en metode at køre Gentoo under umulige
+forhold, har den danske Gentoo-bruger <uri
+link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=22752">janlaur</uri>
+meldt sig friviligt til at lave en Howto om at køre Gentoo Linux,
+som en tilhørende Windows-tråd, ved brug af coLinux (og
+involveringen af en komplet Gentoo installation, indeholdende i en 2GB
+billedfil, til at blive hentet på et tidspunkt). Alle som er
+tålmodig nok til at prøve dette, tjek tråden i
+'Documentation, Tips &amp; Tricks'-sektionen:
 </p>
 
 <ul><li><uri link="http://forums.gentoo.org/viewtopic.php?t=163154">HOWTO coLinux with gentoo</uri></li>
@@ -416,7 +465,14 @@ I tilføjelsen af endny en metode at køre Gentoo under umulige forhold, har den d
 </p>
 
 <p>
-Den store skandinaviske sammensmeltning, som skete på Forums omkring et års tid siden, havde hensigten til at lave en livlig atmosfære omkring den nordiske del af Gentooismen, mest under forestillingen af at svensk var en slags lingua franca til det meste af regionen og så ud som en god fællesnævner. Men nu vil de finske brugere, som sprogligt er meget forskelligt fra, øh, resten af planetens mennesker, opnået en kritisk masse og besluttet at de fortjener et forum til deres eget sprog. Hjertlig velkommen til <uri
+Den store skandinaviske sammensmeltning, som skete på Forums
+omkring et års tid siden, havde hensigten til at lave en livlig
+atmosfære omkring den nordiske del af Gentooismen, mest under
+forestillingen af at svensk var en slags lingua franca til det meste
+af regionen og så ud som en god fællesnævner. Men nu vil de
+finske brugere, som sprogligt er meget forskelligt fra, øh, resten
+af planetens mennesker, opnået en kritisk masse og besluttet at de
+fortjener et forum til deres eget sprog. Hjertlig velkommen til <uri
 link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=22041">jaska</uri>
 og <uri
 link="http://forums.gentoo.org/profile.php?mode=viewprofile&amp;u=32106">Mikessu</uri>
@@ -437,7 +493,12 @@ Værktøjer til ændring af størrelsen på Linux-partitoner
 </p>
 
 <p>
-Der er masser af kommercielle værktøjer til at ændre størrelsen på partitioner på markedet. Men hvad med dem til Linux? Her er en <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/75114">tråd</uri> som taler omkring de kommercielle og frie værktøjer til alle dine behov.
+Der er masser af kommercielle værktøjer til at ændre
+størrelsen på partitioner på markedet. Men hvad med dem til
+Linux? Her er en <uri
+link="http://thread.gmane.org/gmane.linux.gentoo.user/75114">tråd</uri>
+som taler omkring de kommercielle og frie værktøjer til alle
+dine behov.
 </p>
 
 <p>
@@ -447,7 +508,12 @@ Ebuild overflow?
 </p>
 
 <p>
-Nogle dygtige Gentoo-brugere har noteret sig at bruger-bidragede ebuilds har <uri link="http://thread.gmane.org/gmane.linux.gentoo.user/75545">ikke</uri> gjort deres vej igennem Portage i et acceptabel tidsrum.  Det er fordi at der er et udvikler-overload, så hvis du har meget tid ... bliv en Gentoo pakke-vedligeholder!
+Nogle dygtige Gentoo-brugere har noteret sig at bruger-bidragede
+ebuilds har <uri
+link="http://thread.gmane.org/gmane.linux.gentoo.user/75545">ikke</uri>
+gjort deres vej igennem Portage i et acceptabel tidsrum.  Det er fordi
+at der er et udvikler-overload, så hvis du har meget tid ... bliv
+en Gentoo pakke-vedligeholder!
 </p>
 
 </body>
