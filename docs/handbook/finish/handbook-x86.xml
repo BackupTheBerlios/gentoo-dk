@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <!DOCTYPE book SYSTEM "/dtd/book.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-x86.xml,v 1.7 2004/07/29 08:41:36 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/handbook-x86.xml,v 1.8 2004/08/23 05:46:56 broeman Exp $ -->
 
 <book link="handbook-x86.xml" lang="da">
 <title>Gentoo-håndbogen til x86</title>
@@ -131,8 +131,8 @@ informationer omkring Gentoo/Linux.
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 <license/>
 
-<version>2.51</version>
-<date>28. Juli, 2004</date>
+<version>2.89</version>
+<date>23. August 2004</date>
 
 <part>
 <title>Installation af Gentoo</title>
@@ -213,6 +213,15 @@ fortsætter.
 </chapter>
 
 <chapter>
+<title>Installation af nødvendige systemværktøjer</title>
+<abstract>
+Som forklaret før, handler Gentoo om valg. I dette kapitel vil vi hjælpe dig med at
+vælge og at installere nogle vigtige værktøjer.
+</abstract>
+  <include href="hb-install-tools.xml"/>
+</chapter>
+
+<chapter>
 <title>Opsætning af boot-loader</title>
 <abstract>
 Der eksisterer flere forskelige boot-loadere til x86-arkitekturen. Hver af disse har deres egen metode til
@@ -220,15 +229,6 @@ opsætning. Vi vil trinvis hjælpe dig igennem processen for at sætte en boot-load
 behov.
 </abstract>
   <include href="hb-install-x86-bootloader.xml"/>
-</chapter>
-
-<chapter>
-<title>Installation af nødvendige systemværktøjer</title>
-<abstract>
-Som forklaret før, handler Gentoo om valg. I dette kapitel vil vi hjælpe dig med at
-vælge og at installere nogle vigtige værktøjer.
-</abstract>
-  <include href="hb-install-tools.xml"/>
 </chapter>
 
 <chapter>
