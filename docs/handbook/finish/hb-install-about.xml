@@ -3,7 +3,7 @@
 
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.7 2004/03/10 21:42:40 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-about.xml,v 1.8 2004/03/18 17:07:23 broeman Exp $ -->
 
 <sections>
 <section>
@@ -105,9 +105,7 @@ og lige før det valgfrie trin er beskrevet.
 <body>
 
 <p>
-Du kan installere Gentoo på mange forskellige metoder. Du kan hente og installere fra
-en af vores LiveCDer (installationscder), fra en eksisterende distribution, fra en 
-startbar CD (som f.eks. Knoppix), fra en netopstartet miljø osv.
+Du kan installere Gentoo på mange forskellige metoder. Du kan hente og installere fra en af vores LiveCDer (installationscder), fra en eksisterende distribution, fra en startbar CD (som f.eks. Knoppix), fra en netopstartet miljø, fra en redningsdiskette osv. Dette dokument dækker installationen ved brug af vores LiveCDer eller et netopstartet miljø. For at få hjælp til andre installationsmetoder, læs vores <uri link="doc/en/altinstall.xml">Alternative installationsinstruktioner</uri> (engelsk).
 </p>
 
 <p>
