@@ -3,18 +3,19 @@
 
 <!-- $Header: 
 /cvsroot/gentoo-dk/docs/handbook/not_translated/hb-install-finalise.xml,v 1.1 
-2003/12/15 19:38:29 broeman Exp $ --><sections>
+2003/12/15 19:38:29 broeman Exp $ -->
+<sections>
 <section>
-<title>Bruger administation</title>
+<title>Brugeradministation</title>
 <subsection>
-<title>Sæt et root password</title>
+<title>Sæt et root-kodeord</title>
 <body>
 
 <p>
-Før du glemmer det, sæt et root password ved at skrive
+Før du glemmer det, sæt et root-kodeord ved at skrive
 </p>
 
-<pre caption="Sæt root passwordet">
+<pre caption="Sæt root-kodeordet">
 # <i>passwd</i>
 </pre>
 
@@ -29,22 +30,22 @@ At arbejde som root på et Unix/Linux system er <e>farligt</e> og bør undgås så
 vidt som muligt. Derfor anbefales det <e>meget</e> at tilføje en
 dagligdagsbruger.</p>
 <p>
-For eksempel, for at tilføje en bruger ved navn <c>john</c> som er medlem af 
-<c>wheel</c> gruppen (for at kunne skifte til root med <c>su -</c>), 
-<c>users</c> gruppen (standard for alle brugere) og <c>audio</c> gruppen (for at 
+For eksempel, for at tilføje en bruger med navnet <c>jens</c>, som er medlem af 
+<c>wheel</c>-gruppen (for at kunne skifte til root med <c>su -</c>), 
+<c>users</c>-gruppen (standard for alle brugere) og <c>audio</c>-gruppen (for at 
 kunne bruge lyd enheder):</p>
 
 <pre caption="Tilføjelse af en dagligdagsbruger">
-# <i>useradd john -m -G users,wheel,audio -s /bin/bash</i>
-# <i>passwd john</i>
-Password: <comment>(Indtast password for john)</comment>
-Re-enter password: <comment>(Indtast password igen for at bekræfte det)</comment>
+# <i>useradd jens -m -G users,wheel,audio -s /bin/bash</i>
+# <i>passwd jens</i>
+Password: <comment>(Indtast kodeordet for jens)</comment>
+Re-enter password: <comment>(Indtast kodeordet igen for at bekræfte det)</comment>
 </pre>
 
 <p>
-Hvis en bruger nogensinde får brug for at lave nogle opgaver som root kan han
+Hvis en bruger nogensinde får brug for at lave nogle opgaver, som root, kan han
 bruge <c>su -</c> for midlertidigt at få root rettigheder. En anden måde er at
-bruge <c>sudo</c> pakken der, hvis konfigureret korrekt, er meget sikker.</p>
+bruge <c>sudo</c>-pakken, hvis opsat korrekt, er meget sikker.</p>
 </body>
 </subsection>
 </section>
@@ -56,9 +57,9 @@ bruge <c>sudo</c> pakken der, hvis konfigureret korrekt, er meget sikker.</p>
 
 <p>
 Tillykke! Dit Gentoo system er nu færdigt. Kør <c>etc-update</c> for at updatere 
-konfigurations filerne (hvis nødvendigt), gå ud af det chrootede miljø og 
+opsætningsfilerne (hvis nødvendigt), gå ud af det chrootede miljø og 
 unmount de mountede partitioner. Og så skal du bare skrive den magiske
-kommando du har ventet på <c>reboot</c></p>
+kommando du har ventet på: <c>reboot</c></p>
 
 <pre caption="Genstarte systemet">
 # <i>etc-update</i>
@@ -69,14 +70,14 @@ kommando du har ventet på <c>reboot</c></p>
 </pre>
 
 <p>
-Du skal selvfølgelig ikke glemme at fjerne den bootbare CD, ellers vil CDen 
+Du skal selvfølgelig ikke glemme at fjerne den startbare CD, ellers vil CDen 
 blive bootet igen i stedet for dit nye Gentoo system.</p>
 
 <p>
-OldWorld PPC brugere vil boote i MacOS fordi deres bootloader ikke er
+"OldWorld PPC"-brugere skal boote i MacOS, fordi deres boot-loader ikke er
 installeret endnu. Disse brugere bør læse <uri link="#doc_chap2_sect2">Valgfrit:
-Konfigurering af BootX</uri>. GRP brugere kan fortsætte med <uri 
-link="#doc_chap2_sect3">Valgfrit: Installering af ekstra pakkers</uri>, resten 
+Opsætning af BootX</uri>. GRP-brugere kan fortsætte med <uri 
+link="#doc_chap2_sect3">Valgfrit: Installation af ekstra pakker</uri>, resten 
 kan slutte med <uri link="?part=1&amp;chap=12">Hvad skal man så 
 nu?</uri></p>
 </body>
@@ -159,7 +160,7 @@ undgå dette ved at bruge <c>emerge --usepkgonly</c> i stedet for <c>emerge
 --usepkg</c>.</p>
 
 <p>Tillykke, dit system er nu fuldt udstyret! Fortsæt med <uri 
-link="?part=1&amp;chap=12">Hvad skal man så nu?</uri> for at lære mere om
+link="?part=1&amp;chap=12">Hvad kan jeg gøre efter dette?</uri> for at lære mere om
 Gentoo.</p>
 </body>
 </subsection>
