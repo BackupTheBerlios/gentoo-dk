@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-x86-kernel.xml,v 1.7 2004/10/10 20:46:51 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-x86-kernel.xml,v 1.8 2004/10/17 10:06:07 broeman Exp $ -->
 
 <sections>
 <section>
@@ -46,7 +46,7 @@ Til x86-baserede systemer har vi, iblandt andre kerner, <c>vanilla-sources</c>
 (standard 2.4-kernekildekode, som er udviklet af linux-kerne udviklerne),
 <c>gentoo-sources</c> (2.4-kernekildekode, som er patchet med ydelsesforbedrende
 egenskaber), <c>gentoo-dev-sources</c> (kerne version 2.6 kildekoder, som er 
-patchet med ydelsesforbedrende egenskaber), <c>gs-sources</c> (kerne-kildekode, som er patchet til serverbrug), <c>development-sources</c> (vanilla 2.6 kernekildekode), ...
+patchet med ydelsesforbedrende egenskaber), <c>development-sources</c> (vanilla 2.6 kernekildekode), ...
 </p>
 
 <p>
@@ -431,11 +431,6 @@ emerge:
   <ti>nvidia-kernel</ti>
   <ti>Accelereret NVIDIA-grafik til xorg-x11</ti>
   <ti><c>emerge nvidia-kernel</c></ti>
-</tr>
-<tr>
-  <ti>nforce-net</ti>
-  <ti>Indbygget netværkscontroller på NVIDIA NForce(2) bundkort</ti>
-  <ti><c>emerge nforce-net</c></ti>
 </tr>
 <tr>
   <ti>nforce-audio</ti>
