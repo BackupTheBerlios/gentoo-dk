@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-medium.xml,v 1.4 2004/05/03 16:27:47 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-alpha-medium.xml,v 1.5 2004/05/16 11:32:55 broeman Exp $ -->
 
 <sections>
 <section>
@@ -101,6 +101,10 @@ gør. Det er også en udemærket installationsmetode for dem, som har
 lyst til at lære mere om den indre funktionalitet af Gentoo Linux.
 </p>
 
+<p>
+En <e>stage1</e>-installation kan kun blive udført, hvis du har en fungerende Internet-forbindelse.
+</p>
+
 <table>
 <tr>
   <th>Stage1</th>
@@ -131,6 +135,12 @@ lyst til at lære mere om den indre funktionalitet af Gentoo Linux.
     Hvis du ikke har tænkt dig at fin-indstille, er det sikkert spild af tid
   </ti>
 </tr>
+<tr>
+  <th>-</th>
+  <ti>
+    Ikke brugbart for netværksløse installationer
+  </ti>
+</tr>
 </table>
 
 <p>
@@ -138,6 +148,10 @@ lyst til at lære mere om den indre funktionalitet af Gentoo Linux.
 bootstrap-processen og at gøre dette er fint, hvis du er glad for
 de optimeringsindstillinger, som vi har valgt til din særlige
 <e>stage2</e>-tarball.
+</p>
+
+<p>
+En <e>stage2</e>-installation kan kun blive udført, hvis du har en fungerende Internet-forbindelse.
 </p>
 
 <table>
@@ -169,6 +183,12 @@ de optimeringsindstillinger, som vi har valgt til din særlige
   <th>-</th>
   <ti>Du bliver nødt til at acceptere de optimeringer vi har lavet til bootstrap</ti>
 </tr>
+<tr>
+  <th>-</th>
+  <ti>
+    Ikke brugbart for netværksløse installationer
+  </ti>
+</tr>
 </table>
 
 <p>
@@ -177,7 +197,7 @@ Linux, men det betyder også at dit basissystem vil have de
 optimeringsindstillinger, som vi har valgt for dig (og lad os være
 ærlig, det er gode indstillinger, som vi med omhug har valgt til at forøge
 præstationerne, samt vedligeholde stabilitet). <e>stage3</e> kræves
-også, hvis du vil installere Gentoo ved brug af præbyggede pakker.
+også, hvis du vil installere Gentoo ved brug af præbyggede pakker eller uden en netværksforbindelse.
 </p>
 
 <table>
@@ -188,6 +208,10 @@ også, hvis du vil installere Gentoo ved brug af præbyggede pakker.
 <tr>
   <th>+</th>
   <ti>Hurtigste metode for at få et Gentoo basissystem</ti>
+</tr>
+<tr>
+  <th>+</th>
+  <ti>Brugbart til netværksløse installationer</ti>
 </tr>
 <tr>
   <th>-</th>
@@ -273,6 +297,26 @@ Unix/Linux-systemer):
 
 <pre caption="Udpakning af iso.bz2 filen">
 # <i>bunzip2 gentoo-alpha-1.4rc1-test3.iso.bz2</i>
+</pre>
+
+<p>
+En anden måde at tjekke ægtheden af den hentede fil, er at bruge GnuPG til at verificere den krypterede signatur (underskrift) som vi leverer (filen, som ender med <path>.asc</path>). Hent signatur-filen og modtag den offentlige nøgle:
+</p>
+
+<pre caption="Modtagelse af offentlig nøgle">
+$ <i>gpg --keyserver pgp.mit.edu --recv-keys 19462D47</i>
+</pre>
+
+<p>
+Verificer nu signaturen:
+</p>
+
+<pre caption="Verificering af den krypterede signatur">
+$ <i>gpg --verify &lt;signature file&gt; &lt;downloaded iso&gt;</i>
+<comment>(Hvis alt går vel, burde du se noget som dette:)</comment>
+gpg: Signature made Mon Apr 19 18:54:40 2004 EDT using DSA key ID 19462D47
+gpg: Good signature from "John Davis (Gentoo Linux Developer) &lt;zhen@gentoo.org&gt;"
+gpg:                 aka "Gentoo Linux Release Engineering &lt;releng@gentoo.org&gt;"
 </pre>
 
 <p>
