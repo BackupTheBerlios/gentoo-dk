@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding="UTF-8"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/translated/Attic/diskless-howto.xml,v 1.1 2004/01/08 21:44:46 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/diskless-howto.xml,v 1.1 2004/01/11 01:26:30 aaby Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/diskless-howto.xml">
@@ -18,11 +18,14 @@
 <author title="Oversætter">
     <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
 </author>
+<author title="Korrektur">
+    <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
+</author>
 
 <license/>
 
 <abstract>
-Denne HOWTO vil hjælpe dig med at opsætte diskfrie noder med Gentoo Linux 
+Denne HOWTO vil hjælpe dig med at opsætte diskfrie noder med Gentoo Linux.
 </abstract>
 
 <version>1.1</version>
@@ -36,12 +39,13 @@ Denne HOWTO vil hjælpe dig med at opsætte diskfrie noder med Gentoo Linux
 <body>
 
 <p>
-Denne HOWTO vil hjælpe dig med sætte <e>diskfrie</e> arbejdsstationer op, baseret på
-Gentoo Linux distributionen. Vi prøver at lave det så brugervenligt
-som muligt, og sørger for Linux-newbien, fordi alle var én på et
-specifikt tidspunkt :) Da en erfaren bruger sagtens kan samle de mange HOWTOer,
-som er tilgængelige omkring diskfrie noder og netværk sammenlagt, håber vi at denne vejledning kan
-lette installationen for alle interesserede brugere, nørd eller ej. 
+Denne HOWTO vil hjælpe dig med sætte <e>diskfrie</e> arbejdsstationer
+op, baseret på Gentoo Linux distributionen. Vi prøver at lave det så
+brugervenligt som muligt, og sørger for Linux-newbien, fordi alle var
+én på et specifikt tidspunkt :) Da en erfaren bruger sagtens kan samle
+de mange HOWTOer, som er tilgængelige omkring diskfrie noder og
+netværk sammenlagt, håber vi at denne vejledning kan lette
+installationen for alle interesserede brugere, nørd eller ej.
 </p>
 
 </body>
@@ -51,13 +55,15 @@ lette installationen for alle interesserede brugere, nørd eller ej.
 <body>
 
 <p>
-En diskfri maskine er en PC, uden nogen af de normale opstartsenheder, som
-harddiske, floppydrev eller CDROM-drev. Den diskfrie node starter via et netværk og 
-skal bruge en server, som kan levere det med lagerplads, som en lokal harddisk
-ville gøre. Fra nu af, kalder vi serveren <e>master</e>, imens vi kalder den diskfrie 
-maskine for <e>slave</e> (det ligger i navnet :). Slave-noden
-kræver en netværksadapter, som understøtter PXE-opstart. De fleste kort understøtter
-PXE og mange indebygget adaptere på bundkorte vil også virke.
+En diskfri maskine er en PC, uden nogen af de normale opstartsenheder,
+som harddiske, floppydrev eller CDROM-drev. Den diskfrie node starter
+via et netværk og skal bruge en server, som kan levere det med
+lagerplads, som en lokal harddisk ville gøre. Fra nu af, kalder vi
+serveren <e>master</e>, imens vi kalder den diskfrie maskine for
+<e>slave</e> (det ligger i navnet :). Slave-noden kræver en
+netværksadapter, som understøtter PXE-opstart. De fleste kort
+understøtter PXE og mange indebygget adaptere på bundkorte vil også
+virke.
 </p>
 
 </body>
@@ -67,8 +73,8 @@ PXE og mange indebygget adaptere på bundkorte vil også virke.
 <body>
 
 <p>
-Du burde have Gentoo installeret på din master-node, og nok plads på 
-master til at gemme de filsystemer til slave-noderne.  
+Du bør have Gentoo installeret på din master-node, og nok plads på 
+master til at gemme filsystemer til slave-noderne.  
 </p>
 
 </body>
@@ -82,11 +88,12 @@ master til at gemme de filsystemer til slave-noderne.
 <body>
 
 <note>
-Hvis du vil lave en cluster af dine noder ind til en openMosix-cluster, vær sikker på at du
-bruger den patchet kerne til openMosix. Den kan findes i portage under
+Hvis du vil lave en cluster af dine noder ind til en
+openMosix-cluster, vær sikker på at du bruger den patchede kerne til
+openMosix. Den kan findes i portage under
 <path>sys-kernel/openmosix-sources</path>. Du burde læse vores <uri
-link="openmosix-howto.xml">openMosix HOWTO</uri> for at lære om, hvordan du kompilerer din
-kerne til openMosix.
+link="openmosix-howto.xml">openMosix HOWTO</uri> for at lære om,
+hvordan du kompilerer din kerne til openMosix.  
 </note>
 
 <p>
@@ -167,7 +174,7 @@ File systems ---&gt;
 <note>
 Disse kerneopsætningsindstillinger skulle kun blive tilføjet dit systemspecifikke 
 opsætningsindstillinger og er ikke ment til at erstarte din egen kernes
-indstillinger komplet.
+indstillinger fuldstændigt.
 </note>
 
 <p>
@@ -183,8 +190,8 @@ Efter at du har genindstillet masters kerne, vil du få brug for at genbygge den:
 </pre>
 
 <p>
-Tilføj så en punkt for den nye kerne i <path>lilo.conf</path> eller
-<path>grub.conf</path>, afhængigt af hvilken boot-loader, som du bruger og lav
+Tilføj så et punkt for den nye kerne i <path>lilo.conf</path> eller
+<path>grub.conf</path>, afhængigt af hvilken boot-loader du bruger og lav
 den nye kerne, valgt som standard. Nu da den nye bzImage er blevet kopieret til dit
 boot-bibliotek, er alt hvad du skal gøre er, at genstarte systemet for at hente
 disse nye indstillinger.
@@ -205,7 +212,7 @@ slaves kerne i det samme sted, som master var opsat.
 </p>
 
 <p>
-For at undgå misforståelser og spilde tid, er det sikkert en god idé at lave en backup af 
+For at undgå misforståelser og spild af tid, er det sikkert en god idé at lave en backup af 
 masters opsætningsfil ved at taste:
 </p>
 
@@ -299,9 +306,9 @@ den placering, som du ønsker.  Kopiér nu slaves bzImage ind i
 Masters og slaves filsystemer kan blive fin-indstillet og ændret en del.  Lige nu
 er vi kun interesseret i at få lavet et indledende filsystem med passende
 opsætningsfiler og mount-punkter. Først skal vi lave et bibliotek
-inde i <path>/diskless</path> til den første slave.  Enhver slave kræver den egen
-overordnet filsystem, fordi at dele specifikke systemfiler kan skabe problemer med
-rettigheder og problems og det hele går ned.  Du kan kalde de biblioteker alt hvad du ønsker,
+inde i <path>/diskless</path> til den første slave.  Enhver slave kræver dens eget
+overordnede filsystem, fordi at dele specifikke systemfiler, kan skabe problemer med
+rettigheder og at det hele går ned.  Du kan kalde de biblioteker alt hvad du ønsker,
 men vi foreslår at bruge slavernes IP-adresser, idet de er unikke og ikke
 misledende.  Den statiske IP på vores første slave vil være, f.eks.
 <c>192.168.1.21</c>:
@@ -452,25 +459,25 @@ ud som følgende:
 </p>
 
 <pre caption="Smagsprøve af dhcpd.conf layout">
-<comment># global options here</comment>
+<comment># globale muligheder her</comment>
 ddns-update-style none;
 shared-network LOCAL-NET {
-<comment># shared network options here</comment>
+<comment># delte netværksmuligheder her</comment>
 subnet 192.168.1.0 netmask 255.255.255.0 {
-<comment>    # subnet network options here</comment>
+<comment>    # undernetværksmuligheder her</comment>
     host slave{
-<comment>        # host specific options here</comment>
+<comment>        # muligheder specifikt for vært her</comment>
     }
     group {
-<comment>        # group specific options here</comment>
+<comment>        # muligheder specifikt for gruppe her</comment>
     }
 }
 }
 </pre>
 
 <p>
-<c>shared-network</c>-blokken valgfrit og skulle blive brugt til IPer, som du ønsker
-at være tildelt, at tilhøre de samme netværkssteder.  Mindst en af <c>subnet</c>
+<c>shared-network</c>-blokken er valgfri og skulle blive brugt til IPer, som du ønsker
+at være tildelt, for at tilhøre de samme netværkssteder.  Mindst en af <c>subnet</c>
 skal være erklæret og den valgfrie <c>group</c>-blok tillader dig at gruppere opsætninger
 imellem punkter. Et godt eksempel på <path>dhcpd.conf</path> ser ud som følgende:
 </p>
@@ -545,7 +552,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 </pre>
 
 <p>
-IP-adressen efter <c>next-server</c> vil blive spurgt for en specificeret
+IP-adressen efter <c>next-server</c> vil blive spurgt efter et specificeret
 <c>filename</c> (filnavn). Denne IP-adresse skal være IPen på TFTP-serveren, som normalt er
 den samme, som masters IP-adresse.  <c>filename</c> er relativ til
 <path>/diskless</path>-biblioteket (dette er til TFTP-serverens specifikke
@@ -569,7 +576,7 @@ Du kan læse den, ved at taste:
 <body>
 
 <p>
-Før du starter DHCPs initialiseringsscript, redigér
+Før du starter DHCPs initialiseringsscript, så redigér
 <path>/etc/conf.d/dhcp</path>-filen, så at den ser ud som dette
 her:
 </p>
@@ -607,7 +614,8 @@ For at tilføje DHCP-serveren til dit opstartsscript, tast:
 
 <p>
 For at se at noden starter, kan du tage et kig på
-<path>/var/log/daemon.log</path>.  Hvis denne node starter med success, vil <path>daemon.log</path>-filen se ud som dette:
+<path>/var/log/daemon.log</path>.  Hvis denne node starter med
+succes, vil <path>daemon.log</path>-filen se ud som dette:
 </p>
 
 <pre caption="Smagsprøve af DHCPs logfil">
@@ -623,7 +631,7 @@ Denne logfil vil også hjælpe dig med at finde slavernes MAC-adresser.
 
 <p>
 Hvis du får følgende besked, er det sikkert fordi at der er noget galt
-med opsætningsfilen, men at DHCP-serveren stadigvæk sender korrekt.
+med opsætningsfilen, men også at DHCP-serveren stadigvæk sender korrekt.
 </p>
 
 <pre caption="Smagsprøve af en DHCP-serverfejl">
@@ -646,7 +654,7 @@ For at genstarte serveren, tast:
 <chapter>
 <title>Opsætning af TFTP-server og PXE Linux boot-loader</title>
 <section>
-<title>om TFTP-serveren</title>
+<title>Om TFTP-serveren</title>
 <body>
 
 <p>
@@ -691,9 +699,10 @@ af H. Peter Anvin.  Du kan installere denne pakke ved at taste:
 <body>
 
 <p>
-Det er med stor anbefaling at TFTP-serveren er med i tftp-hpa pakken.  
-Denne TFTP-server er tilfældigvis også skrevet af samme forfatter som SYSLINUX, og det virker 
-meget godt med pxelinux. For at installere denne, tast:
+Det er med stor anbefaling at TFTP-serveren er med i tftp-hpa pakken.
+Denne TFTP-server er tilfældigvis også skrevet af samme forfatter som
+SYSLINUX, og det virker meget godt med pxelinux. For at installere
+denne, tast:
 </p>
 
 <pre caption="Installation af TFTP-server">
@@ -718,13 +727,15 @@ pxelinux-binærfilen ind i dit <path>/diskless</path>-bibliotek:
 </pre>
 
 <p>
-Dette vil oprette en standard boot-loader opsætningsfil. Den binære 
-<path>pxelinux.0</path> vil kigge i <path>pxelinux.cfg</path>-biblioteket
-for en fil, hvis navn er klientens IP-adresse i hexadecimal. Hvis den ikke
-finder denne fil, vil den slette det højre ciffer fra samme filnavn og prøve 
-igen, indtil den ikke har flere cifre at bruge. Version 2.05 og senere af syslinux vil gøre
-en ekstra søgning for en fil, som er navngivet efter MAC-adressen. Hvis ingen fil er fundet, vil
-den bruge <path>default</path>-filen.
+Dette vil oprette en standard boot-loader opsætningsfil. Den binære
+<path>pxelinux.0</path> vil kigge i
+<path>pxelinux.cfg</path>-biblioteket efter en fil, hvis navn er
+klientens IP-adresse i hexadecimal. Hvis den ikke finder denne fil,
+vil den slette det højre ciffer fra samme filnavn og prøve igen,
+indtil den ikke har flere cifre at bruge. Version 2.05 og senere af
+syslinux vil lave en ekstra søgning for en fil, som er navngivet efter
+MAC-adressen. Hvis ingen fil er fundet, vil den bruge
+<path>default</path>-filen.
 </p>
 
 <pre caption="Filer som PXE kigger efter i pxelinux.cfg/ i rækkefølge">
@@ -755,7 +766,7 @@ APPEND ip=dhcp root=/dev/nfs nfsroot=192.168.1.1:/diskless/192.168.1.21
 <p>
 <c>DEFAULT</c>-taggen dirigerer pxelinux til kernens bzImage, som vi har kompileret
 tidligere.  <c>APPEND</c>-taggen tildeler kernens intialiseringsopsætning. Siden vi har
-kompileret slaves kerne med <c>NFS_ROOT_SUPPORT</c> vil ve specificere
+kompileret slaves kerne med <c>NFS_ROOT_SUPPORT</c> vil vi specificere
 nfsroot her.  Den første IP er masters IP, og det andet IP er
 biblioteket, som var oprettet i <path>/diskless</path> til at gemme slaves
 indledende filsystem. 
@@ -768,9 +779,9 @@ indledende filsystem.
 <body>
 
 <p>
-Redigér <path>/etc/conf.d/in.tftpd</path>. Du vil få brug for at specificere tftproot-biblioteket
-med <c>INTFTPD_PATH</c> og alle andre kommandolinieopsætninger med
-<c>INTFTPD_OPTS</c>.  Det skulle se ud som dette:
+Redigér <path>/etc/conf.d/in.tftpd</path>. Du vil få brug for at
+specificere tftproot-biblioteket med <c>INTFTPD_PATH</c> og alle andre
+kommandolinieopsætninger med <c>INTFTPD_OPTS</c>.  Det skulle se ud som dette:
 </p>
 
 <pre caption="Smagsprøve af /etc/conf.d/in.tftpd">
@@ -825,13 +836,14 @@ kan du bruge et værktøj, kaldet <c>tcpdump</c>.  For at installere <c>tcpdump</c
 </pre>
 
 <p>
-Du kan nu lytte til forskelligt netværkstrafik og vurdere at din klient/server-interaktion
-er funktionelt.  Hvis noget ikke virker, er der få
-ting, som du måske skulle kigge efter. Først, vær sikker på at klient/server er 
-fysisk forbundet ordentligt, og at netværkskabler ikker er ødelagte. 
-Hvis din klient/server ikke modtager 'requests' på en specifik port, vær sikker på
-at der ikke er nogen firewall-afbrydelser.  For at lytte til interaktionen imellem
-to computere, tast:
+Du kan nu lytte til forskelligt netværkstrafik og vurdere at din
+klient/server-interaktion er funktionelt.  Hvis noget ikke virker, er
+der få ting, som du måske skulle kigge efter. Først, vær sikker på at
+klient/server er fysisk forbundet ordentligt, og at netværkskabler
+ikker er ødelagte.  Hvis din klient/server ikke modtager 'requests' på
+en specifik port, vær sikker på at der ikke er nogen
+firewall-afbrydelser.  For at lytte til interaktionen imellem to
+computere, tast:
 </p>
 
 <pre caption="Lytte til klient- og server-interaktion via tcpdump">
@@ -902,11 +914,11 @@ tast:
 </pre>
 
 <p>
-Du burde se en output, som ser ud som dette, hvis din kerne er blevet sat 
+Du burde se et output, som ser ud som dette, hvis din kerne er blevet sat 
 ordentligt op:
 </p>
 
-<pre caption="Ordentligt NFS-specifik opsætning i masters kerneopsætning">
+<pre caption="Ordentlig NFS-specifik opsætning i masters kerneopsætning">
 # CONFIG_ROOT_NFS is not set
 CONFIG_NFSD=y
 CONFIG_NFSD_V3=y
@@ -972,15 +984,15 @@ dette:
 </pre>
 
 <p>
-Det første fejlt indikerer biblioteket, som bliver eksporteret og det næste felt
-indikerer til hvem og hvordan. Dette felt kan blive delt i to dele: hvem burde have
-tilladelse til at mounte det specifikke bibliotek og hvad den mountede
-klient kan gøre med filsystemet: <c>ro</c> for 'read only', <c>rw</c> for 
-'read/write'; <c>no_root_squash</c> og <c>no_all_squash</c> er 
-vigtige til diskfri klienter, som skriver til disken, så de 
-ikke bliver "smadret", når de laver 'I/O requests'.  Slaves fstab-fil,
-<path>/diskless/192.168.1.21/etc/fstab</path>, burde se ud som
-dette:
+Det første felt indikerer biblioteket, som bliver eksporteret og det
+næste felt indikerer til hvem og hvordan. Dette felt kan blive delt i
+to dele: hvem bør have tilladelse til at mounte det specifikke
+bibliotek og hvad den mountede klient kan gøre med filsystemet:
+<c>ro</c> for 'read only', <c>rw</c> for 'read/write';
+<c>no_root_squash</c> og <c>no_all_squash</c> er vigtige til diskfri
+klienter, som skriver til disken, så de ikke bliver "smadret", når de
+laver 'I/O requests'.  Slaves fstab-fil,
+<path>/diskless/192.168.1.21/etc/fstab</path>, bør se ud som dette:
 </p>
 
 <pre caption="Smagsprøve af slaves fstab">
@@ -998,10 +1010,10 @@ none                            /mfs      mfs     dfsa=1                        
 </pre>
 
 <p>
-I dette eksemep er <e>master</e> kun værtnavnet for master, men det kunne med
+I dette eksempel er <e>master</e> kun værtnavnet for master, men det kunne med
 med lethed være IP for master.  Det første felt indikerer biblioteket, som bliver
 mountet og det andet felt indikerer hvor.  Det tredje felt beskriver
-filsystem og burde være NFS til enhver NFS-mountet bibliotek. Det fjerde felt
+filsystem og bør være NFS til enhvert NFS-mountet bibliotek. Det fjerde felt
 indikerer forskellige indstillinger som kan blive brugt til mount-processen (se
 mount(1) for flere mount-indstillinger).  Nogle folk har problemer med 
 'soft' mount-punkter, så vi laver dem alle 'hard', men du skulle kigge på forskellige
@@ -1024,7 +1036,7 @@ RPCMOUNTDOPTS=""
 </pre>
 
 <p>
-Du burde ændre <c>RPCNFSDCOUNT</c> til det antal af diskfrie noder på
+Du bør ændre <c>RPCNFSDCOUNT</c> til det antal af diskfrie noder på
 netværket.
 </p>
 
@@ -1079,18 +1091,19 @@ de nødvendige binære filer, imens vi stadigvæk bevarer slaves specifikke filer.
 <body>
 
 <p>
-Standard-scripterne vil prøve at køre <e>checkroot</e>, som ikke er logisk for
-dine slave-noder. Den svære vej er at manuelt redigere
-<path>/diskless/192.168.1.21/sbin/rc</path>-scriptet, men dette er en byrdefuld,
-farlig og kunne ødelægge det hele, når du vil ajourføre din nodes filsystem igen
-og glemmer at lade denne script være.  Fidusen er at have en
-<path>/fastboot</path>-filen, når dit system starter op. Denne fil fortæller
-<e>checkroot</e> til ikke at køre nogen tjek af filsystem. Men dette vil også slette
-filen, når den er færdig med programstartsprocessen. Derfor skal vi oprette
-filen igen i slutningen af programstartsprocessen, som dette:
+Standard-scripterne vil prøve at køre <e>checkroot</e>, som ikke er
+logisk for dine slave-noder. Den svære vej er at manuelt redigere
+<path>/diskless/192.168.1.21/sbin/rc</path>-scriptet, men dette er
+byrdefuldt, farligt og kunne ødelægge det hele, når du vil ajourføre
+din nodes filsystem igen og glemmer at lade denne script være.
+Fidusen er at have en <path>/fastboot</path>-fil, når dit system
+starter op. Denne fil fortæller <e>checkroot</e> om ikke at køre
+nogen tjek af filsystem. Men dette vil også slette filen, når den er
+færdig med programstartsprocessen. Derfor skal vi oprette filen igen i
+slutningen af programstartsprocessen, som dette:
 </p>
 
-<pre caption="Forhindre programstartsscriptre at køre et filsystemstjek">
+<pre caption="At forhindre programstartsscriptre at køre et filsystemstjek">
 <comment>(Oprettelse af /fastboot filen til næste genstart)</comment>
 # <i>touch /diskless/192.168.1.21/fastboot</i>
 <comment>(Oprettelse af /fastboot filen på enhver opstart)</comment>
@@ -1168,10 +1181,10 @@ Tillykke!, du er nu en stolt ejer af (en) diskfri(e) node(r) :)
 <body>
 
 <warn>
-Dette er kun forklaret, fordi at en reviewer af dette dokument brugte denne
-løsning. Du skal være klar over at Gentoo <e>ikke</e> understøtter ClusterNFS. Den er ikke
-portage og kræver ændringer til et baselayout programstartsscript. <b>Brug det ved
-din egen risiko</b>.
+Dette er kun forklaret, fordi at en reviewer af dette dokument brugte
+denne løsning. Du skal være klar over at Gentoo <e>ikke</e>
+understøtter ClusterNFS. Den er ikke i portage og kræver ændringer til
+et baselayout programstartsscript. <b>Brug det på eget ansvar</b>.  
 </warn>
 
 <p>
@@ -1218,7 +1231,7 @@ foroven:
   </li>
 </ul>
 
-<pre caption="Filer, som skal være forskellig fra master til slave">
+<pre caption="Filer som skal være forskellig fra master til slave">
 /etc/conf.d/local.start$$CLIENT$$
 /etc/conf.d/local.stop$$CLIENT$$<comment> (Måske tom)</comment>
 /etc/crontab$$CLIENT$$<comment> (Måske tom, master tager sig af dette)</comment>
