@@ -4,7 +4,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/proofread/Attic/hb-working-portage.xml,v 1.1 2004/02/09 21:30:41 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-working-portage.xml,v 1.1 2004/02/22 21:25:24 aaby Exp $ -->
 
 <sections>
 <section>
@@ -295,7 +295,7 @@ et eksempel vil vi se ChangeLog indgange for <c>gnumeric</c>:
 
 <p>
 At søge gennem Portage er rart, men hvis du ikke opdaterer dit Portage-træ
-på et regulært basis, så vil du sidde fast med pakkerne og versionerne
+på regulært basis, så vil du sidde fast med pakkerne og versionerne
 på dit system. Dette betyder at dit system vil blive forældet rimelig
 hurtigt, og at du vil gå glip af fejlrettelser og udbedringer af mulige
 sikkerhedsproblemer.
@@ -739,7 +739,7 @@ dit system fungerer korrekt!
 </warn>
 
 <p>
-Når først unmerge begynder, så vil du se en lang liste af filnavne der
+Når unmerge begynder, så vil du se en lang liste af filnavne der
 tilhører pakken. Nogle af disse filnavne vil have et flag vist til
 venstre for filnavnet. Flagene <c>!mtime</c>, <c>!empty</c>, og
 <c>cfgpro</c> specificerer grunde til hvorfor givne filer ikke bliver
@@ -855,7 +855,7 @@ eller "trænger virkelig til at blive testet"), så lav
 </p>
 
 <p>
-Ændre <e>ikke</e> i <path>/usr/portage/profiles/package.mask</path>­filen,
+Ændér <e>ikke</e> i <path>/usr/portage/profiles/package.mask</path>­filen,
 da alle ændringer bliver fjernet, næste gang du opdaterer dit
 Portage-træ. Hvis du vil maskere en pakke hårdt, så lav
 <path>/etc/portage/package.mask</path> og list pakken i den (brug det
