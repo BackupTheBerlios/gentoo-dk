@@ -3,7 +3,7 @@
 <!-- The content of this document is licensed under the CC-BY-SA license -->
 <!-- See http://creativecommons.org/licenses/by-sa/1.0 -->
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.10 2004/03/08 21:08:51 aaby Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/handbook/finish/Attic/hb-install-finalise.xml,v 1.11 2004/03/10 22:54:21 broeman Exp $ -->
 <sections>
 <section>
 <title>Brugeradministation</title>
@@ -211,12 +211,12 @@ Password: <comment>(Indtast dit root password)</comment>
 
 <p>
 Nu er vi nødt til at ændre konfigurationen af Portage til at lede
-efter de præ-kompilerede binære filer fra den anden CD (CD-2). Først
+efter de præ-kompilerede binære filer fra den anden CD (Gentoo Pakke-CD). Først
 skal du mounte CDen:</p>
 
-<pre caption="Mount CD-2">
+<pre caption="Mount Pakke-CDen">
 # <i>mkdir /mnt/cdrom</i>
-<comment>(Indsæt CD-2 i CD-drevet)</comment>
+<comment>(Indsæt Gentoo Packages CD i CD-drevet)</comment>
 # <i>mount /mnt/cdrom</i>
 </pre>
 
@@ -234,7 +234,7 @@ præbyggede pakker:
 </pre>
 
 <p>
-Nu skal du installere de pakker du vil have. CD-2 indeholder mange 
+Nu skal du installere de pakker du vil have. Pakke-CDen indeholder mange 
 prekompilerede binære filer, for eksempel KDE.
 </p>
 
