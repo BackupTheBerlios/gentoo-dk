@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/guide-localization.xml,v 1.1 2003/12/15 19:38:29 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/guide-localization.xml,v 1.2 2004/02/12 22:08:24 broeman Exp $ -->
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
 <guide link="/doc/da/guide-localization.xml">
 <title>Lokaliseringsvejledningen</title>
-<author title="Forfatter"><mail link="holler@ahsoftware.de">
+<author title="Forfatter"><mail link="holler@gentoo.de">
         Alexander Holler</mail>
 </author>
 <author title="Oversætter(engelsk)/Redaktør"><mail link="slucy@uchicago.edu">
@@ -12,6 +12,9 @@
 </author>
 <author title="Redaktør">
   <mail link="bennyc@gentoo.org">Benny Chuang</mail>
+</author>
+<author title="Redaktør">
+  <mail link="pylon@gentoo.org">Lars Weiler</mail>
 </author>
 <author title="Oversætter">
   <mail link="aaby@gentoo.org">Arne Mejlholm</mail>
@@ -155,6 +158,22 @@ Euro valuta symbol (&#8364;)</note>
 </chapter>
 
 <chapter>
+<title>KDE</title>
+<section>
+<body>
+
+<p>
+Til KDE bliver du nødt til at installere kde-i18n-pakken med de tilsvarende LINGUAS-miljøvariabler sat:</p>
+
+<pre caption="Installation af lokaliseret KDE">
+# <i>LINGUAS="de" emerge kde-i18n</i>
+</pre>
+
+</body>
+</section>
+</chapter>
+
+<chapter>
 <title>Euro Symbolet Konsollen</title>
 <section>
         <body>
@@ -163,9 +182,9 @@ Euro valuta symbol (&#8364;)</note>
 		du nødt til at sætte <i>CONSOLEFONT</i> i
 		<path>/etc/rc.conf</path> til en fil fundet i
 		<path>/usr/share/consolefonts/</path> (uden
-		<c>.psfu.gz</c>).  <c>lat0-16</c> har Euro symbolet.
+		<c>.psfu.gz</c>).  ville <c>lat9w-16</c> have Euro-symbolet.
 <pre caption="At sætte konsol fonten">
- CONSOLEFONT="lat0-16"
+ CONSOLEFONT="lat9w-16"
 </pre>
 		</p>
         </body>
@@ -246,6 +265,6 @@ Euro valuta symbol (&#8364;)</note>
 </section>
 </chapter>
 
-<version>1.8</version>
-<date>25. Oktober, 2003</date>
+<version>1.9</version>
+<date>12. Februar, 2003</date>
 </guide>
