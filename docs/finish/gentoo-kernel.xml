@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/gentoo-kernel.xml,v 1.1 2004/01/22 22:01:08 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/finish/Attic/gentoo-kernel.xml,v 1.1 2004/01/22 22:29:46 aaby Exp $ -->
 
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 <guide link="/doc/da/gentoo-kernel.xml">
@@ -205,7 +205,7 @@ De følgende USE-flag kan sættes for at vælge valgfrie patches:
 <p>
 <c>hardened-sources</c> giver patches fra de forskellige
 underprojekter af Gentoo Hardened, sammen med
-stabilitet/sikkerhed-forbedringer. Tjek
+stabilitets/sikkerheds-forbedringer. Tjek
 <uri>http://www.gentoo.org/proj/en/hardened/</uri>(engelsk) for mere
 information.
 </p>
@@ -431,7 +431,7 @@ ofte og er kendt for at ødelægge ting til tider.
 
 <p>
 <c>gaming-sources</c> er baseret på <c>ck-sources</c> og er derfor
-tunet til højydelse. De indeholder også patches til det nyeste
+tunet til høj ydelse. De indeholder også patches til det nyeste
 game-relaterede hardware (grafik kort, lyd kort ol.).
 </p>
 
@@ -558,7 +558,7 @@ For at få mere information omkring UML og Gentoo, læs da
 
 <p>
 <c>win4lin-sources</c> er patchet til at understøtte de
-brugerbaserede win4lin værktøj, der tillader Linux brugere at køre
+brugerbaserede win4lin værktøjer, der tillader Linux brugere at køre
 mange Microsoft Windows (TM) applikationer på med hastigheder der
 minder om Windows. Se <uri>http://www.netraverse.com/</uri> for mere 
 information.
@@ -575,7 +575,7 @@ information.
 <uri>http://sourceforge.net/projects/wolk</uri>. Denne kerne
 indeholder mange patches fra et bredt udvalg, alle kombineret ind i en
 kerne med ekstrem forsigtighed. Dette tillader dig at konfigurere
-næsten alle ind i og ud af kernen ved kompilerings tid -- så kernen
+næsten alle patches ind i og ud af kernen ved kompilerings tid -- så kernen
 vil virke med næsten alle kombinationer af patches.
 </p>
 
