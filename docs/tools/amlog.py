@@ -28,6 +28,8 @@ class Output:
         rcount = 0
         for char in string:
             charnr = charnr + 1
+            if char == '&':
+                string = string[:charnr+1] + "amp;" +  string[charnr+1:]
             if char == '<' and charnr < 8 and lcount < 1:
                 startchar = charnr
                 lcount = lcount +1
