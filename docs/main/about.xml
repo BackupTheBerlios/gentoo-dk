@@ -68,7 +68,7 @@ bliver tilføjet -- og dem du ikke ønsker, ikke bliver.
 
 <p>
 Portage holder også dit system <i>up-to-date</i>. Ved at skrive <c>emerge -u
-world</c> -- én kommando -- sikrer at alle de pakker <i>du</i> ønsker
+world</c> -- én kommando -- sikrer du at alle de pakker <i>du</i> ønsker
 på dit system, bliver automatisk opdateret.
 </p>
 
