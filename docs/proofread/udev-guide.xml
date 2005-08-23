@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="UTF-8"?>
 <!DOCTYPE guide SYSTEM "/dtd/guide.dtd">
 
-<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/udev-guide.xml,v 1.1 2005/08/21 02:09:01 broeman Exp $ -->
+<!-- $Header: /home/xubuntu/berlios_backup/github/tmp-cvs/gentoo-dk/Repository/docs/proofread/Attic/udev-guide.xml,v 1.2 2005/08/23 21:24:50 aaby Exp $ -->
 
 <guide link="/doc/en/udev-guide.xml">
 <title>Gentoo udev-vejledning</title>
@@ -13,7 +13,7 @@
   <mail link="greg_g@gentoo.org">Gregorio Guidi</mail>
 </author>
 <author title="Oversætter">
-  <mail link="hi_fi-dk@mailadresse.dk">Navn</mail>
+  <mail link="hi_fi-dk@mailadresse.dk">Kim Højgaard-Hansen</mail>
 </author>
 <author title="Korrektion">
   <mail link="broeman@gentoo.org">Jesper Brodersen</mail>
@@ -21,7 +21,7 @@
 
 
 <abstract>
-Dette dokument forklarer hvad udev er, og hvordan du kan benytte udev så det passer til dine behov. 
+Dette dokument forklarer hvad udev er og hvordan du kan benytte udev så det passer til dine behov. 
 </abstract>
 
 <license/>
@@ -54,7 +54,7 @@ Vi tager det dog altid for givet, at den primære IDE disk refereres til som
 Tænk på hotplug-enheder som USB, IEEE1394(Firewire), hot-swap PCI, ... Hvilken enhed
 er den første? Og hvor længe? Hvordan vil de andre enheder blive navngivet, når den
 første forsvinder? Hvad vil det betyde for igangværende transaktioner? Ville det ikke
-være skægt, at et print-job pludseligt blev flyttet fra din nye super laserprinter, til
+være skægt, hvis et print-job pludseligt blev flyttet fra din nye super laserprinter, til
 din halvdøde matrixprinter, fordi din mor besluttede at hive stikket til laserprinteren,
 som var den første printer, ud? 
 </p>
@@ -71,7 +71,7 @@ Derfor <e>udev</e>. Målene for udev-projektet er både interessante og nødvendige
 </ul>
 
 <p>
-For at stille disse funktioner til rådighed, udvikles udev i tre seperate projekter:
+For at stille disse funktioner til rådighed, udvikles udev i tre separate projekter:
 <e>namedev</e>, <e>libsysfs</e> og selvfølgelig, <e>udev</e>.
 </p>
 
@@ -82,9 +82,9 @@ For at stille disse funktioner til rådighed, udvikles udev i tre seperate projek
 <body>
 
 <p>
-Namedev gør det muligt for dig at definere enheds-navngivningen seperat fra
+Namedev gør det muligt for dig at definere enheds-navngivningen separat fra
 udev programmet. Dette giver mulighed for fleksible navngivningspolitikker
-og navngivningsskemaer udviklet af seperate enheder. Dette undersystem til
+og navngivningsskemaer udviklet af separate enheder. Dette undersystem til
 enhedsnavngivning stiller et standard interface til rådighed for udev.
 </p>
 
@@ -109,14 +109,14 @@ De 5 trin er:
 </ul>
 
 <p>
-<e>label or serial-nummer</e> trinnet checker om enheden har en unik ID. F.eks.
-har USB-enheder et unikt USB serial-nummer, SCSI-enheder har en unik UUID. Hvis
+<e>label eller seriel-nummer</e> trinet checker om enheden har et unikt ID. F.eks.
+har USB-enheder et unikt USB seriel-nummer, SCSI-enheder har en unik UUID. Hvis
 namedev finder et match mellem dette unikke nummer, og en konfigurationsfil,
 bliver navnet fra denne konfigurationsfil brugt.
 </p>
 
 <p>
-<e>bus enheds-nummer</e> trinnet checker enhedens bus-nummer. For miljøer uden
+<e>bus enheds-nummer</e> trinet checker enhedens bus-nummer. For miljøer uden
 hot-swap mulighed, er denne procedure nok til at identificere en hardware enhed.
 F.eks. ændrer PCI bus-numre sig sjældent i et systems levetid. Igen er det sådan,
 at hvis namedev finder et match mellem dette nummer og en konfigurationsfil, 
@@ -139,7 +139,7 @@ bliver dette erstatningsnavn brugt.
 Det sidste trin (<e>navn leveret af kernen</e>) er et "fang-alt" trin:
 Det tager standard-navnet leveret af kernen. I langt de fleste tilfælde 
 er dette tilstrækkeligt, fordi det matcher enhedsnavngivningen der bliver
-brugt på nuværende linuxsystemer.
+brugt på nuværende Linux systemer.
 </p>
 
 </body>
@@ -166,7 +166,7 @@ hvilken slags hardware det er.
 Hver gang kernen registrerer en ændring i enhedsstrukturen, sender den et kald
 til <path>/sbin/hotplug</path> applikationen. Hotplug kører applikationen der 
 er linket til i <path>/etc/hotplug.d/default</path> mappen, hvor du også 
-vil finde et symbolsk linke til udev applikationen. Hotplug sender informationerne
+vil finde et symbolsk link til udev applikationen. Hotplug sender informationerne
 fra kernen til udev-applikationen, der udfører de nødvendige operationer på 
 <path>/dev</path> strukturen (oprette og slette enheds-filer).
 </p>
@@ -195,7 +195,7 @@ hvad du behøver.
 
 <p>
 Udev installerer <c>hotplug-base</c> som en af dens afhængigheder. Du behøver
-ikke installere <c>hotplug</c> medmindre du gerne vil have moduler loadet
+ikke installere <c>hotplug</c> medmindre du gerne vil have moduler indlæst
 automatisk når du sætter enheder til. <c>Hotplug</c> håndterer også automatisk
 opstart af netværksenheder og download af firmware.
 </p>
@@ -205,7 +205,7 @@ opstart af netværksenheder og download af firmware.
 </pre>
 
 <p>
-Hvis du vil have loadet moduler til enheder, der blev sat i før opstart,
+Hvis du vil have indlæst moduler til enheder, der blev sat i før opstart,
 kan du bruge coldplug-pakken:
 </p>
 
@@ -217,7 +217,7 @@ kan du bruge coldplug-pakken:
 Husk at tilføje <c>coldplug</c> til boot-runlevel:
 </p>
 
-<pre caption="Tilføje coldplug til boot-runlevel">
+<pre caption="At tilføje coldplug til boot-runlevel">
 # <i>rc-update add coldplug boot</i>
 </pre>
 
@@ -236,7 +236,7 @@ File systems ---&gt;
 </pre>
 
 <p>
-Du kan beholde <c>/dev file system support (OBSOLETE)</c> hvis du vil,
+Du kan beholde <c>/dev file system support (FORÆLDET)</c> hvis du vil,
 men du skal være sikker på at "Automatically mount at boot" er slået fra:
 </p>
 
@@ -262,7 +262,7 @@ med denne <c>genkernel</c>-kommando er nok.
 <p>
 Hvis du ønsker at bruge de udev-tweaks Gentoo har tilføjet for at gøre
 dit liv nemmere, behøver du ikke læse mere. Gentoo vil bruge udev, men
-holde en statisk <path>/dev</path> så du aldrig kommer til at mangle
+holder en statisk <path>/dev</path> så du aldrig kommer til at mangle
 nogen enheds-noder. Gentoo init-scripts vil undlade at køre
 devfsd-dæmonen, og vil deaktivere devfs når du starter din maskine. 
 </p>
@@ -400,11 +400,11 @@ KERNEL="dm-[0-9]*",     PROGRAM="/sbin/devmap_name %M %m", NAME="%k", SYMLINK="%
 </body>
 </section>
 <section>
-<title>Ingen konsistent navngivning mellem DevFS og udev</title>
+<title>Ingen konsekvent navngivning mellem DevFS og udev</title>
 <body>
 
 <p>
-Selvom vores intention er at sørge for at have et konsistent navngivningsskema
+Selvom vores intention er at sørge for at have et konsekvent navngivningsskema
 mellem begge dynamsiske enhedshåndteringsløsninger, sker det nogen gange at
 der opstår forskelle i navngivningen.
 </p>
@@ -423,7 +423,7 @@ Hvis dette er tilfældet, skal du som følge heraf huske at opdatere din
 </p>
 
 <p>
-Det samme sker med all-round symbolske linker der før eksisterede i
+Det samme sker med all-round symbolske link der før eksisterede i
 <path>/dev</path>, som fx <path>/dev/mouse</path>, som <c>udev</c> ikke
 længere opretter. Kontroller din X konfigurationsfil og se om enhedsreglen
 til din mus peger på en eksisterende enhedsfil.
@@ -436,9 +436,9 @@ til din mus peger på en eksisterende enhedsfil.
 <body>
 
 <p>
-Hvis enhedsnoder ikke oprettes når et modul bliver loadet fra
+Hvis enhedsnoder ikke oprettes når et modul bliver indlæst fra
 <path>/etc/modules.autoload.d/kernel-2.6</path>, men de dukker op når du
-loader modulet manuelt med modprobe, bør du prøve at opgradere til
+indlæser modulet manuelt med modprobe, bør du prøve at opgradere til
 <c>sys-apps/baselayout-1.8.12</c> eller højere.
 </p>
 
@@ -448,7 +448,7 @@ kernen fra version 2.6.6-rc2.
 </p>
 
 <p>
-For kerner ældrer end 2.6.4 skal du eksplicit inkludere understøttelse af
+For kerner ældre end 2.6.4 skal du eksplicit inkludere understøttelse af
 <path>/dev/pts</path> filsystemet.
 </p>
 
@@ -463,7 +463,7 @@ File systems ---&gt;
 </chapter>
 
 <chapter>
-<title>Resourcer og anerkendelser</title>
+<title>Ressourcer og anerkendelser</title>
 <section>
 <body>
 
